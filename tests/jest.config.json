@@ -1,0 +1,8 @@
+{
+  "collectCoverage": true,
+  "moduleFileExtensions": [
+    "js",
+    "json"
+  ],
+  "scriptPreprocessor": "<rootDir>/node_modules/babel-jest"
+}
