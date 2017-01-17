@@ -1,0 +1,94 @@
+generic:
+  font:
+    primary:
+      weight:
+        regular: '400'
+        medium: '500'
+        semibold: '600'
+        bold: '700'
+      font-family: 'Lato'
+      generic-family: 'sans-serif'
+    secondary:
+      variants:
+        regular: '400'
+        bold: '700'
+      font-family: 'Roboto'
+      generic-family: 'sans-serif'
+    alternative:
+      variants:
+        regular: '400'
+      font-family: 'Handlee'
+      generic-family: 'cursive'
+  color:
+    accent-darker: &accent-darker   '#0B4848'
+    accent-dark: &accent-dark       '#177D7D'
+    accent: &accent                 '#2A9595'
+    accent-light: &accent-light     '#46BCBC'
+    accent-lighter: &accent-lighter '#6EE1E1'
+
+    primary-darker: &primary-darker   '#162052'
+    primary-dark: &primary-dark       '#283A8E'
+    primary: &primary                 '#3F52A9'
+    primary-light: &primary-light     '#7F92E7'
+    primary-lighter: &primary-lighter '#5B6ECA'
+
+    secondary-darkest: &secondary-darkest '#57410f'
+    secondary-darker: &secondary-darker   '#785A13'
+    secondary-dark: &secondary-dark       '#CF9E26'
+    secondary: &secondary                 '#F8C346'
+    secondary-light: &secondary-light     '#FFD05E'
+    secondary-lighter: &secondary-lighter '#FFD97C'
+
+    text-dark: &text-dark '#333'
+    text: &text '#666'
+    text-light: &text-light '#999'
+
+    active: &active '#3892e7'
+    positive: &positive '#2ca937'
+    negative: &negative '#c54229'
+    negative-light: &negative-light '#f0d0c9'
+
+    shadow: &shadow '#000000'
+    shadow-alt: &shadow-alt '#00196F'
+    blank: &blank '#FFFFFF'
+
+    facebook: &facebook '#45619D'
+    facebook-border: &facebook-border '#324A87'
+    twitter: &twitter '#08ACEE'
+    twitter-border: &twitter-border '#1871C0'
+    google: &google '#B30303'
+    google-border: &google-border '#670E00'
+    mail: &mail '#ec7c1b'
+    mail-border: &mail-border '#cd6612'
+  size:
+    border-radius-small: &border-radius-small 2px
+button:
+  color:
+    bg-top: *accent
+    bg-bottom: *accent
+    text: *blank
+    border: *accent-dark
+    shadow: "transparent"
+    disabled:
+      bg-top: *secondary-dark
+      bg-bottom: *secondary-dark
+      text: *secondary-darker
+      border: "transparent"
+      border-bottom: *secondary-darkest
+  size:
+    border-radius: *border-radius-small
+  shadow:
+    inner:
+      params: "0 3px"
+      color: *accent-dark
+    outer:
+      params: "0 0"
+      color: "transparent"
+      hover:
+        params: "0 0"
+spinner:
+  color:
+    light: *accent-lighter
+    lighter: *accent
+    dark: *primary
+    darker: *primary-lighter

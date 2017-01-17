@@ -1,0 +1,32 @@
+exports[`Button #render() should return base class with mods for strings as class and string as mods 1`] = `
+<a
+  className="ui-button ui-button--size_xs ui-button--variation_default ui-button--disabled_true"
+  data-gtm="id"
+  href="http://google.com">
+  Extra small
+</a>
+`;
+
+exports[`Button #render() should return base class with mods for strings as class and string as mods 2`] = `<noscript />`;
+
+exports[`Button #render() should return base class with mods for strings as class and string as mods 3`] = `<noscript />`;
+
+exports[`Button #render() should return base class with mods for strings as class and string as mods 4`] = `
+<button
+  className="ui-button ui-button--size_xs ui-button--variation_default"
+  data-gtm="id"
+  disabled={false}
+  type="submit">
+  Extra small
+</button>
+`;
+
+exports[`Button #render() should return base class with mods for strings as class and string as mods 5`] = `
+<button
+  className="ui-button ui-button--size_xs ui-button--variation_default"
+  disabled={false}
+  onClick={[Function]}
+  type="button">
+  Extra small
+</button>
+`;
