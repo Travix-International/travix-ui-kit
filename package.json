@@ -77,13 +77,14 @@
     "eslint-plugin-react": "^6.6.0",
     "jest": "^18.1.0",
     "jest-cli": "^18.1.0",
-    "react-addons-test-utils": "^15.4.2",
+    "react-addons-test-utils": "^^0.14.8",
     "react-styleguidist": "^4.6.2",
     "webpack-hot-middleware": "^2.15.0"
   },
   "greenkeeper": {
     "ignore": [
       "react",
+      "react-addons-test-utils",
       "react-dom"
     ]
   }
