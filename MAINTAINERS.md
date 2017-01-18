@@ -28,7 +28,7 @@ $ make release VERSION=patch
 
 Changelogs are generated using the `github_changelog_generator` gem.
 
-Make sure you have Ruby v2+:
+Make sure you have Ruby v2.2+:
 
 ```
 $ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -46,9 +46,28 @@ $ gem install github_changelog_generator
 Now you can generate `CHANGELOG.md` file automatically by running:
 
 ```
-$ github_changelog_generator -t "YOUR_GITHUB_TOKEN"
+$ make changelog GITHUB_API_TOKEN="YOUR_GITHUB_TOKEN"
 ```
+
+### GitHub API Token
 
 You can generate a token [here](https://github.com/settings/tokens/new?description=GitHub%20Changelog%20Generator%20token)
 
 Since this is a public repository, you only need `public_repo` access for the token.
+
+### Pushing `CHANGELOG.md`
+
+Once the `CHANGELOG.md` file is generated, it is up to you to commit and push it to GitHub.
+
+There is a handy command available:
+
+```
+$ make push-changelog
+```
+
+## Adding Release Note
+
+After `CHANGELOG.md` is pushed to GitHub, release notes should be added.
+
+In the repository navigate to `release` section. Here open the `Tags` tab and click on `Edit` button.
+Add your `CHANGELOG.md` notes in the editing section and save.
