@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.2.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.2.0) (2017-01-18)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.1.2...v0.2.0)
+
+**Merged pull requests:**
+
+- Update dependencies to enable Greenkeeper 🌴 [\#2](https://github.com/Travix-International/travix-ui-kit/pull/2) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+
 ## [v0.1.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.1.2) (2017-01-18)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.1.1...v0.1.2)
 
