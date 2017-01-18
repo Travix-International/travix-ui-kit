@@ -50,14 +50,14 @@
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
-    "babel-jest": "^16.0.0",
+    "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.5",
     "babel-preset-travix": "^1.1.0",
     "babel-register": "^6.16.3",
-    "css-loader": "^0.23.1",
+    "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
-    "node-sass": "^3.8.0",
-    "postcss-loader": "^0.11.1",
+    "node-sass": "^4.3.0",
+    "postcss-loader": "^1.2.2",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
     "sass-loader": "^4.0.1",
@@ -72,18 +72,19 @@
     "enzyme-to-json": "^1.1.4",
     "eslint": "^3.9.1",
     "eslint-config-travix": "^2.2.0",
-    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-babel": "^4.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.6.0",
-    "jest": "^14.1.0",
-    "jest-cli": "^16.0.2",
+    "jest": "^18.1.0",
+    "jest-cli": "^18.1.0",
     "react-addons-test-utils": "^0.14.8",
-    "react-styleguidist": "^3.1.1",
+    "react-styleguidist": "^4.6.2",
     "webpack-hot-middleware": "^2.15.0"
   },
   "greenkeeper": {
     "ignore": [
       "react",
+      "react-addons-test-utils",
       "react-dom"
     ]
   }
