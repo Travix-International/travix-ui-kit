@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.2.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.2.1) (2017-01-19)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.2.0...v0.2.1)
+
+**Merged pull requests:**
+
+- downgrade webpack and extract-text-webpack-plugin version [\#4](https://github.com/Travix-International/travix-ui-kit/pull/4) ([iwwwi](https://github.com/iwwwi))
+
 ## [v0.2.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.2.0) (2017-01-18)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.1.2...v0.2.0)
 
