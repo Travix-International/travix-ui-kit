@@ -55,7 +55,7 @@
     "babel-preset-travix": "^1.1.0",
     "babel-register": "^6.16.3",
     "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "extract-text-webpack-plugin": "~1.0.1",
     "node-sass": "^4.3.0",
     "postcss-loader": "^1.2.2",
     "react": "^0.14.8",
@@ -63,7 +63,7 @@
     "sass-loader": "^4.0.1",
     "style-loader": "^0.13.1",
     "theme-builder": "^0.2.1",
-    "webpack": "2.1.0-beta.22"
+    "webpack": "~1.13.0"
   },
   "devDependencies": {
     "cheerio": "^0.22.0",
@@ -83,9 +83,11 @@
   },
   "greenkeeper": {
     "ignore": [
+      "extract-text-webpack-plugin",
       "react",
       "react-addons-test-utils",
-      "react-dom"
+      "react-dom",
+      "webpack"
     ]
   }
 }
