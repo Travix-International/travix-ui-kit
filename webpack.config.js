@@ -1,6 +1,5 @@
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const webpack = require('webpack');
 
 const outputDir = './dist/';
 
@@ -14,7 +13,7 @@ module.exports = {
 
   output: {
     path: outputDir,
-    filename: 'bundle.js',
+    filename: 'ui-bundle.js',
     library: 'TravixUIKit',
     libraryTarget: 'var',
   },
@@ -33,20 +32,16 @@ module.exports = {
       {
         test: /\.s?css$/i,
         exclude: /(node_modules)/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: ['css-loader', 'sass-loader', 'postcss-loader'],
-        }),
+        loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'sass']),
       },
     ],
   },
 
+  postcss: () => {
+    return [autoprefixer('last 2 version')];
+  },
+
   plugins: [
-    new ExtractTextPlugin('bundle.css'),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        postcss: [autoprefixer],
-      },
-    }),
+    new ExtractTextPlugin('ui-bundle.css'),
   ],
 };

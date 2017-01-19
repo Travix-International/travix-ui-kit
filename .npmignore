@@ -7,3 +7,4 @@ tests/
 styleguide/
 styleguide.config.js
 styleguide.html
+themes/theme.scss
