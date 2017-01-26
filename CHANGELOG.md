@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.2.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.2.2) (2017-01-26)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.2.1...v0.2.2)
+
+**Merged pull requests:**
+
+- removed node\_modules from webpack scss loader [\#5](https://github.com/Travix-International/travix-ui-kit/pull/5) ([iwwwi](https://github.com/iwwwi))
+
 ## [v0.2.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.2.1) (2017-01-19)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.2.0...v0.2.1)
 
