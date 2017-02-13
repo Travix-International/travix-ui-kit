@@ -1,6 +1,6 @@
 exports[`Spinner #render() should return base class with mods for strings as class and string as mods 1`] = `
 <div
-  className="ui-spinner ui-spinner--size_xs">
+  className="ui-spinner ui-spinner_size_xs">
   <svg
     styles="enable-background:new 0 0 80 80;"
     version="1.1"
@@ -87,7 +87,7 @@ exports[`Spinner #render() should return base class with mods for strings as cla
 
 exports[`Spinner #render() should return base class with mods for strings as class and string as mods 2`] = `
 <div
-  className="ui-spinner ui-spinner--size_m">
+  className="ui-spinner ui-spinner_size_m">
   <svg
     styles="enable-background:new 0 0 80 80;"
     version="1.1"

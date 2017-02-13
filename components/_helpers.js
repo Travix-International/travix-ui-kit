@@ -1,4 +1,4 @@
-const modSep = '--';
+const modSep = '_';
 
 function getClassNamesWithMods(baseClass, mods = []) {
   baseClass = [].concat(baseClass);

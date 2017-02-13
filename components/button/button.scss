@@ -23,7 +23,7 @@ $text-shadow: null !default;
   transition: all .1s ease-in-out;
 }
 
-.ui-button--variation_default {
+.ui-button_variation_default {
   font-family: $tx-generic-font-primary-font-family, $tx-generic-font-primary-generic-family;
   font-weight: $tx-generic-font-primary-weight-bold;
   font-size: 23px;
@@ -52,10 +52,10 @@ $text-shadow: null !default;
   }
 }
 
-.ui-button--disabled_true,
-.ui-button--disabled_true:focus,
-.ui-button--disabled_true:hover,
-.ui-button--disabled_true:active {
+.ui-button_disabled_true,
+.ui-button_disabled_true:focus,
+.ui-button_disabled_true:hover,
+.ui-button_disabled_true:active {
   color: $tx-button-color-disabled-text;
   cursor: default;
   background-color: $tx-button-color-disabled-bg-bottom;
@@ -65,26 +65,26 @@ $text-shadow: null !default;
   position: static;
 }
 
-.ui-button--size_xs {
+.ui-button_size_xs {
   font-size: 15px;
   padding: 3px 6px;
 }
-.ui-button--size_s {
+.ui-button_size_s {
   font-size: 18px;
   padding: 5px 10px;
 }
 
-.ui-button--size_m {
+.ui-button_size_m {
   font-size: 22px;
   padding: 0 24px;
   line-height: 40px;
 }
 
-.ui-button--size_l {
+.ui-button_size_l {
   font-size: 26px;
   padding: 12px 17px;
 }
-.ui-button--size_xl {
+.ui-button_size_xl {
   font-size: 28px;
   padding: 15px 20px;
 }
