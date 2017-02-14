@@ -87,6 +87,7 @@
       "react",
       "react-addons-test-utils",
       "react-dom",
+      "sass-loader",
       "webpack"
     ]
   }
