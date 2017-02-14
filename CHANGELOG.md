@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.2.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.2.3) (2017-02-14)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.2.2...v0.2.3)
+
+**Closed issues:**
+
+- Support CDN urls via unpkg.com [\#8](https://github.com/Travix-International/travix-ui-kit/issues/8)
+
+**Merged pull requests:**
+
+- Updated mods helper and class names according to the new BEM standards [\#13](https://github.com/Travix-International/travix-ui-kit/pull/13) ([AlexDudar](https://github.com/AlexDudar))
+- Update sass-loader to the latest version 🚀 [\#9](https://github.com/Travix-International/travix-ui-kit/pull/9) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+
 ## [v0.2.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.2.2) (2017-01-26)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.2.1...v0.2.2)
 
