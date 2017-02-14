@@ -1,0 +1,31 @@
+@import "../../themes/theme";
+
+.ui-list {
+  font-family: $tx-generic-font-secondary-font-family, $tx-generic-font-secondary-generic-family;
+
+  &.ui-list_orientation_vertical li {
+    color: $tx-list-bullets-color;
+    line-height: 38px;
+  }
+
+  &.ui-list_orientation_horizontal {
+    padding: 0;
+
+    li {
+      display: inline-block;
+      padding: 5px 10px;
+    }
+  }
+
+  &.ui-list_no-bullets {
+    padding: 0;
+
+    li {
+      display: block;
+    }
+  }
+
+  .ui-list__content {
+    color: $tx-generic-color-text;
+  }
+}

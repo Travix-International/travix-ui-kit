@@ -1,0 +1,71 @@
+exports[`List #render() should return base class with mods for strings as class and string as mods 1`] = `
+<ul
+  className="ui-list ui-list_orientation_vertical">
+  <li>
+    <span
+      className="ui-list__content">
+      London
+    </span>
+  </li>
+  <li>
+    <span
+      className="ui-list__content">
+      Amsterdam
+    </span>
+  </li>
+  <li>
+    <span
+      className="ui-list__content">
+      Madrid
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`List #render() should return base class with mods for strings as class and string as mods 2`] = `
+<ul
+  className="ui-list ui-list_orientation_horizontal">
+  <li>
+    <span
+      className="ui-list__content">
+      London
+    </span>
+  </li>
+  <li>
+    <span
+      className="ui-list__content">
+      Amsterdam
+    </span>
+  </li>
+  <li>
+    <span
+      className="ui-list__content">
+      Madrid
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`List #render() should return base class with mods for strings as class and string as mods 3`] = `
+<ul
+  className="ui-list ui-list_orientation_vertical ui-list_no-bullets">
+  <li>
+    <span
+      className="ui-list__content">
+      London
+    </span>
+  </li>
+  <li>
+    <span
+      className="ui-list__content">
+      Amsterdam
+    </span>
+  </li>
+  <li>
+    <span
+      className="ui-list__content">
+      Madrid
+    </span>
+  </li>
+</ul>
+`;
