@@ -1,5 +1,16 @@
 # Change Log
 
+## [v0.3.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.0) (2017-02-15)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.2.3...v0.3.0)
+
+**Closed issues:**
+
+- Heading elements [\#14](https://github.com/Travix-International/travix-ui-kit/issues/14)
+
+**Merged pull requests:**
+
+- \[WIP\] Implementation of issue \#6's proposal [\#7](https://github.com/Travix-International/travix-ui-kit/pull/7) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.2.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.2.3) (2017-02-14)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.2.2...v0.2.3)
 
