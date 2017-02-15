@@ -13,11 +13,13 @@
   ],
   "globals": {
     "__base": true,
-    "describe": true,
-    "it": true,
     "assert": true,
+    "beforeEach": true,
+    "describe": true,
     "enzyme": true,
     "expect": true,
+    "it": true,
+    "jest": true,
     "React": true,
     "ReactDOM": true
   },

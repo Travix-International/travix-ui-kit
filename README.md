@@ -7,10 +7,66 @@ Travix UI Components' repository.
 ## UI-Kit
 ### How to install and setup
 - `npm i travix-ui-kit -S` install as a dependency
-- add npm script `build` with value `cd node_modules/travix-ui-kit/ && npm run build && cd ../..` to your `package.json`
 
-### How to use
-#### JS
+### Usage
+
+#### CLI
+
+The UI Kit comes with a CLI tool to help you build your UI bundles (JS and CSS).
+
+To see the options available:
+
+```bash
+$ node_modules/.bin/travix-ui-kit -h
+
+  Usage: travix-ui-kit [options]
+
+  Options:
+
+    -h, --help                 output usage information
+    -V, --version              output the version number
+    -c, --css-dir <directory>  Destination directory of the ui-kit.css
+    -j, --js-dir <directory>   Destination directory of the ui-kit.js
+    -t, --theme-file <path>    Path to a theme file to override default UI Kit styles
+    -w, --watch                Enables file-watcher functionality
+```
+
+For example, if we want to generate our UI Bundles, with the default styling, on `./js/` and `./css/` folders,
+we do:
+
+```bash
+$ node_modules/.bin/travix-ui-kit -j ./js/ -c ./css/
+```
+
+If we want to pass our own YAML file for styling, we also can do it:
+
+```bash
+$ node_modules/.bin/travix-ui-kit -j ./js/ -c ./css/ -t ./myDefaultStyle.yml
+```
+
+And for development purposes, we tend to want to watch for changes on the files.
+That's possible too:
+
+```bash
+$ node_modules/.bin/travix-ui-kit -j ./js/ -c ./css/ -t ./myDefaultStyle.yml -w
+```
+
+
+For simplicity purposes we suggest to add a task/script to your `package.json`,
+which simplifies the usage of the CLI. E.g.:
+
+```js
+{
+  "scripts": {
+    "build:ui": "travix-ui-kit -j ./js/ -c ./css/ -t ./myDefaultStyle.yml",
+    "build:ui-watch": "travix-ui-kit -j ./js/ -c ./css/ -t ./myDefaultStyle.yml -w",
+  }
+}
+```
+
+#### The components
+
+##### JS
  ```javascript
  const Button = require('travix-ui-kit').Button;
  // or
@@ -22,13 +78,15 @@ Travix UI Components' repository.
    );
  }
  ```
-#### CSS
+##### CSS
 use file `node_modules/travix-ui-kit/dist/bundle.css`
 - you can create an alias in your webpack plugin
 - or inject it in your page current styles bundle
 - or copy to public folder and add as separate style file with `<link>`
 
 **Warning**: Directly using file `components/index.scss` not recommended. We're not promising that we will use SCSS in future or will keep file's structure
+
+---
 
 ## Living style guide
 
@@ -57,8 +115,7 @@ use file `node_modules/travix-ui-kit/dist/bundle.css`
 #### Start developing
 
 - `npm run build:watch` to build the themes, styles and javascript on each file change
-- `npm run build-theme:watch` to build the themes on each theme change
-- `THEME_PATH=/some/path/to/theme.yaml npm run build` to pass other than default theme. Theme must be a valid yaml file
+- `npm run build:watch -- -t "./path/to/my/theme.yml"` to build using a custom theme (also can use the other options as well).
 - `npm run styleguide-server` to run web service with livingstyle guide and review changes
 
 #### Testing

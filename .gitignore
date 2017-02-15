@@ -6,3 +6,4 @@ node_modules/
 styleguide/
 themes/theme.scss
 .DS_Store
+wallaby.js

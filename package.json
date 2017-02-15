@@ -4,10 +4,10 @@
   "description": "Travix UI kit",
   "main": "lib/index.js",
   "scripts": {
-    "build": "npm run build-theme && webpack && babel --copy-files ./components --out-dir lib --ignore *.scss,*.md",
-    "build:watch": "npm run build-theme:watch & webpack --watch& babel --copy-files ./components --out-dir lib --ignore *.scss,*.md -w",
-    "build-theme": "node bin/build-theme.js",
-    "build-theme:watch": "node bin/build-theme.js --watch",
+    "prebuild": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md &",
+    "build": "node ./builder",
+    "build:watch": "node ./builder -w",
+    "prebuild:watch": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md -w &",
     "styleguide-server": "styleguidist server",
     "styleguide-build": "styleguidist build",
     "test": "jest -c ./tests/jest.config.json",
@@ -16,6 +16,9 @@
     "coverage:coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint --color '{components,tests,utils,scripts}/**/*.js'",
     "transpile": "npm run build"
+  },
+  "bin": {
+    "travix-ui-kit": "./builder/index.js"
   },
   "repository": {
     "type": "git",
@@ -54,6 +57,7 @@
     "babel-loader": "^6.2.5",
     "babel-preset-travix": "^1.1.0",
     "babel-register": "^6.16.3",
+    "commander": "^2.9.0",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^4.3.0",

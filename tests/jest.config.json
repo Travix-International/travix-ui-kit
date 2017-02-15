@@ -1,8 +1,16 @@
 {
   "collectCoverage": true,
+  "collectCoverageFrom": [
+    "builder/**/*.js",
+    "!builder/webpack.config.js",
+    "components/**/*.js",
+    "!components/index.js"
+  ],
   "moduleFileExtensions": [
     "js",
     "json"
   ],
-  "scriptPreprocessor": "<rootDir>/node_modules/babel-jest"
+  "transform": {
+    ".*": "<rootDir>/node_modules/babel-jest"
+  }
 }
