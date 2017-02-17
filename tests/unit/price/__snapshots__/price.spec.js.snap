@@ -41,6 +41,25 @@ exports[`Price #render() should render only the amount of decimals defined in th
 </div>
 `;
 
+exports[`Price #render() should render without decimals when showDecimals = false 1`] = `
+<div
+  className="ui-price ui-price_my-special-class">
+  <div
+    className="ui-price__value-delimiter">
+    <div
+      className="ui-price__currency ui-price__currency-right">
+      د.إ.‏
+    </div>
+    <div
+      className="ui-price__integers">
+      50.153
+    </div>
+  </div>
+  <div
+    className="ui-price__underline" />
+</div>
+`;
+
 exports[`Price #render() should render without thousands separator when overriden to empty string 1`] = `
 <div
   className="ui-price">

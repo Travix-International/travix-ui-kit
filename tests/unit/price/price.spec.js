@@ -103,5 +103,22 @@ describe('Price', () => {
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
+
+    it('should render without decimals when showDecimals = false', () => {
+      const wrapper = shallow(
+        <Price
+          decimalsSeparator=","
+          mods={['my-special-class']}
+          showDecimals={false}
+          symbol="د.إ.‏"
+          symbolPosition="right"
+          thousandsSeparator="."
+          underlined
+          value={50153.30}
+        />
+      );
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
   });
 });
