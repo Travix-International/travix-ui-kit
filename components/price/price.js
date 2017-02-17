@@ -1,8 +1,47 @@
 // Imports
 import React from 'react';
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 const { PropTypes } = React;
+
+/**
+ * Adds the thousands separator to a given value.
+ * If either the thousands separator is not set or the value doesn't have thousands,
+ * it will return the original value.
+ *
+ * @function addThousandsSeparator
+ * @param {String} value              Integer value to be formatted
+ * @param {String} thousandsSeparator Character to be used to split the thousands unit.
+ * @return {String}                   Either the original value or the formatted value.
+ */
+export function addThousandsSeparator(value, thousandsSeparator) {
+  if (!thousandsSeparator || (value.length <= 3)) {
+    return value;
+  }
+
+  return value
+    .split('')
+    .reverse()
+    .reduce((ret, digit, idx) => ret.concat([((idx > 0) && ((idx % 3) === 0) ? thousandsSeparator : ''), digit]), [])
+    .reverse()
+    .join('');
+}
+
+/**
+ * Ensures that a decimal value has the right decimal precision (no rounding applied).
+ *
+ * @function ensureDecimalPrecision
+ * @param {String} value              Integer value, representing the decimal part of a number.
+ * @param {Number} decimalsPrecision  Number of decimals to be allowed.
+ * @return {String}                   The value with a proper precision.
+ */
+export function ensureDecimalPrecision(value, decimalsPrecision = 2) {
+  if (value.length > decimalsPrecision) {
+    return value.substr(0, decimalsPrecision);
+  }
+
+  return `${value}${'0'.repeat(decimalsPrecision - value.length)}`;
+}
 
 /**
  * Price component
@@ -21,32 +60,15 @@ function Price({
   const rootClass = 'ui-price';
   const className = getClassNamesWithMods(rootClass, mods);
   const [intValue, decValue] = value.toString().split('.');
-
-  let formattedIntValue = intValue;
-  if (thousandsSeparator && (formattedIntValue.length > 3)) {
-    formattedIntValue = formattedIntValue
-      .split('')
-      .reverse()
-      .reduce((ret, digit, idx) => ret.concat([((idx > 0) && ((idx % 3) === 0) ? thousandsSeparator : ''), digit]), [])
-      .reverse()
-      .join('');
-  }
-
-  const formattedDecValue = decValue.length > decimalsPrecision
-    ? decValue.substr(0, decimalsPrecision)
-    : `${decValue}${'0'.repeat(decimalsPrecision - decValue.length)}`;
-
-  const dataAttributes = Object.keys(dataAttrs).reduce((ret, key) => {
-    ret[`data-${key.toLowerCase()}`] = dataAttrs[key];
-    return ret;
-  }, {});
   const underlineMarkup = underlined ? <div className={`${rootClass}__underline`}/> : null;
 
-  return (<div className={className} {...dataAttributes}>
+  return (<div className={className} {...getDataAttributes(dataAttrs)}>
     <div className={`${rootClass}__value-delimiter`}>
       <div className={`${rootClass}__currency ${rootClass}__currency-${symbolPosition}`}>{symbol}</div>
-      <div className={`${rootClass}__integers`}>{formattedIntValue}</div>
-      <div className={`${rootClass}__decimals`}>{decimalsSeparator}{formattedDecValue}</div>
+      <div className={`${rootClass}__integers`}>{addThousandsSeparator(intValue, thousandsSeparator)}</div>
+      <div className={`${rootClass}__decimals`}>{
+        decimalsSeparator + ensureDecimalPrecision(decValue, decimalsPrecision)
+      }</div>
     </div>
     {underlineMarkup}
   </div>);
