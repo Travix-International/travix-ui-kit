@@ -51,6 +51,7 @@ function Price({
   decimalsPrecision,
   decimalsSeparator,
   mods = [],
+  showDecimals,
   symbol,
   symbolPosition,
   thousandsSeparator,
@@ -60,15 +61,17 @@ function Price({
   const rootClass = 'ui-price';
   const className = getClassNamesWithMods(rootClass, mods);
   const [intValue, decValue] = value.toString().split('.');
+
+  const decimalsMarkup = showDecimals ? (<div className={`${rootClass}__decimals`}>{
+    decimalsSeparator + ensureDecimalPrecision(decValue, decimalsPrecision)
+  }</div>) : null;
   const underlineMarkup = underlined ? <div className={`${rootClass}__underline`}/> : null;
 
   return (<div className={className} {...getDataAttributes(dataAttrs)}>
     <div className={`${rootClass}__value-delimiter`}>
       <div className={`${rootClass}__currency ${rootClass}__currency-${symbolPosition}`}>{symbol}</div>
       <div className={`${rootClass}__integers`}>{addThousandsSeparator(intValue, thousandsSeparator)}</div>
-      <div className={`${rootClass}__decimals`}>{
-        decimalsSeparator + ensureDecimalPrecision(decValue, decimalsPrecision)
-      }</div>
+      {decimalsMarkup}
     </div>
     {underlineMarkup}
   </div>);
@@ -77,6 +80,7 @@ function Price({
 Price.defaultProps = {
   decimalsPrecision: 2,
   decimalsSeparator: '.',
+  showDecimals: true,
   symbol: '€',
   symbolPosition: 'left',
   thousandsSeparator: ',',
@@ -106,6 +110,11 @@ Price.propTypes = {
    * You can provide set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * Defines if it should show the decimals or not.
+   */
+  showDecimals: PropTypes.bool,
 
   /**
    * Currency symbol. Defines the currency symbol of the Price.
