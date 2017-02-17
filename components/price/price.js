@@ -10,7 +10,7 @@ const { PropTypes } = React;
  * it will return the original value.
  *
  * @function addThousandsSeparator
- * @param {String} value              Integer value to be formatted
+ * @param {String} value              String to be formatted
  * @param {String} thousandsSeparator Character to be used to split the thousands unit.
  * @return {String}                   Either the original value or the formatted value.
  */
@@ -31,7 +31,7 @@ export function addThousandsSeparator(value, thousandsSeparator) {
  * Ensures that a decimal value has the right decimal precision (no rounding applied).
  *
  * @function ensureDecimalPrecision
- * @param {String} value              Integer value, representing the decimal part of a number.
+ * @param {String} value              String representing the decimal part of a number.
  * @param {Number} decimalsPrecision  Number of decimals to be allowed.
  * @return {String}                   The value with a proper precision.
  */
