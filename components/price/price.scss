@@ -1,0 +1,55 @@
+@import "../../themes/theme";
+
+.ui-price {
+  color: $tx-generic-color-primary-dark;
+  font-family: $tx-generic-font-primary-font-family, $tx-generic-font-primary-generic-family;
+  display: inline-block;
+}
+
+.ui-price__value-delimiter {
+  align-items: flex-end;
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 0 0 auto;
+}
+
+.ui-price__currency {
+  display: flex;
+  font-size: $tx-price-font-size-currency;
+  flex: 0 0 auto;
+
+  &.ui-price__currency-left {
+    margin-right: 5px;
+    order: 1;
+  }
+
+  &.ui-price__currency-right {
+    margin-left: 5px;
+    order: 4;
+  }
+}
+
+.ui-price__integers {
+  display: flex;
+  font-size: $tx-price-font-size-integers;
+  font-weight: $tx-generic-font-primary-weight-bold;
+  line-height: $tx-price-line-height-integers;
+  flex: 0 0 auto;
+  order: 2;
+}
+
+.ui-price__decimals {
+  align-self: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  font-size: $tx-price-font-size-decimals;
+  order: 3;
+}
+
+.ui-price__underline {
+  background-color: $tx-generic-color-accent;
+  display: flex;
+  flex: 1 1 auto;
+  height: $tx-price-height-underline;
+  order: 5;
+}

@@ -86,6 +86,16 @@ button:
       color: "transparent"
       hover:
         params: "0 0"
+price:
+  font:
+    size:
+      currency: 19px
+      integers: 35px
+      decimals: 17px
+  height:
+    underline: 6px
+  line-height:
+    integers: 31px
 spinner:
   color:
     light: *accent-lighter
