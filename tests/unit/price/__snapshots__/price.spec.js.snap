@@ -1,4 +1,4 @@
-exports[`Button #render() should not render underline when underlined flag is missing 1`] = `
+exports[`Price #render() should not render underline when underlined flag is missing 1`] = `
 <div
   className="ui-price ui-price_my-special-class"
   data-gtm-id="test">
@@ -14,14 +14,13 @@ exports[`Button #render() should not render underline when underlined flag is mi
     </div>
     <div
       className="ui-price__decimals">
-      ,
-      30
+      ,30
     </div>
   </div>
 </div>
 `;
 
-exports[`Button #render() should render only the amount of decimals defined in the decimalsPrecision 1`] = `
+exports[`Price #render() should render only the amount of decimals defined in the decimalsPrecision 1`] = `
 <div
   className="ui-price">
   <div
@@ -36,14 +35,13 @@ exports[`Button #render() should render only the amount of decimals defined in t
     </div>
     <div
       className="ui-price__decimals">
-      ,
-      30
+      ,30
     </div>
   </div>
 </div>
 `;
 
-exports[`Button #render() should render without thousands separator when overriden to empty string 1`] = `
+exports[`Price #render() should render without thousands separator when overriden to empty string 1`] = `
 <div
   className="ui-price">
   <div
@@ -58,14 +56,13 @@ exports[`Button #render() should render without thousands separator when overrid
     </div>
     <div
       className="ui-price__decimals">
-      ,
-      30
+      ,30
     </div>
   </div>
 </div>
 `;
 
-exports[`Button #render() should return base class with mods for strings as class and string as mods 1`] = `
+exports[`Price #render() should return base class with mods for strings as class and string as mods 1`] = `
 <div
   className="ui-price ui-price_my-special-class"
   data-gtm-id="test">
@@ -81,8 +78,7 @@ exports[`Button #render() should return base class with mods for strings as clas
     </div>
     <div
       className="ui-price__decimals">
-      ,
-      30
+      ,30
     </div>
   </div>
   <div
