@@ -18,12 +18,12 @@
   font-size: $tx-price-font-size-currency;
   flex: 0 0 auto;
 
-  &.ui-price__currency-left {
+  &.ui-price__currency_left {
     margin-right: 5px;
     order: 1;
   }
 
-  &.ui-price__currency-right {
+  &.ui-price__currency_right {
     margin-left: 5px;
     order: 4;
   }

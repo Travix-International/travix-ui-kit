@@ -5,7 +5,7 @@ exports[`Price #render() should not render underline when underlined flag is mis
   <div
     className="ui-price__value-delimiter">
     <div
-      className="ui-price__currency ui-price__currency-right">
+      className="ui-price__currency ui-price__currency_right">
       د.إ.‏
     </div>
     <div
@@ -26,7 +26,7 @@ exports[`Price #render() should render only the amount of decimals defined in th
   <div
     className="ui-price__value-delimiter">
     <div
-      className="ui-price__currency ui-price__currency-right">
+      className="ui-price__currency ui-price__currency_right">
       د.إ.‏
     </div>
     <div
@@ -47,7 +47,7 @@ exports[`Price #render() should render without decimals when showDecimals = fals
   <div
     className="ui-price__value-delimiter">
     <div
-      className="ui-price__currency ui-price__currency-right">
+      className="ui-price__currency ui-price__currency_right">
       د.إ.‏
     </div>
     <div
@@ -66,7 +66,7 @@ exports[`Price #render() should render without thousands separator when override
   <div
     className="ui-price__value-delimiter">
     <div
-      className="ui-price__currency ui-price__currency-right">
+      className="ui-price__currency ui-price__currency_right">
       د.إ.‏
     </div>
     <div
@@ -88,7 +88,7 @@ exports[`Price #render() should return base class with mods for strings as class
   <div
     className="ui-price__value-delimiter">
     <div
-      className="ui-price__currency ui-price__currency-right">
+      className="ui-price__currency ui-price__currency_right">
       د.إ.‏
     </div>
     <div
