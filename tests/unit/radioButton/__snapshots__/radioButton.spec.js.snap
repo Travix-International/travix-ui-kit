@@ -1,0 +1,56 @@
+exports[`Radio Button #render() should render default checked radio button 1`] = `
+<div
+  aria-checked="checked"
+  className="ui-radio"
+  role="radio">
+  <input
+    autoFocus="true"
+    checked="checked"
+    disabled={false}
+    id="radio1"
+    onChange={[Function]}
+    type="radio" />
+  <label
+    htmlFor="radio1">
+    Radio 1
+  </label>
+</div>
+`;
+
+exports[`Radio Button #render() should render disabled radio button 1`] = `
+<div
+  aria-checked={false}
+  className="ui-radio ui-radio_disabled_true"
+  role="radio">
+  <input
+    autoFocus="true"
+    checked={false}
+    disabled="disabled"
+    id="disabledRadio"
+    onChange={[Function]}
+    type="radio" />
+  <label
+    htmlFor="disabledRadio">
+    Disabled radio button
+  </label>
+</div>
+`;
+
+exports[`Radio Button #render() should render radio button 1`] = `
+<div
+  aria-checked="checked"
+  className="ui-radio"
+  role="radio">
+  <input
+    autoFocus="true"
+    checked="checked"
+    disabled={false}
+    id="radio1"
+    onChange={[Function]}
+    type="radio" />
+  <label
+    htmlFor="radio1">
+    Radio 1
+  </label>
+</div>
+`;
