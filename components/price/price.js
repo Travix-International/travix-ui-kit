@@ -67,14 +67,16 @@ function Price({
   }</div>) : null;
   const underlineMarkup = underlined ? <div className={`${rootClass}__underline`}/> : null;
 
-  return (<div className={className} {...getDataAttributes(dataAttrs)}>
-    <div className={`${rootClass}__value-delimiter`}>
-      <div className={`${rootClass}__currency ${rootClass}__currency-${symbolPosition}`}>{symbol}</div>
-      <div className={`${rootClass}__integers`}>{addThousandsSeparator(intValue, thousandsSeparator)}</div>
-      {decimalsMarkup}
+  return (
+    <div className={className} {...getDataAttributes(dataAttrs)}>
+      <div className={`${rootClass}__value-delimiter`}>
+        <div className={`${rootClass}__currency ${rootClass}__currency-${symbolPosition}`}>{symbol}</div>
+        <div className={`${rootClass}__integers`}>{addThousandsSeparator(intValue, thousandsSeparator)}</div>
+        {decimalsMarkup}
+      </div>
+      {underlineMarkup}
     </div>
-    {underlineMarkup}
-  </div>);
+  );
 }
 
 Price.defaultProps = {
