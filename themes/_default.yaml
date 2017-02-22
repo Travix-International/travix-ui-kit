@@ -87,15 +87,44 @@ button:
       hover:
         params: "0 0"
 price:
-  font:
-    size:
-      currency: 19px
-      integers: 35px
-      decimals: 17px
   height:
     underline: 6px
-  line-height:
-    integers: 31px
+  margin-top:
+    underline: 2px;
+  small:
+    font:
+      size:
+        currency: 15px
+        integers: 30px
+        decimals: 14px
+    line-height:
+      integers: 26px
+  medium:
+    font:
+      size:
+        currency: 16px
+        integers: 30px
+        decimals: 14px
+    line-height:
+      integers: 26px
+  large:
+    font:
+      size:
+        currency: 19px
+        integers: 35px
+        decimals: 17px
+    line-height:
+      integers: 31px
+  xlarge:
+    font:
+      size:
+        currency: 30px
+        integers: 55px
+        decimals: 27px
+    line-height:
+      integers: 51px
+    height:
+      underline: 8px
 spinner:
   color:
     light: *accent-lighter

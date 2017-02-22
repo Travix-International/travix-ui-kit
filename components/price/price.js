@@ -52,6 +52,7 @@ function Price({
   decimalsSeparator,
   mods = [],
   showDecimals,
+  size,
   symbol,
   symbolPosition,
   thousandsSeparator,
@@ -59,8 +60,13 @@ function Price({
   value,
 }) {
   const rootClass = 'ui-price';
-  const className = getClassNamesWithMods(rootClass, mods);
   const [intValue, decValue] = value.toString().split('.');
+
+  if (size) {
+    mods.push(`size_${size}`);
+  }
+
+  const className = getClassNamesWithMods(rootClass, mods);
 
   const decimalsMarkup = showDecimals ? (<div className={`${rootClass}__decimals`}>{
     decimalsSeparator + ensureDecimalPrecision(decValue, decimalsPrecision)
@@ -83,6 +89,7 @@ Price.defaultProps = {
   decimalsPrecision: 2,
   decimalsSeparator: '.',
   showDecimals: true,
+  size: 'l',
   symbol: '€',
   symbolPosition: 'left',
   thousandsSeparator: ',',
@@ -117,6 +124,11 @@ Price.propTypes = {
    * Defines if it should show the decimals or not.
    */
   showDecimals: PropTypes.bool,
+
+  /**
+   * Price's size
+   */
+  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
 
   /**
    * Currency symbol. Defines the currency symbol of the Price.
