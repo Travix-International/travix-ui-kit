@@ -1,6 +1,6 @@
 exports[`Price #render() should not render underline when underlined flag is missing 1`] = `
 <div
-  className="ui-price ui-price_my-special-class"
+  className="ui-price ui-price_my-special-class ui-price_size_l"
   data-gtm-id="test">
   <div
     className="ui-price__value-delimiter">
@@ -22,7 +22,7 @@ exports[`Price #render() should not render underline when underlined flag is mis
 
 exports[`Price #render() should render only the amount of decimals defined in the decimalsPrecision 1`] = `
 <div
-  className="ui-price">
+  className="ui-price ui-price_size_l">
   <div
     className="ui-price__value-delimiter">
     <div
@@ -41,9 +41,30 @@ exports[`Price #render() should render only the amount of decimals defined in th
 </div>
 `;
 
+exports[`Price #render() should render with ui-price_size_xl class 1`] = `
+<div
+  className="ui-price ui-price_size_xl">
+  <div
+    className="ui-price__value-delimiter">
+    <div
+      className="ui-price__currency ui-price__currency_left">
+      €
+    </div>
+    <div
+      className="ui-price__integers">
+      50,153
+    </div>
+    <div
+      className="ui-price__decimals">
+      .30
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Price #render() should render without decimals when showDecimals = false 1`] = `
 <div
-  className="ui-price ui-price_my-special-class">
+  className="ui-price ui-price_my-special-class ui-price_size_l">
   <div
     className="ui-price__value-delimiter">
     <div
@@ -62,7 +83,7 @@ exports[`Price #render() should render without decimals when showDecimals = fals
 
 exports[`Price #render() should render without thousands separator when overriden to empty string 1`] = `
 <div
-  className="ui-price">
+  className="ui-price ui-price_size_l">
   <div
     className="ui-price__value-delimiter">
     <div
@@ -83,7 +104,7 @@ exports[`Price #render() should render without thousands separator when override
 
 exports[`Price #render() should return base class with mods for strings as class and string as mods 1`] = `
 <div
-  className="ui-price ui-price_my-special-class"
+  className="ui-price ui-price_my-special-class ui-price_size_l"
   data-gtm-id="test">
   <div
     className="ui-price__value-delimiter">

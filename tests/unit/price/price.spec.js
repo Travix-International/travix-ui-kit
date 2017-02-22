@@ -120,5 +120,16 @@ describe('Price', () => {
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
+
+    it('should render with ui-price_size_xl class', () => {
+      const wrapper = shallow(
+        <Price
+          size="xl"
+          value={50153.30}
+        />
+      );
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
   });
 });
