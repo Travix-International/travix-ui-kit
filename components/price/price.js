@@ -62,9 +62,7 @@ function Price({
   const rootClass = 'ui-price';
   const [intValue, decValue] = value.toString().split('.');
 
-  if (size) {
-    mods.push(`size_${size}`);
-  }
+  mods.push(`size_${size}`);
 
   const className = getClassNamesWithMods(rootClass, mods);
 
