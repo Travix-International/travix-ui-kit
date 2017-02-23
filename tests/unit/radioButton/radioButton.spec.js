@@ -19,7 +19,7 @@ describe('Radio Button', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    it('should render default checked radio button', () => {
+    it('should render checked radio button', () => {
       const wrapper = shallow(
         <RadioButton checked id="radio1" onChange={onChange}>
           Radio 1
@@ -31,8 +31,8 @@ describe('Radio Button', () => {
 
     it('should render radio button', () => {
       const wrapper = shallow(
-        <RadioButton checked id="radio1" onChange={onChange}>
-          Radio 1
+        <RadioButton id="radio2" onChange={onChange}>
+          Radio 2
         </RadioButton>
       );
 

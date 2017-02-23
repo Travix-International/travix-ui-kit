@@ -1,17 +1,16 @@
-exports[`Radio Button #render() should render default checked radio button 1`] = `
+exports[`Radio Button #render() should render checked radio button 1`] = `
 <div
-  aria-checked="checked"
-  className="ui-radio"
-  role="radio">
+  className="ui-radio">
   <input
-    autoFocus="true"
-    checked="checked"
+    checked={true}
     disabled={false}
     id="radio1"
     onChange={[Function]}
     type="radio" />
   <label
-    htmlFor="radio1">
+    aria-checked={true}
+    htmlFor="radio1"
+    role="radio">
     Radio 1
   </label>
 </div>
@@ -19,18 +18,17 @@ exports[`Radio Button #render() should render default checked radio button 1`] =
 
 exports[`Radio Button #render() should render disabled radio button 1`] = `
 <div
-  aria-checked={false}
-  className="ui-radio ui-radio_disabled_true"
-  role="radio">
+  className="ui-radio ui-radio_disabled_true">
   <input
-    autoFocus="true"
     checked={false}
-    disabled="disabled"
+    disabled={true}
     id="disabledRadio"
     onChange={[Function]}
     type="radio" />
   <label
-    htmlFor="disabledRadio">
+    aria-checked={false}
+    htmlFor="disabledRadio"
+    role="radio">
     Disabled radio button
   </label>
 </div>
@@ -38,19 +36,18 @@ exports[`Radio Button #render() should render disabled radio button 1`] = `
 
 exports[`Radio Button #render() should render radio button 1`] = `
 <div
-  aria-checked="checked"
-  className="ui-radio"
-  role="radio">
+  className="ui-radio">
   <input
-    autoFocus="true"
-    checked="checked"
+    checked={false}
     disabled={false}
-    id="radio1"
+    id="radio2"
     onChange={[Function]}
     type="radio" />
   <label
-    htmlFor="radio1">
-    Radio 1
+    aria-checked={false}
+    htmlFor="radio2"
+    role="radio">
+    Radio 2
   </label>
 </div>
 `;

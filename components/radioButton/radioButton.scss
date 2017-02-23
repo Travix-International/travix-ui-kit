@@ -1,5 +1,5 @@
 .ui-radio {
-  color: $tx-generic-color-text-darker;
+  color: $tx-generic-color-text-dark;
   font-family: $tx-generic-font-secondary-font-family, $tx-generic-font-secondary-generic-family;
   font-size: 14px;
   font-weight: $tx-generic-font-primary-weight-regular;
@@ -51,11 +51,11 @@
   }
 
   &.ui-radio_disabled_true input[type="radio"] + label {
-    color: $tx-generic-color-text-disabled;
+    color: $tx-generic-color-text-light;
     cursor: default;
 
     &:before {
-      border-color: $tx-generic-color-secondary-dark-disabled;
+      border-color: $tx-generic-color-secondary-light;
     }
   }
 }
