@@ -126,7 +126,7 @@ Price.propTypes = {
   /**
    * Price's size
    */
-  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
+  size: PropTypes.oneOf(['s', 'm', 'l', 'xl']),
 
   /**
    * Currency symbol. Defines the currency symbol of the Price.
