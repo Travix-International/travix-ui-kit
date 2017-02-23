@@ -1,16 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Radio Button #render() should render checked radio button 1`] = `
 <div
-  className="ui-radio">
+  className="ui-radio"
+>
   <input
     checked={true}
     disabled={false}
     id="radio1"
     onChange={[Function]}
-    type="radio" />
+    type="radio"
+  />
   <label
     aria-checked={true}
     htmlFor="radio1"
-    role="radio">
+    role="radio"
+  >
     Radio 1
   </label>
 </div>
@@ -18,17 +23,20 @@ exports[`Radio Button #render() should render checked radio button 1`] = `
 
 exports[`Radio Button #render() should render disabled radio button 1`] = `
 <div
-  className="ui-radio ui-radio_disabled_true">
+  className="ui-radio ui-radio_disabled_true"
+>
   <input
     checked={false}
     disabled={true}
     id="disabledRadio"
     onChange={[Function]}
-    type="radio" />
+    type="radio"
+  />
   <label
     aria-checked={false}
     htmlFor="disabledRadio"
-    role="radio">
+    role="radio"
+  >
     Disabled radio button
   </label>
 </div>
@@ -36,17 +44,20 @@ exports[`Radio Button #render() should render disabled radio button 1`] = `
 
 exports[`Radio Button #render() should render radio button 1`] = `
 <div
-  className="ui-radio">
+  className="ui-radio"
+>
   <input
     checked={false}
     disabled={false}
     id="radio2"
     onChange={[Function]}
-    type="radio" />
+    type="radio"
+  />
   <label
     aria-checked={false}
     htmlFor="radio2"
-    role="radio">
+    role="radio"
+  >
     Radio 2
   </label>
 </div>
