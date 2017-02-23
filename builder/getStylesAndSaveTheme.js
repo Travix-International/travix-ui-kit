@@ -15,9 +15,12 @@ module.exports = (themeFile, isWatchEnabled) => new Promise((resolve, reject) =>
   const yamlFile = themeFile || path.join(__dirname, '..', 'themes', '_default.yaml');
 
   if (isWatchEnabled) {
-    fs.watch(yamlFile, { persistent: true }, () => {
-      /** TODO: Do proper error handling on watch mode */
-      generateThemeFile(yamlFile).catch(reject);
+    fs.watchFile(yamlFile, () => {
+      generateThemeFile(yamlFile)
+        .then(() => {
+          console.log(`Detected changes on ${yamlFile} and rebuilt themes/theme.scss`); // eslint-disable-line
+        })
+        .catch(console.error); // eslint-disable-line
     });
   }
 

@@ -50,4 +50,23 @@ describe('Builder › generateThemeFile.js', () => {
         expect(err.message).toBe('Read error');
       });
   });
+
+  it('rejects when themeBuilder throws an error', () => {
+    const fakeFile = 'fake/file.yml';
+    fs.readFile.mockImplementation((filePath, options, cb) => cb(null, 'fake file content'));
+    themeBuilder.mockImplementation(() => { throw new Error('ThemeBuilder error'); });
+    return generateThemeFile(fakeFile)
+      .catch((err) => {
+        expect(fs.readFile).toHaveBeenCalled();
+        expect(fs.readFile.mock.calls[0][0]).toBe(fakeFile);
+        expect(fs.readFile.mock.calls[0][1]).toEqual({ encoding: 'utf-8' });
+        expect(fs.readFile.mock.calls[0][2]).toBeInstanceOf(Function);
+
+        expect(themeBuilder).toHaveBeenCalled();
+        expect(saveThemeScssFile).not.toHaveBeenCalled();
+
+        expect(err).toBeInstanceOf(Error);
+        expect(err.message).toBe('ThemeBuilder error');
+      });
+  });
 });
