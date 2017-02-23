@@ -17,8 +17,12 @@ module.exports = (yamlFile) => {
         return;
       }
 
-      const themeChunks = themeBuilder(content, 'scss', { prefix: 'tx' });
-      resolve(themeChunks.join('\n'));
+      try {
+        const themeChunks = themeBuilder(content, 'scss', { prefix: 'tx' });
+        resolve(themeChunks.join('\n'));
+      } catch (e) {
+        reject(e);
+      }
     });
   }).then(saveThemeScssFile);
 };
