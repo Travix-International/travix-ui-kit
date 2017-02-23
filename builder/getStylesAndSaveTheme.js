@@ -18,7 +18,7 @@ module.exports = (themeFile, isWatchEnabled) => new Promise((resolve, reject) =>
     fs.watchFile(yamlFile, () => {
       generateThemeFile(yamlFile)
         .then(() => {
-          console.log(`Detected changes on ${yamlFile} and rebuilt themes/theme.scss`);
+          console.log(`Detected changes on ${yamlFile} and rebuilt themes/theme.scss`); // eslint-disable-line
         })
         .catch(console.error); // eslint-disable-line
     });
