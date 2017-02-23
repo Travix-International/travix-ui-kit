@@ -1,6 +1,6 @@
 // Imports
 import React from 'react';
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 const { PropTypes } = React;
 
@@ -8,12 +8,7 @@ const { PropTypes } = React;
  * General Button component. Use when you need button or a link that looks like button
  */
 function Button({ children, mods = [], size, href, onClick, type, variation, disabled, dataAttrs = false }) {
-  const restProps = {};
-  if (dataAttrs) {
-    Object.keys(dataAttrs).forEach((key) => {
-      restProps[`data-${key.toLowerCase()}`] = dataAttrs[key];
-    });
-  }
+  const restProps = getDataAttributes(dataAttrs);
 
   if (size) {
     mods.push(`size_${size}`);

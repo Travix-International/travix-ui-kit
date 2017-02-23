@@ -44,6 +44,11 @@ RadioButton.defaultProps = {
 
 RadioButton.propTypes = {
   /**
+   * Represents the state of the radio button.
+   */
+  checked: PropTypes.bool,
+
+  /**
    * Radio Button value.
    */
   children: PropTypes.oneOfType([
@@ -53,12 +58,7 @@ RadioButton.propTypes = {
   ]),
 
   /**
-   * Represents the state of the radio button.
-   */
-  checked: PropTypes.bool,
-
-  /**
-   * Data attribute. You can use it to set up GTM key or any custom data-* attribute.
+   * Data attribute. You can use it to set up any custom data-* attribute.
    */
   dataAttrs: PropTypes.oneOfType([
     PropTypes.bool,
