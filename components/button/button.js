@@ -7,7 +7,7 @@ const { PropTypes } = React;
 /**
  * General Button component. Use when you need button or a link that looks like button
  */
-function Button({ children, mods = [], size, href, onClick, type, variation, disabled, dataAttrs = false }) {
+function Button({ children, mods = [], size, href, onClick, type, variation, disabled, dataAttrs = {} }) {
   const restProps = getDataAttributes(dataAttrs);
 
   if (size) {

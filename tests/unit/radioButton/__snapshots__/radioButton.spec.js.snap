@@ -6,6 +6,7 @@ exports[`Radio Button #render() should render checked radio button 1`] = `
 >
   <input
     checked={true}
+    className="ui-radio__input-radio"
     disabled={false}
     id="radio1"
     onChange={[Function]}
@@ -13,6 +14,7 @@ exports[`Radio Button #render() should render checked radio button 1`] = `
   />
   <label
     aria-checked={true}
+    className="ui-radio__label"
     htmlFor="radio1"
     role="radio"
   >
@@ -23,10 +25,11 @@ exports[`Radio Button #render() should render checked radio button 1`] = `
 
 exports[`Radio Button #render() should render disabled radio button 1`] = `
 <div
-  className="ui-radio ui-radio_disabled_true"
+  className="ui-radio ui-radio_disabled"
 >
   <input
     checked={false}
+    className="ui-radio__input-radio"
     disabled={true}
     id="disabledRadio"
     onChange={[Function]}
@@ -34,6 +37,7 @@ exports[`Radio Button #render() should render disabled radio button 1`] = `
   />
   <label
     aria-checked={false}
+    className="ui-radio__label"
     htmlFor="disabledRadio"
     role="radio"
   >
@@ -48,6 +52,7 @@ exports[`Radio Button #render() should render radio button 1`] = `
 >
   <input
     checked={false}
+    className="ui-radio__input-radio"
     disabled={false}
     id="radio2"
     onChange={[Function]}
@@ -55,6 +60,7 @@ exports[`Radio Button #render() should render radio button 1`] = `
   />
   <label
     aria-checked={false}
+    className="ui-radio__label"
     htmlFor="radio2"
     role="radio"
   >

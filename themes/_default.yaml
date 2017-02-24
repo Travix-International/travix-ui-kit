@@ -40,7 +40,7 @@ generic:
     secondary-lighter: &secondary-lighter '#FFD97C'
 
     text-dark: &text-dark '#333'
-    text: &text '#B2BCC4'
+    text: &text '#666'
     text-light: &text-light '#999'
 
     active: &active '#3892e7'

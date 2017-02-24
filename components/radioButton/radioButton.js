@@ -3,10 +3,13 @@ import React, { PropTypes } from 'react';
 
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
+/**
+ * RadioButton component
+ */
 function RadioButton({
   checked,
   children,
-  dataAttrs = false,
+  dataAttrs = {},
   disabled,
   id,
   mods = [],
@@ -15,7 +18,7 @@ function RadioButton({
   const restProps = getDataAttributes(dataAttrs);
 
   if (disabled) {
-    mods.push('disabled_true');
+    mods.push('disabled');
   }
 
   const className = getClassNamesWithMods('ui-radio', mods);
@@ -24,13 +27,14 @@ function RadioButton({
     <div className={className} {...restProps}>
       <input
         checked={checked}
+        className="ui-radio__input-radio"
         disabled={disabled}
         id={id}
         name={name}
         onChange={onChange}
         type="radio"
       />
-      <label aria-checked={checked} htmlFor={id} role="radio">
+      <label aria-checked={checked} className="ui-radio__label" htmlFor={id} role="radio">
         {children}
       </label>
     </div>
@@ -49,7 +53,7 @@ RadioButton.propTypes = {
   checked: PropTypes.bool,
 
   /**
-   * Radio Button value.
+   * Radio Button label.
    */
   children: PropTypes.oneOfType([
     PropTypes.string,
