@@ -1,7 +1,11 @@
 import Button from './button/button';
+import Price from './price/price';
+import RadioButton from './radioButton/radioButton';
 import Spinner from './spinner/spinner';
 
 export default {
-  Button: Button,
-  Spinner: Spinner,
+  Button,
+  Price,
+  RadioButton,
+  Spinner,
 };
