@@ -5,8 +5,8 @@ import { getClassNamesWithMods } from '../_helpers';
 /**
  * General List component. Use when you need to display array of elements
  */
-function List({ items, hideBullets, mods = [], orientation }) {
-  mods.push(`orientation_${orientation}`);
+function List({ items, hideBullets, mods = [], align }) {
+  mods.push(`align_${align}`);
 
   if (hideBullets) {
     mods.push("no-bullets");
@@ -15,8 +15,8 @@ function List({ items, hideBullets, mods = [], orientation }) {
   const className = getClassNamesWithMods('ui-list', mods);
 
   const itemsBlock = items.map((item, index) => (
-    <li key={index}>
-      <span className="ui-list__content">{item}</span>
+    <li className="ui-list__item" key={index}>
+      {item}
     </li>
   ));
 
@@ -29,7 +29,7 @@ function List({ items, hideBullets, mods = [], orientation }) {
 
 List.defaultProps = {
   hideBullets: false,
-  orientation: 'vertical',
+  align: 'vertical',
 };
 
 List.propTypes = {
@@ -54,7 +54,7 @@ List.propTypes = {
   /**
    * List's apperance.
    */
-  orientation: PropTypes.oneOf(['vertical', 'horizontal']),
+  align: PropTypes.oneOf(['vertical', 'horizontal']),
 };
 
 export default List;

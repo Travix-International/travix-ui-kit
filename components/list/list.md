@@ -7,5 +7,5 @@ Vertical list:
 Horizontal list:
 
     <div>
-      <List items={['London', 'Amsterdam', 'Madrid']} orientation="horizontal" />
+      <List items={['London', 'Amsterdam', 'Madrid']} align="horizontal" />
     </div>

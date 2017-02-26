@@ -131,3 +131,6 @@ spinner:
     lighter: *accent
     dark: *primary
     darker: *primary-lighter
+list:
+  bullets:
+    color: *active

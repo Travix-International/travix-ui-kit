@@ -10,7 +10,7 @@ describe('List', () => {
 
     it('should return base class with mods for strings as class and string as mods', () => {
       const wrapper = shallow(
-        <List items={['London', 'Amsterdam', 'Madrid']} orientation="vertical" />
+        <List align="vertical" items={['London', 'Amsterdam', 'Madrid']} />
       );
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -18,7 +18,7 @@ describe('List', () => {
 
     it('should return base class with mods for strings as class and string as mods', () => {
       const wrapper = shallow(
-        <List items={['London', 'Amsterdam', 'Madrid']} orientation="horizontal" />
+        <List align="horizontal" items={['London', 'Amsterdam', 'Madrid']} />
       );
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -26,7 +26,7 @@ describe('List', () => {
 
     it('should return base class with mods for strings as class and string as mods', () => {
       const wrapper = shallow(
-        <List hideBullets items={['London', 'Amsterdam', 'Madrid']} orientation="vertical" />
+        <List align="vertical" hideBullets items={['London', 'Amsterdam', 'Madrid']} />
       );
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
