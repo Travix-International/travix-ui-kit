@@ -1,0 +1,43 @@
+@import "../../themes/theme";
+
+.ui-list {
+  font-family: $tx-generic-font-secondary-font-family, $tx-generic-font-secondary-generic-family;
+
+  &.ui-list_align_vertical {
+    .ui-list__item {
+      display: block;
+      line-height: 38px;
+
+      &:before {
+        content: "•";
+        color: $tx-list-bullets-color;
+        display: inline-block;
+        font-size: 22px;
+        margin-left: -1em;
+        vertical-align: bottom;
+        width: 1em;
+      }
+    }
+  }
+
+  &.ui-list_align_horizontal {
+    padding: 0;
+
+    .ui-list__item {
+      display: inline-block;
+      padding: 5px 10px;
+    }
+  }
+
+  &.ui-list_no-bullets {
+    padding: 0;
+
+    .ui-list__item {
+      display: block;
+    }
+  }
+
+  .ui-list__item {
+    color: $tx-generic-color-text;
+  }
+}

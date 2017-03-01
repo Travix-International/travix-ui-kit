@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List #render() should return base class with mods for strings as class and string as mods 1`] = `
+<ul
+  className="ui-list ui-list_align_vertical"
+>
+  <li
+    className="ui-list__item"
+  >
+    London
+  </li>
+  <li
+    className="ui-list__item"
+  >
+    Amsterdam
+  </li>
+  <li
+    className="ui-list__item"
+  >
+    Madrid
+  </li>
+</ul>
+`;
+
+exports[`List #render() should return base class with mods for strings as class and string as mods 2`] = `
+<ul
+  className="ui-list ui-list_align_horizontal"
+>
+  <li
+    className="ui-list__item"
+  >
+    London
+  </li>
+  <li
+    className="ui-list__item"
+  >
+    Amsterdam
+  </li>
+  <li
+    className="ui-list__item"
+  >
+    Madrid
+  </li>
+</ul>
+`;
+
+exports[`List #render() should return base class with mods for strings as class and string as mods 3`] = `
+<ul
+  className="ui-list ui-list_align_vertical ui-list_no-bullets"
+>
+  <li
+    className="ui-list__item"
+  >
+    London
+  </li>
+  <li
+    className="ui-list__item"
+  >
+    Amsterdam
+  </li>
+  <li
+    className="ui-list__item"
+  >
+    Madrid
+  </li>
+</ul>
+`;
