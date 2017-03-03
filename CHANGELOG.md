@@ -1,5 +1,26 @@
 # Change Log
 
+## [v0.3.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.1) (2017-03-03)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.0...v0.3.1)
+
+**Fixed bugs:**
+
+- Fixes size's prop definition [\#24](https://github.com/Travix-International/travix-ui-kit/pull/24) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Improvement of the builder watcher [\#23](https://github.com/Travix-International/travix-ui-kit/pull/23) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
+**Closed issues:**
+
+- Price component [\#11](https://github.com/Travix-International/travix-ui-kit/issues/11)
+- Convert the project from a 'webpack' execution to a CLI tool [\#6](https://github.com/Travix-International/travix-ui-kit/issues/6)
+
+**Merged pull requests:**
+
+- Radio button [\#25](https://github.com/Travix-International/travix-ui-kit/pull/25) ([iwwwi](https://github.com/iwwwi))
+- Update jest-cli to the latest version 🚀 [\#22](https://github.com/Travix-International/travix-ui-kit/pull/22) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update jest to the latest version 🚀 [\#21](https://github.com/Travix-International/travix-ui-kit/pull/21) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Price component [\#18](https://github.com/Travix-International/travix-ui-kit/pull/18) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Added List component [\#16](https://github.com/Travix-International/travix-ui-kit/pull/16) ([AlexDudar](https://github.com/AlexDudar))
+
 ## [v0.3.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.0) (2017-02-15)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.2.3...v0.3.0)
 
