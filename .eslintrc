@@ -11,6 +11,9 @@
     "travix/base",
     "travix/react"
   ],
+  "env": {
+    "browser": true
+  },
   "globals": {
     "__base": true,
     "assert": true,
