@@ -26,7 +26,7 @@ class Global extends Component {
     window.document.body.removeChild(this.modalTarget);
   }
 
-  render() {
+  render() { // eslint-disable-line
     return null;
   }
 }

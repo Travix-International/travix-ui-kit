@@ -61,19 +61,22 @@ class Modal extends Component {
   }
 
   handleOverlayClick = (e) => {
-    const { overlayClosable, onOverlayClick } = this.props;
+    const { closeOnOverlayClick, onOverlayClick } = this.props;
     if (typeof onOverlayClick === 'function') {
       onOverlayClick(e);
     }
-    if (overlayClosable) {
+    if (closeOnOverlayClick) {
       this.handleClose(e);
     }
   }
 
   renderHeader() {
     const { title } = this.props;
-    if (!title || title.type === 'header') {
-      return title;
+    if (!title) {
+      return null;
+    }
+    if (title.type === 'header') {
+      return React.cloneElement(title, { className: 'ui-modal__header' });
     }
     let modalTitle = title;
     if (typeof title === 'string') {
@@ -91,8 +94,11 @@ class Modal extends Component {
 
   renderFooter() {
     const { footer } = this.props;
+    if (!footer) {
+      return null;
+    }
     if (!footer || footer.type === 'footer') {
-      return footer;
+      return React.cloneElement(footer, { className: 'ui-modal__footer' });
     }
 
     return (
@@ -129,7 +135,7 @@ class Modal extends Component {
   }
 
   render() {
-    const { active, children } = this.props;
+    const { active, fullscreen, children } = this.props;
     const { isOpen } = this.state;
 
     if (!active && !isOpen) {
@@ -142,6 +148,9 @@ class Modal extends Component {
     }
     if (isOpen) {
       rootMods.push('open');
+    }
+    if (fullscreen) {
+      rootMods.push('fullscreen');
     }
 
     const className = getClassNamesWithMods('ui-modal', rootMods);
@@ -167,11 +176,12 @@ Modal.defaultProps = {
   closable: true,
   closeButtonText: null,
   closeOnEsc: true,
+  closeOnOverlayClick: true,
   footer: null,
+  fullscreen: false,
   onClose: null,
   onOverlayClick: null,
   overlay: true,
-  overlayClosable: true,
   title: null,
 };
 
@@ -181,11 +191,12 @@ Modal.propTypes = {
   closable: PropTypes.bool,
   closeButtonText: PropTypes.node,
   closeOnEsc: PropTypes.bool,
+  closeOnOverlayClick: PropTypes.bool,
   footer: PropTypes.node,
+  fullscreen: PropTypes.bool,
   onClose: PropTypes.func,
   onOverlayClick: PropTypes.func,
   overlay: PropTypes.bool,
-  overlayClosable: PropTypes.bool,
   title: PropTypes.node,
 };
 
