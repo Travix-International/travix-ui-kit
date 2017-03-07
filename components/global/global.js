@@ -3,20 +3,15 @@ import { render, unmountComponentAtNode } from 'react-dom';
 
 class Global extends Component {
   componentDidMount() {
+    window.document.body.classList.add('ui-global--noscroll');
+
     this.modalTarget = window.document.createElement('div');
+    this.modalTarget.classList.add('ui-global');
     window.document.body.appendChild(this.modalTarget);
-    this.renderModalTarget();
+    this.componentDidUpdate();
   }
 
   componentDidUpdate() {
-    this.renderModalTarget();
-  }
-
-  componentWillUnmount() {
-    unmountComponentAtNode(this.modalTarget);
-  }
-
-  renderModalTarget() {
     render((
       <div className={this.props.className}>
         {this.props.children}
@@ -24,8 +19,15 @@ class Global extends Component {
     ), this.modalTarget);
   }
 
+  componentWillUnmount() {
+    window.document.body.classList.remove('ui-global--noscroll');
+
+    unmountComponentAtNode(this.modalTarget);
+    window.document.body.removeChild(this.modalTarget);
+  }
+
   render() {
-    return <noscript/>;
+    return null;
   }
 }
 
