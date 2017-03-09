@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.3.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.2) (2017-03-09)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.1...v0.3.2)
+
+**Fixed bugs:**
+
+- Fixes issue \#31 - Changes the builder to properly catch rejections and to output the errors on the webpack process [\#32](https://github.com/Travix-International/travix-ui-kit/pull/32) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.3.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.1) (2017-03-03)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.0...v0.3.1)
 
