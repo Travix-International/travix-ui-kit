@@ -8,9 +8,7 @@ const { PropTypes } = React;
  * General Spinner component. Use when you need spinner
  */
 function Spinner({ mods = [], size }) {
-  if (size) {
-    mods.push(`size_${size}`);
-  }
+  mods.push(`size_${size}`);
 
   const className = getClassNamesWithMods('ui-spinner', mods);
 

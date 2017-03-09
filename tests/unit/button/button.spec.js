@@ -48,5 +48,13 @@ describe('Button', () => {
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
+
+    it('should return base class with mods for strings as class and string as mods without data-attrs', () => {
+      const wrapper = shallow(
+        <Button onClick={onClickSpy} type="button">Extra small</Button>
+      );
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
   });
 });

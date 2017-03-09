@@ -9,6 +9,7 @@ const outputDir = path.join(__dirname, '..', 'dist');
  * @type {Object}
  */
 module.exports = {
+  bail: true,
   entry: {
     dist: [
       '../components/index.scss',
