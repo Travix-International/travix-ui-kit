@@ -2,10 +2,6 @@ const getStylesAndSaveTheme = require('./getStylesAndSaveTheme');
 const runWebpackAndCopyFilesToFinalDestination = require('./runWebpackAndCopyFilesToFinalDestination');
 const webpackConfig = require('./webpack.config');
 
-const webpackNodeEnv = {
-  'process.env.NODE_ENV': process.env.NODE_ENV || 'development',
-};
-
 /**
  * Triggers the build process.
  *
@@ -16,11 +12,13 @@ const webpackNodeEnv = {
  * @param {Boolean} watch      Flag to determine if it should run in 'watch' mode
  * @return {Promise}
  */
-module.exports = ({ cssDir, jsDir, themeFile, watch }) => getStylesAndSaveTheme(themeFile, watch)
-  .then(() => runWebpackAndCopyFilesToFinalDestination({
-    webpackConfig,
-    webpackNodeEnv,
-    cssDir,
-    jsDir,
-    watch,
-  }));
+module.exports = ({ cssDir, environment = 'development', jsDir, themeFile, watch }) => {
+  return getStylesAndSaveTheme(themeFile, watch)
+    .then(() => runWebpackAndCopyFilesToFinalDestination({
+      cssDir,
+      jsDir,
+      watch,
+      webpackConfig,
+      webpackNodeEnv: { 'process.env.NODE_ENV': environment },
+    }));
+};

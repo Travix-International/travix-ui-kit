@@ -20,10 +20,15 @@ describe('Builder › generateThemeFile.js', () => {
     expect(commander.version).toHaveBeenCalled();
     expect(commander.version).toHaveBeenCalledWith(pkg.version);
 
-    expect(commander.option).toHaveBeenCalledTimes(4);
+    expect(commander.option).toHaveBeenCalledTimes(5);
     expect(commander.option).toHaveBeenCalledWith(
       '-c, --css-dir <directory>',
       'Destination directory of the ui-kit.css'
+    );
+    expect(commander.option).toHaveBeenCalledWith(
+      '-e, --environment <environment>',
+      'Environment in which to run the build',
+      process.env.NODE_ENV
     );
     expect(commander.option).toHaveBeenCalledWith(
       '-j, --js-dir <directory>',
