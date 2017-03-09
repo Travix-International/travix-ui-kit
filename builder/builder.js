@@ -19,6 +19,6 @@ module.exports = ({ cssDir, environment, jsDir, themeFile, watch }) => {
       jsDir,
       watch,
       webpackConfig,
-      webpackNodeEnv: { 'process.env.NODE_ENV': environment },
+      webpackNodeEnv: { 'process.env.NODE_ENV': environment || 'development' },
     }));
 };
