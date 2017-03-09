@@ -134,3 +134,8 @@ spinner:
 list:
   bullets:
     color: *active
+modal:
+  z-index: 100
+  color:
+    dark: *primary-dark
+    secondary: *secondary

@@ -18,8 +18,8 @@ Basic Modal:
           closeOnOverlayClick={false}
           closeOnEsc={false}
           onClose={() => setState({ isOpenModalWithTitle: false })}>
-            Press ESC or click on overlay to close this modal
-            <Button size="s" onClick={() => setState({ isOpenModalWithTitle: false })}>Ok</Button>
+            You can't close this modal on ESC or overlay click
+            <Button size="s" onClick={() => setState({ isOpenModalWithTitle: false })}>Close</Button>
         </Modal>
       </div>
       <div>
@@ -34,7 +34,7 @@ Basic Modal:
             </div>
           )}
           onClose={() => setState({ isOpenCustomModal: false })}>
-            You can't close this modal on ESC or overlay click
+            Press ESC or click on overlay to close this modal
             <List items={Array.apply(null, Array(100)).map(() => 'List Item')} />
         </Modal>
       </div>
