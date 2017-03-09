@@ -16,13 +16,11 @@ const webpackNodeEnv = {
  * @param {Boolean} watch      Flag to determine if it should run in 'watch' mode
  * @return {Promise}
  */
-module.exports = ({ cssDir, jsDir, themeFile, watch }) => {
-  return getStylesAndSaveTheme(themeFile, watch)
-    .then(runWebpackAndCopyFilesToFinalDestination({
-      webpackConfig,
-      webpackNodeEnv,
-      cssDir,
-      jsDir,
-      watch,
-    }));
-};
+module.exports = ({ cssDir, jsDir, themeFile, watch }) => getStylesAndSaveTheme(themeFile, watch)
+  .then(() => runWebpackAndCopyFilesToFinalDestination({
+    webpackConfig,
+    webpackNodeEnv,
+    cssDir,
+    jsDir,
+    watch,
+  }));
