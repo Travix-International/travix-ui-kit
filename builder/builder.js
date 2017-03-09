@@ -12,7 +12,7 @@ const webpackConfig = require('./webpack.config');
  * @param {Boolean} watch      Flag to determine if it should run in 'watch' mode
  * @return {Promise}
  */
-module.exports = ({ cssDir, environment = 'development', jsDir, themeFile, watch }) => {
+module.exports = ({ cssDir, environment, jsDir, themeFile, watch }) => {
   return getStylesAndSaveTheme(themeFile, watch)
     .then(() => runWebpackAndCopyFilesToFinalDestination({
       cssDir,
