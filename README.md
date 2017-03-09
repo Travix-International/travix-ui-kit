@@ -23,12 +23,13 @@ $ node_modules/.bin/travix-ui-kit -h
 
   Options:
 
-    -h, --help                 output usage information
-    -V, --version              output the version number
-    -c, --css-dir <directory>  Destination directory of the ui-kit.css
-    -j, --js-dir <directory>   Destination directory of the ui-kit.js
-    -t, --theme-file <path>    Path to a theme file to override default UI Kit styles
-    -w, --watch                Enables file-watcher functionality
+    -h, --help                       output usage information
+    -V, --version                    output the version number
+    -c, --css-dir <directory>        Destination directory of the ui-kit.css
+    -c, --environment <environment>  Environment in which to run the build
+    -j, --js-dir <directory>         Destination directory of the ui-kit.js
+    -t, --theme-file <path>          Path to a theme file to override default UI Kit styles
+    -w, --watch                      Enables file-watcher functionality
 ```
 
 For example, if we want to generate our UI Bundles, with the default styling, on `./js/` and `./css/` folders,
