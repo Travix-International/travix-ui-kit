@@ -9,6 +9,9 @@ describe('helpers', () => {
     it('#2 should return class with mods for strings as array of classes and array as mods', () => {
       expect(getClassNamesWithMods(['test', 'test2'], ['first', 'second'])).toBe('test test2 test_first test_second');
     });
+    it('#3 should return only an array with the classes provided in the first arg', () => {
+      expect(getClassNamesWithMods(['test', 'test2'])).toBe('test test2');
+    });
   });
 
   describe('#getDataAttributes()', () => {

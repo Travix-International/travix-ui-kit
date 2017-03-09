@@ -10,13 +10,9 @@ const { PropTypes } = React;
 function Button({ children, mods = [], size, href, onClick, type, variation, disabled, dataAttrs = {} }) {
   const restProps = getDataAttributes(dataAttrs);
 
-  if (size) {
-    mods.push(`size_${size}`);
-  }
-
-  if (variation) {
-    mods.push(`variation_${variation}`);
-  }
+  /** This props have default values */
+  mods.push(`size_${size}`);
+  mods.push(`variation_${variation}`);
 
   if (disabled) {
     mods.push(`disabled_true`);
