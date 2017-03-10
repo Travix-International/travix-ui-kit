@@ -12,7 +12,8 @@
     "travix/react"
   ],
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "globals": {
     "__base": true,

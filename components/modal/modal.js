@@ -1,7 +1,7 @@
 // Imports
 import React, { Component, PropTypes } from 'react';
 
-import Global from '../global';
+import Global from '../global/global';
 import { getClassNamesWithMods } from '../_helpers';
 
 class Modal extends Component {
@@ -15,7 +15,7 @@ class Modal extends Component {
 
   componentDidMount() {
     if (this.props.closeOnEsc) {
-      document.addEventListener('keydown', this.handleKeydown);
+      global.window.document.addEventListener('keydown', this.handleKeydown);
     }
   }
 
@@ -31,12 +31,12 @@ class Modal extends Component {
 
   componentWillUnmount() {
     if (this.props.closeOnEsc) {
-      document.removeEventListener('keydown', this.handleKeydown);
+      global.window.document.removeEventListener('keydown', this.handleKeydown);
     }
   }
 
   open() {
-    window.requestAnimationFrame(() => {
+    global.window.requestAnimationFrame(() => {
       setTimeout(() => this.setState({ isOpen: true }), 0);
     });
   }
@@ -45,20 +45,20 @@ class Modal extends Component {
     if (typeof this.props.onClose === 'function') {
       this.props.onClose(e);
     }
-    window.requestAnimationFrame(() => {
+    global.window.requestAnimationFrame(() => {
       setTimeout(() => this.setState({ isOpen: false }), 300);
     });
   }
 
   handleClose = (e) => {
     this.close(e);
-  }
+  };
 
   handleKeydown = (e) => {
     if (e.keyCode === 27) {
       this.close(e);
     }
-  }
+  };
 
   handleOverlayClick = (e) => {
     const { closeOnOverlayClick, onOverlayClick } = this.props;
@@ -66,9 +66,9 @@ class Modal extends Component {
       onOverlayClick(e);
     }
     if (closeOnOverlayClick) {
-      this.handleClose(e);
+      this.close(e);
     }
-  }
+  };
 
   renderHeader() {
     const { title } = this.props;
@@ -97,7 +97,7 @@ class Modal extends Component {
     if (!footer) {
       return null;
     }
-    if (!footer || footer.type === 'footer') {
+    if (footer.type === 'footer') {
       return React.cloneElement(footer, { className: 'ui-modal__footer' });
     }
 
