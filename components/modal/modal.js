@@ -1,4 +1,3 @@
-// Imports
 import React, { Component, PropTypes } from 'react';
 
 import Global from '../global/global';

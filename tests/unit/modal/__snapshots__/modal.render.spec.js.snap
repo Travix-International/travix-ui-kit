@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal #render() should add correct className after change state to "open" 1`] = `
+exports[`Modal: render should add correct className after change state to "open" 1`] = `
 <Global
   className="ui-modal ui-modal_active ui-modal_open"
 >
@@ -20,7 +20,7 @@ exports[`Modal #render() should add correct className after change state to "ope
 </Global>
 `;
 
-exports[`Modal #render() should render closable modal with close button text 1`] = `
+exports[`Modal: render should render closable modal with close button text 1`] = `
 <Global
   className="ui-modal ui-modal_active"
 >
@@ -40,9 +40,9 @@ exports[`Modal #render() should render closable modal with close button text 1`]
 </Global>
 `;
 
-exports[`Modal #render() should render empty modal when status is not active 1`] = `null`;
+exports[`Modal: render should render empty modal when status is not active 1`] = `null`;
 
-exports[`Modal #render() should render fullscreen modal 1`] = `
+exports[`Modal: render should render fullscreen modal 1`] = `
 <Global
   className="ui-modal ui-modal_active ui-modal_fullscreen"
 >
@@ -62,9 +62,9 @@ exports[`Modal #render() should render fullscreen modal 1`] = `
 </Global>
 `;
 
-exports[`Modal #render() should render inactive modal 1`] = `null`;
+exports[`Modal: render should render inactive modal 1`] = `null`;
 
-exports[`Modal #render() should render modal with custom footer 1`] = `
+exports[`Modal: render should render modal with custom footer 1`] = `
 <Global
   className="ui-modal ui-modal_active"
 >
@@ -91,7 +91,7 @@ exports[`Modal #render() should render modal with custom footer 1`] = `
 </Global>
 `;
 
-exports[`Modal #render() should render modal with custom header 1`] = `
+exports[`Modal: render should render modal with custom header 1`] = `
 <Global
   className="ui-modal ui-modal_active"
 >
@@ -118,7 +118,7 @@ exports[`Modal #render() should render modal with custom header 1`] = `
 </Global>
 `;
 
-exports[`Modal #render() should render modal without overlay 1`] = `
+exports[`Modal: render should render modal without overlay 1`] = `
 <Global
   className="ui-modal ui-modal_active"
 >
@@ -134,7 +134,7 @@ exports[`Modal #render() should render modal without overlay 1`] = `
 </Global>
 `;
 
-exports[`Modal #render() should render non closable modal 1`] = `
+exports[`Modal: render should render non closable modal 1`] = `
 <Global
   className="ui-modal ui-modal_active"
 >
@@ -154,7 +154,7 @@ exports[`Modal #render() should render non closable modal 1`] = `
 </Global>
 `;
 
-exports[`Modal #render() should return active modal with title and footer 1`] = `
+exports[`Modal: render should return active modal with title and footer 1`] = `
 <Global
   className="ui-modal ui-modal_active"
 >
@@ -190,7 +190,7 @@ exports[`Modal #render() should return active modal with title and footer 1`] = 
 </Global>
 `;
 
-exports[`Modal #render() should return base active modal with close button 1`] = `
+exports[`Modal: render should return base active modal with close button 1`] = `
 <Global
   className="ui-modal ui-modal_active"
 >
