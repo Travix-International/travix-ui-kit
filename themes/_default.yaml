@@ -1,4 +1,6 @@
 generic:
+  breakpoints:
+    small-max: '768px'
   font:
     primary:
       weight:
@@ -135,7 +137,24 @@ list:
   bullets:
     color: *active
 modal:
-  z-index: 100
+  z-index: '100'
   color:
     dark: *primary-dark
     secondary: *secondary
+  overlay:
+    background:
+      color: *primary-dark
+      opacity: '0.65'
+  container:
+    background:
+      color: *blank
+    box-shadow:
+      color: 'rgba(0,0,0,.3)'
+  content:
+    padding-left-right: '24px'
+  content-devider:
+    color: *secondary
+  close-button:
+      color: *text-dark
+      hover:
+        color: *active

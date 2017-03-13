@@ -3,14 +3,13 @@ import React, { Component, PropTypes } from 'react';
 import Global from '../global/global';
 import { getClassNamesWithMods } from '../_helpers';
 
+/**
+ * Modal component
+ */
 class Modal extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false,
-    };
-  }
+  state = {
+    isOpen: false,
+  };
 
   componentDidMount() {
     if (this.props.closeOnEsc) {
@@ -185,17 +184,53 @@ Modal.defaultProps = {
 };
 
 Modal.propTypes = {
+  /**
+   * Determine whether a modal dialog is visible or not
+   */
   active: PropTypes.bool,
+  /**
+   * The modal dialog's body
+   */
   children: PropTypes.node,
+  /**
+   * Determine whether a close button is visible on top right of the modal dialog or not
+   */
   closable: PropTypes.bool,
+  /**
+   * Text of the Close button
+   */
   closeButtonText: PropTypes.node,
+  /**
+   * Determine whether to close the modal dialog on ESC event.
+   */
   closeOnEsc: PropTypes.bool,
+  /**
+   * Determine whether to close the modal dialog when clicked on overlay.
+   */
   closeOnOverlayClick: PropTypes.bool,
+  /**
+   * Footer content
+   */
   footer: PropTypes.node,
+  /**
+   * Determine whether a modal dialog is visible on fullscreen or not
+   */
   fullscreen: PropTypes.bool,
+  /**
+   * Specify a function that will be called when a user clicked on overlay or close button on top right
+   */
   onClose: PropTypes.func,
+  /**
+   * Specify a function that will be called when a user clicked on overlay
+   */
   onOverlayClick: PropTypes.func,
+  /**
+   * Determine whether a overlay is visible or not
+   */
   overlay: PropTypes.bool,
+  /**
+   * The modal dialog's title
+   */
   title: PropTypes.node,
 };
 

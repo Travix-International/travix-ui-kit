@@ -27,9 +27,9 @@ describe('Modal: open', () => {
     expect(component.state().isOpen).toBe(false);
     component.instance().open();
 
-    // expect(component.state().isOpen).toBe(true);
     expect(setTimeout.mock.calls[0][1]).toBe(0);
 
-    expect(onClose).toBeCalled();
+    jest.runAllTimers();
+    expect(component.state().isOpen).toBe(true);
   });
 });

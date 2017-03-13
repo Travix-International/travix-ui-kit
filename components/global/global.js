@@ -1,9 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 
+/**
+ * Global component
+ * React component for transportation of modals, lightboxes, loading bars... to document.body
+ */
 class Global extends Component {
   componentDidMount() {
-    global.window.document.body.classList.add('ui-global--noscroll');
+    if (this.props.noscroll) {
+      global.window.document.body.classList.add('ui-global_noscroll');
+    }
 
     this.modalTarget = global.window.document.createElement('div');
     this.modalTarget.classList.add('ui-global');
@@ -20,8 +26,9 @@ class Global extends Component {
   }
 
   componentWillUnmount() {
-    global.window.document.body.classList.remove('ui-global--noscroll');
-
+    if (this.props.noscroll) {
+      global.window.document.body.classList.remove('ui-global_noscroll');
+    }
     unmountComponentAtNode(this.modalTarget);
     global.window.document.body.removeChild(this.modalTarget);
   }
@@ -31,9 +38,20 @@ class Global extends Component {
   }
 }
 
+Global.defaultProps = {
+  noscroll: true,
+};
+
 Global.propTypes = {
+  /**
+   * Specify a CSS class
+   */
   className: PropTypes.string,
+  /**
+   * The modal dialog's body
+   */
   children: PropTypes.node,
+  noscroll: PropTypes.bool,
 };
 
 export default Global;
