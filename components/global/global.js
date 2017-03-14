@@ -11,9 +11,9 @@ class Global extends Component {
       global.window.document.body.classList.add('ui-global_noscroll');
     }
 
-    this.modalTarget = global.window.document.createElement('div');
-    this.modalTarget.classList.add('ui-global');
-    global.window.document.body.appendChild(this.modalTarget);
+    this.target = global.window.document.createElement('div');
+    this.target.classList.add('ui-global');
+    global.window.document.body.appendChild(this.target);
     this.componentDidUpdate();
   }
 
@@ -22,15 +22,15 @@ class Global extends Component {
       <div className={this.props.className}>
         {this.props.children}
       </div>
-    ), this.modalTarget);
+    ), this.target);
   }
 
   componentWillUnmount() {
     if (this.props.noscroll) {
       global.window.document.body.classList.remove('ui-global_noscroll');
     }
-    unmountComponentAtNode(this.modalTarget);
-    global.window.document.body.removeChild(this.modalTarget);
+    unmountComponentAtNode(this.target);
+    global.window.document.body.removeChild(this.target);
   }
 
   render() { // eslint-disable-line
@@ -51,6 +51,9 @@ Global.propTypes = {
    * The modal dialog's body
    */
   children: PropTypes.node,
+  /**
+   * Determine whether a body is scrollable or not
+   */
   noscroll: PropTypes.bool,
 };
 

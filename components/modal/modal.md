@@ -9,6 +9,7 @@ Basic Modal:
             Modal Content
         </Modal>
       </div>
+      <br/>
       <div>
         <Button size="s" onClick={() => setState({ isOpenModalWithTitle: true })}>Open modal with title</Button>
         <Modal
@@ -22,6 +23,7 @@ Basic Modal:
             <Button size="s" onClick={() => setState({ isOpenModalWithTitle: false })}>Close</Button>
         </Modal>
       </div>
+      <br/>
       <div>
         <Button size="s" onClick={() => setState({ isOpenCustomModal: true })}>Open custom modal</Button>
         <Modal
@@ -38,6 +40,7 @@ Basic Modal:
             <List items={Array.apply(null, Array(100)).map(() => 'List Item')} />
         </Modal>
       </div>
+      <br/>
       <div>
         <Button size="s" onClick={() => setState({ isOpenFullscreenModal: true })}>Open fullscreen modal</Button>
         <Modal

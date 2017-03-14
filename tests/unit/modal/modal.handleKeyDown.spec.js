@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Modal from '../../../components/modal/modal';
 
-describe('Modal: handleKeydown', () => {
+describe('Modal: handleKeyDown', () => {
   it('should close on Esc key event', () => {
     Modal.prototype.close = jest.fn();
 
@@ -15,10 +15,10 @@ describe('Modal: handleKeydown', () => {
     );
     expect(Modal.prototype.close).not.toBeCalled();
 
-    component.instance().handleKeydown({ keyCode: 25 });
+    component.instance().handleKeyDown({ keyCode: 25 });
     expect(Modal.prototype.close).not.toBeCalled();
 
-    component.instance().handleKeydown({ keyCode: 27 });
+    component.instance().handleKeyDown({ keyCode: 27 });
     expect(Modal.prototype.close).toBeCalled();
   });
 });

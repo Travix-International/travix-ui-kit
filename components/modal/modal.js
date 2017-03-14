@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import Global from '../global/global';
+import KEY_CODE from '../../constants/keyCode';
 import { getClassNamesWithMods } from '../_helpers';
 
 /**
@@ -13,7 +14,7 @@ class Modal extends Component {
 
   componentDidMount() {
     if (this.props.closeOnEsc) {
-      global.window.document.addEventListener('keydown', this.handleKeydown);
+      global.window.document.addEventListener('keydown', this.handleKeyDown);
     }
   }
 
@@ -29,7 +30,7 @@ class Modal extends Component {
 
   componentWillUnmount() {
     if (this.props.closeOnEsc) {
-      global.window.document.removeEventListener('keydown', this.handleKeydown);
+      global.window.document.removeEventListener('keydown', this.handleKeyDown);
     }
   }
 
@@ -52,8 +53,8 @@ class Modal extends Component {
     this.close(e);
   };
 
-  handleKeydown = (e) => {
-    if (e.keyCode === 27) {
+  handleKeyDown = (e) => {
+    if (e.keyCode === KEY_CODE.ESC) {
       this.close(e);
     }
   };
@@ -70,12 +71,15 @@ class Modal extends Component {
 
   renderHeader() {
     const { title } = this.props;
+
     if (!title) {
       return null;
     }
+
     if (title.type === 'header') {
       return React.cloneElement(title, { className: 'ui-modal__header' });
     }
+
     let modalTitle = title;
     if (typeof title === 'string') {
       modalTitle = (
@@ -92,9 +96,11 @@ class Modal extends Component {
 
   renderFooter() {
     const { footer } = this.props;
+
     if (!footer) {
       return null;
     }
+
     if (footer.type === 'footer') {
       return React.cloneElement(footer, { className: 'ui-modal__footer' });
     }
