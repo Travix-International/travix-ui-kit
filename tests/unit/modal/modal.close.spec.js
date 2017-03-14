@@ -38,4 +38,24 @@ describe('Modal: open', () => {
     expect(component.state().isOpen).toBe(false);
     expect(onClose).toBeCalled();
   });
+
+  it('should change state "isOpen" in setTimeout', () => {
+    const component = shallow(
+      <Modal
+        active
+      >
+        Modal Content
+      </Modal>
+    );
+    expect(component.state().isOpen).toBe(false);
+    component.setState({ isOpen: true });
+
+    component.instance().close();
+    expect(setTimeout.mock.calls[0][1]).toBe(300);
+    expect(component.state().isOpen).toBe(true);
+
+    jest.runAllTimers();
+
+    expect(component.state().isOpen).toBe(false);
+  });
 });

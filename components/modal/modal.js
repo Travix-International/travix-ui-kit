@@ -135,15 +135,16 @@ class Modal extends Component {
   render() {
     const { active, fullscreen, children } = this.props;
     const { isOpen } = this.state;
+    const rootMods = [];
+
+    if (active) {
+      rootMods.push('active');
+    }
 
     if (!active && !isOpen) {
       return null;
     }
 
-    const rootMods = [];
-    if (active) {
-      rootMods.push('active');
-    }
     if (isOpen) {
       rootMods.push('open');
     }

@@ -107,6 +107,22 @@ describe('Modal: render', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
+  it('should render modal with custom title', () => {
+    const title = (
+      <h2>h2 Custom Title</h2>
+    );
+    const wrapper = shallow(
+      <Modal
+        active
+        title={title}
+      >
+        Modal Content
+      </Modal>
+    );
+
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
+  });
+
   it('should render modal with custom header', () => {
     const wrapper = shallow(
       <Modal

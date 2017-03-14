@@ -24,4 +24,17 @@ describe('Modal: componentWillUnmount', () => {
     wrapper.unmount();
     expect(global.window.document.removeEventListener).toBeCalled();
   });
+
+  it('should remove "keydown" listener before unmount', () => {
+    const wrapper = mount(
+      <Modal
+        active
+        closeOnEsc={false}
+      >
+        Modal Content
+      </Modal>
+    );
+    wrapper.unmount();
+    expect(global.window.document.removeEventListener).not.toBeCalled();
+  });
 });

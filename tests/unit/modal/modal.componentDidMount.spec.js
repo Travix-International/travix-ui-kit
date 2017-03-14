@@ -25,4 +25,16 @@ describe('Modal: handleOverlayClick', () => {
     );
     expect(global.window.document.addEventListener).toBeCalled();
   });
+
+  it('should not add "keydown" event listener if modal is not closable on ESC', () => {
+    mount(
+      <Modal
+        active
+        closeOnEsc={false}
+      >
+        Modal Content
+      </Modal>
+    );
+    expect(global.window.document.addEventListener).not.toBeCalled();
+  });
 });

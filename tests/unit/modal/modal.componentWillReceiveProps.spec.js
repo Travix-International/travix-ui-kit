@@ -23,4 +23,23 @@ describe('Modal: componentWillReceiveProps', () => {
     component.setProps({ active: false });
     expect(Modal.prototype.close).toBeCalled();
   });
+
+  it('should not open/close modal when "active" prop was not changed', () => {
+    Modal.prototype.open = jest.fn();
+    Modal.prototype.close = jest.fn();
+
+    const component = shallow(
+      <Modal
+        active={false}
+      >
+        Modal Content
+      </Modal>
+    );
+    expect(Modal.prototype.open).not.toBeCalled();
+    expect(Modal.prototype.close).not.toBeCalled();
+
+    component.setProps({ active: false });
+    expect(Modal.prototype.open).not.toBeCalled();
+    expect(Modal.prototype.close).not.toBeCalled();
+  });
 });
