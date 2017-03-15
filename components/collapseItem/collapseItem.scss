@@ -1,0 +1,54 @@
+.ui-collapse-item {
+  margin-bottom: 1px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.ui-collapse-item__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s;
+}
+
+.ui-collapse-item__input {
+  display: none;
+
+  &:checked ~ .ui-collapse-item__content {
+    max-height: 500px;
+  }
+
+  & + .ui-collapse-item__label::after {
+    content: "\25BC";
+  }
+
+  &:checked {
+    & + .ui-collapse-item__label {
+      color: $tx-collapse-item-label-active-color;
+
+      &::after {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+
+.ui-collapse-item__label {
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  line-height: 3;
+  position: relative;
+
+  &::after {
+    display: block;
+    height: 48px;
+    line-height: 3;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transition: all .35s;
+    width: 48px;
+  }
+}
