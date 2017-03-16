@@ -1,6 +1,4 @@
 generic:
-  breakpoints:
-    small-max: '768px'
   font:
     primary:
       weight:

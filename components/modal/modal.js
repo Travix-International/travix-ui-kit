@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import Global from '../global/global';
-import KEY_CODE from '../../constants/keyCode';
+import KEY_CODE from '../constants/keyCode';
 import { getClassNamesWithMods } from '../_helpers';
 
 /**

@@ -30,16 +30,21 @@
   box-shadow: 0 5px 10px $tx-modal-container-box-shadow-color;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  left: 0;
-  max-height: 100%;
+  height: auto;
+  left: 50%;
+  max-height: 90%;
+  max-width: 788px;
   opacity: 0;
   position: absolute;
-  top: 0;
-  transform: translate(0, 10%);
+  top: 50%;
+  transform: translate(-50%, 10%);
   transition: all 200ms ease-in-out;
-  width: 100%;
+  width: auto;
   z-index: $tx-modal-z-index - 10;
+
+  .ui-modal_fullscreen & {
+    transform: translate(0, 10%);
+  }
 
   .ui-modal_fullscreen & {
     height: 100%;
@@ -48,21 +53,6 @@
     max-width: 100%;
     top: 0;
     width: 100%;
-  }
-
-  @media screen and (min-width: $tx-generic-breakpoints-small-max) {
-    height: auto;
-    left: 50%;
-    max-height: 90%;
-    max-width: 788px;
-    min-width: 500px;
-    top: 50%;
-    transform: translate(-50%, 10%);
-    width: auto;
-
-    .ui-modal_fullscreen & {
-      transform: translate(0, 10%);
-    }
   }
 }
 
@@ -75,14 +65,10 @@
   }
 
   .ui-modal__container {
-    transform: translateY(0);
+    transform: translate(-50%, -50%);
 
     .ui-modal_fullscreen & {
       transform: none;
-    }
-
-    @media screen and (min-width: $tx-generic-breakpoints-small-max) {
-      transform: translate(-50%, -50%);
     }
   }
 
