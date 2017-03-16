@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import CollapseItem from '../collapseItem/collapseItem';
+import CollapseItem from './collapseItem';
 
 /**
  * Collapse component
@@ -38,7 +38,7 @@ Collapse.propTypes = {
    */
   name: PropTypes.string.isRequired,
   /**
-   * The collapse should contains CollapseItem components
+   * The list of CollapseItem components
    */
   children: PropTypes.node,
   /**

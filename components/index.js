@@ -6,7 +6,7 @@ import Price from './price/price';
 import RadioButton from './radioButton/radioButton';
 import Spinner from './spinner/spinner';
 import Collapse from './collapse/collapse';
-import CollapseItem from './collapseItem/collapseItem';
+import CollapseItem from './collapse/collapseItem';
 
 export default {
   Button,
