@@ -1,7 +1,7 @@
 Open one:
 
     <div>
-      <Collapse name="example0" accordion onChange={(e) => console.log('example1:changed', e)}>
+      <Collapse name="example0" accordion onChange={(e) => console.log('example0:changed', e)}>
         <CollapseItem
           id="c1"
           name="example0"
