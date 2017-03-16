@@ -3,9 +3,14 @@ jest.mock('../../../builder/saveThemeScssFile', () => jest.fn(() => Promise.reso
 jest.mock('theme-builder', () => jest.fn(() => ['scss', 'content']));
 
 const fs = require('fs');
+
+fs.readFileSync = jest.fn();
+fs.readFileSync.mockImplementation(() => 'default: 1');
+
 const generateThemeFile = require('../../../builder/generateThemeFile');
 const saveThemeScssFile = require('../../../builder/saveThemeScssFile');
 const themeBuilder = require('theme-builder');
+
 
 describe('Builder › generateThemeFile.js', () => {
   beforeEach(() => {
@@ -20,13 +25,17 @@ describe('Builder › generateThemeFile.js', () => {
     fs.readFile.mockImplementation((filePath, options, cb) => cb(null, 'fake file content'));
     return generateThemeFile(fakeFile)
       .then(() => {
+        expect(fs.readFileSync).toHaveBeenCalled();
         expect(fs.readFile).toHaveBeenCalled();
         expect(fs.readFile.mock.calls[0][0]).toBe(fakeFile);
         expect(fs.readFile.mock.calls[0][1]).toEqual({ encoding: 'utf-8' });
         expect(fs.readFile.mock.calls[0][2]).toBeInstanceOf(Function);
 
         expect(themeBuilder).toHaveBeenCalled();
-        expect(themeBuilder).toHaveBeenCalledWith('fake file content', 'scss', { prefix: 'tx' });
+        expect(themeBuilder).toHaveBeenCalledWith('fake file content', 'scss', {
+          prefix: 'tx',
+          defaultThemeYaml: 'default: 1',
+        });
 
         expect(saveThemeScssFile).toHaveBeenCalled();
         expect(saveThemeScssFile).toHaveBeenCalledWith('scss\ncontent');
