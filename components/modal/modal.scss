@@ -1,0 +1,126 @@
+.ui-modal {
+  -webkit-tap-highlight-color: transparent;
+  display: none;
+  height: 100%;
+  left: 0;
+  max-height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $tx-modal-z-index;
+
+  &.ui-modal_active,
+  &.ui-modal_open {
+    display:block;
+  }
+}
+
+.ui-modal__overlay {
+  background-color: $tx-modal-overlay-background-color;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  z-index: $tx-modal-z-index - 20;
+}
+
+.ui-modal__container {
+  background-color: $tx-modal-container-background-color;
+  box-shadow: 0 5px 10px $tx-modal-container-box-shadow-color;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  left: 50%;
+  max-height: 90%;
+  max-width: 788px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 10%);
+  transition: all 200ms ease-in-out;
+  width: auto;
+  z-index: $tx-modal-z-index - 10;
+
+  .ui-modal_fullscreen & {
+    transform: translate(0, 10%);
+  }
+
+  .ui-modal_fullscreen & {
+    height: 100%;
+    left: 0;
+    max-height: 100%;
+    max-width: 100%;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.ui-modal_open.ui-modal_active {
+  .ui-modal__overlay {
+    opacity: $tx-modal-overlay-background-opacity;
+  }
+  .ui-modal__container {
+    opacity: 1;
+  }
+
+  .ui-modal__container {
+    transform: translate(-50%, -50%);
+
+    .ui-modal_fullscreen & {
+      transform: none;
+    }
+  }
+
+  &.ui-modal_fullscreen {
+    .ui-modal__container {
+      transform: none;
+    }
+  }
+}
+
+.ui-modal__close-button {
+  background: transparent;
+  border: 0;
+  color: $tx-modal-close-button-color;
+  cursor: pointer;
+  line-height: 20px;
+  outline: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: $tx-modal-z-index;
+
+  &:after {
+    content: 'x';
+    font-size: 20px;
+  }
+
+  &:hover {
+   color: $tx-modal-close-button-hover-color;
+  }
+}
+
+.ui-modal__header {
+  border-bottom: 2px solid $tx-modal-content-devider-color;
+  color: $tx-modal-color-dark;
+  flex-shrink: 0;
+  padding: 22px $tx-modal-content-padding-left-right;
+}
+
+.ui-modal__title {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.ui-modal__content {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  padding: 22px $tx-modal-content-padding-left-right;
+}
+
+.ui-modal__footer {
+  border-top: 2px solid $tx-modal-content-devider-color;
+  flex-shrink: 0;
+  padding: 22px $tx-modal-content-padding-left-right;
+}
