@@ -8,7 +8,11 @@ import CollapseItem from './collapseItem';
 class Collapse extends Component {
   render() {
     const { onChange, accordion, name, children } = this.props;
-    const type = accordion ? 'radio' : 'checkbox';
+
+    if (React.Children.count(children) === 0) {
+      return null;
+    }
+
     return (
       <div className="ui-collapse">
         {React.Children.map(children, (child, index) => {
@@ -17,8 +21,8 @@ class Collapse extends Component {
           }
 
           return React.cloneElement(child, {
+            accordion,
             id: child.props.id || `${name}.${index}`,
-            type,
             name,
             onChange,
           });

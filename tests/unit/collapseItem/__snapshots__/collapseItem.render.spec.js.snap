@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Collapse: render should render collapse item component 1`] = `
+<div
+  className="ui-collapse-item"
+>
+  <input
+    className="ui-collapse-item__input"
+    id="c1"
+    name="test-collapse-item"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="ui-collapse-item__label"
+    htmlFor="c1"
+  >
+    Collapse Item 1
+  </label>
+  <div
+    className="ui-collapse-item__content"
+  >
+    <div>
+      Collapse Item content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapse: render should render collapse item component with correct type for accordion mode 1`] = `
+<div
+  className="ui-collapse-item"
+>
+  <input
+    className="ui-collapse-item__input"
+    id="c1"
+    name="test-collapse-item"
+    onChange={[Function]}
+    type="radio"
+  />
+  <label
+    className="ui-collapse-item__label"
+    htmlFor="c1"
+  >
+    Collapse Item 1
+  </label>
+  <div
+    className="ui-collapse-item__content"
+  >
+    <div>
+      Collapse Item content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapse: render should render expanded collapse item component 1`] = `
+<div
+  className="ui-collapse-item"
+>
+  <input
+    className="ui-collapse-item__input"
+    defaultChecked={true}
+    id="c1"
+    name="test-collapse-item"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="ui-collapse-item__label"
+    htmlFor="c1"
+  >
+    Collapse Item 1
+  </label>
+  <div
+    className="ui-collapse-item__content"
+  >
+    <div>
+      Collapse Item content
+    </div>
+  </div>
+</div>
+`;
