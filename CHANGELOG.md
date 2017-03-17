@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.3.4](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.4) (2017-03-17)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.3...v0.3.4)
+
+**Merged pull requests:**
+
+- Extend default theme by custom theme [\#43](https://github.com/Travix-International/travix-ui-kit/pull/43) ([asci](https://github.com/asci))
+
 ## [v0.3.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.3) (2017-03-16)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.2...v0.3.3)
 
