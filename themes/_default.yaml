@@ -186,6 +186,12 @@ modal:
       color: *text-dark
       hover:
         color: *active
+    content:
+      color: *text
+      background:
+        color: *secondary-light
+        border-bottom:
+          color: *secondary
 price:
   height:
     underline: 6px
