@@ -28,6 +28,7 @@ describe('Price', () => {
       expect(ensureDecimalPrecision('5')).toEqual('50');
       expect(ensureDecimalPrecision('5', 3)).toEqual('500');
       expect(ensureDecimalPrecision('', 3)).toEqual('000');
+      expect(ensureDecimalPrecision(undefined, 3)).toEqual('000');
     });
   });
 
@@ -127,6 +128,14 @@ describe('Price', () => {
           size="xl"
           value={50153.30}
         />
+      );
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should render with decimals when value is integer', () => {
+      const wrapper = shallow(
+        <Price value={50153} />
       );
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();

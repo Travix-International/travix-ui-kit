@@ -1,5 +1,26 @@
 # Change Log
 
+## [v0.3.4](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.4) (2017-03-17)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.3...v0.3.4)
+
+**Merged pull requests:**
+
+- Extend default theme by custom theme [\#43](https://github.com/Travix-International/travix-ui-kit/pull/43) ([asci](https://github.com/asci))
+
+## [v0.3.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.3) (2017-03-16)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.2...v0.3.3)
+
+**Fixed bugs:**
+
+- When SASS files have errors the error is swallowed [\#31](https://github.com/Travix-International/travix-ui-kit/issues/31)
+- fix for price component [\#42](https://github.com/Travix-International/travix-ui-kit/pull/42) ([maximuk](https://github.com/maximuk))
+
+**Merged pull requests:**
+
+- Update theme-builder to the latest version 🚀 [\#38](https://github.com/Travix-International/travix-ui-kit/pull/38) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Modal component [\#37](https://github.com/Travix-International/travix-ui-kit/pull/37) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+- Fixes typo on README.md [\#33](https://github.com/Travix-International/travix-ui-kit/pull/33) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.3.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.2) (2017-03-09)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.1...v0.3.2)
 

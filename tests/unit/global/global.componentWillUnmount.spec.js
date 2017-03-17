@@ -1,0 +1,27 @@
+import React from 'react';
+import { mount } from 'enzyme';
+import Global from '../../../components/global/global';
+
+describe('Global: componentWillUnmount', () => {
+  it('should remove "ui-global_noscroll" className from body before unmount', () => {
+    global.window.document.body.classList.remove = jest.fn();
+    const wrapper = mount(
+      <Global>
+        Global Content
+      </Global>
+    );
+    wrapper.unmount();
+    expect(global.window.document.body.classList.remove).toBeCalledWith('ui-global_noscroll');
+  });
+
+  it('should not remove "ui-global_noscroll" className from body before unmount', () => {
+    global.window.document.body.classList.remove = jest.fn();
+    const wrapper = mount(
+      <Global noscroll={false}>
+        Global Content
+      </Global>
+    );
+    wrapper.unmount();
+    expect(global.window.document.body.classList.remove).not.toBeCalled();
+  });
+});
