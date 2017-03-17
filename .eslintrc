@@ -11,6 +11,9 @@
     "travix/base",
     "travix/react"
   ],
+  "plugins": [
+    "react"
+  ],
   "env": {
     "browser": true,
     "jest": true
@@ -33,6 +36,24 @@
     "max-len": [2, {"code": 120, "comments": 120, "tabWidth": 4}],
     "react/jsx-indent": [2, 2],
     "react/react-in-jsx-scope": 0,
-    "no-else-return": 0
+    "no-else-return": 0,
+    "react/prefer-stateless-function": ["error"],
+    "multiline-ternary": ["error", "always"],
+    "operator-linebreak": [2, 'after', {
+      overrides: {
+        '?': 'before',
+        ':': 'before',
+        '&&': 'ignore',
+        '||': 'ignore',
+        '=': 'ignore',
+        '+': 'ignore'
+      }
+    }]
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "15.0"
+    }
   }
 }
