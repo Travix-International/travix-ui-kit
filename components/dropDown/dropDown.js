@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Select from 'react-select';
 
 import { getClassNamesWithMods } from '../_helpers';
 
@@ -10,19 +11,39 @@ class DropDown extends Component {
     const className = getClassNamesWithMods('ui-dropdown');
 
     return (
-      <div className={className}>
-        DropDown
-      </div>
+      <Select
+        className={className}
+        clearable={this.props.clearable}
+        multi={this.props.multi}
+        name={this.props.name}
+        onChange={this.props.onChange}
+        options={this.props.options}
+        scrollMenuIntoView={this.props.scrollMenuIntoView}
+        searchable={this.props.searchable}
+        value={this.props.value}
+      />
     );
   }
 }
 
 DropDown.defaultProps = {
-  active: false,
+  className: '',
+  clearable: false,
+  multi: false,
+  scrollMenuIntoView: false,
+  searchable: false,
 };
 
 DropDown.propTypes = {
-  active: PropTypes.bool,
+  className: PropTypes.string,
+  clearable: PropTypes.bool,
+  multi: PropTypes.bool,
+  name: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
+  scrollMenuIntoView: PropTypes.bool,
+  searchable: PropTypes.bool,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array]),
 };
 
 export default DropDown;
