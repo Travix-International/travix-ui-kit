@@ -27,7 +27,6 @@ class DropDown extends Component {
 }
 
 DropDown.defaultProps = {
-  className: '',
   clearable: false,
   multi: false,
   scrollMenuIntoView: false,
@@ -35,14 +34,37 @@ DropDown.defaultProps = {
 };
 
 DropDown.propTypes = {
-  className: PropTypes.string,
+  /**
+ * Should it be possible to reset value
+ */
   clearable: PropTypes.bool,
+  /**
+ * Multi-value input
+ */
   multi: PropTypes.bool,
+  /**
+ * Generates a hidden &lt;input /&gt; tag with this field name for html forms
+ */
   name: PropTypes.string,
+  /**
+ * onChange handler: function (newValue) {}
+ */
   onChange: PropTypes.func.isRequired,
+  /**
+ * Array of options
+ */
   options: PropTypes.array.isRequired,
+  /**
+ * Boolean to enable the viewport to shift so that the full menu fully visible when engaged
+ */
   scrollMenuIntoView: PropTypes.bool,
+  /**
+ * Whether to enable searching feature or not
+ */
   searchable: PropTypes.bool,
+  /**
+ * Initial field value
+ */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array]),
 };
 

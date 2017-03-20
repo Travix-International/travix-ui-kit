@@ -156,3 +156,18 @@ modal:
       color: *text-dark
       hover:
         color: *active
+dropdown:
+  input:
+    background-color: *blank
+    border-color: *secondary-darker
+  option:
+    color: *text-dark
+  arrow:
+    color: *primary-lighter
+  select-control:
+    border-color: *active
+  select-arrow-zone:
+    border-color-left: *secondary-darker
+    color: *active
+    hover:
+      color: *active
