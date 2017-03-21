@@ -1,4 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  Component,
+  PropTypes,
+} from 'react';
 
 import CollapseItem from './collapseItem';
 
@@ -7,21 +12,21 @@ import CollapseItem from './collapseItem';
  */
 class Collapse extends Component {
   render() {
-    const { onChange, accordion, name, children } = this.props;
+    const { onChange, isAccordion, name, children } = this.props;
 
-    if (React.Children.count(children) === 0) {
+    if (Children.count(children) === 0) {
       return null;
     }
 
     return (
       <div className="ui-collapse">
-        {React.Children.map(children, (child, index) => {
+        {Children.map(children, (child, index) => {
           if (child.type !== CollapseItem) {
             return null;
           }
 
-          return React.cloneElement(child, {
-            accordion,
+          return cloneElement(child, {
+            isAccordion,
             id: child.props.id || `${name}.${index}`,
             name,
             onChange,
@@ -36,7 +41,7 @@ Collapse.propTypes = {
   /**
    * Accordion mode, only one panel can be expanded at a time.
    */
-  accordion: PropTypes.bool,
+  isAccordion: PropTypes.bool,
   /**
    * Unique name for Collapse component.
    */
@@ -50,9 +55,10 @@ Collapse.propTypes = {
    */
   onChange: PropTypes.func,
 };
+
 Collapse.defaultProps = {
+  isAccordion: false,
   children: null,
-  accordion: false,
 };
 
 export default Collapse;

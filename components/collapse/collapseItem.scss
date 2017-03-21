@@ -42,6 +42,7 @@
   line-height: 3;
   padding-left: 48px;
   position: relative;
+  background-color: $tx-collapse-item-label-background-color;
   border-bottom: 2px dashed $tx-collapse-item-content-background-border-bottom-color;
 
   &::before {

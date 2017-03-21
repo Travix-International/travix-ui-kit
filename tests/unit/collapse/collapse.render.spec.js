@@ -1,4 +1,3 @@
-
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import React from 'react';
@@ -29,7 +28,7 @@ describe('Collapse: render', () => {
 
   it('should return "accordion" collapse component with two items', () => {
     const component = shallow(
-      <Collapse accordion name="test-collapse">
+      <Collapse isAccordion name="test-collapse">
         <CollapseItem title="Collapse Item 1">
           <p>Collapse content 1</p>
         </CollapseItem>
@@ -43,7 +42,7 @@ describe('Collapse: render', () => {
 
   it('should not render collapse component child if it not "CollapseItem"', () => {
     const component = shallow(
-      <Collapse accordion name="test-collapse">
+      <Collapse isAccordion name="test-collapse">
         <div>
           This item should not be rendered
         </div>
@@ -57,7 +56,7 @@ describe('Collapse: render', () => {
 
   it('should render collapse component items with custom id', () => {
     const component = shallow(
-      <Collapse accordion name="test-collapse">
+      <Collapse isAccordion name="test-collapse">
         <CollapseItem id="сid1" title="Collapse Item 1">
           <p>Collapse content 1</p>
         </CollapseItem>
@@ -71,7 +70,7 @@ describe('Collapse: render', () => {
 
   it('should render collapse component items and first item should be expanded', () => {
     const component = shallow(
-      <Collapse accordion name="test-collapse">
+      <Collapse isAccordion name="test-collapse">
         <CollapseItem expanded title="Collapse Item 1">
           <p>Collapse content 1</p>
         </CollapseItem>

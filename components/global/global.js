@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import {
+  unstable_renderSubtreeIntoContainer, // eslint-disable-line
+  unmountComponentAtNode,
+} from 'react-dom';
 
 /**
  * Global component
@@ -18,7 +21,7 @@ class Global extends Component {
   }
 
   componentDidUpdate() {
-    render((
+    unstable_renderSubtreeIntoContainer(this, (
       <div className={this.props.className}>
         {this.props.children}
       </div>

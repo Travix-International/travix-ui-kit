@@ -36,8 +36,8 @@ describe('Collapse: render', () => {
   it('should render collapse item component with correct type for accordion mode', () => {
     const component = shallow(
       <CollapseItem
-        accordion
         id="c1"
+        isAccordion
         name="test-collapse-item"
         onChange={jest.fn()}
         title="Collapse Item 1"

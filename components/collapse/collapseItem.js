@@ -3,8 +3,8 @@ import React, { PropTypes } from 'react';
 /**
  * Collapse item component
  */
-const CollapseItem = ({ id, expanded, name, title, children, accordion, onChange }) => {
-  const type = accordion ? 'radio' : 'checkbox';
+const CollapseItem = ({ id, expanded, name, title, children, isAccordion, onChange }) => {
+  const type = isAccordion ? 'radio' : 'checkbox';
   return (
     <div className="ui-collapse-item">
       <input
@@ -26,7 +26,7 @@ CollapseItem.propTypes = {
   /**
    * Accordion mode, only one panel can be expanded at a time.
    */
-  accordion: PropTypes.bool,
+  isAccordion: PropTypes.bool,
   /**
    * The collapse should contains CollapseItem components
    */

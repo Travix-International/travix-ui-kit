@@ -5,9 +5,9 @@ exports[`Collapse: render should not render collapse component child if it not "
   className="ui-collapse"
 >
   <CollapseItem
-    accordion={true}
     collapsed={false}
     id="test-collapse.1"
+    isAccordion={true}
     name="test-collapse"
     title="Collapse Item 2"
   >
@@ -23,10 +23,10 @@ exports[`Collapse: render should render collapse component items and first item 
   className="ui-collapse"
 >
   <CollapseItem
-    accordion={true}
     collapsed={false}
     expanded={true}
     id="test-collapse.0"
+    isAccordion={true}
     name="test-collapse"
     title="Collapse Item 1"
   >
@@ -35,9 +35,9 @@ exports[`Collapse: render should render collapse component items and first item 
     </p>
   </CollapseItem>
   <CollapseItem
-    accordion={true}
     collapsed={false}
     id="test-collapse.1"
+    isAccordion={true}
     name="test-collapse"
     title="Collapse Item 2"
   >
@@ -53,9 +53,9 @@ exports[`Collapse: render should render collapse component items with custom id 
   className="ui-collapse"
 >
   <CollapseItem
-    accordion={true}
     collapsed={false}
     id="сid1"
+    isAccordion={true}
     name="test-collapse"
     title="Collapse Item 1"
   >
@@ -64,9 +64,9 @@ exports[`Collapse: render should render collapse component items with custom id 
     </p>
   </CollapseItem>
   <CollapseItem
-    accordion={true}
     collapsed={false}
     id="сid2"
+    isAccordion={true}
     name="test-collapse"
     title="Collapse Item 2"
   >
@@ -82,9 +82,9 @@ exports[`Collapse: render should return "accordion" collapse component with two 
   className="ui-collapse"
 >
   <CollapseItem
-    accordion={true}
     collapsed={false}
     id="test-collapse.0"
+    isAccordion={true}
     name="test-collapse"
     title="Collapse Item 1"
   >
@@ -93,9 +93,9 @@ exports[`Collapse: render should return "accordion" collapse component with two 
     </p>
   </CollapseItem>
   <CollapseItem
-    accordion={true}
     collapsed={false}
     id="test-collapse.1"
+    isAccordion={true}
     name="test-collapse"
     title="Collapse Item 2"
   >
@@ -111,9 +111,9 @@ exports[`Collapse: render should return collapse component with two items 1`] = 
   className="ui-collapse"
 >
   <CollapseItem
-    accordion={false}
     collapsed={false}
     id="test-collapse.0"
+    isAccordion={false}
     name="test-collapse"
     title="Collapse Item 1"
   >
@@ -122,9 +122,9 @@ exports[`Collapse: render should return collapse component with two items 1`] = 
     </p>
   </CollapseItem>
   <CollapseItem
-    accordion={false}
     collapsed={false}
     id="test-collapse.1"
+    isAccordion={false}
     name="test-collapse"
     title="Collapse Item 2"
   >
