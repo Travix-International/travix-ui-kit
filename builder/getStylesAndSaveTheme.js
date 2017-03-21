@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const generateThemeFile = require('./generateThemeFile');
 
+const defaultTheme = path.join(__dirname, '..', 'themes', '_default.yaml');
 /**
  * Triggers the generation of the theme file (theme.scss)
  * and handles the watch mode.
@@ -12,7 +13,7 @@ const generateThemeFile = require('./generateThemeFile');
  * @return {Promise}
  */
 module.exports = (themeFile, isWatchEnabled) => new Promise((resolve, reject) => {
-  const yamlFile = themeFile || path.join(__dirname, '..', 'themes', '_default.yaml');
+  const yamlFile = themeFile || defaultTheme;
 
   if (isWatchEnabled) {
     fs.watchFile(yamlFile, () => {

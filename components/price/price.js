@@ -35,7 +35,7 @@ export function addThousandsSeparator(value, thousandsSeparator) {
  * @param {Number} decimalsPrecision  Number of decimals to be allowed.
  * @return {String}                   The value with a proper precision.
  */
-export function ensureDecimalPrecision(value, decimalsPrecision = 2) {
+export function ensureDecimalPrecision(value = '', decimalsPrecision = 2) {
   if (value.length > decimalsPrecision) {
     return value.substr(0, decimalsPrecision);
   }
