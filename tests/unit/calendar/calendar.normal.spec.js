@@ -382,5 +382,25 @@ describe('Calendar (normal mode)', () => {
       expect(nextBtn.props()['aria-label']).toEqual(navButtons.days.next.ariaLabel);
       expect(previousBtn.props()['aria-label']).toEqual(navButtons.days.previous.ariaLabel);
     });
+
+    it('should use be possible to navigate between months', () => {
+      const wrapper = mount(
+        <Calendar initialDates={['2017-01-01']} />
+      );
+      expect(wrapper).toMatchSnapshot();
+
+      const daysView = wrapper.find('Days').at(1);
+      const nextBtn = wrapper.find('.ui-calendar-days__next-month');
+      const previousBtn = wrapper.find('.ui-calendar-days__previous-month');
+
+      previousBtn.simulate('click');
+      expect(daysView.props().renderDate.getMonth()).toEqual(11);
+
+      nextBtn.simulate('click');
+      expect(daysView.props().renderDate.getMonth()).toEqual(0);
+
+      nextBtn.simulate('click');
+      expect(daysView.props().renderDate.getMonth()).toEqual(1);
+    });
   });
 });
