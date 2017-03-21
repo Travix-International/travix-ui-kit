@@ -1,4 +1,5 @@
 import Button from './button/button';
+import Calendar from './calendar/calendar';
 import List from './list/list';
 import Modal from './modal/modal';
 import Price from './price/price';
@@ -7,6 +8,7 @@ import Spinner from './spinner/spinner';
 
 export default {
   Button,
+  Calendar,
   List,
   Modal,
   Price,

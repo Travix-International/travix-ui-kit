@@ -2,6 +2,7 @@
   "collectCoverage": true,
   "collectCoverageFrom": [
     "builder/**/*.js",
+    "!builder/index.js",
     "!builder/webpack.config.js",
     "components/**/*.js",
     "!components/index.js"
@@ -10,7 +11,11 @@
     "js",
     "json"
   ],
+  "snapshotSerializers": [
+    "<rootDir>/node_modules/jest-serializer-enzyme"
+  ],
   "transform": {
     ".*": "<rootDir>/node_modules/babel-jest"
-  }
+  },
+  "watchman": false
 }
