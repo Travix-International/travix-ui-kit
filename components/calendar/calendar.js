@@ -23,9 +23,9 @@ const {
 function processProps(props) {
   const { initialDates, maxDate, minDate, selectionType } = props;
   const maxLimit = maxDate ? normalizeDate(new Date(maxDate), 23, 59, 59, 999) : null;
-  const renderDate = normalizeDate(((initialDates && initialDates.length && initialDates[0])
-    ? new Date(initialDates[0])
-    : new Date()));
+
+  const renderDate = (initialDates && initialDates.length && initialDates[0]) ? new Date(initialDates[0]) : new Date();
+  normalizeDate(renderDate);
 
   let minLimit = minDate ? normalizeDate(new Date(minDate)) : null;
   let selectedDates = [null, null];
