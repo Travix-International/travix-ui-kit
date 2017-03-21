@@ -64,10 +64,10 @@ class Days extends Component {
     const defaultNavButtons = {
       days: {
         next: {
-          displayValue: '&gt;',
+          displayValue: '>',
         },
         previous: {
-          displayValue: '&lt;',
+          displayValue: '<',
         },
       },
     };
@@ -196,13 +196,16 @@ class Days extends Component {
     const locale = this.locale;
     const { next, previous } = this.navButtons.days;
 
+    const nextMonth = renderDate.getMonth() === 11 ? 0 : (renderDate.getMonth() + 1);
+    const previousMonth = renderDate.getMonth() === 0 ? 11 : (renderDate.getMonth() - 1);
+
     const isPreviousMonthDisabled = minDate && (minDate.getMonth() >= renderDate.getMonth());
     const isNextMonthDisabled = maxDate && (maxDate.getMonth() <= renderDate.getMonth());
 
     return (
       <nav className="ui-calendar-days__nav">
         <button
-          aria-label={previous.ariaLabel || locale.months[renderDate.getMonth() - 1].name}
+          aria-label={previous.ariaLabel || locale.months[previousMonth].name}
           className="ui-calendar-days__previous-month"
           disabled={isPreviousMonthDisabled}
           onClick={onNavPreviousMonth}
@@ -212,7 +215,7 @@ class Days extends Component {
           {locale.months[renderDate.getMonth()].short} {renderDate.getFullYear()}
         </label>
         <button
-          aria-label={next.ariaLabel || locale.months[renderDate.getMonth() + 1].name}
+          aria-label={next.ariaLabel || locale.months[nextMonth].name}
           className="ui-calendar-days__next-month"
           disabled={isNextMonthDisabled}
           onClick={onNavNextMonth}
