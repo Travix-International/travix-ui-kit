@@ -1,41 +1,33 @@
 import React, {
   Children,
   cloneElement,
-  Component,
   PropTypes,
 } from 'react';
 
 import CollapseItem from './collapseItem';
 
-/**
- * Collapse component
- */
-class Collapse extends Component {
-  render() {
-    const { onChange, isAccordion, name, children } = this.props;
-
-    if (Children.count(children) === 0) {
-      return null;
-    }
-
-    return (
-      <div className="ui-collapse">
-        {Children.map(children, (child, index) => {
-          if (child.type !== CollapseItem) {
-            return null;
-          }
-
-          return cloneElement(child, {
-            isAccordion,
-            id: child.props.id || `${name}.${index}`,
-            name,
-            onChange,
-          });
-        })}
-      </div>
-    );
+const Collapse = ({ onChange, isAccordion, name, children }) => {
+  if (Children.count(children) === 0) {
+    return <noscript />;
   }
-}
+
+  return (
+    <div className="ui-collapse">
+      {Children.map(children, (child, index) => {
+        if (child.type !== CollapseItem) {
+          return null;
+        }
+
+        return cloneElement(child, {
+          isAccordion,
+          id: child.props.id || `${name}.${index}`,
+          name,
+          onChange,
+        });
+      })}
+    </div>
+  );
+};
 
 Collapse.propTypes = {
   /**

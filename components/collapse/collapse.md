@@ -1,7 +1,7 @@
 Open one:
 
     <div>
-      <Collapse name="example0" accordion onChange={(e) => console.log('example0:changed', e)}>
+      <Collapse name="example0" isAccordion onChange={(e) => console.log('example0:changed', e)}>
         <CollapseItem title="Collapse Title 1">
           <List items={['London', 'Amsterdam', 'Madrid']} />
         </CollapseItem>

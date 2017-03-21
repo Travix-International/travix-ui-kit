@@ -135,4 +135,4 @@ exports[`Collapse: render should return collapse component with two items 1`] = 
 </div>
 `;
 
-exports[`Collapse: render should return empty collapse component 1`] = `null`;
+exports[`Collapse: render should return empty collapse component 1`] = `<noscript />`;
