@@ -166,8 +166,36 @@ dropdown:
     color: *primary-lighter
   select-control:
     border-color: *active
+  select-menu-outer:
+    box-shadow: *shadow
   select-arrow-zone:
     border-color-left: *secondary-darker
     color: *active
     hover:
       color: *active
+  select-option:
+    color: *text
+    hover:
+      background-color: *secondary-light
+    is-selected:
+      background-color: *active
+      color: *blank
+  option-arrow:
+    border-color: *blank
+    border-shadow-color: *shadow
+checkbox:
+  text:
+    color: *text-dark
+    background-color: *blank
+    border-color: *secondary
+    hover:
+      color: *twitter
+    checked:
+      background-color: *twitter
+      border-color: *twitter
+    icon:
+      checked:
+        border-color: *secondary
+    disabled:
+      color: *text-dark
+      border-color: *secondary
