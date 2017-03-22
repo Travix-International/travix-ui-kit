@@ -1,4 +1,5 @@
 import React, {
+  Component,
   Children,
   cloneElement,
   PropTypes,
@@ -6,38 +7,88 @@ import React, {
 
 import CollapseItem from './collapseItem';
 
-const Collapse = ({ onChange, isAccordion, name, children }) => {
-  if (Children.count(children) === 0) {
-    return <noscript />;
+class Collapse extends Component {
+  state = {
+    activeKey: [],
+  };
+
+  componentWillReceiveProps(nextProps) {
+    if ('activeKey' in nextProps) {
+      this.setState({
+        activeKey: (nextProps.activeKey instanceof Array) ? nextProps.activeKey : [nextProps.activeKey],
+      });
+    }
   }
 
-  return (
-    <div className="ui-collapse">
-      {Children.map(children, (child, index) => {
-        if (child.type !== CollapseItem) {
+  handleItemClick = (e, key) => {
+    const { isAccordion } = this.props;
+    let { activeKey } = this.state;
+
+    if (isAccordion) {
+      activeKey = activeKey[0] === key ? [] : [key];
+    } else {
+      activeKey = [...activeKey];
+      const index = activeKey.indexOf(key);
+
+      if (index >= 0) {
+        activeKey.splice(index, 1);
+      } else {
+        activeKey.push(key);
+      }
+    }
+    this.setActiveKey(activeKey);
+  }
+
+  setActiveKey(activeKey) {
+    if (!('activeKey' in this.props)) {
+      this.setState({ activeKey });
+    }
+    if (typeof this.props.onChange === 'function') {
+      this.props.onChange(this.props.isAccordion ? activeKey[0] : activeKey);
+    }
+  }
+
+  renderItems() {
+    const { isAccordion, children } = this.props;
+    const { activeKey } = this.state;
+
+    return (
+      Children.map(children, (child, index) => {
+        if (!child || child.type !== CollapseItem) {
           return null;
         }
 
+        const key = child.props.id || child.key || `ui-collapse-item.${index}`;
+        const isActive = isAccordion ? activeKey[0] === key : activeKey.indexOf(key) >= 0;
         return cloneElement(child, {
-          isAccordion,
-          id: child.props.id || `${name}.${index}`,
-          name,
-          onChange,
+          id: key,
+          isActive,
+          onClick: this.handleItemClick,
         });
-      })}
-    </div>
-  );
-};
+      })
+    );
+  }
+
+  render() {
+    if (Children.count(this.props.children) === 0) {
+      return null;
+    }
+
+    return (
+      <div className="ui-collapse">
+        {this.renderItems()}
+      </div>
+    );
+  }
+}
 
 Collapse.propTypes = {
   /**
    * Accordion mode, only one panel can be expanded at a time.
    */
   isAccordion: PropTypes.bool,
-  /**
-   * Unique name for Collapse component.
-   */
-  name: PropTypes.string.isRequired,
+
+  activeKey: PropTypes.string,
   /**
    * The list of CollapseItem components
    */

@@ -1,22 +1,31 @@
 import React, { PropTypes } from 'react';
 
+import { getClassNamesWithMods } from '../_helpers';
+
 /**
  * Collapse item component
  */
-const CollapseItem = ({ id, expanded, name, title, children, isAccordion, onChange }) => {
-  const type = isAccordion ? 'radio' : 'checkbox';
+const CollapseItem = ({ id, isActive, title, children, onClick }) => {
+  const mods = {
+    active: isActive,
+  };
+  const handleItemClick = e => onClick(e, id);
   return (
-    <div className="ui-collapse-item">
-      <input
-        className="ui-collapse-item__input"
-        defaultChecked={expanded}
+    <div className={getClassNamesWithMods('ui-collapse-item', mods)}>
+      <button
+        aria-controls={id}
+        aria-expanded={isActive}
+        className="ui-collapse__label"
+        onClick={handleItemClick}
+        type="button"
+      >
+        {title}
+      </button>
+      <div
+        aria-hidden={!isActive}
+        className="ui-collapse-item__content"
         id={id}
-        name={name}
-        onChange={onChange}
-        type={type}
-      />
-      <label className="ui-collapse-item__label" htmlFor={id}>{title}</label>
-      <div className="ui-collapse-item__content">
+      >
         {children}
       </div>
     </div>
@@ -24,29 +33,21 @@ const CollapseItem = ({ id, expanded, name, title, children, isAccordion, onChan
 };
 CollapseItem.propTypes = {
   /**
-   * Accordion mode, only one panel can be expanded at a time.
-   */
-  isAccordion: PropTypes.bool,
-  /**
    * The collapse should contains CollapseItem components
    */
   children: PropTypes.node.isRequired,
   /**
    * Determine whether a CollapseItem is collapsed or not by default
    */
-  expanded: PropTypes.bool,
+  isActive: PropTypes.bool,
   /**
    * Unique id for input and label Unique id for input and label.
    */
   id: PropTypes.string,
   /**
-   * The CollapseItem input name
-   */
-  name: PropTypes.string,
-  /**
    * Specify a function that will be called when a user click on CollapseItem
    */
-  onChange: PropTypes.func,
+  onClick: PropTypes.func,
   /**
    * The CollapseItem's title
    */
