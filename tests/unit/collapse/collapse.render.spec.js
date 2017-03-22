@@ -7,14 +7,14 @@ import CollapseItem from '../../../components/collapse/collapseItem';
 describe('Collapse: render', () => {
   it('should return empty collapse component', () => {
     const component = shallow(
-      <Collapse name="test-collapse" />
+      <Collapse />
     );
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   it('should return collapse component with two items', () => {
     const component = shallow(
-      <Collapse name="test-collapse">
+      <Collapse>
         <CollapseItem title="Collapse Item 1">
           <p>Collapse content 1</p>
         </CollapseItem>
@@ -28,7 +28,7 @@ describe('Collapse: render', () => {
 
   it('should return "accordion" collapse component with two items', () => {
     const component = shallow(
-      <Collapse isAccordion name="test-collapse">
+      <Collapse isAccordion>
         <CollapseItem title="Collapse Item 1">
           <p>Collapse content 1</p>
         </CollapseItem>
@@ -42,7 +42,7 @@ describe('Collapse: render', () => {
 
   it('should not render collapse component child if it not "CollapseItem"', () => {
     const component = shallow(
-      <Collapse isAccordion name="test-collapse">
+      <Collapse isAccordion>
         <div>
           This item should not be rendered
         </div>
@@ -56,7 +56,7 @@ describe('Collapse: render', () => {
 
   it('should render collapse component items with custom id', () => {
     const component = shallow(
-      <Collapse isAccordion name="test-collapse">
+      <Collapse isAccordion>
         <CollapseItem id="сid1" title="Collapse Item 1">
           <p>Collapse content 1</p>
         </CollapseItem>
@@ -70,11 +70,11 @@ describe('Collapse: render', () => {
 
   it('should render collapse component items and first item should be expanded', () => {
     const component = shallow(
-      <Collapse isAccordion name="test-collapse">
-        <CollapseItem expanded title="Collapse Item 1">
+      <Collapse activeKey="сid1" isAccordion name="test-collapse">
+        <CollapseItem id="сid1" title="Collapse Item 1">
           <p>Collapse content 1</p>
         </CollapseItem>
-        <CollapseItem title="Collapse Item 2">
+        <CollapseItem id="сid2" title="Collapse Item 2">
           <p>Collapse content 2</p>
         </CollapseItem>
       </Collapse>

@@ -1,51 +1,62 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import { getClassNamesWithMods } from '../_helpers';
 
 /**
  * Collapse item component
  */
-const CollapseItem = ({ id, isActive, title, children, onClick }) => {
-  const mods = {
-    active: isActive,
+class CollapseItem extends Component {
+  handleItemClick = (e) => {
+    const { onClick, id } = this.props;
+
+    if (typeof onClick === 'function') {
+      onClick(e, id);
+    }
   };
-  const handleItemClick = e => onClick(e, id);
-  return (
-    <div className={getClassNamesWithMods('ui-collapse-item', mods)}>
-      <button
-        aria-controls={id}
-        aria-expanded={isActive}
-        className="ui-collapse__label"
-        onClick={handleItemClick}
-        type="button"
-      >
-        {title}
-      </button>
-      <div
-        aria-hidden={!isActive}
-        className="ui-collapse-item__content"
-        id={id}
-      >
-        {children}
+
+  render() {
+    const { id, isActive, title, children } = this.props;
+    const mods = {
+      active: isActive,
+    };
+    return (
+      <div className={getClassNamesWithMods('ui-collapse-item', mods)}>
+        <button
+          aria-controls={id}
+          aria-expanded={isActive}
+          className="ui-collapse__label"
+          onClick={this.handleItemClick}
+          type="button"
+        >
+          {title}
+        </button>
+        <div
+          aria-hidden={!isActive}
+          className="ui-collapse-item__content"
+          id={id}
+        >
+          {children}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+ }
+
 CollapseItem.propTypes = {
   /**
    * The collapse should contains CollapseItem components
    */
   children: PropTypes.node.isRequired,
   /**
-   * Determine whether a CollapseItem is collapsed or not by default
+   * Determine whether a CollapseItem is collapsed or not
    */
   isActive: PropTypes.bool,
   /**
-   * Unique id for input and label Unique id for input and label.
+   * Unique id for collapse item.
    */
   id: PropTypes.string,
   /**
-   * Specify a function that will be called when a user click on CollapseItem
+   * Specify a function that will be called when a user click on label
    */
   onClick: PropTypes.func,
   /**
@@ -53,8 +64,11 @@ CollapseItem.propTypes = {
    */
   title: PropTypes.node.isRequired,
 };
+
 CollapseItem.defaultProps = {
-  collapsed: false,
+  id: null,
+  isActive: false,
+  onClick: null,
 };
 
 export default CollapseItem;

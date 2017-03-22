@@ -8,8 +8,6 @@ describe('Collapse: render', () => {
     const component = shallow(
       <CollapseItem
         id="c1"
-        name="test-collapse-item"
-        onChange={jest.fn()}
         title="Collapse Item 1"
       >
         <div>Collapse Item content</div>
@@ -21,10 +19,8 @@ describe('Collapse: render', () => {
   it('should render expanded collapse item component', () => {
     const component = shallow(
       <CollapseItem
-        expanded
         id="c1"
-        name="test-collapse-item"
-        onChange={jest.fn()}
+        isActive
         title="Collapse Item 1"
       >
         <div>Collapse Item content</div>
@@ -33,35 +29,44 @@ describe('Collapse: render', () => {
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 
-  it('should render collapse item component with correct type for accordion mode', () => {
+  it('should render collapse item without id', () => {
     const component = shallow(
-      <CollapseItem
-        id="c1"
-        isAccordion
-        name="test-collapse-item"
-        onChange={jest.fn()}
-        title="Collapse Item 1"
-      >
+      <CollapseItem title="Collapse Item 1">
         <div>Collapse Item content</div>
       </CollapseItem>
     );
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 
-  it('should call onChange after click on title', () => {
-    const e = { target: { checked: true } };
-    const onChange = jest.fn();
+  it('should call onClick after click on label with correct id', () => {
+    const e = { target: {} };
+    const onClick = jest.fn();
     const component = shallow(
       <CollapseItem
         id="c1"
-        name="test-collapse-item"
-        onChange={onChange}
+        onClick={onClick}
         title="Collapse Item 1"
       >
         <div>Collapse Item content</div>
       </CollapseItem>
     );
-    component.find('.ui-collapse-item__input').simulate('change', e);
-    expect(onChange).toBeCalledWith(e);
+    component.find('.ui-collapse__label').simulate('click', e);
+    expect(onClick).toBeCalledWith(e, 'c1');
+  });
+
+  it('should not call onClick after click on label when "onClick" function is not provided', () => {
+    const e = { target: {} };
+    const onClick = jest.fn();
+    const component = shallow(
+      <CollapseItem
+        id="c1"
+        onClick={onClick}
+        title="Collapse Item 1"
+      >
+        <div>Collapse Item content</div>
+      </CollapseItem>
+    );
+    component.find('.ui-collapse__label').simulate('click', e);
+    expect(onClick).toBeCalledWith(e, 'c1');
   });
 });

@@ -1,11 +1,8 @@
 const modSep = '_';
 
 function getClassNamesWithMods(baseClass = '', mods = {}) {
-  if (!mods) {
-    return baseClass;
-  }
-
-  let classes = [baseClass];
+  let classes = [].concat(baseClass);
+  baseClass = classes[0];
 
   if (mods instanceof Array) {
     classes = classes

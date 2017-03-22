@@ -7,15 +7,23 @@ import React, {
 
 import CollapseItem from './collapseItem';
 
+const getNormalizedActiveKey = ({ activeKey }) => {
+  return activeKey instanceof Array ? activeKey : [activeKey];
+};
+
 class Collapse extends Component {
-  state = {
-    activeKey: [],
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeKey: getNormalizedActiveKey(props),
+    };
+  }
 
   componentWillReceiveProps(nextProps) {
     if ('activeKey' in nextProps) {
       this.setState({
-        activeKey: (nextProps.activeKey instanceof Array) ? nextProps.activeKey : [nextProps.activeKey],
+        activeKey: getNormalizedActiveKey(nextProps),
       });
     }
   }
@@ -44,7 +52,7 @@ class Collapse extends Component {
       this.setState({ activeKey });
     }
     if (typeof this.props.onChange === 'function') {
-      this.props.onChange(this.props.isAccordion ? activeKey[0] : activeKey);
+      this.props.onChange(this.props.isAccordion ? (activeKey[0] || null) : activeKey);
     }
   }
 

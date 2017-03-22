@@ -4,21 +4,19 @@ exports[`Collapse: render should render collapse item component 1`] = `
 <div
   className="ui-collapse-item"
 >
-  <input
-    className="ui-collapse-item__input"
-    id="c1"
-    name="test-collapse-item"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <label
-    className="ui-collapse-item__label"
-    htmlFor="c1"
+  <button
+    aria-controls="c1"
+    aria-expanded={false}
+    className="ui-collapse__label"
+    onClick={[Function]}
+    type="button"
   >
     Collapse Item 1
-  </label>
+  </button>
   <div
+    aria-hidden={true}
     className="ui-collapse-item__content"
+    id="c1"
   >
     <div>
       Collapse Item content
@@ -27,25 +25,23 @@ exports[`Collapse: render should render collapse item component 1`] = `
 </div>
 `;
 
-exports[`Collapse: render should render collapse item component with correct type for accordion mode 1`] = `
+exports[`Collapse: render should render collapse item without id 1`] = `
 <div
   className="ui-collapse-item"
 >
-  <input
-    className="ui-collapse-item__input"
-    id="c1"
-    name="test-collapse-item"
-    onChange={[Function]}
-    type="radio"
-  />
-  <label
-    className="ui-collapse-item__label"
-    htmlFor="c1"
+  <button
+    aria-controls={null}
+    aria-expanded={false}
+    className="ui-collapse__label"
+    onClick={[Function]}
+    type="button"
   >
     Collapse Item 1
-  </label>
+  </button>
   <div
+    aria-hidden={true}
     className="ui-collapse-item__content"
+    id={null}
   >
     <div>
       Collapse Item content
@@ -56,24 +52,21 @@ exports[`Collapse: render should render collapse item component with correct typ
 
 exports[`Collapse: render should render expanded collapse item component 1`] = `
 <div
-  className="ui-collapse-item"
+  className="ui-collapse-item ui-collapse-item_active"
 >
-  <input
-    className="ui-collapse-item__input"
-    defaultChecked={true}
-    id="c1"
-    name="test-collapse-item"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <label
-    className="ui-collapse-item__label"
-    htmlFor="c1"
+  <button
+    aria-controls="c1"
+    aria-expanded={true}
+    className="ui-collapse__label"
+    onClick={[Function]}
+    type="button"
   >
     Collapse Item 1
-  </label>
+  </button>
   <div
+    aria-hidden={false}
     className="ui-collapse-item__content"
+    id="c1"
   >
     <div>
       Collapse Item content
