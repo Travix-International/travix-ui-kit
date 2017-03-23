@@ -1,0 +1,1644 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar (range mode) #render() should render the calendar with selectionType as range, initialized in the current date 1`] = `
+<Calendar
+  selectionType="range"
+>
+  <div
+    className="ui-calendar"
+  >
+    <Days
+      maxDate={null}
+      minDate={null}
+      onNavNextMonth={[Function]}
+      onNavPreviousMonth={[Function]}
+      onSelectDay={[Function]}
+      renderDate={2017-03-21T00:00:00.000Z}
+      selectedDates={
+        Array [
+          null,
+          null,
+        ]
+      }
+      selectionType="range"
+    >
+      <div
+        className="ui-calendar-days-panel"
+      >
+        <Days
+          dataAttrs={Object {}}
+          hide={false}
+          maxDate={null}
+          minDate={null}
+          mods={Array []}
+          onNavNextMonth={[Function]}
+          onNavPreviousMonth={[Function]}
+          onSelectDay={[Function]}
+          renderDate={2017-03-21T00:00:00.000Z}
+          selectedDates={
+            Array [
+              null,
+              null,
+            ]
+          }
+          selectionType="range"
+        >
+          <div
+            className="ui-calendar-days"
+          >
+            <nav
+              className="ui-calendar-days__nav"
+            >
+              <button
+                aria-label="February"
+                className="ui-calendar-days__previous-month"
+                disabled={null}
+                onClick={[Function]}
+                type="button"
+              >
+                &lt;
+              </button>
+              <label
+                className="ui-calendar-days__rendered-month"
+              >
+                Mar
+                 
+                2017
+              </label>
+              <button
+                aria-label="April"
+                className="ui-calendar-days__next-month"
+                disabled={null}
+                onClick={[Function]}
+                type="button"
+              >
+                &gt;
+              </button>
+            </nav>
+            <header
+              className="ui-calendar-days__weekdays"
+            >
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Mon
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Tue
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Wed
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Thu
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Fri
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Sat
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Sun
+              </div>
+            </header>
+            <div
+              className="ui-calendar-days__options"
+            >
+              <button
+                aria-label="Monday, 27 February 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_previous-month"
+                data-date="2017-02-27"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                27
+              </button>
+              <button
+                aria-label="Tuesday, 28 February 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_previous-month"
+                data-date="2017-02-28"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                28
+              </button>
+              <button
+                aria-label="Wednesday, 1 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-01"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                1
+              </button>
+              <button
+                aria-label="Thursday, 2 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-02"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                2
+              </button>
+              <button
+                aria-label="Friday, 3 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-03"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                3
+              </button>
+              <button
+                aria-label="Saturday, 4 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-04"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                4
+              </button>
+              <button
+                aria-label="Sunday, 5 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-05"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                5
+              </button>
+              <button
+                aria-label="Monday, 6 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-06"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                6
+              </button>
+              <button
+                aria-label="Tuesday, 7 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-07"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                7
+              </button>
+              <button
+                aria-label="Wednesday, 8 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-08"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                8
+              </button>
+              <button
+                aria-label="Thursday, 9 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-09"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                9
+              </button>
+              <button
+                aria-label="Friday, 10 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-10"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                10
+              </button>
+              <button
+                aria-label="Saturday, 11 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-11"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                11
+              </button>
+              <button
+                aria-label="Sunday, 12 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-12"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                12
+              </button>
+              <button
+                aria-label="Monday, 13 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-13"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                13
+              </button>
+              <button
+                aria-label="Tuesday, 14 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-14"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                14
+              </button>
+              <button
+                aria-label="Wednesday, 15 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-15"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                15
+              </button>
+              <button
+                aria-label="Thursday, 16 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-16"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                16
+              </button>
+              <button
+                aria-label="Friday, 17 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-17"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                17
+              </button>
+              <button
+                aria-label="Saturday, 18 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-18"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                18
+              </button>
+              <button
+                aria-label="Sunday, 19 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-19"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                19
+              </button>
+              <button
+                aria-label="Monday, 20 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-20"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                20
+              </button>
+              <button
+                aria-label="Tuesday, 21 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-21"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                21
+              </button>
+              <button
+                aria-label="Wednesday, 22 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-22"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                22
+              </button>
+              <button
+                aria-label="Thursday, 23 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-23"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                23
+              </button>
+              <button
+                aria-label="Friday, 24 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-24"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                24
+              </button>
+              <button
+                aria-label="Saturday, 25 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-25"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                25
+              </button>
+              <button
+                aria-label="Sunday, 26 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-26"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                26
+              </button>
+              <button
+                aria-label="Monday, 27 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-27"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                27
+              </button>
+              <button
+                aria-label="Tuesday, 28 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-28"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                28
+              </button>
+              <button
+                aria-label="Wednesday, 29 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-29"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                29
+              </button>
+              <button
+                aria-label="Thursday, 30 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-30"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                30
+              </button>
+              <button
+                aria-label="Friday, 31 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-31"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                31
+              </button>
+              <button
+                aria-label="Saturday, 1 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-01"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                1
+              </button>
+              <button
+                aria-label="Sunday, 2 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-02"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                2
+              </button>
+              <button
+                aria-label="Monday, 3 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-03"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                3
+              </button>
+              <button
+                aria-label="Tuesday, 4 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-04"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                4
+              </button>
+              <button
+                aria-label="Wednesday, 5 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-05"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                5
+              </button>
+              <button
+                aria-label="Thursday, 6 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-06"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                6
+              </button>
+              <button
+                aria-label="Friday, 7 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-07"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                7
+              </button>
+              <button
+                aria-label="Saturday, 8 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-08"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                8
+              </button>
+              <button
+                aria-label="Sunday, 9 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-09"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                9
+              </button>
+            </div>
+          </div>
+        </Days>
+      </div>
+    </Days>
+  </div>
+</Calendar>
+`;
+
+exports[`Calendar (range mode) #render() should set the minLimit and dates properly and reset them at 3rd click 1`] = `
+<Calendar
+  selectionType="range"
+>
+  <div
+    className="ui-calendar"
+  >
+    <Days
+      maxDate={null}
+      minDate={null}
+      onNavNextMonth={[Function]}
+      onNavPreviousMonth={[Function]}
+      onSelectDay={[Function]}
+      renderDate={2017-03-21T00:00:00.000Z}
+      selectedDates={
+        Array [
+          null,
+          null,
+        ]
+      }
+      selectionType="range"
+    >
+      <div
+        className="ui-calendar-days-panel"
+      >
+        <Days
+          dataAttrs={Object {}}
+          hide={false}
+          maxDate={null}
+          minDate={null}
+          mods={Array []}
+          onNavNextMonth={[Function]}
+          onNavPreviousMonth={[Function]}
+          onSelectDay={[Function]}
+          renderDate={2017-03-21T00:00:00.000Z}
+          selectedDates={
+            Array [
+              null,
+              null,
+            ]
+          }
+          selectionType="range"
+        >
+          <div
+            className="ui-calendar-days"
+          >
+            <nav
+              className="ui-calendar-days__nav"
+            >
+              <button
+                aria-label="February"
+                className="ui-calendar-days__previous-month"
+                disabled={null}
+                onClick={[Function]}
+                type="button"
+              >
+                &lt;
+              </button>
+              <label
+                className="ui-calendar-days__rendered-month"
+              >
+                Mar
+                 
+                2017
+              </label>
+              <button
+                aria-label="April"
+                className="ui-calendar-days__next-month"
+                disabled={null}
+                onClick={[Function]}
+                type="button"
+              >
+                &gt;
+              </button>
+            </nav>
+            <header
+              className="ui-calendar-days__weekdays"
+            >
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Mon
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Tue
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Wed
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Thu
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Fri
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Sat
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Sun
+              </div>
+            </header>
+            <div
+              className="ui-calendar-days__options"
+            >
+              <button
+                aria-label="Monday, 27 February 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_previous-month"
+                data-date="2017-02-27"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                27
+              </button>
+              <button
+                aria-label="Tuesday, 28 February 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_previous-month"
+                data-date="2017-02-28"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                28
+              </button>
+              <button
+                aria-label="Wednesday, 1 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-01"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                1
+              </button>
+              <button
+                aria-label="Thursday, 2 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-02"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                2
+              </button>
+              <button
+                aria-label="Friday, 3 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-03"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                3
+              </button>
+              <button
+                aria-label="Saturday, 4 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-04"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                4
+              </button>
+              <button
+                aria-label="Sunday, 5 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-05"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                5
+              </button>
+              <button
+                aria-label="Monday, 6 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-06"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                6
+              </button>
+              <button
+                aria-label="Tuesday, 7 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-07"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                7
+              </button>
+              <button
+                aria-label="Wednesday, 8 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-08"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                8
+              </button>
+              <button
+                aria-label="Thursday, 9 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-09"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                9
+              </button>
+              <button
+                aria-label="Friday, 10 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-10"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                10
+              </button>
+              <button
+                aria-label="Saturday, 11 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-11"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                11
+              </button>
+              <button
+                aria-label="Sunday, 12 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-12"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                12
+              </button>
+              <button
+                aria-label="Monday, 13 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-13"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                13
+              </button>
+              <button
+                aria-label="Tuesday, 14 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-14"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                14
+              </button>
+              <button
+                aria-label="Wednesday, 15 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-15"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                15
+              </button>
+              <button
+                aria-label="Thursday, 16 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-16"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                16
+              </button>
+              <button
+                aria-label="Friday, 17 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-17"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                17
+              </button>
+              <button
+                aria-label="Saturday, 18 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-18"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                18
+              </button>
+              <button
+                aria-label="Sunday, 19 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-19"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                19
+              </button>
+              <button
+                aria-label="Monday, 20 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-20"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                20
+              </button>
+              <button
+                aria-label="Tuesday, 21 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-21"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                21
+              </button>
+              <button
+                aria-label="Wednesday, 22 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-22"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                22
+              </button>
+              <button
+                aria-label="Thursday, 23 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-23"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                23
+              </button>
+              <button
+                aria-label="Friday, 24 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-24"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                24
+              </button>
+              <button
+                aria-label="Saturday, 25 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-25"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                25
+              </button>
+              <button
+                aria-label="Sunday, 26 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-26"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                26
+              </button>
+              <button
+                aria-label="Monday, 27 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-27"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                27
+              </button>
+              <button
+                aria-label="Tuesday, 28 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-28"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                28
+              </button>
+              <button
+                aria-label="Wednesday, 29 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-29"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                29
+              </button>
+              <button
+                aria-label="Thursday, 30 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-30"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                30
+              </button>
+              <button
+                aria-label="Friday, 31 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-31"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                31
+              </button>
+              <button
+                aria-label="Saturday, 1 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-01"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                1
+              </button>
+              <button
+                aria-label="Sunday, 2 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-02"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                2
+              </button>
+              <button
+                aria-label="Monday, 3 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-03"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                3
+              </button>
+              <button
+                aria-label="Tuesday, 4 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-04"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                4
+              </button>
+              <button
+                aria-label="Wednesday, 5 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-05"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                5
+              </button>
+              <button
+                aria-label="Thursday, 6 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-06"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                6
+              </button>
+              <button
+                aria-label="Friday, 7 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-07"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                7
+              </button>
+              <button
+                aria-label="Saturday, 8 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-08"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                8
+              </button>
+              <button
+                aria-label="Sunday, 9 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-09"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                9
+              </button>
+            </div>
+          </div>
+        </Days>
+      </div>
+    </Days>
+  </div>
+</Calendar>
+`;
+
+exports[`Calendar (range mode) #render() should set the minLimit to the same date as the first initialDates when provided 1`] = `
+<Calendar
+  initialDates={
+    Array [
+      "2017-03-25",
+    ]
+  }
+  selectionType="range"
+>
+  <div
+    className="ui-calendar"
+  >
+    <Days
+      maxDate={null}
+      minDate={2017-03-25T00:00:00.000Z}
+      onNavNextMonth={[Function]}
+      onNavPreviousMonth={[Function]}
+      onSelectDay={[Function]}
+      renderDate={2017-03-25T00:00:00.000Z}
+      selectedDates={
+        Array [
+          2017-03-25T00:00:00.000Z,
+          null,
+        ]
+      }
+      selectionType="range"
+    >
+      <div
+        className="ui-calendar-days-panel"
+      >
+        <Days
+          dataAttrs={Object {}}
+          hide={false}
+          maxDate={null}
+          minDate={2017-03-25T00:00:00.000Z}
+          mods={Array []}
+          onNavNextMonth={[Function]}
+          onNavPreviousMonth={[Function]}
+          onSelectDay={[Function]}
+          renderDate={2017-03-25T00:00:00.000Z}
+          selectedDates={
+            Array [
+              2017-03-25T00:00:00.000Z,
+              null,
+            ]
+          }
+          selectionType="range"
+        >
+          <div
+            className="ui-calendar-days"
+          >
+            <nav
+              className="ui-calendar-days__nav"
+            >
+              <button
+                aria-label="February"
+                className="ui-calendar-days__previous-month"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                &lt;
+              </button>
+              <label
+                className="ui-calendar-days__rendered-month"
+              >
+                Mar
+                 
+                2017
+              </label>
+              <button
+                aria-label="April"
+                className="ui-calendar-days__next-month"
+                disabled={null}
+                onClick={[Function]}
+                type="button"
+              >
+                &gt;
+              </button>
+            </nav>
+            <header
+              className="ui-calendar-days__weekdays"
+            >
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Mon
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Tue
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Wed
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Thu
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Fri
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Sat
+              </div>
+              <div
+                className="ui-calendar-days__weekday"
+              >
+                Sun
+              </div>
+            </header>
+            <div
+              className="ui-calendar-days__options"
+            >
+              <button
+                aria-label="Monday, 27 February 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_previous-month"
+                data-date="2017-02-27"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                27
+              </button>
+              <button
+                aria-label="Tuesday, 28 February 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_previous-month"
+                data-date="2017-02-28"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                28
+              </button>
+              <button
+                aria-label="Wednesday, 1 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-01"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                1
+              </button>
+              <button
+                aria-label="Thursday, 2 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-02"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                2
+              </button>
+              <button
+                aria-label="Friday, 3 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-03"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                3
+              </button>
+              <button
+                aria-label="Saturday, 4 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-04"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                4
+              </button>
+              <button
+                aria-label="Sunday, 5 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-05"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                5
+              </button>
+              <button
+                aria-label="Monday, 6 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-06"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                6
+              </button>
+              <button
+                aria-label="Tuesday, 7 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-07"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                7
+              </button>
+              <button
+                aria-label="Wednesday, 8 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-08"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                8
+              </button>
+              <button
+                aria-label="Thursday, 9 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-09"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                9
+              </button>
+              <button
+                aria-label="Friday, 10 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-10"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                10
+              </button>
+              <button
+                aria-label="Saturday, 11 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-11"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                11
+              </button>
+              <button
+                aria-label="Sunday, 12 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-12"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                12
+              </button>
+              <button
+                aria-label="Monday, 13 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-13"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                13
+              </button>
+              <button
+                aria-label="Tuesday, 14 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-14"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                14
+              </button>
+              <button
+                aria-label="Wednesday, 15 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-15"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                15
+              </button>
+              <button
+                aria-label="Thursday, 16 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-16"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                16
+              </button>
+              <button
+                aria-label="Friday, 17 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-17"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                17
+              </button>
+              <button
+                aria-label="Saturday, 18 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-18"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                18
+              </button>
+              <button
+                aria-label="Sunday, 19 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-19"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                19
+              </button>
+              <button
+                aria-label="Monday, 20 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-20"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                20
+              </button>
+              <button
+                aria-label="Tuesday, 21 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-21"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                21
+              </button>
+              <button
+                aria-label="Wednesday, 22 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-22"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                22
+              </button>
+              <button
+                aria-label="Thursday, 23 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-23"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                23
+              </button>
+              <button
+                aria-label="Friday, 24 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-24"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                24
+              </button>
+              <button
+                aria-label="Saturday, 25 March 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_selected-start"
+                data-date="2017-03-25"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                25
+              </button>
+              <button
+                aria-label="Sunday, 26 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-26"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                26
+              </button>
+              <button
+                aria-label="Monday, 27 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-27"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                27
+              </button>
+              <button
+                aria-label="Tuesday, 28 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-28"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                28
+              </button>
+              <button
+                aria-label="Wednesday, 29 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-29"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                29
+              </button>
+              <button
+                aria-label="Thursday, 30 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-30"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                30
+              </button>
+              <button
+                aria-label="Friday, 31 March 2017"
+                className="ui-calendar-days-option"
+                data-date="2017-03-31"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                31
+              </button>
+              <button
+                aria-label="Saturday, 1 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-01"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                1
+              </button>
+              <button
+                aria-label="Sunday, 2 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-02"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                2
+              </button>
+              <button
+                aria-label="Monday, 3 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-03"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                3
+              </button>
+              <button
+                aria-label="Tuesday, 4 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-04"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                4
+              </button>
+              <button
+                aria-label="Wednesday, 5 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-05"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                5
+              </button>
+              <button
+                aria-label="Thursday, 6 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-06"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                6
+              </button>
+              <button
+                aria-label="Friday, 7 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-07"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                7
+              </button>
+              <button
+                aria-label="Saturday, 8 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-08"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                8
+              </button>
+              <button
+                aria-label="Sunday, 9 April 2017"
+                className="ui-calendar-days-option ui-calendar-days-option_next-month"
+                data-date="2017-04-09"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                9
+              </button>
+            </div>
+          </div>
+        </Days>
+      </div>
+    </Days>
+  </div>
+</Calendar>
+`;

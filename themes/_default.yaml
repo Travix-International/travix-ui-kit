@@ -23,8 +23,11 @@ generic:
     accent-darker: &accent-darker   '#0B4848'
     accent-dark: &accent-dark       '#177D7D'
     accent: &accent                 '#2A9595'
+    accent-border: &accent-border   '#E6BB00'
+    accent-bottom: &accent-bottom   '#FFD05E'
     accent-light: &accent-light     '#46BCBC'
     accent-lighter: &accent-lighter '#6EE1E1'
+    accent-top: &accent-top         '#FFD97C'
 
     primary-darker: &primary-darker   '#162052'
     primary-dark: &primary-dark       '#283A8E'
@@ -87,76 +90,80 @@ button:
       color: "transparent"
       hover:
         params: "0 0"
-price:
-  height:
-    underline: 6px
-  margin-top:
-    underline: 2px;
-  small:
-    font:
-      size:
-        currency: 15px
-        integers: 30px
-        decimals: 14px
-    line-height:
-      integers: 26px
-  medium:
-    font:
-      size:
-        currency: 16px
-        integers: 30px
-        decimals: 14px
-    line-height:
-      integers: 26px
-  large:
-    font:
-      size:
-        currency: 19px
-        integers: 35px
-        decimals: 17px
-    line-height:
-      integers: 31px
-  xlarge:
-    font:
-      size:
-        currency: 30px
-        integers: 55px
-        decimals: 27px
-    line-height:
-      integers: 51px
-    height:
-      underline: 8px
-spinner:
-  color:
-    light: *accent-lighter
-    lighter: *accent
-    dark: *primary
-    darker: *primary-lighter
-list:
-  bullets:
-    color: *active
-modal:
-  z-index: '100'
-  color:
-    dark: *primary-dark
-    secondary: *secondary
-  overlay:
-    background:
-      color: *primary-dark
-      opacity: '0.65'
-  container:
-    background:
+calendar:
+  height: 300px
+  nav:
+    background: *primary-lighter
+    border-radius: '5px 5px 0 0'
+    button:
+      background-color-end: *accent-bottom
+      background-color-start: *accent-top
+      border-radius: 50%
+      box-shadow-color: *accent-border
+      color: *primary-lighter
+      font-weight: '700'
+      height: 27px
+      margin: '0 5px'
+      width: 27px
+    height: 41px
+    label:
       color: *blank
-    box-shadow:
-      color: 'rgba(0,0,0,.3)'
-  content:
-    padding-left-right: '24px'
-  content-devider:
-    color: *secondary
-  close-button:
-      color: *text-dark
+      font-weight: '500'
+  header:
+    background-color: *primary-lighter
+    height: 32px
+    weekday:
+      color: *secondary
+      font-size: 14px
+      font-weight: bold
+  options:
+    border-color: *secondary
+    option:
+      background-color: *blank
+      border-bottom: *secondary
+      border-right: *secondary
+      color: *primary-darker
+      disabled:
+        background-color: *secondary
+        color: *secondary-darkest
+      font-size: 14px
       hover:
-        color: *active
+        background-color: *active
+        color: *blank
+      next-month:
+        background-color: *secondary-light
+      previous-month:
+        background-color: *secondary-light
+      range:
+        after:
+          border-color: transparent
+        between:
+          background-color: *secondary-dark
+        end:
+          after:
+            border-color: *active
+          background-color: *secondary-dark
+        start:
+          after:
+            border-color: *active
+          background-color: *secondary-dark
+  width: 300px
+checkbox:
+  text:
+    color: *text-dark
+    background-color: *blank
+    border-color: *secondary
+    hover:
+      color: *twitter
+    checked:
+      background-color: *twitter
+      border-color: *twitter
+    icon:
+      checked:
+        border-color: *secondary
+    disabled:
+      color: *text-lighter
+      border-color: *secondary
 dropdown:
   input:
     background-color: *blank
@@ -206,19 +213,73 @@ dropdown-filter-option:
     background-color: *active
     checkbox:
       color: *blank
-checkbox:
-  text:
-    color: *text-dark
-    background-color: *blank
-    border-color: *secondary
-    hover:
-      color: *twitter
-    checked:
-      background-color: *twitter
-      border-color: *twitter
-    icon:
-      checked:
-        border-color: *secondary
-    disabled:
-      color: *text-lighter
-      border-color: *secondary
+list:
+  bullets:
+    color: *active
+modal:
+  z-index: '100'
+  color:
+    dark: *primary-dark
+    secondary: *secondary
+  overlay:
+    background:
+      color: *primary-dark
+      opacity: '0.65'
+  container:
+    background:
+      color: *blank
+    box-shadow:
+      color: 'rgba(0,0,0,.3)'
+  content:
+    padding-left-right: '24px'
+  content-devider:
+    color: *secondary
+  close-button:
+      color: *text-dark
+      hover:
+        color: *active
+price:
+  height:
+    underline: 6px
+  margin-top:
+    underline: 2px;
+  small:
+    font:
+      size:
+        currency: 15px
+        integers: 30px
+        decimals: 14px
+    line-height:
+      integers: 26px
+  medium:
+    font:
+      size:
+        currency: 16px
+        integers: 30px
+        decimals: 14px
+    line-height:
+      integers: 26px
+  large:
+    font:
+      size:
+        currency: 19px
+        integers: 35px
+        decimals: 17px
+    line-height:
+      integers: 31px
+  xlarge:
+    font:
+      size:
+        currency: 30px
+        integers: 55px
+        decimals: 27px
+    line-height:
+      integers: 51px
+    height:
+      underline: 8px
+spinner:
+  color:
+    light: *accent-lighter
+    lighter: *accent
+    dark: *primary
+    darker: *primary-lighter

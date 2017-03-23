@@ -31,6 +31,7 @@
     "comma-dangle": ["error", "always-multiline"],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "max-len": [2, {"code": 120, "comments": 120, "tabWidth": 4}],
+    "react/jsx-indent": [2, 2],
     "react/react-in-jsx-scope": 0,
     "no-else-return": 0
   }
