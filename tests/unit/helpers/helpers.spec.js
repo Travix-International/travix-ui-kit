@@ -12,6 +12,9 @@ describe('helpers', () => {
     it('#3 should return only an array with the classes provided in the first arg', () => {
       expect(getClassNamesWithMods(['test', 'test2'])).toBe('test test2');
     });
+    it('#4 should return empty string when baseClass was not provided', () => {
+      expect(getClassNamesWithMods()).toBe('');
+    });
   });
 
   describe('#getDataAttributes()', () => {

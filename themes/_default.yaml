@@ -147,6 +147,20 @@ calendar:
             border-color: *active
           background-color: *secondary-dark
   width: 300px
+collapse:
+   item:
+     label:
+       color: *text-dark
+       background:
+         color: *blank
+       active:
+         color: *active
+     content:
+       color: *text
+       background:
+         color: *secondary-light
+         border-bottom:
+           color: *secondary
 list:
   bullets:
     color: *active
@@ -169,9 +183,9 @@ modal:
   content-devider:
     color: *secondary
   close-button:
-      color: *text-dark
-      hover:
-        color: *active
+    color: *text-dark
+    hover:
+      color: *active
 price:
   height:
     underline: 6px

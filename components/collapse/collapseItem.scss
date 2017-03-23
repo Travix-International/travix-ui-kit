@@ -1,0 +1,48 @@
+.ui-collapse-item {
+  margin-bottom: 1px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.ui-collapse__label {
+  background-color: $tx-collapse-item-label-background-color;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 2px dashed $tx-collapse-item-content-background-border-bottom-color;
+  color: $tx-collapse-item-label-color;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  outline: none;
+  text-align: inherit;
+  width: 100%;
+
+  &::before {
+    content: '\25ba\0020';
+  }
+
+  &[aria-expanded="true"] {
+    color: $tx-collapse-item-label-active-color;
+    border-bottom: none;
+
+    &::before {
+      content: '\25bc\0020';
+    }
+  }
+}
+
+.ui-collapse-item__content {
+  color: $tx-collapse-item-content-color;
+  padding: 25px;
+  background-color: $tx-collapse-item-content-background-color;
+
+  &[aria-hidden="true"] {
+    display: none;
+  }
+
+  &[aria-hidden="false"] {
+    display: block;
+  }
+}

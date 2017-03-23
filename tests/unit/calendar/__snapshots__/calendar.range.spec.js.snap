@@ -13,7 +13,7 @@ exports[`Calendar (range mode) #render() should render the calendar with selecti
       onNavNextMonth={[Function]}
       onNavPreviousMonth={[Function]}
       onSelectDay={[Function]}
-      renderDate={2017-03-21T00:00:00.000Z}
+      renderDate={2017-03-23T00:00:00.000Z}
       selectedDates={
         Array [
           null,
@@ -34,7 +34,7 @@ exports[`Calendar (range mode) #render() should render the calendar with selecti
           onNavNextMonth={[Function]}
           onNavPreviousMonth={[Function]}
           onSelectDay={[Function]}
-          renderDate={2017-03-21T00:00:00.000Z}
+          renderDate={2017-03-23T00:00:00.000Z}
           selectedDates={
             Array [
               null,
@@ -559,7 +559,7 @@ exports[`Calendar (range mode) #render() should set the minLimit and dates prope
       onNavNextMonth={[Function]}
       onNavPreviousMonth={[Function]}
       onSelectDay={[Function]}
-      renderDate={2017-03-21T00:00:00.000Z}
+      renderDate={2017-03-23T00:00:00.000Z}
       selectedDates={
         Array [
           null,
@@ -580,7 +580,7 @@ exports[`Calendar (range mode) #render() should set the minLimit and dates prope
           onNavNextMonth={[Function]}
           onNavPreviousMonth={[Function]}
           onSelectDay={[Function]}
-          renderDate={2017-03-21T00:00:00.000Z}
+          renderDate={2017-03-23T00:00:00.000Z}
           selectedDates={
             Array [
               null,
