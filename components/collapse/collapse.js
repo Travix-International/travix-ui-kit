@@ -106,7 +106,9 @@ Collapse.propTypes = {
    * Accordion mode, only one panel can be expanded at a time.
    */
   isAccordion: PropTypes.bool,
-
+  /**
+   * Determine whether items is expanded. You need to provide `id` for `CollapseItem`
+   */
   activeKey: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
