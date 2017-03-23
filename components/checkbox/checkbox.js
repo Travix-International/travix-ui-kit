@@ -44,13 +44,47 @@ Checkbox.defaultProps = {
 };
 
 Checkbox.propTypes = {
+  /**
+   * Represents the state of the checkbox.
+   */
   checked: PropTypes.bool,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+
+  /**
+   * Checkbox label.
+   */
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
+
+  /**
+   * Current activity state of the checkbox.
+   */
   disabled: PropTypes.bool,
+
+  /**
+   * You can use it to set up any custom attribute for input.
+   */
   inputAttr: PropTypes.object,
+
+  /**
+   * You can use it to set up any custom attribute for label.
+   */
   labelAttr: PropTypes.object,
+
+  /**
+   * You can provide set of custom modifications.
+   */
   mods: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * Represents the element's name.
+   */
   name: PropTypes.string.isRequired,
+
+  /**
+   * Represents the callback for onChange event.
+   */
   onChange: PropTypes.func.isRequired,
 };
 

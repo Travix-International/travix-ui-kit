@@ -42,6 +42,7 @@ generic:
     text-dark: &text-dark '#333'
     text: &text '#666'
     text-light: &text-light '#999'
+    text-lighter: &text-lighter '#998'
 
     active: &active '#3892e7'
     positive: &positive '#2ca937'
@@ -183,6 +184,28 @@ dropdown:
   option-arrow:
     border-color: *blank
     border-shadow-color: *shadow
+  filter:
+    select-control:
+      border-color: *secondary-darker
+    select-placeholder:
+      color: *text-dark
+    select-menu-outer:
+      box-shadow: *shadow
+  active:
+    select-control:
+      background-color: *blank
+      border-color: *active
+dropdown-filter-option:
+  checkbox:
+    color: *text-light
+    hover:
+      color: *text
+    disabled:
+      color: *text-lighter
+  hover-and-not-disabled:
+    background-color: *active
+    checkbox:
+      color: *blank
 checkbox:
   text:
     color: *text-dark
@@ -197,5 +220,5 @@ checkbox:
       checked:
         border-color: *secondary
     disabled:
-      color: *text-dark
+      color: *text-lighter
       border-color: *secondary

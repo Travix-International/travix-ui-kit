@@ -124,3 +124,95 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
     }
   }
 }
+
+.ui-dropdown_filter {
+  .Select-control,
+  .Select-input {
+    height: 28px;
+  }
+
+  &.is-open .Select-control,
+  .Select-control {
+    background: none;
+    border-color:  $tx-dropdown-filter-select-control-border-color;
+  }
+
+  .Select-placeholder {
+    color: $tx-dropdown-filter-select-placeholder-color;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 28px; // should equal to .Select-control, .Select-input height
+    padding-left: 10px;
+    position: static;
+  }
+
+  &.Select--multi {
+    .Select-multi-value-wrapper {
+      display: flex;
+    }
+
+    .Select-input {
+      margin-left: 0;
+      vertical-align: middle;
+    }
+  }
+
+  &.cars-dropdown .Select-arrow-zone {
+    width: 32px;
+  }
+
+  .Select-input > input {
+    padding: 0;
+  }
+
+  .Select-menu-outer {
+    box-shadow: 0 0 3px rgba($tx-dropdown-filter-select-menu-outer-box-shadow, .5);
+    box-sizing: content-box;
+    margin-top: -2px;
+    padding: 0;
+    width: 200px;
+  }
+
+  &.ui-dropdown_state-active {
+    .Select-control {
+      background-color: $tx-dropdown-active-select-control-background-color;
+      border-color: $tx-dropdown-active-select-control-border-color;
+    }
+  }
+}
+
+.ui-dropdown-filter__option {
+  .ui-checkbox {
+    align-items: center;
+    color: $tx-dropdown-filter-option-checkbox-color;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    min-height: 40px;
+    padding: 5px 15px 5px 20px;
+
+    .ui-checkbox__text {
+      height: 16px;
+      margin-top: 0;
+    }
+
+    &:hover {
+      color: $tx-dropdown-filter-option-checkbox-hover-color;
+    }
+  }
+
+  &.ui-dropdown-filter__option_is-disabled {
+    .ui-checkbox {
+      color: rgba($tx-dropdown-filter-option-checkbox-disabled-color, .3);
+      cursor: default;
+    }
+  }
+
+  &:hover:not(.ui-dropdown-filter__option_is-disabled) {
+    background-color: $tx-dropdown-filter-option-hover-and-not-disabled-background-color;
+
+    .ui-checkbox {
+      color: $tx-dropdown-filter-option-hover-and-not-disabled-checkbox-color;
+    }
+  }
+}

@@ -7,6 +7,7 @@
     "prebuild": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md &",
     "build": "node ./builder",
     "build:watch": "node ./builder -w",
+    "build:watcht": "node ./builder -w -t ../../travix-themes/themes/cheaptickets/_default.yaml",
     "prebuild:watch": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md -w &",
     "styleguide-server": "styleguidist server",
     "styleguide-build": "styleguidist build",
