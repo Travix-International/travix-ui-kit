@@ -32,31 +32,52 @@ Searchable dropDown:
 
 DropDown with filter mode:
 
-    initialState = {filterOptions: [
+    initialState = {filterOptions1: [
       { label: 'One', value: 'One', disabled: true },
       { label: 'Two', value: 'Two', checked: true },
+      { label: 'Three', value: 'Three' },
+      { label: 'Four', value: 'Four' },
+    ], filterOptions2: [
+      { label: 'One', value: 'One' },
+      { label: 'Two', value: 'Two'  },
       { label: 'Three', value: 'Three' },
       { label: 'Four', value: 'Four' },
     ]};
 
     <div>
-      <div>{state.filterOptions.filter(i => i.checked).map(i => i.label).join(', ')}</div>
-      <div style={{ width: '50%', display: 'flex' }}>
+      <div>filter1: {state.filterOptions1.filter(i => i.checked).map(i => i.label).join(', ')}</div>
+      <div>filter2: {state.filterOptions2.filter(i => i.checked).map(i => i.label).join(', ')}</div>
+      <br/>
+      <div style={{ width: '50%', display: 'flex', justifyContent: 'space-between' }}>
         <DropDown
           filterMode
-          onChange={(option, optionIndex) => {
+          onChange={(option, optionIndex, filterKey) => {
             setState({
-              filterOptions: [
-                ...state.filterOptions.slice(0, optionIndex),
+              [`filterOptions${filterKey}`]: [
+                ...state[`filterOptions${filterKey}`].slice(0, optionIndex),
                 { ...option, checked: !option.checked },
-                ...state.filterOptions.slice(optionIndex + 1)
+                ...state[`filterOptions${filterKey}`].slice(optionIndex + 1)
               ]
             })
           }}
-          options={state.filterOptions}
-          value={state.value}
-          placeholder="filter mode"
-          filterKey="filterKey"
+          options={state.filterOptions1}
+          placeholder="filter1"
+          filterKey="1"
+        />
+        <DropDown
+          filterMode
+          onChange={(option, optionIndex, filterKey) => {
+            setState({
+              [`filterOptions${filterKey}`]: [
+                ...state[`filterOptions${filterKey}`].slice(0, optionIndex),
+                { ...option, checked: !option.checked },
+                ...state[`filterOptions${filterKey}`].slice(optionIndex + 1)
+              ]
+            })
+          }}
+          options={state.filterOptions2}
+          placeholder="filter2"
+          filterKey="2"
         />
       </div>
     </div>
