@@ -5,9 +5,10 @@ import React, {
   PropTypes,
 } from 'react';
 
+import { getClassNamesWithMods } from '../_helpers';
 import CollapseItem from './collapseItem';
 
-const getNormalizedActiveKey = ({ activeKey }) => {
+const getNormalizedActiveKey = ({ activeKey = [] }) => {
   return activeKey instanceof Array ? activeKey : [activeKey];
 };
 
@@ -78,12 +79,22 @@ class Collapse extends Component {
   }
 
   render() {
-    if (Children.count(this.props.children) === 0) {
+    const {
+      isAccordion,
+      children,
+      onChange, // eslint-disable-line no-unused-vars
+      ...otherProps
+    } = this.props;
+    if (Children.count(children) === 0) {
       return null;
     }
 
+    const mods = {
+      accordion: isAccordion,
+    };
+
     return (
-      <div className="ui-collapse">
+      <div {...otherProps} className={getClassNamesWithMods('ui-collapse', mods)}>
         {this.renderItems()}
       </div>
     );
@@ -96,7 +107,10 @@ Collapse.propTypes = {
    */
   isAccordion: PropTypes.bool,
 
-  activeKey: PropTypes.string,
+  activeKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
   /**
    * The list of CollapseItem components
    */

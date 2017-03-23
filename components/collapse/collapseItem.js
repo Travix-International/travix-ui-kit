@@ -15,12 +15,19 @@ class CollapseItem extends Component {
   };
 
   render() {
-    const { id, isActive, title, children } = this.props;
+    const {
+      id,
+      isActive,
+      title,
+      children,
+      onClick, // eslint-disable-line no-unused-vars
+      ...otherProps
+    } = this.props;
     const mods = {
       active: isActive,
     };
     return (
-      <div className={getClassNamesWithMods('ui-collapse-item', mods)}>
+      <div {...otherProps} className={getClassNamesWithMods('ui-collapse-item', mods)}>
         <button
           aria-controls={id}
           aria-expanded={isActive}
