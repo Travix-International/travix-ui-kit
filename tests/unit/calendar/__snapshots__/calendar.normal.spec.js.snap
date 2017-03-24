@@ -591,7 +591,7 @@ exports[`Calendar (normal mode) #render() should apply the new minDate on Calend
           onNavNextMonth={[Function]}
           onNavPreviousMonth={[Function]}
           onSelectDay={[Function]}
-          renderDate={2017-03-24T00:00:00.000Z}
+          renderDate={2017-03-21T00:00:00.000Z}
           selectedDates={
             Array [
               null,
@@ -612,7 +612,7 @@ exports[`Calendar (normal mode) #render() should apply the new minDate on Calend
               onNavNextMonth={[Function]}
               onNavPreviousMonth={[Function]}
               onSelectDay={[Function]}
-              renderDate={2017-03-24T00:00:00.000Z}
+              renderDate={2017-03-21T00:00:00.000Z}
               selectedDates={
                 Array [
                   null,
@@ -1814,7 +1814,7 @@ exports[`Calendar (normal mode) #render() should merge the locale definition wit
       onNavNextMonth={[Function]}
       onNavPreviousMonth={[Function]}
       onSelectDay={[Function]}
-      renderDate={2017-03-24T00:00:00.000Z}
+      renderDate={2017-03-21T00:00:00.000Z}
       selectedDates={
         Array [
           null,
@@ -1840,7 +1840,7 @@ exports[`Calendar (normal mode) #render() should merge the locale definition wit
           onNavNextMonth={[Function]}
           onNavPreviousMonth={[Function]}
           onSelectDay={[Function]}
-          renderDate={2017-03-24T00:00:00.000Z}
+          renderDate={2017-03-21T00:00:00.000Z}
           selectedDates={
             Array [
               null,
@@ -4024,7 +4024,7 @@ exports[`Calendar (normal mode) #render() should render the Calendar and re-rend
           onNavNextMonth={[Function]}
           onNavPreviousMonth={[Function]}
           onSelectDay={[Function]}
-          renderDate={2017-03-24T00:00:00.000Z}
+          renderDate={2017-03-21T00:00:00.000Z}
           selectedDates={
             Array [
               null,
@@ -4045,7 +4045,7 @@ exports[`Calendar (normal mode) #render() should render the Calendar and re-rend
               onNavNextMonth={[Function]}
               onNavPreviousMonth={[Function]}
               onSelectDay={[Function]}
-              renderDate={2017-03-24T00:00:00.000Z}
+              renderDate={2017-03-21T00:00:00.000Z}
               selectedDates={
                 Array [
                   null,
@@ -4584,7 +4584,7 @@ exports[`Calendar (normal mode) #render() should render the calendar with select
       onNavNextMonth={[Function]}
       onNavPreviousMonth={[Function]}
       onSelectDay={[Function]}
-      renderDate={2017-03-24T00:00:00.000Z}
+      renderDate={2017-03-21T00:00:00.000Z}
       selectedDates={
         Array [
           null,
@@ -4605,7 +4605,7 @@ exports[`Calendar (normal mode) #render() should render the calendar with select
           onNavNextMonth={[Function]}
           onNavPreviousMonth={[Function]}
           onSelectDay={[Function]}
-          renderDate={2017-03-24T00:00:00.000Z}
+          renderDate={2017-03-21T00:00:00.000Z}
           selectedDates={
             Array [
               null,
@@ -5685,7 +5685,7 @@ exports[`Calendar (normal mode) #render() should set maxLimit, with a given "max
       onNavNextMonth={[Function]}
       onNavPreviousMonth={[Function]}
       onSelectDay={[Function]}
-      renderDate={2017-03-24T00:00:00.000Z}
+      renderDate={2017-03-21T00:00:00.000Z}
       selectedDates={
         Array [
           null,
@@ -5706,7 +5706,7 @@ exports[`Calendar (normal mode) #render() should set maxLimit, with a given "max
           onNavNextMonth={[Function]}
           onNavPreviousMonth={[Function]}
           onSelectDay={[Function]}
-          renderDate={2017-03-24T00:00:00.000Z}
+          renderDate={2017-03-21T00:00:00.000Z}
           selectedDates={
             Array [
               null,
@@ -6232,7 +6232,7 @@ exports[`Calendar (normal mode) #render() should set minLimit, with a given "min
       onNavNextMonth={[Function]}
       onNavPreviousMonth={[Function]}
       onSelectDay={[Function]}
-      renderDate={2017-03-24T00:00:00.000Z}
+      renderDate={2017-03-21T00:00:00.000Z}
       selectedDates={
         Array [
           null,
@@ -6253,7 +6253,7 @@ exports[`Calendar (normal mode) #render() should set minLimit, with a given "min
           onNavNextMonth={[Function]}
           onNavPreviousMonth={[Function]}
           onSelectDay={[Function]}
-          renderDate={2017-03-24T00:00:00.000Z}
+          renderDate={2017-03-21T00:00:00.000Z}
           selectedDates={
             Array [
               null,
