@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dropdownFilterOptionComponent #render() should render disabled and checked filter option 1`] = `
+<div
+  className="ui-dropdown-filter__option ui-dropdown-filter__option_is-disabled"
+>
+  <Checkbox
+    checked={true}
+    disabled={true}
+    inputAttr={Object {}}
+    labelAttr={Object {}}
+    name="3"
+    onChange={[Function]}
+  >
+    Three
+  </Checkbox>
+</div>
+`;
+
+exports[`dropdownFilterOptionComponent #render() should render filter option 1`] = `
+<div
+  className="ui-dropdown-filter__option"
+>
+  <Checkbox
+    checked={false}
+    disabled={false}
+    inputAttr={Object {}}
+    labelAttr={Object {}}
+    name="3"
+    onChange={[Function]}
+  >
+    Three
+  </Checkbox>
+</div>
+`;

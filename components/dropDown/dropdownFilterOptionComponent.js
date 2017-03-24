@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { getClassNamesWithMods } from '../_helpers';
 import Checkbox from '../checkbox/checkbox';
 
@@ -6,23 +6,29 @@ import Checkbox from '../checkbox/checkbox';
    * @property {Function} onSelect Passed by react-select internally
    * @property {Object} option Passed by user of Dropdown for filter
    */
-function DropdownFilterOptionComponent({ option, onSelect, children }) {
-  const mods = [];
-  option.disabled && mods.push('is-disabled');
-  const className = getClassNamesWithMods('ui-dropdown-filter__option', mods);
+class DropdownFilterOptionComponent extends Component {
+  onChange = (e) => {
+    this.props.onSelect(this.props.option, e);
+  }
 
-  return (
-    <div className={className}>
-      <Checkbox
-        checked={option.checked}
-        disabled={option.disabled}
-        name={option.value}
-        onChange={event => onSelect(option, event)}
-      >
-        {children}
-      </Checkbox>
-    </div>
-  );
+  render() {
+    const mods = [];
+    this.props.option.disabled && mods.push('is-disabled');
+    const className = getClassNamesWithMods('ui-dropdown-filter__option', mods);
+
+    return (
+      <div className={className}>
+        <Checkbox
+          checked={this.props.option.checked}
+          disabled={this.props.option.disabled}
+          name={this.props.option.value}
+          onChange={this.onChange}
+        >
+          {this.props.children}
+        </Checkbox>
+      </div>
+    );
+  }
 }
 
 DropdownFilterOptionComponent.propTypes = {

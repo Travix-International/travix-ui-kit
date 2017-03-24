@@ -38,10 +38,10 @@ DropDown with filter mode:
       { label: 'Three', value: 'Three' },
       { label: 'Four', value: 'Four' },
     ], filterOptions2: [
-      { label: 'One', value: 'One' },
-      { label: 'Two', value: 'Two'  },
-      { label: 'Three', value: 'Three' },
-      { label: 'Four', value: 'Four' },
+      { label: 'One', value: '1' },
+      { label: 'Two', value: '2'  },
+      { label: 'Three', value: '3' },
+      { label: 'Four', value: '4' },
     ]};
 
     <div>

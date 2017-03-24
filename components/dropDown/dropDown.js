@@ -5,55 +5,6 @@ import { getClassNamesWithMods } from '../_helpers';
 import DropdownFilterOptionComponent from './dropdownFilterOptionComponent';
 
 /**
- * Overriding the internal method of react-select for fix autoscrolling
- */
-function menuRenderer({
-    focusedOption,
-    instancePrefix,
-    onFocus,
-    onSelect,
-    optionClassName,
-    optionComponent,
-    optionRenderer,
-    options,
-    valueArray,
-    valueKey,
-    onOptionRef,
-  }) {
-  let Option = optionComponent;
-
-  return options.map((option, i) => {
-    let isSelected = valueArray && valueArray.indexOf(option) > -1;
-    let isFocused = option === focusedOption;
-    const classes = [optionClassName, 'Select-option'];
-
-    isSelected && classes.push('is-selected');
-    isFocused && classes.push('is-focused');
-    option.disabled && classes.push('is-disabled');
-
-    const optionClass = classes.join(' ');
-
-    return (
-      <Option
-        className={optionClass}
-        instancePrefix={instancePrefix}
-        isDisabled={option.disabled}
-        isFocused={isFocused}
-        isSelected={isSelected}
-        key={`option-${i}-${option[valueKey]}`}
-        onFocus={onFocus}
-        onSelect={onSelect}
-        option={option}
-        optionIndex={i}
-        ref={(ref) => { onOptionRef(ref, isSelected); }}
-      >
-        {optionRenderer(option, i)}
-      </Option>
-    );
-  });
-}
-
-/**
  * DropDown component
  */
 class DropDown extends Component {
@@ -61,6 +12,58 @@ class DropDown extends Component {
     super(props);
 
     this.onChange = this.onChange.bind(this);
+    this.menuRenderer = this.menuRenderer.bind(this);
+  }
+
+  optionRef = (onOptionRef, isSelected) => ref => onOptionRef(ref, isSelected);
+
+  /**
+   * Overriding the internal method of react-select for fix autoscrolling
+   */
+  menuRenderer({
+      focusedOption,
+      instancePrefix,
+      onFocus,
+      onSelect,
+      optionClassName,
+      optionComponent,
+      optionRenderer,
+      options,
+      valueArray,
+      valueKey,
+      onOptionRef,
+    }) {
+    let Option = optionComponent;
+
+    return options.map((option, i) => {
+      let isSelected = valueArray && valueArray.indexOf(option) > -1;
+      let isFocused = option === focusedOption;
+      const classes = ['Select-option'];
+
+      optionClassName && classes.push(optionClassName);
+      isSelected && classes.push('is-selected');
+      isFocused && classes.push('is-focused');
+      option.disabled && classes.push('is-disabled');
+      const optionClass = classes.join(' ');
+
+      return (
+        <Option
+          className={optionClass}
+          instancePrefix={instancePrefix}
+          isDisabled={option.disabled}
+          isFocused={this.props.filterMode ? false : isFocused}
+          isSelected={isSelected}
+          key={`option-${i}-${option[valueKey]}`}
+          onFocus={onFocus}
+          onSelect={onSelect}
+          option={option}
+          optionIndex={i}
+          ref={this.optionRef(onOptionRef, isSelected)}
+        >
+          {optionRenderer(option, i)}
+        </Option>
+      );
+    });
   }
 
   /**
@@ -89,7 +92,7 @@ class DropDown extends Component {
       <Select
         className={className}
         clearable={this.props.clearable}
-        menuRenderer={menuRenderer}
+        menuRenderer={this.menuRenderer}
         multi={isFiltermode ? true : this.props.multi}
         name={this.props.name}
         onChange={this.onChange}
