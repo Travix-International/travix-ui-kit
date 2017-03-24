@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Collapse: render should render collapse item component 1`] = `
+<div
+  className="ui-collapse-item"
+>
+  <button
+    aria-controls="c1"
+    aria-expanded={false}
+    className="ui-collapse__label"
+    onClick={[Function]}
+    type="button"
+  >
+    Collapse Item 1
+  </button>
+  <div
+    aria-hidden={true}
+    className="ui-collapse-item__content"
+    id="c1"
+  >
+    <div>
+      Collapse Item content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapse: render should render collapse item without id 1`] = `
+<div
+  className="ui-collapse-item"
+>
+  <button
+    aria-controls={null}
+    aria-expanded={false}
+    className="ui-collapse__label"
+    onClick={[Function]}
+    type="button"
+  >
+    Collapse Item 1
+  </button>
+  <div
+    aria-hidden={true}
+    className="ui-collapse-item__content"
+    id={null}
+  >
+    <div>
+      Collapse Item content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapse: render should render expanded collapse item component 1`] = `
+<div
+  className="ui-collapse-item ui-collapse-item_active"
+>
+  <button
+    aria-controls="c1"
+    aria-expanded={true}
+    className="ui-collapse__label"
+    onClick={[Function]}
+    type="button"
+  >
+    Collapse Item 1
+  </button>
+  <div
+    aria-hidden={false}
+    className="ui-collapse-item__content"
+    id="c1"
+  >
+    <div>
+      Collapse Item content
+    </div>
+  </div>
+</div>
+`;
