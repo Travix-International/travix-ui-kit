@@ -12,7 +12,6 @@ describe('Calendar (normal mode)', () => {
         <Calendar />
       );
 
-      expect(wrapper).toMatchSnapshot();
       expect(wrapper.props()).toEqual({
         selectionType: 'normal',
       });
@@ -32,7 +31,6 @@ describe('Calendar (normal mode)', () => {
         <Calendar initialDates={[initialDate]} />
       );
 
-      expect(wrapper).toMatchSnapshot();
       expect(wrapper.props()).toEqual({
         initialDates: [initialDate],
         selectionType: 'normal',
@@ -54,7 +52,6 @@ describe('Calendar (normal mode)', () => {
         <Calendar maxDate={maxDate} />
       );
 
-      expect(wrapper).toMatchSnapshot();
       expect(wrapper.props()).toEqual({
         maxDate,
         selectionType: 'normal',
@@ -76,7 +73,6 @@ describe('Calendar (normal mode)', () => {
         <Calendar minDate={minDate} />
       );
 
-      expect(wrapper).toMatchSnapshot();
       expect(wrapper.props()).toEqual({
         minDate,
         selectionType: 'normal',
@@ -102,7 +98,6 @@ describe('Calendar (normal mode)', () => {
         <Calendar initialDates={initialDates} maxDate={maxDate} minDate={minDate} />
       );
 
-      expect(wrapper).toMatchSnapshot();
       expect(wrapper.props()).toEqual({
         initialDates,
         maxDate,
@@ -132,7 +127,6 @@ describe('Calendar (normal mode)', () => {
           onNavPreviousMonth={previousMock}
         />
       );
-      expect(wrapper).toMatchSnapshot();
 
       /** Clicks to go next month */
       wrapper.find('.ui-calendar-days__next-month').simulate('click');
@@ -157,7 +151,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <Calendar initialDates={[initialDate]} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       /** Clicks to go select the day */
       wrapper.find(`[data-date="2017-03-25"]`).simulate('click');
@@ -172,7 +165,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <Calendar initialDates={[initialDate]} onSelectDay={selectDayMock} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       /** Clicks to go select the day */
       expect(wrapper.state().renderDate.getMonth()).toEqual(2);
@@ -193,7 +185,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <Calendar initialDates={[initialDate]} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       /** Clicks to go next month */
       wrapper.find('.ui-calendar-days__next-month').simulate('click');
@@ -216,7 +207,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <Calendar initialDates={[initialDate]} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       /** Clicks to go next month */
       wrapper.find(`[data-date="${selectedDate}"]`).simulate('click');
@@ -239,7 +229,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <Calendar initialDates={[initialDate]} isDaySelectableFn={isDaySelectableFn} onSelectDay={onSelectDayMock} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       expect(wrapper.state().selectedDates).toEqual([initialDateObject, null]);
 
@@ -271,7 +260,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <Calendar initialDates={["2017-10-05"]} locale={myLocale} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       expect(wrapper.find('.ui-calendar-days__weekday').first().text()).toEqual('Seg');
     });
@@ -282,7 +270,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <Calendar locale={myLocale} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       expect(wrapper.find('.ui-calendar-days__weekday').first().text()).toEqual('Sun');
     });
@@ -291,7 +278,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <CalendarWrapper initialDates={['2017-03-03']} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       expect(wrapper.find('Calendar').props().initialDates[0]).toEqual('2017-03-03');
 
@@ -304,7 +290,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <CalendarWrapper />
       );
-      expect(wrapper).toMatchSnapshot();
 
       wrapper.find('#changeInitialDate').simulate('click');
 
@@ -320,7 +305,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <CalendarWrapper minDate="2017-03-01" />
       );
-      expect(wrapper).toMatchSnapshot();
 
       expect(wrapper.find('Calendar').props().minDate).toEqual('2017-03-01');
 
@@ -344,7 +328,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <Calendar initialDates={['2017-03-03']} navButtons={navButtons} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       const nextBtn = wrapper.find('.ui-calendar-days__next-month');
       const previousBtn = wrapper.find('.ui-calendar-days__previous-month');
@@ -372,7 +355,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <Calendar initialDates={['2017-03-03']} navButtons={navButtons} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       const nextBtn = wrapper.find('.ui-calendar-days__next-month');
       const previousBtn = wrapper.find('.ui-calendar-days__previous-month');
@@ -387,7 +369,6 @@ describe('Calendar (normal mode)', () => {
       const wrapper = mount(
         <Calendar initialDates={['2017-01-01']} />
       );
-      expect(wrapper).toMatchSnapshot();
 
       const daysView = wrapper.find('Days').at(1);
       const nextBtn = wrapper.find('.ui-calendar-days__next-month');
