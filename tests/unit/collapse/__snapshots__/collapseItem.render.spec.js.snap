@@ -11,7 +11,14 @@ exports[`Collapse: render should render collapse item component 1`] = `
     onClick={[Function]}
     type="button"
   >
-    Collapse Item 1
+    <span
+      className="ui-collapse__label-icon"
+    />
+    <span
+      className="ui-collapse__label-text"
+    >
+      Collapse Item 1
+    </span>
   </button>
   <div
     aria-hidden={true}
@@ -36,7 +43,14 @@ exports[`Collapse: render should render collapse item without id 1`] = `
     onClick={[Function]}
     type="button"
   >
-    Collapse Item 1
+    <span
+      className="ui-collapse__label-icon"
+    />
+    <span
+      className="ui-collapse__label-text"
+    >
+      Collapse Item 1
+    </span>
   </button>
   <div
     aria-hidden={true}
@@ -61,7 +75,14 @@ exports[`Collapse: render should render expanded collapse item component 1`] = `
     onClick={[Function]}
     type="button"
   >
-    Collapse Item 1
+    <span
+      className="ui-collapse__label-icon"
+    />
+    <span
+      className="ui-collapse__label-text"
+    >
+      Collapse Item 1
+    </span>
   </button>
   <div
     aria-hidden={false}

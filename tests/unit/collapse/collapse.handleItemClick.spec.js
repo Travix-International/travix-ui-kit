@@ -75,6 +75,8 @@ describe('Collapse: handleItemClick', () => {
       </Collapse>
     );
 
+    expect(component.state().activeKey).toEqual([]);
+
     component.instance().handleItemClick(e, 'c1');
     expect(component.state().activeKey).toEqual(['c1']);
 
