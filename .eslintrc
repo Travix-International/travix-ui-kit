@@ -38,15 +38,15 @@
     "react/react-in-jsx-scope": 0,
     "no-else-return": 0,
     "react/prefer-stateless-function": ["error"],
-    "multiline-ternary": ["error", "always"],
-    "operator-linebreak": [2, 'after', {
-      overrides: {
-        '?': 'before',
-        ':': 'before',
-        '&&': 'ignore',
-        '||': 'ignore',
-        '=': 'ignore',
-        '+': 'ignore'
+    "multiline-ternary": ["off"],
+    "operator-linebreak": [2, "after", {
+      "overrides": {
+        "?": "before",
+        ":": "before",
+        "&&": "ignore",
+        "||": "ignore",
+        "=": "ignore",
+        "+": "ignore"
       }
     }]
   },
