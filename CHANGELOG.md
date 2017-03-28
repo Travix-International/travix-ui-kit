@@ -1,5 +1,35 @@
 # Change Log
 
+## [v0.3.6](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.6) (2017-03-28)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.5...v0.3.6)
+
+**Fixed bugs:**
+
+- Stub `new Date` for Calendar's unit tests [\#48](https://github.com/Travix-International/travix-ui-kit/issues/48)
+- Removes the 'matchSnapshot' assertions [\#50](https://github.com/Travix-International/travix-ui-kit/pull/50) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
+**Merged pull requests:**
+
+- Improvements for Collapse component [\#52](https://github.com/Travix-International/travix-ui-kit/pull/52) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+- ESlint improvements [\#46](https://github.com/Travix-International/travix-ui-kit/pull/46) ([asci](https://github.com/asci))
+
+## [v0.3.5](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.5) (2017-03-23)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.4...v0.3.5)
+
+**Fixed bugs:**
+
+- Fixes the calendar's doc example [\#47](https://github.com/Travix-International/travix-ui-kit/pull/47) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
+**Closed issues:**
+
+- Modal [\#40](https://github.com/Travix-International/travix-ui-kit/issues/40)
+- Calendar [\#36](https://github.com/Travix-International/travix-ui-kit/issues/36)
+
+**Merged pull requests:**
+
+- Calendar component - Issue \#36 \(WIP\) [\#45](https://github.com/Travix-International/travix-ui-kit/pull/45) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Collapse component [\#44](https://github.com/Travix-International/travix-ui-kit/pull/44) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+
 ## [v0.3.4](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.4) (2017-03-17)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.3...v0.3.4)
 
