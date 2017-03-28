@@ -10,7 +10,7 @@ import CollapseItem from './collapseItem';
 
 const getNormalizedActiveKey = ({ defaultActiveKey, activeKey }) => {
   if (activeKey === undefined && defaultActiveKey) {
-    activeKey = defaultActiveKey instanceof Array ? defaultActiveKey : [defaultActiveKey];
+    return getNormalizedActiveKey({ activeKey: defaultActiveKey });
   }
   if (!activeKey) {
     activeKey = [];

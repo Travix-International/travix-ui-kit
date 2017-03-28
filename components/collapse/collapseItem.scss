@@ -25,6 +25,11 @@
   &[aria-expanded="true"] {
     color: $tx-collapse-item-label-active-color;
     border-bottom: none;
+
+    .ui-collapse__label-icon:before {
+      color: $tx-collapse-item-label-icon-active-color;
+      content: '\25bc\0020';
+    }
   }
 }
 
@@ -32,14 +37,9 @@
   flex-shrink: 0;
   margin-right: 10px;
 
-  &::before {
+  &:before {
     color: $tx-collapse-item-label-icon-color;
     content: '\25ba\0020';
-
-    .ui-collapse__label[aria-expanded="true"] & {
-      color: $tx-collapse-item-label-icon-active-color;
-      content: '\25bc\0020';
-    }
   }
 }
 
