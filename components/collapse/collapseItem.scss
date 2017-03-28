@@ -6,37 +6,48 @@
 }
 
 .ui-collapse__label {
+  align-items: center;
   background-color: $tx-collapse-item-label-background-color;
-  border-top: 0;
-  border-right: 0;
+  border-bottom: $tx-collapse-item-label-border-bottom-width $tx-collapse-item-label-border-bottom-style $tx-collapse-item-label-border-bottom-color;
   border-left: 0;
-  border-bottom: 2px dashed $tx-collapse-item-content-background-border-bottom-color;
+  border-right: 0;
+  border-top: 0;
   color: $tx-collapse-item-label-color;
   cursor: pointer;
-  display: block;
-  font-size: 20px;
+  display: flex;
+  font-size: 16px;
+  min-height: 50px;
   outline: none;
+  padding: 10px 0;
   text-align: inherit;
   width: 100%;
-
-  &::before {
-    content: '\25ba\0020';
-  }
 
   &[aria-expanded="true"] {
     color: $tx-collapse-item-label-active-color;
     border-bottom: none;
 
-    &::before {
+    .ui-collapse__label-icon:before {
+      color: $tx-collapse-item-label-icon-active-color;
       content: '\25bc\0020';
     }
   }
 }
 
+.ui-collapse__label-icon {
+  flex-shrink: 0;
+  margin-right: 10px;
+
+  &:before {
+    color: $tx-collapse-item-label-icon-color;
+    content: '\25ba\0020';
+  }
+}
+
 .ui-collapse-item__content {
+  background-color: $tx-collapse-item-content-background-color;
+  border-radius: $tx-collapse-item-content-border-radius;
   color: $tx-collapse-item-content-color;
   padding: 25px;
-  background-color: $tx-collapse-item-content-background-color;
 
   &[aria-hidden="true"] {
     display: none;

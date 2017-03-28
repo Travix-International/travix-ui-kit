@@ -70,7 +70,49 @@ describe('Collapse: render', () => {
 
   it('should render collapse component items and first item should be expanded', () => {
     const component = shallow(
-      <Collapse activeKey="сid1" isAccordion name="test-collapse">
+      <Collapse activeKey="сid1" isAccordion>
+        <CollapseItem id="сid1" title="Collapse Item 1">
+          <p>Collapse content 1</p>
+        </CollapseItem>
+        <CollapseItem id="сid2" title="Collapse Item 2">
+          <p>Collapse content 2</p>
+        </CollapseItem>
+      </Collapse>
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('should render collapse component with expanded item by default', () => {
+    const component = shallow(
+      <Collapse defaultActiveKey="сid2" isAccordion>
+        <CollapseItem id="сid1" title="Collapse Item 1">
+          <p>Collapse content 1</p>
+        </CollapseItem>
+        <CollapseItem id="сid2" title="Collapse Item 2">
+          <p>Collapse content 2</p>
+        </CollapseItem>
+      </Collapse>
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('should render collapse component with expanded item based on props when "defaultActiveKey" is provided', () => {
+    const component = shallow(
+      <Collapse activeKey="сid1" defaultActiveKey="сid2" isAccordion>
+        <CollapseItem id="сid1" title="Collapse Item 1">
+          <p>Collapse content 1</p>
+        </CollapseItem>
+        <CollapseItem id="сid2" title="Collapse Item 2">
+          <p>Collapse content 2</p>
+        </CollapseItem>
+      </Collapse>
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('should render collapse component with expanded items based on "defaultActiveKey"', () => {
+    const component = shallow(
+      <Collapse defaultActiveKey={['сid1', 'сid2']}>
         <CollapseItem id="сid1" title="Collapse Item 1">
           <p>Collapse content 1</p>
         </CollapseItem>
