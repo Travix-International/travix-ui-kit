@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "prebuild": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md &",
-    "build": "node ./builder",
-    "build:watch": "node ./builder -w",
+    "build": "node ./builder/program",
+    "build:watch": "node ./builder/program -w",
     "prebuild:watch": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md -w &",
     "styleguide-server": "styleguidist server",
     "styleguide-build": "styleguidist build",
@@ -18,7 +18,7 @@
     "transpile": "npm run build"
   },
   "bin": {
-    "travix-ui-kit": "./builder/index.js"
+    "travix-ui-kit": "./builder/program.js"
   },
   "repository": {
     "type": "git",
