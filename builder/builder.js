@@ -17,20 +17,33 @@ const defaultOutputThemeFile = path.join(__dirname, '..', 'themes', 'theme.scss'
  * @param {Boolean} watch      Flag to determine if it should run in 'watch' mode
  * @return {Promise}
  */
-module.exports = ({ cssDir, environment = 'development', output = defaultOutputThemeFile, jsDir, themeFile, watch }) => {
+module.exports = (options) => {
+  const {
+    cssDir,
+    environment = 'development',
+    jsDir,
+    output = defaultOutputThemeFile,
+    themeFile,
+    watch,
+  } = options;
+
   let themeFiles = [defaultThemeYamlPath];
   if (themeFile) {
     themeFiles = themeFiles.concat(themeFile);
   }
 
-  const uiKitBuilder = themeBuilder({
+  const builder = themeBuilder({
     format: 'scss',
     prefix: 'tx',
   });
 
-  return uiKitBuilder
-    .merge(themeFiles)
-    .then(uiKitBuilder.build)
+  if (watch) {
+    builder.watch(themeFiles, (result) => {
+      saveThemeScssFile(output, result);
+    });
+  }
+
+  return builder.build(themeFiles)
     .then(result => saveThemeScssFile(output, result))
     .then(() => runWebpackAndCopyFilesToFinalDestination({
       cssDir,
