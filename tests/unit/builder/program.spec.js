@@ -9,15 +9,14 @@ commander.version = jest.fn().mockReturnValue(commander);
 commander.option = jest.fn().mockReturnValue(commander);
 commander.parse = jest.fn().mockReturnValue(commander);
 
-require('../../../builder/index');
+require('../../../builder/program');
 
 describe('Builder › generateThemeFile.js', () => {
-  beforeEach(() => {
+  afterEach(() => {
     jest.resetModules();
   });
 
   it('sets the program version, attributes, parses the process.argv and calls the builder', () => {
-    expect(commander.version).toHaveBeenCalled();
     expect(commander.version).toHaveBeenCalledWith(pkg.version);
 
     expect(commander.option).toHaveBeenCalledTimes(5);
@@ -44,10 +43,8 @@ describe('Builder › generateThemeFile.js', () => {
       false
     );
 
-    expect(commander.parse).toHaveBeenCalled();
     expect(commander.parse).toHaveBeenCalledWith(process.argv);
 
-    expect(builder).toHaveBeenCalled();
     expect(builder).toHaveBeenCalledWith(commander);
   });
 });

@@ -27,10 +27,7 @@ module.exports = (options) => {
     watch,
   } = options;
 
-  let themeFiles = [defaultThemeYamlPath];
-  if (themeFile) {
-    themeFiles = themeFiles.concat(themeFile);
-  }
+  const themeFiles = [defaultThemeYamlPath].concat(themeFile).filter(Boolean);
 
   const builder = themeBuilder({
     format: 'scss',
