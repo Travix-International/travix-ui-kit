@@ -3,8 +3,7 @@ import { getClassNamesWithMods } from '../_helpers';
 import Checkbox from '../checkbox/checkbox';
 
   /**
-   * @property {Function} onSelect Passed by react-select internally
-   * @property {Object} option Passed by user of Dropdown for filter
+   * Replasing ReactSelect item for filter mode.
    */
 class DropdownFilterOptionComponent extends Component {
   onChange = (e) => {

@@ -159,10 +159,10 @@ checkbox:
     background-color: *blank
     border-color: *secondary
     hover:
-      color: *twitter
+      color: *active
     checked:
-      background-color: *twitter
-      border-color: *twitter
+      background-color: *active
+      border-color: *active
     icon:
       checked:
         border-color: *secondary
