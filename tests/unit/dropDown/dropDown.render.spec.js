@@ -101,4 +101,15 @@ describe('DropDown: render', () => {
     );
     expect(shallowToJson(component)).toMatchSnapshot();
   });
+
+  it('should return filter dropdown', () => {
+    const component = shallow(
+      <DropDown
+        filterMode
+        onChange={() => {}}
+        options={[{ checked: true }]}
+      />
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
 });

@@ -333,6 +333,59 @@ exports[`DropDown: render should return dropdown with shifting viewport enabled 
 />
 `;
 
+exports[`DropDown: render should return filter dropdown 1`] = `
+<Select
+  addLabelText="Add \\"{label}\\"?"
+  arrowRenderer={[Function]}
+  autosize={true}
+  backspaceRemoves={true}
+  backspaceToRemoveMessage="Press backspace to remove {label}"
+  className="ui-dropdown ui-dropdown_filter ui-dropdown_state-active"
+  clearAllText="Clear all"
+  clearRenderer={[Function]}
+  clearValueText="Clear value"
+  clearable={false}
+  deleteRemoves={true}
+  delimiter=","
+  disabled={false}
+  escapeClearsValue={true}
+  filterOptions={[Function]}
+  ignoreAccents={true}
+  ignoreCase={true}
+  inputProps={Object {}}
+  isLoading={false}
+  joinValues={false}
+  labelKey="label"
+  matchPos="any"
+  matchProp="any"
+  menuBuffer={0}
+  menuRenderer={[Function]}
+  multi={true}
+  noResultsText="No results found"
+  onBlurResetsInput={true}
+  onChange={[Function]}
+  onCloseResetsInput={true}
+  openAfterFocus={false}
+  optionComponent={[Function]}
+  options={
+    Array [
+      Object {
+        "checked": true,
+      },
+    ]
+  }
+  pageSize={5}
+  placeholder=""
+  required={false}
+  scrollMenuIntoView={false}
+  searchable={false}
+  simpleValue={false}
+  tabSelectsValue={true}
+  valueComponent={[Function]}
+  valueKey="value"
+/>
+`;
+
 exports[`DropDown: render should return multi dropdown 1`] = `
 <Select
   addLabelText="Add \\"{label}\\"?"
@@ -420,6 +473,59 @@ exports[`DropDown: render should return searchable dropdown 1`] = `
   required={false}
   scrollMenuIntoView={false}
   searchable={true}
+  simpleValue={false}
+  tabSelectsValue={true}
+  valueComponent={[Function]}
+  valueKey="value"
+/>
+`;
+
+exports[`DropDown: render should return searchable dropdown 2`] = `
+<Select
+  addLabelText="Add \\"{label}\\"?"
+  arrowRenderer={[Function]}
+  autosize={true}
+  backspaceRemoves={true}
+  backspaceToRemoveMessage="Press backspace to remove {label}"
+  className="ui-dropdown ui-dropdown_filter ui-dropdown_state-active"
+  clearAllText="Clear all"
+  clearRenderer={[Function]}
+  clearValueText="Clear value"
+  clearable={false}
+  deleteRemoves={true}
+  delimiter=","
+  disabled={false}
+  escapeClearsValue={true}
+  filterOptions={[Function]}
+  ignoreAccents={true}
+  ignoreCase={true}
+  inputProps={Object {}}
+  isLoading={false}
+  joinValues={false}
+  labelKey="label"
+  matchPos="any"
+  matchProp="any"
+  menuBuffer={0}
+  menuRenderer={[Function]}
+  multi={true}
+  noResultsText="No results found"
+  onBlurResetsInput={true}
+  onChange={[Function]}
+  onCloseResetsInput={true}
+  openAfterFocus={false}
+  optionComponent={[Function]}
+  options={
+    Array [
+      Object {
+        "checked": true,
+      },
+    ]
+  }
+  pageSize={5}
+  placeholder=""
+  required={false}
+  scrollMenuIntoView={false}
+  searchable={false}
   simpleValue={false}
   tabSelectsValue={true}
   valueComponent={[Function]}
