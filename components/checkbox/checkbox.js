@@ -8,8 +8,6 @@ function Checkbox({
   checked,
   children,
   disabled,
-  inputAttr,
-  labelAttr,
   mods = [],
   name,
   onChange,
@@ -18,9 +16,8 @@ function Checkbox({
   const className = getClassNamesWithMods('ui-checkbox', mods);
 
   return (
-    <label className={className} htmlFor={name} {...labelAttr}>
+    <label className={className} htmlFor={name}>
       <input
-        {...inputAttr}
         aria-checked={checked}
         checked={checked}
         disabled={disabled}
@@ -38,8 +35,6 @@ function Checkbox({
 Checkbox.defaultProps = {
   checked: false,
   disabled: false,
-  inputAttr: {},
-  labelAttr: {},
   name: '',
 };
 
@@ -61,16 +56,6 @@ Checkbox.propTypes = {
    * Current activity state of the checkbox.
    */
   disabled: PropTypes.bool,
-
-  /**
-   * You can use it to set up any custom attribute for input.
-   */
-  inputAttr: PropTypes.object,
-
-  /**
-   * You can use it to set up any custom attribute for label.
-   */
-  labelAttr: PropTypes.object,
 
   /**
    * You can provide set of custom modifications.
