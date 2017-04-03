@@ -47,7 +47,7 @@ generic:
     text-dark: &text-dark "#333"
     text: &text "#666"
     text-light: &text-light "#999"
-    text-lighter: &text-lighter '#998'
+    text-lighter: &text-lighter "#998"
 
     active: &active "#3892e7"
     positive: &positive "#2ca937"
