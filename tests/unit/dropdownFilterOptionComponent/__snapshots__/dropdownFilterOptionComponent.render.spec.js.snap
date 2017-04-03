@@ -7,8 +7,6 @@ exports[`dropdownFilterOptionComponent #render() should render disabled and chec
   <Checkbox
     checked={true}
     disabled={true}
-    inputAttr={Object {}}
-    labelAttr={Object {}}
     name="3"
     onChange={[Function]}
   >
@@ -24,8 +22,6 @@ exports[`dropdownFilterOptionComponent #render() should render filter option 1`]
   <Checkbox
     checked={false}
     disabled={false}
-    inputAttr={Object {}}
-    labelAttr={Object {}}
     name="3"
     onChange={[Function]}
   >
