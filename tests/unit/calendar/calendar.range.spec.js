@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import Calendar from '../../../components/calendar/calendar';
-import { normalizeDate } from '../../../components/_helpers';
+import { leftPad, normalizeDate } from '../../../components/_helpers';
 
 describe('Calendar (range mode)', () => {
   describe('#render()', () => {
@@ -60,26 +60,45 @@ describe('Calendar (range mode)', () => {
         selectedDates: [null, null],
       });
 
-      const expectedStartDate = normalizeDate(new Date('2017-03-25'));
+      const dayBeforeStart = [
+        todayDate.getFullYear(),
+        leftPad(todayDate.getMonth() + 1),
+        '22',
+      ].join('-');
 
-      const startRangeOption = wrapper.find('[data-date="2017-03-25"]');
+      const dayBetweenStartAndEnd = [
+        todayDate.getFullYear(),
+        leftPad(todayDate.getMonth() + 1),
+        '25',
+      ].join('-');
+
+      const expectedStart = [
+        todayDate.getFullYear(),
+        leftPad(todayDate.getMonth() + 1),
+        '23',
+      ].join('-');
+
+      const expectedEnd = [
+        todayDate.getFullYear(),
+        leftPad(todayDate.getMonth() + 1),
+        '27',
+      ].join('-');
+
+      const expectedStartDate = normalizeDate(new Date(expectedStart));
+      const expectedEndDate = normalizeDate(new Date(expectedEnd));
+
+      const startRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       startRangeOption.simulate('click');
       expect(startRangeOption.props().className.includes('ui-calendar-days-option_selected-start')).toEqual(true);
       expect(wrapper.state().minLimit).toEqual(expectedStartDate);
       expect(wrapper.state().selectedDates[0]).toEqual(expectedStartDate);
-      expect(wrapper.find('[data-date="2017-03-24"]').props().disabled).toEqual(true);
-
-      const expectedEndDate = new Date('2017-03-29');
-      expectedEndDate.setHours(0);
-      expectedEndDate.setMinutes(0);
-      expectedEndDate.setSeconds(0);
-      expectedEndDate.setMilliseconds(0);
+      expect(wrapper.find(`[data-date="${dayBeforeStart}"]`).props().disabled).toEqual(true);
 
       // Selects the end date on the 2nd click
-      const endRangeOption = wrapper.find('[data-date="2017-03-29"]');
+      const endRangeOption = wrapper.find(`[data-date="${expectedEnd}"]`);
       endRangeOption.simulate('click');
 
-      const betweenRangeOption = wrapper.find('[data-date="2017-03-28"]');
+      const betweenRangeOption = wrapper.find(`[data-date="${dayBetweenStartAndEnd}"]`);
 
       expect(endRangeOption.props().className.includes('ui-calendar-days-option_selected-end')).toEqual(true);
       expect(wrapper.state().selectedDates[1]).toEqual(expectedEndDate);
@@ -92,20 +111,28 @@ describe('Calendar (range mode)', () => {
     });
 
     it('should render the selection as normal (not range) when start and end date are the same', () => {
-      const expectedEndDate = normalizeDate(new Date('2017-03-25'));
-      const expectedStartDate = normalizeDate(new Date('2017-03-25'));
+      const todayDate = normalizeDate(new Date());
+      const expectedStart = [
+        todayDate.getFullYear(),
+        leftPad(todayDate.getMonth() + 1),
+        '25',
+      ].join('-');
+
+
+      const expectedEndDate = normalizeDate(new Date(expectedStart));
+      const expectedStartDate = normalizeDate(new Date(expectedStart));
       const wrapper = mount(
         <Calendar selectionType="range" />
       );
 
-      const startRangeOption = wrapper.find('[data-date="2017-03-25"]');
+      const startRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       startRangeOption.simulate('click');
       expect(startRangeOption.props().className.includes('ui-calendar-days-option_selected-start')).toEqual(true);
       expect(wrapper.state().minLimit).toEqual(expectedStartDate);
       expect(wrapper.state().selectedDates[0]).toEqual(expectedStartDate);
 
       // Selects the end date on the 2nd click
-      const endRangeOption = wrapper.find('[data-date="2017-03-25"]');
+      const endRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       endRangeOption.simulate('click');
 
       expect(endRangeOption.props().className.includes('ui-calendar-days-option_selected')).toEqual(true);
@@ -114,8 +141,19 @@ describe('Calendar (range mode)', () => {
     });
 
     it('should put the minLimit back to the one passed on props, when resetting it', () => {
-      const expectedEndDate = normalizeDate(new Date('2017-03-25'));
-      const expectedStartDate = normalizeDate(new Date('2017-03-25'));
+      const todayDate = normalizeDate(new Date());
+      const differentDay = [
+        todayDate.getFullYear(),
+        leftPad(todayDate.getMonth() + 1),
+        '26',
+      ].join('-');
+      const expectedStart = [
+        todayDate.getFullYear(),
+        leftPad(todayDate.getMonth() + 1),
+        '25',
+      ].join('-');
+      const expectedEndDate = normalizeDate(new Date(expectedStart));
+      const expectedStartDate = normalizeDate(new Date(expectedStart));
       const minDate = '2017-03-05';
       const expectedInitialMinLimit = normalizeDate(new Date(minDate));
 
@@ -125,14 +163,14 @@ describe('Calendar (range mode)', () => {
 
       expect(wrapper.state().minLimit).toEqual(expectedInitialMinLimit);
 
-      const startRangeOption = wrapper.find('[data-date="2017-03-25"]');
+      const startRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       startRangeOption.simulate('click');
       expect(startRangeOption.props().className.includes('ui-calendar-days-option_selected-start')).toEqual(true);
       expect(wrapper.state().minLimit).toEqual(expectedStartDate);
       expect(wrapper.state().selectedDates[0]).toEqual(expectedStartDate);
 
       // Selects the end date on the 2nd click
-      const endRangeOption = wrapper.find('[data-date="2017-03-25"]');
+      const endRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       endRangeOption.simulate('click');
 
       expect(endRangeOption.props().className.includes('ui-calendar-days-option_selected')).toEqual(true);
@@ -140,7 +178,7 @@ describe('Calendar (range mode)', () => {
       expect(wrapper.state().selectedDates[1]).toEqual(expectedEndDate);
 
       // And resets the dates with the 3rd click
-      wrapper.find('[data-date="2017-03-26"]').simulate('click');
+      wrapper.find(`[data-date="${differentDay}"]`).simulate('click');
       expect(wrapper.state().minLimit).toEqual(expectedInitialMinLimit);
       expect(wrapper.state().selectedDates).toEqual([null, null]);
     });
