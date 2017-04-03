@@ -44,16 +44,10 @@ generic:
     secondary-light: &secondary-light     "#FFD05E"
     secondary-lighter: &secondary-lighter "#FFD97C"
 
-<<<<<<< HEAD
-    text-dark: &text-dark '#333'
-    text: &text '#666'
-    text-light: &text-light '#999'
-    text-lighter: &text-lighter '#998'
-=======
     text-dark: &text-dark "#333"
     text: &text "#666"
     text-light: &text-light "#999"
->>>>>>> master
+    text-lighter: &text-lighter '#998'
 
     active: &active "#3892e7"
     positive: &positive "#2ca937"
@@ -176,20 +170,29 @@ checkbox:
       color: *text-lighter
       border-color: *secondary
 collapse:
-<<<<<<< HEAD
-   item:
-     label:
-       color: *text-dark
-       background:
-         color: *blank
-       active:
-         color: *active
-     content:
-       color: *text
-       background:
-         color: *secondary-light
-         border-bottom:
-           color: *secondary
+  item:
+    label:
+      color: *text-dark
+      background:
+        color: *blank
+      active:
+        color: *active
+      icon:
+        color: *secondary-darker
+        active:
+          color: *active
+      border-bottom:
+        width: *separator-width
+        style: *separator-style
+        color: *secondary-darker
+    content:
+      color: *text
+      background:
+        color: *secondary-light
+        border-bottom:
+          color: *secondary-darker
+      border:
+        radius: *border-radius
 dropdown:
   input:
     background-color: *blank
@@ -239,31 +242,6 @@ dropdown-filter-option:
     background-color: *active
     checkbox:
       color: *blank
-=======
-  item:
-    label:
-      color: *text-dark
-      background:
-        color: *blank
-      active:
-        color: *active
-      icon:
-        color: *secondary-darker
-        active:
-          color: *active
-      border-bottom:
-        width: *separator-width
-        style: *separator-style
-        color: *secondary-darker
-    content:
-      color: *text
-      background:
-        color: *secondary-light
-        border-bottom:
-          color: *secondary-darker
-      border:
-        radius: *border-radius
->>>>>>> master
 list:
   bullets:
     color: *active
