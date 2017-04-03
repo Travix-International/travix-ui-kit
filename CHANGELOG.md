@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.4.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.0) (2017-04-03)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.6...v0.4.0)
+
+**Merged pull requests:**
+
+- Removes dependencies related to current date on Calendar's unit tests [\#60](https://github.com/Travix-International/travix-ui-kit/pull/60) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Added ability to merge yaml files and override default theme [\#55](https://github.com/Travix-International/travix-ui-kit/pull/55) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+
 ## [v0.3.6](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.6) (2017-03-28)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.5...v0.3.6)
 

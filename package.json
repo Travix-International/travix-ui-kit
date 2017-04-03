@@ -1,12 +1,12 @@
 {
   "name": "travix-ui-kit",
-  "version": "0.3.6",
+  "version": "0.4.0",
   "description": "Travix UI kit",
   "main": "lib/index.js",
   "scripts": {
     "prebuild": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md &",
-    "build": "node ./builder",
-    "build:watch": "node ./builder -w",
+    "build": "node ./builder/program",
+    "build:watch": "node ./builder/program -w",
     "prebuild:watch": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md -w &",
     "styleguide-server": "styleguidist server",
     "styleguide-build": "styleguidist build",
@@ -18,7 +18,7 @@
     "transpile": "npm run build"
   },
   "bin": {
-    "travix-ui-kit": "./builder/index.js"
+    "travix-ui-kit": "./builder/program.js"
   },
   "repository": {
     "type": "git",
@@ -67,7 +67,7 @@
     "react-select": "^1.0.0-rc.3",
     "sass-loader": "^4.0.1",
     "style-loader": "^0.13.1",
-    "theme-builder": "^0.3.1",
+    "theme-builder": "^0.4.0",
     "webpack": "^1.13.0"
   },
   "devDependencies": {
