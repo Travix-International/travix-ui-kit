@@ -2,6 +2,7 @@ const fs = require('fs');
 
 /**
  * @module saveThemeScssFile
+ * @param {String} file output file
  * @param {String} themeScss SCSS content to be stored as themes/theme.scss
  * @return {Promise}
  */
