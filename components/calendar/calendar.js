@@ -64,11 +64,10 @@ function processProps(props) {
   }
 
   /** If the renderDate is not between any of the minLimit and/or maxDate, we need to redefine it. */
-  if (
-    (minLimit && (renderDate.getMonth() < minLimit.getMonth())) ||
-    (maxLimit && (renderDate.getMonth() > maxLimit.getMonth()))
-  ) {
+  if (minLimit && (renderDate.getMonth() < minLimit.getMonth())) {
     renderDate.setMonth(minLimit.getMonth());
+  } else if (maxLimit && (renderDate.getMonth() > maxLimit.getMonth())) {
+    renderDate.setMonth(maxLimit.getMonth());
   }
 
   return {

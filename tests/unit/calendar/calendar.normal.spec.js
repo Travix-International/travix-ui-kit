@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import Calendar from '../../../components/calendar/calendar';
 import CalendarWrapper from './calendarWrapper.mock';
-import { normalizeDate } from '../../../components/_helpers';
+import { leftPad, normalizeDate } from '../../../components/_helpers';
 
 describe('Calendar (normal mode)', () => {
   describe('#render()', () => {
@@ -45,8 +45,16 @@ describe('Calendar (normal mode)', () => {
 
     it('should set maxLimit, with a given "maxDate" attribute', () => {
       const maxDate = '2017-03-20';
-      const todayDate = normalizeDate(new Date());
       const maxDateObject = normalizeDate(new Date(maxDate), 23, 59, 59, 999);
+
+      const todayDate = new Date();
+      const renderDateYYYYMMDD = [
+        maxDateObject.getFullYear(),
+        leftPad(maxDateObject.getMonth() + 1),
+        leftPad(todayDate.getDate()),
+      ].join('-');
+
+      const renderDate = normalizeDate(new Date(renderDateYYYYMMDD));
 
       const wrapper = mount(
         <Calendar maxDate={maxDate} />
@@ -59,7 +67,7 @@ describe('Calendar (normal mode)', () => {
       expect(wrapper.state()).toEqual({
         maxLimit: maxDateObject,
         minLimit: null,
-        renderDate: todayDate,
+        renderDate,
         selectedDates: [null, null],
       });
     });
@@ -86,17 +94,18 @@ describe('Calendar (normal mode)', () => {
     });
 
     it('should reset selectedDates, when at least one of the initialDates are outside min/max limit', () => {
-      const initialDates = ['2017-03-23', '2017-03-29'];
-      const initialDatesObjects = initialDates.map(dateStr => normalizeDate(new Date(dateStr)));
+      const initialDates = ['2017-02-23', '2017-03-29'];
       const maxDate = '2017-03-25';
       const maxDateObject = normalizeDate(new Date(maxDate), 23, 59, 59, 999);
       const minDate = '2017-03-20';
       const minDateObject = normalizeDate(new Date(minDate));
 
-
       const wrapper = mount(
         <Calendar initialDates={initialDates} maxDate={maxDate} minDate={minDate} />
       );
+
+      const expectedRenderDate = normalizeDate(new Date(initialDates[0]));
+      expectedRenderDate.setMonth(minDateObject.getMonth());
 
       expect(wrapper.props()).toEqual({
         initialDates,
@@ -107,7 +116,28 @@ describe('Calendar (normal mode)', () => {
       expect(wrapper.state()).toEqual({
         maxLimit: maxDateObject,
         minLimit: minDateObject,
-        renderDate: initialDatesObjects[0],
+        renderDate: expectedRenderDate,
+        selectedDates: [null, null],
+      });
+
+
+      const initialDates2 = ['2017-04-21', '2017-04-24'];
+      const expectedRenderDate2 = normalizeDate(new Date(initialDates2[0]));
+      expectedRenderDate2.setMonth(maxDateObject.getMonth());
+      const wrapper2 = mount(
+        <Calendar initialDates={initialDates2} maxDate={maxDate} minDate={minDate} />
+      );
+
+      expect(wrapper2.props()).toEqual({
+        initialDates: initialDates2,
+        maxDate,
+        minDate,
+        selectionType: 'normal',
+      });
+      expect(wrapper2.state()).toEqual({
+        maxLimit: maxDateObject,
+        minLimit: minDateObject,
+        renderDate: expectedRenderDate2,
         selectedDates: [null, null],
       });
     });
