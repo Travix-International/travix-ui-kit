@@ -1,10 +1,15 @@
-jest.mock('../../../builder/getStylesAndSaveTheme', () => jest.fn(() => Promise.resolve()));
-jest.mock('../../../builder/runWebpackAndCopyFilesToFinalDestination', () => jest.fn(() => Promise.resolve()));
-
-const builder = require('../../../builder/builder');
-const getStylesAndSaveTheme = require('../../../builder/getStylesAndSaveTheme');
+const path = require('path');
+const builder = require('../../../builder');
+const saveThemeScssFile = require('../../../builder/saveThemeScssFile');
 const runWebpackAndCopyFilesToFinalDestination = require('../../../builder/runWebpackAndCopyFilesToFinalDestination');
 const webpackConfig = require('../../../builder/webpack.config');
+
+jest.mock('../../../builder/runWebpackAndCopyFilesToFinalDestination', () => jest.fn(() => Promise.resolve()));
+jest.mock('../../../builder/saveThemeScssFile', () => jest.fn());
+jest.mock('theme-builder', () => () => ({
+  watch: (file, cb) => cb(),
+  build: jest.fn(() => Promise.resolve('theme-builder-result')),
+}));
 
 describe('Builder › builder.js', () => {
   it('should call the dependencies\' functions with the proper args', () => {
@@ -21,10 +26,9 @@ describe('Builder › builder.js', () => {
     expect(result).toBeInstanceOf(Promise);
 
     return result.then(() => {
-      expect(getStylesAndSaveTheme).toHaveBeenCalled();
-      expect(getStylesAndSaveTheme).toHaveBeenCalledWith(args.themeFile, args.watch);
+      const outputPath = path.join(__dirname, '../../../themes/theme.scss');
+      expect(saveThemeScssFile).toHaveBeenCalledWith(outputPath, 'theme-builder-result');
 
-      expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalled();
       expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
         cssDir: args.cssDir,
         jsDir: args.jsDir,
@@ -40,8 +44,6 @@ describe('Builder › builder.js', () => {
       cssDir: 'myCssDir',
       environment: 'myOwnEnv',
       jsDir: 'myJsDir',
-      themeFile: 'myThemeFile',
-      watch: true,
     };
 
     const result = builder(args);
@@ -49,10 +51,6 @@ describe('Builder › builder.js', () => {
     expect(result).toBeInstanceOf(Promise);
 
     return result.then(() => {
-      expect(getStylesAndSaveTheme).toHaveBeenCalled();
-      expect(getStylesAndSaveTheme).toHaveBeenCalledWith(args.themeFile, args.watch);
-
-      expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalled();
       expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
         cssDir: args.cssDir,
         jsDir: args.jsDir,
@@ -69,6 +67,7 @@ describe('Builder › builder.js', () => {
       jsDir: 'myJsDir',
       themeFile: 'myThemeFile',
       watch: true,
+      output: '/output/path/to/file.scss',
     };
 
     const result = builder(args);
@@ -76,10 +75,8 @@ describe('Builder › builder.js', () => {
     expect(result).toBeInstanceOf(Promise);
 
     return result.then(() => {
-      expect(getStylesAndSaveTheme).toHaveBeenCalled();
-      expect(getStylesAndSaveTheme).toHaveBeenCalledWith(args.themeFile, args.watch);
+      expect(saveThemeScssFile).toHaveBeenCalledWith(args.output, 'theme-builder-result');
 
-      expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalled();
       expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
         cssDir: args.cssDir,
         jsDir: args.jsDir,
