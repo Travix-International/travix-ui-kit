@@ -1,8 +1,6 @@
 // Imports
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
-
-const { PropTypes } = React;
 
 /**
  * Adds the thousands separator to a given value.
@@ -19,12 +17,7 @@ export function addThousandsSeparator(value, thousandsSeparator) {
     return value;
   }
 
-  return value
-    .split('')
-    .reverse()
-    .reduce((ret, digit, idx) => ret.concat([((idx > 0) && ((idx % 3) === 0) ? thousandsSeparator : ''), digit]), [])
-    .reverse()
-    .join('');
+  return value.replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator);
 }
 
 /**
@@ -66,10 +59,17 @@ function Price({
 
   const className = getClassNamesWithMods(rootClass, mods);
 
-  const decimalsMarkup = showDecimals ? (<div className={`${rootClass}__decimals`}>{
-    decimalsSeparator + ensureDecimalPrecision(decValue, decimalsPrecision)
-  }</div>) : null;
-  const underlineMarkup = underlined ? <div className={`${rootClass}__underline`}/> : null;
+  const decimalsMarkup = showDecimals
+    ? (
+      <div className={`${rootClass}__decimals`}>
+        {decimalsSeparator + ensureDecimalPrecision(decValue, decimalsPrecision)}
+      </div>
+      )
+    : null;
+
+  const underlineMarkup = underlined
+    ? <div className={`${rootClass}__underline`}/>
+    : null;
 
   return (
     <div className={className} {...getDataAttributes(dataAttrs)}>

@@ -21,7 +21,6 @@ exports[`Collapse: render should render collapse component items and first item 
 <div
   activeKey="сid1"
   className="ui-collapse ui-collapse_accordion"
-  name="test-collapse"
 >
   <CollapseItem
     id="сid1"
@@ -63,6 +62,96 @@ exports[`Collapse: render should render collapse component items with custom id 
   <CollapseItem
     id="сid2"
     isActive={false}
+    onClick={[Function]}
+    title="Collapse Item 2"
+  >
+    <p>
+      Collapse content 2
+    </p>
+  </CollapseItem>
+</div>
+`;
+
+exports[`Collapse: render should render collapse component with expanded item based on props when "defaultActiveKey" is provided 1`] = `
+<div
+  activeKey="сid1"
+  className="ui-collapse ui-collapse_accordion"
+  defaultActiveKey="сid2"
+>
+  <CollapseItem
+    id="сid1"
+    isActive={true}
+    onClick={[Function]}
+    title="Collapse Item 1"
+  >
+    <p>
+      Collapse content 1
+    </p>
+  </CollapseItem>
+  <CollapseItem
+    id="сid2"
+    isActive={false}
+    onClick={[Function]}
+    title="Collapse Item 2"
+  >
+    <p>
+      Collapse content 2
+    </p>
+  </CollapseItem>
+</div>
+`;
+
+exports[`Collapse: render should render collapse component with expanded item by default 1`] = `
+<div
+  className="ui-collapse ui-collapse_accordion"
+  defaultActiveKey="сid2"
+>
+  <CollapseItem
+    id="сid1"
+    isActive={false}
+    onClick={[Function]}
+    title="Collapse Item 1"
+  >
+    <p>
+      Collapse content 1
+    </p>
+  </CollapseItem>
+  <CollapseItem
+    id="сid2"
+    isActive={true}
+    onClick={[Function]}
+    title="Collapse Item 2"
+  >
+    <p>
+      Collapse content 2
+    </p>
+  </CollapseItem>
+</div>
+`;
+
+exports[`Collapse: render should render collapse component with expanded items based on "defaultActiveKey" 1`] = `
+<div
+  className="ui-collapse"
+  defaultActiveKey={
+    Array [
+      "сid1",
+      "сid2",
+    ]
+  }
+>
+  <CollapseItem
+    id="сid1"
+    isActive={true}
+    onClick={[Function]}
+    title="Collapse Item 1"
+  >
+    <p>
+      Collapse content 1
+    </p>
+  </CollapseItem>
+  <CollapseItem
+    id="сid2"
+    isActive={true}
     onClick={[Function]}
     title="Collapse Item 2"
   >

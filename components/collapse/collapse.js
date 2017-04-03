@@ -8,7 +8,13 @@ import React, {
 import { getClassNamesWithMods } from '../_helpers';
 import CollapseItem from './collapseItem';
 
-const getNormalizedActiveKey = ({ activeKey = [] }) => {
+const getNormalizedActiveKey = ({ defaultActiveKey, activeKey }) => {
+  if (activeKey === undefined && defaultActiveKey) {
+    return getNormalizedActiveKey({ activeKey: defaultActiveKey });
+  }
+  if (!activeKey) {
+    activeKey = [];
+  }
   return activeKey instanceof Array ? activeKey : [activeKey];
 };
 
@@ -117,6 +123,13 @@ Collapse.propTypes = {
    * The list of CollapseItem components
    */
   children: PropTypes.node,
+  /**
+   * Determine whether item is expanded by default
+   */
+  defaultActiveKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
   /**
    * Specify a function that will be called when a user click on CollapseItem
    */

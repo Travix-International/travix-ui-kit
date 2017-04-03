@@ -12,7 +12,6 @@ describe('Calendar (range mode)', () => {
         <Calendar selectionType="range" />
       );
 
-      expect(wrapper).toMatchSnapshot();
       expect(wrapper.props()).toEqual({
         selectionType: 'range',
       });
@@ -32,7 +31,6 @@ describe('Calendar (range mode)', () => {
         <Calendar initialDates={[initialDate]} selectionType="range" />
       );
 
-      expect(wrapper).toMatchSnapshot();
       expect(wrapper.props()).toEqual({
         initialDates: [initialDate],
         selectionType: 'range',
@@ -52,7 +50,6 @@ describe('Calendar (range mode)', () => {
         <Calendar selectionType="range" />
       );
 
-      expect(wrapper).toMatchSnapshot();
       expect(wrapper.props()).toEqual({
         selectionType: 'range',
       });

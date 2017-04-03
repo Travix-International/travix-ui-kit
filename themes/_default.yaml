@@ -1,69 +1,80 @@
 generic:
+  border:
+    radius: &border-radius 8px
   font:
     primary:
       weight:
-        regular: '400'
-        medium: '500'
-        semibold: '600'
-        bold: '700'
-      font-family: 'Lato'
-      generic-family: 'sans-serif'
+        regular: "400"
+        medium: "500"
+        semibold: "600"
+        bold: "700"
+      font-family: "Lato"
+      generic-family: "sans-serif"
     secondary:
       variants:
-        regular: '400'
-        bold: '700'
-      font-family: 'Roboto'
-      generic-family: 'sans-serif'
+        regular: "400"
+        bold: "700"
+      font-family: "Roboto"
+      generic-family: "sans-serif"
     alternative:
       variants:
-        regular: '400'
-      font-family: 'Handlee'
-      generic-family: 'cursive'
+        regular: "400"
+      font-family: "Handlee"
+      generic-family: "cursive"
   color:
-    accent-darker: &accent-darker   '#0B4848'
-    accent-dark: &accent-dark       '#177D7D'
-    accent: &accent                 '#2A9595'
-    accent-border: &accent-border   '#E6BB00'
-    accent-bottom: &accent-bottom   '#FFD05E'
-    accent-light: &accent-light     '#46BCBC'
-    accent-lighter: &accent-lighter '#6EE1E1'
-    accent-top: &accent-top         '#FFD97C'
+    accent-darker: &accent-darker   "#0B4848"
+    accent-dark: &accent-dark       "#177D7D"
+    accent: &accent                 "#2A9595"
+    accent-border: &accent-border   "#E6BB00"
+    accent-bottom: &accent-bottom   "#FFD05E"
+    accent-light: &accent-light     "#46BCBC"
+    accent-lighter: &accent-lighter "#6EE1E1"
+    accent-top: &accent-top         "#FFD97C"
 
-    primary-darker: &primary-darker   '#162052'
-    primary-dark: &primary-dark       '#283A8E'
-    primary: &primary                 '#3F52A9'
-    primary-light: &primary-light     '#7F92E7'
-    primary-lighter: &primary-lighter '#5B6ECA'
+    primary-darker: &primary-darker   "#162052"
+    primary-dark: &primary-dark       "#283A8E"
+    primary: &primary                 "#3F52A9"
+    primary-light: &primary-light     "#7F92E7"
+    primary-lighter: &primary-lighter "#5B6ECA"
 
-    secondary-darkest: &secondary-darkest '#57410f'
-    secondary-darker: &secondary-darker   '#785A13'
-    secondary-dark: &secondary-dark       '#CF9E26'
-    secondary: &secondary                 '#F8C346'
-    secondary-light: &secondary-light     '#FFD05E'
-    secondary-lighter: &secondary-lighter '#FFD97C'
+    secondary-darkest: &secondary-darkest "#57410f"
+    secondary-darker: &secondary-darker   "#785A13"
+    secondary-dark: &secondary-dark       "#CF9E26"
+    secondary: &secondary                 "#F8C346"
+    secondary-light: &secondary-light     "#FFD05E"
+    secondary-lighter: &secondary-lighter "#FFD97C"
 
+<<<<<<< HEAD
     text-dark: &text-dark '#333'
     text: &text '#666'
     text-light: &text-light '#999'
     text-lighter: &text-lighter '#998'
+=======
+    text-dark: &text-dark "#333"
+    text: &text "#666"
+    text-light: &text-light "#999"
+>>>>>>> master
 
-    active: &active '#3892e7'
-    positive: &positive '#2ca937'
-    negative: &negative '#c54229'
-    negative-light: &negative-light '#f0d0c9'
+    active: &active "#3892e7"
+    positive: &positive "#2ca937"
+    negative: &negative "#c54229"
+    negative-light: &negative-light "#f0d0c9"
 
-    shadow: &shadow '#000000'
-    shadow-alt: &shadow-alt '#00196F'
-    blank: &blank '#FFFFFF'
+    shadow: &shadow "#000000"
+    shadow-alt: &shadow-alt "#00196F"
+    blank: &blank "#FFFFFF"
 
-    facebook: &facebook '#45619D'
-    facebook-border: &facebook-border '#324A87'
-    twitter: &twitter '#08ACEE'
-    twitter-border: &twitter-border '#1871C0'
-    google: &google '#B30303'
-    google-border: &google-border '#670E00'
-    mail: &mail '#ec7c1b'
-    mail-border: &mail-border '#cd6612'
+    facebook: &facebook "#45619D"
+    facebook-border: &facebook-border "#324A87"
+    twitter: &twitter "#08ACEE"
+    twitter-border: &twitter-border "#1871C0"
+    google: &google "#B30303"
+    google-border: &google-border "#670E00"
+    mail: &mail "#ec7c1b"
+    mail-border: &mail-border "#cd6612"
+  separator:
+    width: &separator-width 2px
+    style: &separator-style dotted
   size:
     border-radius-small: &border-radius-small 2px
 button:
@@ -94,21 +105,21 @@ calendar:
   height: 300px
   nav:
     background: *primary-lighter
-    border-radius: '5px 5px 0 0'
+    border-radius: "5px 5px 0 0"
     button:
       background-color-end: *accent-bottom
       background-color-start: *accent-top
       border-radius: 50%
       box-shadow-color: *accent-border
       color: *primary-lighter
-      font-weight: '700'
+      font-weight: "700"
       height: 27px
-      margin: '0 5px'
+      margin: "0 5px"
       width: 27px
     height: 41px
     label:
       color: *blank
-      font-weight: '500'
+      font-weight: "500"
   header:
     background-color: *primary-lighter
     height: 32px
@@ -165,6 +176,7 @@ checkbox:
       color: *text-lighter
       border-color: *secondary
 collapse:
+<<<<<<< HEAD
    item:
      label:
        color: *text-dark
@@ -227,25 +239,50 @@ dropdown-filter-option:
     background-color: *active
     checkbox:
       color: *blank
+=======
+  item:
+    label:
+      color: *text-dark
+      background:
+        color: *blank
+      active:
+        color: *active
+      icon:
+        color: *secondary-darker
+        active:
+          color: *active
+      border-bottom:
+        width: *separator-width
+        style: *separator-style
+        color: *secondary-darker
+    content:
+      color: *text
+      background:
+        color: *secondary-light
+        border-bottom:
+          color: *secondary-darker
+      border:
+        radius: *border-radius
+>>>>>>> master
 list:
   bullets:
     color: *active
 modal:
-  z-index: '100'
+  z-index: "100"
   color:
     dark: *primary-dark
     secondary: *secondary
   overlay:
     background:
       color: *primary-dark
-      opacity: '0.65'
+      opacity: "0.65"
   container:
     background:
       color: *blank
     box-shadow:
-      color: 'rgba(0,0,0,.3)'
+      color: "rgba(0,0,0,.3)"
   content:
-    padding-left-right: '24px'
+    padding-left-right: "24px"
   content-devider:
     color: *secondary
   close-button:
@@ -295,5 +332,5 @@ spinner:
   color:
     light: *accent-lighter
     lighter: *accent
-    dark: *primary
+    dark: *active
     darker: *primary-lighter

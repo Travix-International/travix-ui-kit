@@ -22,7 +22,7 @@ function Button({ children, mods = [], size, href, onClick, type, variation, dis
 
   if (type === 'link') {
     if (!href) {
-      console.warn('Missing href');
+      console.warn('Missing href'); // eslint-disable-line no-console
       return <noscript />;
     }
 
@@ -38,7 +38,7 @@ function Button({ children, mods = [], size, href, onClick, type, variation, dis
   }
 
   if (!onClick) {
-    console.warn('Missing onClick');
+    console.warn('Missing onClick'); // eslint-disable-line no-console
     return <noscript />;
   }
 

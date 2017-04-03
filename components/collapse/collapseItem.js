@@ -35,7 +35,8 @@ class CollapseItem extends Component {
           onClick={this.handleItemClick}
           type="button"
         >
-          {title}
+          <span className="ui-collapse__label-icon"/>
+          <span className="ui-collapse__label-text">{title}</span>
         </button>
         <div
           aria-hidden={!isActive}
