@@ -225,6 +225,7 @@ dropdown:
       border-color: *secondary-darker
     select-placeholder:
       color: *text-dark
+      line-height: 28px
     select-menu-outer:
       box-shadow: *shadow
   active:

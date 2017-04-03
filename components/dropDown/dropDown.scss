@@ -141,7 +141,7 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
     color: $tx-dropdown-filter-select-placeholder-color;
     font-size: 13px;
     font-weight: bold;
-    line-height: 28px; // should equal to .Select-control, .Select-input height
+    line-height: $tx-dropdown-filter-select-placeholder-line-height; // should equal to .Select-control, .Select-input height
     padding-left: 10px;
     position: static;
   }
