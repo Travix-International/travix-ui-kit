@@ -82,9 +82,10 @@ class DropDown extends Component {
 
   render() {
     const isFiltermode = this.props.filterMode;
-    const mods = [];
-    isFiltermode && mods.push('filter');
-    isFiltermode && this.props.options.some(option => option.checked) && mods.push('state-active');
+    const mods = {
+      'filter': isFiltermode,
+      'state-active': isFiltermode && this.props.options.some(option => option.checked),
+    };
 
     const className = getClassNamesWithMods('ui-dropdown', mods);
 
@@ -160,7 +161,7 @@ DropDown.propTypes = {
   /**
  * Initial field value
  */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array, PropTypes.object]),
+  value: PropTypes.any,
 };
 
 export default DropDown;

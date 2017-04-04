@@ -37,7 +37,8 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
     padding: 10px 22px;
 
     &:first-child {
-      &:after, &:before {
+      &:after,
+      &:before {
         content: '';
         position: absolute;
       }
