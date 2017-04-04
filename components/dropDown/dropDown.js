@@ -15,7 +15,9 @@ class DropDown extends Component {
     this.menuRenderer = this.menuRenderer.bind(this);
   }
 
-  optionRef = (onOptionRef, isSelected) => ref => onOptionRef(ref, isSelected);
+  static optionRef(onOptionRef, isSelected) {
+    return ref => onOptionRef(ref, isSelected);
+  }
 
   /**
    * Overriding the internal method of react-select for fix autoscrolling
@@ -58,7 +60,7 @@ class DropDown extends Component {
           onSelect={onSelect}
           option={option}
           optionIndex={i}
-          ref={this.optionRef(onOptionRef, isSelected)}
+          ref={DropDown.optionRef(onOptionRef, isSelected)}
         >
           {optionRenderer(option, i)}
         </Option>

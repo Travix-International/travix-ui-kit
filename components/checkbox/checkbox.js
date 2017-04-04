@@ -26,8 +26,9 @@ function Checkbox({
         role="radio"
         type="checkbox"
       />
-      <span className="ui-checkbox__text" />
-      {children}
+      <span className="ui-checkbox__text">
+        {children}
+      </span>
     </label>
   );
 }
@@ -70,7 +71,7 @@ Checkbox.propTypes = {
   /**
    * Represents the callback for onChange event.
    */
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
 };
 
 export default Checkbox;

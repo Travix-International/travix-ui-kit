@@ -208,7 +208,7 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
   &:hover:not(.ui-dropdown-filter__option_is-disabled) {
     background-color: $tx-dropdown-filter-option-hover-and-not-disabled-background-color;
 
-    .ui-checkbox {
+    span.ui-checkbox__text {
       color: $tx-dropdown-filter-option-hover-and-not-disabled-checkbox-color;
     }
   }
