@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.4.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.1) (2017-04-04)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.0...v0.4.1)
+
+**Merged pull requests:**
+
+- Dropdown and Checkbox component [\#49](https://github.com/Travix-International/travix-ui-kit/pull/49) ([AlleeX](https://github.com/AlleeX))
+
 ## [v0.4.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.0) (2017-04-03)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.6...v0.4.0)
 
