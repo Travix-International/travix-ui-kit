@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox #render() should render checkbox 1`] = `
+<label
+  className="ui-checkbox"
+  htmlFor="checkbox"
+>
+  <input
+    aria-checked={false}
+    checked={false}
+    disabled={false}
+    id="checkbox"
+    onChange={[Function]}
+    role="radio"
+    type="checkbox"
+  />
+  <span
+    className="ui-checkbox__text"
+  />
+</label>
+`;
+
+exports[`Checkbox #render() should render checked checkbox 1`] = `
+<label
+  className="ui-checkbox"
+  htmlFor="checked"
+>
+  <input
+    aria-checked={true}
+    checked={true}
+    disabled={false}
+    id="checked"
+    onChange={[Function]}
+    role="radio"
+    type="checkbox"
+  />
+  <span
+    className="ui-checkbox__text"
+  />
+</label>
+`;
+
+exports[`Checkbox #render() should render disabled checkbox 1`] = `
+<label
+  className="ui-checkbox ui-checkbox_is-disabled"
+  htmlFor="disabled"
+>
+  <input
+    aria-checked={false}
+    checked={false}
+    disabled={true}
+    id="disabled"
+    onChange={[Function]}
+    role="radio"
+    type="checkbox"
+  />
+  <span
+    className="ui-checkbox__text"
+  />
+</label>
+`;
