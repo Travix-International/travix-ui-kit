@@ -43,7 +43,7 @@ module.exports = {
   },
 
   postcss: () => {
-    return [autoprefixer('last 2 version')];
+    return [autoprefixer('last 4 version')];
   },
 
   plugins: [

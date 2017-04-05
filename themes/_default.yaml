@@ -170,6 +170,11 @@ checkbox:
       color: *text-lighter
       border-color: *secondary
 collapse:
+  background:
+    color: *blank
+  border:
+    radius: *border-radius
+  padding: "25px"
   item:
     label:
       color: *text-dark
@@ -261,13 +266,17 @@ modal:
     box-shadow:
       color: "rgba(0,0,0,.3)"
   content:
+    background:
+      color: *secondary-lighter
     padding-left-right: "24px"
   content-devider:
-    color: *secondary
+    color: *secondary-darker
   close-button:
     color: *text-dark
     hover:
       color: *active
+    icon:
+      color: *secondary-darker
 price:
   height:
     underline: 6px
