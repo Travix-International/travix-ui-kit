@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.4.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.2) (2017-04-06)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.1...v0.4.2)
+
+**Merged pull requests:**
+
+- Improvements for Modal component [\#61](https://github.com/Travix-International/travix-ui-kit/pull/61) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+
 ## [v0.4.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.1) (2017-04-04)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.0...v0.4.1)
 
