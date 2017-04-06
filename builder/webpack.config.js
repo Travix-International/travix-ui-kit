@@ -43,7 +43,13 @@ module.exports = {
   },
 
   postcss: () => {
-    return [autoprefixer('last 4 version')];
+    return [autoprefixer({
+      browsers: [
+        'last 2 versions',
+        'iOS >= 8',
+        'Safari >= 8',
+      ],
+    })];
   },
 
   plugins: [
