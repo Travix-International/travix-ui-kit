@@ -139,9 +139,10 @@ class Modal extends Component {
   }
 
   render() {
-    const { active, fullscreen, children } = this.props;
+    const { active, fullscreen, children, mods = [] } = this.props;
     const { isOpen } = this.state;
-    const rootMods = [];
+
+    const rootMods = [...mods];
 
     if (active) {
       rootMods.push('active');
@@ -159,6 +160,7 @@ class Modal extends Component {
     }
 
     const className = getClassNamesWithMods('ui-modal', rootMods);
+
     return (
       <Global className={className}>
         {this.renderOverlay()}
@@ -184,6 +186,7 @@ Modal.defaultProps = {
   closeOnOverlayClick: true,
   footer: null,
   fullscreen: false,
+  mods: [],
   onClose: null,
   onOverlayClick: null,
   overlay: true,
@@ -223,6 +226,10 @@ Modal.propTypes = {
    * Determine whether a modal dialog is visible on fullscreen or not
    */
   fullscreen: PropTypes.bool,
+  /**
+   * Set of custom modifications.
+   */
+  mods: PropTypes.arrayOf(PropTypes.string),
   /**
    * Specify a function that will be called when a user clicked on overlay or close button on top right
    */
