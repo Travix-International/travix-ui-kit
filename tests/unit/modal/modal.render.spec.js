@@ -70,6 +70,19 @@ describe('Modal: render', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
+  it('should render modal with custom mods', () => {
+    const wrapper = shallow(
+      <Modal
+        active
+        mods={['my-custom-mod']}
+      >
+        Modal Content
+      </Modal>
+    );
+
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
+  });
+
   it('should render empty modal when status is not active', () => {
     const wrapper = shallow(
       <Modal
