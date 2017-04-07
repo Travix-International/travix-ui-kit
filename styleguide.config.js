@@ -7,16 +7,15 @@ module.exports = {
   getExampleFilename: function(componentPath) {
     return componentPath.replace(/\.jsx?$/, '.md');
   },
-
-  updateWebpackConfig: function(webpackConfig, env) {
-    webpackConfig.module.loaders.push(
-      {
-        test: /\.jsx?$/,
-        include: __dirname + '/components',
-        loader: 'babel'
-      }
-    );
-
-    return webpackConfig;
+  webpackConfig: {
+    module: {
+      loaders: [
+        {
+          test: /\.js?$/,
+          include: __dirname + '/components',
+          loader: 'babel'
+        }
+      ]
+    }
   }
 };
