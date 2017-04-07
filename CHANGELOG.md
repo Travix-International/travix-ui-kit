@@ -1,5 +1,19 @@
 # Change Log
 
+## [v0.4.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.3) (2017-04-07)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.2...v0.4.3)
+
+**Closed issues:**
+
+- Checkbox [\#59](https://github.com/Travix-International/travix-ui-kit/issues/59)
+- Dropdown [\#53](https://github.com/Travix-International/travix-ui-kit/issues/53)
+- Collapse [\#41](https://github.com/Travix-International/travix-ui-kit/issues/41)
+
+**Merged pull requests:**
+
+- Update styleguide.config.js to work with latest minor version of react-styleguidist [\#65](https://github.com/Travix-International/travix-ui-kit/pull/65) ([juliamaksimchik](https://github.com/juliamaksimchik))
+- Add posibility to pass mods through `props` in modal component [\#63](https://github.com/Travix-International/travix-ui-kit/pull/63) ([juliamaksimchik](https://github.com/juliamaksimchik))
+
 ## [v0.4.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.2) (2017-04-06)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.1...v0.4.2)
 
