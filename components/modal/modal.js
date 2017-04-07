@@ -139,13 +139,11 @@ class Modal extends Component {
   }
 
   render() {
-    const { active, fullscreen, children, mods } = this.props;
+    const { active, fullscreen, children, mods = [] } = this.props;
     const { isOpen } = this.state;
 
-    const rootMods = [...mods];
-
     if (active) {
-      rootMods.push('active');
+      mods.push('active');
     }
 
     if (!active && !isOpen) {
@@ -153,13 +151,13 @@ class Modal extends Component {
     }
 
     if (isOpen) {
-      rootMods.push('open');
+      mods.push('open');
     }
     if (fullscreen) {
-      rootMods.push('fullscreen');
+      mods.push('fullscreen');
     }
 
-    const className = getClassNamesWithMods('ui-modal', rootMods);
+    const className = getClassNamesWithMods('ui-modal', mods);
 
     return (
       <Global className={className}>
@@ -186,7 +184,6 @@ Modal.defaultProps = {
   closeOnOverlayClick: true,
   footer: null,
   fullscreen: false,
-  mods: [],
   onClose: null,
   onOverlayClick: null,
   overlay: true,
