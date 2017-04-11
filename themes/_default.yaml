@@ -248,6 +248,13 @@ dropdown-filter-option:
     background-color: *active
     checkbox:
       color: *blank
+input:
+  border-color: *secondary-darker
+  border-radius: "4px"
+  color: *text-dark
+  font-size: "16px"
+  focused:
+    border-color: *active
 list:
   bullets:
     color: *active
