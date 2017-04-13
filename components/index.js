@@ -1,4 +1,5 @@
 import AutoComplete from './autoComplete/autoComplete';
+import AutoCompleteItem from './autoComplete/autoCompleteItem';
 import Button from './button/button';
 import Calendar from './calendar/calendar';
 import Checkbox from './checkbox/checkbox';
@@ -14,6 +15,7 @@ import Spinner from './spinner/spinner';
 
 export default {
   AutoComplete,
+  AutoCompleteItem,
   Button,
   Calendar,
   Checkbox,

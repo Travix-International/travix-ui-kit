@@ -23,7 +23,7 @@ class Input extends Component {
 
   handleInputChange = (e) => {
     if (this.props.onChange) {
-      this.props.onChange(e, e.target.value);
+      this.props.onChange(e);
     }
   };
 
@@ -38,6 +38,24 @@ class Input extends Component {
       this.props.onFocus(e);
     }
   };
+
+  blur() {
+    if (this.input) {
+      this.input.blur();
+    }
+  }
+
+  focus() {
+    if (this.input) {
+      this.input.focus();
+    }
+  }
+
+  select() {
+    if (this.input) {
+      this.input.select();
+    }
+  }
 
   render() {
     const {
@@ -63,6 +81,7 @@ class Input extends Component {
         onBlur={this.handleInputBlur}
         onChange={this.handleInputChange}
         onFocus={this.handleInputFocus}
+        ref={elem => (this.input = elem)}
         value={value}
       />
     );

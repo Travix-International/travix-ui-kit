@@ -1,0 +1,34 @@
+.ui-autocomplete-item {
+  color: #597385;
+  cursor: pointer;
+  padding: 10px 22px;
+
+  &:not(.ui-autocomplete-item_title):hover {
+    background-color: #00B0FF;
+    color: #fff;
+
+    .ui-autocomplete-item_highlight {
+      color: #fff;
+    }
+  }
+}
+
+.ui-autocomplete-item_active {
+  background-color: #00B0FF;
+  color: #fff;
+
+  .ui-autocomplete-item_highlight {
+    color: #fff;
+  }
+}
+
+.ui-autocomplete-item_title {
+  background-color: #BDD8F1;
+  color: #003F7F;
+  cursor: default;
+}
+
+.ui-autocomplete-item_highlight {
+  color: #00B0FF;
+  font-weight: bold;
+}
