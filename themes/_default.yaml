@@ -47,6 +47,7 @@ generic:
     text-dark: &text-dark "#333"
     text: &text "#666"
     text-light: &text-light "#999"
+    text-lighter: &text-lighter "#998"
 
     active: &active "#3892e7"
     positive: &positive "#2ca937"
@@ -152,7 +153,28 @@ calendar:
             border-color: *active
           background-color: *secondary-dark
   width: 300px
+checkbox:
+  text:
+    color: *text-dark
+    background-color: *blank
+    border-color: *secondary
+    hover:
+      color: *active
+    checked:
+      background-color: *active
+      border-color: *active
+    icon:
+      checked:
+        border-color: *secondary
+    disabled:
+      color: *text-lighter
+      border-color: *secondary
 collapse:
+  background:
+    color: *blank
+  border:
+    radius: *border-radius
+  padding: "25px"
   item:
     label:
       color: *text-dark
@@ -176,6 +198,56 @@ collapse:
           color: *secondary-darker
       border:
         radius: *border-radius
+dropdown:
+  input:
+    background-color: *blank
+    border-color: *secondary-darker
+  option:
+    color: *text-dark
+  arrow:
+    color: *primary-lighter
+  select-control:
+    border-color: *active
+  select-menu-outer:
+    box-shadow: *shadow
+  select-arrow-zone:
+    border-color-left: *secondary-darker
+    color: *active
+    hover:
+      color: *active
+  select-option:
+    color: *text
+    hover:
+      background-color: *secondary-light
+    is-selected:
+      background-color: *active
+      color: *blank
+  option-arrow:
+    border-color: *blank
+    border-shadow-color: *shadow
+  filter:
+    select-control:
+      border-color: *secondary-darker
+    select-placeholder:
+      color: *text-dark
+      line-height: 28px
+    select-menu-outer:
+      box-shadow: *shadow
+  active:
+    select-control:
+      background-color: *blank
+      border-color: *active
+dropdown-filter-option:
+  checkbox:
+    color: *text-light
+    hover:
+      color: *text
+    disabled:
+      color: *text-lighter
+  hover-and-not-disabled:
+    background-color: *active
+    checkbox:
+      color: *blank
 list:
   bullets:
     color: *active
@@ -194,13 +266,17 @@ modal:
     box-shadow:
       color: "rgba(0,0,0,.3)"
   content:
+    background:
+      color: *secondary-lighter
     padding-left-right: "24px"
   content-devider:
-    color: *secondary
+    color: *secondary-darker
   close-button:
     color: *text-dark
     hover:
       color: *active
+    icon:
+      color: *secondary-darker
 price:
   height:
     underline: 6px

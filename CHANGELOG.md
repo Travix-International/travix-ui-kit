@@ -1,5 +1,41 @@
 # Change Log
 
+## [v0.4.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.3) (2017-04-07)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.2...v0.4.3)
+
+**Closed issues:**
+
+- Checkbox [\#59](https://github.com/Travix-International/travix-ui-kit/issues/59)
+- Dropdown [\#53](https://github.com/Travix-International/travix-ui-kit/issues/53)
+- Collapse [\#41](https://github.com/Travix-International/travix-ui-kit/issues/41)
+
+**Merged pull requests:**
+
+- Update styleguide.config.js to work with latest minor version of react-styleguidist [\#65](https://github.com/Travix-International/travix-ui-kit/pull/65) ([juliamaksimchik](https://github.com/juliamaksimchik))
+- Add posibility to pass mods through `props` in modal component [\#63](https://github.com/Travix-International/travix-ui-kit/pull/63) ([juliamaksimchik](https://github.com/juliamaksimchik))
+
+## [v0.4.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.2) (2017-04-06)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.1...v0.4.2)
+
+**Merged pull requests:**
+
+- Improvements for Modal component [\#61](https://github.com/Travix-International/travix-ui-kit/pull/61) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+
+## [v0.4.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.1) (2017-04-04)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.0...v0.4.1)
+
+**Merged pull requests:**
+
+- Dropdown and Checkbox component [\#49](https://github.com/Travix-International/travix-ui-kit/pull/49) ([AlleeX](https://github.com/AlleeX))
+
+## [v0.4.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.0) (2017-04-03)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.6...v0.4.0)
+
+**Merged pull requests:**
+
+- Removes dependencies related to current date on Calendar's unit tests [\#60](https://github.com/Travix-International/travix-ui-kit/pull/60) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Added ability to merge yaml files and override default theme [\#55](https://github.com/Travix-International/travix-ui-kit/pull/55) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+
 ## [v0.3.6](https://github.com/Travix-International/travix-ui-kit/tree/v0.3.6) (2017-03-28)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.3.5...v0.3.6)
 
