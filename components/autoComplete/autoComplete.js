@@ -10,13 +10,6 @@ import Input from '../input/input';
 import AutoCompleteItem from './autoCompleteItem';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
-const getItemsKeys = (data) => {
-  return data
-          .map((item, index) => ({ index, title: item.title }))
-          .filter(i => !i.title)
-          .map(i => i.index);
-};
-
 const getActiveKey = (keys, key, mode) => {
   if (mode === 'NEXT') {
     return keys[keys.indexOf(key) + 1] || key;
@@ -37,22 +30,15 @@ class AutoComplete extends Component {
   constructor(props) {
     super(props);
 
-    const keys = getItemsKeys(props.source);
+    this.source = [];
+    this.keys = [];
+    this.initActiveKey = undefined;
 
     this.state = {
       inputValue: props.initialValue,
       open: false,
-      keys,
-      activeKey: getActiveKey(keys),
+      activeKey: undefined,
     };
-  }
-
-  componentWillReceiveProps(newProps) {
-    const keys = getItemsKeys(newProps.source);
-    this.setState({
-      activeKey: getActiveKey(keys),
-      keys,
-    });
   }
 
   handleInputChange = (e) => {
@@ -63,6 +49,7 @@ class AutoComplete extends Component {
     this.setState({
       inputValue: value,
       open: true,
+      activeKey: undefined,
     });
   }
 
@@ -86,7 +73,7 @@ class AutoComplete extends Component {
         break;
       case 'esc':
       case 'enter':
-        this.applyAktiveKey(e);
+        this.applyAktiveKey(e, code);
         break;
       default:
         break;
@@ -101,11 +88,12 @@ class AutoComplete extends Component {
     e.stopPropagation();
 
     this.setState({
-      activeKey: index,
+      activeKey: 0,
       inputValue: item.value,
       open: false,
     }, () => {
       this.props.onChange(item);
+      this.props.onInputUpdate(item.value);
       this.blurInput();
     });
   }
@@ -122,9 +110,15 @@ class AutoComplete extends Component {
 
   handleInputFocus = (e) => {
     this.selectInput();
+
+    const activeKey = this.state.activeKey !== undefined
+      ? this.state.activeKey
+      : getActiveKey(this.keys);
+
     if (!this.state.open) {
       this.setState({
         open: true,
+        activeKey,
       });
     }
 
@@ -153,27 +147,45 @@ class AutoComplete extends Component {
 
   focusItem(e, mode) {
     e.preventDefault();
+
+    const activeKey = this.state.activeKey || this.initActiveKey;
     this.setState({
       open: true,
-      activeKey: getActiveKey(this.state.keys, this.state.activeKey, mode)
+      activeKey: getActiveKey(this.keys, activeKey, mode),
     });
   }
 
-  applyAktiveKey(e) {
+  applyAktiveKey(e, code) {
     e.preventDefault();
 
-    const item = this.props.source && this.props.source[this.state.activeKey];
+    const activeKey = this.state.activeKey || this.initActiveKey;
+    const item = this.source[activeKey];
 
-    if (!item) {
-      this.setState({ inputValue: undefined });
+    // if (item.value === this.state.submitedValue) {
+    //   this.close();
+    //   this.blurInput();
+    //   return;
+    // }
+
+    if (!item || (!this.state.inputValue && code !== 'enter')) {
+      this.setState({
+        inputValue: undefined,
+      }, () => {
+        this.props.onInputUpdate(undefined);
+        this.close();
+        this.blurInput();
+      });
       return;
     }
 
     this.setState({
+      activeKey: 0,
       inputValue: item.value,
+      submitedValue: item.value,
       open: false,
     }, () => {
       this.props.onChange(item);
+      this.props.onInputUpdate(item.value);
       this.blurInput();
     });
   }
@@ -189,13 +201,8 @@ class AutoComplete extends Component {
   }
 
   getValue() {
-    const key = this.state.activeKey;
-    const itemData = this.props.source[key];
-    console.log(itemData);
-    if (!itemData) {
-      return '';
-    }
-    return itemData.code ? itemData.code : itemData.value;
+    const itemData = this.source[this.state.activeKey];
+    return itemData && this.state.inputValue ? itemData.value : '';
   }
 
   highlightItem(str) {
@@ -209,7 +216,10 @@ class AutoComplete extends Component {
   }
 
   renderItems() {
-    const { children, source, highlight } = this.props;
+    const { children, highlight } = this.props;
+    this.source = [];
+    this.keys = [];
+    this.initActiveKey = undefined;
 
     return (
       Children.map(children, (child, index) => {
@@ -217,11 +227,18 @@ class AutoComplete extends Component {
           return null;
         }
 
+        /* Init items source list and keys data */
+        this.source.push(child.props.source);
+        !child.props.isTitle && this.keys.push(index);
+        if (!child.props.isTitle && this.initActiveKey === undefined) {
+          this.initActiveKey = index;
+        }
+
         const key = child.props.id || child.key || `ui-autocomplete-item.${index}`;
-        const isActive = index === this.state.activeKey;
+        const isActive = index === (this.state.activeKey || this.initActiveKey);
         let childrenNode = child.props.children;
 
-        if (child.props.children === source[index].value && highlight && !child.props.isTitle) {
+        if (highlight && !child.props.isTitle) {
           childrenNode = this.highlightItem(child.props.children);
         }
 
@@ -240,6 +257,7 @@ class AutoComplete extends Component {
   render() {
     const {
       dataAttrs = {},
+      disabled,
       mods = [],
       name,
       ...otherProps
@@ -255,6 +273,7 @@ class AutoComplete extends Component {
         className={className}
       >
         <Input
+          disabled={disabled}
           onBlur={this.handleInputBlur}
           onChange={this.handleInputChange}
           onFocus={this.handleInputFocus}

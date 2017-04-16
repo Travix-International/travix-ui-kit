@@ -78,16 +78,25 @@ Basic autoComplete:
             })
           }}
           highlight
-          name="a0"
-          source={state.options}>
+          name="a0">
           {state.options.map((item, key) =>
             <AutoCompleteItem
               isTitle={!!item.title}
               source={item}
+              value={item.value}
+              code={item.code}
               key={key}>
               {item.value}
             </AutoCompleteItem>
           )}
         </AutoComplete>
+      </div>
+    </div>
+
+Disabled autoComplete:
+
+    <div>
+      <div style={{ width: '50%' }}>
+        <AutoComplete name="a1" disabled />
       </div>
     </div>
