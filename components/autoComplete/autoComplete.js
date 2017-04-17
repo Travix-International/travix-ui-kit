@@ -4,10 +4,10 @@ import React, {
   cloneElement,
   PropTypes,
 } from 'react';
-import keycode from 'keycode';
 
-import Input from '../input/input';
 import AutoCompleteItem from './autoCompleteItem';
+import Input from '../input/input';
+import KEY_CODE from '../constants/keyCode';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 const getActiveKey = (keys, key, mode) => {
@@ -30,12 +30,12 @@ class AutoComplete extends Component {
   constructor(props) {
     super(props);
 
-    this.source = [];
     this.keys = [];
+    this.items = [];
     this.initActiveKey = undefined;
 
     this.state = {
-      inputValue: props.initialValue,
+      inputValue: props.initialValue && props.initialValue.value,
       open: false,
       activeKey: undefined,
     };
@@ -44,8 +44,8 @@ class AutoComplete extends Component {
   handleInputChange = (e) => {
     e.stopPropagation();
     const value = e.target.value;
+    this.inputUpdate(value);
 
-    this.props.onInputUpdate(value);
     this.setState({
       inputValue: value,
       open: true,
@@ -58,21 +58,21 @@ class AutoComplete extends Component {
       this.props.onKeyDown(e);
     }
 
-    const code = keycode(e);
+    const code = e.keyCode;
 
-    if (['down', 'up', 'esc', 'enter'].indexOf(code) === -1) {
+    if ([KEY_CODE.DOWN, KEY_CODE.UP, KEY_CODE.ESC, KEY_CODE.ENTER].indexOf(code) === -1) {
       return;
     }
 
     switch (code) {
-      case 'down':
+      case KEY_CODE.DOWN:
         this.focusItem(e, 'NEXT');
         break;
-      case 'up':
+      case KEY_CODE.UP:
         this.focusItem(e, 'PREV');
         break;
-      case 'esc':
-      case 'enter':
+      case KEY_CODE.ESC:
+      case KEY_CODE.ENTER:
         this.applyAktiveKey(e, code);
         break;
       default:
@@ -84,18 +84,30 @@ class AutoComplete extends Component {
     e.preventDefault();
   };
 
-  handleItemClick = (e, item, index) => {
+  handleItemClick = (e, data) => {
     e.stopPropagation();
 
     this.setState({
       activeKey: 0,
-      inputValue: item.value,
+      inputValue: data.value,
       open: false,
     }, () => {
-      this.props.onChange(item);
-      this.props.onInputUpdate(item.value);
+      this.change(data);
+      this.inputUpdate(data.value);
       this.blurInput();
     });
+  }
+
+  change(data) {
+    if (this.props.onChange) {
+      this.props.onChange(data);
+    }
+  }
+
+  inputUpdate(data) {
+    if (this.props.onInputUpdate) {
+      this.props.onInputUpdate(data);
+    }
   }
 
   handleInputBlur = (e) => {
@@ -159,19 +171,13 @@ class AutoComplete extends Component {
     e.preventDefault();
 
     const activeKey = this.state.activeKey || this.initActiveKey;
-    const item = this.source[activeKey];
+    const item = this.items[activeKey].getValue();
 
-    // if (item.value === this.state.submitedValue) {
-    //   this.close();
-    //   this.blurInput();
-    //   return;
-    // }
-
-    if (!item || (!this.state.inputValue && code !== 'enter')) {
+    if (!item || (!this.state.inputValue && code !== KEY_CODE.ENTER)) {
       this.setState({
         inputValue: undefined,
       }, () => {
-        this.props.onInputUpdate(undefined);
+        this.inputUpdate(undefined);
         this.close();
         this.blurInput();
       });
@@ -184,8 +190,8 @@ class AutoComplete extends Component {
       submitedValue: item.value,
       open: false,
     }, () => {
-      this.props.onChange(item);
-      this.props.onInputUpdate(item.value);
+      this.change(item);
+      this.inputUpdate(item.value);
       this.blurInput();
     });
   }
@@ -201,15 +207,24 @@ class AutoComplete extends Component {
   }
 
   getValue() {
-    const itemData = this.source[this.state.activeKey];
-    return itemData && this.state.inputValue ? itemData.value : '';
+    const itemData = (this.items.length
+      && this.state.activeKey && this.items[this.state.activeKey].getValue())
+      || this.props.initialValue;
+
+    let value = '';
+    if (itemData && this.state.inputValue) {
+      value = itemData.code !== undefined ? itemData.code : itemData.value;
+    }
+    return value;
   }
 
   highlightItem(str) {
-    if (!this.state.inputValue) return str;
+    if (!this.state.inputValue) {
+      return str;
+    }
     const value = this.state.inputValue;
     const descriptionRule = new RegExp(`(${value})`, 'i');
-    const highlighted = str.replace(descriptionRule, '<span class="ui-autocomplete-item_highlight">$1</span>')
+    const highlighted = str.replace(descriptionRule, '<span class="ui-autocomplete-item_highlight">$1</span>');
     return (
       <div dangerouslySetInnerHTML={{ __html: highlighted }}/>
     );
@@ -217,7 +232,7 @@ class AutoComplete extends Component {
 
   renderItems() {
     const { children, highlight } = this.props;
-    this.source = [];
+    this.items = [];
     this.keys = [];
     this.initActiveKey = undefined;
 
@@ -227,8 +242,7 @@ class AutoComplete extends Component {
           return null;
         }
 
-        /* Init items source list and keys data */
-        this.source.push(child.props.source);
+        /* Init keys */
         !child.props.isTitle && this.keys.push(index);
         if (!child.props.isTitle && this.initActiveKey === undefined) {
           this.initActiveKey = index;
@@ -243,12 +257,13 @@ class AutoComplete extends Component {
         }
 
         return cloneElement(child, {
+          children: childrenNode,
           id: key,
           index,
           isActive,
           onClick: this.handleItemClick,
           onMouseDown: this.handleItemMouseDown,
-          children: childrenNode,
+          ref: elem => (this.items[index] = elem),
         });
       })
     );
@@ -260,6 +275,7 @@ class AutoComplete extends Component {
       disabled,
       mods = [],
       name,
+      placeholder,
       ...otherProps
     } = this.props;
 
@@ -278,6 +294,7 @@ class AutoComplete extends Component {
           onChange={this.handleInputChange}
           onFocus={this.handleInputFocus}
           onKeyDown={this.handleInputKeyDown}
+          placeholder={placeholder}
           ref={elem => (this.input = elem)}
           value={this.state.inputValue}
         />
@@ -295,5 +312,31 @@ class AutoComplete extends Component {
     );
   }
 }
+
+AutoComplete.propTypes = {
+  children: PropTypes.node,
+  dataAttrs: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
+  ]),
+  disabled: PropTypes.bool,
+  initialValue: PropTypes.shape({
+    value: PropTypes.any,
+    code: PropTypes.any,
+  }),
+  highlight: PropTypes.bool,
+  /**
+   * Set of custom modifications.
+   */
+  mods: PropTypes.arrayOf(PropTypes.string),
+  name: PropTypes.string,
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  onClose: PropTypes.func,
+  onFocus: PropTypes.func,
+  onInputUpdate: PropTypes.func,
+  onKeyDown: PropTypes.func,
+  placeholder: PropTypes.string,
+};
 
 export default AutoComplete;

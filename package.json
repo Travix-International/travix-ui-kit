@@ -60,7 +60,6 @@
     "commander": "^2.9.0",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "keycode": "^2.1.8",
     "node-sass": "^4.3.0",
     "postcss-loader": "^1.2.2",
     "react": "^0.14.8",
