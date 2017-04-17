@@ -45,6 +45,9 @@ class AutoCompleteItem extends Component {
         {...otherProps}
         className={className}
         onClick={!isTitle && this.handleItemClick}
+        role="listitem"
+        role="option"
+        tabIndex="-1"
       >
         {children}
       </li>

@@ -1,6 +1,9 @@
 Basic autoComplete:
 
-    initialState = {options: [{
+    initialState = {
+    disable: false,
+    highlight: true,
+    options: [{
       value: "Fruits",
       title: true
     }, {
@@ -64,6 +67,14 @@ Basic autoComplete:
 
     <div>
       <div style={{ width: '50%' }}>
+        <Button size="xs" onClick={() => setState({ disable: !state.disable })}>
+          {state.disable ? '✅' : ''} disable
+        </Button>
+        <i> </i>
+        <Button size="xs" onClick={() => setState({ highlight: !state.highlight })}>
+          {state.highlight ? '✅' : ''} highlight
+        </Button>
+        <br/><br/>
         <AutoComplete
           onChange={(data) => {
             console.log('OUTPUT', data);
@@ -77,7 +88,8 @@ Basic autoComplete:
               options: newOpts,
             })
           }}
-          highlight
+          highlight={state.highlight}
+          disabled={state.disable}
           placeholder="autocomplete 1"
           name="a0">
           {state.options.map((item, key) =>
@@ -125,13 +137,5 @@ Preselected autoComplete:
             </AutoCompleteItem>
           )}
         </AutoComplete>
-      </div>
-    </div>
-
-Disabled autoComplete:
-
-    <div>
-      <div style={{ width: '50%' }}>
-        <AutoComplete name="a1" disabled />
       </div>
     </div>

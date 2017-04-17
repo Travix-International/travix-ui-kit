@@ -231,7 +231,7 @@ class AutoComplete extends Component {
   }
 
   renderItems() {
-    const { children, highlight } = this.props;
+    const { children, highlight, name } = this.props;
     this.items = [];
     this.keys = [];
     this.initActiveKey = undefined;
@@ -248,7 +248,7 @@ class AutoComplete extends Component {
           this.initActiveKey = index;
         }
 
-        const key = child.props.id || child.key || `ui-autocomplete-item.${index}`;
+        const id = child.props.id || `ui-autocomplete-item-${name}-${index}`;
         const isActive = index === (this.state.activeKey || this.initActiveKey);
         let childrenNode = child.props.children;
 
@@ -258,7 +258,7 @@ class AutoComplete extends Component {
 
         return cloneElement(child, {
           children: childrenNode,
-          id: key,
+          id,
           index,
           isActive,
           onClick: this.handleItemClick,
@@ -281,6 +281,7 @@ class AutoComplete extends Component {
 
     this.state.open && mods.push('open');
     const className = getClassNamesWithMods('ui-autocomplete', mods);
+    const activeKey = this.state.activeKey || 0;
 
     return (
       <div
@@ -289,6 +290,11 @@ class AutoComplete extends Component {
         className={className}
       >
         <Input
+          aria-activedescendant={`ui-autocomplete-item-${name}-${activeKey}`}
+          aria-autocomplete="list"
+          aria-expanded={this.state.open}
+          aria-haspopup={this.state.open}
+          aria-owns={`ui-autocomplete-list-${name}`}
           disabled={disabled}
           onBlur={this.handleInputBlur}
           onChange={this.handleInputChange}
@@ -304,7 +310,12 @@ class AutoComplete extends Component {
           value={this.getValue()}
         />
         <div className="ui-autocomplete__popunder">
-          <ul className="ui-autocomplete__popunder-list">
+          <ul
+            aria-expanded={this.state.open}
+            className="ui-autocomplete__popunder-list"
+            id={`ui-autocomplete-list-${name}`}
+            role="listbox"
+          >
             {this.renderItems()}
           </ul>
         </div>
