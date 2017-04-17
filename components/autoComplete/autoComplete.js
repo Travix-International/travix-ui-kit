@@ -302,6 +302,7 @@ class AutoComplete extends Component {
           onKeyDown={this.handleInputKeyDown}
           placeholder={placeholder}
           ref={elem => (this.input = elem)}
+          role="combobox"
           value={this.state.inputValue}
         />
         <Input
