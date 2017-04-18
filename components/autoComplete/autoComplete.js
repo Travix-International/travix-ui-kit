@@ -35,7 +35,7 @@ class AutoComplete extends Component {
     this.initActiveKey = undefined;
 
     this.state = {
-      inputValue: props.initialValue && props.initialValue.value,
+      inputValue: props.defaultValue && props.defaultValue.value,
       open: false,
       activeKey: undefined,
     };
@@ -44,7 +44,7 @@ class AutoComplete extends Component {
   handleInputChange = (e) => {
     e.stopPropagation();
     const value = e.target.value;
-    this.inputUpdate(value);
+    this.updateInput(value);
 
     this.setState({
       inputValue: value,
@@ -93,7 +93,7 @@ class AutoComplete extends Component {
       open: false,
     }, () => {
       this.change(data);
-      this.inputUpdate(data.value);
+      this.updateInput(data.value);
       this.blurInput();
     });
   }
@@ -104,9 +104,9 @@ class AutoComplete extends Component {
     }
   }
 
-  inputUpdate(data) {
-    if (this.props.onInputUpdate) {
-      this.props.onInputUpdate(data);
+  updateInput(data) {
+    if (this.props.onUpdateInput) {
+      this.props.onUpdateInput(data);
     }
   }
 
@@ -177,7 +177,8 @@ class AutoComplete extends Component {
       this.setState({
         inputValue: undefined,
       }, () => {
-        this.inputUpdate(undefined);
+        this.updateInput(undefined);
+        this.change(undefined);
         this.close();
         this.blurInput();
       });
@@ -191,7 +192,7 @@ class AutoComplete extends Component {
       open: false,
     }, () => {
       this.change(item);
-      this.inputUpdate(item.value);
+      this.updateInput(item.value);
       this.blurInput();
     });
   }
@@ -209,7 +210,7 @@ class AutoComplete extends Component {
   getValue() {
     const itemData = (this.items.length
       && this.state.activeKey && this.items[this.state.activeKey].getValue())
-      || this.props.initialValue;
+      || this.props.defaultValue;
 
     let value = '';
     if (itemData && this.state.inputValue) {
@@ -223,15 +224,16 @@ class AutoComplete extends Component {
       return str;
     }
     const value = this.state.inputValue;
-    const descriptionRule = new RegExp(`(${value})`, 'i');
+    const descriptionRule = this.props.highlightRule || new RegExp(`(${value})`, 'i');
     const highlighted = str.replace(descriptionRule, '<span class="ui-autocomplete-item_highlight">$1</span>');
+
     return (
       <div dangerouslySetInnerHTML={{ __html: highlighted }}/>
     );
   }
 
   renderItems() {
-    const { children, highlight, name } = this.props;
+    const { children, highlighted, name } = this.props;
     this.items = [];
     this.keys = [];
     this.initActiveKey = undefined;
@@ -252,7 +254,7 @@ class AutoComplete extends Component {
         const isActive = index === (this.state.activeKey || this.initActiveKey);
         let childrenNode = child.props.children;
 
-        if (highlight && !child.props.isTitle) {
+        if (highlighted && typeof child.props.children === 'string' && !child.props.isTitle) {
           childrenNode = this.highlightItem(child.props.children);
         }
 
@@ -273,6 +275,7 @@ class AutoComplete extends Component {
     const {
       dataAttrs = {},
       disabled,
+      label,
       mods = [],
       name,
       placeholder,
@@ -283,19 +286,26 @@ class AutoComplete extends Component {
     const className = getClassNamesWithMods('ui-autocomplete', mods);
     const activeKey = this.state.activeKey || 0;
 
+    const labelBlock = label ? (
+      <label htmlFor={`ui-autocomplete-input-${name}`} id={`ui-autocomplete-label-${name}`}>{label}</label>
+    ) : '';
+
     return (
       <div
         {...getDataAttributes(dataAttrs)}
         {...otherProps}
         className={className}
       >
+        {labelBlock}
         <Input
           aria-activedescendant={`ui-autocomplete-item-${name}-${activeKey}`}
           aria-autocomplete="list"
           aria-expanded={this.state.open}
           aria-haspopup={this.state.open}
+          aria-labelledby={label ? `ui-autocomplete-label-${name}` : ''}
           aria-owns={`ui-autocomplete-list-${name}`}
           disabled={disabled}
+          id={`ui-autocomplete-input-${name}`}
           onBlur={this.handleInputBlur}
           onChange={this.handleInputChange}
           onFocus={this.handleInputFocus}
@@ -325,29 +335,87 @@ class AutoComplete extends Component {
   }
 }
 
+AutoComplete.defaultProps = {
+  disabled: false,
+  highlighted: false,
+};
+
 AutoComplete.propTypes = {
-  children: PropTypes.node,
+  /**
+   * The AutoComplete should contains AutoCompleteItem components.
+   */
+  children: PropTypes.node.isRequired,
+  /**
+   * Data attribute. You can use it to set up GTM key or any custom data-* attribute.
+   */
   dataAttrs: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.object,
   ]),
+  /**
+   * Disable autocomplete.
+   */
   disabled: PropTypes.bool,
-  initialValue: PropTypes.shape({
-    value: PropTypes.any,
-    code: PropTypes.any,
+  /**
+   * Default selected option.
+   */
+  defaultValue: PropTypes.shape({
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
+    code: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
   }),
-  highlight: PropTypes.bool,
+  /**
+   * Highlighting of found items.
+   */
+  highlighted: PropTypes.bool,
+  /**
+   * Rule for highlighting of found items.
+   */
+  highlightRule: PropTypes.object,
+  /**
+   * Label for autocomplete.
+   */
+  label: PropTypes.string,
   /**
    * Set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
-  name: PropTypes.string,
+  /**
+   * Represents the element's name.
+   */
+  name: PropTypes.string.isRequired,
+  /**
+   * Function to be triggered when the autocomplete item is blurred.
+   */
   onBlur: PropTypes.func,
+  /**
+   * Function to be triggered when the autocomplete item is selected.
+   */
   onChange: PropTypes.func,
+  /**
+   * Function to be triggered when the autocomplete is closed.
+   */
   onClose: PropTypes.func,
+  /**
+   * Function to be triggered when the autocomplete input is focued.
+   */
   onFocus: PropTypes.func,
-  onInputUpdate: PropTypes.func,
+  /**
+   * Function to be triggered when the autocomplete input is updated.
+   */
+  onUpdateInput: PropTypes.func,
+  /**
+   * Function to be triggered when key is pressed.
+   */
   onKeyDown: PropTypes.func,
+  /**
+   * Placeholder for input element .
+   */
   placeholder: PropTypes.string,
 };
 

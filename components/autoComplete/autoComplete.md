@@ -3,6 +3,8 @@ Basic autoComplete:
     initialState = {
     disable: false,
     highlight: true,
+    label: false,
+    custom: false,
     options: [{
       value: "Fruits",
       title: true
@@ -66,42 +68,75 @@ Basic autoComplete:
     }]};
 
     <div>
-      <div style={{ width: '50%' }}>
+      <div>
         <Button size="xs" onClick={() => setState({ disable: !state.disable })}>
-          {state.disable ? '✅' : ''} disable
+          {state.disable ? '✅' : ''} disabled
         </Button>
         <i> </i>
-        <Button size="xs" onClick={() => setState({ highlight: !state.highlight })}>
-          {state.highlight ? '✅' : ''} highlight
+        <Button disabled={state.custom} size="xs" onClick={() => setState({ highlight: !state.highlight })}>
+          {state.highlight ? '✅' : ''} highlighted
+        </Button>
+        <i> </i>
+        <Button size="xs" onClick={() => setState({ label: !state.label })}>
+          {state.label ? '✅' : ''} label
+        </Button>
+        <i> </i>
+        <Button
+          size="xs"
+          onClick={() =>
+            setState({ custom: !state.custom, highlight: state.custom })}>
+          {state.custom ? '✅' : ''} custom atem
         </Button>
         <br/><br/>
-        <AutoComplete
-          onChange={(data) => {
-            console.log('OUTPUT', data);
-          }}
-          onInputUpdate={(value) => {
-            console.log('UPDATE', value);
-            const newOpts = value
-              ? state.originalOptions.filter((i) => i.value.toUpperCase().indexOf(value.toUpperCase()) !== -1)
-              : state.originalOptions;
-            setState({
-              options: newOpts,
-            })
-          }}
-          highlight={state.highlight}
-          disabled={state.disable}
-          placeholder="autocomplete 1"
-          name="a0">
-          {state.options.map((item, key) =>
-            <AutoCompleteItem
-              isTitle={!!item.title}
-              value={item.value}
-              code={item.code}
-              key={key}>
-              {item.value}
-            </AutoCompleteItem>
-          )}
-        </AutoComplete>
+        <div style={{ width: '50%' }}>
+          <AutoComplete
+            onChange={(data) => {
+              setState({
+                output: data
+              })
+            }}
+            onUpdateInput={(value) => {
+              const newOpts = value
+                ? state.originalOptions.filter((i) => i.value.toUpperCase().indexOf(value.toUpperCase()) !== -1)
+                : state.originalOptions;
+              setState({
+                options: newOpts,
+              })
+            }}
+            highlighted={state.highlight}
+            disabled={state.disable}
+            label={state.label ? 'Autocomplete' : undefined}
+            placeholder="autocomplete 1"
+            name="a0">
+            {state.options.map((item, key) =>
+              <AutoCompleteItem
+                isTitle={!!item.title}
+                value={item.value}
+                code={item.code}
+                key={key}>
+                {
+                  state.custom ? (
+                    <div style={{display:'flex', justifyContent: 'space-between'}}>
+                      <span>{item.value} {item.code ? `(${item.code})` : ''}</span>
+                      <span style={{transform: `rotate(${key*30}deg)`}}>{!item.title ? '㋡' : ''}</span>
+                    </div>
+                  ) : item.value
+                }
+              </AutoCompleteItem>
+            )}
+          </AutoComplete>
+        </div>
+        <div>
+          {
+            state.output ? (
+              <div>
+                <br/>
+                <span>OUTPUT: </span>
+                <span>{JSON.stringify(state.output)}</span>
+              </div>
+            ) : ''
+          }
+        </div>
       </div>
     </div>
 
@@ -115,11 +150,7 @@ Preselected autoComplete:
     <div>
       <div style={{ width: '50%' }}>
         <AutoComplete
-          onChange={(data) => {
-            console.log('OUTPUT', data);
-          }}
-          onInputUpdate={(value) => {
-            console.log('UPDATE', value);
+          onUpdateInput={(value) => {
             const newOpts = value
               ? state.originalOptions.filter((i) => i.toUpperCase().indexOf(value.toUpperCase()) !== -1)
               : state.originalOptions;
@@ -127,7 +158,7 @@ Preselected autoComplete:
               options: newOpts,
             })
           }}
-          initialValue={{value: "Apple"}}
+          defaultValue={{value: "Apple"}}
           name="a3">
           {state.options.map((item, key) =>
             <AutoCompleteItem
