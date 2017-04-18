@@ -35,9 +35,10 @@ class AutoComplete extends Component {
     this.initActiveKey = undefined;
 
     this.state = {
+      activeKey: undefined,
       inputValue: props.defaultValue && props.defaultValue.value,
       open: false,
-      activeKey: undefined,
+      selectedValue: undefined,
     };
   }
 
@@ -91,6 +92,7 @@ class AutoComplete extends Component {
       activeKey: 0,
       inputValue: data.value,
       open: false,
+      selectedValue: data.code || data.value,
     }, () => {
       this.change(data);
       this.updateInput(data.value);
@@ -171,11 +173,12 @@ class AutoComplete extends Component {
     e.preventDefault();
 
     const activeKey = this.state.activeKey || this.initActiveKey;
-    const item = this.items[activeKey].getValue();
+    const item = this.items.length && this.items[activeKey].getValue();
 
     if (!item || (!this.state.inputValue && code !== KEY_CODE.ENTER)) {
       this.setState({
         inputValue: undefined,
+        selectedValue: undefined,
       }, () => {
         this.updateInput(undefined);
         this.change(undefined);
@@ -188,8 +191,8 @@ class AutoComplete extends Component {
     this.setState({
       activeKey: 0,
       inputValue: item.value,
-      submitedValue: item.value,
       open: false,
+      selectedValue: item.code || item.value,
     }, () => {
       this.change(item);
       this.updateInput(item.value);
@@ -205,18 +208,6 @@ class AutoComplete extends Component {
     if (this.props.onClose) {
       this.props.onClose();
     }
-  }
-
-  getValue() {
-    const itemData = (this.items.length
-      && this.state.activeKey && this.items[this.state.activeKey].getValue())
-      || this.props.defaultValue;
-
-    let value = '';
-    if (itemData && this.state.inputValue) {
-      value = itemData.code !== undefined ? itemData.code : itemData.value;
-    }
-    return value;
   }
 
   highlightItem(str) {
@@ -318,7 +309,7 @@ class AutoComplete extends Component {
         <Input
           hidden
           name={name}
-          value={this.getValue()}
+          value={this.state.selectedValue}
         />
         <div className="ui-autocomplete__popunder">
           <ul

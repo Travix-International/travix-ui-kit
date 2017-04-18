@@ -16,13 +16,13 @@ class Input extends Component {
 
   handleInputBlur = (e) => {
     this.setState({ isFocused: false });
-    if (this.props.onBlur) {
+    if (typeof this.props.onBlur === 'function') {
       this.props.onBlur(e);
     }
   };
 
   handleInputChange = (e) => {
-    if (this.props.onChange) {
+    if (typeof this.props.onChange === 'function') {
       this.props.onChange(e);
     }
   };
@@ -34,10 +34,14 @@ class Input extends Component {
 
     this.setState({ isFocused: true });
 
-    if (this.props.onFocus) {
+    if (typeof this.props.onFocus === 'function') {
       this.props.onFocus(e);
     }
   };
+
+  ref = (elem) => {
+    this.input = elem;
+  }
 
   blur() {
     if (this.input) {
@@ -81,7 +85,7 @@ class Input extends Component {
         onBlur={this.handleInputBlur}
         onChange={this.handleInputChange}
         onFocus={this.handleInputFocus}
-        ref={elem => (this.input = elem)}
+        ref={this.ref}
         value={value}
       />
     );
