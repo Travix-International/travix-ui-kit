@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AutoCompleteItem #render() should render autocomplete item with active mode 1`] = `
+<li
+  className="ui-autocomplete-item ui-autocomplete-item_active"
+  onClick={[Function]}
+  role="option"
+  tabIndex="-1"
+  value="value"
+>
+  item
+</li>
+`;
+
+exports[`AutoCompleteItem #render() should render autocomplete item with title mode 1`] = `
+<li
+  className="ui-autocomplete-item ui-autocomplete-item_title"
+  onClick={false}
+  role="option"
+  tabIndex="-1"
+  value="value"
+>
+  item
+</li>
+`;
+
+exports[`AutoCompleteItem #render() should render correct autocomplete item 1`] = `
+<li
+  className="ui-autocomplete-item"
+  onClick={[Function]}
+  role="option"
+  tabIndex="-1"
+  value="value"
+>
+  item
+</li>
+`;
