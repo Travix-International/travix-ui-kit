@@ -6,10 +6,9 @@
 }
 
 .ui-autocomplete__popunder {
-  background-color: #fff;
-  box-shadow: 0 0 5px 0 rgba(#000000, .18);
+  background-color: $tx-autocomplete-background-color;
+  box-shadow: 0 0 5px 0 rgba($tx-autocomplete-box-shadow, .18);
   left: 0;
-  margin-right: -150px;
   margin-top: -2px;
   max-height: 300px;
   overflow-x: overlay;

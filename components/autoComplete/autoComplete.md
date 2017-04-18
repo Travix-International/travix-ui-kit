@@ -85,7 +85,7 @@ Basic autoComplete:
           size="xs"
           onClick={() =>
             setState({ custom: !state.custom, highlight: state.custom })}>
-          {state.custom ? '✅' : ''} custom atem
+          {state.custom ? '✅' : ''} custom item
         </Button>
         <br/><br/>
         <div style={{ width: '50%' }}>

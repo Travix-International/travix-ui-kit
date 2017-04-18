@@ -71,6 +71,19 @@ generic:
     style: &separator-style dotted
   size:
     border-radius-small: &border-radius-small 2px
+autocomplete:
+  background-color: *blank
+  box-shadow: *shadow
+autocomplete-item:
+  color: *text
+  active:
+    color: *blank
+    background-color: *active
+  title:
+    color: *primary-darker
+    background-color: *secondary-dark
+  highlight:
+    color: *active
 button:
   color:
     bg-top: *accent
