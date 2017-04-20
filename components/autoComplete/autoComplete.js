@@ -64,7 +64,7 @@ class AutoComplete extends Component {
         break;
       case KEY_CODE.ESC:
       case KEY_CODE.ENTER:
-        this.applyAktiveKey(e);
+        this.applyActiveKey(e);
         break;
       default:
         break;
@@ -92,7 +92,7 @@ class AutoComplete extends Component {
 
   handleInputBlur = (e) => {
     if (this.state.open) {
-      this.applyAktiveKey(e);
+      this.applyActiveKey(e);
     }
 
     if (typeof this.props.onBlur === 'function') {
@@ -166,14 +166,15 @@ class AutoComplete extends Component {
     });
   }
 
-  applyAktiveKey(e) {
+  applyActiveKey(e) {
     e.preventDefault();
 
     const activeKey = this.state.activeKey !== undefined
       ? this.state.activeKey
       : this.initActiveKey;
 
-    const item = this.items.length && this.items[activeKey].getValue();
+    const item = this.items.length
+      && this.items[activeKey] && this.items[activeKey].getValue();
     const value = this.state.inputValue;
 
     if (!item || (!value && e.keyCode !== KEY_CODE.ENTER)) {

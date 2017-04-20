@@ -4,8 +4,8 @@ import AutoComplete from '../../../components/autoComplete/autoComplete';
 import AutoCompleteItem from '../../../components/autoComplete/autoCompleteItem';
 
 describe('AutoComplete: handleInputBlur', () => {
-  it('should call passed onBlur and applyAktiveKey handler with correct data', () => {
-    AutoComplete.prototype.applyAktiveKey = jest.fn();
+  it('should call passed onBlur and applyActiveKey handler with correct data', () => {
+    AutoComplete.prototype.applyActiveKey = jest.fn();
     const onBlur = jest.fn();
     const e = { target: {} };
 
@@ -25,11 +25,11 @@ describe('AutoComplete: handleInputBlur', () => {
     component.instance().setState({ open: true });
     component.instance().handleInputBlur(e);
     expect(onBlur).toBeCalledWith(e);
-    expect(component.instance().applyAktiveKey).toBeCalledWith(e);
+    expect(component.instance().applyActiveKey).toBeCalledWith(e);
   });
 
   it('should not call passed methods when list not open or onBlur is not a function', () => {
-    AutoComplete.prototype.applyAktiveKey = jest.fn();
+    AutoComplete.prototype.applyActiveKey = jest.fn();
     const onBlur = jest.fn();
     const e = { target: {} };
 
@@ -47,6 +47,6 @@ describe('AutoComplete: handleInputBlur', () => {
 
     component.instance().handleInputBlur(e);
     expect(onBlur).not.toBeCalled();
-    expect(component.instance().applyAktiveKey).not.toBeCalled();
+    expect(component.instance().applyActiveKey).not.toBeCalled();
   });
 });

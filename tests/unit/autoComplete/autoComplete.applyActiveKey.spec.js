@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import AutoComplete from '../../../components/autoComplete/autoComplete';
 import AutoCompleteItem from '../../../components/autoComplete/autoCompleteItem';
 
-describe('AutoComplete: applyAktiveKey', () => {
+describe('AutoComplete: applyActiveKey', () => {
   it('should call methods and update state with correct data', () => {
     const data = {
       index: 1,
@@ -37,7 +37,7 @@ describe('AutoComplete: applyAktiveKey', () => {
     );
 
     component.instance().setState({ inputValue: 'test', activeKey: 0 });
-    component.instance().applyAktiveKey(e);
+    component.instance().applyActiveKey(e);
     expect(component.instance().state).toEqual({
       activeKey: 0,
       inputValue: data.value,
@@ -81,7 +81,7 @@ describe('AutoComplete: applyAktiveKey', () => {
     );
 
     component.instance().setState({ inputValue: 'test' });
-    component.instance().applyAktiveKey(e);
+    component.instance().applyActiveKey(e);
     expect(component.instance().state).toEqual({
       activeKey: 0,
       inputValue: data.value,
@@ -118,7 +118,7 @@ describe('AutoComplete: applyAktiveKey', () => {
       </AutoComplete>
     );
 
-    component.instance().applyAktiveKey(e);
+    component.instance().applyActiveKey(e);
     expect(component.instance().state).toEqual({
       activeKey: undefined,
       inputValue: undefined,
