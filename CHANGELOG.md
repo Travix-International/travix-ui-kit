@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.4.4](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.4) (2017-04-14)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.3...v0.4.4)
+
+**Closed issues:**
+
+- 'npm run styleguide-build' fails with an error after fresh node modules installation  [\#64](https://github.com/Travix-International/travix-ui-kit/issues/64)
+- Can't pass custom modifications \(eg. mods\) to Modal component  [\#62](https://github.com/Travix-International/travix-ui-kit/issues/62)
+
+**Merged pull requests:**
+
+- Update react-styleguidist to the latest version 🚀 [\#56](https://github.com/Travix-International/travix-ui-kit/pull/56) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+
 ## [v0.4.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.3) (2017-04-07)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.2...v0.4.3)
 
