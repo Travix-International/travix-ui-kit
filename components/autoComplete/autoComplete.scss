@@ -1,0 +1,30 @@
+@import "../../themes/theme";
+
+.ui-autocomplete {
+  font-family: $tx-generic-font-primary-font-family, $tx-generic-font-primary-generic-family;
+  position: relative;
+}
+
+.ui-autocomplete__popunder {
+  background-color: $tx-autocomplete-background-color;
+  box-shadow: 0 0 5px 0 rgba($tx-autocomplete-box-shadow, .18);
+  display: none;
+  left: 0;
+  margin-top: -2px;
+  max-height: 300px;
+  overflow-x: overlay;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 3;
+
+  .ui-autocomplete_open & {
+    display: block;
+  }
+}
+
+.ui-autocomplete__popunder-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
