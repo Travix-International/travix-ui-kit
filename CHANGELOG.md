@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.4.5](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.5) (2017-04-20)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.4...v0.4.5)
+
+**Merged pull requests:**
+
+- added scripts to Makefile for publishing travix-ui-kit to github pages [\#67](https://github.com/Travix-International/travix-ui-kit/pull/67) ([iwwwi](https://github.com/iwwwi))
+- Autocomplete and Input [\#66](https://github.com/Travix-International/travix-ui-kit/pull/66) ([AlleeX](https://github.com/AlleeX))
+
 ## [v0.4.4](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.4) (2017-04-14)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.3...v0.4.4)
 
