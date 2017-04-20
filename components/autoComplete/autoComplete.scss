@@ -8,6 +8,7 @@
 .ui-autocomplete__popunder {
   background-color: $tx-autocomplete-background-color;
   box-shadow: 0 0 5px 0 rgba($tx-autocomplete-box-shadow, .18);
+  display: none;
   left: 0;
   margin-top: -2px;
   max-height: 300px;
@@ -16,7 +17,6 @@
   right: 0;
   top: 100%;
   z-index: 3;
-  display: none;
 
   .ui-autocomplete_open & {
     display: block;

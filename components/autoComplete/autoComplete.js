@@ -10,14 +10,14 @@ import Input from '../input/input';
 import KEY_CODE from '../constants/keyCode';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
-const getNextKey = (keys, key) => {
+function getNextKey(keys, key) {
   return keys[keys.indexOf(key) + 1] || key;
-};
+}
 
-const getPrevKey = (keys, key) => {
+function getPrevKey(keys, key) {
   const prevKey = keys[keys.indexOf(key) - 1];
   return prevKey !== undefined ? prevKey : key;
-};
+}
 
 /**
  * AutoComplete component
@@ -174,14 +174,15 @@ class AutoComplete extends Component {
       : this.initActiveKey;
 
     const item = this.items.length && this.items[activeKey].getValue();
+    const value = this.state.inputValue;
 
-    if (!item || (!this.state.inputValue && e.keyCode !== KEY_CODE.ENTER)) {
+    if (!item || (!value && e.keyCode !== KEY_CODE.ENTER)) {
       this.setState({
-        inputValue: undefined,
+        inputValue: value,
         selectedValue: undefined,
         open: false,
       }, () => {
-        this.updateInput(undefined);
+        this.updateInput(value);
         this.change(undefined);
         this.blurInput();
       });
