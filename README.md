@@ -5,6 +5,8 @@
 Travix UI Components' repository.
 
 ## UI-Kit
+Take a look at: https://travix-international.github.io/travix-ui-kit/
+
 ### How to install and setup
 - `npm i travix-ui-kit -S` install as a dependency
 
