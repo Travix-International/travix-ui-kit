@@ -6,7 +6,7 @@
   &.ui-list_align_vertical {
     .ui-list__item {
       display: block;
-      line-height: 38px;
+      line-height: $tx-list-line-height;
 
       &:before {
         content: "•";
@@ -38,6 +38,6 @@
   }
 
   .ui-list__item {
-    color: $tx-generic-color-text;
+    color: $tx-list-color;
   }
 }
