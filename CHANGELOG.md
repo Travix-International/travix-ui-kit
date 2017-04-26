@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.4.6](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.6) (2017-04-26)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.5...v0.4.6)
+
+**Merged pull requests:**
+
+- Added variables to the List classes [\#69](https://github.com/Travix-International/travix-ui-kit/pull/69) ([AlexDudar](https://github.com/AlexDudar))
+
 ## [v0.4.5](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.5) (2017-04-20)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.4...v0.4.5)
 
