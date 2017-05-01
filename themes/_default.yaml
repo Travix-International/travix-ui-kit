@@ -271,6 +271,8 @@ input:
 list:
   bullets:
     color: *active
+  color: *text-dark
+  line-height: "38px"
 modal:
   z-index: "100"
   color:
