@@ -85,6 +85,11 @@ autocomplete-item:
   highlight:
     color: *active
 button:
+  icon:
+    color:
+      normal: *primary-lighter
+      hover: *active
+      active: *primary-lighter
   color:
     bg-top: *accent
     bg-bottom: *accent
@@ -102,7 +107,7 @@ button:
   shadow:
     inner:
       params: "0 3px"
-      color: *accent-dark
+      color: *accent-border
     outer:
       params: "0 0"
       color: "transparent"
