@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.4.7](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.7) (2017-05-02)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.6...v0.4.7)
+
+**Merged pull requests:**
+
+- added package dependencies + missing list vars to fix the build [\#70](https://github.com/Travix-International/travix-ui-kit/pull/70) ([iwwwi](https://github.com/iwwwi))
+
 ## [v0.4.6](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.6) (2017-04-26)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.5...v0.4.6)
 
