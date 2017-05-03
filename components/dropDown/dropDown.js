@@ -98,12 +98,11 @@ class DropDown extends Component {
       ...otherProps
     } = this.props;
 
-    const isFiltermode = this.props.filterMode;
-
-    filterMode && mods.push('filter');
-    filterMode && this.props.options.some(option => option.checked) && mods.push('state-active');
-
-    const className = getClassNamesWithMods('ui-dropdown', mods);
+    const className = getClassNamesWithMods('ui-dropdown', [
+      ...mods,
+      filterMode && 'filter',
+      filterMode && options.some(option => option.checked) && 'state-active',
+    ]);
 
     return (
       <div {...getDataAttributes(dataAttrs)}>
@@ -112,10 +111,10 @@ class DropDown extends Component {
           className={className}
           clearable={clearable}
           menuRenderer={this.menuRenderer}
-          multi={isFiltermode ? true : multi}
+          multi={filterMode ? true : multi}
           name={name}
           onChange={this.onChange}
-          optionComponent={isFiltermode ? DropdownFilterOptionComponent : undefined}
+          optionComponent={filterMode ? DropdownFilterOptionComponent : undefined}
           options={options}
           placeholder={placeholder}
           scrollMenuIntoView={scrollMenuIntoView}

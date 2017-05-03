@@ -6,11 +6,20 @@ Basic autoComplete:
     label: false,
     custom: false,
     options: [{
-      value: "Fruits",
+      value: "Apple",
       title: true
     }, {
-      code: "APL",
-      value: "Apple",
+      code: "APL1",
+      value: "Apple 1",
+    }, {
+      code: "APL2",
+      value: "Apple 2",
+    }, {
+      code: "APL3",
+      value: "Apple 3",
+    }, {
+      code: "APL4",
+      value: "Apple 4",
     }, {
       code: "APR",
       value: "Apricot",
@@ -36,11 +45,20 @@ Basic autoComplete:
       code: "BRO",
       value: "Broccoli",
     }], originalOptions: [{
-      value: "Fruits",
+      value: "Apple",
       title: true
     }, {
-      code: "APL",
-      value: "Apple",
+      code: "APL1",
+      value: "Apple 1",
+    }, {
+      code: "APL2",
+      value: "Apple 2",
+    }, {
+      code: "APL3",
+      value: "Apple 3",
+    }, {
+      code: "APL4",
+      value: "Apple 4",
     }, {
       code: "APR",
       value: "Apricot",
@@ -91,13 +109,15 @@ Basic autoComplete:
         <div style={{ width: '50%' }}>
           <AutoComplete
             onChange={(data) => {
+              console.log('CHANGE', data);
               setState({
                 output: data
               })
             }}
             onUpdateInput={(value) => {
+              console.log('UPDATE', value);
               const newOpts = value
-                ? state.originalOptions.filter((i) => i.value.toUpperCase().indexOf(value.toUpperCase()) !== -1)
+                ? state.originalOptions.filter((i) => (i.value.toUpperCase().indexOf(value.toUpperCase()) !== -1 || i.title))
                 : state.originalOptions;
               setState({
                 options: newOpts,
