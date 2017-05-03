@@ -297,6 +297,7 @@ class AutoComplete extends Component {
           aria-haspopup={this.state.open}
           aria-labelledby={label ? `ui-autocomplete-label-${name}` : ''}
           aria-owns={`ui-autocomplete-list-${name}`}
+          autoComplete="off"
           disabled={disabled}
           id={`ui-autocomplete-input-${name}`}
           onBlur={this.handleInputBlur}
