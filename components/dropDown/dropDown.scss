@@ -13,11 +13,13 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
 .ui-dropdown {
   font-family: $tx-generic-font-primary-font-family, $tx-generic-font-primary-generic-family;
 
-  .Select-control {
-    cursor: pointer;
+  &:not(.is-disabled) {
+    .Select-control {
+      cursor: pointer;
 
-    &:hover {
-      border-color: $tx-dropdown-select-control-border-color;
+      &:hover {
+        border-color: $tx-dropdown-select-control-border-color;
+      }
     }
   }
 

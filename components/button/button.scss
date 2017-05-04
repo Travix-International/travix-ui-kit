@@ -37,18 +37,30 @@ $text-shadow: null !default;
   position: relative;
   top: 0;
 
+  span:before {
+    color: $tx-button-icon-color-normal;
+  }
+
   &:focus,
   &:hover {
-    box-shadow: 0 5px $tx-button-color-border, $tx-button-shadow-outer-hover-params $tx-button-shadow-outer-color;
+    box-shadow: 0 5px $tx-button-shadow-inner-color, $tx-button-shadow-outer-hover-params $tx-button-shadow-outer-color;
     outline: none;
     top: -2px;
     transition: all .1s ease-in-out;
+
+    span:before {
+      color: $tx-button-icon-color-hover;
+    }
   }
 
   &:active {
-    box-shadow: 0 2px $tx-button-color-border;
+    box-shadow: 0 2px $tx-button-shadow-inner-color;
     top: 1px;
     transition: all .1s ease-in-out;
+
+    span:before {
+      color: $tx-button-icon-color-active;
+    }
   }
 }
 

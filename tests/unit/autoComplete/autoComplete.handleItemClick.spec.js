@@ -33,14 +33,14 @@ describe('AutoComplete: handleItemClick', () => {
 
     component.instance().handleItemClick(e, data);
     expect(component.instance().state).toEqual({
-      activeKey: 0,
+      activeKey: undefined,
       inputValue: 'value',
       open: false,
+      selectedKey: undefined,
       selectedValue: 'code',
     });
     expect(e.stopPropagation).toBeCalled();
     expect(component.instance().change).toBeCalledWith(data);
-    expect(component.instance().updateInput).toBeCalledWith(data.value);
     expect(component.instance().blurInput).toBeCalled();
   });
 
@@ -72,14 +72,14 @@ describe('AutoComplete: handleItemClick', () => {
 
     component.instance().handleItemClick(e, data);
     expect(component.instance().state).toEqual({
-      activeKey: 0,
+      activeKey: undefined,
       inputValue: 'value',
       open: false,
+      selectedKey: undefined,
       selectedValue: 'value',
     });
     expect(e.stopPropagation).toBeCalled();
     expect(component.instance().change).toBeCalledWith(data);
-    expect(component.instance().updateInput).toBeCalledWith(data.value);
     expect(component.instance().blurInput).toBeCalled();
   });
 });

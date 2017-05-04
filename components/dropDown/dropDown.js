@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
 
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 import DropdownFilterOptionComponent from './dropdownFilterOptionComponent';
 
 /**
@@ -83,29 +83,45 @@ class DropDown extends Component {
   }
 
   render() {
-    const isFiltermode = this.props.filterMode;
-    const mods = {
-      'filter': isFiltermode,
-      'state-active': isFiltermode && this.props.options.some(option => option.checked),
-    };
+    const {
+      clearable,
+      dataAttrs = {},
+      filterMode,
+      mods = [],
+      multi,
+      name,
+      options,
+      placeholder,
+      scrollMenuIntoView,
+      searchable,
+      value,
+      ...otherProps
+    } = this.props;
 
-    const className = getClassNamesWithMods('ui-dropdown', mods);
+    const className = getClassNamesWithMods('ui-dropdown', [
+      ...mods,
+      filterMode && 'filter',
+      filterMode && options.some(option => option.checked) && 'state-active',
+    ]);
 
     return (
-      <Select
-        className={className}
-        clearable={this.props.clearable}
-        menuRenderer={this.menuRenderer}
-        multi={isFiltermode ? true : this.props.multi}
-        name={this.props.name}
-        onChange={this.onChange}
-        optionComponent={isFiltermode ? DropdownFilterOptionComponent : undefined}
-        options={this.props.options}
-        placeholder={this.props.placeholder}
-        scrollMenuIntoView={this.props.scrollMenuIntoView}
-        searchable={this.props.searchable}
-        value={this.props.value}
-      />
+      <div {...getDataAttributes(dataAttrs)}>
+        <Select
+          {...otherProps}
+          className={className}
+          clearable={clearable}
+          menuRenderer={this.menuRenderer}
+          multi={filterMode ? true : multi}
+          name={name}
+          onChange={this.onChange}
+          optionComponent={filterMode ? DropdownFilterOptionComponent : undefined}
+          options={options}
+          placeholder={placeholder}
+          scrollMenuIntoView={scrollMenuIntoView}
+          searchable={searchable}
+          value={value}
+        />
+      </div>
     );
   }
 }
@@ -125,6 +141,13 @@ DropDown.propTypes = {
  */
   clearable: PropTypes.bool,
   /**
+   * Data attribute. You can use it to set up GTM key or any custom data-* attribute.
+   */
+  dataAttrs: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
+  ]),
+  /**
  * Filter key
  */
   filterKey: PropTypes.string,
@@ -132,6 +155,10 @@ DropDown.propTypes = {
  * Filter mode
  */
   filterMode: PropTypes.bool,
+  /**
+ * Set of custom modifications.
+ */
+  mods: PropTypes.arrayOf(PropTypes.string),
   /**
  * Multi-value input
  */
