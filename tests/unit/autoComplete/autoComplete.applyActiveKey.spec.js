@@ -47,7 +47,6 @@ describe('AutoComplete: applyActiveKey', () => {
       selectedValue: data.code,
     });
     expect(e.preventDefault).toBeCalled();
-    expect(component.instance().updateInput).toBeCalledWith(data.value);
     expect(component.instance().change).toBeCalledWith(data);
     expect(component.instance().blurInput).toBeCalled();
   });
@@ -140,7 +139,6 @@ describe('AutoComplete: applyActiveKey', () => {
       selectedValue: data.value,
     });
     expect(e.preventDefault).toBeCalled();
-    expect(component.instance().updateInput).toBeCalledWith(data.value);
     expect(component.instance().change).toBeCalledWith(data);
     expect(component.instance().blurInput).toBeCalled();
   });

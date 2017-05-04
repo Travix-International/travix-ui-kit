@@ -41,7 +41,6 @@ describe('AutoComplete: handleItemClick', () => {
     });
     expect(e.stopPropagation).toBeCalled();
     expect(component.instance().change).toBeCalledWith(data);
-    expect(component.instance().updateInput).toBeCalledWith(data.value);
     expect(component.instance().blurInput).toBeCalled();
   });
 
@@ -81,7 +80,6 @@ describe('AutoComplete: handleItemClick', () => {
     });
     expect(e.stopPropagation).toBeCalled();
     expect(component.instance().change).toBeCalledWith(data);
-    expect(component.instance().updateInput).toBeCalledWith(data.value);
     expect(component.instance().blurInput).toBeCalled();
   });
 });

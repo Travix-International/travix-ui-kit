@@ -110,7 +110,11 @@ Basic autoComplete:
           <AutoComplete
             onChange={(data) => {
               console.log('CHANGE', data);
+              const newOpts = data
+                ? state.originalOptions.filter((i) => (i.code === data.code || i.title))
+                : state.originalOptions;
               setState({
+                options: newOpts,
                 output: data
               })
             }}

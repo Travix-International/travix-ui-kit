@@ -87,7 +87,6 @@ class AutoComplete extends Component {
       selectedKey: data.key,
     }, () => {
       this.change(data);
-      this.updateInput(data.value);
       this.blurInput();
     });
   }
@@ -211,7 +210,6 @@ class AutoComplete extends Component {
         selectedKey: item.key,
       }, () => {
         this.change(item);
-        this.updateInput(item.value);
         this.blurInput();
       });
       return;
