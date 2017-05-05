@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.4.8](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.8) (2017-05-04)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.7...v0.4.8)
+
+**Merged pull requests:**
+
+- Improvements for autoComplete, dropDown and button components [\#75](https://github.com/Travix-International/travix-ui-kit/pull/75) ([AlleeX](https://github.com/AlleeX))
+
 ## [v0.4.7](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.7) (2017-05-02)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.6...v0.4.7)
 

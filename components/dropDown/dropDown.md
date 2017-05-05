@@ -30,6 +30,22 @@ Searchable dropDown:
       </div>
     </div>
 
+Disabled dropDown with data attrs:
+
+      <div>
+        <div style={{ width: '50%' }}>
+          <DropDown
+            dataAttrs={{['test']: 'test'}}
+            disabled
+            scrollMenuIntoView
+            onChange={(opts) => {setState({ value: opts.value })}}
+            options={new Array(20).fill(1).map((item, i) => { return { value: i+1, label: i+1 } })}
+            value={state.value}
+            placeholder="disabled dropdown"
+          />
+        </div>
+      </div>
+
 DropDown with filter mode:
 
     initialState = {filterOptions1: [

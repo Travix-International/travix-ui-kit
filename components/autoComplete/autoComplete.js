@@ -31,6 +31,7 @@ class AutoComplete extends Component {
       inputValue: props.defaultValue && props.defaultValue.value,
       open: false,
       selectedValue: undefined,
+      selectedKey: undefined,
     };
   }
 
@@ -79,13 +80,13 @@ class AutoComplete extends Component {
     e.stopPropagation();
 
     this.setState({
-      activeKey: 0,
+      activeKey: undefined,
       inputValue: data.value,
       open: false,
       selectedValue: data.code || data.value,
+      selectedKey: data.key,
     }, () => {
       this.change(data);
-      this.updateInput(data.value);
       this.blurInput();
     });
   }
@@ -177,10 +178,20 @@ class AutoComplete extends Component {
       && this.items[activeKey] && this.items[activeKey].getValue();
     const value = this.state.inputValue;
 
+    const isPreviousValue = (this.state.selectedKey === item.key
+      && (this.state.selectedValue === item.code || this.state.selectedValue === item.value));
+
     if (!item || (!value && e.keyCode !== KEY_CODE.ENTER)) {
+      if (!this.state.selectedValue && !value) {
+        this.close();
+        return;
+      }
+
       this.setState({
+        activeKey: undefined,
         inputValue: value,
         selectedValue: undefined,
+        selectedKey: undefined,
         open: false,
       }, () => {
         this.updateInput(value);
@@ -190,16 +201,21 @@ class AutoComplete extends Component {
       return;
     }
 
-    this.setState({
-      activeKey: 0,
-      inputValue: item.value,
-      open: false,
-      selectedValue: item.code || item.value,
-    }, () => {
-      this.change(item);
-      this.updateInput(item.value);
-      this.blurInput();
-    });
+    if (!isPreviousValue) {
+      this.setState({
+        activeKey: undefined,
+        inputValue: item.value,
+        open: false,
+        selectedValue: item.code || item.value,
+        selectedKey: item.key,
+      }, () => {
+        this.change(item);
+        this.blurInput();
+      });
+      return;
+    }
+
+    this.close();
   }
 
   close() {
@@ -297,6 +313,7 @@ class AutoComplete extends Component {
           aria-haspopup={this.state.open}
           aria-labelledby={label ? `ui-autocomplete-label-${name}` : ''}
           aria-owns={`ui-autocomplete-list-${name}`}
+          autoComplete="off"
           disabled={disabled}
           id={`ui-autocomplete-input-${name}`}
           onBlur={this.handleInputBlur}

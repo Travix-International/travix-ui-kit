@@ -12,6 +12,7 @@ exports[`AutoComplete #render() should not render item child if it not "AutoComp
     aria-haspopup={false}
     aria-labelledby=""
     aria-owns="ui-autocomplete-list-autocomplete"
+    autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
     multiline={false}
@@ -52,6 +53,7 @@ exports[`AutoComplete #render() should render correct autocomplete component 1`]
     aria-haspopup={false}
     aria-labelledby=""
     aria-owns="ui-autocomplete-list-autocomplete"
+    autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
     multiline={false}
@@ -109,6 +111,7 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
     aria-haspopup={false}
     aria-labelledby=""
     aria-owns="ui-autocomplete-list-autocomplete"
+    autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
     multiline={false}
@@ -168,6 +171,7 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
     aria-haspopup={false}
     aria-labelledby=""
     aria-owns="ui-autocomplete-list-autocomplete"
+    autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
     multiline={false}
@@ -226,6 +230,7 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
     aria-haspopup={false}
     aria-labelledby="ui-autocomplete-label-autocomplete"
     aria-owns="ui-autocomplete-list-autocomplete"
+    autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
     multiline={false}
@@ -284,6 +289,7 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
     aria-haspopup={false}
     aria-labelledby="ui-autocomplete-label-autocomplete"
     aria-owns="ui-autocomplete-list-autocomplete"
+    autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
     multiline={false}
@@ -336,6 +342,7 @@ exports[`AutoComplete #render() should render correct open autocomplete componen
     aria-haspopup={true}
     aria-labelledby=""
     aria-owns="ui-autocomplete-list-autocomplete"
+    autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
     multiline={false}
