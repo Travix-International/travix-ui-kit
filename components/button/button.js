@@ -101,7 +101,7 @@ Button.propTypes = {
   /**
    * Button's apperance.
    */
-  variation: PropTypes.oneOf(['default', 'ghost', 'social', 'rounded', 'borderless']),
+  variation: PropTypes.oneOf(['default']),
 };
 
 export default Button;
