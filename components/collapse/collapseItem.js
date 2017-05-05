@@ -21,7 +21,7 @@ class CollapseItem extends Component {
       title,
       children,
       onClick, // eslint-disable-line no-unused-vars
-      labelProps,
+      labelProps = {},
       ...otherProps
     } = this.props;
     const mods = {
@@ -83,7 +83,6 @@ CollapseItem.defaultProps = {
   id: null,
   isActive: false,
   onClick: null,
-  labelProps: {},
 };
 
 export default CollapseItem;
