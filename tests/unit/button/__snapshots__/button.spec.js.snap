@@ -1,20 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button #render() should return base class with mods for strings as class and string as mods 1`] = `
+exports[`Button #render() should not modify mods 1`] = `
+<button
+  className="ui-button ui-button_test ui-button_size_m ui-button_variation_default"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Button #render() should render disabled link 1`] = `
 <a
   className="ui-button ui-button_size_xs ui-button_variation_default ui-button_disabled_true"
-  data-gtm="id"
   href="http://google.com"
 >
   Extra small
 </a>
 `;
 
-exports[`Button #render() should return base class with mods for strings as class and string as mods 2`] = `<noscript />`;
+exports[`Button #render() should render gtm data attribute 1`] = `
+<button
+  className="ui-button ui-button_size_m ui-button_variation_default"
+  data-gtm="id"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  Extra small
+</button>
+`;
 
-exports[`Button #render() should return base class with mods for strings as class and string as mods 3`] = `<noscript />`;
+exports[`Button #render() should return base class with mods for strings as class and string as mods #1 1`] = `<noscript />`;
 
-exports[`Button #render() should return base class with mods for strings as class and string as mods 4`] = `
+exports[`Button #render() should return base class with mods for strings as class and string as mods #2 1`] = `
 <button
   className="ui-button ui-button_size_xs ui-button_variation_default"
   data-gtm="id"
@@ -25,7 +43,7 @@ exports[`Button #render() should return base class with mods for strings as clas
 </button>
 `;
 
-exports[`Button #render() should return base class with mods for strings as class and string as mods 5`] = `
+exports[`Button #render() should return base class with mods for strings as class and string as mods #3 1`] = `
 <button
   className="ui-button ui-button_size_xs ui-button_variation_default"
   disabled={false}
@@ -46,3 +64,5 @@ exports[`Button #render() should return base class with mods for strings as clas
   Extra small
 </button>
 `;
+
+exports[`Button #render() should return noscript if no onClick provided 1`] = `<noscript />`;

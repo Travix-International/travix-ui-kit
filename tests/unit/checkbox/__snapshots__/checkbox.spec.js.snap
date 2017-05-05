@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Checkbox #render() should not modify mods 1`] = `
+<label
+  className="ui-checkbox ui-checkbox_test"
+  htmlFor=""
+>
+  <input
+    aria-checked={false}
+    checked={false}
+    disabled={false}
+    id=""
+    role="radio"
+    type="checkbox"
+  />
+  <span
+    className="ui-checkbox__text"
+  />
+</label>
+`;
+
 exports[`Checkbox #render() should render checkbox 1`] = `
 <label
   className="ui-checkbox"

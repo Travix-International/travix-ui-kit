@@ -1,4 +1,5 @@
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import React from 'react';
 import Calendar from '../../../components/calendar/calendar';
 import CalendarWrapper from './calendarWrapper.mock';
@@ -21,6 +22,18 @@ describe('Calendar (normal mode)', () => {
         renderDate: todayDate,
         selectedDates: [null, null],
       });
+    });
+
+    it('should not mutate props', () => {
+      const mods = ['test'];
+      const wrapper = shallow(
+        <Calendar
+          mods={mods}
+        />
+      );
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(mods.length).toEqual(1);
+      expect(mods[0]).toEqual('test');
     });
 
     it('should set renderDate and not minLimit, with a given "initalDates" attribute', () => {

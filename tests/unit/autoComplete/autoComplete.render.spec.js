@@ -25,6 +25,26 @@ describe('AutoComplete', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
+    it('should copy mods', () => {
+      const mods = ['test'];
+      const wrapper = shallow(
+        <AutoComplete
+          mods={mods}
+          name="autocomplete"
+        >
+          <AutoCompleteItem
+            value="value"
+          >
+            item
+          </AutoCompleteItem>
+        </AutoComplete>
+      );
+
+      expect(mods.length).toEqual(1);
+      expect(mods[0]).toEqual('test');
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
     it('should render correct open autocomplete component', () => {
       const component = shallow(
         <AutoComplete

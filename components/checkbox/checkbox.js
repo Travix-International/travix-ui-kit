@@ -4,14 +4,15 @@ import { getClassNamesWithMods } from '../_helpers';
 /**
  * Checkbox component.
  */
-function Checkbox({
-  checked,
-  children,
-  disabled,
-  mods = [],
-  name,
-  onChange,
-}) {
+function Checkbox(props) {
+  const {
+    checked,
+    children,
+    disabled,
+    name,
+    onChange,
+  } = props;
+  const mods = props.mods ? props.mods.slice() : [];
   disabled && mods.push('is-disabled');
   const className = getClassNamesWithMods('ui-checkbox', mods);
 
