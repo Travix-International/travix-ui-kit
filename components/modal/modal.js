@@ -139,8 +139,9 @@ class Modal extends Component {
   }
 
   render() {
-    const { active, fullscreen, children, mods = [] } = this.props;
+    const { active, fullscreen, children } = this.props;
     const { isOpen } = this.state;
+    const mods = this.props.mods ? this.props.mods.slice() : [];
 
     if (active) {
       mods.push('active');

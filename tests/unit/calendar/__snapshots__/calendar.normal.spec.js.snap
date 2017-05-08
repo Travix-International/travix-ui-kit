@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar (normal mode) #render() should not mutate props 1`] = `
+<div
+  className="ui-calendar ui-calendar_test"
+>
+  <Days
+    maxDate={null}
+    minDate={null}
+    onNavNextMonth={[Function]}
+    onNavPreviousMonth={[Function]}
+    onSelectDay={[Function]}
+    renderDate={2017-05-05T00:00:00.000Z}
+    selectedDates={
+      Array [
+        null,
+        null,
+      ]
+    }
+    selectionType="normal"
+  />
+</div>
+`;

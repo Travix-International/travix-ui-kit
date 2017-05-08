@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Radio Button #render() should not modify mods 1`] = `
+<div
+  className="ui-radio ui-radio_test ui-radio_disabled"
+>
+  <input
+    checked={false}
+    className="ui-radio__input-radio"
+    disabled={true}
+    id="disabledRadio"
+    onChange={[Function]}
+    type="radio"
+  />
+  <label
+    aria-checked={false}
+    className="ui-radio__label"
+    htmlFor="disabledRadio"
+    role="radio"
+  >
+    Disabled radio button
+  </label>
+</div>
+`;
+
 exports[`Radio Button #render() should render checked radio button 1`] = `
 <div
   className="ui-radio"

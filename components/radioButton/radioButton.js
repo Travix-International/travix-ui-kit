@@ -6,16 +6,18 @@ import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 /**
  * RadioButton component
  */
-function RadioButton({
-  checked,
-  children,
-  dataAttrs = {},
-  disabled,
-  id,
-  mods = [],
-  name,
-  onChange }) {
+function RadioButton(props) {
+  const {
+    checked,
+    children,
+    dataAttrs = {},
+    disabled,
+    id,
+    name,
+    onChange,
+  } = props;
   const restProps = getDataAttributes(dataAttrs);
+  const mods = props.mods ? props.mods.slice() : [];
 
   if (disabled) {
     mods.push('disabled');

@@ -39,19 +39,21 @@ export function ensureDecimalPrecision(value = '', decimalsPrecision = 2) {
 /**
  * Price component
  */
-function Price({
-  dataAttrs = {},
-  decimalsPrecision,
-  decimalsSeparator,
-  mods = [],
-  showDecimals,
-  size,
-  symbol,
-  symbolPosition,
-  thousandsSeparator,
-  underlined,
-  value,
-}) {
+function Price(props) {
+  const {
+    dataAttrs = {},
+    decimalsPrecision,
+    decimalsSeparator,
+    showDecimals,
+    size,
+    symbol,
+    symbolPosition,
+    thousandsSeparator,
+    underlined,
+    value,
+  } = props;
+  const mods = props.mods ? props.mods.slice() : [];
+
   const rootClass = 'ui-price';
   const [intValue, decValue] = value.toString().split('.');
 

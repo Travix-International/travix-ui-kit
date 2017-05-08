@@ -8,6 +8,21 @@ describe('List', () => {
     const shallow = enzyme.shallow;
     const shallowToJson = enzymeToJson.shallowToJson;
 
+    it('should not modify mods', () => {
+      const mods = ['test'];
+      const wrapper = shallow(
+        <List
+          align="vertical"
+          items={['London', 'Amsterdam', 'Madrid']}
+          mods={mods}
+        />
+      );
+
+      expect(mods.length).toEqual(1);
+      expect(mods[0]).toEqual('test');
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
     it('should return base class with mods for strings as class and string as mods', () => {
       const wrapper = shallow(
         <List align="vertical" items={['London', 'Amsterdam', 'Madrid']} />

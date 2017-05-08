@@ -1,5 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AutoComplete #render() should copy mods 1`] = `
+<div
+  className="ui-autocomplete ui-autocomplete_test"
+  highlighted={false}
+  mods={
+    Array [
+      "test",
+    ]
+  }
+>
+  <Input
+    aria-activedescendant="ui-autocomplete-item-autocomplete-0"
+    aria-autocomplete="list"
+    aria-expanded={false}
+    aria-haspopup={false}
+    aria-labelledby=""
+    aria-owns="ui-autocomplete-list-autocomplete"
+    autoComplete="off"
+    disabled={false}
+    id="ui-autocomplete-input-autocomplete"
+    multiline={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="combobox"
+  />
+  <Input
+    disabled={false}
+    hidden={true}
+    multiline={false}
+    name="autocomplete"
+  />
+  <div
+    className="ui-autocomplete__popunder"
+  >
+    <ul
+      aria-expanded={false}
+      className="ui-autocomplete__popunder-list"
+      id="ui-autocomplete-list-autocomplete"
+      role="listbox"
+    >
+      <AutoCompleteItem
+        id="ui-autocomplete-item-autocomplete-0"
+        index={0}
+        isActive={true}
+        isTitle={false}
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        value="value"
+      >
+        item
+      </AutoCompleteItem>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`AutoComplete #render() should not render item child if it not "AutoCompleteItem" 1`] = `
 <div
   className="ui-autocomplete"

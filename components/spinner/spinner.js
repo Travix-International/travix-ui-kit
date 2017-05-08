@@ -7,7 +7,10 @@ const { PropTypes } = React;
 /**
  * General Spinner component. Use when you need spinner
  */
-function Spinner({ mods = [], size }) {
+function Spinner(props) {
+  const { size } = props;
+  const mods = props.mods ? props.mods.slice() : [];
+
   mods.push(`size_${size}`);
 
   const className = getClassNamesWithMods('ui-spinner', mods);

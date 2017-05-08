@@ -285,11 +285,11 @@ class AutoComplete extends Component {
       dataAttrs = {},
       disabled,
       label,
-      mods = [],
       name,
       placeholder,
       ...otherProps
     } = this.props;
+    const mods = this.props.mods ? this.props.mods.slice() : [];
 
     this.state.open && mods.push('open');
     const className = getClassNamesWithMods('ui-autocomplete', mods);
