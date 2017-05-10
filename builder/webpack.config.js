@@ -45,7 +45,13 @@ module.exports = {
             {
               loader: 'postcss-loader',
               options: {
-                plugins: [autoprefixer('last 2 version')],
+                plugins: [autoprefixer({
+                  browsers: [
+                    'last 2 versions',
+                    'iOS >= 8',
+                    'Safari >= 8',
+                  ],
+                })],
               },
             },
             'sass-loader',
