@@ -1,5 +1,4 @@
 import { mount, shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
 import React from 'react';
 import Calendar from '../../../components/calendar/calendar';
 import CalendarWrapper from './calendarWrapper.mock';
