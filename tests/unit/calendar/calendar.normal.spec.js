@@ -26,12 +26,8 @@ describe('Calendar (normal mode)', () => {
 
     it('should not mutate props', () => {
       const mods = ['test'];
-      const wrapper = shallow(
-        <Calendar
-          mods={mods}
-        />
-      );
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+
+      shallow(<Calendar mods={mods} />);
       expect(mods.length).toEqual(1);
       expect(mods[0]).toEqual('test');
     });
