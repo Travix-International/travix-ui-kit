@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.5.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.5.1) (2017-05-11)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.5.0...v0.5.1)
+
+**Merged pull requests:**
+
+- Fixes the config for Webpack 2 on the styleguide.config.js [\#89](https://github.com/Travix-International/travix-ui-kit/pull/89) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Improvements for CollapseItem component [\#76](https://github.com/Travix-International/travix-ui-kit/pull/76) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+
 ## [v0.5.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.5.0) (2017-05-10)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.8...v0.5.0)
 
