@@ -9,13 +9,13 @@ module.exports = {
   },
   webpackConfig: {
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js?$/,
           include: __dirname + '/components',
-          loader: 'babel'
-        }
-      ]
-    }
-  }
+          use: 'babel-loader',
+        },
+      ],
+    },
+  },
 };
