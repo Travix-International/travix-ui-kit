@@ -3,11 +3,6 @@
 exports[`Radio Button #render() should not modify mods 1`] = `
 <div
   className="ui-radio ui-radio_test ui-radio_disabled"
-  mods={
-    Array [
-      "test",
-    ]
-  }
 >
   <input
     checked={false}
