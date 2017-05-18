@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.5.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.5.2) (2017-05-18)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.5.1...v0.5.2)
+
+**Merged pull requests:**
+
+- Components props improvements [\#94](https://github.com/Travix-International/travix-ui-kit/pull/94) ([RumataDeEstor](https://github.com/RumataDeEstor))
+
 ## [v0.5.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.5.1) (2017-05-11)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.5.0...v0.5.1)
 
