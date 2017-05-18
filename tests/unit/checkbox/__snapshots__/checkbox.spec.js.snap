@@ -4,6 +4,11 @@ exports[`Checkbox #render() should not modify mods 1`] = `
 <label
   className="ui-checkbox ui-checkbox_test"
   htmlFor=""
+  mods={
+    Array [
+      "test",
+    ]
+  }
 >
   <input
     aria-checked={false}

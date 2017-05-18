@@ -15,8 +15,9 @@ function RadioButton(props) {
     id,
     name,
     onChange,
+    ...otherProps
   } = props;
-  const restProps = getDataAttributes(dataAttrs);
+  const dataAttributes = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
 
   if (disabled) {
@@ -26,7 +27,11 @@ function RadioButton(props) {
   const className = getClassNamesWithMods('ui-radio', mods);
 
   return (
-    <div className={className} {...restProps}>
+    <div
+      className={className}
+      {...dataAttributes}
+      {...otherProps}
+    >
       <input
         checked={checked}
         className="ui-radio__input-radio"

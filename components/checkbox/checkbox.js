@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 /**
  * Checkbox component.
@@ -8,16 +8,24 @@ function Checkbox(props) {
   const {
     checked,
     children,
+    dataAttrs = {},
     disabled,
     name,
     onChange,
+    ...otherProps
   } = props;
+  const dataAttributes = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
   disabled && mods.push('is-disabled');
   const className = getClassNamesWithMods('ui-checkbox', mods);
 
   return (
-    <label className={className} htmlFor={name}>
+    <label
+      {...dataAttributes}
+      {...otherProps}
+      className={className}
+      htmlFor={name}
+    >
       <input
         aria-checked={checked}
         checked={checked}
@@ -52,6 +60,14 @@ Checkbox.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
+  ]),
+
+  /**
+   * Data attributes. You can use it to set up GTM key or any custom data-* attribute.
+   */
+  dataAttrs: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
   ]),
 
   /**
