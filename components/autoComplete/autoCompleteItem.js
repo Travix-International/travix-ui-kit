@@ -28,12 +28,12 @@ class AutoCompleteItem extends Component {
     const {
       children,
       dataAttrs = {},
-      mods = [],
       onClick,
       isActive,
       isTitle,
       ...otherProps
     } = this.props;
+    const mods = this.props.mods ? this.props.mods.slice() : [];
 
     isTitle && mods.push('title');
     isActive && mods.push('active');

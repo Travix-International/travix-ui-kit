@@ -21,6 +21,7 @@ class CollapseItem extends Component {
       title,
       children,
       onClick, // eslint-disable-line no-unused-vars
+      labelProps = {},
       ...otherProps
     } = this.props;
     const mods = {
@@ -29,6 +30,7 @@ class CollapseItem extends Component {
     return (
       <div {...otherProps} className={getClassNamesWithMods('ui-collapse-item', mods)}>
         <button
+          {...labelProps}
           aria-controls={id}
           aria-expanded={isActive}
           className="ui-collapse__label"
@@ -71,6 +73,10 @@ CollapseItem.propTypes = {
    * The CollapseItem's title
    */
   title: PropTypes.node.isRequired,
+  /**
+   * Specify props for label
+   */
+  labelProps: PropTypes.object,
 };
 
 CollapseItem.defaultProps = {

@@ -21,6 +21,19 @@ describe('Input', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
+    it('should not modify mods', () => {
+      const mods = ['test'];
+      const wrapper = shallow(
+        <Input
+          mods={mods}
+        />
+      );
+
+      expect(mods.length).toEqual(1);
+      expect(mods[0]).toEqual('test');
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
     it('should render multiline input', () => {
       const wrapper = shallow(
         <Input

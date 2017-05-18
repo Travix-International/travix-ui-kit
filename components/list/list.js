@@ -5,7 +5,10 @@ import { getClassNamesWithMods } from '../_helpers';
 /**
  * General List component. Use when you need to display array of elements
  */
-function List({ items, hideBullets, mods = [], align }) {
+function List(props) {
+  const { items, hideBullets, align } = props;
+  const mods = props.mods ? props.mods.slice() : [];
+
   mods.push(`align_${align}`);
 
   if (hideBullets) {

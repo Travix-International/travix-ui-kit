@@ -65,11 +65,11 @@ class Input extends Component {
     const {
       dataAttrs = {},
       disabled,
-      mods = [],
       multiline,
       value,
       ...otherProps
     } = this.props;
+    const mods = this.props.mods ? this.props.mods.slice() : [];
 
     this.state.isFocused && mods.push('focused');
     const className = getClassNamesWithMods('ui-input', mods);

@@ -1,4 +1,4 @@
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import React from 'react';
 import Calendar from '../../../components/calendar/calendar';
 import CalendarWrapper from './calendarWrapper.mock';
@@ -21,6 +21,14 @@ describe('Calendar (normal mode)', () => {
         renderDate: todayDate,
         selectedDates: [null, null],
       });
+    });
+
+    it('should not mutate props', () => {
+      const mods = ['test'];
+
+      shallow(<Calendar mods={mods} />);
+      expect(mods.length).toEqual(1);
+      expect(mods[0]).toEqual('test');
     });
 
     it('should set renderDate and not minLimit, with a given "initalDates" attribute', () => {

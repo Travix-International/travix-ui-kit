@@ -9,6 +9,19 @@ describe('Radio Button', () => {
     const shallowToJson = enzymeToJson.shallowToJson;
     const onChange = () => {};
 
+    it('should not modify mods', () => {
+      const mods = ['test'];
+      const wrapper = shallow(
+        <RadioButton disabled id="disabledRadio" mods={mods} onChange={onChange}>
+          Disabled radio button
+        </RadioButton>
+      );
+
+      expect(mods.length).toEqual(1);
+      expect(mods[0]).toEqual('test');
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
     it('should render disabled radio button', () => {
       const wrapper = shallow(
         <RadioButton disabled id="disabledRadio" onChange={onChange}>

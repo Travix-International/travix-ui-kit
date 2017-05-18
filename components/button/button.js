@@ -7,9 +7,19 @@ const { PropTypes } = React;
 /**
  * General Button component. Use when you need button or a link that looks like button
  */
-function Button({ children, mods = [], size, href, onClick, type, variation, disabled, dataAttrs = {} }) {
+function Button(props) {
+  const {
+    children,
+    size,
+    href,
+    onClick,
+    type,
+    variation,
+    disabled,
+    dataAttrs = {},
+  } = props;
   const restProps = getDataAttributes(dataAttrs);
-
+  const mods = props.mods ? props.mods.slice() : [];
   /** This props have default values */
   mods.push(`size_${size}`);
   mods.push(`variation_${variation}`);
@@ -43,7 +53,15 @@ function Button({ children, mods = [], size, href, onClick, type, variation, dis
   }
 
   return (
-    <button className={className} disabled={disabled} onClick={onClick} type="button">{children}</button>
+    <button
+      className={className}
+      disabled={disabled}
+      onClick={onClick}
+      type="button"
+      {...restProps}
+    >
+      {children}
+    </button>
   );
 }
 
@@ -101,7 +119,7 @@ Button.propTypes = {
   /**
    * Button's apperance.
    */
-  variation: PropTypes.oneOf(['default', 'ghost', 'social', 'rounded', 'borderless']),
+  variation: PropTypes.oneOf(['default']),
 };
 
 export default Button;

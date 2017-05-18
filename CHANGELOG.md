@@ -1,5 +1,34 @@
 # Change Log
 
+## [v0.5.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.5.1) (2017-05-11)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.5.0...v0.5.1)
+
+**Merged pull requests:**
+
+- Fixes the config for Webpack 2 on the styleguide.config.js [\#89](https://github.com/Travix-International/travix-ui-kit/pull/89) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Improvements for CollapseItem component [\#76](https://github.com/Travix-International/travix-ui-kit/pull/76) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+
+## [v0.5.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.5.0) (2017-05-10)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.8...v0.5.0)
+
+**Closed issues:**
+
+- Upgrade to Webpack 2 [\#84](https://github.com/Travix-International/travix-ui-kit/issues/84)
+- Avoid mutating props in Components [\#77](https://github.com/Travix-International/travix-ui-kit/issues/77)
+
+**Merged pull requests:**
+
+- Upgrade webpack 2 [\#87](https://github.com/Travix-International/travix-ui-kit/pull/87) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Button restProps and non-mutating mods [\#78](https://github.com/Travix-International/travix-ui-kit/pull/78) ([asci](https://github.com/asci))
+- Update button.js [\#74](https://github.com/Travix-International/travix-ui-kit/pull/74) ([asci](https://github.com/asci))
+
+## [v0.4.8](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.8) (2017-05-04)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.7...v0.4.8)
+
+**Merged pull requests:**
+
+- Improvements for autoComplete, dropDown and button components [\#75](https://github.com/Travix-International/travix-ui-kit/pull/75) ([AlleeX](https://github.com/AlleeX))
+
 ## [v0.4.7](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.7) (2017-05-02)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.6...v0.4.7)
 

@@ -1,6 +1,7 @@
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 const outputDir = path.join(__dirname, '..', 'dist');
 
@@ -29,27 +30,35 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/i,
         exclude: /(node_modules)/,
-        loader: 'babel',
+        use: 'babel-loader',
       },
       {
         test: /\.s?css$/i,
-        loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'sass']),
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [autoprefixer({
+                  browsers: [
+                    'last 2 versions',
+                    'iOS >= 8',
+                    'Safari >= 8',
+                  ],
+                })],
+              },
+            },
+            'sass-loader',
+          ],
+        }),
       },
     ],
-  },
-
-  postcss: () => {
-    return [autoprefixer({
-      browsers: [
-        'last 2 versions',
-        'iOS >= 8',
-        'Safari >= 8',
-      ],
-    })];
   },
 
   plugins: [

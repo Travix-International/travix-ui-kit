@@ -21,6 +21,19 @@ describe('Checkbox', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
+    it('should not modify mods', () => {
+      const mods = ['test'];
+      const wrapper = shallow(
+        <Checkbox
+          mods={mods}
+        />
+      );
+
+      expect(mods.length).toEqual(1);
+      expect(mods[0]).toEqual('test');
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
     it('should render checked checkbox', () => {
       const wrapper = shallow(
         <Checkbox
