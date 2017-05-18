@@ -28,9 +28,9 @@ function RadioButton(props) {
 
   return (
     <div
-      className={className}
       {...dataAttributes}
       {...otherProps}
+      className={className}
     >
       <input
         checked={checked}
