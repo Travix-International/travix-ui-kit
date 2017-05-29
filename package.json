@@ -88,6 +88,7 @@
   },
   "greenkeeper": {
     "ignore": [
+      "cheerio",
       "eslint",
       "eslint-plugin-react",
       "extract-text-webpack-plugin",
