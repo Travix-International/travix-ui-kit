@@ -8,7 +8,7 @@
 
   &.ui-checkbox_is-disabled {
     cursor: default;
-    color: rgba(var(--tx-checkbox-text-disabled-color), .3);
+    color: var(--tx-checkbox-text-disabled-color);
   }
 
   input[type="checkbox"] {
@@ -67,10 +67,10 @@
 
     &:disabled {
       & ~ .ui-checkbox__text {
-        color: rgba(var(--tx-checkbox-text-disabled-color), .3);
+        color: var(--tx-checkbox-text-disabled-color);
 
         &:before {
-          border-color: rgba(var(--tx-checkbox-text-disabled-border-color), .3);
+          border-color: var(--tx-checkbox-text-disabled-border-color);
         }
       }
     }
