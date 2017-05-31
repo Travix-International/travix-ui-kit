@@ -5,7 +5,6 @@ node_js:
 
 script:
   - 'npm run lint'
-  - 'npm run test'
   - 'npm run cov'
 
 after_success: 'npm run coverage:coveralls'
