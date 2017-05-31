@@ -1,8 +1,8 @@
 .ui-input {
-  border-radius: $tx-input-border-radius;
-  border: 2px solid $tx-input-border-color;
-  color: $tx-input-color;
-  font-size: $tx-input-font-size;
+  border-radius: var(--tx-input-border-radius);
+  border: 2px solid var(--tx-input-border-color);
+  color: var(--tx-input-color);
+  font-size: var(--tx-input-font-size);
   min-width: 100%;
   outline: 0;
   padding: 15px;
@@ -11,5 +11,5 @@
 }
 
 .ui-input_focused {
-  border-color: $tx-input-focused-border-color;
+  border-color: var(--tx-input-focused-border-color);
 }

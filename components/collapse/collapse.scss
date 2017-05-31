@@ -1,5 +1,5 @@
 .ui-collapse {
-  background: $tx-collapse-background-color;
-  border-radius: $tx-collapse-border-radius;
-  padding: $tx-collapse-padding;
+  background: var(--tx-collapse-background-color);
+  border-radius: var(--tx-collapse-border-radius);
+  padding: var(--tx-collapse-padding);
 }

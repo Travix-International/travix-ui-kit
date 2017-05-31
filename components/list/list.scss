@@ -1,16 +1,15 @@
-@import "../../themes/theme";
 
 .ui-list {
-  font-family: $tx-generic-font-secondary-font-family, $tx-generic-font-secondary-generic-family;
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
 
   &.ui-list_align_vertical {
     .ui-list__item {
       display: block;
-      line-height: $tx-list-line-height;
+      line-height: var(--tx-list-line-height);
 
       &:before {
         content: "•";
-        color: $tx-list-bullets-color;
+        color: var(--tx-list-bullets-color);
         display: inline-block;
         font-size: 22px;
         margin-left: -1em;
@@ -38,6 +37,6 @@
   }
 
   .ui-list__item {
-    color: $tx-list-color;
+    color: var(--tx-list-color);
   }
 }

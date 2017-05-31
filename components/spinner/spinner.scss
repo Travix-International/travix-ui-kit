@@ -1,4 +1,3 @@
-@import "../../themes/theme";
 
 .ui-spinner {
   animation: rotation infinite 0.7s;
@@ -31,20 +30,20 @@
 }
 
 .ui-spinner {
-  fill: $tx-spinner-color-light;
+  fill: var(--tx-spinner-color-light);
 }
 
 .ui-spinner_dark {
-  fill: $tx-spinner-color-dark;
+  fill: var(--tx-spinner-color-dark);
 }
 
 .ui-spinner_darker {
-  fill: $tx-spinner-color-darker;
+  fill: var(--tx-spinner-color-darker);
 }
 
 .ui-spinner_lighter {
   fill: none;
-  stroke: $tx-spinner-color-lighter;
+  stroke: var(--tx-spinner-color-lighter);
 }
 
 @keyframes bouncedelay {

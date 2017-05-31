@@ -73,7 +73,7 @@ generic:
     border-radius-small: &border-radius-small 2px
 autocomplete:
   background-color: *blank
-  box-shadow: *shadow
+  box-shadow: "0 0 5px 0 rgba(var(--tx-shadow), .18)"
 autocomplete-item:
   color: *text
   active:
@@ -104,15 +104,9 @@ button:
       border-bottom: *secondary-darkest
   size:
     border-radius: *border-radius-small
-  shadow:
-    inner:
-      params: "0 3px"
-      color: *accent-border
-    outer:
-      params: "0 0"
-      color: "transparent"
-      hover:
-        params: "0 0"
+  shadow: "0 3px var(--tx-accent-border), 0 0 transparent"
+  shadow-hover: "0 5px var(--tx-accent-border), 0 0 transparent"
+  text-shadow: "none"
 calendar:
   height: 300px
   nav:
