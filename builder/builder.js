@@ -6,7 +6,7 @@ const runWebpackAndCopyFilesToFinalDestination = require('./runWebpackAndCopyFil
 const webpackConfig = require('./webpack.config');
 
 const defaultThemeYamlPath = path.join(__dirname, '..', 'themes', '_default.yaml');
-const defaultOutputThemeFile = path.join(__dirname, '..', 'themes', 'theme.scss');
+const defaultOutputThemeFile = path.join(__dirname, '..', 'dist', 'theme.css');
 /**
  * Triggers the build process.
  *
@@ -30,7 +30,7 @@ module.exports = (options) => {
   const themeFiles = [defaultThemeYamlPath].concat(themeFile).filter(Boolean);
 
   const builder = themeBuilder({
-    format: 'scss',
+    format: 'cssvars',
     prefix: 'tx',
   });
 
