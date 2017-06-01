@@ -45,7 +45,7 @@
     }
   ],
   "dependencies": {
-    "react-select": "^1.0.0-rc.3"
+    "react-select": "^1.0.0-rc.5"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.0",
