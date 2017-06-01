@@ -44,6 +44,9 @@
       "url": "https://github.com/mAiNiNfEcTiOn"
     }
   ],
+  "dependencies": {
+    "react-select": "^1.0.0-rc.3"
+  },
   "devDependencies": {
     "autoprefixer": "^6.7.0",
     "babel-cli": "^6.18.0",
@@ -74,7 +77,6 @@
     "prop-types": "^15.5.8",
     "react-addons-test-utils": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-select": "^1.0.0-rc.3",
     "react-styleguidist": "~5.1.10",
     "react": "^0.14.8",
     "sass-loader": "~6.0.4",
