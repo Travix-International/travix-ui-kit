@@ -1,5 +1,20 @@
 # Change Log
 
+## [v0.6.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.1) (2017-06-01)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.0...v0.6.1)
+
+## [v0.6.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.0) (2017-06-01)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.5.2...v0.6.0)
+
+**Closed issues:**
+
+- Consider React as a peer dependency [\#98](https://github.com/Travix-International/travix-ui-kit/issues/98)
+
+**Merged pull requests:**
+
+- Move dependencies to devDependencies [\#100](https://github.com/Travix-International/travix-ui-kit/pull/100) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Convert SCSS Variables into CSS Custom Properties/Variables [\#99](https://github.com/Travix-International/travix-ui-kit/pull/99) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.5.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.5.2) (2017-05-18)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.5.1...v0.5.2)
 
@@ -68,7 +83,7 @@
 
 **Merged pull requests:**
 
-- Update react-styleguidist to the latest version 🚀 [\#56](https://github.com/Travix-International/travix-ui-kit/pull/56) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update react-styleguidist to the latest version 🚀 [\#56](https://github.com/Travix-International/travix-ui-kit/pull/56) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 
 ## [v0.4.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.4.3) (2017-04-07)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.4.2...v0.4.3)
@@ -153,7 +168,7 @@
 
 **Merged pull requests:**
 
-- Update theme-builder to the latest version 🚀 [\#38](https://github.com/Travix-International/travix-ui-kit/pull/38) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update theme-builder to the latest version 🚀 [\#38](https://github.com/Travix-International/travix-ui-kit/pull/38) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 - Modal component [\#37](https://github.com/Travix-International/travix-ui-kit/pull/37) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
 - Fixes typo on README.md [\#33](https://github.com/Travix-International/travix-ui-kit/pull/33) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
 
@@ -180,8 +195,8 @@
 **Merged pull requests:**
 
 - Radio button [\#25](https://github.com/Travix-International/travix-ui-kit/pull/25) ([iwwwi](https://github.com/iwwwi))
-- Update jest-cli to the latest version 🚀 [\#22](https://github.com/Travix-International/travix-ui-kit/pull/22) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
-- Update jest to the latest version 🚀 [\#21](https://github.com/Travix-International/travix-ui-kit/pull/21) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update jest-cli to the latest version 🚀 [\#22](https://github.com/Travix-International/travix-ui-kit/pull/22) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update jest to the latest version 🚀 [\#21](https://github.com/Travix-International/travix-ui-kit/pull/21) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 - Price component [\#18](https://github.com/Travix-International/travix-ui-kit/pull/18) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
 - Added List component [\#16](https://github.com/Travix-International/travix-ui-kit/pull/16) ([AlexDudar](https://github.com/AlexDudar))
 
@@ -206,7 +221,7 @@
 **Merged pull requests:**
 
 - Updated mods helper and class names according to the new BEM standards [\#13](https://github.com/Travix-International/travix-ui-kit/pull/13) ([AlexDudar](https://github.com/AlexDudar))
-- Update sass-loader to the latest version 🚀 [\#9](https://github.com/Travix-International/travix-ui-kit/pull/9) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update sass-loader to the latest version 🚀 [\#9](https://github.com/Travix-International/travix-ui-kit/pull/9) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 
 ## [v0.2.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.2.2) (2017-01-26)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.2.1...v0.2.2)
@@ -227,7 +242,7 @@
 
 **Merged pull requests:**
 
-- Update dependencies to enable Greenkeeper 🌴 [\#2](https://github.com/Travix-International/travix-ui-kit/pull/2) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update dependencies to enable Greenkeeper 🌴 [\#2](https://github.com/Travix-International/travix-ui-kit/pull/2) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 
 ## [v0.1.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.1.2) (2017-01-18)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.1.1...v0.1.2)
