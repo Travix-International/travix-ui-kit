@@ -17,9 +17,6 @@
     "lint": "eslint --color '{components,tests,utils,scripts}/**/*.js'",
     "transpile": "npm run build"
   },
-  "bin": {
-    "travix-ui-kit": "./builder/program.js"
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:Travix-International/travix-ui-kit.git"
@@ -48,6 +45,9 @@
     }
   ],
   "dependencies": {
+    "react-select": "^1.0.0-rc.5"
+  },
+  "devDependencies": {
     "autoprefixer": "^6.7.0",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
@@ -56,37 +56,34 @@
     "babel-loader": "^6.2.5",
     "babel-preset-travix": "^1.1.0",
     "babel-register": "^6.16.3",
+    "cheerio": "^0.22.0",
     "commander": "^2.9.0",
+    "coveralls": "^2.11.12",
     "create-react-class": "^15.5.2",
     "css-loader": "~0.28.1",
-    "extract-text-webpack-plugin": "~2.1.0",
-    "node-sass": "^4.3.0",
-    "postcss-loader": "~2.0.3",
-    "prop-types": "^15.5.8",
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8",
-    "react-select": "^1.0.0-rc.3",
-    "sass-loader": "~6.0.4",
-    "style-loader": "~0.17.0",
-    "theme-builder": "~0.5.0",
-    "webpack": "~2.5.1"
-  },
-  "devDependencies": {
-    "cheerio": "^0.22.0",
-    "coveralls": "^2.11.12",
-    "enzyme": "^2.7.1",
     "enzyme-to-json": "^1.1.4",
-    "eslint": "^3.14.0",
+    "enzyme": "^2.7.1",
     "eslint-config-travix": "^2.2.0",
     "eslint-plugin-babel": "^4.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.10.2",
-    "jest": "^19.0.0",
+    "eslint": "^3.14.0",
+    "extract-text-webpack-plugin": "~2.1.0",
     "jest-cli": "^19.0.1",
     "jest-serializer-enzyme": "^1.0.0",
+    "jest": "^19.0.0",
+    "node-sass": "^4.3.0",
+    "postcss-loader": "~2.0.3",
+    "prop-types": "^15.5.8",
     "react-addons-test-utils": "^0.14.8",
+    "react-dom": "^0.14.8",
     "react-styleguidist": "~5.1.10",
-    "webpack-hot-middleware": "^2.15.0"
+    "react": "^0.14.8",
+    "sass-loader": "~6.0.4",
+    "style-loader": "~0.17.0",
+    "theme-builder": "~0.5.0",
+    "webpack-hot-middleware": "^2.15.0",
+    "webpack": "~2.5.1"
   },
   "greenkeeper": {
     "ignore": [
