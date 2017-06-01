@@ -30,7 +30,8 @@ prepare-site:
 	rm -rf ./_site
 	mkdir _site
 	cp -r ./styleguide/ ./_site/
-	cp ./dist/ui-bundle.css ./_site/build/ui-bundle.css
+	cp ./dist/*.css ./_site/build/
+	sed -i.bak 's/\/theme\.css/build\/theme\.css/g' _site/index.html
 	sed -i.bak 's/\/ui\-bundle\.css/build\/ui\-bundle\.css/g' _site/index.html
 	rm _site/index.html.bak
 	cp .gitignore ./_site/.gitignore
