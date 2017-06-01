@@ -1,13 +1,12 @@
-@import "../../themes/theme";
 
 .ui-autocomplete {
-  font-family: $tx-generic-font-primary-font-family, $tx-generic-font-primary-generic-family;
+  font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
   position: relative;
 }
 
 .ui-autocomplete__popunder {
-  background-color: $tx-autocomplete-background-color;
-  box-shadow: 0 0 5px 0 rgba($tx-autocomplete-box-shadow, .18);
+  background-color: var(--tx-autocomplete-background-color);
+  box-shadow: var(--tx-autocomplete-box-shadow);
   display: none;
   left: 0;
   margin-top: -2px;

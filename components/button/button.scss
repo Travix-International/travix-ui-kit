@@ -1,65 +1,47 @@
-@import "../../themes/theme";
-
-$tx-button-shadow-outer-params: null !default;
-$button-shadow: null !default;
-
-@if $tx-button-shadow-outer-params {
-  $button-shadow: $tx-button-shadow-inner-params $tx-button-shadow-inner-color, $tx-button-shadow-outer-params $tx-button-shadow-outer-color;
-} @else {
-  $button-shadow: $tx-button-shadow-inner-params $tx-button-shadow-inner-color;
-}
-
-$tx-button-shadow-text-params: null !default;
-$text-shadow: null !default;
-
-@if $tx-button-shadow-text-params {
-  $text-shadow: $tx-button-shadow-text-params $tx-button-shadow-text-color;
-}
-
 .ui-button {
   cursor: pointer;
-  border-radius: $tx-button-size-border-radius;
+  border-radius: var(--tx-button-size-border-radius);
   outline: none;
   transition: all .1s ease-in-out;
 }
 
 .ui-button_variation_default {
-  font-family: $tx-generic-font-primary-font-family, $tx-generic-font-primary-generic-family;
-  font-weight: $tx-generic-font-primary-weight-bold;
+  font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
+  font-weight: var(--tx-generic-font-primary-weight-bold);
   font-size: 23px;
   padding: 15px 24px;
   border: none;
-  color: $tx-button-color-text;
-  background-color: $tx-button-color-bg-bottom;
-  background: linear-gradient(to bottom, $tx-button-color-bg-top 0, $tx-button-color-bg-bottom 100%);
-  box-shadow: $button-shadow;
-  text-shadow: $text-shadow;
+  color: var(--tx-button-color-text);
+  background-color: var(--tx-button-color-bg-bottom);
+  background: linear-gradient(to bottom, var(--tx-button-color-bg-top) 0, var(--tx-button-color-bg-bottom) 100%);
+  box-shadow: var(--tx-button-shadow);
+  text-shadow: var(--tx-button-text-shadow);
   position: relative;
   top: 0;
 
   span:before {
-    color: $tx-button-icon-color-normal;
+    color: var(--tx-button-icon-color-normal);
   }
 
   &:focus,
   &:hover {
-    box-shadow: 0 5px $tx-button-shadow-inner-color, $tx-button-shadow-outer-hover-params $tx-button-shadow-outer-color;
+    box-shadow: 0 5px var(--tx-button-shadow-inner-color), var(--tx-button-shadow-outer-hover-params) var(--tx-button-shadow-outer-color);
     outline: none;
     top: -2px;
     transition: all .1s ease-in-out;
 
     span:before {
-      color: $tx-button-icon-color-hover;
+      color: var(--tx-button-icon-color-hover);
     }
   }
 
   &:active {
-    box-shadow: 0 2px $tx-button-shadow-inner-color;
+    box-shadow: 0 2px var(--tx-button-shadow-inner-color);
     top: 1px;
     transition: all .1s ease-in-out;
 
     span:before {
-      color: $tx-button-icon-color-active;
+      color: var(--tx-button-icon-color-active);
     }
   }
 }
@@ -68,12 +50,12 @@ $text-shadow: null !default;
 .ui-button_disabled_true:focus,
 .ui-button_disabled_true:hover,
 .ui-button_disabled_true:active {
-  color: $tx-button-color-disabled-text;
+  color: var(--tx-button-color-disabled-text);
   cursor: default;
-  background-color: $tx-button-color-disabled-bg-bottom;
-  background: linear-gradient(to bottom, $tx-button-color-disabled-bg-top 0, $tx-button-color-disabled-bg-bottom 100%);
-  border-bottom: 3px solid $tx-button-color-disabled-border-bottom;
-  box-shadow: 0 2px $tx-button-color-disabled-border;
+  background-color: var(--tx-button-color-disabled-bg-bottom);
+  background: linear-gradient(to bottom, var(--tx-button-color-disabled-bg-top) 0, var(--tx-button-color-disabled-bg-bottom) 100%);
+  border-bottom: 3px solid var(--tx-button-color-disabled-border-bottom);
+  box-shadow: 0 2px var(--tx-button-color-disabled-border);
   position: static;
 }
 

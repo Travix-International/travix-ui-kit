@@ -26,7 +26,7 @@ describe('Builder › builder.js', () => {
     expect(result).toBeInstanceOf(Promise);
 
     return result.then(() => {
-      const outputPath = path.join(__dirname, '../../../themes/theme.scss');
+      const outputPath = path.join(__dirname, '../../../dist/theme.css');
       expect(saveThemeScssFile).toHaveBeenCalledWith(outputPath, 'theme-builder-result');
 
       expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({

@@ -1,34 +1,34 @@
 .ui-autocomplete-item {
-  color: $tx-autocomplete-item-color;
+  color: var(--tx-autocomplete-item-color);
   cursor: pointer;
   padding: 10px 22px;
 
   &:not(.ui-autocomplete-item_title):hover {
-    background-color: $tx-autocomplete-item-active-background-color;
-    color: $tx-autocomplete-item-active-color;
+    background-color: var(--tx-autocomplete-item-active-background-color);
+    color: var(--tx-autocomplete-item-active-color);
 
     .ui-autocomplete-item_highlight {
-      color: $tx-autocomplete-item-active-color;
+      color: var(--tx-autocomplete-item-active-color);
     }
   }
 }
 
 .ui-autocomplete-item_active {
-  background-color: $tx-autocomplete-item-active-background-color;
-  color: $tx-autocomplete-item-active-color;
+  background-color: var(--tx-autocomplete-item-active-background-color);
+  color: var(--tx-autocomplete-item-active-color);
 
   .ui-autocomplete-item_highlight {
-    color: $tx-autocomplete-item-active-color;
+    color: var(--tx-autocomplete-item-active-color);
   }
 }
 
 .ui-autocomplete-item_title {
-  background-color: $tx-autocomplete-item-title-background-color;
-  color: $tx-autocomplete-item-title-color;
+  background-color: var(--tx-autocomplete-item-title-background-color);
+  color: var(--tx-autocomplete-item-title-color);
   cursor: default;
 }
 
 .ui-autocomplete-item_highlight {
-  color: $tx-autocomplete-item-highlight-color;;
+  color: var(--tx-autocomplete-item-highlight-color);
   font-weight: bold;
 }

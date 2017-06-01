@@ -1,8 +1,8 @@
 .ui-radio {
-  color: $tx-generic-color-text-dark;
-  font-family: $tx-generic-font-secondary-font-family, $tx-generic-font-secondary-generic-family;
+  color: var(--tx-generic-color-text-dark);
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
   font-size: 14px;
-  font-weight: $tx-generic-font-primary-weight-regular;
+  font-weight: var(--tx-generic-font-primary-weight-regular);
   min-height: 20px;
   padding-bottom: 2px;
   padding-right: 10px;
@@ -10,7 +10,7 @@
   position: relative;
 
   &:hover {
-    color: $tx-generic-color-active;
+    color: var(--tx-generic-color-active);
   }
 }
 
@@ -19,7 +19,7 @@
   position: absolute;
 
   &:checked + .ui-radio__label:after {
-    background-color: $tx-generic-color-active;
+    background-color: var(--tx-generic-color-active);
     border-radius: 50%;
     content: '';
     height: 10px;
@@ -30,7 +30,7 @@
   }
 
   &:focus + .ui-radio__label:before {
-    border: 2px solid $tx-generic-color-active;
+    border: 2px solid var(--tx-generic-color-active);
   }
 }
 
@@ -39,9 +39,9 @@
   padding-left: 33px;
 
   &:before {
-    background: $tx-generic-color-blank;
+    background: var(--tx-generic-color-blank);
     border-radius: 50%;
-    border: 2px solid $tx-generic-color-secondary-dark;
+    border: 2px solid var(--tx-generic-color-secondary-dark);
     content: '';
     height: 16px;
     left: 0px;
@@ -52,10 +52,10 @@
 }
 
 .ui-radio_disabled .ui-radio__label {
-  color: $tx-generic-color-text-light;
+  color: var(--tx-generic-color-text-light);
   cursor: default;
 
   &:before {
-    border-color: $tx-generic-color-secondary-light;
+    border-color: var(--tx-generic-color-secondary-light);
   }
 }

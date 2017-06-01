@@ -1,8 +1,8 @@
 .ui-calendar {
   display: flex;
   flex-flow: column wrap;
-  height: $tx-calendar-height;
-  width: $tx-calendar-width;
+  height: var(--tx-calendar-height);
+  width: var(--tx-calendar-width);
 }
 
 .ui-calendar-days-panel {
@@ -25,10 +25,10 @@
 
 .ui-calendar-days__nav {
   align-items: stretch;
-  background: $tx-calendar-nav-background;
-  border-radius: $tx-calendar-nav-border-radius;
+  background: var(--tx-calendar-nav-background);
+  border-radius: var(--tx-calendar-nav-border-radius);
   display: flex;
-  flex: 0 0 $tx-calendar-nav-height;
+  flex: 0 0 var(--tx-calendar-nav-height);
   flex-flow: row nowrap;
   width: 100%;
 }
@@ -36,17 +36,17 @@
 .ui-calendar-days__previous-month,
 .ui-calendar-days__next-month {
   align-self: center;
-  background: $tx-calendar-nav-button-background-color-end;
-  background: linear-gradient(to bottom,$tx-calendar-nav-button-background-color-start 0,$tx-calendar-nav-button-background-color-end 100%);
+  background: var(--tx-calendar-nav-button-background-color-end);
+  background: linear-gradient(to bottom,var(--tx-calendar-nav-button-background-color-start) 0,var(--tx-calendar-nav-button-background-color-end) 100%);
   border: none;
-  border-radius: $tx-calendar-nav-button-border-radius;
-  box-shadow: 0 2px $tx-calendar-nav-button-box-shadow-color;
+  border-radius: var(--tx-calendar-nav-button-border-radius);
+  box-shadow: 0 2px var(--tx-calendar-nav-button-box-shadow-color);
   cursor: pointer;
-  color: $tx-calendar-nav-button-color;
-  flex: 0 0 $tx-calendar-nav-button-width;
-  font-weight: $tx-calendar-nav-button-font-weight;
-  height: $tx-calendar-nav-button-height;
-  margin: $tx-calendar-nav-button-margin;
+  color: var(--tx-calendar-nav-button-color);
+  flex: 0 0 var(--tx-calendar-nav-button-width);
+  font-weight: var(--tx-calendar-nav-button-font-weight);
+  height: var(--tx-calendar-nav-button-height);
+  margin: var(--tx-calendar-nav-button-margin);
 
   &[disabled] {
     visibility: hidden;
@@ -55,48 +55,48 @@
 
 .ui-calendar-days__rendered-month {
   align-self: center;
-  color: $tx-calendar-nav-label-color;
+  color: var(--tx-calendar-nav-label-color);
   flex: 1 1 100%;
   font-family: sans-serif;
-  font-weight: $tx-calendar-nav-label-font-weight;
+  font-weight: var(--tx-calendar-nav-label-font-weight);
   text-align: center;
 }
 
 .ui-calendar-days__weekdays {
   align-items: center;
-  background-color: $tx-calendar-header-background-color;
+  background-color: var(--tx-calendar-header-background-color);
   display: flex;
-  flex: 0 0 $tx-calendar-header-height;
+  flex: 0 0 var(--tx-calendar-header-height);
   flex-flow: row nowrap;
 }
 
 .ui-calendar-days__weekday {
-  color: $tx-calendar-header-weekday-color;
+  color: var(--tx-calendar-header-weekday-color);
   display: flex;
   flex: 1 1 14.285%;
   font-family: sans-serif;
-  font-size: $tx-calendar-header-weekday-font-size;
-  font-weight: $tx-calendar-header-weekday-font-weight;
+  font-size: var(--tx-calendar-header-weekday-font-size);
+  font-weight: var(--tx-calendar-header-weekday-font-weight);
   justify-content: center;
   text-transform: lowercase;
 }
 
 .ui-calendar-days__options {
-  border: 1px solid $tx-calendar-options-border-color;
+  border: 1px solid var(--tx-calendar-options-border-color);
   display: flex;
   flex: 1 1 auto;
   flex-flow: row wrap;
 }
 
 .ui-calendar-days-option {
-  background: $tx-calendar-options-option-background-color;
+  background: var(--tx-calendar-options-option-background-color);
   border: none;
-  border-bottom: 1px solid $tx-calendar-options-option-border-bottom;
-  border-right: 1px solid $tx-calendar-options-option-border-right;
-  color: $tx-calendar-options-option-color;
+  border-bottom: 1px solid var(--tx-calendar-options-option-border-bottom);
+  border-right: 1px solid var(--tx-calendar-options-option-border-right);
+  color: var(--tx-calendar-options-option-color);
   cursor: pointer;
   flex: 1 1 14.285%;
-  font-size: $tx-calendar-options-option-font-size;
+  font-size: var(--tx-calendar-options-option-font-size);
   outline: none;
 
   &:nth-of-type(7),
@@ -119,20 +119,20 @@
   }
 
   &[disabled] {
-    background: $tx-calendar-options-option-disabled-background-color;
-    color: $tx-calendar-options-option-disabled-color;
+    background: var(--tx-calendar-options-option-disabled-background-color);
+    color: var(--tx-calendar-options-option-disabled-color);
   }
 
   &.ui-calendar-days-option_selected,
   &.ui-calendar-days-option_selected-start,
   &.ui-calendar-days-option_selected-end,
   &:not([disabled]):hover {
-    background: $tx-calendar-options-option-hover-background-color;
-    color: $tx-calendar-options-option-hover-color;
+    background: var(--tx-calendar-options-option-hover-background-color);
+    color: var(--tx-calendar-options-option-hover-color);
   }
 
   &.ui-calendar-days-option_selected-between {
-    background: $tx-calendar-options-option-range-between-background-color;
+    background: var(--tx-calendar-options-option-range-between-background-color);
   }
 
   &:not([disabled]):focus {
@@ -146,7 +146,7 @@
 
   &:before,
   &:after {
-    border: 18px solid $tx-calendar-options-option-range-after-border-color;
+    border: 18px solid var(--tx-calendar-options-option-range-after-border-color);
     bottom: 0;
     content: " ";
     position: absolute;
@@ -155,21 +155,21 @@
 }
 
 .ui-calendar-days-option_selected-start:after {
-  border-left: 10px solid $tx-calendar-options-option-range-start-after-border-color;
+  border-left: 10px solid var(--tx-calendar-options-option-range-start-after-border-color);
   border-right: none;
   right: -10px;
 }
 
 .ui-calendar-days-option_selected-end:before {
   border-left: none;
-  border-right: 10px solid $tx-calendar-options-option-range-end-after-border-color;
+  border-right: 10px solid var(--tx-calendar-options-option-range-end-after-border-color);
   left: -10px;
 }
 
 .ui-calendar-days-option_previous-month {
-  background: $tx-calendar-options-option-previous-month-background-color;
+  background: var(--tx-calendar-options-option-previous-month-background-color);
 }
 
 .ui-calendar-days-option_next-month {
-  background: $tx-calendar-options-option-next-month-background-color;
+  background: var(--tx-calendar-options-option-next-month-background-color);
 }

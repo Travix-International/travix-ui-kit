@@ -1,24 +1,12 @@
-$select-input-bg: $tx-dropdown-input-background-color !default;
-$select-input-border-color: $tx-dropdown-input-border-color !default;
-$select-input-border-width: 2px !default;
-$select-input-border-radius: 4px !default;
-$select-input-height: 53px !default;
-
-$select-padding-horizontal: 15px;
-
-$select-option-color: $tx-dropdown-option-color !default;
-
-$select-arrow-color: $tx-dropdown-arrow-color !default;
-
 .ui-dropdown {
-  font-family: $tx-generic-font-primary-font-family, $tx-generic-font-primary-generic-family;
+  font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
 
   &:not(.is-disabled) {
     .Select-control {
       cursor: pointer;
 
       &:hover {
-        border-color: $tx-dropdown-select-control-border-color;
+        border-color: var(--tx-dropdown-select-control-border-color);
       }
     }
   }
@@ -29,13 +17,13 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
 
   .Select-menu-outer {
     border: none;
-    box-shadow: 0 0 5px 0 rgba($tx-dropdown-select-menu-outer-box-shadow, .18);
+    box-shadow: var(--tx-dropdown-select-menu-outer-box-shadow);
     left: 0;
     margin-top: -3px;
   }
 
   .Select-option {
-    color: $tx-dropdown-select-option-color;
+    color: var(--tx-dropdown-select-option-color);
     padding: 10px 22px;
 
     &:first-child {
@@ -46,7 +34,7 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
       }
 
       &:after {
-        border-bottom: 9px solid $tx-dropdown-option-arrow-border-color;
+        border-bottom: 9px solid var(--tx-dropdown-option-arrow-border-color);
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         right: 14px;
@@ -54,7 +42,7 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
       }
 
       &:before {
-        border-bottom: 12px solid rgba($tx-dropdown-option-arrow-border-shadow-color, .07);
+        border-bottom: 12px solid var(--tx-dropdown-option-arrow-border-shadow-color);
         border-left: 13px solid transparent;
         border-right: 13px solid transparent;
         content: '';
@@ -65,12 +53,12 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
     }
 
     &:hover {
-      background-color: $tx-dropdown-select-option-hover-background-color;
+      background-color: var(--tx-dropdown-select-option-hover-background-color);
     }
 
     &.is-selected {
-      background-color: $tx-dropdown-select-option-is-selected-background-color;
-      color: $tx-dropdown-select-option-is-selected-color;
+      background-color: var(--tx-dropdown-select-option-is-selected-background-color);
+      color: var(--tx-dropdown-select-option-is-selected-color);
     }
   }
 
@@ -80,8 +68,8 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
   }
 
   .Select-arrow-zone {
-    border-left: dashed 1px $tx-dropdown-select-arrow-zone-border-color-left;
-    color: $tx-dropdown-select-arrow-zone-color;
+    border-left: dashed 1px var(--tx-dropdown-select-arrow-zone-border-color-left);
+    color: var(--tx-dropdown-select-arrow-zone-color);
     margin: 7px 0;
     padding: 0;
     width: 45px;
@@ -113,17 +101,17 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
 
   &.Select--single:hover {
     .Select-control .Select-value .Select-value-label {
-      color: $tx-dropdown-select-arrow-zone-color;
+      color: var(--tx-dropdown-select-arrow-zone-color);
     }
 
     .Select-arrow-zone {
-      color: $tx-dropdown-select-arrow-zone-color;
+      color: var(--tx-dropdown-select-arrow-zone-color);
     }
   }
 
   &.Select--multi:hover {
     .Select-arrow-zone {
-      color: $tx-dropdown-select-arrow-zone-hover-color;
+      color: var(--tx-dropdown-select-arrow-zone-hover-color);
     }
   }
 }
@@ -137,14 +125,14 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
   &.is-open .Select-control,
   .Select-control {
     background: none;
-    border-color:  $tx-dropdown-filter-select-control-border-color;
+    border-color:  var(--tx-dropdown-filter-select-control-border-color);
   }
 
   .Select-placeholder {
-    color: $tx-dropdown-filter-select-placeholder-color;
+    color: var(--tx-dropdown-filter-select-placeholder-color);
     font-size: 13px;
     font-weight: bold;
-    line-height: $tx-dropdown-filter-select-placeholder-line-height; // should equal to .Select-control, .Select-input height
+    line-height: var(--tx-dropdown-filter-select-placeholder-line-height); // should equal to .Select-control, .Select-input height
     padding-left: 10px;
     position: static;
   }
@@ -165,7 +153,7 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
   }
 
   .Select-menu-outer {
-    box-shadow: 0 0 3px rgba($tx-dropdown-filter-select-menu-outer-box-shadow, .5);
+    box-shadow: 0 0 3px var(--tx-dropdown-filter-select-menu-outer-box-shadow);
     box-sizing: content-box;
     margin-top: -2px;
     padding: 0;
@@ -174,8 +162,8 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
 
   &.ui-dropdown_state-active {
     .Select-control {
-      background-color: $tx-dropdown-active-select-control-background-color;
-      border-color: $tx-dropdown-active-select-control-border-color;
+      background-color: var(--tx-dropdown-active-select-control-background-color);
+      border-color: var(--tx-dropdown-active-select-control-border-color);
     }
   }
 }
@@ -183,7 +171,7 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
 .ui-dropdown-filter__option {
   .ui-checkbox {
     align-items: center;
-    color: $tx-dropdown-filter-option-checkbox-color;
+    color: var(--tx-dropdown-filter-option-checkbox-color);
     cursor: pointer;
     display: flex;
     font-size: 16px;
@@ -196,22 +184,22 @@ $select-arrow-color: $tx-dropdown-arrow-color !default;
     }
 
     &:hover {
-      color: $tx-dropdown-filter-option-checkbox-hover-color;
+      color: var(--tx-dropdown-filter-option-checkbox-hover-color);
     }
   }
 
   &.ui-dropdown-filter__option_is-disabled {
     .ui-checkbox {
-      color: rgba($tx-dropdown-filter-option-checkbox-disabled-color, .3);
+      color: var(--tx-dropdown-filter-option-checkbox-disabled-color);
       cursor: default;
     }
   }
 
   &:hover:not(.ui-dropdown-filter__option_is-disabled) {
-    background-color: $tx-dropdown-filter-option-hover-and-not-disabled-background-color;
+    background-color: var(--tx-dropdown-filter-option-hover-and-not-disabled-background-color);
 
     span.ui-checkbox__text {
-      color: $tx-dropdown-filter-option-hover-and-not-disabled-checkbox-color;
+      color: var(--tx-dropdown-filter-option-hover-and-not-disabled-checkbox-color);
     }
   }
 }
