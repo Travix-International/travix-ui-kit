@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge #render() should not render wrapper if children is not provided 1`] = `
+<div
+  className="ui-badge-badge"
+>
+  Badge title
+</div>
+`;
+
+exports[`Badge #render() should render children 1`] = `
+<div
+  className="ui-badge"
+>
+  Badge Content
+  <div
+    className="ui-badge-badge"
+  >
+    Badge title
+  </div>
+</div>
+`;
