@@ -84,6 +84,29 @@ autocomplete-item:
     background-color: *secondary-dark
   highlight:
     color: *active
+badge:
+  after:
+    border:
+      size: 4px
+      color: *primary-darker
+  arrow:
+    angle:
+      coefficient: "0.6"
+  border:
+    bottom:
+      width: 4px
+      style: solid
+      color: *primary-darker
+    radius:
+      start: 0
+      end: 0
+  color:
+    background: *accent
+    text: *primary-darker
+  font-size: 15px
+  padding:
+    right-left: 8px
+    top-bottom: 6px
 button:
   icon:
     color:
