@@ -3,6 +3,7 @@
 exports[`Badge #render() should not render wrapper if children is not provided 1`] = `
 <div
   className="ui-badge-badge"
+  mods={Array []}
 >
   Badge title
 </div>
@@ -15,6 +16,7 @@ exports[`Badge #render() should render children 1`] = `
   Badge Content
   <div
     className="ui-badge-badge"
+    mods={Array []}
   >
     Badge title
   </div>

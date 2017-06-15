@@ -12,6 +12,10 @@ class Badge extends Component {
   renderBadge() {
     const { arrow, border, children, position, title, ...otherProps } = this.props;
 
+    if (!title) {
+      return null;
+    }
+
     const mods = {
       'arrow-left': arrow && position === 'right',
       'arrow-right': arrow && position === 'left',
@@ -31,14 +35,14 @@ class Badge extends Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, mods } = this.props;
 
     if (!children) {
       return this.renderBadge();
     }
 
     return (
-      <div className="ui-badge">
+      <div className={getClassNamesWithMods('ui-badge', mods)}>
         {children}
         {this.renderBadge()}
       </div>
@@ -60,19 +64,25 @@ Badge.propTypes = {
    */
   children: PropTypes.node,
   /**
+   * Set of custom modifications.
+   */
+  mods: PropTypes.arrayOf(PropTypes.string),
+  /**
    * The Badge's position
    */
   position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
   /**
    * The Badge's title
    */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 Badge.defaultProps = {
   arrow: false,
   border: true,
   children: null,
+  mods: [],
+  title: '',
 };
 
 export default Badge;

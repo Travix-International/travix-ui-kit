@@ -30,5 +30,13 @@ describe('Badge', () => {
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
+
+    it('should return null if title not provided', () => {
+      const wrapper = shallow(
+        <Badge />
+      );
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
   });
 });
