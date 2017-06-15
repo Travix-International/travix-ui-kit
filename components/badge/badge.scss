@@ -6,22 +6,22 @@
 
     $position: calc(-1 * var(--tx-badge-after-border-size));
 
-    &_top {
+    &.ui-badge-badge_top {
       top: $position;
       right: 20px;
     }
 
-    &_right {
+    &.ui-badge-badge_right {
       right: $position;
       top: 20px;
     }
 
-    &_bottom {
+    &.ui-badge-badge_bottom {
       bottom: $position;
       right: 20px;
     }
 
-    &_left {
+    &.ui-badge-badge_left {
       left: $position;
       top: 20px;
     }

@@ -10,24 +10,25 @@ import { getClassNamesWithMods } from '../_helpers';
  */
 class Badge extends Component {
   renderBadge() {
-    const { arrow, border, children, position, title, ...otherProps } = this.props;
+    const { arrow, border, children, mods, position, title, ...otherProps } = this.props;
 
     if (!title) {
       return null;
     }
 
-    const mods = {
+    const badgeMods = {
+      ...mods,
       'arrow-left': arrow && position === 'right',
       'arrow-right': arrow && position === 'left',
       'no-border': !border,
     };
 
     if (position && children) {
-      mods[position] = true;
+      badgeMods[position] = true;
     }
 
     return (
-      <div {...otherProps} className={getClassNamesWithMods('ui-badge-badge', mods)}>
+      <div {...otherProps} className={getClassNamesWithMods('ui-badge-badge', badgeMods)}>
         {title}
         {arrow && (position === 'right' || position === 'left') ? <span className="ui-badge-badge-arrow" /> : null}
       </div>

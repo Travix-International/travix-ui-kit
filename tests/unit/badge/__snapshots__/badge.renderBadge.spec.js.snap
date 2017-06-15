@@ -3,7 +3,6 @@
 exports[`Badge #renderBadge() should ignore position if no content provided 1`] = `
 <div
   className="ui-badge-badge"
-  mods={Array []}
 >
   Badge title
 </div>
@@ -16,7 +15,6 @@ exports[`Badge #renderBadge() should render arrow-left 1`] = `
   Badge Content
   <div
     className="ui-badge-badge ui-badge-badge_arrow-left ui-badge-badge_right"
-    mods={Array []}
   >
     Badge title
     <span
@@ -29,7 +27,6 @@ exports[`Badge #renderBadge() should render arrow-left 1`] = `
 exports[`Badge #renderBadge() should render arrow-right 1`] = `
 <div
   className="ui-badge-badge ui-badge-badge_arrow-right"
-  mods={Array []}
 >
   Badge title
   <span
