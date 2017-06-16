@@ -1,19 +1,21 @@
 const modSep = '_';
 
-function getClassNamesWithMods(baseClass = '', mods = {}) {
+function getClassNamesWithMods(baseClass = '', ...modsSet) {
   let classes = [].concat(baseClass);
   baseClass = classes[0];
 
-  if (mods instanceof Array) {
-    classes = classes
-      .concat(mods.filter(Boolean).map(mode => `${baseClass}${modSep}${mode}`));
-  } else {
-    Object.keys(mods).forEach((mode) => {
-      if (mods[mode]) {
-        classes.push(`${baseClass}${modSep}${mode}`);
-      }
-    });
-  }
+  modsSet.forEach((mods) => {
+    if (mods instanceof Array) {
+      classes = classes
+        .concat(mods.filter(Boolean).map(mode => `${baseClass}${modSep}${mode}`));
+    } else {
+      Object.keys(mods).forEach((mode) => {
+        if (mods[mode]) {
+          classes.push(`${baseClass}${modSep}${mode}`);
+        }
+      });
+    }
+  });
 
   return classes.join(' ');
 }
