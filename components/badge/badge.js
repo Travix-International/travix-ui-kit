@@ -1,21 +1,18 @@
-import React, {
-  Component,
-  PropTypes,
-} from 'react';
+import React, { PropTypes } from 'react';
 
 import { getClassNamesWithMods } from '../_helpers';
 
 /**
  * Badge component
  */
-class Badge extends Component {
-  renderBadge() {
-    const { arrow, border, children, mods = [], position, title, ...otherProps } = this.props;
+const Badge = ({ arrow, border, children, mods, position, title, ...otherProps }) => {
+  if (!children && !title) {
+    return <noscript />;
+  }
 
-    if (!title) {
-      return null;
-    }
+  let badge = null;
 
+  if (title) {
     const badgeMods = {
       'arrow-left': arrow && position === 'right',
       'arrow-right': arrow && position === 'left',
@@ -26,7 +23,7 @@ class Badge extends Component {
       badgeMods[position] = true;
     }
 
-    return (
+    badge = (
       <div {...otherProps} className={getClassNamesWithMods('ui-badge-badge', mods, badgeMods)}>
         {title}
         {arrow && (position === 'right' || position === 'left') ? <span className="ui-badge-badge-arrow" /> : null}
@@ -34,21 +31,17 @@ class Badge extends Component {
     );
   }
 
-  render() {
-    const { children, mods = [] } = this.props;
-
-    if (!children) {
-      return this.renderBadge();
-    }
-
-    return (
-      <div className={getClassNamesWithMods('ui-badge', mods)}>
-        {children}
-        {this.renderBadge()}
-      </div>
-    );
+  if (!children) {
+    return badge;
   }
-}
+
+  return (
+    <div className={getClassNamesWithMods('ui-badge', mods)}>
+      {children}
+      {badge}
+    </div>
+  );
+};
 
 Badge.propTypes = {
   /**
@@ -81,6 +74,7 @@ Badge.defaultProps = {
   arrow: false,
   border: true,
   children: null,
+  mods: [],
   title: '',
 };
 
