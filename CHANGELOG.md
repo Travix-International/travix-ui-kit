@@ -1,5 +1,16 @@
 # Change Log
 
+## [v0.6.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.2) (2017-06-19)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.1...v0.6.2)
+
+**Closed issues:**
+
+- NPM package without unnecessary `dependencies` [\#88](https://github.com/Travix-International/travix-ui-kit/issues/88)
+
+**Merged pull requests:**
+
+- Added Badge component [\#101](https://github.com/Travix-International/travix-ui-kit/pull/101) ([maximuk](https://github.com/maximuk))
+
 ## [v0.6.1](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.1) (2017-06-01)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.0...v0.6.1)
 
