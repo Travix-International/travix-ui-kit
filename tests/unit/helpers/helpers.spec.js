@@ -15,6 +15,16 @@ describe('helpers', () => {
     it('#4 should return empty string when baseClass was not provided', () => {
       expect(getClassNamesWithMods()).toBe('');
     });
+    it('#5 should return class with mods for strings as class and object as mods', () => {
+      expect(getClassNamesWithMods('test', { first: true, second: false })).toBe('test test_first');
+    });
+    it('#6 should return class with mods for strings as array of classes and object and array as mods', () => {
+      expect(getClassNamesWithMods(
+        ['test', 'test2'],
+        ['first', 'second'],
+        { third: true, fourth: false }
+      )).toBe('test test2 test_first test_second test_third');
+    });
   });
 
   describe('#getDataAttributes()', () => {
