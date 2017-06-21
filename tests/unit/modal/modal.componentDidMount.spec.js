@@ -17,7 +17,6 @@ describe('Modal: handleOverlayClick', () => {
     const onClose = jest.fn();
     mount(
       <Modal
-        active
         onClose={onClose}
       >
         Modal Content
@@ -29,12 +28,17 @@ describe('Modal: handleOverlayClick', () => {
   it('should not add "keydown" event listener if modal is not closable on ESC', () => {
     mount(
       <Modal
-        active
         closeOnEsc={false}
       >
         Modal Content
       </Modal>
     );
     expect(global.window.document.addEventListener).not.toBeCalled();
+  });
+
+  it('should open if the active prop is set', () => {
+    Modal.prototype.open = jest.fn();
+    mount(<Modal active />);
+    expect(Modal.prototype.open).toBeCalled();
   });
 });

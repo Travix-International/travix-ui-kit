@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Modal from '../../../components/modal/modal';
 
 describe('Modal: open', () => {
-  const requestAnimationFrame = global.window.document.requestAnimationFrame;
+  const requestAnimationFrame = global.window.requestAnimationFrame;
 
   jest.useFakeTimers();
 
