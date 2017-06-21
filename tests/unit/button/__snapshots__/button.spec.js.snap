@@ -6,7 +6,9 @@ exports[`Button #render() should not modify mods 1`] = `
   disabled={false}
   onClick={[Function]}
   type="button"
-/>
+>
+  Button
+</button>
 `;
 
 exports[`Button #render() should render disabled link 1`] = `

@@ -36,7 +36,7 @@ describe('Modal: handleOverlayClick', () => {
     expect(global.window.document.addEventListener).not.toBeCalled();
   });
 
-  it('should open if the active prop is set', () => {
+  it('should open the modal window if the active prop is set by default', () => {
     Modal.prototype.open = jest.fn();
     mount(<Modal active />);
     expect(Modal.prototype.open).toBeCalled();
