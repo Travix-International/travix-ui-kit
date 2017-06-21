@@ -1,6 +1,5 @@
 .ui-button {
   cursor: pointer;
-  border-radius: var(--tx-button-size-border-radius);
   outline: none;
   transition: all .1s ease-in-out;
 }
@@ -11,6 +10,7 @@
   font-size: 23px;
   padding: 15px 24px;
   border: none;
+  border-radius: var(--tx-button-size-border-radius);
   color: var(--tx-button-color-text);
   background-color: var(--tx-button-color-bg-bottom);
   background: linear-gradient(to bottom, var(--tx-button-color-bg-top) 0, var(--tx-button-color-bg-bottom) 100%);
@@ -43,6 +43,23 @@
     span:before {
       color: var(--tx-button-icon-color-active);
     }
+  }
+}
+
+.ui-button_variation_ghost {
+  background: var(--tx-button-ghost-background);
+  border: var(--tx-button-ghost-border);
+  border-radius: var(--tx-button-ghost-border-radius);
+  font-family: var(--tx-button-ghost-font-family);
+  color: var(--tx-button-ghost-color);
+  &:hover,
+  &:focus {
+    border-color: var(--tx-button-ghost-hover-border-color);
+    color: var(--tx-button-ghost-hover-color);
+  }
+  &:active {
+    border-color: var(--tx-button-ghost-border-color);
+    color: var(--tx-button-ghost-color);
   }
 }
 

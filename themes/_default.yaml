@@ -133,6 +133,15 @@ button:
   shadow: "0 3px var(--tx-generic-color-accent-border), 0 0 transparent"
   shadow-hover: "0 5px var(--tx-generic-color-accent-border), 0 0 transparent"
   text-shadow: "none"
+  ghost:
+    background: "transparent"
+    color: *accent
+    border-color: *accent
+    border: "3px solid var(--tx-button-ghost-border-color)"
+    border-radius: "var(--tx-button-size-border-radius)"
+    font-family: "var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family)"
+    hover-color: *primary
+    hover-border-color: *primary
 calendar:
   height: 300px
   nav:
