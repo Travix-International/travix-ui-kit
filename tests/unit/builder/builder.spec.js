@@ -1,11 +1,13 @@
 const path = require('path');
 const builder = require('../../../builder');
-const saveThemeScssFile = require('../../../builder/saveThemeScssFile');
+const { outputFile } = require('fs-extra');
 const runWebpackAndCopyFilesToFinalDestination = require('../../../builder/runWebpackAndCopyFilesToFinalDestination');
 const webpackConfig = require('../../../builder/webpack.config');
 
 jest.mock('../../../builder/runWebpackAndCopyFilesToFinalDestination', () => jest.fn(() => Promise.resolve()));
-jest.mock('../../../builder/saveThemeScssFile', () => jest.fn());
+jest.mock('fs-extra', () => ({
+  outputFile: jest.fn(),
+}));
 jest.mock('theme-builder', () => () => ({
   watch: (file, cb) => cb(),
   build: jest.fn(() => Promise.resolve('theme-builder-result')),
@@ -27,7 +29,7 @@ describe('Builder › builder.js', () => {
 
     return result.then(() => {
       const outputPath = path.join(__dirname, '../../../dist/theme.css');
-      expect(saveThemeScssFile).toHaveBeenCalledWith(outputPath, 'theme-builder-result');
+      expect(outputFile).toHaveBeenCalledWith(outputPath, 'theme-builder-result');
 
       expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
         cssDir: args.cssDir,
@@ -75,7 +77,7 @@ describe('Builder › builder.js', () => {
     expect(result).toBeInstanceOf(Promise);
 
     return result.then(() => {
-      expect(saveThemeScssFile).toHaveBeenCalledWith(args.output, 'theme-builder-result');
+      expect(outputFile).toHaveBeenCalledWith(args.output, 'theme-builder-result');
 
       expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
         cssDir: args.cssDir,
