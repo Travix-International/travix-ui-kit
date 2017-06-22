@@ -39,7 +39,9 @@ describe('Button', () => {
         <Button
           mods={mods}
           onClick={onClickSpy}
-        />
+        >
+          Button
+        </Button>
       );
 
       expect(mods.length).toEqual(1);

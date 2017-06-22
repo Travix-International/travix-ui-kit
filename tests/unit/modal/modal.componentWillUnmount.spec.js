@@ -15,9 +15,7 @@ describe('Modal: componentWillUnmount', () => {
 
   it('should remove "keydown" listener before unmount', () => {
     const wrapper = mount(
-      <Modal
-        active
-      >
+      <Modal>
         Modal Content
       </Modal>
     );
@@ -28,7 +26,6 @@ describe('Modal: componentWillUnmount', () => {
   it('should remove "keydown" listener before unmount', () => {
     const wrapper = mount(
       <Modal
-        active
         closeOnEsc={false}
       >
         Modal Content

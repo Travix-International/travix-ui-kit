@@ -16,6 +16,9 @@ class Modal extends Component {
     if (this.props.closeOnEsc) {
       global.window.document.addEventListener('keydown', this.handleKeyDown);
     }
+    if (this.props.active) {
+      this.open();
+    }
   }
 
   componentWillReceiveProps(newProps) {
