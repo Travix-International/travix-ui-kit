@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.6.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.3) (2017-06-22)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.2...v0.6.3)
+
+**Closed issues:**
+
+- Can't have a Modal be open by default [\#103](https://github.com/Travix-International/travix-ui-kit/issues/103)
+
+**Merged pull requests:**
+
+- Allow Modal window to be active by default [\#105](https://github.com/Travix-International/travix-ui-kit/pull/105) ([reaktivo](https://github.com/reaktivo))
+- Handle building intermediate directories when outputing files [\#104](https://github.com/Travix-International/travix-ui-kit/pull/104) ([reaktivo](https://github.com/reaktivo))
+
 ## [v0.6.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.2) (2017-06-19)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.1...v0.6.2)
 
