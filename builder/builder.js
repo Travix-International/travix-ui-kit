@@ -1,7 +1,7 @@
 const path = require('path');
+const { outputFile } = require('fs-extra');
 const themeBuilder = require('theme-builder');
 
-const saveThemeScssFile = require('./saveThemeScssFile');
 const runWebpackAndCopyFilesToFinalDestination = require('./runWebpackAndCopyFilesToFinalDestination');
 const webpackConfig = require('./webpack.config');
 
@@ -36,12 +36,12 @@ module.exports = (options) => {
 
   if (watch) {
     builder.watch(themeFiles, (result) => {
-      saveThemeScssFile(output, result);
+      outputFile(output, result);
     });
   }
 
   return builder.build(themeFiles)
-    .then(result => saveThemeScssFile(output, result))
+    .then(result => outputFile(output, result))
     .then(() => runWebpackAndCopyFilesToFinalDestination({
       cssDir,
       jsDir,
