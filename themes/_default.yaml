@@ -41,6 +41,7 @@ generic:
     secondary-darker: &secondary-darker   "#785A13"
     secondary-dark: &secondary-dark       "#CF9E26"
     secondary: &secondary                 "#F8C346"
+    secondary-rgb: &secondary-rgb         "248,195,70"
     secondary-light: &secondary-light     "#FFD05E"
     secondary-lighter: &secondary-lighter "#FFD97C"
 
@@ -48,6 +49,7 @@ generic:
     text: &text "#666"
     text-light: &text-light "#999"
     text-lighter: &text-lighter "#998"
+    text-lighter-rgb: &text-lighter-rgb "153,153,136"
 
     active: &active "#3892e7"
     positive: &positive "#2ca937"
@@ -55,6 +57,7 @@ generic:
     negative-light: &negative-light "#f0d0c9"
 
     shadow: &shadow "#000000"
+    shadow-rgb: &shadow-rgb "0,0,0"
     shadow-alt: &shadow-alt "#00196F"
     blank: &blank "#FFFFFF"
 
@@ -73,7 +76,7 @@ generic:
     border-radius-small: &border-radius-small 2px
 autocomplete:
   background-color: *blank
-  box-shadow: "0 0 5px 0 rgba(var(--tx-generic-color-shadow), .18)"
+  box-shadow: "0 0 5px 0 rgba(var(--tx-generic-color-shadow-rgb), .18)"
 autocomplete-item:
   color: *text
   active:
@@ -202,8 +205,8 @@ checkbox:
       checked:
         border-color: *secondary
     disabled:
-      color: "rgba(var(--tx-generic-color-text-lighter), .3)"
-      border-color: "rgba(var(--tx-generic-color-secondary), .3)"
+      color: "rgba(var(--tx-generic-color-text-lighter-rgb), .3)"
+      border-color: "rgba(var(--tx-generic-color-secondary-rgb), .3)"
 collapse:
   background:
     color: *blank
@@ -244,7 +247,7 @@ dropdown:
   select-control:
     border-color: *active
   select-menu-outer:
-    box-shadow: "0 0 5px 0 rgba(var(--tx-generic-color-shadow), .18)"
+    box-shadow: "0 0 5px 0 rgba(var(--tx-generic-color-shadow-rgb), .18)"
   select-arrow-zone:
     border-color-left: *secondary-darker
     color: *active
@@ -259,7 +262,7 @@ dropdown:
       color: *blank
   option-arrow:
     border-color: *blank
-    border-shadow-color: "rgba(var(--tx-generic-color-shadow), .07)"
+    border-shadow-color: "rgba(var(--tx-generic-color-shadow-rgb), .07)"
   filter:
     select-control:
       border-color: *secondary-darker
@@ -267,7 +270,7 @@ dropdown:
       color: *text-dark
       line-height: 28px
     select-menu-outer:
-      box-shadow: "rgba(var(--tx-generic-color-shadow), .5)"
+      box-shadow: "rgba(var(--tx-generic-color-shadow-rgb), .5)"
   active:
     select-control:
       background-color: *blank
@@ -278,7 +281,7 @@ dropdown-filter-option:
     hover:
       color: *text
     disabled:
-      color: "rgba(var(--tx-generic-color-text-lighter), .3)"
+      color: "rgba(var(--tx-generic-color-text-lighter-rgb), .3)"
   hover-and-not-disabled:
     background-color: *active
     checkbox:
@@ -308,7 +311,7 @@ modal:
     background:
       color: *blank
     box-shadow:
-      color: "rgba(0,0,0,.3)"
+      color: "rgba(var(--tx-generic-color-shadow-rgb), .3)"
   content:
     background:
       color: *secondary-lighter
