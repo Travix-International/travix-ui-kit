@@ -80,5 +80,13 @@ describe('Button', () => {
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
+
+    it('should render ghost variation', () => {
+      const wrapper = shallow(
+        <Button onClick={onClickSpy} type="button" variation="ghost">Ghost</Button>
+      );
+
+      expect(wrapper.find('.ui-button').hasClass('ui-button_variation_ghost')).toEqual(true);
+    });
   });
 });

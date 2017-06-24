@@ -15,3 +15,14 @@ Sizes:
       <Button type="reset" size="l">Large</Button><br/><br/>
       <Button type="reset" size="xl">Extra large</Button><br/><br/>
     </div>
+
+Variations:
+
+    <div>
+      <Button onClick={alert} variation="ghost" size="xs">Extra small Ghost</Button><br/><br/>
+      <Button onClick={alert} variation="ghost" size="s">Small Ghost</Button><br/><br/>
+      <Button onClick={alert} variation="ghost" size="m">Medium Ghost</Button><br/><br/>
+      <Button onClick={alert} variation="ghost" size="l">Large Ghost</Button><br/><br/>
+      <Button onClick={alert} variation="ghost" size="xl">Extra large Ghost</Button><br/><br/>
+    </div>
+    
