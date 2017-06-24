@@ -1,5 +1,4 @@
-$select-input-bg: var(--tx-dropdown-input-background-color);
-$select-input-border-color: var(--tx-dropdown-input-border-color);
+$override-select-input-border-color: var(--tx-dropdown-input-border-color);
 $select-input-border-width: 2px !default;
 $select-input-border-radius: 4px !default;
 $select-input-height: 53px !default;
@@ -15,6 +14,7 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
 
   &:not(.is-disabled) {
     .Select-control {
+      border-color: $override-select-input-border-color;
       cursor: pointer;
 
       &:hover {
