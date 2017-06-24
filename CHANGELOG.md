@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.6.4](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.4) (2017-06-24)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.3...v0.6.4)
+
+**Merged pull requests:**
+
+- Adds removed variables for react select and fixes RGB values under CSS Variables [\#108](https://github.com/Travix-International/travix-ui-kit/pull/108) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- adds ghost button [\#106](https://github.com/Travix-International/travix-ui-kit/pull/106) ([froskie](https://github.com/froskie))
+
 ## [v0.6.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.3) (2017-06-22)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.2...v0.6.3)
 
