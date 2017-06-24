@@ -1,8 +1,20 @@
+$override-select-input-border-color: var(--tx-dropdown-input-border-color);
+$select-input-border-width: 2px !default;
+$select-input-border-radius: 4px !default;
+$select-input-height: 53px !default;
+
+$select-padding-horizontal: 15px;
+
+$select-option-color: var(--tx-dropdown-option-color);
+
+$select-arrow-color: var(--tx-dropdown-arrow-color);
+
 .ui-dropdown {
   font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
 
   &:not(.is-disabled) {
     .Select-control {
+      border-color: $override-select-input-border-color;
       cursor: pointer;
 
       &:hover {

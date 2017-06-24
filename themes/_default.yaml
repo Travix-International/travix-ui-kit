@@ -41,6 +41,7 @@ generic:
     secondary-darker: &secondary-darker   "#785A13"
     secondary-dark: &secondary-dark       "#CF9E26"
     secondary: &secondary                 "#F8C346"
+    secondary-rgb: &secondary-rgb         "248,195,70"
     secondary-light: &secondary-light     "#FFD05E"
     secondary-lighter: &secondary-lighter "#FFD97C"
 
@@ -48,6 +49,7 @@ generic:
     text: &text "#666"
     text-light: &text-light "#999"
     text-lighter: &text-lighter "#998"
+    text-lighter-rgb: &text-lighter-rgb "153,153,136"
 
     active: &active "#3892e7"
     positive: &positive "#2ca937"
@@ -55,6 +57,7 @@ generic:
     negative-light: &negative-light "#f0d0c9"
 
     shadow: &shadow "#000000"
+    shadow-rgb: &shadow-rgb "0,0,0"
     shadow-alt: &shadow-alt "#00196F"
     blank: &blank "#FFFFFF"
 
@@ -72,23 +75,23 @@ generic:
   size:
     border-radius-small: &border-radius-small 2px
 autocomplete:
-  background-color: *blank
-  box-shadow: "0 0 5px 0 rgba(var(--tx-generic-color-shadow), .18)"
+  background-color: "var(--tx-generic-color-blank)"
+  box-shadow: "0 0 5px 0 rgba(var(--tx-generic-color-shadow-rgb), .18)"
 autocomplete-item:
-  color: *text
+  color: "var(--tx-generic-color-text)"
   active:
-    color: *blank
-    background-color: *active
+    color: "var(--tx-generic-color-blank)"
+    background-color: "var(--tx-generic-color-active)"
   title:
-    color: *primary-darker
-    background-color: *secondary-dark
+    color: "var(--tx-generic-color-primary-darker)"
+    background-color: "var(--tx-generic-color-secondary-dark)"
   highlight:
-    color: *active
+    color: "var(--tx-generic-color-active)"
 badge:
   after:
     border:
       size: 4px
-      color: *primary-darker
+      color: "var(--tx-generic-color-primary-darker)"
   arrow:
     angle:
       coefficient: "0.6"
@@ -96,13 +99,13 @@ badge:
     bottom:
       width: 4px
       style: solid
-      color: *primary-darker
+      color: "var(--tx-generic-color-primary-darker)"
     radius:
       start: 0px
       end: 0px
   color:
-    background: *accent
-    text: *primary-darker
+    background: "var(--tx-generic-color-accent)"
+    text: "var(--tx-generic-color-primary-darker)"
   font-size: 15px
   padding:
     right-left: 8px
@@ -110,21 +113,21 @@ badge:
 button:
   icon:
     color:
-      normal: *primary-lighter
-      hover: *active
-      active: *primary-lighter
+      normal: "var(--tx-generic-color-primary-lighter)"
+      hover: "var(--tx-generic-color-active)"
+      active: "var(--tx-generic-color-primary-lighter)"
   color:
-    bg-top: *accent
-    bg-bottom: *accent
-    text: *blank
-    border: *accent-dark
+    bg-top: "var(--tx-generic-color-accent)"
+    bg-bottom: "var(--tx-generic-color-accent)"
+    text: "var(--tx-generic-color-blank)"
+    border: "var(--tx-generic-color-accent-dark)"
     shadow: "transparent"
     disabled:
-      bg-top: *secondary-dark
-      bg-bottom: *secondary-dark
-      text: *secondary-darker
+      bg-top: "var(--tx-generic-color-secondary-dark)"
+      bg-bottom: "var(--tx-generic-color-secondary-dark)"
+      text: "var(--tx-generic-color-secondary-darker)"
       border: "transparent"
-      border-bottom: *secondary-darkest
+      border-bottom: "var(--tx-generic-color-secondary-darkest)"
   size:
     border-radius: *border-radius-small
   shadow: "0 3px var(--tx-generic-color-accent-border), 0 0 transparent"
@@ -133,194 +136,194 @@ button:
 calendar:
   height: 300px
   nav:
-    background: *primary-lighter
+    background: "var(--tx-generic-color-primary-lighter)"
     border-radius: "5px 5px 0 0"
     button:
-      background-color-end: *accent-bottom
-      background-color-start: *accent-top
+      background-color-end: "var(--tx-generic-color-accent-bottom)"
+      background-color-start: "var(--tx-generic-color-accent-top)"
       border-radius: 50%
-      box-shadow-color: *accent-border
-      color: *primary-lighter
+      box-shadow-color: "var(--tx-generic-color-accent-border)"
+      color: "var(--tx-generic-color-primary-lighter)"
       font-weight: "700"
       height: 27px
       margin: "0 5px"
       width: 27px
     height: 41px
     label:
-      color: *blank
+      color: "var(--tx-generic-color-blank)"
       font-weight: "500"
   header:
-    background-color: *primary-lighter
+    background-color: "var(--tx-generic-color-primary-lighter)"
     height: 32px
     weekday:
-      color: *secondary
+      color: "var(--tx-generic-color-secondary)"
       font-size: 14px
       font-weight: bold
   options:
-    border-color: *secondary
+    border-color: "var(--tx-generic-color-secondary)"
     option:
-      background-color: *blank
-      border-bottom: *secondary
-      border-right: *secondary
-      color: *primary-darker
+      background-color: "var(--tx-generic-color-blank)"
+      border-bottom: "var(--tx-generic-color-secondary)"
+      border-right: "var(--tx-generic-color-secondary)"
+      color: "var(--tx-generic-color-primary-darker)"
       disabled:
-        background-color: *secondary
-        color: *secondary-darkest
+        background-color: "var(--tx-generic-color-secondary)"
+        color: "var(--tx-generic-color-secondary-darkest)"
       font-size: 14px
       hover:
-        background-color: *active
-        color: *blank
+        background-color: "var(--tx-generic-color-active)"
+        color: "var(--tx-generic-color-blank)"
       next-month:
-        background-color: *secondary-light
+        background-color: "var(--tx-generic-color-secondary-light)"
       previous-month:
-        background-color: *secondary-light
+        background-color: "var(--tx-generic-color-secondary-light)"
       range:
         after:
           border-color: transparent
         between:
-          background-color: *secondary-dark
+          background-color: "var(--tx-generic-color-secondary-dark)"
         end:
           after:
-            border-color: *active
-          background-color: *secondary-dark
+            border-color: "var(--tx-generic-color-active)"
+          background-color: "var(--tx-generic-color-secondary-dark)"
         start:
           after:
-            border-color: *active
-          background-color: *secondary-dark
+            border-color: "var(--tx-generic-color-active)"
+          background-color: "var(--tx-generic-color-secondary-dark)"
   width: 300px
 checkbox:
   text:
-    color: *text-dark
-    background-color: *blank
-    border-color: *secondary
+    color: "var(--tx-generic-color-text-dark)"
+    background-color: "var(--tx-generic-color-blank)"
+    border-color: "var(--tx-generic-color-secondary)"
     hover:
-      color: *active
+      color: "var(--tx-generic-color-active)"
     checked:
-      background-color: *active
-      border-color: *active
+      background-color: "var(--tx-generic-color-active)"
+      border-color: "var(--tx-generic-color-active)"
     icon:
       checked:
-        border-color: *secondary
+        border-color: "var(--tx-generic-color-secondary)"
     disabled:
-      color: "rgba(var(--tx-generic-color-text-lighter), .3)"
-      border-color: "rgba(var(--tx-generic-color-secondary), .3)"
+      color: "rgba(var(--tx-generic-color-text-lighter-rgb), .3)"
+      border-color: "rgba(var(--tx-generic-color-secondary-rgb), .3)"
 collapse:
   background:
-    color: *blank
+    color: "var(--tx-generic-color-blank)"
   border:
     radius: *border-radius
   padding: "25px"
   item:
     label:
-      color: *text-dark
+      color: "var(--tx-generic-color-text-dark)"
       background:
-        color: *blank
+        color: "var(--tx-generic-color-blank)"
       active:
-        color: *active
+        color: "var(--tx-generic-color-active)"
       icon:
-        color: *secondary-darker
+        color: "var(--tx-generic-color-secondary-darker)"
         active:
-          color: *active
+          color: "var(--tx-generic-color-active)"
       border-bottom:
         width: *separator-width
         style: *separator-style
-        color: *secondary-darker
+        color: "var(--tx-generic-color-secondary-darker)"
     content:
-      color: *text
+      color: "var(--tx-generic-color-text)"
       background:
-        color: *secondary-light
+        color: "var(--tx-generic-color-secondary-light)"
         border-bottom:
-          color: *secondary-darker
+          color: "var(--tx-generic-color-secondary-darker)"
       border:
         radius: *border-radius
 dropdown:
   input:
-    background-color: *blank
-    border-color: *secondary-darker
+    background-color: "var(--tx-generic-color-blank)"
+    border-color: "var(--tx-generic-color-secondary-darker)"
   option:
-    color: *text-dark
+    color: "var(--tx-generic-color-text-dark)"
   arrow:
-    color: *primary-lighter
+    color: "var(--tx-generic-color-primary-lighter)"
   select-control:
-    border-color: *active
+    border-color: "var(--tx-generic-color-active)"
   select-menu-outer:
-    box-shadow: "0 0 5px 0 rgba(var(--tx-generic-color-shadow), .18)"
+    box-shadow: "0 0 5px 0 rgba(var(--tx-generic-color-shadow-rgb), .18)"
   select-arrow-zone:
-    border-color-left: *secondary-darker
-    color: *active
+    border-color-left: "var(--tx-generic-color-secondary-darker)"
+    color: "var(--tx-generic-color-active)"
     hover:
-      color: *active
+      color: "var(--tx-generic-color-active)"
   select-option:
-    color: *text
+    color: "var(--tx-generic-color-text)"
     hover:
-      background-color: *secondary-light
+      background-color: "var(--tx-generic-color-secondary-light)"
     is-selected:
-      background-color: *active
-      color: *blank
+      background-color: "var(--tx-generic-color-active)"
+      color: "var(--tx-generic-color-blank)"
   option-arrow:
-    border-color: *blank
-    border-shadow-color: "rgba(var(--tx-generic-color-shadow), .07)"
+    border-color: "var(--tx-generic-color-blank)"
+    border-shadow-color: "rgba(var(--tx-generic-color-shadow-rgb), .07)"
   filter:
     select-control:
-      border-color: *secondary-darker
+      border-color: "var(--tx-generic-color-secondary-darker)"
     select-placeholder:
-      color: *text-dark
+      color: "var(--tx-generic-color-text-dark)"
       line-height: 28px
     select-menu-outer:
-      box-shadow: "rgba(var(--tx-generic-color-shadow), .5)"
+      box-shadow: "rgba(var(--tx-generic-color-shadow-rgb), .5)"
   active:
     select-control:
-      background-color: *blank
-      border-color: *active
+      background-color: "var(--tx-generic-color-blank)"
+      border-color: "var(--tx-generic-color-active)"
 dropdown-filter-option:
   checkbox:
-    color: *text-light
+    color: "var(--tx-generic-color-text-light)"
     hover:
-      color: *text
+      color: "var(--tx-generic-color-text)"
     disabled:
-      color: "rgba(var(--tx-generic-color-text-lighter), .3)"
+      color: "rgba(var(--tx-generic-color-text-lighter-rgb), .3)"
   hover-and-not-disabled:
-    background-color: *active
+    background-color: "var(--tx-generic-color-active)"
     checkbox:
-      color: *blank
+      color: "var(--tx-generic-color-blank)"
 input:
-  border-color: *secondary-darker
+  border-color: "var(--tx-generic-color-secondary-darker)"
   border-radius: "4px"
-  color: *text-dark
+  color: "var(--tx-generic-color-text-dark)"
   font-size: "16px"
   focused:
-    border-color: *active
+    border-color: "var(--tx-generic-color-active)"
 list:
   bullets:
-    color: *active
-  color: *text-dark
+    color: "var(--tx-generic-color-active)"
+  color: "var(--tx-generic-color-text-dark)"
   line-height: "38px"
 modal:
   z-index: "100"
   color:
-    dark: *primary-dark
-    secondary: *secondary
+    dark: "var(--tx-generic-color-primary-dark)"
+    secondary: "var(--tx-generic-color-secondary)"
   overlay:
     background:
-      color: *primary-dark
+      color: "var(--tx-generic-color-primary-dark)"
       opacity: "0.65"
   container:
     background:
-      color: *blank
+      color: "var(--tx-generic-color-blank)"
     box-shadow:
-      color: "rgba(0,0,0,.3)"
+      color: "rgba(var(--tx-generic-color-shadow-rgb), .3)"
   content:
     background:
-      color: *secondary-lighter
+      color: "var(--tx-generic-color-secondary-lighter)"
     padding-left-right: "24px"
   content-devider:
-    color: *secondary-darker
+    color: "var(--tx-generic-color-secondary-darker)"
   close-button:
-    color: *text-dark
+    color: "var(--tx-generic-color-text-dark)"
     hover:
-      color: *active
+      color: "var(--tx-generic-color-active)"
     icon:
-      color: *secondary-darker
+      color: "var(--tx-generic-color-secondary-darker)"
 price:
   height:
     underline: 6px
@@ -362,7 +365,7 @@ price:
       underline: 8px
 spinner:
   color:
-    light: *accent-lighter
-    lighter: *accent
-    dark: *active
-    darker: *primary-lighter
+    light: "var(--tx-generic-color-accent-lighter)"
+    lighter: "var(--tx-generic-color-accent)"
+    dark: "var(--tx-generic-color-active)"
+    darker: "var(--tx-generic-color-primary-lighter)"
