@@ -375,7 +375,7 @@ price:
       underline: 8px
 sliding-panel:
   overlay:
-    background-color: "var(--tx-generic-color-primary-dark-rgb, .65)"
+    background-color: "rgba(var(--tx-generic-color-primary-dark-rgb), .65)"
     z-index: "3"
   panel:
     background-color: "var(--tx-generic-color-blank)"
