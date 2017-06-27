@@ -31,11 +31,12 @@ generic:
     accent-lighter: &accent-lighter "#6EE1E1"
     accent-top: &accent-top         "#FFD97C"
 
-    primary-darker: &primary-darker   "#162052"
-    primary-dark: &primary-dark       "#283A8E"
-    primary: &primary                 "#3F52A9"
-    primary-light: &primary-light     "#7F92E7"
-    primary-lighter: &primary-lighter "#5B6ECA"
+    primary-darker: &primary-darker     "#162052"
+    primary-dark: &primary-dark         "#283A8E"
+    primary-dark-rgb: &primary-dark-rgb "40,58,142"
+    primary: &primary                   "#3F52A9"
+    primary-light: &primary-light       "#7F92E7"
+    primary-lighter: &primary-lighter   "#5B6ECA"
 
     secondary-darkest: &secondary-darkest "#57410f"
     secondary-darker: &secondary-darker   "#785A13"
@@ -372,6 +373,26 @@ price:
       integers: 51px
     height:
       underline: 8px
+sliding-panel:
+  overlay:
+    background-color: "var(--tx-generic-color-primary-dark-rgb, .65)"
+    z-index: "3"
+  panel:
+    background-color: "var(--tx-generic-color-blank)"
+    bottom: "0"
+    box-shadow: "3px 0 3px -3px var(--tx-generic-color-shadow)"
+    left: "0"
+    margin: "0"
+    max-width: "100%"
+    min-width: "150px"
+    opacity: "1"
+    padding: "15px"
+    right: "auto"
+    top: "0"
+    transform: "translateX(-100%)"
+    transition: "transform 195ms cubic-bezier(0.0, 0.0, 0.2, 1)"
+  panel-open:
+    transform: "translateX(0)"
 spinner:
   color:
     light: "var(--tx-generic-color-accent-lighter)"
