@@ -20,6 +20,18 @@ describe('Rating', () => {
       expect(valueElement.node.style.width).toEqual("0%");
     });
 
+    it('renders with custom data attributes', () => {
+      const dataAttrs = {
+        'ui-test': 'rating',
+      };
+
+      const renderTree = mount(
+        <Rating dataAttrs={dataAttrs} rate={0} />
+      );
+
+      expect(renderTree).toMatchSnapshot();
+    });
+
     it('renders with custom props', () => {
       const size = 10;
       const renderTree = mount(
