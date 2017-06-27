@@ -1,0 +1,12 @@
+.ui-rating {
+  color: var(--tx-generic-color-secondary);
+  position: relative;
+  display: inline-block;
+}
+.ui-rating-value {
+  color: var(--tx-generic-color-accent);
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  top: 0;
+}

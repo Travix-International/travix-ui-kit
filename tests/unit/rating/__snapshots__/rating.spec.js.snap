@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating #render() renders with custom data attributes 1`] = `
+<Rating
+  dataAttrs={
+    Object {
+      "ui-test": "rating",
+    }
+  }
+  rate={0}
+  size={5}
+>
+  <div
+    className="ui-rating"
+    data-ui-test="rating"
+  >
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <div
+      className="ui-rating-value"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    >
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+    </div>
+  </div>
+</Rating>
+`;
+
+exports[`Rating #render() renders with custom props 1`] = `
+<Rating
+  rate={1.5}
+  size={10}
+>
+  <div
+    className="ui-rating"
+  >
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <div
+      className="ui-rating-value"
+      style={
+        Object {
+          "width": "15%",
+        }
+      }
+    >
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+    </div>
+  </div>
+</Rating>
+`;
+
+exports[`Rating #render() renders with default props and mods provided 1`] = `
+<Rating
+  rate={0}
+  size={5}
+>
+  <div
+    className="ui-rating"
+  >
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <b>
+      ★
+    </b>
+    <div
+      className="ui-rating-value"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    >
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+      <b>
+        ★
+      </b>
+    </div>
+  </div>
+</Rating>
+`;
