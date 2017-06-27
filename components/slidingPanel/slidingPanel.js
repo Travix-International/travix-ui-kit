@@ -6,10 +6,10 @@ export default class SlidingPanel extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { hideOverlay: true, isOpen: false };
+    this.state = { isOverlayHidden: true, isActive: false };
 
     this.handleClickOverlay = this.handleClickOverlay.bind(this);
-    this.handleOpen = this.handleOpen.bind(this);
+    this.handleActive = this.handleActive.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
   }
@@ -23,7 +23,7 @@ export default class SlidingPanel extends Component {
     /**
      * When true, if the user clicks on the overaly, closes the panel.
      */
-    closeOnOverlay: PropTypes.bool,
+    closeOnOverlayClick: PropTypes.bool,
 
     /**
      * Data attributes. You can use it to set up any custom data-* attribute
@@ -48,17 +48,17 @@ export default class SlidingPanel extends Component {
     /**
      * Defines if the panel is open.
      */
-    open: PropTypes.bool,
+    active: PropTypes.bool,
   }
 
   static defaultProps = {
-    closeOnOverlay: true,
+    closeOnOverlayClick: true,
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.open !== this.state.isOpen) {
-      if (newProps.open) {
-        this.handleOpen();
+    if (newProps.active !== this.state.isActive) {
+      if (newProps.active) {
+        this.handleActive();
       } else {
         this.handleClose();
       }
@@ -66,9 +66,9 @@ export default class SlidingPanel extends Component {
   }
 
   componentDidMount() {
-    const { open } = this.props;
-    if (open) {
-      this.handleOpen();
+    const { active } = this.props;
+    if (active) {
+      this.handleActive();
     }
 
     this.panel.addEventListener('transitionend', this.handleTransitionEnd);
@@ -87,7 +87,7 @@ export default class SlidingPanel extends Component {
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
   handleClickOverlay(e) {
-    if ((e.target === e.currentTarget) && this.props.closeOnOverlay) {
+    if ((e.target === e.currentTarget) && this.props.closeOnOverlayClick) {
       this.handleClose();
     }
   }
@@ -101,7 +101,7 @@ export default class SlidingPanel extends Component {
   handleClose() {
     const { onClose } = this.props;
 
-    this.setState({ isOpen: false }, () => {
+    this.setState({ isActive: false }, () => {
       if (onClose) {
         onClose();
       }
@@ -111,14 +111,14 @@ export default class SlidingPanel extends Component {
   /**
    * Opens the panel
    *
-   * @method handleOpen
+   * @method handleActive
    */
-  handleOpen() {
+  handleActive() {
     const { onOpen } = this.props;
 
-    this.setState({ hideOverlay: false }, () => {
+    this.setState({ isOverlayHidden: false }, () => {
       setTimeout(() => {
-        this.setState({ isOpen: true }, () => {
+        this.setState({ isActive: true }, () => {
           if (onOpen) {
             onOpen();
           }
@@ -129,7 +129,7 @@ export default class SlidingPanel extends Component {
 
   handleTransitionEnd(e) {
     if (e.propertyName === 'transform') {
-      this.setState({ hideOverlay: !this.state.isOpen });
+      this.setState({ isOverlayHidden: !this.state.isActive });
     }
   }
 
@@ -142,12 +142,12 @@ export default class SlidingPanel extends Component {
     const overlayMods = [];
     const panelMods = this.props.mods ? this.props.mods.slice() : [];
 
-    if (this.state.hideOverlay) {
-      overlayMods.push('hide');
+    if (this.state.isOverlayHidden) {
+      overlayMods.push('hidden');
     }
 
-    if (this.state.isOpen) {
-      panelMods.push('open');
+    if (this.state.isActive) {
+      panelMods.push('active');
     }
 
     const panelClass = 'ui-sliding-panel';

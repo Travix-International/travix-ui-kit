@@ -376,6 +376,7 @@ price:
 sliding-panel:
   overlay:
     background-color: "rgba(var(--tx-generic-color-primary-dark-rgb), .65)"
+    position: "fixed"
     z-index: "3"
   panel:
     background-color: "var(--tx-generic-color-blank)"
@@ -387,6 +388,7 @@ sliding-panel:
     min-width: "150px"
     opacity: "1"
     padding: "15px"
+    position: "absolute"
     right: "auto"
     top: "0"
     transform: "translateX(-100%)"

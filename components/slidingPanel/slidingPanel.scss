@@ -3,12 +3,12 @@
   bottom: 0;
   display: block;
   left: 0;
-  position: absolute;
+  position: var(--tx-sliding-panel-overlay-position);
   right: 0;
   top: 0;
   z-index: var(--tx-sliding-panel-overlay-z-index);
 
-  &.ui-sliding-panel-overlay_hide {
+  &.ui-sliding-panel-overlay_hidden {
     display: none;
   }
 }
@@ -25,13 +25,13 @@
   max-width: var(--tx-sliding-panel-panel-max-width);
   min-width: var(--tx-sliding-panel-panel-min-width);
   padding: var(--tx-sliding-panel-panel-padding);
-  position: absolute;
+  position: var(--tx-sliding-panel-panel-position);
   right: var(--tx-sliding-panel-panel-right);
   top: var(--tx-sliding-panel-panel-top);
   transform: var(--tx-sliding-panel-panel-transform);
   transition: var(--tx-sliding-panel-panel-transition);
 
-  &.ui-sliding-panel_open {
+  &.ui-sliding-panel_active {
     opacity: var(--tx-sliding-panel-panel-open-opacity);
     transform: var(--tx-sliding-panel-panel-open-transform);
   }

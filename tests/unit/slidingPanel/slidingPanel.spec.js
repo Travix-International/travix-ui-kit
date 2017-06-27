@@ -18,14 +18,14 @@ describe('SlidingPanel', () => {
 
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(true);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_test')).toEqual(true);
       expect(panelElement.text()).toEqual('Test');
     });
 
-    it('render open by default and when clicking on the overlay it closes it', () => {
+    it('render active by default and when clicking on the overlay it closes it', () => {
       const renderTree = mount(
-        <SlidingPanel open>Test</SlidingPanel>
+        <SlidingPanel active>Test</SlidingPanel>
       );
 
       jest.runAllTimers();
@@ -34,8 +34,8 @@ describe('SlidingPanel', () => {
       const panelElement = overlayElement.find('.ui-sliding-panel');
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_open')).toEqual(true);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
 
       overlayElement.simulate('click');
       renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
@@ -44,13 +44,13 @@ describe('SlidingPanel', () => {
       jest.runAllTimers();
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(true);
-      expect(panelElement.hasClass('ui-sliding-panel_open')).toEqual(false);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
-    it('render open by default but with closeOnOverlay=false does not close when overlay clicked', () => {
+    it('render active by default but with closeOnOverlayClick=false does not close when overlay clicked', () => {
       const renderTree = mount(
-        <SlidingPanel closeOnOverlay={false} open>Test</SlidingPanel>
+        <SlidingPanel active closeOnOverlayClick={false}>Test</SlidingPanel>
       );
 
       jest.runAllTimers();
@@ -59,16 +59,16 @@ describe('SlidingPanel', () => {
       const panelElement = overlayElement.find('.ui-sliding-panel');
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_open')).toEqual(true);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
 
       overlayElement.simulate('click');
 
       jest.runAllTimers();
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_open')).toEqual(true);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
     });
 
     it('calls onOpen and onClose functions when provided via props', () => {
@@ -76,7 +76,7 @@ describe('SlidingPanel', () => {
       const onOpenMock = jest.fn();
 
       const renderTree = mount(
-        <SlidingPanel onClose={onCloseMock} onOpen={onOpenMock} open>Test</SlidingPanel>
+        <SlidingPanel active onClose={onCloseMock} onOpen={onOpenMock}>Test</SlidingPanel>
       );
       const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
 
@@ -92,7 +92,7 @@ describe('SlidingPanel', () => {
     it('enables [rel="close"] element provided on the children, that closes the overlay', () => {
       document.body.insertAdjacentHTML('afterbegin', '<div id="root"></div>');
       const renderTree = mount(
-        <SlidingPanel closeOnOverlay={false} open>
+        <SlidingPanel active closeOnOverlayClick={false}>
           <button rel="close">Test</button>
         </SlidingPanel>
       , { attachTo: document.body.querySelector('#root') });
@@ -101,11 +101,11 @@ describe('SlidingPanel', () => {
 
       jest.runAllTimers();
 
-      const closeButtonElement = document.querySelector('.ui-sliding-panel_open [rel="close"]');
+      const closeButtonElement = document.querySelector('.ui-sliding-panel_active [rel="close"]');
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_open')).toEqual(true);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
 
       closeButtonElement.dispatchEvent(new Event('click'));
 
@@ -113,13 +113,13 @@ describe('SlidingPanel', () => {
       jest.runAllTimers();
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(true);
-      expect(panelElement.hasClass('ui-sliding-panel_open')).toEqual(false);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
 
       renderTree.detach();
     });
 
-    it('opens the panel when open prop changes to true', () => {
+    it('opens the panel when active prop changes to true', () => {
       document.body.insertAdjacentHTML('afterbegin', '<div id="root"></div>');
       const renderTree = mount(
         <SlidingPanel>Test</SlidingPanel>
@@ -130,22 +130,22 @@ describe('SlidingPanel', () => {
       jest.runAllTimers();
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(true);
-      expect(panelElement.hasClass('ui-sliding-panel_open')).toEqual(false);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
 
-      renderTree.setProps({ open: true });
+      renderTree.setProps({ active: true });
 
       jest.runAllTimers();
       renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_open')).toEqual(true);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
     });
 
-    it('closes the panel when open prop changes to false', () => {
+    it('closes the panel when active prop changes to false', () => {
       const renderTree = mount(
-        <SlidingPanel open>Test</SlidingPanel>
+        <SlidingPanel active>Test</SlidingPanel>
       );
       const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
       const panelElement = overlayElement.find('.ui-sliding-panel');
@@ -153,22 +153,22 @@ describe('SlidingPanel', () => {
       jest.runAllTimers();
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_open')).toEqual(true);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
 
-      renderTree.setProps({ open: false });
+      renderTree.setProps({ active: false });
 
       renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
       jest.runAllTimers();
 
       expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hide')).toEqual(true);
-      expect(panelElement.hasClass('ui-sliding-panel_open')).toEqual(false);
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
-    it('ignores the new open prop value if its the same as the state', () => {
+    it('ignores the new active prop value if its the same as the state', () => {
       const renderTree = mount(
-        <SlidingPanel open>Test</SlidingPanel>
+        <SlidingPanel active>Test</SlidingPanel>
       );
       const instance = renderTree.instance();
 
@@ -177,7 +177,7 @@ describe('SlidingPanel', () => {
       instance.handleClose = jest.fn();
       instance.handleOpen = jest.fn();
 
-      renderTree.setProps({ open: true });
+      renderTree.setProps({ active: true });
 
       expect(instance.handleClose.mock.calls.length).toEqual(0);
       expect(instance.handleOpen.mock.calls.length).toEqual(0);
@@ -185,7 +185,7 @@ describe('SlidingPanel', () => {
 
     it('ignores the transitionend event when it is not related to the transform CSS prop', () => {
       const renderTree = mount(
-        <SlidingPanel open>Test</SlidingPanel>
+        <SlidingPanel active>Test</SlidingPanel>
       );
       const instance = renderTree.instance();
 
