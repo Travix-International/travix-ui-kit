@@ -51,6 +51,10 @@ export default class SlidingPanel extends Component {
     open: PropTypes.bool,
   }
 
+  static defaultProps = {
+    closeOnOverlay: true,
+  }
+
   componentWillReceiveProps(newProps) {
     if (newProps.open !== this.state.isOpen) {
       if (newProps.open) {
