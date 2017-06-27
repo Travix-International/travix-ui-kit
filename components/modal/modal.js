@@ -40,7 +40,8 @@ class Modal extends Component {
 
   open() {
     global.window.requestAnimationFrame(() => {
-      setTimeout(() => this.setState({ isActive: true, isOpen: true }), 0);
+      this.setState({ isActive: true });
+      setTimeout(() => this.setState({ isOpen: true }), 300);
     });
   }
 
@@ -152,7 +153,7 @@ class Modal extends Component {
       mods.push('active');
     }
 
-    if (!isOpen) {
+    if (!isOpen && !isActive) {
       return null;
     }
 
