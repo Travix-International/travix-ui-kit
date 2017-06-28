@@ -12,6 +12,7 @@ import List from './list/list';
 import Modal from './modal/modal';
 import Price from './price/price';
 import RadioButton from './radioButton/radioButton';
+import Rating from './rating/rating';
 import SlidingPanel from './slidingPanel/slidingPanel';
 import Spinner from './spinner/spinner';
 
@@ -30,6 +31,7 @@ export default {
   Modal,
   Price,
   RadioButton,
+  Rating,
   SlidingPanel,
   Spinner,
 };
