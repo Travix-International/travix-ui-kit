@@ -1,22 +1,32 @@
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { mount } from 'enzyme';
 import React from 'react';
 import Modal from '../../../components/modal/modal';
 
 describe('Modal: render', () => {
+  const requestAnimationFrame = global.window.requestAnimationFrame;
+
+  beforeEach(() => {
+    global.window.requestAnimationFrame = (cb) => { cb(); };
+  });
+
+  afterEach(() => {
+    global.window.requestAnimationFrame = requestAnimationFrame;
+  });
+
   it('should return base active modal with close button', () => {
-    const component = shallow(
+    const component = mount(
       <Modal active>
         Modal Content
       </Modal>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+
+    expect(component).toMatchSnapshot();
   });
 
   it('should return active modal with title and footer', () => {
     const modalTitle = 'Test Modal Title';
     const modalFooter = <div>Test Modal Footer</div>;
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active
         footer={modalFooter}
@@ -26,11 +36,11 @@ describe('Modal: render', () => {
       </Modal>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render non closable modal', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active
         closable={false}
@@ -40,12 +50,11 @@ describe('Modal: render', () => {
         Modal Content
       </Modal>
     );
-
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render fullscreen modal', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active
         fullscreen
@@ -54,11 +63,11 @@ describe('Modal: render', () => {
       </Modal>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render modal without overlay', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active
         overlay={false}
@@ -67,11 +76,11 @@ describe('Modal: render', () => {
       </Modal>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render modal with custom mods', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active
         mods={['my-custom-mod']}
@@ -80,11 +89,11 @@ describe('Modal: render', () => {
       </Modal>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render empty modal when status is not active', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active={false}
       >
@@ -92,11 +101,11 @@ describe('Modal: render', () => {
       </Modal>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render closable modal with close button text', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active
         closeButtonText="Close"
@@ -105,11 +114,11 @@ describe('Modal: render', () => {
       </Modal>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render inactive modal', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active={false}
       >
@@ -117,14 +126,14 @@ describe('Modal: render', () => {
       </Modal>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render modal with custom title', () => {
     const title = (
       <h2>h2 Custom Title</h2>
     );
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active
         title={title}
@@ -133,11 +142,11 @@ describe('Modal: render', () => {
       </Modal>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render modal with custom header', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active
         title={<header><h1>Custom Title</h1></header>}
@@ -146,11 +155,11 @@ describe('Modal: render', () => {
       </Modal>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render modal with custom footer', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Modal
         active
         footer={<footer><p>Custom footer</p></footer>}
@@ -159,11 +168,11 @@ describe('Modal: render', () => {
       </Modal>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should add correct className after change state to "open"', () => {
-    const component = shallow(
+    const component = mount(
       <Modal
         active
       >
@@ -175,6 +184,6 @@ describe('Modal: render', () => {
     component.setState({ isOpen: true });
 
     expect(component.state().isOpen).toBe(true);
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 });

@@ -8,9 +8,15 @@ import { getClassNamesWithMods } from '../_helpers';
  * Modal component
  */
 class Modal extends Component {
-  state = {
-    isOpen: false,
-  };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isActive: props.active || false,
+      isOpen: false,
+    };
+  }
 
   componentDidMount() {
     if (this.props.closeOnEsc) {
@@ -39,7 +45,8 @@ class Modal extends Component {
 
   open() {
     global.window.requestAnimationFrame(() => {
-      setTimeout(() => this.setState({ isOpen: true }), 0);
+      this.setState({ isActive: true });
+      setTimeout(() => this.setState({ isOpen: true }), 300);
     });
   }
 
@@ -48,6 +55,7 @@ class Modal extends Component {
       this.props.onClose(e);
     }
     global.window.requestAnimationFrame(() => {
+      this.setState({ isActive: false });
       setTimeout(() => this.setState({ isOpen: false }), 300);
     });
   }
@@ -142,15 +150,15 @@ class Modal extends Component {
   }
 
   render() {
-    const { active, fullscreen, children } = this.props;
-    const { isOpen } = this.state;
+    const { fullscreen, children } = this.props;
+    const { isActive, isOpen } = this.state;
     const mods = this.props.mods ? this.props.mods.slice() : [];
 
-    if (active) {
+    if (isActive) {
       mods.push('active');
     }
 
-    if (!active && !isOpen) {
+    if (!isOpen && !isActive) {
       return null;
     }
 
