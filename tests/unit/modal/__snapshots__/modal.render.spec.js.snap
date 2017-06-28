@@ -1,269 +1,289 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal: render should add correct className after change state to "open" 1`] = `
-<Global
-  className="ui-modal ui-modal_active ui-modal_open"
-  noscroll={true}
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={null}
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
 >
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
+  <Global
+    className="ui-modal ui-modal_active ui-modal_open"
+    noscroll={true}
   />
-  <div
-    className="ui-modal__container"
-  >
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-  </div>
-</Global>
+</Modal>
 `;
 
 exports[`Modal: render should render closable modal with close button text 1`] = `
-<Global
-  className="ui-modal ui-modal_active"
-  noscroll={true}
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText="Close"
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={null}
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
 >
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
+  <Global
+    className="ui-modal ui-modal_active"
+    noscroll={true}
   />
-  <div
-    className="ui-modal__container"
-  >
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-  </div>
-</Global>
+</Modal>
 `;
 
-exports[`Modal: render should render empty modal when status is not active 1`] = `null`;
+exports[`Modal: render should render empty modal when status is not active 1`] = `
+<Modal
+  active={false}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={null}
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
+/>
+`;
 
 exports[`Modal: render should render fullscreen modal 1`] = `
-<Global
-  className="ui-modal ui-modal_active ui-modal_fullscreen"
-  noscroll={true}
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={null}
+  fullscreen={true}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
 >
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
+  <Global
+    className="ui-modal ui-modal_active ui-modal_fullscreen"
+    noscroll={true}
   />
-  <div
-    className="ui-modal__container"
-  >
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-  </div>
-</Global>
+</Modal>
 `;
 
-exports[`Modal: render should render inactive modal 1`] = `null`;
+exports[`Modal: render should render inactive modal 1`] = `
+<Modal
+  active={false}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={null}
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
+/>
+`;
 
 exports[`Modal: render should render modal with custom footer 1`] = `
-<Global
-  className="ui-modal ui-modal_active"
-  noscroll={true}
->
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
-  />
-  <div
-    className="ui-modal__container"
-  >
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-    <footer
-      className="ui-modal__footer"
-    >
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={
+    <footer>
       <p>
         Custom footer
       </p>
     </footer>
-  </div>
-</Global>
+  }
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
+>
+  <Global
+    className="ui-modal ui-modal_active"
+    noscroll={true}
+  />
+</Modal>
 `;
 
 exports[`Modal: render should render modal with custom header 1`] = `
-<Global
-  className="ui-modal ui-modal_active"
-  noscroll={true}
->
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
-  />
-  <div
-    className="ui-modal__container"
-  >
-    <header
-      className="ui-modal__header"
-    >
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={null}
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={
+    <header>
       <h1>
         Custom Title
       </h1>
     </header>
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-  </div>
-</Global>
+  }
+>
+  <Global
+    className="ui-modal ui-modal_active"
+    noscroll={true}
+  />
+</Modal>
 `;
 
 exports[`Modal: render should render modal with custom mods 1`] = `
-<Global
-  className="ui-modal ui-modal_my-custom-mod ui-modal_active"
-  noscroll={true}
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={null}
+  fullscreen={false}
+  mods={
+    Array [
+      "my-custom-mod",
+    ]
+  }
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
 >
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
+  <Global
+    className="ui-modal ui-modal_my-custom-mod ui-modal_active"
+    noscroll={true}
   />
-  <div
-    className="ui-modal__container"
-  >
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-  </div>
-</Global>
+</Modal>
 `;
 
 exports[`Modal: render should render modal with custom title 1`] = `
-<Global
-  className="ui-modal ui-modal_active"
-  noscroll={true}
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={null}
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={
+    <h2>
+      h2 Custom Title
+    </h2>
+  }
 >
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
+  <Global
+    className="ui-modal ui-modal_active"
+    noscroll={true}
   />
-  <div
-    className="ui-modal__container"
-  >
-    <header
-      className="ui-modal__header"
-    >
-      <h2>
-        h2 Custom Title
-      </h2>
-    </header>
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-  </div>
-</Global>
+</Modal>
 `;
 
 exports[`Modal: render should render modal without overlay 1`] = `
-<Global
-  className="ui-modal ui-modal_active"
-  noscroll={true}
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={null}
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={false}
+  title={null}
 >
-  <div
-    className="ui-modal__container"
-  >
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-  </div>
-</Global>
+  <Global
+    className="ui-modal ui-modal_active"
+    noscroll={true}
+  />
+</Modal>
 `;
 
 exports[`Modal: render should render non closable modal 1`] = `
-<Global
-  className="ui-modal ui-modal_active"
-  noscroll={true}
+<Modal
+  active={true}
+  closable={false}
+  closeButtonText={null}
+  closeOnEsc={false}
+  closeOnOverlayClick={false}
+  footer={null}
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
 >
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
+  <Global
+    className="ui-modal ui-modal_active"
+    noscroll={true}
   />
-  <div
-    className="ui-modal__container"
-  >
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-  </div>
-</Global>
+</Modal>
 `;
 
 exports[`Modal: render should return active modal with title and footer 1`] = `
-<Global
-  className="ui-modal ui-modal_active"
-  noscroll={true}
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={
+    <div>
+      Test Modal Footer
+    </div>
+  }
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title="Test Modal Title"
 >
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
+  <Global
+    className="ui-modal ui-modal_active"
+    noscroll={true}
   />
-  <div
-    className="ui-modal__container"
-  >
-    <header
-      className="ui-modal__header"
-    >
-      <h3
-        className="ui-modal__title"
-      >
-        Test Modal Title
-      </h3>
-    </header>
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-    <footer
-      className="ui-modal__footer"
-    >
-      <div>
-        Test Modal Footer
-      </div>
-    </footer>
-  </div>
-</Global>
+</Modal>
 `;
 
 exports[`Modal: render should return base active modal with close button 1`] = `
-<Global
-  className="ui-modal ui-modal_active"
-  noscroll={true}
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  footer={null}
+  fullscreen={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
 >
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
+  <Global
+    className="ui-modal ui-modal_active"
+    noscroll={true}
   />
-  <div
-    className="ui-modal__container"
-  >
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-  </div>
-</Global>
+</Modal>
 `;

@@ -1,22 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal: handleOverlayClick should call "onOverlayClick" prop after click on overlay 1`] = `
-<Global
-  className="ui-modal ui-modal_active"
-  noscroll={true}
->
-  <div
-    className="ui-modal__overlay"
-    onClick={[Function]}
-  />
-  <div
-    className="ui-modal__container"
-  >
-    <section
-      className="ui-modal__content"
-    >
-      Modal Content
-    </section>
-  </div>
-</Global>
-`;
+exports[`Modal: handleOverlayClick should call "onOverlayClick" prop after click on overlay 1`] = `null`;
