@@ -8,10 +8,15 @@ import { getClassNamesWithMods } from '../_helpers';
  * Modal component
  */
 class Modal extends Component {
-  state = {
-    isActive: false,
-    isOpen: false,
-  };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isActive: props.active || false,
+      isOpen: false,
+    };
+  }
 
   componentDidMount() {
     if (this.props.closeOnEsc) {

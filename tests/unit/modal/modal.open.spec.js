@@ -25,7 +25,7 @@ describe('Modal: open', () => {
       </Modal>
     );
     expect(component.state().isOpen).toBe(false);
-    expect(component.state().isActive).toBe(false);
+    expect(component.state().isActive).toBe(true);
     component.instance().open();
 
     expect(setTimeout.mock.calls[0][1]).toBe(300);

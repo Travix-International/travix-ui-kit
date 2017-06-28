@@ -27,7 +27,7 @@ describe('Modal: open', () => {
     );
     expect(onClose).not.toBeCalled();
     expect(component.state().isOpen).toBe(false);
-    expect(component.state().isActive).toBe(false);
+    expect(component.state().isActive).toBe(true);
     component.setState({ isOpen: true, isActive: true });
 
     component.instance().close();
