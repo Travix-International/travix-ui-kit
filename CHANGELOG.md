@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.6.7](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.7) (2017-06-28)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.6...v0.6.7)
+
+**Fixed bugs:**
+
+- \#109 modal bug [\#115](https://github.com/Travix-International/travix-ui-kit/pull/115) ([froskie](https://github.com/froskie))
+
 ## [v0.6.6](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.6) (2017-06-28)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.5...v0.6.6)
 
