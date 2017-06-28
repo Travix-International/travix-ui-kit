@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.6.6](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.6) (2017-06-28)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.5...v0.6.6)
+
+**Merged pull requests:**
+
+- HOT-FIX for export rating component [\#114](https://github.com/Travix-International/travix-ui-kit/pull/114) ([AlleeX](https://github.com/AlleeX))
+
 ## [v0.6.5](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.5) (2017-06-28)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.4...v0.6.5)
 
