@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
-import Global from '../global/global';
-
 export default class SlidingPanel extends Component {
   constructor(props) {
     super(props);
@@ -75,7 +73,8 @@ export default class SlidingPanel extends Component {
 
     this.panel.addEventListener('transitionend', this.handleTransitionEnd);
 
-    const closeButton = this.panel.querySelector('[rel="close"]');
+    const rootNode = findDOMNode(this);
+    const closeButton = rootNode.querySelector('[rel="close"]');
     if (closeButton) {
       closeButton.addEventListener('click', this.handleClose);
     }
@@ -158,17 +157,15 @@ export default class SlidingPanel extends Component {
     const overlayClassName = getClassNamesWithMods(overlayClass, overlayMods);
 
     return (
-      <Global>
-        <div className={overlayClassName} onClick={this.handleClickOverlay}>
-          <div
-            className={panelClassName}
-            ref={e => (this.panel = e)}
-            {...getDataAttributes(dataAttrs)}
-          >
-            {children}
-          </div>
+      <div className={overlayClassName} onClick={this.handleClickOverlay}>
+        <div
+          className={panelClassName}
+          ref={e => (this.panel = e)}
+          {...getDataAttributes(dataAttrs)}
+        >
+          {children}
         </div>
-      </Global>
+      </div>
     );
   }
 }
