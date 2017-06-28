@@ -1,5 +1,18 @@
 # Change Log
 
+## [v0.6.5](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.5) (2017-06-28)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.4...v0.6.5)
+
+**Closed issues:**
+
+- Rating [\#113](https://github.com/Travix-International/travix-ui-kit/issues/113)
+- SlidingPanel [\#110](https://github.com/Travix-International/travix-ui-kit/issues/110)
+
+**Merged pull requests:**
+
+- Adds the rating component [\#112](https://github.com/Travix-International/travix-ui-kit/pull/112) ([froskie](https://github.com/froskie))
+- Adds the SlidingPanel component [\#111](https://github.com/Travix-International/travix-ui-kit/pull/111) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.6.4](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.4) (2017-06-24)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.3...v0.6.4)
 
