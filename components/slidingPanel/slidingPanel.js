@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { findDOMNode } from 'react-dom';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 export default class SlidingPanel extends Component {
@@ -73,10 +72,16 @@ export default class SlidingPanel extends Component {
 
     this.panel.addEventListener('transitionend', this.handleTransitionEnd);
 
-    const rootNode = findDOMNode(this);
-    const closeButton = rootNode.querySelector('[rel="close"]');
-    if (closeButton) {
-      closeButton.addEventListener('click', this.handleClose);
+    this.closeButton = this.panel.querySelector('[rel="close"]');
+    if (this.closeButton) {
+      this.closeButton.addEventListener('click', this.handleClose);
+    }
+  }
+
+  componentWillUnmount() {
+    this.panel.removeEventListener('transitionend', this.handleTransitionEnd);
+    if (this.closeButton) {
+      this.closeButton.removeEventListener('click', this.handleClose);
     }
   }
 
@@ -99,13 +104,7 @@ export default class SlidingPanel extends Component {
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
   handleClose() {
-    const { onClose } = this.props;
-
-    this.setState({ isActive: false }, () => {
-      if (onClose) {
-        onClose();
-      }
-    });
+    this.setState({ isActive: false });
   }
 
   /**
@@ -128,8 +127,13 @@ export default class SlidingPanel extends Component {
   }
 
   handleTransitionEnd(e) {
+    const { onClose } = this.props;
     if (e.propertyName === 'transform') {
-      this.setState({ isOverlayHidden: !this.state.isActive });
+      this.setState({ isOverlayHidden: !this.state.isActive }, () => {
+        if (this.state.isOverlayHidden && onClose) {
+          onClose();
+        }
+      });
     }
   }
 

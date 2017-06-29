@@ -7,6 +7,7 @@ import Checkbox from './checkbox/checkbox';
 import Collapse from './collapse/collapse';
 import CollapseItem from './collapse/collapseItem';
 import DropDown from './dropDown/dropDown';
+import Global from './global/global';
 import Input from './input/input';
 import List from './list/list';
 import Modal from './modal/modal';
@@ -26,6 +27,7 @@ export default {
   Collapse,
   CollapseItem,
   DropDown,
+  Global,
   Input,
   List,
   Modal,

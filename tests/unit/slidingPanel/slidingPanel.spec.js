@@ -41,8 +41,6 @@ describe('SlidingPanel', () => {
       renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
       jest.runAllTimers();
 
-      jest.runAllTimers();
-
       expect(renderTree).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
@@ -86,6 +84,8 @@ describe('SlidingPanel', () => {
       overlayElement.simulate('click');
 
       jest.runAllTimers();
+      renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
+
       expect(onCloseMock.mock.calls.length).toEqual(1);
     });
 
@@ -196,6 +196,8 @@ describe('SlidingPanel', () => {
       instance.handleTransitionEnd({ propertyName: 'fakeProp' });
 
       expect(instance.setState.mock.calls.length).toEqual(0);
+
+      renderTree.unmount();
     });
   });
 });
