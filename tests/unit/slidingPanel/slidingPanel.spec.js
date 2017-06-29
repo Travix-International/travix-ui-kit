@@ -41,8 +41,6 @@ describe('SlidingPanel', () => {
       renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
       jest.runAllTimers();
 
-      jest.runAllTimers();
-
       expect(renderTree).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
