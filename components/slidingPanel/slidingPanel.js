@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { findDOMNode } from 'react-dom';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 export default class SlidingPanel extends Component {
