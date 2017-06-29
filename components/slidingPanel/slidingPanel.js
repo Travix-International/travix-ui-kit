@@ -73,14 +73,17 @@ export default class SlidingPanel extends Component {
 
     this.panel.addEventListener('transitionend', this.handleTransitionEnd);
 
-    const closeButton = this.panel.querySelector('[rel="close"]');
-    if (closeButton) {
-      closeButton.addEventListener('click', this.handleClose);
+    this.closeButton = this.panel.querySelector('[rel="close"]');
+    if (this.closeButton) {
+      this.closeButton.addEventListener('click', this.handleClose);
     }
   }
 
   componentWillUnmount() {
     this.panel.removeEventListener('transitionend', this.handleTransitionEnd);
+    if (this.closeButton) {
+      this.closeButton.removeEventListener('click', this.handleClose);
+    }
   }
 
   /**

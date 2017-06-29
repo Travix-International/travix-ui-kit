@@ -196,6 +196,8 @@ describe('SlidingPanel', () => {
       instance.handleTransitionEnd({ propertyName: 'fakeProp' });
 
       expect(instance.setState.mock.calls.length).toEqual(0);
+
+      renderTree.unmount();
     });
   });
 });
