@@ -104,13 +104,8 @@ export default class SlidingPanel extends Component {
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
   handleClose() {
-    const { onClose } = this.props;
 
-    this.setState({ isActive: false }, () => {
-      if (onClose) {
-        onClose();
-      }
-    });
+    this.setState({ isActive: false });
   }
 
   /**
@@ -133,8 +128,13 @@ export default class SlidingPanel extends Component {
   }
 
   handleTransitionEnd(e) {
+    const { onClose } = this.props;
     if (e.propertyName === 'transform') {
-      this.setState({ isOverlayHidden: !this.state.isActive });
+      this.setState({ isOverlayHidden: !this.state.isActive }, () => {
+        if (this.state.isOverlayHidden && onClose) {
+          onClose();
+        }
+      });
     }
   }
 
