@@ -104,7 +104,6 @@ export default class SlidingPanel extends Component {
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
   handleClose() {
-
     this.setState({ isActive: false });
   }
 
