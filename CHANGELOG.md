@@ -1,5 +1,16 @@
 # Change Log
 
+## [v0.6.8](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.8) (2017-06-29)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.7...v0.6.8)
+
+**Fixed bugs:**
+
+- Modal component is still rendered \(although transparent\) after closed by clicking on overlay [\#109](https://github.com/Travix-International/travix-ui-kit/issues/109)
+
+**Merged pull requests:**
+
+- Change SlidingPanel to use the refs [\#116](https://github.com/Travix-International/travix-ui-kit/pull/116) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.6.7](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.7) (2017-06-28)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.6...v0.6.7)
 
