@@ -84,6 +84,8 @@ describe('SlidingPanel', () => {
       overlayElement.simulate('click');
 
       jest.runAllTimers();
+      renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
+
       expect(onCloseMock.mock.calls.length).toEqual(1);
     });
 
