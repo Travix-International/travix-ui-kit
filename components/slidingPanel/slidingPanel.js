@@ -79,6 +79,10 @@ export default class SlidingPanel extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.panel.removeEventListener('transitionend', this.handleTransitionEnd);
+  }
+
   /**
    * Handles the click in the overlay.
    *
