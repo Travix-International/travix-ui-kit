@@ -31,8 +31,12 @@ prepare-site:
 	mkdir _site
 	cp -r ./styleguide/ ./_site/
 	cp ./dist/*.css ./_site/build/
+	cp ./dist/theme.js ./_site/build/
+	cp ./css-vars-polyfill.js ./_site/build/
 	sed -i.bak 's/\/theme\.css/build\/theme\.css/g' _site/index.html
 	sed -i.bak 's/\/ui\-bundle\.css/build\/ui\-bundle\.css/g' _site/index.html
+	sed -i.bak 's/\/css\-vars\-polyfill\.js/build\/css\-vars\-polyfill\.js/g' _site/index.html
+	sed -i.bak 's/\/theme\.js/build\/theme\.js/g' _site/index.html
 	rm _site/index.html.bak
 	cp .gitignore ./_site/.gitignore
 

@@ -2,8 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/theme.css" />
-    <link rel="stylesheet" href="/ui-bundle.css" />
+    <link rel="stylesheet" href="/ui-bundle.css" data-cssvars />
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,String.prototype.repeat,Array.prototype.keys"></script>
+    <script>
+      (function () {
+        'use strict';
+        var ua = navigator.userAgent.toLowerCase();
+        var andr = (/android\s([0-9\.]*)/ig).exec(ua);
+        var edge = (/edge\/([0-9\.]*)/ig).exec(ua);
+        var isIE = ua.indexOf('msie ') > -1 || ua.indexOf('trident') > -1;
+        var safari = (ua.indexOf('chrome') === -1) && (/version\/([0-9\.]*)\ssafari/ig).exec(ua);
+        var iOSSafari = (ua.indexOf('chrome') === -1) && (/version\/([0-9\.]*)\smobile\/[a-z0-9]+\ssafari/ig).exec(ua);
+
+        if (
+          (andr && parseFloat(andr[1]) < 5) ||
+          (edge && parseInt(edge[1], 10) < 14) ||
+          isIE ||
+          (safari && parseFloat(safari[1], 10) < 9.1) ||
+          (iOSSafari && parseFloat(iOSSafari[1], 10) < 9.3)
+        ) {
+          var themejs = document.createElement('script');
+          var polyfilljs = document.createElement('script');
+          themejs.src = "/theme.js";
+          polyfilljs.src = "/css-vars-polyfill.js";
+          themejs.async = false;
+          polyfilljs.async = false;
+          document.head.appendChild(themejs);
+          document.head.appendChild(polyfilljs);
+        } else {
+          var themecss = document.createElement('link');
+          themecss.href = "/theme.css";
+          themecss.rel = "stylesheet";
+          themecss.type = "text/css";
+          document.head.appendChild(themecss);
+        }
+      }());
+    </script>
     <title><%=htmlWebpackPlugin.options.title%></title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <style type="text/css">
