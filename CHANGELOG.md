@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.6.9](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.9) (2017-07-01)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.8...v0.6.9)
+
+**Fixed bugs:**
+
+- Adds polyfilling support for CSS Variables [\#119](https://github.com/Travix-International/travix-ui-kit/pull/119) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.6.8](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.8) (2017-06-29)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.7...v0.6.8)
 
