@@ -7,6 +7,21 @@ const webpackConfig = require('./webpack.config');
 
 const defaultThemeYamlPath = path.join(__dirname, '..', 'themes', '_default.yaml');
 const defaultOutputThemeFile = path.join(__dirname, '..', 'dist', 'theme.css');
+
+function buildTheme(builder, themeFiles) {
+  return builder.build(themeFiles);
+}
+
+function buildThemeCSS(builder, themeFiles, output) {
+  return buildTheme(builder, themeFiles)
+    .then(result => outputFile(output, result));
+}
+
+function buildThemeJS(builder, themeFiles, output) {
+  return buildTheme(builder, themeFiles)
+    .then(result => outputFile(output, `window.TravixTheme = ${JSON.stringify(result)};`));
+}
+
 /**
  * Triggers the build process.
  *
@@ -34,19 +49,33 @@ module.exports = (options) => {
     prefix: 'tx',
   });
 
+  const outputThemeJs = path.join(
+    path.dirname(output),
+    `${path.basename(output, path.extname(output))}.js`
+  );
+  const builderJS = themeBuilder({
+    format: 'jsflat',
+    prefix: 'tx',
+  });
+
   if (watch) {
     builder.watch(themeFiles, (result) => {
       outputFile(output, result);
     });
+
+    builderJS.watch(themeFiles, (result) => {
+      outputFile(outputThemeJs, `window.TravixTheme = ${JSON.stringify(result)};`);
+    });
   }
 
-  return builder.build(themeFiles)
-    .then(result => outputFile(output, result))
-    .then(() => runWebpackAndCopyFilesToFinalDestination({
-      cssDir,
-      jsDir,
-      watch,
-      webpackConfig,
-      webpackNodeEnv: { 'process.env.NODE_ENV': environment },
-    }));
+  return Promise.all([
+    buildThemeCSS(builder, themeFiles, output),
+    buildThemeJS(builderJS, themeFiles, outputThemeJs),
+  ]).then(() => runWebpackAndCopyFilesToFinalDestination({
+    cssDir,
+    jsDir,
+    watch,
+    webpackConfig,
+    webpackNodeEnv: { 'process.env.NODE_ENV': environment },
+  }));
 };
