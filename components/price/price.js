@@ -41,6 +41,7 @@ export function ensureDecimalPrecision(value = '', decimalsPrecision = 2) {
  */
 function Price(props) {
   const {
+    additionalText,
     dataAttrs = {},
     decimalsPrecision,
     decimalsSeparator,
@@ -81,11 +82,19 @@ function Price(props) {
         {decimalsMarkup}
       </div>
       {underlineMarkup}
+      {additionalText
+        ? (
+          <div className={`${rootClass}__additional-text-block`}>
+            {additionalText}
+          </div>
+        )
+        : null}
     </div>
   );
 }
 
 Price.defaultProps = {
+  additionalText: '',
   decimalsPrecision: 2,
   decimalsSeparator: '.',
   showDecimals: true,
@@ -97,6 +106,12 @@ Price.defaultProps = {
 };
 
 Price.propTypes = {
+  /**
+   * Additional text that will be displayed under price and the line.
+   * E.g.: 'per day'.
+   */
+  additionalText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+
   /**
    * Data attribute. You can use it to set up GTM key or any custom data-* attribute
    */

@@ -6,6 +6,12 @@ Basic Price:
       <Price decimalsSeparator="," showDecimals={false} thousandsSeparator="." underlined value={50153.30} /><br/><br/>
     </div>
 
+Price with additional text:
+
+    <div>
+      <Price additionalText="per day" decimalsSeparator="," thousandsSeparator="." underlined value={43.9} /><br/><br/>
+    </div>
+
 Sizes:
 
     <div>

@@ -5,6 +5,16 @@
   display: inline-block;
 }
 
+.ui-price__additional-text-block {
+  color: $tx-generic-color-text;
+  display: block;
+  display: flex;
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
+  font-size: 13px;
+  justify-content: center;
+  line-height: 15px;
+}
+
 .ui-price__value-delimiter {
   align-items: flex-end;
   display: flex;
