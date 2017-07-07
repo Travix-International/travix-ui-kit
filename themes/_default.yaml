@@ -345,6 +345,8 @@ price:
         currency: 15px
         integers: 30px
         decimals: 14px
+        additional-text: 13px
+        discount: 16px
     line-height:
       integers: 26px
   medium:
@@ -353,6 +355,8 @@ price:
         currency: 16px
         integers: 30px
         decimals: 14px
+        additional-text: 13px
+        discount: 16px
     line-height:
       integers: 26px
   large:
@@ -361,6 +365,8 @@ price:
         currency: 19px
         integers: 35px
         decimals: 17px
+        additional-text: 17px
+        discount: 20px
     line-height:
       integers: 31px
   xlarge:
@@ -369,6 +375,8 @@ price:
         currency: 30px
         integers: 55px
         decimals: 27px
+        additional-text: 19px
+        discount: 22px
     line-height:
       integers: 51px
     height:
