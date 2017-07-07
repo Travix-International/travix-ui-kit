@@ -170,11 +170,14 @@ class Days extends Component {
       options.push(
         <button
           aria-label={ariaLabel}
+          aria-selected={!!selectedDate}
           className={className}
           data-date={dateInYYYYMMDD}
           disabled={!this.isOptionEnabled(currentDate)}
           key={`option_${counter}`}
           onClick={onClickHandler}
+          role="gridcell"
+          tabindex="-1"
           type="button"
         >{currentDate.getDate()}</button>
       );
@@ -182,7 +185,7 @@ class Days extends Component {
       counter += 1;
     } while (counter < 42);
 
-    return <div className="ui-calendar-days__options">{options}</div>;
+    return <div className="ui-calendar-days__options" role="grid">{options}</div>;
   }
 
   /**
@@ -211,7 +214,12 @@ class Days extends Component {
           onClick={onNavPreviousMonth}
           type="button"
         >{previous.displayValue}</button>
-        <label className="ui-calendar-days__rendered-month">
+        <label
+          aria-atomic="true"
+          aria-live="assertive"
+          className="ui-calendar-days__rendered-month"
+          role="heading"
+        >
           {locale.months[renderDate.getMonth()].short} {renderDate.getFullYear()}
         </label>
         <button
@@ -244,12 +252,16 @@ class Days extends Component {
   }
 
   render() {
-    const { dataAttrs, mods } = this.props;
+    const { dataAttrs, mods, onMouseDown } = this.props;
     const className = getClassNamesWithMods('ui-calendar-days', mods);
     const restProps = getDataAttributes(dataAttrs);
 
     return (
-      <div className={className} {...restProps}>
+      <div
+        className={className}
+        onMouseDown={onMouseDown}
+        {...restProps}
+      >
         {this.renderNav()}
         {this.renderWeekDays()}
         {this.renderDays()}
@@ -318,6 +330,11 @@ Days.propTypes = {
       }),
     }),
   }),
+
+  /**
+   * onMouseDown handler
+   */
+  onMouseDown: PropTypes.func,
 
   /**
    * Function to be triggered when pressing the nav's "next" button.
