@@ -45,6 +45,7 @@ function Price(props) {
     dataAttrs = {},
     decimalsPrecision,
     decimalsSeparator,
+    discount,
     showDecimals,
     size,
     symbol,
@@ -62,6 +63,22 @@ function Price(props) {
 
   const className = getClassNamesWithMods(rootClass, mods);
 
+  const textBlock = additionalText
+    ? (
+      <div className={`${rootClass}__additional-text-block`}>
+        {additionalText}
+      </div>
+      )
+  : null;
+
+  const discountBlock = discount
+    ? (
+      <div className={`${rootClass}__discount`}>
+        {discount}
+      </div>
+      )
+    : null;
+
   const decimalsMarkup = showDecimals
     ? (
       <div className={`${rootClass}__decimals`}>
@@ -76,19 +93,14 @@ function Price(props) {
 
   return (
     <div className={className} {...getDataAttributes(dataAttrs)}>
+      {discountBlock}
       <div className={`${rootClass}__value-delimiter`}>
         <div className={`${rootClass}__currency ${rootClass}__currency_${symbolPosition}`}>{symbol}</div>
         <div className={`${rootClass}__integers`}>{addThousandsSeparator(intValue, thousandsSeparator)}</div>
         {decimalsMarkup}
       </div>
       {underlineMarkup}
-      {additionalText
-        ? (
-          <div className={`${rootClass}__additional-text-block`}>
-            {additionalText}
-          </div>
-        )
-        : null}
+      {textBlock}
     </div>
   );
 }
@@ -97,6 +109,7 @@ Price.defaultProps = {
   additionalText: '',
   decimalsPrecision: 2,
   decimalsSeparator: '.',
+  discount: 0,
   showDecimals: true,
   size: 'l',
   symbol: '€',
@@ -129,6 +142,11 @@ Price.propTypes = {
    * Decimals separator. When formatting the number it will split decimals from integers.
    */
   decimalsSeparator: PropTypes.string,
+
+  /**
+   * Discount block. Strikethrough text with original price.
+   */
+  discount: PropTypes.number,
 
   /**
    * You can provide set of custom modifications.

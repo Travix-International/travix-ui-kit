@@ -12,6 +12,12 @@ Price with additional text:
       <Price additionalText="per day" decimalsSeparator="," thousandsSeparator="." underlined value={43.9} /><br/><br/>
     </div>
 
+Price with discount:
+
+    <div>
+      <Price additionalText="per day" decimalsSeparator="," discount={50.2} thousandsSeparator="." underlined value={43.9} /><br/><br/>
+    </div>
+
 Sizes:
 
     <div>
