@@ -177,7 +177,6 @@ class Days extends Component {
           key={`option_${counter}`}
           onClick={onClickHandler}
           role="gridcell"
-          tabindex="-1"
           type="button"
         >{currentDate.getDate()}</button>
       );

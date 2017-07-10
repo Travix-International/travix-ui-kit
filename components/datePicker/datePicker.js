@@ -33,12 +33,6 @@ class DatePicker extends Component {
     }
   }
 
-  selectInput() {
-    if (this.input) {
-      this.input.select();
-    }
-  }
-
   handleItemMouseDown = (e) => {
     e.preventDefault();
   };
