@@ -10,7 +10,7 @@ describe('DatePicker', () => {
     const onChange = () => {};
     const valueFormatterFn = jest.fn();
 
-    it('should render correct input', () => {
+    it('should render disabled DatePicker', () => {
       const wrapper = shallow(
         <DatePicker
           disabled
@@ -22,7 +22,7 @@ describe('DatePicker', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    it('should render correct input', () => {
+    it('should render DatePicker with label', () => {
       const wrapper = shallow(
         <DatePicker
           label="label"
@@ -34,7 +34,7 @@ describe('DatePicker', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    it('should render correct input', () => {
+    it('should render correct DatePicker with value', () => {
       const wrapper = shallow(
         <DatePicker
           name="date-picker"
@@ -47,7 +47,7 @@ describe('DatePicker', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    it('should render correct input', () => {
+    it('should render open DatePicker', () => {
       const wrapper = shallow(
         <DatePicker
           name="date-picker"
