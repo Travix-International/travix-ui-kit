@@ -44,7 +44,6 @@ export default class Carousel extends React.Component {
 
   handleClickPrev(e) {
     e.preventDefault();
-
     let next = this.state.currentItem - 1;
     if (next < 0) {
       next = this.props.images.length - 1;
@@ -69,7 +68,6 @@ export default class Carousel extends React.Component {
     if (next < 0) {
       return;
     }
-
     this.setNextItem(next);
   }
 
@@ -78,17 +76,12 @@ export default class Carousel extends React.Component {
     if (next === this.props.images.length) {
       return;
     }
-
     this.setNextItem(next);
   }
 
   handleClickGoTo(e) {
     e.preventDefault();
     const index = parseInt(e.currentTarget.getAttribute('data-index'), 10);
-    if (index === this.state.currentItem) {
-      return;
-    }
-
     this.setNextItem(index);
   }
 
