@@ -1,21 +1,21 @@
-.carousel {
+.ui-carousel {
   position: relative;
   overflow: hidden;
 }
 
-.carousel-track {
+.ui-carousel-track {
   display: flex;
   position: relative;
   transition: var(--tx-carousel-track-transition);
 }
 
-.carousel-item {
+.ui-carousel-item {
   flex: 1 0 100%;
   position: relative;
   min-height: var(--tx-carousel-item-min-height);
 }
 
-.carousel-item-image {
+.ui-carousel-item-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -25,7 +25,7 @@
   background-size: cover;
 }
 
-.carousel-navigation button {
+.ui-carousel-navigation button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -42,21 +42,21 @@
   font-size: var(--tx-carousel-button-font-size);
 }
 
-.carousel-navigation button:last-child {
+.ui-carousel-navigation button:last-child {
   right: 0;
   border-radius: var(--tx-carousel-button-right-radius);
 }
 
-.carousel-markers,
-.carousel-page {
+.ui-carousel-markers,
+.ui-carousel-page {
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.carousel-markers button,
-.carousel-markers i {
+.ui-carousel-markers button,
+.ui-carousel-markers i {
   display: inline-block;
   border: 0;
   padding: 0;
@@ -69,12 +69,12 @@
   cursor: pointer;
 }
 
-.carousel-markers i {
+.ui-carousel-markers i {
   cursor: default;
   background-color: var(--tx-carousel-marker-active-background-color);
 }
 
-.carousel-page {
+.ui-carousel-page {
   background: var(--tx-carousel-page-background-color);
   border-radius: var(--tx-carousel-page-border-radius);
   padding: var(--tx-carousel-page-padding);

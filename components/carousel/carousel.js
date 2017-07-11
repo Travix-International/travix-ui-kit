@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getDataAttributes } from '../_helpers';
 import CarouselItem from './carouselItem';
 import CarouselMarkers from './carouselMarkers';
 import CarouselPage from './carouselPage';
@@ -99,7 +100,7 @@ export default class Carousel extends React.Component {
   renderNavigation() {
     return (
       <div>
-        <div className="carousel-navigation">
+        <div className="ui-carousel-navigation">
           <button onClick={this.handleClickPrev}>{this.props.prevButton}</button>
           <button onClick={this.handleClickNext}>{this.props.nextButton}</button>
         </div>
@@ -121,13 +122,15 @@ export default class Carousel extends React.Component {
   }
 
   render() {
+    const restProps = getDataAttributes(this.props.dataAttrs);
+
     const trackerStyles = {
       transform: `translateX(-${this.state.currentItem * 100}%)`,
     };
 
     return (
-      <div className="carousel">
-        <div className="carousel-track" ref={(c) => { this.carouselTracker = c; }} style={trackerStyles}>
+      <div className="ui-carousel" {...restProps}>
+        <div className="ui-carousel-track" ref={(c) => { this.carouselTracker = c; }} style={trackerStyles}>
           {this.state.images.map((src, i) => <CarouselItem key={i} load={this.shouldLoad(i)} src={src} />)}
         </div>
         {this.state.images.length > 1 && this.renderNavigation()}
@@ -137,6 +140,10 @@ export default class Carousel extends React.Component {
 }
 
 Carousel.propTypes = {
+  /**
+   * Data attributes. You can use it to set up any custom data-* attribute
+   */
+  dataAttrs: PropTypes.object,
   /**
    * Images array
    */

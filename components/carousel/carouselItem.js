@@ -37,8 +37,8 @@ export default class CarouselItem extends React.Component {
     }
 
     return (
-      <div className="carousel-item">
-        <div className="carousel-item-image" style={imageStyles}>&nbsp;</div>
+      <div className="ui-carousel-item">
+        <div className="ui-carousel-item-image" style={imageStyles}>&nbsp;</div>
       </div>
     );
   }
