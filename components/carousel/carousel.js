@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+
 import CarouselItem from './carouselItem';
 import CarouselMarkers from './carouselMarkers';
 import CarouselPage from './carouselPage';
@@ -121,8 +122,11 @@ export default class Carousel extends React.Component {
       transform: `translateX(-${this.state.currentItem * 100}%)`,
     };
 
+    const carouselMods = this.props.mods ? this.props.mods.slice() : [];
+    const carouselClass = getClassNamesWithMods('ui-carousel', carouselMods);
+
     return (
-      <div className="ui-carousel" {...restProps}>
+      <div className={carouselClass} {...restProps}>
         <div className="ui-carousel-track" ref={(c) => { this.carouselTracker = c; }} style={trackerStyles}>
           {this.state.images.map((src, i) => <CarouselItem key={i} load={this.shouldLoad(i)} src={src} />)}
         </div>
@@ -159,6 +163,10 @@ Carousel.propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
+  /**
+   * You can provide set of custom modifications
+   */
+  mods: PropTypes.arrayOf(PropTypes.string),
 };
 
 Carousel.defaultProps = {

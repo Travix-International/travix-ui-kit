@@ -800,7 +800,7 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
 </Carousel>
 `;
 
-exports[`Carousel #render() render with default props 1`] = `
+exports[`Carousel #render() render with default props and mods 1`] = `
 <Carousel
   images={
     Array [
@@ -810,6 +810,11 @@ exports[`Carousel #render() render with default props 1`] = `
     ]
   }
   markers={false}
+  mods={
+    Array [
+      "small",
+    ]
+  }
   nextButton={
     <span>
       ›
@@ -822,7 +827,7 @@ exports[`Carousel #render() render with default props 1`] = `
   }
 >
   <div
-    className="ui-carousel"
+    className="ui-carousel ui-carousel_small"
   >
     <div
       className="ui-carousel-track"

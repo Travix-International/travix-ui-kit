@@ -4,19 +4,20 @@ import Carousel from '../../../components/carousel/carousel';
 
 describe('Carousel', () => {
   describe('#render()', () => {
-    it('render with default props', () => {
+    it('render with default props and mods', () => {
       const images = [
         'http://lorempixel.com/600/400/city',
         'http://lorempixel.com/600/400/sports',
         'http://lorempixel.com/600/400/people',
       ];
       const renderTree = mount(
-        <Carousel images={images} />
+        <Carousel images={images} mods={['small']} />
       );
-
+      
       const items = renderTree.find('.ui-carousel-item');
 
       expect(renderTree).toMatchSnapshot();
+      expect(renderTree.hasClass('ui-carousel_small')).toEqual(true);
       expect(items.length).toEqual(images.length);
     });
 
