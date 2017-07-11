@@ -1,42 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DatePicker #render() should render correct input 1`] = `
-<div
-  className="ui-datepicker"
-  onChange={[Function]}
-  open={false}
-  selectionType="normal"
->
-  <Input
-    disabled={true}
-    id="ui-datepicker-input-date-picker"
-    mods={
-      Array [
-        "datepicker",
-      ]
-    }
-    multiline={false}
-    name="date-picker"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    readOnly={true}
-    type="text"
-  />
-  <div
-    aria-hidden={false}
-    className="ui-datepicker__calendar-wrapper"
-  >
-    <Calendar
-      multiplemode={true}
-      onMouseDown={[Function]}
-      onSelectDay={[Function]}
-      selectionType="normal"
-    />
-  </div>
-</div>
-`;
-
-exports[`DatePicker #render() should render correct input 2`] = `
+exports[`DatePicker #render() should render DatePicker with label 1`] = `
 <div
   className="ui-datepicker"
   onChange={[Function]}
@@ -78,7 +42,7 @@ exports[`DatePicker #render() should render correct input 2`] = `
 </div>
 `;
 
-exports[`DatePicker #render() should render correct input 3`] = `
+exports[`DatePicker #render() should render correct DatePicker with value 1`] = `
 <div
   className="ui-datepicker"
   onChange={[Function]}
@@ -114,7 +78,43 @@ exports[`DatePicker #render() should render correct input 3`] = `
 </div>
 `;
 
-exports[`DatePicker #render() should render correct input 4`] = `
+exports[`DatePicker #render() should render disabled DatePicker 1`] = `
+<div
+  className="ui-datepicker"
+  onChange={[Function]}
+  open={false}
+  selectionType="normal"
+>
+  <Input
+    disabled={true}
+    id="ui-datepicker-input-date-picker"
+    mods={
+      Array [
+        "datepicker",
+      ]
+    }
+    multiline={false}
+    name="date-picker"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    readOnly={true}
+    type="text"
+  />
+  <div
+    aria-hidden={false}
+    className="ui-datepicker__calendar-wrapper"
+  >
+    <Calendar
+      multiplemode={true}
+      onMouseDown={[Function]}
+      onSelectDay={[Function]}
+      selectionType="normal"
+    />
+  </div>
+</div>
+`;
+
+exports[`DatePicker #render() should render open DatePicker 1`] = `
 <div
   className="ui-datepicker ui-datepicker_active"
   open={true}
