@@ -1,0 +1,86 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  position: relative;
+  transition: var(--tx-carousel-track-transition);
+}
+
+.carousel-item {
+  flex: 1 0 100%;
+  position: relative;
+  min-height: var(--tx-carousel-item-min-height);
+}
+
+.carousel-item-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+
+.carousel-navigation button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  background-color: var(--tx-carousel-button-background-color);
+  border: 0;
+  border-radius:  var(--tx-carousel-button-left-radius);
+  cursor: pointer;
+  height: var(--tx-carousel-button-height);
+  min-width: var(--tx-carousel-button-min-width);
+  padding: 0;
+  
+  color: var(--tx-carousel-button-color);
+  font-size: var(--tx-carousel-button-font-size);
+}
+
+.carousel-navigation button:last-child {
+  right: 0;
+  border-radius: var(--tx-carousel-button-right-radius);
+}
+
+.carousel-markers,
+.carousel-page {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel-markers button,
+.carousel-markers i {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  background-color: var(--tx-carousel-marker-background-color);
+  width: var(--tx-carousel-marker-width);
+  height: var(--tx-carousel-marker-height);
+  margin: 0 2px;
+  border-radius: var(--tx-carousel-marker-border-radius);
+  box-shadow: var(--tx-carousel-marker-box-shadow);
+  cursor: pointer;
+}
+
+.carousel-markers i {
+  cursor: default;
+  background-color: var(--tx-carousel-marker-active-background-color);
+}
+
+.carousel-page {
+  background: var(--tx-carousel-page-background-color);
+  border-radius: var(--tx-carousel-page-border-radius);
+  padding: var(--tx-carousel-page-padding);
+  
+  font-family: var(--tx-carousel-page-font-family);
+  font-weight: var(--tx-generic-font-primary-weight-bold);
+  color: var(--tx-generic-color-active);
+  font-size: var(--tx-carousel-page-font-size);
+}
