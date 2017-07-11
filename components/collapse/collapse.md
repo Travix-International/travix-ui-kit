@@ -12,10 +12,10 @@ Open one:
     </div>
 
 
-With label on the right:
+With icon on the right:
 
     <div style={{marginTop: '10px'}}>
-      <Collapse isAccordion labelPosition="right">
+      <Collapse isAccordion iconPosition="right">
         <CollapseItem title="Collapse Title 1">
           <List items={['London', 'Amsterdam', 'Madrid']} />
         </CollapseItem>

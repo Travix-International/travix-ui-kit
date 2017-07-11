@@ -64,7 +64,7 @@ class Collapse extends Component {
   }
 
   renderItems() {
-    const { isAccordion, children, labelPosition } = this.props;
+    const { isAccordion, children, iconPosition } = this.props;
     const { activeKey } = this.state;
 
     return (
@@ -78,7 +78,7 @@ class Collapse extends Component {
         return cloneElement(child, {
           id: key,
           isActive,
-          labelPosition,
+          iconPosition,
           onClick: this.handleItemClick,
         });
       })
@@ -132,9 +132,9 @@ Collapse.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
   ]),
   /**
-   * Determine on which side of the block label is shown
+   * Determine on which side of the block the icon is shown. On the left by default
    */
-  labelPosition: PropTypes.oneOf(['right', 'left']),
+  iconPosition: PropTypes.oneOf(['right', 'left']),
   /**
    * Specify a function that will be called when a user click on CollapseItem
    */
@@ -144,7 +144,7 @@ Collapse.propTypes = {
 Collapse.defaultProps = {
   children: null,
   isAccordion: false,
-  labelPosition: 'left',
+  iconPosition: 'left',
 };
 
 export default Collapse;
