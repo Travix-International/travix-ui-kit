@@ -21,7 +21,7 @@ const {
  * @static
  */
 function processProps(props) {
-  const { initialDates, maxDate, minDate, selectionType } = props;
+  const { initialDates, maxDate, minDate, selectionType, multiplemode } = props;
   const maxLimit = maxDate ? normalizeDate(new Date(maxDate), 23, 59, 59, 999) : null;
 
   const renderDate = (initialDates && initialDates.length && initialDates[0]) ? new Date(initialDates[0]) : new Date();
@@ -59,7 +59,7 @@ function processProps(props) {
   }
 
   /** If initialDates is defined and we have a start date, we want to set it as the minLimit */
-  if (selectedDates[0] && (selectionType === CALENDAR_SELECTION_TYPE_RANGE)) {
+  if (selectedDates[0] && (selectionType === CALENDAR_SELECTION_TYPE_RANGE && !multiplemode)) {
     minLimit = selectedDates[0];
   }
 
@@ -87,7 +87,7 @@ export default class Calendar extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    const { initialDates, maxDate, minDate, selectionType } = newProps;
+    const { initialDates, maxDate, minDate, selectionType, multiplemode } = newProps;
 
     let propsChanged = (
       (maxDate !== this.props.maxDate) ||
@@ -103,10 +103,16 @@ export default class Calendar extends Component {
       }
     }
 
-    if (propsChanged) {
+    if (propsChanged || (selectionType === CALENDAR_SELECTION_TYPE_RANGE && multiplemode)) {
       this.setState(() => processProps(newProps));
     }
   }
+
+  handleItemMouseDown = (e) => {
+    if (typeof this.props.onMouseDown === 'function') {
+      this.props.onMouseDown(e);
+    }
+  };
 
   /**
    * Changes the renderDate of the calendar to the previous or next month.
@@ -140,7 +146,7 @@ export default class Calendar extends Component {
    * @param {Date} dateSelected Date selected by the user.
    */
   onSelectDay(dateSelected) {
-    const { onSelectDay, selectionType, minDate } = this.props;
+    const { onSelectDay, selectionType, minDate, multiplemode } = this.props;
 
     this.setState((prevState) => {
       let { minLimit, renderDate, selectedDates } = prevState;
@@ -162,7 +168,7 @@ export default class Calendar extends Component {
        *     - If there's an end date selected and the user is clicking on the start date again, it
        * clears the selections and the limits, resetting the range.
        */
-      if (selectionType === CALENDAR_SELECTION_TYPE_RANGE) {
+      if (selectionType === CALENDAR_SELECTION_TYPE_RANGE && !multiplemode) {
         if (selectedDates[0]) {
           if (!selectedDates[1]) {
             selectedDates[1] = dateSelected;
@@ -197,7 +203,10 @@ export default class Calendar extends Component {
       };
     }, () => {
       if (onSelectDay) {
-        onSelectDay(this.state.selectedDates);
+        const returnValue = (selectionType === CALENDAR_SELECTION_TYPE_RANGE && multiplemode)
+          ? dateSelected
+          : this.state.selectedDates;
+        onSelectDay(returnValue);
       }
     });
   }
@@ -218,6 +227,7 @@ export default class Calendar extends Component {
           maxDate={maxLimit}
           minDate={minLimit}
           navButtons={navButtons}
+          onMouseDown={this.handleItemMouseDown}
           onNavNextMonth={() => this.moveToMonth(CALENDAR_MOVE_TO_NEXT)}
           onNavPreviousMonth={() => this.moveToMonth(CALENDAR_MOVE_TO_PREVIOUS)}
           onSelectDay={dt => this.onSelectDay(dt)}
@@ -232,6 +242,7 @@ export default class Calendar extends Component {
 
 Calendar.defaultProps = {
   selectionType: 'normal',
+  multiplemode: false,
 };
 
 Calendar.propTypes = {
@@ -279,6 +290,11 @@ Calendar.propTypes = {
    */
   mods: PropTypes.arrayOf(PropTypes.string),
 
+  /**
+   * Technical marker for using range mode with multiple calendar instances.
+   */
+  multiplemode: PropTypes.bool,
+
   navButtons: PropTypes.shape({
     days: PropTypes.shape({
       next: PropTypes.shape({
@@ -291,6 +307,11 @@ Calendar.propTypes = {
       }),
     }),
   }),
+
+  /**
+   * onMouseDown handler
+   */
+  onMouseDown: PropTypes.func,
 
   /**
    * Function to be triggered when pressing the nav's "next" button.

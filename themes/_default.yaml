@@ -246,6 +246,10 @@ collapse:
           color: "var(--tx-generic-color-secondary-darker)"
       border:
         radius: *border-radius
+datepicker:
+  calendar-wrapper:
+    background-color: "var(--tx-generic-color-blank)"
+    box-shadow: "0 0 4px rgba(var(--tx-generic-color-shadow-rgb), .4)"
 dropdown:
   input:
     background-color: "var(--tx-generic-color-blank)"

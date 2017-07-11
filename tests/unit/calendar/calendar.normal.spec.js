@@ -13,6 +13,7 @@ describe('Calendar (normal mode)', () => {
       );
 
       expect(wrapper.props()).toEqual({
+        multiplemode: false,
         selectionType: 'normal',
       });
       expect(wrapper.state()).toEqual({
@@ -41,6 +42,7 @@ describe('Calendar (normal mode)', () => {
 
       expect(wrapper.props()).toEqual({
         initialDates: [initialDate],
+        multiplemode: false,
         selectionType: 'normal',
       });
       expect(wrapper.state()).toEqual({
@@ -70,6 +72,7 @@ describe('Calendar (normal mode)', () => {
 
       expect(wrapper.props()).toEqual({
         maxDate,
+        multiplemode: false,
         selectionType: 'normal',
       });
       expect(wrapper.state()).toEqual({
@@ -91,6 +94,7 @@ describe('Calendar (normal mode)', () => {
 
       expect(wrapper.props()).toEqual({
         minDate,
+        multiplemode: false,
         selectionType: 'normal',
       });
       expect(wrapper.state()).toEqual({
@@ -119,6 +123,7 @@ describe('Calendar (normal mode)', () => {
         initialDates,
         maxDate,
         minDate,
+        multiplemode: false,
         selectionType: 'normal',
       });
       expect(wrapper.state()).toEqual({
@@ -140,6 +145,7 @@ describe('Calendar (normal mode)', () => {
         initialDates: initialDates2,
         maxDate,
         minDate,
+        multiplemode: false,
         selectionType: 'normal',
       });
       expect(wrapper2.state()).toEqual({
