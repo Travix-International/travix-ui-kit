@@ -69,7 +69,7 @@ function Price(props) {
         {additionalText}
       </div>
       )
-  : null;
+    : null;
 
   const discountBlock = discount
     ? (
