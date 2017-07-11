@@ -6,6 +6,7 @@ import Calendar from './calendar/calendar';
 import Checkbox from './checkbox/checkbox';
 import Collapse from './collapse/collapse';
 import CollapseItem from './collapse/collapseItem';
+import DatePicker from './datePicker/datePicker';
 import DropDown from './dropDown/dropDown';
 import Global from './global/global';
 import Input from './input/input';
@@ -26,6 +27,7 @@ export default {
   Checkbox,
   Collapse,
   CollapseItem,
+  DatePicker,
   DropDown,
   Global,
   Input,

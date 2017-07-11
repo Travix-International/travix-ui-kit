@@ -13,6 +13,7 @@ describe('Calendar (range mode)', () => {
       );
 
       expect(wrapper.props()).toEqual({
+        multiplemode: false,
         selectionType: 'range',
       });
       expect(wrapper.state()).toEqual({
@@ -33,6 +34,7 @@ describe('Calendar (range mode)', () => {
 
       expect(wrapper.props()).toEqual({
         initialDates: [initialDate],
+        multiplemode: false,
         selectionType: 'range',
       });
       expect(wrapper.state()).toEqual({
@@ -51,6 +53,7 @@ describe('Calendar (range mode)', () => {
       );
 
       expect(wrapper.props()).toEqual({
+        multiplemode: false,
         selectionType: 'range',
       });
       expect(wrapper.state()).toEqual({
@@ -181,6 +184,60 @@ describe('Calendar (range mode)', () => {
       wrapper.find(`[data-date="${differentDay}"]`).simulate('click');
       expect(wrapper.state().minLimit).toEqual(expectedInitialMinLimit);
       expect(wrapper.state().selectedDates).toEqual([null, null]);
+    });
+
+    it('should not set the minLimit and update state if multiplemode', () => {
+      const initialDate = '2017-03-25';
+      const initialDateObj = normalizeDate(new Date(initialDate));
+
+      const wrapper = mount(
+        <Calendar initialDates={[initialDate]} multiplemode selectionType="range" />
+      );
+
+      expect(wrapper.props()).toEqual({
+        initialDates: [initialDate],
+        multiplemode: true,
+        selectionType: 'range',
+      });
+      expect(wrapper.state()).toEqual({
+        maxLimit: null,
+        minLimit: null,
+        renderDate: initialDateObj,
+        selectedDates: [initialDateObj, null],
+      });
+
+      wrapper.setProps({ initialDates: [initialDate] });
+
+      expect(wrapper.state()).toEqual({
+        maxLimit: null,
+        minLimit: null,
+        renderDate: initialDateObj,
+        selectedDates: [initialDateObj, null],
+      });
+    });
+
+    it('should set renderDate to the month of the date pressed when different from current one', () => {
+      const initialDate = '2017-03-05';
+      const selectDayMock = jest.fn();
+
+      const wrapper = mount(
+        <Calendar
+          initialDates={[initialDate]}
+          multiplemode
+          onSelectDay={selectDayMock}
+          selectionType="range"
+        />
+      );
+
+      /** Clicks to go select the day */
+      expect(wrapper.state().renderDate.getMonth()).toEqual(2);
+
+      wrapper.find(`[data-date="2017-04-01"]`).simulate('click');
+
+      expect(wrapper.state().selectedDates[0].getMonth()).toEqual(3);
+      expect(wrapper.state().renderDate.getMonth()).toEqual(3);
+      expect(selectDayMock.mock.calls.length).toEqual(1);
+      expect(selectDayMock.mock.calls[0][0]).toEqual(new Date('2017-04-01T00:00:00.000Z'));
     });
   });
 });
