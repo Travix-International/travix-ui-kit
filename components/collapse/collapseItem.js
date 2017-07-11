@@ -21,6 +21,7 @@ class CollapseItem extends Component {
       title,
       children,
       onClick, // eslint-disable-line no-unused-vars
+      labelPosition,
       labelProps = {},
       ...otherProps
     } = this.props;
@@ -33,7 +34,9 @@ class CollapseItem extends Component {
           {...labelProps}
           aria-controls={id}
           aria-expanded={isActive}
-          className="ui-collapse__label"
+          className={`ui-collapse__label ${
+            getClassNamesWithMods('ui-collapse__label--label_position', [labelPosition])}
+          `}
           onClick={this.handleItemClick}
           type="button"
         >
@@ -74,6 +77,10 @@ CollapseItem.propTypes = {
    */
   title: PropTypes.node.isRequired,
   /**
+   * Determine on which side of the block label is shown
+   */
+  labelPosition: PropTypes.oneOf(['right', 'left']),
+  /**
    * Specify props for label
    */
   labelProps: PropTypes.object,
@@ -82,6 +89,7 @@ CollapseItem.propTypes = {
 CollapseItem.defaultProps = {
   id: null,
   isActive: false,
+  labelPosition: 'left',
   onClick: null,
 };
 
