@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.6.11](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.11) (2017-07-11)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.10...v0.6.11)
+
+**Merged pull requests:**
+
+- Fix datepicker demo [\#124](https://github.com/Travix-International/travix-ui-kit/pull/124) ([AlleeX](https://github.com/AlleeX))
+
 ## [v0.6.10](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.10) (2017-07-11)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.9...v0.6.10)
 
