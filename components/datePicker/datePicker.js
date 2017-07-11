@@ -89,7 +89,7 @@ class DatePicker extends Component {
     const {
       dataAttrs = {},
       disabled,
-      inputmMods = [],
+      inputMods = [],
       label,
       mods = [],
       name,
@@ -107,13 +107,15 @@ class DatePicker extends Component {
 
     this.state.active && mods.push('active');
     const className = getClassNamesWithMods('ui-datepicker', mods);
-    inputmMods.push('datepicker');
+    inputMods.push('datepicker');
 
-    const labelBlock = label ? (
+    const labelBlock = label
+    ? (
       <label htmlFor={`ui-datepicker-input-${name}`} id={`ui-datepicker-label-${name}`}>
         {label}
       </label>
-    ) : '';
+    )
+    : '';
 
     return (
       <div
@@ -125,7 +127,7 @@ class DatePicker extends Component {
         <Input
           disabled={disabled}
           id={`ui-datepicker-input-${name}`}
-          mods={inputmMods}
+          mods={inputMods}
           name={name}
           onBlur={this.handleInputBlur}
           onClick={onClick}
@@ -164,11 +166,11 @@ DatePicker.propTypes = {
   /**
    * Optional. Initial value of the calendar.
    */
-  initialDates: PropTypes.array,
+  initialDates: PropTypes.arrayOf(PropTypes.string),
   /**
    * Set of custom modifications for input.
    */
-  inputmMods: PropTypes.arrayOf(PropTypes.string),
+  inputMods: PropTypes.arrayOf(PropTypes.string),
   /**
    * Label for datepicker.
    */
