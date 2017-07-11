@@ -74,7 +74,6 @@ Multiple datePicker with range mode:
           value={state.date1}
           selectionType="range"
           placeholder="start"
-          open
         />
       </div>
       <div style={{ flexBasis: '10px' }} />
