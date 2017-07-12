@@ -11,6 +11,20 @@ Open one:
       </Collapse>
     </div>
 
+
+With icon on the right:
+
+    <div style={{marginTop: '10px'}}>
+      <Collapse isAccordion iconPosition="right">
+        <CollapseItem title="Collapse Title 1">
+          <List items={['London', 'Amsterdam', 'Madrid']} />
+        </CollapseItem>
+        <CollapseItem title="Collapse Title 2">
+          <List items={['London', 'Amsterdam', 'Madrid']} />
+        </CollapseItem>
+      </Collapse>
+    </div>
+
 Open one with expanded first item by default:
 
     <div style={{marginTop: '10px'}}>
