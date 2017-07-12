@@ -22,6 +22,18 @@ export default class Swipe {
     }
   }
 
+  unbind() {
+    if (this.hasTouch) {
+      this.$elm.removeEventListener('touchstart', this.handleStart, false);
+      this.$elm.removeEventListener('touchmove', this.handleMove, false);
+      this.$elm.removeEventListener('touchend', this.handleEnd, false);
+    } else {
+      this.$elm.removeEventListener('mousedown', this.handleStart, false);
+      this.$elm.removeEventListener('mousemove', this.handleMove, false);
+      this.$elm.removeEventListener('mouseup', this.handleEnd, false);
+    }
+  }
+
   onLeft(callback) {
     this.onLeft = callback;
     return this;

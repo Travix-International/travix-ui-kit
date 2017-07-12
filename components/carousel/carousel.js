@@ -30,9 +30,13 @@ export default class Carousel extends React.Component {
   }
 
   componentDidMount() {
-    const swipeHandler = new Swipe(this.carouselTracker);
-    swipeHandler.onLeft(this.handleSwipeNext);
-    swipeHandler.onRight(this.handleSwipePrev);
+    this.swipeHandler = new Swipe(this.carouselTracker);
+    this.swipeHandler.onLeft(this.handleSwipeNext);
+    this.swipeHandler.onRight(this.handleSwipePrev);
+  }
+
+  componentWillUnmount() {
+    this.swipeHandler.unbind();
   }
 
   setNextItem(next) {
@@ -152,14 +156,14 @@ Carousel.propTypes = {
   /**
    * Content of the navigation button "previous"
    */
-  prevButton: PropTypes.oneOf([
+  prevButton: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
   /**
    * Content of the navigation button "next"
    */
-  nextButton: PropTypes.oneOf([
+  nextButton: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
