@@ -16,10 +16,9 @@ export default class Carousel extends React.Component {
     super(props);
 
     this.state = {
-      images: props.images,
       isTransitioning: false,
       previousItem: null,
-      currentItem: 0,
+      currentItem: this.props.current,
     };
 
     this.handleClickNext = this.handleClickNext.bind(this);
@@ -107,12 +106,12 @@ export default class Carousel extends React.Component {
           this.props.markers
           ? <CarouselMarkers
             current={this.state.currentItem}
-            images={this.state.images}
+            images={this.props.images}
             onClick={this.handleClickGoTo}
           />
           : <CarouselPage
             current={this.state.currentItem}
-            images={this.state.images}
+            images={this.props.images}
           />
         }
       </div>
@@ -132,9 +131,9 @@ export default class Carousel extends React.Component {
     return (
       <div className={carouselClass} {...restProps}>
         <div className="ui-carousel-track" ref={(c) => { this.carouselTracker = c; }} style={trackerStyles}>
-          {this.state.images.map((src, i) => <CarouselItem key={i} load={this.shouldLoad(i)} src={src} />)}
+          {this.props.images.map((src, i) => <CarouselItem key={i} load={this.shouldLoad(i)} src={src} />)}
         </div>
-        {this.state.images.length > 1 && this.renderNavigation()}
+        {this.props.images.length > 1 && this.renderNavigation()}
       </div>
     );
   }
@@ -156,21 +155,19 @@ Carousel.propTypes = {
   /**
    * Content of the navigation button "previous"
    */
-  prevButton: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
+  prevButton: PropTypes.node,
   /**
    * Content of the navigation button "next"
    */
-  nextButton: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
+  nextButton: PropTypes.node,
   /**
    * You can provide set of custom modifications
    */
   mods: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Initial index being displayed
+   */
+  current: PropTypes.number,
 };
 
 Carousel.defaultProps = {
@@ -178,4 +175,5 @@ Carousel.defaultProps = {
   markers: false,
   prevButton: <span>&lsaquo;</span>,
   nextButton: <span>&rsaquo;</span>,
+  current: 0,
 };

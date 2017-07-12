@@ -2,6 +2,7 @@
 
 exports[`Carousel #render() clicking markers to change pagination 1`] = `
 <Carousel
+  current={0}
   images={
     Array [
       "http://lorempixel.com/600/400/city",
@@ -137,6 +138,7 @@ exports[`Carousel #render() clicking markers to change pagination 1`] = `
 
 exports[`Carousel #render() display markers instead of pagination 1`] = `
 <Carousel
+  current={0}
   images={
     Array [
       "http://lorempixel.com/600/400/city",
@@ -272,6 +274,7 @@ exports[`Carousel #render() display markers instead of pagination 1`] = `
 
 exports[`Carousel #render() hitting next move to first item 1`] = `
 <Carousel
+  current={0}
   images={
     Array [
       "http://lorempixel.com/600/400/city",
@@ -400,6 +403,7 @@ exports[`Carousel #render() hitting next move to first item 1`] = `
 
 exports[`Carousel #render() hitting previous move to last item 1`] = `
 <Carousel
+  current={0}
   images={
     Array [
       "http://lorempixel.com/600/400/city",
@@ -528,6 +532,7 @@ exports[`Carousel #render() hitting previous move to last item 1`] = `
 
 exports[`Carousel #render() prevent swipe after last item 1`] = `
 <Carousel
+  current={0}
   images={
     Array [
       "http://lorempixel.com/600/400/city",
@@ -663,6 +668,7 @@ exports[`Carousel #render() prevent swipe after last item 1`] = `
 
 exports[`Carousel #render() prevent swipe before first item 1`] = `
 <Carousel
+  current={0}
   images={
     Array [
       "http://lorempixel.com/600/400/city",
@@ -798,6 +804,7 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
 
 exports[`Carousel #render() render with default props and mods 1`] = `
 <Carousel
+  current={0}
   images={
     Array [
       "http://lorempixel.com/600/400/city",
@@ -931,6 +938,7 @@ exports[`Carousel #render() render with default props and mods 1`] = `
 
 exports[`Carousel #render() show correct pagination info 1`] = `
 <Carousel
+  current={0}
   images={
     Array [
       "http://lorempixel.com/600/400/city",
@@ -1059,6 +1067,7 @@ exports[`Carousel #render() show correct pagination info 1`] = `
 
 exports[`Carousel #render() swiping will change the current item 1`] = `
 <Carousel
+  current={0}
   images={
     Array [
       "http://lorempixel.com/600/400/city",
@@ -1194,6 +1203,7 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
 
 exports[`Carousel #render() unbind events when unmounting 1`] = `
 <Carousel
+  current={0}
   images={
     Array [
       "http://lorempixel.com/600/400/city",

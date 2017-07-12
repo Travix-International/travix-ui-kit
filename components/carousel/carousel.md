@@ -23,6 +23,7 @@ Carousel:
           'http://lorempixel.com/600/400/food',
           'http://lorempixel.com/600/400/fashion',
         ]}
+        current={3}
         markers
       />
       <br/>
