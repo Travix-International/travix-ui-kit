@@ -1,57 +1,35 @@
 Position top:
 
-    <Badge position="top" title="Badge">
-      <div style={{border: '1px solid lightgray', height: '70px', marginTop: '15px'}} />
-    </Badge>
+    initialState = {
+      isVisibleTop: false,
+      isVisibleRight: true,
+      isVisibleBottom: true,
+      isVisibleLeft: true,
+      isArrow: false,
+      isBorder: true,
+    };
 
-Position right:
+    <div>
+      <Checkbox name="isVisibleTop" checked={state.isVisibleTop} onChange={() => setState({ isVisibleTop: !state.isVisibleTop })}>top</Checkbox>
+      <Checkbox name="isVisibleRight" checked={state.isVisibleRight} onChange={() => setState({ isVisibleRight: !state.isVisibleRight })}>right</Checkbox>
+      <Checkbox name="isVisibleBottom" checked={state.isVisibleBottom} onChange={() => setState({ isVisibleBottom: !state.isVisibleBottom })}>bottom</Checkbox>
+      <Checkbox name="isVisibleLeft" checked={state.isVisibleLeft} onChange={() => setState({ isVisibleLeft: !state.isVisibleLeft })}>left</Checkbox>
 
-    <Badge position="right" title="Badge">
-      <div style={{border: '1px solid lightgray', height: '70px', marginTop: '15px'}} />
-    </Badge>
+      <br/>
 
-Position right with arrow:
+      <Checkbox name="isArrow" checked={state.isArrow} onChange={() => setState({ isArrow: !state.isArrow })}>arrow</Checkbox>
+      <Checkbox name="isBorder" checked={state.isBorder} onChange={() => setState({ isBorder: !state.isBorder })}>border</Checkbox>
 
-    <Badge arrow position="right" title="Badge">
-      <div style={{border: '1px solid lightgray', height: '70px', marginTop: '15px'}} />
-    </Badge>
-
-Position bottom:
-
-    <Badge position="bottom" title="Badge">
-      <div style={{border: '1px solid lightgray', height: '70px', marginTop: '15px'}} />
-    </Badge>
-
-Position left:
-
-    <Badge position="left" title="Badge">
-      <div style={{border: '1px solid lightgray', height: '70px', marginTop: '15px'}} />
-    </Badge>
-
-Position left with arrow:
-
-    <Badge arrow position="left" title="Badge">
-      <div style={{border: '1px solid lightgray', height: '70px', marginTop: '15px'}} />
-    </Badge>
-
-Without title:
-
-    <Badge>
-      <div style={{border: '1px solid lightgray', height: '70px', marginTop: '15px'}} />
-    </Badge>
-
-Without content:
-
-    <Badge title="Badge" />
-
-Without content and with right arrow:
-
-    <Badge arrow position="right" title="Badge" />
-
-Without content and with left arrow:
-
-    <Badge arrow position="left" title="Badge" />
-
-Without border:
-
-    <Badge border={false} title="Badge" />
+      <Badge arrow={state.isArrow} border={state.isBorder} position="top" title="top" visible={state.isVisibleTop}>
+        <Badge arrow={state.isArrow} border={state.isBorder} position="right" title="right" visible={state.isVisibleRight}>
+          <Badge arrow={state.isArrow} border={state.isBorder} position="bottom" title="bottom" visible={state.isVisibleBottom}>
+            <Badge arrow={state.isArrow} border={state.isBorder} position="left" title="left" visible={state.isVisibleLeft}>
+              <div style={{border: '1px solid lightgray', padding: '25px 100px', marginTop: '15px'}}>
+                <Badge arrow={state.isArrow} border={state.isBorder} position="right" title={<span>Left</span>} />
+                <Badge arrow={state.isArrow} border={state.isBorder} position="left" title="Right" />
+              </div>
+            </Badge>
+          </Badge>
+        </Badge>
+      </Badge>
+    </div>

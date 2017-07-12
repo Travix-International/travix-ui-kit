@@ -2,28 +2,33 @@
   position: relative;
 
   .ui-badge-badge {
-    position: absolute;
-
     $position: calc(-1 * var(--tx-badge-after-border-size));
+
+    &.ui-badge-badge_top,
+    &.ui-badge-badge_right,
+    &.ui-badge-badge_bottom,
+    &.ui-badge-badge_left {
+      position: absolute;
+    }
 
     &.ui-badge-badge_top {
       top: $position;
-      right: 20px;
+      left: var(--tx-badge-indent);
     }
 
     &.ui-badge-badge_right {
       right: $position;
-      top: 20px;
+      top: var(--tx-badge-indent);
     }
 
     &.ui-badge-badge_bottom {
       bottom: $position;
-      right: 20px;
+      right: var(--tx-badge-indent);
     }
 
     &.ui-badge-badge_left {
       left: $position;
-      top: 20px;
+      top: var(--tx-badge-indent);
     }
   }
 }
@@ -96,7 +101,7 @@
     }
 
     &.ui-badge-badge_no-border:before {
-      bottom: calc(-1 * var(--tx-badge-after-border-size));
+      bottom: 0;
     }
   }
 
