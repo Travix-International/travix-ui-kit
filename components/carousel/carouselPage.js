@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function CarouselPage({ images, current }) {
   return (
     <div className="ui-carousel-page">
-      {current + 1} / <b>{images.length}</b>
+      {current + 1} / {images.length}
     </div>
   );
 }

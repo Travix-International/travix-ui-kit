@@ -20,7 +20,7 @@
 }
 
 .ui-carousel-markers button,
-.ui-carousel-markers i {
+.ui-carousel-markers span {
   background-color: var(--tx-carousel-marker-background-color);
   border: 0;
   border-radius: var(--tx-carousel-marker-border-radius);
@@ -33,7 +33,7 @@
   width: var(--tx-carousel-marker-width);
 }
 
-.ui-carousel-markers i {
+.ui-carousel-markers span {
   background-color: var(--tx-carousel-marker-active-background-color);
   cursor: default;
 }
