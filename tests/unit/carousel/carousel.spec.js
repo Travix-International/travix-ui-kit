@@ -13,7 +13,7 @@ describe('Carousel', () => {
       const renderTree = mount(
         <Carousel images={images} mods={['small']} />
       );
-      
+
       const items = renderTree.find('.ui-carousel-item');
 
       expect(renderTree).toMatchSnapshot();
@@ -168,7 +168,7 @@ describe('Carousel', () => {
       expect(renderTree).toMatchSnapshot();
 
       const instance = renderTree.instance();
-      
+
       instance.handleSwipeNext();
       instance.handleSwipeNext();
       instance.handleSwipeNext();
