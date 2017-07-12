@@ -40,6 +40,16 @@ describe('Badge', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
+  it('should render content without badge when badge is not visible', () => {
+    const wrapper = shallow(
+      <Badge position="right" title="Badge title" visible={false}>
+        Badge Content
+      </Badge>
+    );
+
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
+  });
+
   it('should render left arrow', () => {
     const wrapper = shallow(
       <Badge arrow position="right" title="Badge title" />
