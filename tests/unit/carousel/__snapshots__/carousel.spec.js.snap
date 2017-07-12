@@ -1191,3 +1191,62 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
   </div>
 </Carousel>
 `;
+
+exports[`Carousel #render() unbind events when unmounting 1`] = `
+<Carousel
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+    ]
+  }
+  markers={false}
+  mods={
+    Array [
+      "small",
+    ]
+  }
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel ui-carousel_small"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+  </div>
+</Carousel>
+`;

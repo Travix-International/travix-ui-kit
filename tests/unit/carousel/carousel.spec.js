@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import Carousel from '../../../components/carousel/carousel';
+import Swipe from '../../../utils/swipe';
 
 describe('Carousel', () => {
   describe('#render()', () => {
@@ -19,6 +20,19 @@ describe('Carousel', () => {
       expect(renderTree).toMatchSnapshot();
       expect(renderTree.hasClass('ui-carousel_small')).toEqual(true);
       expect(items.length).toEqual(images.length);
+    });
+
+    it('unbind events when unmounting', () => {
+      const images = ['http://lorempixel.com/600/400/city'];
+      const renderTree = mount(
+        <Carousel images={images} mods={['small']} />
+      );
+
+      Swipe.prototype.unbind = jest.fn();
+
+      expect(renderTree).toMatchSnapshot();
+      renderTree.unmount();
+      expect(Swipe.prototype.unbind.mock.calls.length).toEqual(1);
     });
 
     it('show correct pagination info', () => {
