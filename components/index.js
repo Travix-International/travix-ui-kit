@@ -3,7 +3,7 @@ import AutoCompleteItem from './autoComplete/autoCompleteItem';
 import Badge from './badge/badge';
 import Button from './button/button';
 import Calendar from './calendar/calendar';
-import Carousel from './calendar/carousel';
+import Carousel from './carousel/carousel';
 import Checkbox from './checkbox/checkbox';
 import Collapse from './collapse/collapse';
 import CollapseItem from './collapse/collapseItem';
