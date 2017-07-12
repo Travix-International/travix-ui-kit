@@ -35,22 +35,22 @@ export default class Swipe {
   }
 
   onLeft(callback) {
-    this.onLeft = callback;
+    this.onLeftHandler = callback;
     return this;
   }
 
   onRight(callback) {
-    this.onRight = callback;
+    this.onRightHandler = callback;
     return this;
   }
 
   onUp(callback) {
-    this.onUp = callback;
+    this.onUpHandler = callback;
     return this;
   }
 
   onDown(callback) {
-    this.onDown = callback;
+    this.onDownHandler = callback;
     return this;
   }
 
@@ -88,15 +88,15 @@ export default class Swipe {
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
       if (xDiff > 0) {
-        this.onLeft();
+        this.onLeftHandler();
       } else {
-        this.onRight();
+        this.onRightHandler();
       }
     } else {
       if (yDiff > 0) { //eslint-disable-line
-        this.onUp();
+        this.onUpHandler();
       } else {
-        this.onDown();
+        this.onDownHandler();
       }
     }
     /* reset values */
