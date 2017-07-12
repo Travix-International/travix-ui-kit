@@ -32,7 +32,7 @@ export default class CarouselItem extends React.Component {
     const { imageSrc, hasLoaded } = this.state;
     const imageStyles = {};
 
-    if (imageSrc && hasLoaded) {
+    if (hasLoaded) {
       imageStyles.backgroundImage = `url('${imageSrc}')`;
     }
 
