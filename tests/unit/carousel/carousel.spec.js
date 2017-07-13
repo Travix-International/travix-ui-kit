@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import Carousel from '../../../components/carousel/carousel';
-import Swipe from '../../../utils/swipe';
+import Swipe from '../../../components/_utils/swipe';
 
 describe('Carousel', () => {
   describe('#render()', () => {
