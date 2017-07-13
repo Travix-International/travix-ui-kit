@@ -10,15 +10,51 @@ Position top:
     };
 
     <div>
-      <Checkbox name="isVisibleTop" checked={state.isVisibleTop} onChange={() => setState({ isVisibleTop: !state.isVisibleTop })}>top</Checkbox>
-      <Checkbox name="isVisibleRight" checked={state.isVisibleRight} onChange={() => setState({ isVisibleRight: !state.isVisibleRight })}>right</Checkbox>
-      <Checkbox name="isVisibleBottom" checked={state.isVisibleBottom} onChange={() => setState({ isVisibleBottom: !state.isVisibleBottom })}>bottom</Checkbox>
-      <Checkbox name="isVisibleLeft" checked={state.isVisibleLeft} onChange={() => setState({ isVisibleLeft: !state.isVisibleLeft })}>left</Checkbox>
+      <Checkbox
+        checked={state.isVisibleTop}
+        name="isVisibleTop"
+        onChange={() => setState({ isVisibleTop: !state.isVisibleTop })}
+      >
+        top
+      </Checkbox>
+      <Checkbox
+        checked={state.isVisibleRight}
+        name="isVisibleRight"
+        onChange={() => setState({ isVisibleRight: !state.isVisibleRight })}
+      >
+        right
+      </Checkbox>
+      <Checkbox
+        checked={state.isVisibleBottom}
+        name="isVisibleBottom"
+        onChange={() => setState({ isVisibleBottom: !state.isVisibleBottom })}
+      >
+        bottom
+      </Checkbox>
+      <Checkbox
+        checked={state.isVisibleLeft}
+        name="isVisibleLeft"
+        onChange={() => setState({ isVisibleLeft: !state.isVisibleLeft })}
+      >
+        left
+      </Checkbox>
 
       <br/>
 
-      <Checkbox name="isArrow" checked={state.isArrow} onChange={() => setState({ isArrow: !state.isArrow })}>arrow</Checkbox>
-      <Checkbox name="isBorder" checked={state.isBorder} onChange={() => setState({ isBorder: !state.isBorder })}>border</Checkbox>
+      <Checkbox
+        checked={state.isArrow}
+        name="isArrow"
+        onChange={() => setState({ isArrow: !state.isArrow })}
+      >
+        arrow
+      </Checkbox>
+      <Checkbox
+        checked={state.isBorder}
+        name="isBorder"
+        onChange={() => setState({ isBorder: !state.isBorder })}
+      >
+        border
+      </Checkbox>
 
       <Badge arrow={state.isArrow} border={state.isBorder} position="top" title="top" visible={state.isVisibleTop}>
         <Badge arrow={state.isArrow} border={state.isBorder} position="right" title="right" visible={state.isVisibleRight}>
