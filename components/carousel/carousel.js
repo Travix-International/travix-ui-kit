@@ -5,7 +5,7 @@ import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 import CarouselItem from './carouselItem';
 import CarouselMarkers from './carouselMarkers';
 import CarouselPage from './carouselPage';
-import Swipe from '../../utils/swipe';
+import Swipe from '../swipe/swipe';
 
 /**
  * Carousel component
@@ -26,12 +26,6 @@ export default class Carousel extends React.Component {
     this.handleClickGoTo = this.handleClickGoTo.bind(this);
     this.handleSwipeNext = this.handleSwipeNext.bind(this);
     this.handleSwipePrev = this.handleSwipePrev.bind(this);
-  }
-
-  componentDidMount() {
-    this.swipeHandler = new Swipe(this.carouselTracker);
-    this.swipeHandler.onLeft(this.handleSwipeNext);
-    this.swipeHandler.onRight(this.handleSwipePrev);
   }
 
   componentWillUnmount() {
@@ -130,9 +124,9 @@ export default class Carousel extends React.Component {
 
     return (
       <div className={carouselClass} {...restProps}>
-        <div className="ui-carousel-track" ref={(c) => { this.carouselTracker = c; }} style={trackerStyles}>
+        <Swipe onLeft={this.handleSwipeNext} onRight={this.handleSwipePrev} style={trackerStyles}>
           {this.props.images.map((src, i) => <CarouselItem key={i} load={this.shouldLoad(i)} src={src} />)}
-        </div>
+        </Swipe>
         {this.props.images.length > 1 && this.renderNavigation()}
       </div>
     );
