@@ -1,0 +1,1262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel #render() clicking markers to change pagination 1`] = `
+<Carousel
+  current={0}
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+      "http://lorempixel.com/600/400/sports",
+      "http://lorempixel.com/600/400/people",
+    ]
+  }
+  markers={true}
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/sports"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/sports')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={false}
+        src="http://lorempixel.com/600/400/people"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={Object {}}
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+    <div>
+      <div
+        className="ui-carousel-navigation"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ‹
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ›
+          </span>
+        </button>
+      </div>
+      <CarouselMarkers
+        current={0}
+        images={
+          Array [
+            "http://lorempixel.com/600/400/city",
+            "http://lorempixel.com/600/400/sports",
+            "http://lorempixel.com/600/400/people",
+          ]
+        }
+        onClick={[Function]}
+      >
+        <div
+          className="ui-carousel-markers"
+        >
+          <span />
+          <button
+            data-index={1}
+            onClick={[Function]}
+          />
+          <button
+            data-index={2}
+            onClick={[Function]}
+          />
+        </div>
+      </CarouselMarkers>
+    </div>
+  </div>
+</Carousel>
+`;
+
+exports[`Carousel #render() display markers instead of pagination 1`] = `
+<Carousel
+  current={0}
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+      "http://lorempixel.com/600/400/sports",
+      "http://lorempixel.com/600/400/people",
+    ]
+  }
+  markers={true}
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/sports"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/sports')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={false}
+        src="http://lorempixel.com/600/400/people"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={Object {}}
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+    <div>
+      <div
+        className="ui-carousel-navigation"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ‹
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ›
+          </span>
+        </button>
+      </div>
+      <CarouselMarkers
+        current={0}
+        images={
+          Array [
+            "http://lorempixel.com/600/400/city",
+            "http://lorempixel.com/600/400/sports",
+            "http://lorempixel.com/600/400/people",
+          ]
+        }
+        onClick={[Function]}
+      >
+        <div
+          className="ui-carousel-markers"
+        >
+          <span />
+          <button
+            data-index={1}
+            onClick={[Function]}
+          />
+          <button
+            data-index={2}
+            onClick={[Function]}
+          />
+        </div>
+      </CarouselMarkers>
+    </div>
+  </div>
+</Carousel>
+`;
+
+exports[`Carousel #render() hitting next move to first item 1`] = `
+<Carousel
+  current={0}
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+      "http://lorempixel.com/600/400/sports",
+      "http://lorempixel.com/600/400/people",
+    ]
+  }
+  markers={false}
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/sports"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/sports')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={false}
+        src="http://lorempixel.com/600/400/people"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={Object {}}
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+    <div>
+      <div
+        className="ui-carousel-navigation"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ‹
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ›
+          </span>
+        </button>
+      </div>
+      <CarouselPage
+        current={0}
+        images={
+          Array [
+            "http://lorempixel.com/600/400/city",
+            "http://lorempixel.com/600/400/sports",
+            "http://lorempixel.com/600/400/people",
+          ]
+        }
+      >
+        <div
+          className="ui-carousel-page"
+        >
+          1
+           / 
+          3
+        </div>
+      </CarouselPage>
+    </div>
+  </div>
+</Carousel>
+`;
+
+exports[`Carousel #render() hitting previous move to last item 1`] = `
+<Carousel
+  current={0}
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+      "http://lorempixel.com/600/400/sports",
+      "http://lorempixel.com/600/400/people",
+    ]
+  }
+  markers={false}
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/sports"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/sports')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={false}
+        src="http://lorempixel.com/600/400/people"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={Object {}}
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+    <div>
+      <div
+        className="ui-carousel-navigation"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ‹
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ›
+          </span>
+        </button>
+      </div>
+      <CarouselPage
+        current={0}
+        images={
+          Array [
+            "http://lorempixel.com/600/400/city",
+            "http://lorempixel.com/600/400/sports",
+            "http://lorempixel.com/600/400/people",
+          ]
+        }
+      >
+        <div
+          className="ui-carousel-page"
+        >
+          1
+           / 
+          3
+        </div>
+      </CarouselPage>
+    </div>
+  </div>
+</Carousel>
+`;
+
+exports[`Carousel #render() prevent swipe after last item 1`] = `
+<Carousel
+  current={0}
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+      "http://lorempixel.com/600/400/sports",
+      "http://lorempixel.com/600/400/people",
+    ]
+  }
+  markers={true}
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/sports"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/sports')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={false}
+        src="http://lorempixel.com/600/400/people"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={Object {}}
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+    <div>
+      <div
+        className="ui-carousel-navigation"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ‹
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ›
+          </span>
+        </button>
+      </div>
+      <CarouselMarkers
+        current={0}
+        images={
+          Array [
+            "http://lorempixel.com/600/400/city",
+            "http://lorempixel.com/600/400/sports",
+            "http://lorempixel.com/600/400/people",
+          ]
+        }
+        onClick={[Function]}
+      >
+        <div
+          className="ui-carousel-markers"
+        >
+          <span />
+          <button
+            data-index={1}
+            onClick={[Function]}
+          />
+          <button
+            data-index={2}
+            onClick={[Function]}
+          />
+        </div>
+      </CarouselMarkers>
+    </div>
+  </div>
+</Carousel>
+`;
+
+exports[`Carousel #render() prevent swipe before first item 1`] = `
+<Carousel
+  current={0}
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+      "http://lorempixel.com/600/400/sports",
+      "http://lorempixel.com/600/400/people",
+    ]
+  }
+  markers={true}
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/sports"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/sports')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={false}
+        src="http://lorempixel.com/600/400/people"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={Object {}}
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+    <div>
+      <div
+        className="ui-carousel-navigation"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ‹
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ›
+          </span>
+        </button>
+      </div>
+      <CarouselMarkers
+        current={0}
+        images={
+          Array [
+            "http://lorempixel.com/600/400/city",
+            "http://lorempixel.com/600/400/sports",
+            "http://lorempixel.com/600/400/people",
+          ]
+        }
+        onClick={[Function]}
+      >
+        <div
+          className="ui-carousel-markers"
+        >
+          <span />
+          <button
+            data-index={1}
+            onClick={[Function]}
+          />
+          <button
+            data-index={2}
+            onClick={[Function]}
+          />
+        </div>
+      </CarouselMarkers>
+    </div>
+  </div>
+</Carousel>
+`;
+
+exports[`Carousel #render() render with default props and mods 1`] = `
+<Carousel
+  current={0}
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+      "http://lorempixel.com/600/400/sports",
+      "http://lorempixel.com/600/400/people",
+    ]
+  }
+  markers={false}
+  mods={
+    Array [
+      "small",
+    ]
+  }
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel ui-carousel_small"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/sports"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/sports')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={false}
+        src="http://lorempixel.com/600/400/people"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={Object {}}
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+    <div>
+      <div
+        className="ui-carousel-navigation"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ‹
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ›
+          </span>
+        </button>
+      </div>
+      <CarouselPage
+        current={0}
+        images={
+          Array [
+            "http://lorempixel.com/600/400/city",
+            "http://lorempixel.com/600/400/sports",
+            "http://lorempixel.com/600/400/people",
+          ]
+        }
+      >
+        <div
+          className="ui-carousel-page"
+        >
+          1
+           / 
+          3
+        </div>
+      </CarouselPage>
+    </div>
+  </div>
+</Carousel>
+`;
+
+exports[`Carousel #render() show correct pagination info 1`] = `
+<Carousel
+  current={0}
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+      "http://lorempixel.com/600/400/sports",
+      "http://lorempixel.com/600/400/people",
+    ]
+  }
+  markers={false}
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/sports"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/sports')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={false}
+        src="http://lorempixel.com/600/400/people"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={Object {}}
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+    <div>
+      <div
+        className="ui-carousel-navigation"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ‹
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ›
+          </span>
+        </button>
+      </div>
+      <CarouselPage
+        current={0}
+        images={
+          Array [
+            "http://lorempixel.com/600/400/city",
+            "http://lorempixel.com/600/400/sports",
+            "http://lorempixel.com/600/400/people",
+          ]
+        }
+      >
+        <div
+          className="ui-carousel-page"
+        >
+          1
+           / 
+          3
+        </div>
+      </CarouselPage>
+    </div>
+  </div>
+</Carousel>
+`;
+
+exports[`Carousel #render() swiping will change the current item 1`] = `
+<Carousel
+  current={0}
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+      "http://lorempixel.com/600/400/sports",
+      "http://lorempixel.com/600/400/people",
+    ]
+  }
+  markers={true}
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/sports"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/sports')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+      <CarouselItem
+        load={false}
+        src="http://lorempixel.com/600/400/people"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={Object {}}
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+    <div>
+      <div
+        className="ui-carousel-navigation"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ‹
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          <span>
+            ›
+          </span>
+        </button>
+      </div>
+      <CarouselMarkers
+        current={0}
+        images={
+          Array [
+            "http://lorempixel.com/600/400/city",
+            "http://lorempixel.com/600/400/sports",
+            "http://lorempixel.com/600/400/people",
+          ]
+        }
+        onClick={[Function]}
+      >
+        <div
+          className="ui-carousel-markers"
+        >
+          <span />
+          <button
+            data-index={1}
+            onClick={[Function]}
+          />
+          <button
+            data-index={2}
+            onClick={[Function]}
+          />
+        </div>
+      </CarouselMarkers>
+    </div>
+  </div>
+</Carousel>
+`;
+
+exports[`Carousel #render() unbind events when unmounting 1`] = `
+<Carousel
+  current={0}
+  images={
+    Array [
+      "http://lorempixel.com/600/400/city",
+    ]
+  }
+  markers={false}
+  mods={
+    Array [
+      "small",
+    ]
+  }
+  nextButton={
+    <span>
+      ›
+    </span>
+  }
+  prevButton={
+    <span>
+      ‹
+    </span>
+  }
+>
+  <div
+    className="ui-carousel ui-carousel_small"
+  >
+    <div
+      className="ui-carousel-track"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <CarouselItem
+        load={true}
+        src="http://lorempixel.com/600/400/city"
+      >
+        <div
+          className="ui-carousel-item"
+        >
+          <div
+            className="ui-carousel-item-image"
+            style={
+              Object {
+                "backgroundImage": "url('http://lorempixel.com/600/400/city')",
+              }
+            }
+          >
+             
+          </div>
+        </div>
+      </CarouselItem>
+    </div>
+  </div>
+</Carousel>
+`;

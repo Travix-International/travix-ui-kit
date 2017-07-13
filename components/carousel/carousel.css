@@ -1,0 +1,83 @@
+.ui-carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.ui-carousel-item {
+  flex: 1 0 100%;
+  min-height: var(--tx-carousel-item-min-height);
+  position: relative;
+}
+
+.ui-carousel-item-image {
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.ui-carousel-markers button,
+.ui-carousel-markers span {
+  background-color: var(--tx-carousel-marker-background-color);
+  border: 0;
+  border-radius: var(--tx-carousel-marker-border-radius);
+  box-shadow: var(--tx-carousel-marker-box-shadow);
+  cursor: pointer;
+  display: inline-block;
+  height: var(--tx-carousel-marker-height);
+  margin: 0 2px;
+  padding: 0;
+  width: var(--tx-carousel-marker-width);
+}
+
+.ui-carousel-markers span {
+  background-color: var(--tx-carousel-marker-active-background-color);
+  cursor: default;
+}
+
+.ui-carousel-markers,
+.ui-carousel-page {
+  bottom: 10px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.ui-carousel-navigation button {
+  background-color: var(--tx-carousel-button-background-color);
+  border: 0;
+  border-radius: var(--tx-carousel-button-left-radius);
+  color: var(--tx-carousel-button-color);
+  cursor: pointer;
+  font-size: var(--tx-carousel-button-font-size);
+  height: var(--tx-carousel-button-height);
+  min-width: var(--tx-carousel-button-min-width);
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ui-carousel-navigation button:last-child {
+  border-radius: var(--tx-carousel-button-right-radius);
+  right: 0;
+}
+
+.ui-carousel-page {
+  background: var(--tx-carousel-page-background-color);
+  border-radius: var(--tx-carousel-page-border-radius);
+  color: var(--tx-generic-color-active);
+  font-family: var(--tx-carousel-page-font-family);
+  font-size: var(--tx-carousel-page-font-size);
+  font-weight: var(--tx-generic-font-primary-weight-bold);
+  padding: var(--tx-carousel-page-padding);
+}
+
+.ui-carousel-track {
+  display: flex;
+  position: relative;
+  transition: var(--tx-carousel-track-transition);
+}

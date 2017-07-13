@@ -414,3 +414,29 @@ spinner:
     lighter: "var(--tx-generic-color-accent)"
     dark: "var(--tx-generic-color-active)"
     darker: "var(--tx-generic-color-primary-lighter)"
+carousel:
+  track:
+    transition: "transform 0.5s cubic-bezier(0.2, 1, 0.3, 1)"
+  item:
+    min-height: "400px"
+  button:
+    font-size: "24px"
+    background-color: *blank
+    left-radius:  "0 5px 5px 0"
+    right-radius:  "5px 0 0 5px"
+    height: "54px"
+    min-width: "30px"
+    color: "var(--tx-generic-color-active)"
+  marker:
+    background-color: *blank
+    active-background-color: "var(--tx-generic-color-active)"
+    width: "10px"
+    height: "10px"
+    box-shadow: "0px 2px 5px 0px rgba(0,0,0,0.5)"
+    border-radius: "100%"
+  page:
+    background-color: *blank
+    border-radius: "3px"
+    padding: "5px 15px"
+    font-size: "12px"
+    font-family: "var(--tx-generic-font-secondary-font-family)"
