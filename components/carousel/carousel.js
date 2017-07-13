@@ -5,7 +5,7 @@ import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 import CarouselItem from './carouselItem';
 import CarouselMarkers from './carouselMarkers';
 import CarouselPage from './carouselPage';
-import Swipe from '../../utils/swipe';
+import Swipe from '../_utils/swipe';
 
 /**
  * Carousel component
