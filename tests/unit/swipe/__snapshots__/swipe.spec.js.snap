@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Swipe #render() render with default props and mods 1`] = `
+<Swipe
+  mods={
+    Array [
+      "small",
+    ]
+  }
+>
+  <Touch
+    className="ui-swipe ui-swipe_small"
+    onEnd={[Function]}
+    onMove={[Function]}
+    onStart={[Function]}
+  >
+    <div
+      className="ui-swipe ui-swipe_small"
+      onMouseDown={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+    >
+      <h1>
+        The content
+      </h1>
+    </div>
+  </Touch>
+</Swipe>
+`;
