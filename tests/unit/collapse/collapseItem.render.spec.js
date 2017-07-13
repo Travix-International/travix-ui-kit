@@ -66,4 +66,13 @@ describe('Collapse: render', () => {
     );
     component.find('.ui-collapse__label').simulate('click', e);
   });
+
+  it('should render collapseItem component with icon on the right', () => {
+    const component = shallow(
+      <CollapseItem iconPosition="right" title="Collapse Item 1">
+        <div>Collapse Item content</div>
+      </CollapseItem>
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
 });

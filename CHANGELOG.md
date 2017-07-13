@@ -1,5 +1,44 @@
 # Change Log
 
+## [v0.6.12](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.12) (2017-07-13)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.11...v0.6.12)
+
+**Closed issues:**
+
+- Carousel [\#128](https://github.com/Travix-International/travix-ui-kit/issues/128)
+
+**Merged pull requests:**
+
+- Improvements for Badge component [\#127](https://github.com/Travix-International/travix-ui-kit/pull/127) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+- Carousel component [\#126](https://github.com/Travix-International/travix-ui-kit/pull/126) ([froskie](https://github.com/froskie))
+- Collapse component adjustments [\#125](https://github.com/Travix-International/travix-ui-kit/pull/125) ([RumataDeEstor](https://github.com/RumataDeEstor))
+
+## [v0.6.11](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.11) (2017-07-11)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.10...v0.6.11)
+
+**Merged pull requests:**
+
+- Fix datepicker demo [\#124](https://github.com/Travix-International/travix-ui-kit/pull/124) ([AlleeX](https://github.com/AlleeX))
+
+## [v0.6.10](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.10) (2017-07-11)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.9...v0.6.10)
+
+**Fixed bugs:**
+
+- Issues on IE11 & Safari 8 [\#117](https://github.com/Travix-International/travix-ui-kit/issues/117)
+- Fixed color for radio button [\#121](https://github.com/Travix-International/travix-ui-kit/pull/121) ([AlexDudar](https://github.com/AlexDudar))
+
+**Closed issues:**
+
+- RadioButton [\#17](https://github.com/Travix-International/travix-ui-kit/issues/17)
+- List component [\#12](https://github.com/Travix-International/travix-ui-kit/issues/12)
+
+**Merged pull requests:**
+
+- Adds the DatePicker component [\#123](https://github.com/Travix-International/travix-ui-kit/pull/123) ([AlleeX](https://github.com/AlleeX))
+- Price component adjustments [\#122](https://github.com/Travix-International/travix-ui-kit/pull/122) ([RumataDeEstor](https://github.com/RumataDeEstor))
+- Fixes typo on the UserAgent detection [\#120](https://github.com/Travix-International/travix-ui-kit/pull/120) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.6.9](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.9) (2017-07-01)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.8...v0.6.9)
 

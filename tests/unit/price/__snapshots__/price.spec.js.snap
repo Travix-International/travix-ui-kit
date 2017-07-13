@@ -53,10 +53,109 @@ exports[`Price #render() should render only the amount of decimals defined in th
 </div>
 `;
 
+exports[`Price #render() should render with additional text block if it is a node 1`] = `
+<div
+  className="ui-price ui-price_size_l"
+>
+  <div
+    className="ui-price__value-delimiter"
+  >
+    <div
+      className="ui-price__currency ui-price__currency_left"
+    >
+      €
+    </div>
+    <div
+      className="ui-price__integers"
+    >
+      50,153
+    </div>
+    <div
+      className="ui-price__decimals"
+    >
+      .00
+    </div>
+  </div>
+  <div
+    className="ui-price__additional-text-block"
+  >
+    <div
+      className="custom-class"
+    >
+      <span>
+         some important info about price! 
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Price #render() should render with additional text if it is non empty string 1`] = `
+<div
+  className="ui-price ui-price_size_l"
+>
+  <div
+    className="ui-price__value-delimiter"
+  >
+    <div
+      className="ui-price__currency ui-price__currency_left"
+    >
+      €
+    </div>
+    <div
+      className="ui-price__integers"
+    >
+      50,153
+    </div>
+    <div
+      className="ui-price__decimals"
+    >
+      .00
+    </div>
+  </div>
+  <div
+    className="ui-price__additional-text-block"
+  >
+    per day
+  </div>
+</div>
+`;
+
 exports[`Price #render() should render with decimals when value is integer 1`] = `
 <div
   className="ui-price ui-price_size_l"
 >
+  <div
+    className="ui-price__value-delimiter"
+  >
+    <div
+      className="ui-price__currency ui-price__currency_left"
+    >
+      €
+    </div>
+    <div
+      className="ui-price__integers"
+    >
+      50,153
+    </div>
+    <div
+      className="ui-price__decimals"
+    >
+      .00
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Price #render() should render with discount when value is integer not equal 0 1`] = `
+<div
+  className="ui-price ui-price_size_l"
+>
+  <div
+    className="ui-price__discount"
+  >
+    50200
+  </div>
   <div
     className="ui-price__value-delimiter"
   >

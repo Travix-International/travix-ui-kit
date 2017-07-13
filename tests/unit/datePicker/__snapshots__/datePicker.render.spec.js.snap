@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatePicker #render() should render DatePicker with label 1`] = `
+<div
+  className="ui-datepicker"
+  onChange={[Function]}
+  open={false}
+  selectionType="normal"
+>
+  <label
+    htmlFor="ui-datepicker-input-date-picker"
+    id="ui-datepicker-label-date-picker"
+  >
+    label
+  </label>
+  <Input
+    disabled={false}
+    id="ui-datepicker-input-date-picker"
+    mods={
+      Array [
+        "datepicker",
+      ]
+    }
+    multiline={false}
+    name="date-picker"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    readOnly={true}
+    type="text"
+  />
+  <div
+    aria-hidden={false}
+    className="ui-datepicker__calendar-wrapper"
+  >
+    <Calendar
+      multiplemode={true}
+      onMouseDown={[Function]}
+      onSelectDay={[Function]}
+      selectionType="normal"
+    />
+  </div>
+</div>
+`;
+
+exports[`DatePicker #render() should render correct DatePicker with value 1`] = `
+<div
+  className="ui-datepicker"
+  onChange={[Function]}
+  open={false}
+  selectionType="normal"
+>
+  <Input
+    disabled={false}
+    id="ui-datepicker-input-date-picker"
+    mods={
+      Array [
+        "datepicker",
+      ]
+    }
+    multiline={false}
+    name="date-picker"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    readOnly={true}
+    type="text"
+  />
+  <div
+    aria-hidden={false}
+    className="ui-datepicker__calendar-wrapper"
+  >
+    <Calendar
+      multiplemode={true}
+      onMouseDown={[Function]}
+      onSelectDay={[Function]}
+      selectionType="normal"
+    />
+  </div>
+</div>
+`;
+
+exports[`DatePicker #render() should render disabled DatePicker 1`] = `
+<div
+  className="ui-datepicker"
+  onChange={[Function]}
+  open={false}
+  selectionType="normal"
+>
+  <Input
+    disabled={true}
+    id="ui-datepicker-input-date-picker"
+    mods={
+      Array [
+        "datepicker",
+      ]
+    }
+    multiline={false}
+    name="date-picker"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    readOnly={true}
+    type="text"
+  />
+  <div
+    aria-hidden={false}
+    className="ui-datepicker__calendar-wrapper"
+  >
+    <Calendar
+      multiplemode={true}
+      onMouseDown={[Function]}
+      onSelectDay={[Function]}
+      selectionType="normal"
+    />
+  </div>
+</div>
+`;
+
+exports[`DatePicker #render() should render open DatePicker 1`] = `
+<div
+  className="ui-datepicker ui-datepicker_active"
+  open={true}
+  selectionType="normal"
+>
+  <Input
+    disabled={false}
+    id="ui-datepicker-input-date-picker"
+    mods={
+      Array [
+        "datepicker",
+      ]
+    }
+    multiline={false}
+    name="date-picker"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    readOnly={true}
+    type="text"
+  />
+  <div
+    aria-hidden={true}
+    className="ui-datepicker__calendar-wrapper"
+  >
+    <Calendar
+      multiplemode={true}
+      onMouseDown={[Function]}
+      onSelectDay={[Function]}
+      selectionType="normal"
+    />
+  </div>
+</div>
+`;

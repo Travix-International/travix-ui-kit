@@ -28,10 +28,6 @@ export default class Carousel extends React.Component {
     this.handleSwipePrev = this.handleSwipePrev.bind(this);
   }
 
-  componentWillUnmount() {
-    this.swipeHandler.unbind();
-  }
-
   setNextItem(next) {
     this.setState(state => ({
       isTransitioning: true,

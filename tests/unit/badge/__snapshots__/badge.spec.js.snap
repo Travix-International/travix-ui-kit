@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Badge should render content without badge when badge is not visible 1`] = `
+<div
+  className="ui-badge"
+>
+  Badge Content
+  <noscript />
+</div>
+`;
+
 exports[`Badge should render left arrow 1`] = `
 <div
   className="ui-badge-badge ui-badge-badge_arrow-left"
@@ -24,7 +33,7 @@ exports[`Badge should render right arrow 1`] = `
 
 exports[`Badge should return content inside container if title not provided 1`] = `
 <div
-  className="ui-badge"
+  className="ui-badge ui-badge_visible"
 >
   Badge Content
 </div>
@@ -42,7 +51,7 @@ exports[`Badge should return only badge if content not provided 1`] = `
 
 exports[`Badge should use position prop if content provided 1`] = `
 <div
-  className="ui-badge"
+  className="ui-badge ui-badge_visible"
 >
   Badge Content
   <div

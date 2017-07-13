@@ -3,8 +3,10 @@
 exports[`Collapse: render should not render collapse component child if it not "CollapseItem" 1`] = `
 <div
   className="ui-collapse ui-collapse_accordion"
+  iconPosition="left"
 >
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.1"
     isActive={false}
     onClick={[Function]}
@@ -21,8 +23,10 @@ exports[`Collapse: render should render collapse component items and first item 
 <div
   activeKey="сid1"
   className="ui-collapse ui-collapse_accordion"
+  iconPosition="left"
 >
   <CollapseItem
+    iconPosition="left"
     id="сid1"
     isActive={true}
     onClick={[Function]}
@@ -33,6 +37,7 @@ exports[`Collapse: render should render collapse component items and first item 
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="сid2"
     isActive={false}
     onClick={[Function]}
@@ -48,8 +53,10 @@ exports[`Collapse: render should render collapse component items and first item 
 exports[`Collapse: render should render collapse component items with custom id 1`] = `
 <div
   className="ui-collapse ui-collapse_accordion"
+  iconPosition="left"
 >
   <CollapseItem
+    iconPosition="left"
     id="сid1"
     isActive={false}
     onClick={[Function]}
@@ -60,6 +67,7 @@ exports[`Collapse: render should render collapse component items with custom id 
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="сid2"
     isActive={false}
     onClick={[Function]}
@@ -77,8 +85,10 @@ exports[`Collapse: render should render collapse component with expanded item ba
   activeKey="сid1"
   className="ui-collapse ui-collapse_accordion"
   defaultActiveKey="сid2"
+  iconPosition="left"
 >
   <CollapseItem
+    iconPosition="left"
     id="сid1"
     isActive={true}
     onClick={[Function]}
@@ -89,6 +99,7 @@ exports[`Collapse: render should render collapse component with expanded item ba
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="сid2"
     isActive={false}
     onClick={[Function]}
@@ -105,8 +116,10 @@ exports[`Collapse: render should render collapse component with expanded item by
 <div
   className="ui-collapse ui-collapse_accordion"
   defaultActiveKey="сid2"
+  iconPosition="left"
 >
   <CollapseItem
+    iconPosition="left"
     id="сid1"
     isActive={false}
     onClick={[Function]}
@@ -117,6 +130,7 @@ exports[`Collapse: render should render collapse component with expanded item by
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="сid2"
     isActive={true}
     onClick={[Function]}
@@ -138,8 +152,10 @@ exports[`Collapse: render should render collapse component with expanded items b
       "сid2",
     ]
   }
+  iconPosition="left"
 >
   <CollapseItem
+    iconPosition="left"
     id="сid1"
     isActive={true}
     onClick={[Function]}
@@ -150,6 +166,43 @@ exports[`Collapse: render should render collapse component with expanded items b
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
+    id="сid2"
+    isActive={true}
+    onClick={[Function]}
+    title="Collapse Item 2"
+  >
+    <p>
+      Collapse content 2
+    </p>
+  </CollapseItem>
+</div>
+`;
+
+exports[`Collapse: render should render collapse component with icon on the right 1`] = `
+<div
+  className="ui-collapse"
+  defaultActiveKey={
+    Array [
+      "сid1",
+      "сid2",
+    ]
+  }
+  iconPosition="right"
+>
+  <CollapseItem
+    iconPosition="right"
+    id="сid1"
+    isActive={true}
+    onClick={[Function]}
+    title="Collapse Item 1"
+  >
+    <p>
+      Collapse content 1
+    </p>
+  </CollapseItem>
+  <CollapseItem
+    iconPosition="right"
     id="сid2"
     isActive={true}
     onClick={[Function]}
@@ -165,8 +218,10 @@ exports[`Collapse: render should render collapse component with expanded items b
 exports[`Collapse: render should return "accordion" collapse component with two items 1`] = `
 <div
   className="ui-collapse ui-collapse_accordion"
+  iconPosition="left"
 >
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.0"
     isActive={false}
     onClick={[Function]}
@@ -177,6 +232,7 @@ exports[`Collapse: render should return "accordion" collapse component with two 
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.1"
     isActive={false}
     onClick={[Function]}
@@ -192,8 +248,10 @@ exports[`Collapse: render should return "accordion" collapse component with two 
 exports[`Collapse: render should return collapse component with two items 1`] = `
 <div
   className="ui-collapse"
+  iconPosition="left"
 >
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.0"
     isActive={false}
     onClick={[Function]}
@@ -204,6 +262,7 @@ exports[`Collapse: render should return collapse component with two items 1`] = 
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.1"
     isActive={false}
     onClick={[Function]}

@@ -33,6 +33,11 @@
   }
 }
 
+.ui-collapse__label--icon_position_right {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
 .ui-collapse__label-icon {
   flex-shrink: 0;
   margin-right: 10px;

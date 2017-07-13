@@ -123,4 +123,18 @@ describe('Collapse: render', () => {
     );
     expect(shallowToJson(component)).toMatchSnapshot();
   });
+
+  it('should render collapse component with icon on the right', () => {
+    const component = shallow(
+      <Collapse defaultActiveKey={['сid1', 'сid2']} iconPosition="right">
+        <CollapseItem id="сid1" title="Collapse Item 1">
+          <p>Collapse content 1</p>
+        </CollapseItem>
+        <CollapseItem id="сid2" title="Collapse Item 2">
+          <p>Collapse content 2</p>
+        </CollapseItem>
+      </Collapse>
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
 });

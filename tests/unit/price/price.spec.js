@@ -140,5 +140,44 @@ describe('Price', () => {
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
+
+    it('should render with discount when value is integer not equal 0', () => {
+      const wrapper = shallow(
+        <Price
+          discount={50200}
+          value={50153}
+        />
+      );
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should render with additional text if it is non empty string', () => {
+      const wrapper = shallow(
+        <Price
+          additionalText={'per day'}
+          value={50153}
+        />
+      );
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should render with additional text block if it is a node', () => {
+      const additionalText = (
+        <div className="custom-class">
+          <span> some important info about price! </span>
+        </div>
+      );
+
+      const wrapper = shallow(
+        <Price
+          additionalText={additionalText}
+          value={50153}
+        />
+      );
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
   });
 });
