@@ -107,6 +107,7 @@ badge:
   color:
     background: "var(--tx-generic-color-accent)"
     text: "var(--tx-generic-color-primary-darker)"
+  indent: 13px
   font-size: 15px
   padding:
     right-left: 8px
