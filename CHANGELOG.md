@@ -1,5 +1,18 @@
 # Change Log
 
+## [v0.6.12](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.12) (2017-07-13)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.11...v0.6.12)
+
+**Closed issues:**
+
+- Carousel [\#128](https://github.com/Travix-International/travix-ui-kit/issues/128)
+
+**Merged pull requests:**
+
+- Improvements for Badge component [\#127](https://github.com/Travix-International/travix-ui-kit/pull/127) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+- Carousel component [\#126](https://github.com/Travix-International/travix-ui-kit/pull/126) ([froskie](https://github.com/froskie))
+- Collapse component adjustments [\#125](https://github.com/Travix-International/travix-ui-kit/pull/125) ([RumataDeEstor](https://github.com/RumataDeEstor))
+
 ## [v0.6.11](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.11) (2017-07-11)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.10...v0.6.11)
 
