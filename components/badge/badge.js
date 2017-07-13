@@ -5,7 +5,7 @@ import { getClassNamesWithMods } from '../_helpers';
 /**
  * Badge component
  */
-const Badge = ({ arrow, border, children, mods, position, title, ...otherProps }) => {
+const Badge = ({ arrow, border, children, mods, position, title, visible, ...otherProps }) => {
   if (!children && !title) {
     return <noscript />;
   }
@@ -23,12 +23,12 @@ const Badge = ({ arrow, border, children, mods, position, title, ...otherProps }
       badgeMods[position] = true;
     }
 
-    badge = (
+    badge = visible ? (
       <div {...otherProps} className={getClassNamesWithMods('ui-badge-badge', mods, badgeMods)}>
         {title}
         {arrow && (position === 'right' || position === 'left') ? <span className="ui-badge-badge-arrow" /> : null}
       </div>
-    );
+    ) : <noscript />;
   }
 
   if (!children) {
@@ -36,7 +36,7 @@ const Badge = ({ arrow, border, children, mods, position, title, ...otherProps }
   }
 
   return (
-    <div className={getClassNamesWithMods('ui-badge', mods)}>
+    <div className={getClassNamesWithMods('ui-badge', { visible }, mods)}>
       {children}
       {badge}
     </div>
@@ -67,7 +67,11 @@ Badge.propTypes = {
   /**
    * The Badge's title
    */
-  title: PropTypes.string,
+  title: PropTypes.node,
+  /**
+   * Determine whether a badge is visible or not
+   */
+  visible: PropTypes.bool,
 };
 
 Badge.defaultProps = {
@@ -76,6 +80,7 @@ Badge.defaultProps = {
   children: null,
   mods: [],
   title: '',
+  visible: true,
 };
 
 export default Badge;

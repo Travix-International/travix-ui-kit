@@ -18,8 +18,8 @@
           (andr && parseFloat(andr[1]) < 5) ||
           (edge && parseInt(edge[1], 10) < 14) ||
           isIE ||
-          (safari && parseFloat(safari[1], 10) < 9.1) ||
-          (iOSSafari && parseFloat(iOSSafari[1], 10) < 9.3)
+          (safari && parseFloat(safari[1]) < 9.1) ||
+          (iOSSafari && parseFloat(iOSSafari[1]) < 9.3)
         ) {
           var themejs = document.createElement('script');
           var polyfilljs = document.createElement('script');
