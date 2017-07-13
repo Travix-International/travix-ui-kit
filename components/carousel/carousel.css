@@ -76,7 +76,7 @@
   padding: var(--tx-carousel-page-padding);
 }
 
-.ui-carousel-track {
+.ui-carousel .ui-swipe {
   display: flex;
   position: relative;
   transition: var(--tx-carousel-track-transition);
