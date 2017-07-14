@@ -313,6 +313,10 @@ list:
     color: "var(--tx-generic-color-active)"
   color: "var(--tx-generic-color-text-dark)"
   line-height: "38px"
+messagebox:
+  background-color: "var(--tx-generic-color-secondary-lighter)"
+  border-radius: "8px"
+  padding: "24px"
 modal:
   z-index: "100"
   color:

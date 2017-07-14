@@ -10,6 +10,7 @@ import CollapseItem from './collapse/collapseItem';
 import DatePicker from './datePicker/datePicker';
 import DropDown from './dropDown/dropDown';
 import Global from './global/global';
+import MessageBox from './messageBox/messageBox';
 import Input from './input/input';
 import List from './list/list';
 import Modal from './modal/modal';
@@ -34,6 +35,7 @@ export default {
   Global,
   Input,
   List,
+  MessageBox,
   Modal,
   Price,
   RadioButton,
