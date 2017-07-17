@@ -5,7 +5,7 @@ import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 import CarouselItem from './carouselItem';
 import CarouselMarkers from './carouselMarkers';
 import CarouselPage from './carouselPage';
-import Swipe from '../swipe/swipe';
+import CarouselTrack from './carouselTrack';
 
 /**
  * Carousel component
@@ -111,18 +111,19 @@ export default class Carousel extends React.Component {
   render() {
     const restProps = getDataAttributes(this.props.dataAttrs);
 
-    const trackerStyles = {
-      transform: `translateX(-${this.state.currentItem * 100}%)`,
-    };
-
     const carouselMods = this.props.mods ? this.props.mods.slice() : [];
     const carouselClass = getClassNamesWithMods('ui-carousel', carouselMods);
 
     return (
       <div className={carouselClass} {...restProps}>
-        <Swipe onLeft={this.handleSwipeNext} onRight={this.handleSwipePrev} style={trackerStyles}>
+        <CarouselTrack
+          current={this.state.currentItem}
+          total={this.props.images.length}
+          onNext={this.handleSwipeNext}
+          onPrev={this.handleSwipePrev}
+        >
           {this.props.images.map((src, i) => <CarouselItem key={i} load={this.shouldLoad(i)} src={src} />)}
-        </Swipe>
+        </CarouselTrack>
         {this.props.images.length > 1 && this.renderNavigation()}
       </div>
     );
