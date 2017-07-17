@@ -27,14 +27,13 @@ class CarouselTrack extends Component {
   componentDidMount() {
     this.bindEvents();
     this.$elm.style.willChange = 'transform';
-    if (this.props.current > 0) {
-      requestAnimationFrame(
-        () => {
-          this.slideBCR = this.$elm.getBoundingClientRect();
-          this.resetSlidePosition(this.props.current);
-        }
-      );
-    }
+
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        this.slideBCR = this.$elm.getBoundingClientRect();
+        this.resetSlidePosition(this.props.current);
+      });
+    }, 0);
   }
 
   componentWillUnmount() {
