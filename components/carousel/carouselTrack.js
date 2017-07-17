@@ -19,6 +19,7 @@ class CarouselTrack extends Component {
     this.handleMove = this.handleMove.bind(this);
     this.handleEnd = this.handleEnd.bind(this);
     this.update = this.update.bind(this);
+    this.setupSlidePosition = this.setupSlidePosition.bind(this);
 
     //
     this.isDragging = false;
@@ -27,13 +28,7 @@ class CarouselTrack extends Component {
   componentDidMount() {
     this.bindEvents();
     this.$elm.style.willChange = 'transform';
-
-    setTimeout(() => {
-      requestAnimationFrame(() => {
-        this.slideBCR = this.$elm.getBoundingClientRect();
-        this.resetSlidePosition(this.props.current);
-      });
-    }, 0);
+    this.setupSlidePosition();
   }
 
   componentWillUnmount() {
@@ -50,19 +45,29 @@ class CarouselTrack extends Component {
     this.$elm.addEventListener('mousedown', this.handleStart);
     document.addEventListener('mousemove', this.handleMove);
     document.addEventListener('mouseup', this.handleEnd);
+
+    this.$elm.addEventListener('touchstart', this.handleStart);
+    document.addEventListener('touchmove', this.handleMove);
+    document.addEventListener('touchend', this.handleEnd);
+
+    window.addEventListener('resize', () => this.setupSlidePosition);
   }
 
   unbindEvents() {
     this.$elm.removeEventListener('mousedown', this.handleStart);
     document.removeEventListener('mousemove', this.handleMove);
     document.removeEventListener('mouseup', this.handleEnd);
+
+    this.$elm.removeEventListener('touchstart', this.handleStart);
+    document.removeEventListener('touchmove', this.handleMove);
+    document.removeEventListener('touchend', this.handleEnd);
   }
 
   handleStart(evt) {
     evt.preventDefault();
     this.isDragging = true;
     // setup element boundaries
-    this.slideBCR = this.$elm.getBoundingClientRect();
+    this.resetSlidePosition(this.props.current);
     // initialize position tracker
     this.startX = evt.pageX || evt.touches[0].pageX;
     this.currentX = this.startX;
@@ -91,8 +96,15 @@ class CarouselTrack extends Component {
     requestAnimationFrame(this.update);
   }
 
+  setupSlidePosition() {
+    requestAnimationFrame(() => {
+      this.$elm.style.transform = `translateX(-${this.props.current * 100}%)`;
+    });
+  }
+
   resetSlidePosition(current) {
     this.screenX = 0;
+    this.slideBCR = this.$elm.getBoundingClientRect();
     this.slideX = (current * this.slideBCR.width) * -1;
     requestAnimationFrame(this.update);
   }
