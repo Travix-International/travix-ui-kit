@@ -315,7 +315,9 @@ list:
   line-height: "38px"
 messagebox:
   background-color: "var(--tx-generic-color-secondary-lighter)"
-  border-radius: "8px"
+  background-color-error: "var(--tx-generic-color-negative-light)"
+  border-radius: "12px"
+  color: "var(--tx-generic-color-text)"
   padding: "24px"
 modal:
   z-index: "100"

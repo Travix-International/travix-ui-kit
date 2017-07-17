@@ -1,10 +1,16 @@
 import React, { PropTypes } from 'react';
 import { getClassNamesWithMods } from '../_helpers';
 
-const className = getClassNamesWithMods('ui-messageBox', mods);
 const MessageBox = ({ children, mods, type }) => {
+  const messageMods = mods ? mods.slice() : [];
+  if (type) {
+    messageMods.push(`type_${type}`);
+  }
+
+  const className = getClassNamesWithMods('ui-messageBox', messageMods);
+
   return (
-    <div className="ui-messageBox">
+    <div className={className}>
       {children}
     </div>
   );
@@ -20,11 +26,11 @@ MessageBox.propTypes = {
    * You can provide set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
-  type: PropTypes.oneOf(['info', 'error']),
+  type: PropTypes.oneOf(['', 'info', 'error']),
 };
 
 MessageBox.defaultProps = {
-  type: 'info',
+  type: '',
 };
 
 export default MessageBox;
