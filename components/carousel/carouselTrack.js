@@ -9,7 +9,7 @@ class CarouselTrack extends Component {
     super(props);
 
     // bounding client rect for the container
-    this.targetBCR = null;
+    this.slideBCR = null;
 
     // store position for further math
     this.slideX = 0;
@@ -27,6 +27,14 @@ class CarouselTrack extends Component {
   componentDidMount() {
     this.bindEvents();
     this.$elm.style.willChange = 'transform';
+    if (this.props.current > 0) {
+      requestAnimationFrame(
+        () => {
+          this.slideBCR = this.$elm.getBoundingClientRect();
+          this.resetSlidePosition(this.props.current);
+        }
+      );
+    }
   }
 
   componentWillUnmount() {
@@ -55,7 +63,7 @@ class CarouselTrack extends Component {
     evt.preventDefault();
     this.isDragging = true;
     // setup element boundaries
-    this.targetBCR = this.$elm.getBoundingClientRect();
+    this.slideBCR = this.$elm.getBoundingClientRect();
     // initialize position tracker
     this.startX = evt.pageX || evt.touches[0].pageX;
     this.currentX = this.startX;
@@ -76,7 +84,7 @@ class CarouselTrack extends Component {
       return;
     }
     this.isDragging = false;
-    const threshold = this.targetBCR.width * 0.35;
+    const threshold = this.slideBCR.width * 0.35;
     if (Math.abs(this.screenX) > threshold) {
       (this.screenX > 0) ? this.props.onPrev() : this.props.onNext();
     }
@@ -86,7 +94,7 @@ class CarouselTrack extends Component {
 
   resetSlidePosition(current) {
     this.screenX = 0;
-    this.slideX = (current * this.targetBCR.width) * -1;
+    this.slideX = (current * this.slideBCR.width) * -1;
     requestAnimationFrame(this.update);
   }
 

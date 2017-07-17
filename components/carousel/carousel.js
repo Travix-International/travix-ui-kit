@@ -118,7 +118,6 @@ export default class Carousel extends React.Component {
       <div className={carouselClass} {...restProps}>
         <CarouselTrack
           current={this.state.currentItem}
-          total={this.props.images.length}
           onNext={this.handleSwipeNext}
           onPrev={this.handleSwipePrev}
         >
