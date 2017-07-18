@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const noop = () => {};
-
 class CarouselTrack extends Component {
 
   constructor(props) {
@@ -50,7 +48,7 @@ class CarouselTrack extends Component {
     document.addEventListener('touchmove', this.handleMove);
     document.addEventListener('touchend', this.handleEnd);
 
-    window.addEventListener('resize', () => this.setupSlidePosition);
+    window.addEventListener('resize', this.setupSlidePosition);
   }
 
   unbindEvents() {
@@ -61,6 +59,8 @@ class CarouselTrack extends Component {
     this.$elm.removeEventListener('touchstart', this.handleStart);
     document.removeEventListener('touchmove', this.handleMove);
     document.removeEventListener('touchend', this.handleEnd);
+
+    window.removeEventListener('resize', this.setupSlidePosition);
   }
 
   handleStart(evt) {
@@ -69,7 +69,10 @@ class CarouselTrack extends Component {
     // setup element boundaries
     this.resetSlidePosition(this.props.current);
     // initialize position tracker
-    this.startX = evt.pageX || evt.touches[0].pageX;
+    this.startX = evt.pageX;
+    if (typeof evt.pageX === 'undefined') {
+      this.startX = evt.touches[0].pageX;
+    }
     this.currentX = this.startX;
   }
 
@@ -77,7 +80,10 @@ class CarouselTrack extends Component {
     if (!this.isDragging) {
       return;
     }
-    this.currentX = typeof evt.pageX !== 'undefined' ? evt.pageX : evt.touches[0].pageX;
+    this.currentX = evt.pageX;
+    if (typeof evt.pageX === 'undefined') {
+      this.currentX = evt.touches[0].pageX;
+    }
     const diff = this.currentX - this.startX;
     this.screenX = diff;
     requestAnimationFrame(this.update);
@@ -128,15 +134,13 @@ class CarouselTrack extends Component {
 
 CarouselTrack.propTypes = {
   children: PropTypes.node,
-  onNext: PropTypes.func,
-  onPrev: PropTypes.func,
+  onNext: PropTypes.func.isRequired,
+  onPrev: PropTypes.func.isRequired,
   current: PropTypes.number,
 };
 
 CarouselTrack.defaultProps = {
   current: 0,
-  onNext: noop,
-  onPrev: noop,
 };
 
 export default CarouselTrack;

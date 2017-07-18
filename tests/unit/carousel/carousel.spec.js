@@ -3,6 +3,16 @@ import React from 'react';
 import Carousel from '../../../components/carousel/carousel';
 
 describe('Carousel', () => {
+  const requestAnimationFrame = global.window.requestAnimationFrame;
+
+  beforeEach(() => {
+    global.window.requestAnimationFrame = (cb) => { cb(); };
+  });
+
+  afterEach(() => {
+    global.window.requestAnimationFrame = requestAnimationFrame;
+  });
+
   describe('#render()', () => {
     it('render with default props and mods', () => {
       const images = [
