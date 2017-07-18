@@ -31,7 +31,7 @@ exports[`Carousel #render() clicking markers to change pagination 1`] = `
       onPrev={[Function]}
     >
       <div
-        className="ui-swipe"
+        className="ui-carousel-track"
       >
         <CarouselItem
           load={true}
@@ -92,20 +92,20 @@ exports[`Carousel #render() clicking markers to change pagination 1`] = `
       <div
         className="ui-carousel-navigation"
       >
-        <button
+        <a
           onClick={[Function]}
         >
           <span>
             ‹
           </span>
-        </button>
-        <button
+        </a>
+        <a
           onClick={[Function]}
         >
           <span>
             ›
           </span>
-        </button>
+        </a>
       </div>
       <CarouselMarkers
         current={0}
@@ -121,7 +121,9 @@ exports[`Carousel #render() clicking markers to change pagination 1`] = `
         <div
           className="ui-carousel-markers"
         >
-          <span />
+          <button
+            disabled={true}
+          />
           <button
             data-index={1}
             onClick={[Function]}
@@ -168,7 +170,7 @@ exports[`Carousel #render() display markers instead of pagination 1`] = `
       onPrev={[Function]}
     >
       <div
-        className="ui-swipe"
+        className="ui-carousel-track"
       >
         <CarouselItem
           load={true}
@@ -229,20 +231,20 @@ exports[`Carousel #render() display markers instead of pagination 1`] = `
       <div
         className="ui-carousel-navigation"
       >
-        <button
+        <a
           onClick={[Function]}
         >
           <span>
             ‹
           </span>
-        </button>
-        <button
+        </a>
+        <a
           onClick={[Function]}
         >
           <span>
             ›
           </span>
-        </button>
+        </a>
       </div>
       <CarouselMarkers
         current={0}
@@ -258,7 +260,9 @@ exports[`Carousel #render() display markers instead of pagination 1`] = `
         <div
           className="ui-carousel-markers"
         >
-          <span />
+          <button
+            disabled={true}
+          />
           <button
             data-index={1}
             onClick={[Function]}
@@ -305,7 +309,7 @@ exports[`Carousel #render() hitting next move to first item 1`] = `
       onPrev={[Function]}
     >
       <div
-        className="ui-swipe"
+        className="ui-carousel-track"
       >
         <CarouselItem
           load={true}
@@ -366,20 +370,20 @@ exports[`Carousel #render() hitting next move to first item 1`] = `
       <div
         className="ui-carousel-navigation"
       >
-        <button
+        <a
           onClick={[Function]}
         >
           <span>
             ‹
           </span>
-        </button>
-        <button
+        </a>
+        <a
           onClick={[Function]}
         >
           <span>
             ›
           </span>
-        </button>
+        </a>
       </div>
       <CarouselPage
         current={0}
@@ -435,7 +439,7 @@ exports[`Carousel #render() hitting previous move to last item 1`] = `
       onPrev={[Function]}
     >
       <div
-        className="ui-swipe"
+        className="ui-carousel-track"
       >
         <CarouselItem
           load={true}
@@ -496,20 +500,20 @@ exports[`Carousel #render() hitting previous move to last item 1`] = `
       <div
         className="ui-carousel-navigation"
       >
-        <button
+        <a
           onClick={[Function]}
         >
           <span>
             ‹
           </span>
-        </button>
-        <button
+        </a>
+        <a
           onClick={[Function]}
         >
           <span>
             ›
           </span>
-        </button>
+        </a>
       </div>
       <CarouselPage
         current={0}
@@ -565,7 +569,7 @@ exports[`Carousel #render() prevent swipe after last item 1`] = `
       onPrev={[Function]}
     >
       <div
-        className="ui-swipe"
+        className="ui-carousel-track"
       >
         <CarouselItem
           load={true}
@@ -626,20 +630,20 @@ exports[`Carousel #render() prevent swipe after last item 1`] = `
       <div
         className="ui-carousel-navigation"
       >
-        <button
+        <a
           onClick={[Function]}
         >
           <span>
             ‹
           </span>
-        </button>
-        <button
+        </a>
+        <a
           onClick={[Function]}
         >
           <span>
             ›
           </span>
-        </button>
+        </a>
       </div>
       <CarouselMarkers
         current={0}
@@ -655,7 +659,9 @@ exports[`Carousel #render() prevent swipe after last item 1`] = `
         <div
           className="ui-carousel-markers"
         >
-          <span />
+          <button
+            disabled={true}
+          />
           <button
             data-index={1}
             onClick={[Function]}
@@ -702,7 +708,7 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
       onPrev={[Function]}
     >
       <div
-        className="ui-swipe"
+        className="ui-carousel-track"
       >
         <CarouselItem
           load={true}
@@ -763,20 +769,20 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
       <div
         className="ui-carousel-navigation"
       >
-        <button
+        <a
           onClick={[Function]}
         >
           <span>
             ‹
           </span>
-        </button>
-        <button
+        </a>
+        <a
           onClick={[Function]}
         >
           <span>
             ›
           </span>
-        </button>
+        </a>
       </div>
       <CarouselMarkers
         current={0}
@@ -792,7 +798,9 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
         <div
           className="ui-carousel-markers"
         >
-          <span />
+          <button
+            disabled={true}
+          />
           <button
             data-index={1}
             onClick={[Function]}
@@ -844,7 +852,7 @@ exports[`Carousel #render() render with default props and mods 1`] = `
       onPrev={[Function]}
     >
       <div
-        className="ui-swipe"
+        className="ui-carousel-track"
       >
         <CarouselItem
           load={true}
@@ -905,20 +913,20 @@ exports[`Carousel #render() render with default props and mods 1`] = `
       <div
         className="ui-carousel-navigation"
       >
-        <button
+        <a
           onClick={[Function]}
         >
           <span>
             ‹
           </span>
-        </button>
-        <button
+        </a>
+        <a
           onClick={[Function]}
         >
           <span>
             ›
           </span>
-        </button>
+        </a>
       </div>
       <CarouselPage
         current={0}
@@ -974,7 +982,7 @@ exports[`Carousel #render() show correct pagination info 1`] = `
       onPrev={[Function]}
     >
       <div
-        className="ui-swipe"
+        className="ui-carousel-track"
       >
         <CarouselItem
           load={true}
@@ -1035,20 +1043,20 @@ exports[`Carousel #render() show correct pagination info 1`] = `
       <div
         className="ui-carousel-navigation"
       >
-        <button
+        <a
           onClick={[Function]}
         >
           <span>
             ‹
           </span>
-        </button>
-        <button
+        </a>
+        <a
           onClick={[Function]}
         >
           <span>
             ›
           </span>
-        </button>
+        </a>
       </div>
       <CarouselPage
         current={0}
@@ -1104,7 +1112,7 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
       onPrev={[Function]}
     >
       <div
-        className="ui-swipe"
+        className="ui-carousel-track"
       >
         <CarouselItem
           load={true}
@@ -1165,20 +1173,20 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
       <div
         className="ui-carousel-navigation"
       >
-        <button
+        <a
           onClick={[Function]}
         >
           <span>
             ‹
           </span>
-        </button>
-        <button
+        </a>
+        <a
           onClick={[Function]}
         >
           <span>
             ›
           </span>
-        </button>
+        </a>
       </div>
       <CarouselMarkers
         current={0}
@@ -1194,7 +1202,9 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
         <div
           className="ui-carousel-markers"
         >
-          <span />
+          <button
+            disabled={true}
+          />
           <button
             data-index={1}
             onClick={[Function]}

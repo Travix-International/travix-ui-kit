@@ -88,8 +88,8 @@ export default class Carousel extends React.Component {
     return (
       <div>
         <div className="ui-carousel-navigation">
-          <button onClick={this.handleClickPrev}>{this.props.prevButton}</button>
-          <button onClick={this.handleClickNext}>{this.props.nextButton}</button>
+          <a onClick={this.handleClickPrev}>{this.props.prevButton}</a>
+          <a onClick={this.handleClickNext}>{this.props.nextButton}</a>
         </div>
 
         {

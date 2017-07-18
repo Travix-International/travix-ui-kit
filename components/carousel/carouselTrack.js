@@ -123,7 +123,7 @@ class CarouselTrack extends Component {
   render() {
     return (
       <div
-        className="ui-swipe"
+        className="ui-carousel-track"
         ref={(c) => { this.$elm = c; }}
       >
         {this.props.children}

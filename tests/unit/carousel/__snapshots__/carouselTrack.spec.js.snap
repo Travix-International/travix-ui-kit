@@ -7,7 +7,7 @@ exports[`Carousel Track #render() changing current will move element 1`] = `
   onPrev={[Function]}
 >
   <div
-    className="ui-swipe"
+    className="ui-carousel-track"
   />
 </CarouselTrack>
 `;
@@ -19,7 +19,7 @@ exports[`Carousel Track #render() changing custom initial item to same dont chan
   onPrev={[Function]}
 >
   <div
-    className="ui-swipe"
+    className="ui-carousel-track"
   />
 </CarouselTrack>
 `;
@@ -31,7 +31,7 @@ exports[`Carousel Track #render() handle touch events event 1`] = `
   onPrev={[Function]}
 >
   <div
-    className="ui-swipe"
+    className="ui-carousel-track"
   />
 </CarouselTrack>
 `;
@@ -43,7 +43,7 @@ exports[`Carousel Track #render() moving to left will fire next event 1`] = `
   onPrev={[Function]}
 >
   <div
-    className="ui-swipe"
+    className="ui-carousel-track"
   />
 </CarouselTrack>
 `;
@@ -55,7 +55,7 @@ exports[`Carousel Track #render() moving to right will fire prev event 1`] = `
   onPrev={[Function]}
 >
   <div
-    className="ui-swipe"
+    className="ui-carousel-track"
   />
 </CarouselTrack>
 `;
@@ -67,7 +67,7 @@ exports[`Carousel Track #render() render with custom initial item 1`] = `
   onPrev={[Function]}
 >
   <div
-    className="ui-swipe"
+    className="ui-carousel-track"
   />
 </CarouselTrack>
 `;
@@ -79,7 +79,7 @@ exports[`Carousel Track #render() render with default props 1`] = `
   onPrev={[Function]}
 >
   <div
-    className="ui-swipe"
+    className="ui-carousel-track"
   />
 </CarouselTrack>
 `;
@@ -91,7 +91,7 @@ exports[`Carousel Track #render() small move wont fire prev event 1`] = `
   onPrev={[Function]}
 >
   <div
-    className="ui-swipe"
+    className="ui-carousel-track"
   />
 </CarouselTrack>
 `;
@@ -103,7 +103,7 @@ exports[`Carousel Track #render() wont move element if touch didnt start 1`] = `
   onPrev={[Function]}
 >
   <div
-    className="ui-swipe"
+    className="ui-carousel-track"
   />
 </CarouselTrack>
 `;
