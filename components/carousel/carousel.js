@@ -5,7 +5,7 @@ import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 import CarouselItem from './carouselItem';
 import CarouselMarkers from './carouselMarkers';
 import CarouselPage from './carouselPage';
-import Swipe from '../_utils/swipe';
+import CarouselTrack from './carouselTrack';
 
 /**
  * Carousel component
@@ -26,16 +26,6 @@ export default class Carousel extends React.Component {
     this.handleClickGoTo = this.handleClickGoTo.bind(this);
     this.handleSwipeNext = this.handleSwipeNext.bind(this);
     this.handleSwipePrev = this.handleSwipePrev.bind(this);
-  }
-
-  componentDidMount() {
-    this.swipeHandler = new Swipe(this.carouselTracker);
-    this.swipeHandler.onLeft(this.handleSwipeNext);
-    this.swipeHandler.onRight(this.handleSwipePrev);
-  }
-
-  componentWillUnmount() {
-    this.swipeHandler.unbind();
   }
 
   setNextItem(next) {
@@ -98,8 +88,8 @@ export default class Carousel extends React.Component {
     return (
       <div>
         <div className="ui-carousel-navigation">
-          <button onClick={this.handleClickPrev}>{this.props.prevButton}</button>
-          <button onClick={this.handleClickNext}>{this.props.nextButton}</button>
+          <a onClick={this.handleClickPrev}>{this.props.prevButton}</a>
+          <a onClick={this.handleClickNext}>{this.props.nextButton}</a>
         </div>
 
         {
@@ -121,18 +111,18 @@ export default class Carousel extends React.Component {
   render() {
     const restProps = getDataAttributes(this.props.dataAttrs);
 
-    const trackerStyles = {
-      transform: `translateX(-${this.state.currentItem * 100}%)`,
-    };
-
     const carouselMods = this.props.mods ? this.props.mods.slice() : [];
     const carouselClass = getClassNamesWithMods('ui-carousel', carouselMods);
 
     return (
       <div className={carouselClass} {...restProps}>
-        <div className="ui-carousel-track" ref={(c) => { this.carouselTracker = c; }} style={trackerStyles}>
+        <CarouselTrack
+          current={this.state.currentItem}
+          onNext={this.handleSwipeNext}
+          onPrev={this.handleSwipePrev}
+        >
           {this.props.images.map((src, i) => <CarouselItem key={i} load={this.shouldLoad(i)} src={src} />)}
-        </div>
+        </CarouselTrack>
         {this.props.images.length > 1 && this.renderNavigation()}
       </div>
     );

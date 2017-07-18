@@ -1,9 +1,18 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import Carousel from '../../../components/carousel/carousel';
-import Swipe from '../../../components/_utils/swipe';
 
 describe('Carousel', () => {
+  const requestAnimationFrame = global.window.requestAnimationFrame;
+
+  beforeEach(() => {
+    global.window.requestAnimationFrame = (cb) => { cb(); };
+  });
+
+  afterEach(() => {
+    global.window.requestAnimationFrame = requestAnimationFrame;
+  });
+
   describe('#render()', () => {
     it('render with default props and mods', () => {
       const images = [
@@ -22,19 +31,6 @@ describe('Carousel', () => {
       expect(items.length).toEqual(images.length);
     });
 
-    it('unbind events when unmounting', () => {
-      const images = ['http://lorempixel.com/600/400/city'];
-      const renderTree = mount(
-        <Carousel images={images} mods={['small']} />
-      );
-
-      Swipe.prototype.unbind = jest.fn();
-
-      expect(renderTree).toMatchSnapshot();
-      renderTree.unmount();
-      expect(Swipe.prototype.unbind.mock.calls.length).toEqual(1);
-    });
-
     it('show correct pagination info', () => {
       const images = [
         'http://lorempixel.com/600/400/city',
@@ -50,7 +46,7 @@ describe('Carousel', () => {
       expect(renderTree).toMatchSnapshot();
       expect(pagination.text()).toEqual(`1 / ${images.length}`);
 
-      const nextButton = renderTree.find('.ui-carousel-navigation > button').last();
+      const nextButton = renderTree.find('.ui-carousel-navigation > a').last();
       nextButton.simulate('click');
       expect(pagination.text()).toEqual(`2 / ${images.length}`);
     });
@@ -68,8 +64,8 @@ describe('Carousel', () => {
       expect(renderTree).toMatchSnapshot();
 
       const pagination = renderTree.find('.ui-carousel-page');
-      const prevButton = renderTree.find('.ui-carousel-navigation > button').first();
-      const nextButton = renderTree.find('.ui-carousel-navigation > button').last();
+      const prevButton = renderTree.find('.ui-carousel-navigation > a').first();
+      const nextButton = renderTree.find('.ui-carousel-navigation > a').last();
       nextButton.simulate('click');
       prevButton.simulate('click');
       prevButton.simulate('click');
@@ -89,7 +85,7 @@ describe('Carousel', () => {
       expect(renderTree).toMatchSnapshot();
 
       const pagination = renderTree.find('.ui-carousel-page');
-      const prevButton = renderTree.find('.ui-carousel-navigation > button').last();
+      const prevButton = renderTree.find('.ui-carousel-navigation > a').last();
       prevButton.simulate('click');
       prevButton.simulate('click');
       prevButton.simulate('click');
