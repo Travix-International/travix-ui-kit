@@ -8,10 +8,14 @@ describe('MessageBox', () => {
     const shallow = enzyme.shallow;
     const shallowToJson = enzymeToJson.shallowToJson;
 
-    it('should render only message box', () => {
+    it('should render info message box with test modifications', () => {
       const mods = ['test'];
+      const dataAttr = {
+        gtmId: 'info-message',
+        e2e: 'ui-messageBox',
+      };
       const wrapper = shallow(
-        <MessageBox mods={mods}>Just a simple message box</MessageBox>
+        <MessageBox dataAttr={dataAttr} mods={mods}>Just a simple message box</MessageBox>
       );
 
       expect(mods.length).toEqual(1);
@@ -19,17 +23,9 @@ describe('MessageBox', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    it('should render info message box', () => {
-      const wrapper = shallow(
-        <MessageBox type="info">Just a info message box</MessageBox>
-      );
-
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
-    });
-
     it('should render error message box', () => {
       const wrapper = shallow(
-        <MessageBox type="error">Ooops... this is an error!</MessageBox>
+        <MessageBox isError>Ooops... this is an error!</MessageBox>
       );
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();

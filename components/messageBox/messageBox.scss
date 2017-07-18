@@ -1,4 +1,5 @@
 .ui-messageBox {
+  background-color: var(--tx-messagebox-background-color);
   border-radius: var(--tx-messagebox-border-radius);
   color: var(--tx-messagebox-color);
   font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
@@ -6,10 +7,6 @@
   padding: var(--tx-messagebox-padding);
 }
 
-.ui-messageBox_type_info {
-  background-color: var(--tx-messagebox-background-color);
-}
-
-.ui-messageBox_type_error {
+.ui-messageBox_error {
   background-color: var(--tx-messagebox-background-color-error);
 }

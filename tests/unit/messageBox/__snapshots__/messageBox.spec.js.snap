@@ -2,21 +2,13 @@
 
 exports[`MessageBox #render() should render error message box 1`] = `
 <div
-  className="ui-messageBox ui-messageBox_type_error"
+  className="ui-messageBox ui-messageBox_error"
 >
   Ooops... this is an error!
 </div>
 `;
 
-exports[`MessageBox #render() should render info message box 1`] = `
-<div
-  className="ui-messageBox ui-messageBox_type_info"
->
-  Just a info message box
-</div>
-`;
-
-exports[`MessageBox #render() should render only message box 1`] = `
+exports[`MessageBox #render() should render info message box with test modifications 1`] = `
 <div
   className="ui-messageBox ui-messageBox_test"
 >
