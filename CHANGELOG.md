@@ -1,5 +1,15 @@
 # Change Log
 
+## [v0.6.14](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.14) (2017-07-18)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.13...v0.6.14)
+
+**Merged pull requests:**
+
+- Carousel swipe refactor [\#130](https://github.com/Travix-International/travix-ui-kit/pull/130) ([froskie](https://github.com/froskie))
+
+## [v0.6.13](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.13) (2017-07-13)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.12...v0.6.13)
+
 ## [v0.6.12](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.12) (2017-07-13)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.11...v0.6.12)
 
