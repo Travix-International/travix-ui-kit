@@ -164,7 +164,7 @@ export default class SlidingPanel extends Component {
       <div className={overlayClassName} onClick={this.handleClickOverlay}>
         <div
           className={panelClassName}
-          ref={e => (this.panel = e)}
+          ref={(e) => { this.panel = e; }}
           {...getDataAttributes(dataAttrs)}
         >
           {children}
