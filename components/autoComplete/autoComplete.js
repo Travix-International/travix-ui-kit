@@ -125,7 +125,9 @@ class AutoComplete extends Component {
   }
 
   initItemRef = (index) => {
-    return elem => (this.items[index] = elem);
+    return (elem) => {
+      this.items[index] = elem;
+    };
   }
 
   change(data) {
