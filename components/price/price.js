@@ -17,6 +17,8 @@ export function addThousandsSeparator(value, thousandsSeparator) {
     return value;
   }
 
+  console.log(value);
+
   return value.replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator);
 }
 
@@ -71,13 +73,20 @@ function Price(props) {
       )
     : null;
 
-  const discountBlock = discount
-    ? (
+  let discountBlock = null;
+
+  if (discount) {
+    const [intDiscountValue, decDiscountValue] = discount.toString().split('.');
+    const discountValue = addThousandsSeparator(intDiscountValue, thousandsSeparator)
+      + decimalsSeparator
+      + ensureDecimalPrecision(decDiscountValue, decimalsPrecision);
+
+    discountBlock = (
       <div className={`${rootClass}__discount`}>
-        {discount}
+        {discountValue}
       </div>
-      )
-    : null;
+    );
+  }
 
   const decimalsMarkup = showDecimals
     ? (
@@ -146,7 +155,10 @@ Price.propTypes = {
   /**
    * Discount block. Strikethrough text with original price.
    */
-  discount: PropTypes.number,
+  discount: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]),
 
   /**
    * You can provide set of custom modifications.
