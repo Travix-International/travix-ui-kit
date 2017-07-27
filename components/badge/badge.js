@@ -26,6 +26,7 @@ const Badge = ({ arrow, border, children, mods, position, title, visible, ...oth
     badge = visible ? (
       <div {...otherProps} className={getClassNamesWithMods('ui-badge-badge', mods, badgeMods)}>
         {title}
+        {border ? <div className="ui-badge__border" /> : null}
         {arrow && (position === 'right' || position === 'left') ? <span className="ui-badge-badge-arrow" /> : null}
       </div>
     ) : <noscript />;

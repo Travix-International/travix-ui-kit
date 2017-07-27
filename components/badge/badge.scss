@@ -1,3 +1,5 @@
+$ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx-badge-arrow-angle-coefficient));
+
 .ui-badge {
   position: relative;
 
@@ -37,14 +39,15 @@
   $border-radius-start: var(--tx-badge-border-radius-start);
   $border-radius-end: var(--tx-badge-border-radius-end);
 
+  background-clip: padding-box;
   background-color: var(--tx-badge-color-background);
-  border-bottom: var(--tx-badge-border-bottom-width) var(--tx-badge-border-bottom-style) var(--tx-badge-border-bottom-color);
+  border-bottom: var(--tx-badge-border-bottom-width) var(--tx-badge-border-bottom-style) transparent;
   border-radius: $border-radius-start;
   color: var(--tx-badge-color-text);
   display: inline-block;
   font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
-  font-weight: var(--tx-generic-font-primary-weight-bold);
   font-size: var(--tx-badge-font-size);
+  font-weight: var(--tx-generic-font-primary-weight-bold);
   line-height: 1em;
   padding: var(--tx-badge-padding-top-bottom) var(--tx-badge-padding-right-left);
   position: relative;
@@ -123,7 +126,6 @@
   $arrow-border-big: calc(var(--tx-badge-font-size) / 2 + var(--tx-badge-padding-top-bottom));
   $arrow-border-small: calc((var(--tx-badge-font-size) / 2 + var(--tx-badge-padding-top-bottom)) * var(--tx-badge-arrow-angle-coefficient));
   $arrow-position: calc((var(--tx-badge-font-size) / 2 + var(--tx-badge-padding-top-bottom)) * var(--tx-badge-arrow-angle-coefficient) * -1);
-  $arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx-badge-arrow-angle-coefficient));
 
   &.ui-badge-badge_arrow-left {
     border-bottom-left-radius: 0;
@@ -141,8 +143,12 @@
     &:after {
       left: 0;
       top: 100%;
-      border-top: var(--tx-badge-border-bottom-width) solid transparent;
-      border-left:   $arrow-border-fix solid white;
+      border-top: var(--tx-badge-border-bottom-width) solid var(--tx-badge-border-bottom-color);
+      border-left: $ui-badge__arrow-border-fix solid transparent;
+    }
+
+    &.ui-badge-badge_no-border:after {
+      border: none;
     }
   }
 
@@ -162,8 +168,29 @@
     &:after {
       right: 0;
       top: 100%;
-      border-top: var(--tx-badge-border-bottom-width) solid transparent;
-      border-right:   $arrow-border-fix solid white;
+      border-top: var(--tx-badge-border-bottom-width) solid var(--tx-badge-border-bottom-color);
+      border-right: $ui-badge__arrow-border-fix solid transparent;
     }
+
+    &.ui-badge-badge_no-border:after {
+      border: none;
+    }
+  }
+}
+
+.ui-badge__border {
+  background: var(--tx-badge-border-bottom-color);
+  bottom: calc(var(--tx-badge-border-bottom-width) * -1);
+  height: var(--tx-badge-border-bottom-width);
+  left: 0;
+  position: absolute;
+  right: 0;
+
+  .ui-badge-badge_arrow-right & {
+    right: $ui-badge__arrow-border-fix;
+  }
+
+  .ui-badge-badge_arrow-left & {
+    left: $ui-badge__arrow-border-fix;
   }
 }
