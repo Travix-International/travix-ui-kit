@@ -17,8 +17,6 @@ export function addThousandsSeparator(value, thousandsSeparator) {
     return value;
   }
 
-  console.log(value);
-
   return value.replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator);
 }
 
