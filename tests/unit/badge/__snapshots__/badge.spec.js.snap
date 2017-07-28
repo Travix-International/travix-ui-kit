@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Badge should render badge without border 1`] = `
+<div
+  className="ui-badge-badge ui-badge-badge_no-border"
+>
+  Badge title
+</div>
+`;
+
 exports[`Badge should render content without badge when badge is not visible 1`] = `
 <div
   className="ui-badge"
@@ -14,6 +22,9 @@ exports[`Badge should render left arrow 1`] = `
   className="ui-badge-badge ui-badge-badge_arrow-left"
 >
   Badge title
+  <div
+    className="ui-badge__border"
+  />
   <span
     className="ui-badge-badge-arrow"
   />
@@ -25,6 +36,9 @@ exports[`Badge should render right arrow 1`] = `
   className="ui-badge-badge ui-badge-badge_arrow-right"
 >
   Badge title
+  <div
+    className="ui-badge__border"
+  />
   <span
     className="ui-badge-badge-arrow"
   />
@@ -46,6 +60,9 @@ exports[`Badge should return only badge if content not provided 1`] = `
   className="ui-badge-badge"
 >
   Badge title
+  <div
+    className="ui-badge__border"
+  />
 </div>
 `;
 
@@ -58,6 +75,9 @@ exports[`Badge should use position prop if content provided 1`] = `
     className="ui-badge-badge ui-badge-badge_right"
   >
     Badge title
+    <div
+      className="ui-badge__border"
+    />
   </div>
 </div>
 `;
