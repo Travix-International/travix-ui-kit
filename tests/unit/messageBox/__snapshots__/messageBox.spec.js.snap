@@ -1,17 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MessageBox #render() should render error message box 1`] = `
+exports[`MessageBox #render() should render error message box with icon 1`] = `
 <div
   className="ui-messageBox ui-messageBox_error"
 >
-  Ooops... this is an error!
+  <div
+    className="ui-messageBox__content__icon"
+  >
+    <div
+      className="icon"
+    />
+  </div>
+  <div
+    className="ui-messageBox__content"
+  >
+    <div
+      className="ui-messageBox__content__body"
+    >
+      Error message box
+    </div>
+  </div>
 </div>
 `;
 
 exports[`MessageBox #render() should render info message box with test modifications 1`] = `
 <div
-  className="ui-messageBox ui-messageBox_test"
+  className="ui-messageBox ui-messageBox_test ui-messageBox_info"
 >
-  Just a simple message box
+  <div
+    className="ui-messageBox__content"
+  >
+    <div
+      className="ui-messageBox__content__body"
+    >
+      Just a simple message box
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MessageBox #render() should render success message box with title 1`] = `
+<div
+  className="ui-messageBox ui-messageBox_success"
+>
+  <div
+    className="ui-messageBox__content"
+  >
+    <div
+      className="ui-messageBox__content__title"
+    >
+      Success message box title
+    </div>
+    <div
+      className="ui-messageBox__content__body"
+    >
+      Success message box
+    </div>
+  </div>
 </div>
 `;

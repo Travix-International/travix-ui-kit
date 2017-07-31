@@ -1,19 +1,30 @@
 import React, { PropTypes } from 'react';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
-const MessageBox = (props) => {
-  const { children, dataAttrs, isError } = props;
-  const mods = props.mods ? props.mods.slice() : [];
+const MessageBox = ({ children, dataAttrs, icon, mods, title, type }) => {
+  const className = getClassNamesWithMods('ui-messageBox', [...mods, type]);
 
-  if (isError) {
-    mods.push(`error`);
-  }
+  const logo = icon && (
+    <div className="ui-messageBox__content__icon">
+      {icon}
+    </div>
+  );
 
-  const className = getClassNamesWithMods('ui-messageBox', mods);
+  const header = title && (
+    <div className="ui-messageBox__content__title">
+      {title}
+    </div>
+  );
 
   return (
     <div {...getDataAttributes(dataAttrs)} className={className}>
-      {children}
+      {logo}
+      <div className="ui-messageBox__content">
+        {header}
+        <div className="ui-messageBox__content__body">
+          {children}
+        </div>
+      </div>
     </div>
   );
 };
@@ -33,18 +44,34 @@ MessageBox.propTypes = {
   ]),
 
   /**
+   * Icon of MessageBox
+   */
+  icon: PropTypes.node,
+
+  /**
    * You can provide set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
 
   /**
-   * Set to true if this represents an error message.
+   * Title of MessageBox
    */
-  isError: PropTypes.bool,
+  title: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string,
+  ]),
+
+  /**
+   * Type of MessageBox
+   */
+  type: PropTypes.oneOf(['info', 'success', 'error']),
 };
 
 MessageBox.defaultProps = {
-  isError: false,
+  icon: null,
+  mods: [],
+  title: null,
+  type: 'info',
 };
 
 export default MessageBox;

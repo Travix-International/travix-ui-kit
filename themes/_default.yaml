@@ -54,6 +54,7 @@ generic:
 
     active: &active "#3892e7"
     positive: &positive "#2ca937"
+    positive-light: &positive "#9edb97"
     negative: &negative "#c54229"
     negative-light: &negative-light "#f0d0c9"
 
@@ -314,10 +315,16 @@ list:
   color: "var(--tx-generic-color-text-dark)"
   line-height: "38px"
 messagebox:
-  background-color: "var(--tx-generic-color-secondary-lighter)"
-  background-color-error: "var(--tx-generic-color-negative-light)"
+  background-color:
+    info: "var(--tx-generic-color-secondary-light)"
+    error: "var(--tx-generic-color-negative-light)"
+    success: "var(--tx-generic-color-positive-lighter)"
   border-radius: "12px"
   color: "var(--tx-generic-color-text)"
+  title:
+    color: "var(--tx-generic-color-primary)"
+    font-size: "20px"
+    padding-bottom: "0px"
   padding: "24px"
 modal:
   z-index: "100"

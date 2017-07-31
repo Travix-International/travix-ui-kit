@@ -23,9 +23,17 @@ describe('MessageBox', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    it('should render error message box', () => {
+    it('should render success message box with title', () => {
       const wrapper = shallow(
-        <MessageBox isError>Ooops... this is an error!</MessageBox>
+        <MessageBox title="Success message box title" type="success">Success message box</MessageBox>
+      );
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
+
+    it('should render error message box with icon', () => {
+      const wrapper = shallow(
+        <MessageBox icon={<div className="icon" />} type="error">Error message box</MessageBox>
       );
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
