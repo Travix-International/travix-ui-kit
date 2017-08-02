@@ -1,0 +1,30 @@
+.ui-messageBox {
+  align-items: flex-start;
+  background-color: var(--tx-messagebox-background-color-info);
+  border-radius: var(--tx-messagebox-border-radius);
+  color: var(--tx-messagebox-color);
+  display: flex;
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
+  font-weight: var(--tx-generic-font-primary-weight-regular);
+  padding: var(--tx-messagebox-padding);
+}
+
+.ui-messageBox_error {
+  background-color: var(--tx-messagebox-background-color-error);
+}
+
+.ui-messageBox_success {
+  background-color: var(--tx-messagebox-background-color-success);
+}
+
+.ui-messageBox__content-icon {
+  padding-right: var(--tx-messagebox-padding);
+}
+
+.ui-messageBox__content-title {
+  color: var(--tx-messagebox-title-color);
+  font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
+  font-size: var(--tx-messagebox-title-font-size);
+  font-weight: var(--tx-generic-font-primary-weight-semibold);
+  padding-bottom: var(--tx-messagebox-title-padding-bottom);
+}

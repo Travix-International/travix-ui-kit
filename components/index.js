@@ -12,6 +12,7 @@ import DropDown from './dropDown/dropDown';
 import Global from './global/global';
 import Input from './input/input';
 import List from './list/list';
+import MessageBox from './messageBox/messageBox';
 import Modal from './modal/modal';
 import Price from './price/price';
 import RadioButton from './radioButton/radioButton';
@@ -34,6 +35,7 @@ export default {
   Global,
   Input,
   List,
+  MessageBox,
   Modal,
   Price,
   RadioButton,
