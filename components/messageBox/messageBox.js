@@ -5,13 +5,13 @@ const MessageBox = ({ children, dataAttrs, icon, mods, title, type }) => {
   const className = getClassNamesWithMods('ui-messageBox', [...mods, type]);
 
   const logo = icon && (
-    <div className="ui-messageBox__content__icon">
+    <div className="ui-messageBox__content-icon">
       {icon}
     </div>
   );
 
   const header = title && (
-    <div className="ui-messageBox__content__title">
+    <div className="ui-messageBox__content-title">
       {title}
     </div>
   );
@@ -21,7 +21,7 @@ const MessageBox = ({ children, dataAttrs, icon, mods, title, type }) => {
       {logo}
       <div className="ui-messageBox__content">
         {header}
-        <div className="ui-messageBox__content__body">
+        <div className="ui-messageBox__content-body">
           {children}
         </div>
       </div>

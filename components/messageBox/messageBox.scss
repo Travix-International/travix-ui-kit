@@ -17,11 +17,11 @@
   background-color: var(--tx-messagebox-background-color-success);
 }
 
-.ui-messageBox__content__icon {
+.ui-messageBox__content-icon {
   padding-right: var(--tx-messagebox-padding);
 }
 
-.ui-messageBox__content__title {
+.ui-messageBox__content-title {
   color: var(--tx-messagebox-title-color);
   font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
   font-size: var(--tx-messagebox-title-font-size);
