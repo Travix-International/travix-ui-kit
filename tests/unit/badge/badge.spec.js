@@ -65,4 +65,12 @@ describe('Badge', () => {
 
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
+
+  it('should render badge without border', () => {
+    const wrapper = shallow(
+      <Badge border={false} title="Badge title" />
+    );
+
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
+  });
 });

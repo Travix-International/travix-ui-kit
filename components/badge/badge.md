@@ -7,6 +7,7 @@ Position top:
       isVisibleLeft: true,
       isArrow: false,
       isBorder: true,
+      isColorBackground: false,
     };
 
     <div>
@@ -55,12 +56,18 @@ Position top:
       >
         border
       </Checkbox>
-
+      <Checkbox
+        checked={state.isColorBackground}
+        name="isColorBackground"
+        onChange={() => setState({ isColorBackground: !state.isColorBackground })}
+      >
+        background
+      </Checkbox>
       <Badge arrow={state.isArrow} border={state.isBorder} position="top" title="top" visible={state.isVisibleTop}>
         <Badge arrow={state.isArrow} border={state.isBorder} position="right" title="right" visible={state.isVisibleRight}>
           <Badge arrow={state.isArrow} border={state.isBorder} position="bottom" title="bottom" visible={state.isVisibleBottom}>
             <Badge arrow={state.isArrow} border={state.isBorder} position="left" title="left" visible={state.isVisibleLeft}>
-              <div style={{border: '1px solid lightgray', padding: '25px 100px', marginTop: '15px'}}>
+              <div style={{border: '1px solid lightgray', padding: '25px 100px', marginTop: '15px', background: state.isColorBackground ? "#3e6161" : "none"}}>
                 <Badge arrow={state.isArrow} border={state.isBorder} position="right" title={<span>Left</span>} />
                 <Badge arrow={state.isArrow} border={state.isBorder} position="left" title="Right" />
               </div>

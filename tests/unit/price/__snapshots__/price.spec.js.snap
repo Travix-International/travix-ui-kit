@@ -154,7 +154,7 @@ exports[`Price #render() should render with discount when value is integer not e
   <div
     className="ui-price__discount"
   >
-    50200
+    50,200.00
   </div>
   <div
     className="ui-price__value-delimiter"
