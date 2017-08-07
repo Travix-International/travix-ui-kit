@@ -4,6 +4,15 @@ Map:
       zoomControl: true,
       mapTypeControl: true,
       enableTestCustomStyles: false,
+      enableTestCustomMarker: false,
+      points: [{
+        position: { lat: 52.379189, lng: 4.899431 },
+        customMarker: true,
+        info: {
+          title: 'custom title',
+        },
+      }],
+      center: { lat: 52.379189, lng: 4.899431 },
       testCustomStyles: [
         { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
         { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
@@ -109,9 +118,18 @@ Map:
         >
           enable test custom styles
         </Checkbox>
+        <Checkbox
+          checked={state.enableTestCustomMarker}
+          name="enableTestCustomMarker"
+          onChange={() => setState({ enableTestCustomMarker: !state.enableTestCustomMarker })}
+        >
+          enable test custom marker
+        </Checkbox>
       </div>
       <GoogleMap
         apiKey=""
+        points={state.enableTestCustomMarker ? state.points : undefined}
+        center={state.enableTestCustomMarker ? state.center : undefined}
         google={window.google}
         zoomControl={state.zoomControl}
         mapTypeControl={state.mapTypeControl}
