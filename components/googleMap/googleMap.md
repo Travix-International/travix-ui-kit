@@ -116,6 +116,5 @@ Map:
         zoomControl={state.zoomControl}
         mapTypeControl={state.mapTypeControl}
         styles={state.enableTestCustomStyles ? state.testCustomStyles : []}
-        width={state.width}
       />
     </div>
