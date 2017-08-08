@@ -6,7 +6,10 @@ export default {
     MapTypeId: {
       ROADMAP: '',
     },
-    Marker: jest.fn().mockReturnValue({ addListener: jest.fn(), ab: 2 }),
+    Marker: function Marker() {
+      this.addListener = jest.fn((event, func) => func());
+      return this;
+    },
     OverlayView: jest.fn(),
     Map: jest.fn(),
   },
