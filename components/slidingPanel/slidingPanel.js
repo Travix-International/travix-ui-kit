@@ -1,4 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import SlidingPanelHeader from './slidingPanelHeader';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 export default class SlidingPanel extends Component {
@@ -48,6 +50,11 @@ export default class SlidingPanel extends Component {
      * Defines if the panel is open.
      */
     active: PropTypes.bool,
+
+    /**
+     * Defines title for header. Optional. If it's defined header will be shown.
+     */
+    title: PropTypes.string,
   }
 
   static defaultProps = {
@@ -72,17 +79,13 @@ export default class SlidingPanel extends Component {
 
     this.panel.addEventListener('transitionend', this.handleTransitionEnd);
 
-    this.closeButton = this.panel.querySelector('[rel="close"]');
-    if (this.closeButton) {
-      this.closeButton.addEventListener('click', this.handleClose);
-    }
+    this.closeButtons = this.panel.querySelectorAll('[rel="close"]');
+    this.closeButtons.forEach(b => b.addEventListener('click', this.handleClose));
   }
 
   componentWillUnmount() {
     this.panel.removeEventListener('transitionend', this.handleTransitionEnd);
-    if (this.closeButton) {
-      this.closeButton.removeEventListener('click', this.handleClose);
-    }
+    this.closeButtons.forEach(b => b.removeEventListener('click', this.handleClose));
   }
 
   /**
@@ -141,6 +144,7 @@ export default class SlidingPanel extends Component {
     const {
       dataAttrs,
       children,
+      title,
     } = this.props;
 
     const overlayMods = [];
@@ -167,7 +171,10 @@ export default class SlidingPanel extends Component {
           ref={(e) => { this.panel = e; }}
           {...getDataAttributes(dataAttrs)}
         >
-          {children}
+          {title && <SlidingPanelHeader title={title} />}
+          <div className="ui-sliding-panel__content">
+            {children}
+          </div>
         </div>
       </div>
     );

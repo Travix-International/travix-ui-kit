@@ -13,14 +13,26 @@ describe('SlidingPanel', () => {
 
       const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
       const panelElement = overlayElement.find('.ui-sliding-panel');
+      const mainContent = panelElement.find('.ui-sliding-panel__content');
 
       jest.runAllTimers();
-
 
       expect(renderTree).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_test')).toEqual(true);
-      expect(panelElement.text()).toEqual('Test');
+      expect(mainContent.text()).toEqual('Test');
+    });
+
+    it('render header if title prop is passed', () => {
+      const renderTree = mount(
+        <SlidingPanel mods={['test']} title="Test Title">Test</SlidingPanel>
+      );
+      const header = renderTree.find('.ui-sliding-panel-header');
+
+      jest.runAllTimers();
+
+      expect(renderTree).toMatchSnapshot();
+      expect(header).toHaveLength(1);
     });
 
     it('render active by default and when clicking on the overlay it closes it', () => {
