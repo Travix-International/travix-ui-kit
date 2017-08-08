@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SlidingPanel #render() do not render without title 1`] = `
+exports[`SlidingPanel #render() render noscript without title 1`] = `
 <SlidingPanelHeader>
   <noscript />
 </SlidingPanelHeader>

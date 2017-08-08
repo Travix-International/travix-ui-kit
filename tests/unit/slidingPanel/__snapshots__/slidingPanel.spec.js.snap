@@ -227,7 +227,7 @@ exports[`SlidingPanel #render() render active by default but with closeOnOverlay
 </SlidingPanel>
 `;
 
-exports[`SlidingPanel #render() render with default props and mods provided 1`] = `
+exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
   mods={
@@ -263,6 +263,32 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
           </button>
         </div>
       </SlidingPanelHeader>
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
+exports[`SlidingPanel #render() render with default props and mods provided 1`] = `
+<SlidingPanel
+  closeOnOverlayClick={true}
+  mods={
+    Array [
+      "test",
+    ]
+  }
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_test"
+    >
       <div
         className="ui-sliding-panel__content"
       >
