@@ -19,7 +19,9 @@
   box-shadow: none;
   color: var(--tx-generic-color-secondary-darker);
   cursor: pointer;
+  font-family: Arial, sans-serif;
   font-size: 40px;
+  font-weight: 400;
   height: 25px;
   line-height: 25px;
   overflow: visible;
@@ -27,7 +29,7 @@
   position: absolute;
   right: var(--tx-sliding-panel-panel-padding);
   text-align: right;
-  top: 16px;
+  top: 20px;
   width: 20px;
 
   &:hover {
