@@ -1,0 +1,36 @@
+.ui-sliding-panel-header {
+  background-color: var(--tx-generic-color-blank);
+  border-bottom: solid 2px var(--tx-generic-color-secondary-darker);
+  flex-shrink: 0;
+  height: 65px;
+  min-height: 65px;
+  text-align: center;
+}
+
+.ui-sliding-panel-header__title {
+  line-height: 65px;
+  margin: 0;
+  padding: 0 50px;
+}
+
+.ui-sliding-panel-header__close-button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: var(--tx-generic-color-secondary-darker);
+  cursor: pointer;
+  font-size: 40px;
+  height: 25px;
+  line-height: 25px;
+  overflow: visible;
+  padding: 0;
+  position: absolute;
+  right: var(--tx-sliding-panel-panel-padding);
+  text-align: right;
+  top: 16px;
+  width: 20px;
+
+  &:hover {
+    color: var(--tx-generic-color-secondary-darkest);
+  }
+}

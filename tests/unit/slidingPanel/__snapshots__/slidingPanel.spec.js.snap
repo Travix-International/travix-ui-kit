@@ -12,7 +12,11 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
     <div
       className="ui-sliding-panel ui-sliding-panel_active"
     >
-      Test
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
     </div>
   </div>
 </SlidingPanel>
@@ -30,7 +34,11 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
     <div
       className="ui-sliding-panel"
     >
-      Test
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
     </div>
   </div>
 </SlidingPanel>
@@ -48,11 +56,15 @@ exports[`SlidingPanel #render() enables [rel="close"] element provided on the ch
     <div
       className="ui-sliding-panel ui-sliding-panel_active"
     >
-      <button
-        rel="close"
+      <div
+        className="ui-sliding-panel__content"
       >
-        Test
-      </button>
+        <button
+          rel="close"
+        >
+          Test
+        </button>
+      </div>
     </div>
   </div>
 </SlidingPanel>
@@ -70,11 +82,15 @@ exports[`SlidingPanel #render() enables [rel="close"] element provided on the ch
     <div
       className="ui-sliding-panel"
     >
-      <button
-        rel="close"
+      <div
+        className="ui-sliding-panel__content"
       >
-        Test
-      </button>
+        <button
+          rel="close"
+        >
+          Test
+        </button>
+      </div>
     </div>
   </div>
 </SlidingPanel>
@@ -91,7 +107,11 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
     <div
       className="ui-sliding-panel"
     >
-      Test
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
     </div>
   </div>
 </SlidingPanel>
@@ -109,7 +129,11 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
     <div
       className="ui-sliding-panel ui-sliding-panel_active"
     >
-      Test
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
     </div>
   </div>
 </SlidingPanel>
@@ -127,7 +151,11 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
     <div
       className="ui-sliding-panel ui-sliding-panel_active"
     >
-      Test
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
     </div>
   </div>
 </SlidingPanel>
@@ -145,7 +173,11 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
     <div
       className="ui-sliding-panel"
     >
-      Test
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
     </div>
   </div>
 </SlidingPanel>
@@ -163,7 +195,11 @@ exports[`SlidingPanel #render() render active by default but with closeOnOverlay
     <div
       className="ui-sliding-panel ui-sliding-panel_active"
     >
-      Test
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
     </div>
   </div>
 </SlidingPanel>
@@ -181,7 +217,11 @@ exports[`SlidingPanel #render() render active by default but with closeOnOverlay
     <div
       className="ui-sliding-panel ui-sliding-panel_active"
     >
-      Test
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
     </div>
   </div>
 </SlidingPanel>
@@ -195,6 +235,7 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
       "test",
     ]
   }
+  title="Test Title"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -203,7 +244,30 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
     <div
       className="ui-sliding-panel ui-sliding-panel_test"
     >
-      Test
+      <SlidingPanelHeader
+        title="Test Title"
+      >
+        <div
+          className="ui-sliding-panel-header"
+        >
+          <h3
+            className="ui-sliding-panel-header__title"
+          >
+            Test Title
+          </h3>
+          <button
+            className="ui-sliding-panel-header__close-button"
+            rel="close"
+          >
+            ×
+          </button>
+        </div>
+      </SlidingPanelHeader>
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
     </div>
   </div>
 </SlidingPanel>

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SlidingPanel #render() do not render without title 1`] = `
+<SlidingPanelHeader>
+  <noscript />
+</SlidingPanelHeader>
+`;
+
+exports[`SlidingPanel #render() render with title 1`] = `
+<SlidingPanelHeader
+  title="Test Title"
+>
+  <div
+    className="ui-sliding-panel-header"
+  >
+    <h3
+      className="ui-sliding-panel-header__title"
+    >
+      Test Title
+    </h3>
+    <button
+      className="ui-sliding-panel-header__close-button"
+      rel="close"
+    >
+      ×
+    </button>
+  </div>
+</SlidingPanelHeader>
+`;
