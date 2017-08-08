@@ -80,11 +80,6 @@ export default class GoogleMap extends Component {
       if (!div) {
         div = document.createElement('DIV');
         this.div = div;
-        div.style.position = 'absolute';
-        div.style.paddingLeft = '0px';
-        div.style.cursor = 'pointer';
-        div.style.width = '10px';
-        div.style.height = '10px';
         div.classList.add('ui-google-map__custom-marker');
 
         if (this.info && this.info.title) {

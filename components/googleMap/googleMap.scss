@@ -8,6 +8,9 @@
   min-width: 50px;
   overflow: visible;
   transform: translate(-50%, -100%);
+  position: absolute;
+  padding-left: 0;
+  cursor: pointer;
 
   &:before {
     color: var(--tx-generic-color-blank);
