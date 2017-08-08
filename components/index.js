@@ -13,6 +13,7 @@ import Global from './global/global';
 import GoogleMap from './googleMap/googleMap';
 import Input from './input/input';
 import List from './list/list';
+import MessageBox from './messageBox/messageBox';
 import Modal from './modal/modal';
 import Price from './price/price';
 import RadioButton from './radioButton/radioButton';
@@ -36,6 +37,7 @@ export default {
   GoogleMap,
   Input,
   List,
+  MessageBox,
   Modal,
   Price,
   RadioButton,

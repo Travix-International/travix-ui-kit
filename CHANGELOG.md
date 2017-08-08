@@ -1,5 +1,24 @@
 # Change Log
 
+## [v0.6.16](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.16) (2017-08-02)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.15...v0.6.16)
+
+**Merged pull requests:**
+
+- Message box [\#133](https://github.com/Travix-International/travix-ui-kit/pull/133) ([iwwwi](https://github.com/iwwwi))
+
+## [v0.6.15](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.15) (2017-08-02)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.14...v0.6.15)
+
+**Closed issues:**
+
+- Styling issue of badge [\#132](https://github.com/Travix-International/travix-ui-kit/issues/132)
+
+**Merged pull requests:**
+
+- Improvements for price and badge [\#134](https://github.com/Travix-International/travix-ui-kit/pull/134) ([AlleeX](https://github.com/AlleeX))
+- Improves the polyfill loader to use feature detection [\#131](https://github.com/Travix-International/travix-ui-kit/pull/131) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.6.14](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.14) (2017-07-18)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.13...v0.6.14)
 
