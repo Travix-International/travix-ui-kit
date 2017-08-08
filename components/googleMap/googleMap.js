@@ -242,7 +242,6 @@ export default class GoogleMap extends Component {
 }
 
 GoogleMap.propTypes = {
-  // https://developers.google.com/maps/documentation/javascript/style-reference
   /**
    * Map center coordinates.
    */
