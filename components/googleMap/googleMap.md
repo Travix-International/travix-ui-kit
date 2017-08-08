@@ -3,8 +3,8 @@ Map:
     initialState = {
       zoomControl: true,
       mapTypeControl: true,
-      enableTestCustomStyles: false,
-      enableTestCustomMarker: false,
+      enableCustomStyles: false,
+      enableCustomMarker: false,
       points: [{
         position: { lat: 52.379189, lng: 4.899431 },
         customMarker: true,
@@ -13,7 +13,7 @@ Map:
         },
       }],
       center: { lat: 52.379189, lng: 4.899431 },
-      testCustomStyles: [
+      customStyles: [
         { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
         { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
         { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
@@ -112,27 +112,27 @@ Map:
           show map type control
         </Checkbox>
         <Checkbox
-          checked={state.enableTestCustomStyles}
-          name="enableTestCustomStyles"
-          onChange={() => setState({ enableTestCustomStyles: !state.enableTestCustomStyles })}
+          checked={state.enableCustomStyles}
+          name="enableCustomStyles"
+          onChange={() => setState({ enableCustomStyles: !state.enableCustomStyles })}
         >
-          enable test custom styles
+          enable custom styles (example)
         </Checkbox>
         <Checkbox
-          checked={state.enableTestCustomMarker}
-          name="enableTestCustomMarker"
-          onChange={() => setState({ enableTestCustomMarker: !state.enableTestCustomMarker })}
+          checked={state.enableCustomMarker}
+          name="enableCustomMarker"
+          onChange={() => setState({ enableCustomMarker: !state.enableCustomMarker })}
         >
-          enable test custom marker
+          enable custom marker (example)
         </Checkbox>
       </div>
       <GoogleMap
         apiKey=""
-        points={state.enableTestCustomMarker ? state.points : undefined}
-        center={state.enableTestCustomMarker ? state.center : undefined}
+        points={state.enableCustomMarker ? state.points : undefined}
+        center={state.enableCustomMarker ? state.center : undefined}
         google={window.google}
         zoomControl={state.zoomControl}
         mapTypeControl={state.mapTypeControl}
-        styles={state.enableTestCustomStyles ? state.testCustomStyles : []}
+        styles={state.enableCustomStyles ? state.customStyles : []}
       />
     </div>
