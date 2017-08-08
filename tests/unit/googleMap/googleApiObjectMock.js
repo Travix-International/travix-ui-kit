@@ -23,7 +23,6 @@ export default {
     },
     Marker: function Marker() {
       this.addListener = jest.fn((event, func) => func());
-      return this;
     },
     OverlayView,
     LatLng,
