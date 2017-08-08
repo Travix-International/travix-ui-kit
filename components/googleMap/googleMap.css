@@ -11,19 +11,19 @@
   padding-left: 0;
   position: absolute;
   transform: translate(-50%, -100%);
+}
 
-  &:before {
-    color: var(--tx-generic-color-blank);
-    content: '☻';
-    font-size: 30px;
-  }
+.ui-google-map__custom-marker:before {
+  color: var(--tx-generic-color-blank);
+  content: '\263B';
+  font-size: 30px;
+}
 
-  &:after {
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid var(--tx-generic-color-active);
-    bottom: -7px;
-    content: '';
-    position: absolute;
-  }
+.ui-google-map__custom-marker:after {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--tx-generic-color-active);
+  bottom: -7px;
+  content: '';
+  position: absolute;
 }
