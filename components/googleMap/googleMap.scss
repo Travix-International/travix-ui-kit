@@ -2,15 +2,15 @@
   align-items: center;
   background-color: var(--tx-generic-color-active);
   border-radius: var(--tx-generic-border-radius);
+  cursor: pointer;
   display: flex;
   justify-content: center;
   min-height: 50px;
   min-width: 50px;
   overflow: visible;
-  transform: translate(-50%, -100%);
-  position: absolute;
   padding-left: 0;
-  cursor: pointer;
+  position: absolute;
+  transform: translate(-50%, -100%);
 
   &:before {
     color: var(--tx-generic-color-blank);
