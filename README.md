@@ -82,7 +82,7 @@ which simplifies the usage of the CLI. E.g.:
  }
  ```
 ##### CSS
-use file `node_modules/travix-ui-kit/dist/bundle.css`
+use file `node_modules/travix-ui-kit/dist/ui-bundle.css`
 - you can create an alias in your webpack plugin
 - or inject it in your page current styles bundle
 - or copy to public folder and add as separate style file with `<link>`
