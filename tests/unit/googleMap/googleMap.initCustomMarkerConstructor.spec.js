@@ -3,7 +3,7 @@ import google from './googleApiObjectMock';
 
 let ctx;
 
-describe('GoogleMap: createCustomMarker', () => {
+describe('GoogleMap: initCustomMarkerConstructor', () => {
   beforeEach(() => {
     ctx = {
       props: {
