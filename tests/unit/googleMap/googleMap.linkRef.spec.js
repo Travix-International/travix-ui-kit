@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleMap from '../../../components/googleMap/googleMap';
+import google from './googleApiObjectMock';
 
 describe('GoogleMap: linkRef', () => {
   it('should link passed ref to `this`', () => {
@@ -9,7 +10,7 @@ describe('GoogleMap: linkRef', () => {
       initCustomMarkerConstructor: jest.fn(),
     };
 
-    const map = new GoogleMap();
+    const map = new GoogleMap(google);
 
     map.linkRef(node);
 

@@ -12,6 +12,18 @@ exports[`GoogleMap: render should return base GoogleMap container 1`] = `
 />
 `;
 
+exports[`GoogleMap: render should return base GoogleMap container with custom marker 1`] = `
+<div
+  className="ui-google-map"
+  style={
+    Object {
+      "height": "150px",
+      "width": "250px",
+    }
+  }
+/>
+`;
+
 exports[`GoogleMap: render should return base GoogleMap container with custom size 1`] = `
 <div
   className="ui-google-map"

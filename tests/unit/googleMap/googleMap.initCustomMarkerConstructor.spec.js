@@ -1,16 +1,11 @@
-import GoogleMap from '../../../components/googleMap/googleMap';
+import { initCustomMarkerConstructor } from '../../../components/googleMap/googleMap';
 import google from './googleApiObjectMock';
 
-let ctx;
+let handleMarkerClick;
 
 describe('GoogleMap: initCustomMarkerConstructor', () => {
   beforeEach(() => {
-    ctx = {
-      props: {
-        google,
-      },
-      handleMarkerClick: () => {},
-    };
+    handleMarkerClick = jest.fn();
   });
 
   it('should create custom marker instance with corren data', () => {
@@ -21,7 +16,7 @@ describe('GoogleMap: initCustomMarkerConstructor', () => {
       },
     };
 
-    const CustomMarker = GoogleMap.prototype.initCustomMarkerConstructor.call(ctx);
+    const CustomMarker = initCustomMarkerConstructor(google, handleMarkerClick);
     const marker = new CustomMarker(pointData, {}, 1);
 
     expect(marker).toEqual({
@@ -45,7 +40,7 @@ describe('GoogleMap: initCustomMarkerConstructor', () => {
       },
     };
 
-    const CustomMarker = GoogleMap.prototype.initCustomMarkerConstructor.call(ctx);
+    const CustomMarker = initCustomMarkerConstructor(google, handleMarkerClick);
     const marker = new CustomMarker(pointData, {}, 3);
     marker.draw();
 
@@ -61,7 +56,7 @@ describe('GoogleMap: initCustomMarkerConstructor', () => {
       },
     };
 
-    const CustomMarker = GoogleMap.prototype.initCustomMarkerConstructor.call(ctx);
+    const CustomMarker = initCustomMarkerConstructor(google, handleMarkerClick);
     CustomMarker.prototype.div = document.createElement('DIV');
     const marker = new CustomMarker(pointData, {}, 3);
     marker.draw();
@@ -78,12 +73,17 @@ describe('GoogleMap: initCustomMarkerConstructor', () => {
       },
     };
 
-    const CustomMarker = GoogleMap.prototype.initCustomMarkerConstructor.call(ctx);
+    const CustomMarker = initCustomMarkerConstructor(google);
     CustomMarker.prototype.getProjection = jest.fn(() => ({ fromLatLngToDivPixel: () => {} }));
     const marker = new CustomMarker(pointData, {}, 3);
     marker.draw();
 
     expect(marker.div.style.left).toEqual('');
     expect(marker.div.style.top).toEqual('');
+  });
+
+  it('should return undefiner if google api is not exist', () => {
+    const CustomMarker = initCustomMarkerConstructor();
+    expect(CustomMarker).toEqual(undefined);
   });
 });

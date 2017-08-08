@@ -3,6 +3,69 @@ import { PropTypes } from 'prop-types';
 import ReactDOM from 'react-dom';
 
 /**
+ * Initializes custom marker constructor
+ *
+ * @method initCustomMarkerConstructor
+ * @param {Object} google
+ * @param {function} onMarkerClick
+ * @return {function} CustomMarker constructor
+ */
+export function initCustomMarkerConstructor(google, onMarkerClick) {
+  if (!google) {
+    console.warn('google map api is not available!');
+    return undefined;
+  }
+
+  function CustomMarker(pointData, map, index) {
+    const { position, info } = pointData;
+
+    this.latlng = position;
+    this.info = info;
+    this.index = index;
+    this.setMap(map);
+  }
+
+  CustomMarker.prototype = new google.maps.OverlayView();
+
+  CustomMarker.prototype.draw = function draw() {
+    let div = this.div;
+    if (!div) {
+      div = document.createElement('DIV');
+      this.div = div;
+      div.classList.add('ui-google-map__custom-marker');
+
+      if (this.info && this.info.title) {
+        div.setAttribute('title', this.info.title);
+      }
+
+      if (this.info && this.info.content && this.info.content instanceof HTMLElement) {
+        div.appendChild(this.info.content);
+      }
+
+      if (typeof onMarkerClick === 'function') {
+        google.maps.event.addDomListener(div, 'click', () => {
+          onMarkerClick(this.index);
+        });
+      }
+
+      const panes = this.getPanes();
+      panes.overlayImage.appendChild(div);
+    }
+
+    const { lat, lng } = this.latlng;
+    const curPosition = new google.maps.LatLng(lat, lng);
+    const point = this.getProjection().fromLatLngToDivPixel(curPosition);
+
+    if (point) {
+      div.style.left = `${point.x}px`;
+      div.style.top = `${point.y}px`;
+    }
+  };
+
+  return CustomMarker;
+}
+
+/**
  * GoogleMap component
  */
 export default class GoogleMap extends Component {
@@ -16,7 +79,7 @@ export default class GoogleMap extends Component {
     super(props);
 
     this.overlay = null;
-    this.CustomMarker = this.initCustomMarkerConstructor();
+    this.CustomMarker = initCustomMarkerConstructor(props.google, this.handleMarkerClick);
   }
 
   /**
@@ -52,63 +115,6 @@ export default class GoogleMap extends Component {
     if (typeof this.props.onMarkerClick === 'function') {
       this.props.onMarkerClick(index);
     }
-  }
-
-  /**
-   * Initializes custom marker constructor
-   *
-   * @method initCustomMarkerConstructor
-   * @return {function} CustomMarker constructor
-   */
-  initCustomMarkerConstructor() {
-    const { google } = this.props;
-    const handleCustomMarkerClick = this.handleMarkerClick;
-
-    function CustomMarker(pointData, map, index) {
-      const { position, info } = pointData;
-
-      this.latlng = position;
-      this.info = info;
-      this.index = index;
-      this.setMap(map);
-    }
-
-    CustomMarker.prototype = new google.maps.OverlayView();
-
-    CustomMarker.prototype.draw = function draw() {
-      let div = this.div;
-      if (!div) {
-        div = document.createElement('DIV');
-        this.div = div;
-        div.classList.add('ui-google-map__custom-marker');
-
-        if (this.info && this.info.title) {
-          div.setAttribute('title', this.info.title);
-        }
-
-        if (this.info && this.info.content && this.info.content instanceof HTMLElement) {
-          div.appendChild(this.info.content);
-        }
-
-        google.maps.event.addDomListener(div, 'click', () => {
-          handleCustomMarkerClick(this.index);
-        });
-
-        const panes = this.getPanes();
-        panes.overlayImage.appendChild(div);
-      }
-
-      const { lat, lng } = this.latlng;
-      const curPosition = new google.maps.LatLng(lat, lng);
-      const point = this.getProjection().fromLatLngToDivPixel(curPosition);
-
-      if (point) {
-        div.style.left = `${point.x}px`;
-        div.style.top = `${point.y}px`;
-      }
-    };
-
-    return CustomMarker;
   }
 
   /**
