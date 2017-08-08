@@ -5,7 +5,7 @@ function OverlayView() {
       appendChild: jest.fn(),
     },
   });
-  this.getProjection = jest.fn().mockReturnValue({});
+  this.getProjection = jest.fn(() => ({ fromLatLngToDivPixel: () => ({ x: 1, y: 3 }) }));
 }
 
 function LatLng(lat, lng) {
@@ -21,12 +21,15 @@ export default {
     MapTypeId: {
       ROADMAP: '',
     },
-    Marker: jest.fn().mockReturnValue({ addListener: jest.fn(), ab: 2 }),
-    OverlayView: OverlayView,
-    LatLng: LatLng,
+    Marker: function Marker() {
+      this.addListener = jest.fn((event, func) => func());
+      return this;
+    },
+    OverlayView,
+    LatLng,
     Map: jest.fn(),
     event: {
-      addDomListener: jest.fn(),
+      addDomListener: jest.fn((event, type, func) => func()),
     },
   },
 };
