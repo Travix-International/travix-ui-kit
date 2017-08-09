@@ -10,6 +10,7 @@ import CollapseItem from './collapse/collapseItem';
 import DatePicker from './datePicker/datePicker';
 import DropDown from './dropDown/dropDown';
 import Global from './global/global';
+import GoogleMap from './googleMap/googleMap';
 import Input from './input/input';
 import List from './list/list';
 import MessageBox from './messageBox/messageBox';
@@ -33,6 +34,7 @@ export default {
   DatePicker,
   DropDown,
   Global,
+  GoogleMap,
   Input,
   List,
   MessageBox,

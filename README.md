@@ -113,7 +113,7 @@ use file `node_modules/travix-ui-kit/dist/ui-bundle.css`
 ### How to run living style guide
 - `npm run styleguide-build` to build web service with living style guide
 - `npm run styleguide-server` to run web service with living style guide
-- open [localhost:3000](http://localhost:3000/)
+- open [localhost:6060](http://localhost:6060/)
 
 ### Development
 
