@@ -147,11 +147,9 @@ button:
     hover-border-color: *primary
   link:
     color: *text
-    text:
-      decoration: "underline"
     font:
-      size: "14px"
       family: "var(--tx-generic-font-secondary-font-family)"
+      size: "14px"
       weight: "var(--tx-generic-font-primary-weight-regular)"
     hover: 
       color: *text-dark
@@ -160,6 +158,8 @@ button:
       font:
         family: "var(--tx-generic-font-secondary-font-family)"
         weight: "var(--tx-generic-font-primary-weight-regular)"
+    text:
+      decoration: "underline"
 calendar:
   height: 300px
   nav:

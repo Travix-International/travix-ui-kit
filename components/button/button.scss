@@ -101,22 +101,21 @@
 }
 
 .ui-button_variation_link {
-  display: inline-block;
   background: transparent;
   border: none;
-  padding: 0;
-  line-height: normal;
-
   color:  var(--tx-button-link-color);
-  text-decoration:  var(--tx-button-link-text-decoration);
+  display: inline-block;
   font-family: var(--tx-button-link-font-family);
   font-size: var(--tx-button-link-font-size);
   font-weight: var(--tx-button-link-font-weight);
+  line-height: normal;
+  padding: 0;
+  text-decoration:  var(--tx-button-link-text-decoration);
 
   &:hover {
     color:  var(--tx-button-link-hover-color);
-    text-decoration:  var(--tx-button-link-hover-text-decoration);
     font-family: var(--tx-button-link-hover-font-family);
     font-weight: var(--tx-button-link-hover-font-weight);
+    text-decoration:  var(--tx-button-link-hover-text-decoration);
   }
 }
