@@ -1,5 +1,16 @@
 # Change Log
 
+## [v0.6.17](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.17) (2017-08-10)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.16...v0.6.17)
+
+**Merged pull requests:**
+
+- Adds link variation to button [\#139](https://github.com/Travix-International/travix-ui-kit/pull/139) ([froskie](https://github.com/froskie))
+- Google map component [\#138](https://github.com/Travix-International/travix-ui-kit/pull/138) ([RumataDeEstor](https://github.com/RumataDeEstor))
+- Add header to SlidingPanel component [\#137](https://github.com/Travix-International/travix-ui-kit/pull/137) ([yurist38](https://github.com/yurist38))
+- Fix path to bundle css file in readme [\#136](https://github.com/Travix-International/travix-ui-kit/pull/136) ([yurist38](https://github.com/yurist38))
+- Update dependencies to enable Greenkeeper 🌴 [\#102](https://github.com/Travix-International/travix-ui-kit/pull/102) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v0.6.16](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.16) (2017-08-02)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.15...v0.6.16)
 
