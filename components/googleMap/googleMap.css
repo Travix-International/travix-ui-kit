@@ -1,0 +1,29 @@
+.ui-google-map__custom-marker {
+  align-items: center;
+  background-color: var(--tx-generic-color-active);
+  border-radius: var(--tx-generic-border-radius);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  min-height: 50px;
+  min-width: 50px;
+  overflow: visible;
+  padding-left: 0;
+  position: absolute;
+  transform: translate(-50%, -100%);
+}
+
+.ui-google-map__custom-marker:before {
+  color: var(--tx-generic-color-blank);
+  content: '\263B';
+  font-size: 30px;
+}
+
+.ui-google-map__custom-marker:after {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--tx-generic-color-active);
+  bottom: -7px;
+  content: '';
+  position: absolute;
+}
