@@ -99,3 +99,23 @@
   font-size: 28px;
   padding: 15px 20px;
 }
+
+.ui-button_variation_link {
+  background: transparent;
+  border: none;
+  color:  var(--tx-button-link-color);
+  display: inline-block;
+  font-family: var(--tx-button-link-font-family);
+  font-size: var(--tx-button-link-font-size);
+  font-weight: var(--tx-button-link-font-weight);
+  line-height: normal;
+  padding: 0;
+  text-decoration:  var(--tx-button-link-text-decoration);
+
+  &:hover {
+    color:  var(--tx-button-link-hover-color);
+    font-family: var(--tx-button-link-hover-font-family);
+    font-weight: var(--tx-button-link-hover-font-weight);
+    text-decoration:  var(--tx-button-link-hover-text-decoration);
+  }
+}
