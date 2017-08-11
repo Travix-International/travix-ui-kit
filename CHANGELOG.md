@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.6.18](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.18) (2017-08-11)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.17...v0.6.18)
+
+**Merged pull requests:**
+
+- Makes the SlidePanel scrollable [\#144](https://github.com/Travix-International/travix-ui-kit/pull/144) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Adds public API Key for Google Maps to the styleguide's HTML [\#142](https://github.com/Travix-International/travix-ui-kit/pull/142) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.6.17](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.17) (2017-08-10)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.16...v0.6.17)
 
