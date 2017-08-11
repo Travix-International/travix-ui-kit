@@ -1,8 +1,7 @@
 // Imports
+import PropTypes from 'prop-types';
 import React from 'react';
 import { getClassNamesWithMods } from '../_helpers';
-
-const { PropTypes } = React;
 
 /**
  * General Spinner component. Use when you need spinner

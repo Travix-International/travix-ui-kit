@@ -1,8 +1,8 @@
+import PropTypes from 'prop-types';
 import React, {
   Component,
   Children,
   cloneElement,
-  PropTypes,
 } from 'react';
 
 import { getClassNamesWithMods } from '../_helpers';
