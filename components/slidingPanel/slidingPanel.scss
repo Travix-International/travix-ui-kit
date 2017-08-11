@@ -17,6 +17,8 @@
   background-color: var(--tx-sliding-panel-panel-background-color);
   bottom: var(--tx-sliding-panel-panel-bottom);
   box-shadow: var(--tx-sliding-panel-panel-box-shadow);
+  display: flex;
+  flex-flow: var(--tx-sliding-panel-panel-flex-flow);
   font-family: var(--tx-generic-font-primary-font-family);
   font-weight: var(--tx-generic-font-primary-weight-bold);
   left: var(--tx-sliding-panel-panel-left);
@@ -37,5 +39,8 @@
 }
 
 .ui-sliding-panel__content {
+  flex: var(--tx-sliding-panel-content-flex);
+  overflow: var(--tx-sliding-panel-content-overflow);
+  overflow-y: var(--tx-sliding-panel-content-overflow-y);
   padding: var(--tx-sliding-panel-panel-padding);
 }

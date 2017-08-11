@@ -151,7 +151,7 @@ button:
       family: "var(--tx-generic-font-secondary-font-family)"
       size: "14px"
       weight: "var(--tx-generic-font-primary-weight-regular)"
-    hover: 
+    hover:
       color: *text-dark
       text:
         decoration: "underline"
@@ -415,6 +415,10 @@ price:
     height:
       underline: 8px
 sliding-panel:
+  content:
+    flex: "1 1 100%"
+    overflow: "hidden"
+    overflow-y: "auto"
   overlay:
     background-color: "rgba(var(--tx-generic-color-primary-dark-rgb), .65)"
     position: "fixed"
@@ -423,6 +427,7 @@ sliding-panel:
     background-color: "var(--tx-generic-color-blank)"
     bottom: "0"
     box-shadow: "3px 0 3px -3px var(--tx-generic-color-shadow)"
+    flex-flow: "column"
     left: "0"
     margin: "0"
     max-width: "100%"
