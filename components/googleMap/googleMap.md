@@ -127,7 +127,6 @@ Map:
         </Checkbox>
       </div>
       <GoogleMap
-        apiKey=""
         points={state.enableCustomMarker ? state.points : undefined}
         center={state.enableCustomMarker ? state.center : undefined}
         google={window.google}
