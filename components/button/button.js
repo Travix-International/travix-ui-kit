@@ -1,8 +1,7 @@
 // Imports
+import PropTypes from 'prop-types';
 import React from 'react';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
-
-const { PropTypes } = React;
 
 /**
  * General Button component. Use when you need button or a link that looks like button

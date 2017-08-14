@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { getClassNamesWithMods, getDataAttributes, normalizeDate } from '../_helpers';
 import DaysPanel from './panels/days';
 import calendarConstants from './constants/calendar';
