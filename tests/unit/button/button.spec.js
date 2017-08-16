@@ -25,14 +25,6 @@ describe('Button', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    it('should return noscript if no onClick provided', () => {
-      const wrapper = shallow(
-        <Button>Extra small</Button>
-      );
-
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
-    });
-
     it('should not modify mods', () => {
       const mods = ['test'];
       const wrapper = shallow(

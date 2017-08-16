@@ -66,5 +66,3 @@ exports[`Button #render() should return base class with mods for strings as clas
   Extra small
 </button>
 `;
-
-exports[`Button #render() should return noscript if no onClick provided 1`] = `<noscript />`;

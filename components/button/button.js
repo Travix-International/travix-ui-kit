@@ -46,11 +46,6 @@ function Button(props) {
     );
   }
 
-  if (!onClick) {
-    console.warn('Missing onClick'); // eslint-disable-line no-console
-    return <noscript />;
-  }
-
   return (
     <button
       className={className}
