@@ -13,7 +13,7 @@ const SlidingPanelHeader = ({ title }) => {
       </h3>
       <button
         className="ui-sliding-panel-header__close-button"
-        rel="close"
+        data-rel="close"
       >
         &#215;
       </button>

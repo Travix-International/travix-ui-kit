@@ -12,6 +12,6 @@ Basic Sliding Panel:
         This is an example<br/>
         Of how simple it is to use<br/>
         Our sliding panel.<br/><br/>
-        <button rel="close">Close</button>
+        <button data-rel="close">Close</button>
       </SlidingPanel>
     </div>
