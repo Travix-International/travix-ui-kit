@@ -101,11 +101,11 @@ describe('SlidingPanel', () => {
       expect(onCloseMock.mock.calls.length).toEqual(1);
     });
 
-    it('enables [rel="close"] element provided on the children, that closes the overlay', () => {
+    it('enables [data-rel="close"] element provided on the children, that closes the overlay', () => {
       document.body.insertAdjacentHTML('afterbegin', '<div id="root"></div>');
       const renderTree = mount(
         <SlidingPanel active closeOnOverlayClick={false}>
-          <button rel="close">Test</button>
+          <button data-rel="close">Test</button>
         </SlidingPanel>
       , { attachTo: document.body.querySelector('#root') });
       const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
@@ -113,7 +113,7 @@ describe('SlidingPanel', () => {
 
       jest.runAllTimers();
 
-      const closeButtonElement = document.querySelector('.ui-sliding-panel_active [rel="close"]');
+      const closeButtonElement = document.querySelector('.ui-sliding-panel_active [data-rel="close"]');
 
       expect(renderTree).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
