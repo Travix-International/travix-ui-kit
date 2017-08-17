@@ -44,7 +44,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
 </SlidingPanel>
 `;
 
-exports[`SlidingPanel #render() enables [rel="close"] element provided on the children, that closes the overlay 1`] = `
+exports[`SlidingPanel #render() enables [data-rel="close"] element provided on the children, that closes the overlay 1`] = `
 <SlidingPanel
   active={true}
   closeOnOverlayClick={false}
@@ -60,7 +60,7 @@ exports[`SlidingPanel #render() enables [rel="close"] element provided on the ch
         className="ui-sliding-panel__content"
       >
         <button
-          rel="close"
+          data-rel="close"
         >
           Test
         </button>
@@ -70,7 +70,7 @@ exports[`SlidingPanel #render() enables [rel="close"] element provided on the ch
 </SlidingPanel>
 `;
 
-exports[`SlidingPanel #render() enables [rel="close"] element provided on the children, that closes the overlay 2`] = `
+exports[`SlidingPanel #render() enables [data-rel="close"] element provided on the children, that closes the overlay 2`] = `
 <SlidingPanel
   active={true}
   closeOnOverlayClick={false}
@@ -86,7 +86,7 @@ exports[`SlidingPanel #render() enables [rel="close"] element provided on the ch
         className="ui-sliding-panel__content"
       >
         <button
-          rel="close"
+          data-rel="close"
         >
           Test
         </button>
@@ -257,7 +257,7 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
           </h3>
           <button
             className="ui-sliding-panel-header__close-button"
-            rel="close"
+            data-rel="close"
           >
             ×
           </button>
