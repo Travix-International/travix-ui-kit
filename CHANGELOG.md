@@ -1,5 +1,14 @@
 # Change Log
 
+## [v0.6.19](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.19) (2017-08-17)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.18...v0.6.19)
+
+**Merged pull requests:**
+
+- Changes the components to use the 'prop-types' package [\#145](https://github.com/Travix-International/travix-ui-kit/pull/145) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Change slidingPanel close button to use 'data-rel' attr instead of 'rel'  [\#146](https://github.com/Travix-International/travix-ui-kit/pull/146) ([yurist38](https://github.com/yurist38))
+- Change Button's onClick prop to be optional [\#147](https://github.com/Travix-International/travix-ui-kit/pull/147) ([yurist38](https://github.com/yurist38))
+
 ## [v0.6.18](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.18) (2017-08-11)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.17...v0.6.18)
 
