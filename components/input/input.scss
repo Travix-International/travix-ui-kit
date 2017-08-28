@@ -1,15 +1,54 @@
+.ui-input-container {
+  position: relative;
+}
+
 .ui-input {
   border-radius: var(--tx-input-border-radius);
-  border: 2px solid var(--tx-input-border-color);
+  border: var(--tx-input-border-width) solid var(--tx-input-border-color);
   color: var(--tx-input-color);
   font-size: var(--tx-input-font-size);
   min-width: 100%;
   outline: 0;
-  padding: 15px;
+  padding: var(--tx-input-padding);
   vertical-align: middle;
   width: 100%;
-}
 
-.ui-input_focused {
-  border-color: var(--tx-input-focused-border-color);
+  &.ui-input_focused {
+    border-color: var(--tx-input-focused-border-color);
+
+    & + .ui-input-status {
+      display: none;
+    }
+  }
+
+  &.ui-input_error {
+    border-color: var(--tx-input-status-error-border-color);
+    padding-right: var(--tx-input-status-error-padding-right);
+
+    & + .ui-input-status {
+      color: var(--tx-input-status-error-color);
+    }
+  }
+
+  &.ui-input_valid {
+    border-color: var(--tx-input-status-valid-border-color);
+    padding-right: var(--tx-input-status-valid-padding-right);
+
+    & + .ui-input-status {
+      color: var(--tx-input-status-valid-color);
+    }
+  }
+
+  & + .ui-input-status {
+    font-size: var(--tx-input-status-font-size);
+    line-height: 1em;
+    position: absolute;
+    right: var(--tx-input-status-right);
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  &:hover {
+    border-color: var(--tx-input-border-hover-color);
+  }
 }
