@@ -28,6 +28,36 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
     white-space: nowrap;
   }
 
+  .Select-control {
+    .Select-placeholder {
+      color: var(--tx-generic-color-secondary-darker);
+    }
+  }
+
+  &:hover {
+    .Select-control {
+      .Select-placeholder {
+        color: var(--tx-generic-color-active);
+      }
+    }
+  }
+
+  &.is-disabled {
+    .Select-control {
+      background-color: var(--tx-generic-color-blank);
+      border-color: var(--tx-generic-color-secondary-darker);
+      opacity: .4;
+    }
+
+    &:hover {
+      .Select-control {
+        .Select-placeholder {
+          color: var(--tx-generic-color-secondary-darker);
+        }
+      }
+    }
+  }
+
   .Select-menu-outer {
     border: none;
     box-shadow: var(--tx-dropdown-select-menu-outer-box-shadow);
