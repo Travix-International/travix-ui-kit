@@ -1,13 +1,31 @@
 # Change Log
 
-## [v0.6.19](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.19) (2017-08-17)
-[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.18...v0.6.19)
+## [v0.6.20](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.20) (2017-08-29)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.19...v0.6.20)
+
+**Closed issues:**
+
+- Extend Input and DropDown components [\#143](https://github.com/Travix-International/travix-ui-kit/issues/143)
+- Import PropTypes from `prop-types` package only [\#135](https://github.com/Travix-International/travix-ui-kit/issues/135)
+- Rendering button [\#72](https://github.com/Travix-International/travix-ui-kit/issues/72)
 
 **Merged pull requests:**
 
-- Changes the components to use the 'prop-types' package [\#145](https://github.com/Travix-International/travix-ui-kit/pull/145) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
-- Change slidingPanel close button to use 'data-rel' attr instead of 'rel'  [\#146](https://github.com/Travix-International/travix-ui-kit/pull/146) ([yurist38](https://github.com/yurist38))
+- Dropdown control updates [\#151](https://github.com/Travix-International/travix-ui-kit/pull/151) ([kmiadzvedski1](https://github.com/kmiadzvedski1))
+- Input and dropdown improvements [\#149](https://github.com/Travix-International/travix-ui-kit/pull/149) ([maximuk](https://github.com/maximuk))
+
+## [v0.6.19](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.19) (2017-08-17)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.18...v0.6.19)
+
+**Closed issues:**
+
+- Content inside the panel not scrollable [\#141](https://github.com/Travix-International/travix-ui-kit/issues/141)
+
+**Merged pull requests:**
+
 - Change Button's onClick prop to be optional [\#147](https://github.com/Travix-International/travix-ui-kit/pull/147) ([yurist38](https://github.com/yurist38))
+- Change slidingPanel close button to use 'data-rel' attr instead of 'rel' [\#146](https://github.com/Travix-International/travix-ui-kit/pull/146) ([yurist38](https://github.com/yurist38))
+- Changes the components to use the 'prop-types' package [\#145](https://github.com/Travix-International/travix-ui-kit/pull/145) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
 
 ## [v0.6.18](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.18) (2017-08-11)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.17...v0.6.18)
