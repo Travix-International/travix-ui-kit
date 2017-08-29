@@ -104,7 +104,7 @@ class DropDown extends Component {
       ...mods,
       filterMode && 'filter',
       filterMode && options.some(option => option.checked) && 'state-active',
-      status && status,
+      status,
     ]);
 
     return (
