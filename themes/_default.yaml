@@ -306,6 +306,18 @@ dropdown:
     select-control:
       background-color: "var(--tx-generic-color-blank)"
       border-color: "var(--tx-generic-color-active)"
+  status:
+    font-size: "20px"
+    right: "59px"
+    error:
+      border-color: "var(--tx-generic-color-negative-light)"
+      color: "var(--tx-generic-color-negative)"
+      padding-right: "94px"
+    valid:
+      border-color: "var(--tx-generic-color-secondary-darker)"
+      color: "var(--tx-generic-color-positive)"
+      padding-right: "94px"
+  padding-right: "60px"
 dropdown-filter-option:
   checkbox:
     color: "var(--tx-generic-color-text-light)"
@@ -318,12 +330,28 @@ dropdown-filter-option:
     checkbox:
       color: "var(--tx-generic-color-blank)"
 input:
-  border-color: "var(--tx-generic-color-secondary-darker)"
+  border:
+    color: "var(--tx-generic-color-secondary-darker)"
+    hover:
+      color: "var(--tx-generic-color-active)"
+    width: "2px"
   border-radius: "4px"
   color: "var(--tx-generic-color-text-dark)"
   font-size: "16px"
   focused:
     border-color: "var(--tx-generic-color-active)"
+  status:
+    font-size: "20px"
+    right: "14px"
+    error:
+      border-color: "var(--tx-generic-color-negative-light)"
+      color: "var(--tx-generic-color-negative)"
+      padding-right: "32px"
+    valid:
+      border-color: "var(--tx-generic-color-secondary-darker)"
+      color: "var(--tx-generic-color-positive)"
+      padding-right: "32px"
+  padding: "15px"
 list:
   bullets:
     color: "var(--tx-generic-color-active)"

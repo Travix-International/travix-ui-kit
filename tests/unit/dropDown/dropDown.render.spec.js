@@ -112,4 +112,15 @@ describe('DropDown: render', () => {
     );
     expect(shallowToJson(component)).toMatchSnapshot();
   });
+
+  it('should return dropdown with status', () => {
+    const component = shallow(
+      <DropDown
+        onChange={() => {}}
+        options={[]}
+        status="error"
+      />
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
 });

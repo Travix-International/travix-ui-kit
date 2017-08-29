@@ -46,5 +46,17 @@ describe('Input', () => {
 
       expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
+
+    it('should render span for icon', () => {
+      const wrapper = shallow(
+        <Input
+          name="input"
+          onChange={onChange}
+          status="error"
+        />
+      );
+
+      expect(shallowToJson(wrapper)).toMatchSnapshot();
+    });
   });
 });
