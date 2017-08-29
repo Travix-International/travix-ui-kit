@@ -25,6 +25,7 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
 
   .Select-value-label {
     font-size: 16px;
+    white-space: nowrap;
   }
 
   .Select-control {
@@ -139,6 +140,14 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
     .Select-arrow {
       transform: rotate(270deg);
     }
+
+    &.Select--single.ui-dropdown_error > .Select-control,
+    &.Select--single.ui-dropdown_valid > .Select-control {
+      .Select-value:before,
+      .Select-placeholder:before {
+        display: none;
+      }
+    }
   }
 
   &.Select--single:hover {
@@ -154,6 +163,52 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
   &.Select--multi:hover {
     .Select-arrow-zone {
       color: var(--tx-dropdown-select-arrow-zone-hover-color);
+    }
+  }
+
+  &.Select--single > .Select-control {
+    .Select-value,
+    .Select-placeholder {
+      padding-right: var(--tx-dropdown-padding-right);
+    }
+  }
+
+  &:not(.is-open) {
+    &.Select--single > .Select-control {
+      .Select-value:before,
+      .Select-placeholder:before {
+        font-size: var(--tx-dropdown-status-font-size);
+        position: absolute;
+        right: var(--tx-dropdown-status-right);
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+
+    &.Select--single.ui-dropdown_error > .Select-control {
+       border-color: var(--tx-dropdown-status-error-border-color);
+
+      .Select-value,
+      .Select-placeholder {
+        padding-right: var(--tx-dropdown-status-error-padding-right);
+
+        &:before {
+          color: var(--tx-dropdown-status-error-color);
+        }
+      }
+    }
+
+    &.Select--single.ui-dropdown_valid > .Select-control {
+      border-color: var(--tx-dropdown-status-valid-border-color);
+
+      .Select-value,
+      .Select-placeholder {
+        padding-right: var(--tx-dropdown-status-valid-padding-right);
+
+        &:before {
+          color: var(--tx-dropdown-status-valid-color);
+        }
+      }
     }
   }
 }

@@ -1,38 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input #render() should not modify mods 1`] = `
-<input
-  className="ui-input ui-input_test"
-  disabled={false}
-  mods={
-    Array [
-      "test",
-    ]
-  }
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-/>
+<div
+  className="ui-input-container"
+>
+  <input
+    className="ui-input ui-input_test"
+    disabled={false}
+    mods={
+      Array [
+        "test",
+      ]
+    }
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+  />
+</div>
 `;
 
 exports[`Input #render() should render correct input 1`] = `
-<input
-  className="ui-input"
-  disabled={true}
-  name="input"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-/>
+<div
+  className="ui-input-container"
+>
+  <input
+    className="ui-input"
+    disabled={true}
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+  />
+</div>
 `;
 
 exports[`Input #render() should render multiline input 1`] = `
-<textarea
-  className="ui-input"
-  disabled={true}
-  name="input"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-/>
+<div
+  className="ui-input-container"
+>
+  <textarea
+    className="ui-input"
+    disabled={true}
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+  />
+</div>
+`;
+
+exports[`Input #render() should render span for icon 1`] = `
+<div
+  className="ui-input-container"
+>
+  <input
+    className="ui-input ui-input_error"
+    disabled={false}
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+  />
+  <span
+    className="ui-input-status"
+  />
+</div>
 `;

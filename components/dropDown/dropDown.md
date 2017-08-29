@@ -30,6 +30,33 @@ Searchable dropDown:
       </div>
     </div>
 
+Basic dropDown with status:
+
+    <div>
+      <div style={{ width: '50%' }}>
+        <style dangerouslySetInnerHTML={{__html: `
+          .ui-dropdown_error .Select-value:before, .ui-dropdown_error .Select-placeholder:before {
+            content: '✗';
+          }
+
+          .ui-dropdown_valid .Select-value:before, .ui-dropdown_valid .Select-placeholder:before {
+            content: '✅';
+          }
+        `}} />
+        <DropDown
+          onChange={(opts) => {setState({ value: opts.value })}}
+          options={[
+            { value: null, label: 'without status' },
+            { value: 'error', label: 'error' },
+            { value: 'valid', label: 'valid ' },
+          ]}
+          value={state.value}
+          placeholder="basic dropdown with status"
+          status={state.value}
+        />
+      </div>
+    </div>
+
 Disabled dropDown with data attrs:
 
       <div>
