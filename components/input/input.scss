@@ -42,6 +42,7 @@
   & + .ui-input-status {
     font-size: var(--tx-input-status-font-size);
     line-height: 1em;
+    pointer-events: none;
     position: absolute;
     right: var(--tx-input-status-right);
     top: 50%;
