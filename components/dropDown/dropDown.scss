@@ -9,9 +9,6 @@ $select-option-color: var(--tx-dropdown-option-color);
 
 $select-arrow-color: var(--tx-dropdown-arrow-color);
 
-$ui-dropdown__element__bg-color: $blank !default;
-$ui-dropdown__trigger__placeholder__color: $text-lighter !default;
-
 .ui-dropdown {
   font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
 
@@ -46,7 +43,7 @@ $ui-dropdown__trigger__placeholder__color: $text-lighter !default;
 
   &.is-disabled {
     .Select-control {
-      background-color: $ui-dropdown__element__bg-color;
+      background-color: var(--tx-generic-color-blank);
       border-color: var(--tx-generic-color-secondary-darker);
       opacity: .4;
     }
