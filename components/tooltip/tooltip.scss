@@ -1,0 +1,21 @@
+.ui-tooltip {
+  color: red;
+}
+
+.ui-tooltip::::after {
+  content: '';
+  position: absolute;
+  border-top: 20px solid green;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  left: 20px; bottom: -20px;
+}
+
+.ui-tooltip_active {
+  display: flex;
+}
+
+.ui-tooltip_inactive {
+  display: none;
+}
