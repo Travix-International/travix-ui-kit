@@ -1,15 +1,54 @@
 .ui-tooltip {
   color: red;
+  width: 200px;
+  min-height: 40px;
+  height: 150px;
+  background-color: green;
+  position: relative;
 }
 
-.ui-tooltip::::after {
+.ui-tooltip_top::before {
   content: '';
   position: absolute;
-  border-top: 20px solid green;
-  border-right: 20px solid transparent;
-  border-left: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  left: 20px; bottom: -20px;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  right: 15px;
+  bottom: -7px;
+  background-color: green;
+}
+
+.ui-tooltip_bottom::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  right: 15px;
+  top: -7px;
+  background-color: green;
+}
+
+.ui-tooltip_right::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  left: -7px;
+  bottom: 15px;
+  background-color: green;
+}
+
+.ui-tooltip_left::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  right: -7px;
+  bottom: 15px;
+  background-color: green;
 }
 
 .ui-tooltip_active {

@@ -1,6 +1,6 @@
 OverlayTrigger:
     <div>
-      <OverlayTrigger triggerAction='click' elemToToggle={<Tooltip> <div> gdfgdfgdf! </div> </Tooltip>}>
+      <OverlayTrigger triggerAction='click' elemToToggle={<Tooltip position='bottom'> <div> gdfgdfgdf! </div> </Tooltip>}>
         <div style={{ width: '50%' }}>
           Dafgkhjgfjgf fghkfg jkgfh gkfhgfhkfg jhgfh gkfhj kfg
           hjgfkhjgfkl ghfg khl fghglfhgfj klfgj hh gfhjfgkl hfgljh

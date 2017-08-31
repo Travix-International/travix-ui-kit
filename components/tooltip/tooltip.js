@@ -7,6 +7,7 @@ export default class Tooltip extends Component {
     const className = getClassNamesWithMods('ui-tooltip', [
       // ...mods,
       this.props.active ? 'active' : 'inactive',
+      this.props.position,
     ]);
     return (
       <div className={className}>
@@ -21,6 +22,12 @@ Tooltip.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.string,
+  ]),
+  position: PropTypes.oneOf([
+    'bottom',
+    'left',
+    'right',
+    'top',
   ]),
 };
 
