@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-// import Global from '../global/global';
-
 export default class OverlayTrigger extends Component {
   constructor(props) {
     super(props);
@@ -49,9 +47,10 @@ export default class OverlayTrigger extends Component {
 
     return (
       <div className="ui-overlay-trigger">
-        {targetElement}
-        {elemToToggle}
-        {this.state.active ? 'active' : 'not active'}
+        <div className="ui-overlay-trigger__content">
+          {targetElement}
+          {elemToToggle}
+        </div>
       </div>
     );
   }
@@ -61,7 +60,9 @@ OverlayTrigger.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.string,
+    PropTypes.element,
   ]),
+  elemToToggle: PropTypes.element,
   triggerAction: PropTypes.string,
 };
 

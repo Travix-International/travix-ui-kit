@@ -1,60 +1,48 @@
 .ui-tooltip {
-  color: red;
-  width: 200px;
-  min-height: 40px;
-  height: 150px;
-  background-color: green;
-  position: relative;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(black, 0.4);
+  max-width: 1000px;
+  min-height: 60px;
+  padding: 12px;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.ui-tooltip:before {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  content: '';
+  transform: rotate(45deg);
+  position: absolute;
 }
 
 .ui-tooltip_top::before {
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  transform: rotate(45deg);
   right: 15px;
   bottom: -7px;
-  background-color: green;
+  box-shadow: 2px 2px 6px -2px rgba(black, 0.4);
 }
 
 .ui-tooltip_bottom::before {
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  transform: rotate(45deg);
   right: 15px;
   top: -7px;
-  background-color: green;
+  box-shadow: -2px -2px 6px -2px rgba(black, 0.4);
 }
 
 .ui-tooltip_right::before {
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  transform: rotate(45deg);
   left: -7px;
   bottom: 15px;
-  background-color: green;
+  box-shadow: -2px 2px 6px -2px rgba(black, 0.4);
 }
 
 .ui-tooltip_left::before {
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  transform: rotate(45deg);
   right: -7px;
+  box-shadow: 2px -2px 6px -2px rgba(black, 0.4);
   bottom: 15px;
-  background-color: green;
-}
-
-.ui-tooltip_active {
-  display: flex;
 }
 
 .ui-tooltip_inactive {
-  display: none;
+  visibility: hidden;
 }
