@@ -3,10 +3,10 @@ import React, {
   Component,
   Children,
   cloneElement,
+  isValidElement,
 } from 'react';
 
 import { getClassNamesWithMods } from '../_helpers';
-import CollapseItem from './collapseItem';
 
 const getNormalizedActiveKey = ({ defaultActiveKey, activeKey }) => {
   if (activeKey === undefined && defaultActiveKey) {
@@ -69,7 +69,7 @@ class Collapse extends Component {
 
     return (
       Children.map(children, (child, index) => {
-        if (!child || child.type !== CollapseItem) {
+        if (!isValidElement(child)) {
           return null;
         }
 
