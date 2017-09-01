@@ -10,8 +10,36 @@ export default class OverlayTrigger extends Component {
     };
   }
 
+  linkChild = (ref) => {
+    this.elem = ref;
+  }
+
+  componentDidMount() {
+    document.body.addEventListener('click', this.handleOutsideClick);
+  }
+
+  componentWillUnmount() {
+    document.body.removeEventListener('click', this.handleOutsideClick);
+  }
+
   toggleElement = () => {
     this.setState({ active: !this.state.active });
+  }
+
+  showElement() {
+    this.setState({ active: true });
+  }
+
+  hideElement() {
+    this.setState({ active: false });
+  }
+
+  handleOutsideClick = (e) => {
+    if (this.elem.contains(e.target)) {
+      return;
+    }
+
+    this.hideElement();
   }
 
   getOnClickTarget() {
@@ -37,9 +65,12 @@ export default class OverlayTrigger extends Component {
   render() {
     const { triggerAction } = this.props;
 
-    const targetElement = triggerAction === 'click'
-      ? this.getOnClickTarget()
-      : this.getOnHoverTarget();
+    const actions = {
+      click: this.getOnClickTarget,
+      hover: this.getOnHoverTarget,
+    };
+
+    const targetElement = actions[triggerAction].call(this);
 
     const elemToToggle = React.cloneElement(this.props.elemToToggle, {
       active: this.state.active,
@@ -49,7 +80,9 @@ export default class OverlayTrigger extends Component {
       <div className="ui-overlay-trigger">
         <div className="ui-overlay-trigger__content">
           {targetElement}
-          {elemToToggle}
+          <div className="ui-overlay-trigger__element-to-toogle" ref={this.linkChild}>
+            {elemToToggle}
+          </div>
         </div>
       </div>
     );
@@ -63,7 +96,10 @@ OverlayTrigger.propTypes = {
     PropTypes.element,
   ]),
   elemToToggle: PropTypes.element,
-  triggerAction: PropTypes.string,
+  triggerAction: PropTypes.oneOf([
+    'click',
+    'hover',
+  ]),
 };
 
 OverlayTrigger.defaultProps = {
