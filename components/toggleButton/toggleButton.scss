@@ -1,0 +1,46 @@
+.ui-toggle-button {
+  cursor: pointer;
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+
+  .ui-toggle-button__item {
+    background-color: #FFF;
+    border: 2px solid #A0BFE5;
+    border-right: 0;
+    color: #00519D;
+    display: inline-block;
+    line-height: 25px;
+    min-width: 108px;
+    padding: 5px 10px;
+    text-align: center;
+
+    &:first-child {
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 4px;
+      border-left: 0;
+      border-right: 2px solid #A0BFE5;
+      border-top-right-radius: 4px;
+    }
+  }
+
+  .active {
+    background-color: #00B0FF;
+    border-color: #00B0FF;
+    color: #FFF;
+
+    &::before {
+      content: " + ";
+      color: #FFF;
+      font-size: 22px;
+      line-height: 22px;
+      vertical-align: middle;
+    }
+  }
+}

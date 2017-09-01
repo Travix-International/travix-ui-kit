@@ -20,6 +20,7 @@ import RadioButton from './radioButton/radioButton';
 import Rating from './rating/rating';
 import SlidingPanel from './slidingPanel/slidingPanel';
 import Spinner from './spinner/spinner';
+import ToggleButton from './toggleButton/toggleButton';
 
 export default {
   AutoComplete,
@@ -44,4 +45,5 @@ export default {
   Rating,
   SlidingPanel,
   Spinner,
+  ToggleButton,
 };
