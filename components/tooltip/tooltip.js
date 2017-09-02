@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { getClassNamesWithMods } from '../_helpers';
-
-export function getNum(str) {
-  return parseInt(str, 10);
-}
+import { getClassNamesWithMods, getNum } from '../_helpers';
 
 export function getOffset(length, margin) {
   return -getNum(length) - getNum(margin);

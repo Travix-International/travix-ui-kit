@@ -1,5 +1,6 @@
 const getClassNamesWithMods = require('../../../components/_helpers.js').getClassNamesWithMods;
 const getDataAttributes = require('../../../components/_helpers.js').getDataAttributes;
+const getNum = require('../../../components/_helpers.js').getNum;
 
 describe('helpers', () => {
   describe('#getClassNamesWithMods()', () => {
@@ -38,6 +39,22 @@ describe('helpers', () => {
     it('returns an empty object when no object is provided or an empty object is provided', () => {
       expect(getDataAttributes()).toEqual({});
       expect(getDataAttributes({})).toEqual({});
+    });
+  });
+
+  describe('#getNum', () => {
+    it('should return an integer part of string with px', () => {
+      const str = '12px';
+      const expected = 12;
+
+      expect(getNum(str)).toEqual(expected);
+    });
+
+    it('should return an integer from string containing 0', () => {
+      const str = '0';
+      const expected = 0;
+
+      expect(getNum(str)).toEqual(expected);
     });
   });
 });
