@@ -9,7 +9,7 @@
   z-index: 1;
 }
 
-.ui-tooltip:before {
+.ui-tooltip::before {
   background-color: white;
   content: '';
   height: 15px;
@@ -45,4 +45,24 @@
 
 .ui-tooltip_inactive {
   visibility: hidden;
+}
+
+.ui-tooltip__close-button-section {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 5px;
+}
+
+.ui-tooltip__close-button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
+}
+
+.ui-tooltip__close-button::before {
+  color: blue;
+  content: '✖';
+  font-size: 20px;
 }

@@ -15,23 +15,27 @@ export default class OverlayTrigger extends Component {
   }
 
   componentDidMount() {
-    document.body.addEventListener('click', this.handleOutsideClick);
+    if (this.props.triggerAction !== 'click') {
+      return;
+    }
+
+    this.addOutsideClickListener();
   }
 
   componentWillUnmount() {
+    if (this.props.triggerAction !== 'click') {
+      return;
+    }
+
+    this.removeOutsideClickListener();
+  }
+
+  addOutsideClickListener() {
+    document.body.addEventListener('click', this.handleOutsideClick);
+  }
+
+  removeOutsideClickListener() {
     document.body.removeEventListener('click', this.handleOutsideClick);
-  }
-
-  toggleElement = () => {
-    this.setState({ active: !this.state.active });
-  }
-
-  showElement() {
-    this.setState({ active: true });
-  }
-
-  hideElement() {
-    this.setState({ active: false });
   }
 
   handleOutsideClick = (e) => {
@@ -39,7 +43,29 @@ export default class OverlayTrigger extends Component {
       return;
     }
 
-    this.hideElement();
+    this.state.active && this.hideElement();
+  }
+
+  toggleElement = () => {
+    this.state.active
+      ? this.hideElement()
+      : this.showElement();
+  }
+
+  showElement() {
+    const { onElementShow } = this.props;
+
+    this.setState({ active: true });
+
+    onElementShow && onElementShow();
+  }
+
+  hideElement() {
+    const { onElementHide } = this.props;
+
+    this.setState({ active: false });
+
+    onElementHide && onElementHide();
   }
 
   getOnClickTarget() {
@@ -62,6 +88,10 @@ export default class OverlayTrigger extends Component {
     );
   }
 
+  handleCloseButtonClick() {
+    this.hideElement();
+  }
+
   render() {
     const { triggerAction } = this.props;
 
@@ -74,15 +104,15 @@ export default class OverlayTrigger extends Component {
 
     const elemToToggle = React.cloneElement(this.props.elemToToggle, {
       active: this.state.active,
+      onCloseButtonClick: this.handleCloseButtonClick.bind(this), // eslint-disable-line
+      triggerAction: this.props.triggerAction,
     });
 
     return (
       <div className="ui-overlay-trigger">
-        <div className="ui-overlay-trigger__content">
+        <div className="ui-overlay-trigger__content" ref={this.linkChild}>
           {targetElement}
-          <div className="ui-overlay-trigger__element-to-toogle" ref={this.linkChild}>
-            {elemToToggle}
-          </div>
+          {elemToToggle}
         </div>
       </div>
     );
@@ -96,6 +126,8 @@ OverlayTrigger.propTypes = {
     PropTypes.element,
   ]),
   elemToToggle: PropTypes.element,
+  onElementHide: PropTypes.func,
+  onElementShow: PropTypes.func,
   triggerAction: PropTypes.oneOf([
     'click',
     'hover',

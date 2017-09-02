@@ -2,8 +2,12 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { getClassNamesWithMods } from '../_helpers';
 
-export function getNum(string) {
-  return parseInt(string, 10);
+export function getNum(str) {
+  return parseInt(str, 10);
+}
+
+export function getOffset(length, margin) {
+  return -getNum(length) - getNum(margin);
 }
 
 export default class Tooltip extends Component {
@@ -11,13 +15,41 @@ export default class Tooltip extends Component {
     this.container = ref;
   }
 
+  countPositionOffset() {
+    const { margin, oppositeAxisOffset } = this.props;
+
+    const { width, height } = this.container.getBoundingClientRect();
+
+    const yOffset = getOffset(height, margin);
+    const xOffset = getOffset(width, margin);
+
+    const positions = {
+      top: { top: yOffset, left: oppositeAxisOffset },
+      bottom: { bottom: yOffset, left: oppositeAxisOffset },
+      right: { right: xOffset, bottom: oppositeAxisOffset },
+      left: { left: xOffset, bottom: oppositeAxisOffset },
+    };
+
+    return positions;
+  }
+
+  renderCloseButtonBlock() {
+    const { showCloseButton, onCloseButtonClick, triggerAction } = this.props;
+
+    return (showCloseButton && triggerAction === 'click')
+      ? (
+        <div className="ui-tooltip__close-button-section">
+          <button
+            className="ui-tooltip__close-button"
+            onClick={onCloseButtonClick}
+          />
+        </div>
+      )
+      : null;
+  }
+
   render() {
-    const {
-      width,
-      height,
-      active,
-      position,
-    } = this.props;
+    const { width, height, active, position } = this.props;
 
     const mods = this.props.mods
       ? this.props.mods.slice()
@@ -35,25 +67,14 @@ export default class Tooltip extends Component {
     };
 
     if (this.container) {
-      const offsets = this.container.getBoundingClientRect();
-      const actualWidth = offsets.width;
-      const actualHeight = offsets.height;
-
-      const yOffset = -getNum(actualHeight) - getNum(this.props.margin);
-      const xOffset = -getNum(actualWidth) - getNum(this.props.margin);
-
-      const positions = {
-        top: { top: yOffset, left: this.props.oppositeAxisOffset },
-        bottom: { bottom: yOffset, left: this.props.oppositeAxisOffset },
-        right: { right: xOffset, bottom: this.props.oppositeAxisOffset },
-        left: { left: xOffset, bottom: this.props.oppositeAxisOffset },
-      };
+      const positions = this.countPositionOffset();
 
       styles = { ...styles, ...positions[this.props.position] };
     }
 
     return (
       <div className={className} ref={this.linkChild} style={styles}>
+        {this.renderCloseButtonBlock()}
         {this.props.children}
       </div>
     );
@@ -72,12 +93,18 @@ Tooltip.propTypes = {
    * Set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
+  onCloseButtonClick: PropTypes.func,
   oppositeAxisOffset: PropTypes.string,
   position: PropTypes.oneOf([
     'bottom',
     'left',
     'right',
     'top',
+  ]),
+  showCloseButton: PropTypes.bool,
+  triggerAction: PropTypes.oneOf([
+    'click',
+    'hover',
   ]),
   width: PropTypes.string,
 };
@@ -88,5 +115,7 @@ Tooltip.defaultProps = {
   height: '',
   margin: '15px',
   oppositeAxisOffset: '0',
+  showCloseButton: false,
+  triggerAction: 'click',
   width: '',
 };
