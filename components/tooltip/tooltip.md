@@ -76,7 +76,7 @@ Also check OverlayTrigger specification.
         <div style={{ marginRight: "15px" }}>
           <div style={{ marginBottom: "10px" }}> Show close button: </div>
             <Checkbox
-              checked={state.showCloseButton}
+              checked={state.showCloseButton && state.triggerAction === 'click'}
               disabled={state.triggerAction !== 'click'}
               name="showCloseButton"
               onChange={e => setState({ showCloseButton: !state.showCloseButton })}
