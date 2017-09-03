@@ -111,6 +111,7 @@ Tooltip.defaultProps = {
   height: '',
   margin: '15px',
   oppositeAxisOffset: '0',
+  position: 'top',
   showCloseButton: false,
   triggerAction: 'click',
   width: '',

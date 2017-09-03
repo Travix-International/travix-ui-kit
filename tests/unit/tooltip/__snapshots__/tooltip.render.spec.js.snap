@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip: render should render active tooltip with all passed props 1`] = `
+<Tooltip
+  active={true}
+  height="70px"
+  margin="10px"
+  oppositeAxisOffset="5px"
+  position="right"
+  showCloseButton={true}
+  triggerAction="hover"
+  width="120px"
+>
+  <div
+    className="ui-tooltip ui-tooltip_active ui-tooltip_right"
+    style={
+      Object {
+        "height": "70px",
+        "width": "120px",
+      }
+    }
+  >
+    <div>
+       Tooltip content 
+    </div>
+  </div>
+</Tooltip>
+`;
+
+exports[`Tooltip: render should render normal active tooltip with mods 1`] = `
+<div
+  className="ui-tooltip ui-tooltip_custom-class ui-tooltip_active ui-tooltip_top"
+  style={
+    Object {
+      "height": "",
+      "width": "",
+    }
+  }
+/>
+`;
+
+exports[`Tooltip: render should render normal inactive tooltip without config 1`] = `
+<div
+  className="ui-tooltip ui-tooltip_inactive ui-tooltip_top"
+  style={
+    Object {
+      "height": "",
+      "width": "",
+    }
+  }
+/>
+`;
