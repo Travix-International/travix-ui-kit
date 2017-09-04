@@ -203,6 +203,36 @@ exports[`Collapse: render should render collapse component with icon on the righ
 </div>
 `;
 
+exports[`Collapse: render should render collapse with mod 1`] = `
+<div
+  className="ui-collapse ui-collapse_collapse-mod"
+  iconPosition="left"
+>
+  <CollapseItem
+    iconPosition="left"
+    id="ui-collapse-item.0"
+    isActive={false}
+    onClick={[Function]}
+    title="Collapse Item 1"
+  >
+    <p>
+      Collapse content 1
+    </p>
+  </CollapseItem>
+  <CollapseItem
+    iconPosition="left"
+    id="ui-collapse-item.1"
+    isActive={false}
+    onClick={[Function]}
+    title="Collapse Item 2"
+  >
+    <p>
+      Collapse content 2
+    </p>
+  </CollapseItem>
+</div>
+`;
+
 exports[`Collapse: render should return "accordion" collapse component with two items 1`] = `
 <div
   className="ui-collapse ui-collapse_accordion"

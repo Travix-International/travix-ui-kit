@@ -134,4 +134,18 @@ describe('Collapse: render', () => {
     );
     expect(shallowToJson(component)).toMatchSnapshot();
   });
+
+  it('should render collapse with mod', () => {
+    const component = shallow(
+      <Collapse mods={['collapse-mod']}>
+        <CollapseItem title="Collapse Item 1">
+          <p>Collapse content 1</p>
+        </CollapseItem>
+        <CollapseItem title="Collapse Item 2">
+          <p>Collapse content 2</p>
+        </CollapseItem>
+      </Collapse>
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
 });
