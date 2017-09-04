@@ -6,6 +6,13 @@ import { getClassNamesWithMods } from '../_helpers';
  * ToggleButton component.
  */
 class ToggleButton extends Component {
+  /**
+   * Instantiates ToggleButton component
+   *
+   * @constructor
+   * @param {Object} props Component properties object
+   * @return {Object} ToggleButton instance
+   */
   constructor(props) {
     super(props);
 
@@ -13,7 +20,6 @@ class ToggleButton extends Component {
     this.handleSelectItem = this.handleSelectItem.bind(this);
 
     const mods = props.mods ? props.mods.slice() : [];
-    mods.push(`size_${props.size}`);
 
     this.state = {
       activeItem: 0,
@@ -21,22 +27,37 @@ class ToggleButton extends Component {
     };
   }
 
-  handleSelectItem(event) {
+  /**
+   * Handlers onClick event
+   *
+   * @method handleSelectItem
+   * @param {Object} event
+   * @private
+   */
+  handleSelectItem = (event) => {
     event.stopPropagation();
-    const index = this.props.items.indexOf(event.target.textContent);
 
-    this.setState(
-      { activeItem: index },
-      () => {
-        if (typeof this.props.handleSelect === 'function') {
-          this.props.handleSelect(index);
-        }
-      });
+    const index = this.props.items.indexOf(event.target.textContent);
+    this.setState({ activeItem: index });
+    if (typeof this.props.handleSelect === 'function') {
+      this.props.handleSelect(index);
+    }
   }
 
+  /**
+   * Renders items markup
+   *
+   * @method renderItems
+   * @returns {JSX}
+   * @private
+   */
   renderItems() {
     return this.props.items.map((item, index) => {
-      const classNameItem = `ui-toggle-button__item ${index === this.state.activeItem ? 'active' : ''}`;
+      const classes = ['ui-toggle-button__item'];
+      if (index === this.state.activeItem) {
+        classes.push('ui-toggle-button__item--active');
+      }
+      const classNameItem = classes.join(' ');
       return (
         <li
           className={classNameItem}
@@ -65,14 +86,24 @@ class ToggleButton extends Component {
 }
 
 ToggleButton.defaultProps = {
-  size: 'm',
+  items: [],
 };
 
 ToggleButton.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  /**
+   * List's elements.
+   */
+  items: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * You can provide set of custom modifications.
+   */
   mods: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * Specify a function that will be called when a user clicked on  button.
+   */
   handleSelect: PropTypes.func.isRequired,
-  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
 };
 
 export default ToggleButton;
