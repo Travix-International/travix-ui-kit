@@ -68,7 +68,7 @@
     "eslint": "^3.14.0",
     "extract-text-webpack-plugin": "~2.1.0",
     "fs-extra": "^3.0.1",
-    "jest-cli": "^19.0.0",
+    "jest-cli": "^20.0.0",
     "jest-serializer-enzyme": "^1.0.0",
     "jest": "^20.0.0",
     "node-sass": "^4.3.0",
