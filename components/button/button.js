@@ -1,8 +1,7 @@
 // Imports
+import PropTypes from 'prop-types';
 import React from 'react';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
-
-const { PropTypes } = React;
 
 /**
  * General Button component. Use when you need button or a link that looks like button
@@ -45,11 +44,6 @@ function Button(props) {
     return (
       <button className={className} disabled={disabled} type={type} {...restProps}>{children}</button>
     );
-  }
-
-  if (!onClick) {
-    console.warn('Missing onClick'); // eslint-disable-line no-console
-    return <noscript />;
   }
 
   return (

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
@@ -61,33 +62,42 @@ class Input extends Component {
     }
   }
 
+  renderStatusIcon() {
+    return this.props.status ? <span className="ui-input-status" /> : null;
+  }
+
   render() {
     const {
       dataAttrs = {},
       disabled,
       multiline,
+      status,
       value,
       ...otherProps
     } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
 
+    (!this.state.isFocused && status) && mods.push(status);
     this.state.isFocused && mods.push('focused');
     const className = getClassNamesWithMods('ui-input', mods);
 
     let Element = multiline ? 'textarea' : 'input';
 
     return (
-      <Element
-        {...getDataAttributes(dataAttrs)}
-        {...otherProps}
-        className={className}
-        disabled={disabled}
-        onBlur={this.handleInputBlur}
-        onChange={this.handleInputChange}
-        onFocus={this.handleInputFocus}
-        ref={this.ref}
-        value={value}
-      />
+      <div className="ui-input-container">
+        <Element
+          {...getDataAttributes(dataAttrs)}
+          {...otherProps}
+          className={className}
+          disabled={disabled}
+          onBlur={this.handleInputBlur}
+          onChange={this.handleInputChange}
+          onFocus={this.handleInputFocus}
+          ref={this.ref}
+          value={value}
+        />
+        {this.renderStatusIcon()}
+      </div>
     );
   }
 }
@@ -110,6 +120,14 @@ Input.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
+   * Set of custom modifications.
+   */
+  mods: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Multiline mode (textarea).
+   */
+  multiline: PropTypes.bool,
+  /**
    * Name applied to the input.
    */
   name: PropTypes.string,
@@ -126,13 +144,9 @@ Input.propTypes = {
    */
   onFocus: PropTypes.func,
   /**
-   * Set of custom modifications.
+   * The status of the text field.
    */
-  mods: PropTypes.arrayOf(PropTypes.string),
-  /**
-   * Multiline mode (textarea).
-   */
-  multiline: PropTypes.bool,
+  status: PropTypes.oneOf(['error', 'valid']),
   /**
    * The value of the text field.
    */

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import SlidingPanelHeader from './slidingPanelHeader';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
@@ -79,7 +79,7 @@ export default class SlidingPanel extends Component {
 
     this.panel.addEventListener('transitionend', this.handleTransitionEnd);
 
-    this.closeButtons = this.panel.querySelectorAll('[rel="close"]');
+    this.closeButtons = this.panel.querySelectorAll('[data-rel="close"]');
     this.closeButtons.forEach(b => b.addEventListener('click', this.handleClose));
   }
 

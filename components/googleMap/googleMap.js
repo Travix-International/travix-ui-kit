@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 /**
@@ -12,7 +12,7 @@ import ReactDOM from 'react-dom';
  */
 export function initCustomMarkerConstructor(google, onMarkerClick) {
   if (!google) {
-    console.warn('google map api is not available!');
+    console.warn('google map api is not available!'); // eslint-disable-line
     return undefined;
   }
 

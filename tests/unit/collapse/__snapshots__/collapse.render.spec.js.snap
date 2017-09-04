@@ -1,22 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Collapse: render should not render collapse component child if it not "CollapseItem" 1`] = `
+exports[`Collapse: render should not render collapse component child if it is not valid react element 1`] = `
 <div
   className="ui-collapse ui-collapse_accordion"
   iconPosition="left"
->
-  <CollapseItem
-    iconPosition="left"
-    id="ui-collapse-item.1"
-    isActive={false}
-    onClick={[Function]}
-    title="Collapse Item 2"
-  >
-    <p>
-      Collapse content 2
-    </p>
-  </CollapseItem>
-</div>
+/>
 `;
 
 exports[`Collapse: render should render collapse component items and first item should be expanded 1`] = `

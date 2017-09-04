@@ -22,6 +22,38 @@ Disabled input:
       </div>
     </div>
 
+Input with error status:
+
+    <div className="input-with-status-error">
+      <style dangerouslySetInnerHTML={{__html: `
+        .input-with-status-error * {
+          box-sizing: border-box;
+        }
+        .ui-input_error + .ui-input-status:before {
+          content: '✗';
+        }
+      `}} />
+      <div style={{ width: '50%' }}>
+        <Input status="error" />
+      </div>
+    </div>
+
+Input with valid status:
+
+    <div className="input-with-status-valid">
+      <style dangerouslySetInnerHTML={{__html: `
+        .input-with-status-valid * {
+          box-sizing: border-box;
+        }
+        .ui-input_valid + .ui-input-status:before {
+          content: '✅';
+        }
+      `}} />
+      <div style={{ width: '50%' }}>
+        <Input status="valid" />
+      </div>
+    </div>
+
 Multiline input:
 
     <div>

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import Select from 'react-select';
 
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
@@ -94,6 +95,7 @@ class DropDown extends Component {
       placeholder,
       scrollMenuIntoView,
       searchable,
+      status,
       value,
       ...otherProps
     } = this.props;
@@ -102,6 +104,7 @@ class DropDown extends Component {
       ...mods,
       filterMode && 'filter',
       filterMode && options.some(option => option.checked) && 'state-active',
+      status,
     ]);
 
     return (
@@ -187,6 +190,10 @@ DropDown.propTypes = {
  * Whether to enable searching feature or not
  */
   searchable: PropTypes.bool,
+  /**
+   * The status of the DropDown.
+   */
+  status: PropTypes.oneOf(['error', 'valid']),
   /**
  * Initial field value
  */

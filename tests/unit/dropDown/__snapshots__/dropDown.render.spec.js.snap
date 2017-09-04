@@ -340,6 +340,54 @@ exports[`DropDown: render should return dropdown with shifting viewport enabled 
 </div>
 `;
 
+exports[`DropDown: render should return dropdown with status 1`] = `
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown ui-dropdown_error"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+  />
+</div>
+`;
+
 exports[`DropDown: render should return filter dropdown 1`] = `
 <div>
   <Select
