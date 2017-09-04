@@ -120,14 +120,29 @@ export default class OverlayTrigger extends Component {
 }
 
 OverlayTrigger.propTypes = {
+  /**
+   * The content which triggers the interactive component
+   */
   children: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.string,
     PropTypes.element,
   ]),
+  /**
+   * The interactive component to be triggered with a prop (for now: Tooltip)
+   */
   elemToToggle: PropTypes.element,
+  /**
+   * The callback to be called when elementHide action is triggered
+   */
   onElementHide: PropTypes.func,
+  /**
+   * The callback to be called when elementShow action is triggered
+   */
   onElementShow: PropTypes.func,
+  /**
+   * Determines the action on which the interactive component is triggered
+   */
   triggerAction: PropTypes.oneOf([
     'click',
     'hover',

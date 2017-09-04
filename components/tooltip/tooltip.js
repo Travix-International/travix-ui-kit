@@ -78,18 +78,36 @@ export default class Tooltip extends Component {
 }
 
 Tooltip.propTypes = {
+  /**
+   * Determines whether the component is visible.
+   */
   active: PropTypes.bool,
+  /**
+   * Tooltip content.
+   */
   children: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.string,
   ]),
+  /**
+   * The height of the component (px)
+   */
   height: PropTypes.string,
+  /**
+   * Margin between the component and the adjacent rib of the content block (px)
+   */
   margin: PropTypes.string,
   /**
    * Set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * The callback to be called on close button clicking.
+   */
   onCloseButtonClick: PropTypes.func,
+  /**
+   * The offset for the opposite axis (px).
+   */
   oppositeAxisOffset: PropTypes.string,
   position: PropTypes.oneOf([
     'bottom',
@@ -97,11 +115,21 @@ Tooltip.propTypes = {
     'right',
     'top',
   ]),
+  /**
+   * Determines whether the close button is visible
+   * (for onClick action only)
+   */
   showCloseButton: PropTypes.bool,
+  /**
+   * Determines the action on which the component is triggered
+   */
   triggerAction: PropTypes.oneOf([
     'click',
     'hover',
   ]),
+  /**
+   * The width of the component (px)
+   */
   width: PropTypes.string,
 };
 
