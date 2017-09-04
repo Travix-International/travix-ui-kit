@@ -501,3 +501,20 @@ carousel:
     padding: "5px 15px"
     font-size: "12px"
     font-family: "var(--tx-generic-font-secondary-font-family)"
+tooltip:
+  close-button:
+    color: "var(--tx-generic-color-secondary-darker)"
+    hover:
+      color: "var(--tx-generic-color-secondary-darkest)"
+  top:
+    shadow: "2px 2px 6px -2px rgba(0,0,0,0.4)"
+  bottom:
+    shadow: "-2px -2px 6px -2px rgba(0,0,0,0.4)"
+  right:
+    shadow: "-2px 2px 6px -2px rgba(0,0,0,0.4)"
+  left:
+    shadow: "2px -2px 6px -2px rgba(0,0,0,0.4)"
+  shadow: "0 0 6px rgba(0,0,0,0.4)"
+  background-color: *blank
+  border-radius: 4px
+  font-size: 20px
