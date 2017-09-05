@@ -39,9 +39,7 @@ class ToggleButton extends Component {
 
     const index = this.props.items.indexOf(event.target.textContent);
     this.setState({ activeItem: index });
-    if (typeof this.props.handleSelect === 'function') {
-      this.props.handleSelect(index);
-    }
+    (typeof this.props.handleSelect === 'function') && this.props.handleSelect(index);
   }
 
   /**

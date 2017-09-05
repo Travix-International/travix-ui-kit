@@ -41,7 +41,6 @@ describe('ToggleButton: handleSelectItem', () => {
 
     component.instance().handleSelectItem(e);
 
-    expect(typeof handleSelect === 'function').toEqual(true);
     expect(handleSelect).toBeCalled();
   });
 });
