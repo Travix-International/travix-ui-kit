@@ -7,24 +7,10 @@ import { getClassNamesWithMods } from '../_helpers';
  */
 class ToggleButton extends Component {
   /**
-   * Instantiates ToggleButton component
-   *
-   * @constructor
-   * @param {Object} props Component properties object
-   * @return {Object} ToggleButton instance
+   * Initialize default state
    */
-  constructor(props) {
-    super(props);
-
-    this.renderItems = this.renderItems.bind(this);
-    this.handleSelectItem = this.handleSelectItem.bind(this);
-
-    const mods = props.mods ? props.mods.slice() : [];
-
-    this.state = {
-      activeItem: 0,
-      mods,
-    };
+  state = {
+    activeItem: 0,
   }
 
   /**
@@ -51,11 +37,11 @@ class ToggleButton extends Component {
    */
   renderItems() {
     return this.props.items.map((item, index) => {
-      const classes = ['ui-toggle-button__item'];
-      if (index === this.state.activeItem) {
-        classes.push('ui-toggle-button__item--active');
-      }
-      const classNameItem = classes.join(' ');
+      const mods = {
+        'active': index === this.state.activeItem,
+      };
+      const classNameItem = getClassNamesWithMods('ui-toggle-button__item', mods);
+
       return (
         <li
           className={classNameItem}
@@ -73,7 +59,8 @@ class ToggleButton extends Component {
       return null;
     }
 
-    const className = getClassNamesWithMods('ui-toggle-button', this.state.mods);
+    const { mods = [] } = this.props;
+    const className = getClassNamesWithMods('ui-toggle-button', mods);
 
     return (
       <ul className={className}>

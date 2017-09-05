@@ -29,7 +29,7 @@
       border-top-right-radius: var(--tx-toggle-button-item-border-radius);
     }
 
-    &--active {
+    &_active {
       background-color: var(--tx-generic-color-active);
       border-color: var(--tx-generic-color-active);
       color: var(--tx-generic-color-blank);
