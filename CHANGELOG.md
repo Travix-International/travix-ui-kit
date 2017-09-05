@@ -1,5 +1,16 @@
 # Change Log
 
+## [v0.6.23](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.23) (2017-09-05)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.22...v0.6.23)
+
+**Merged pull requests:**
+
+- Move react-select from devDeps to deps [\#164](https://github.com/Travix-International/travix-ui-kit/pull/164) ([yurist38](https://github.com/yurist38))
+- chore\(package\): update jest to version 21.0.1 [\#162](https://github.com/Travix-International/travix-ui-kit/pull/162) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- chore\(package\): update jest-cli to version 21.0.1 [\#161](https://github.com/Travix-International/travix-ui-kit/pull/161) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Update babel-jest to the latest version 🚀 [\#158](https://github.com/Travix-International/travix-ui-kit/pull/158) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Create CODE\_OF\_CONDUCT.md [\#157](https://github.com/Travix-International/travix-ui-kit/pull/157) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.6.22](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.22) (2017-09-04)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.21...v0.6.22)
 
