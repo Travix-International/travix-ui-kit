@@ -44,6 +44,9 @@
       "url": "https://github.com/mAiNiNfEcTiOn"
     }
   ],
+  "dependencies": {
+    "react-select": "^1.0.0-rc.5"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "babel-cli": "^6.18.0",
@@ -94,8 +97,5 @@
       "sass-loader",
       "webpack"
     ]
-  },
-  "dependencies": {
-    "react-select": "^1.0.0-rc.5"
   }
 }
