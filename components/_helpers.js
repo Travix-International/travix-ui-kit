@@ -67,15 +67,10 @@ function normalizeDate(dateObject, hours = 0, minutes = 0, seconds = 0, millisec
   return dateObject;
 }
 
-function getNum(str) {
-  return parseInt(str, 10);
-}
-
 // Exports
 export default {
   getClassNamesWithMods,
   getDataAttributes,
   leftPad,
   normalizeDate,
-  getNum,
 };

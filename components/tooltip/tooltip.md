@@ -1,6 +1,7 @@
 Also check OverlayTrigger specification.
 
     initialState = {
+      align: 'center',
       customMargin: false,
       customOppositeOffset: false,
       onElementHideAction: false,
@@ -36,6 +37,19 @@ Also check OverlayTrigger specification.
               key={pos}
               name="pos"
               onChange={onChange = e => setState({ position: pos })}
+            />
+          ))}
+        </div>
+        <div style={{ marginRight: "15px" }}>
+          <div style={{ marginBottom: "10px" }}> Align: </div>
+          {['center', 'start', 'end'].map(align => (
+            <RadioButton
+              checked={align === state.align}
+              children={align}
+              id={align}
+              key={align}
+              name="align"
+              onChange={onChange = e => setState({ align })}
             />
           ))}
         </div>
@@ -91,6 +105,7 @@ Also check OverlayTrigger specification.
         onElementShow={state.onElementShowAction ? () => { alert('hi :)') } : () => {}}
         elemToToggle={
           <Tooltip
+            align={state.align}
             margin={state.customMargin ? '22px' : undefined}
             oppositeAxisOffset={state.customOppositeOffset ? '70px' : '0'}
             position={state.position}
