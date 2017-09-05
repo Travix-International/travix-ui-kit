@@ -45,7 +45,7 @@ export default class Tooltip extends Component {
   }
 
   render() {
-    const { width, height, active, position } = this.props;
+    const { align, width, height, active, position } = this.props;
 
     const mods = this.props.mods
       ? this.props.mods.slice()
@@ -55,6 +55,7 @@ export default class Tooltip extends Component {
       ...mods,
       active ? 'active' : 'inactive',
       position,
+      align,
     ]);
 
     let styles = {
@@ -63,9 +64,7 @@ export default class Tooltip extends Component {
     };
 
     if (this.container) {
-      const positions = this.countPositionOffset();
-
-      styles = { ...styles, ...positions[this.props.position] };
+      styles = { ...styles };
     }
 
     return (
@@ -82,6 +81,14 @@ Tooltip.propTypes = {
    * Determines whether the component is visible.
    */
   active: PropTypes.bool,
+  /**
+   * The tooltip align.
+   */
+  align: PropTypes.oneOf([
+    'center',
+    'start',
+    'end',
+  ]),
   /**
    * Tooltip content.
    */
@@ -135,6 +142,7 @@ Tooltip.propTypes = {
 
 Tooltip.defaultProps = {
   active: false,
+  align: 'center',
   children: '',
   height: '',
   margin: '15px',
