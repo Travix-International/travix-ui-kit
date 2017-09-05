@@ -35,9 +35,9 @@ class CollapseItem extends Component {
           {...labelProps}
           aria-controls={id}
           aria-expanded={isActive}
-          className={`ui-collapse__label ${
-            getClassNamesWithMods('ui-collapse__label--icon_position', [iconPosition])}
-          `}
+          className={
+            `ui-collapse__label ${getClassNamesWithMods('ui-collapse__label--icon_position', [iconPosition])}`
+          }
           onClick={this.handleItemClick}
           type="button"
         >
