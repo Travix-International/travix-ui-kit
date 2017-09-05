@@ -13,6 +13,5 @@ describe('ToggleButton: renderItems', () => {
 
     const items = component.instance().renderItems();
     expect(items.length).toEqual(2);
-  }
-);
+  });
 });
