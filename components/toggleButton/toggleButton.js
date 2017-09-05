@@ -55,11 +55,14 @@ class ToggleButton extends Component {
   }
 
   render() {
-    if (!(Array.isArray(this.props.items) && this.props.items.length > 1)) {
+    const {
+      mods = [],
+      items,
+    } = this.props;
+
+    if (!Array.isArray(items) || items.length < 2) {
       return null;
     }
-
-    const { mods = [] } = this.props;
     const className = getClassNamesWithMods('ui-toggle-button', mods);
 
     return (

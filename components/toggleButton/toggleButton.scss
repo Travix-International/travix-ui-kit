@@ -36,7 +36,7 @@
   
       &::before {
         color: var(--tx-generic-color-blank);
-        content: '✅';
+        content: '\2714';
         font-size: var(--tx-toggle-button-item-active-font-size);
         line-height: var(--tx-toggle-button-item-active-line-height);
         margin-right: 5px;
