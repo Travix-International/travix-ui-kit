@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.6.22](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.22) (2017-09-04)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.21...v0.6.22)
+
+**Merged pull requests:**
+
+- collapse component adjustments [\#156](https://github.com/Travix-International/travix-ui-kit/pull/156) ([maximuk](https://github.com/maximuk))
+
 ## [v0.6.21](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.21) (2017-09-04)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.20...v0.6.21)
 
