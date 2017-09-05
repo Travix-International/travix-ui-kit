@@ -1,6 +1,6 @@
 {
   "name": "travix-ui-kit",
-  "version": "0.6.22",
+  "version": "0.6.23",
   "description": "Travix UI kit",
   "main": "lib/index.js",
   "scripts": {
