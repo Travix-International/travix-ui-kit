@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
 import React from 'react';
 import Badge from '../../../components/badge/badge';
 
@@ -9,7 +8,7 @@ describe('Badge', () => {
       <Badge />
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should return content inside container if title not provided', () => {
@@ -19,7 +18,7 @@ describe('Badge', () => {
       </Badge>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should return only badge if content not provided', () => {
@@ -27,7 +26,7 @@ describe('Badge', () => {
       <Badge title="Badge title" />
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should use position prop if content provided', () => {
@@ -37,7 +36,7 @@ describe('Badge', () => {
       </Badge>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render content without badge when badge is not visible', () => {
@@ -47,7 +46,7 @@ describe('Badge', () => {
       </Badge>
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render left arrow', () => {
@@ -55,7 +54,7 @@ describe('Badge', () => {
       <Badge arrow position="right" title="Badge title" />
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render right arrow', () => {
@@ -63,7 +62,7 @@ describe('Badge', () => {
       <Badge arrow position="left" title="Badge title" />
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should render badge without border', () => {
@@ -71,6 +70,6 @@ describe('Badge', () => {
       <Badge border={false} title="Badge title" />
     );
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

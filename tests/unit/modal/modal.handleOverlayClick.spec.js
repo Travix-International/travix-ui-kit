@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
 import Modal from '../../../components/modal/modal';
 
 describe('Modal: handleOverlayClick', () => {
@@ -36,6 +35,6 @@ describe('Modal: handleOverlayClick', () => {
 
     component.instance().handleOverlayClick();
     expect(onOverlayClick).toBeCalled();
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 });

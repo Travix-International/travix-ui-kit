@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
 import React from 'react';
 import Collapse from '../../../components/collapse/collapse';
 import CollapseItem from '../../../components/collapse/collapseItem';
@@ -9,7 +8,7 @@ describe('Collapse: render', () => {
     const component = shallow(
       <Collapse />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return collapse component with two items', () => {
@@ -23,7 +22,7 @@ describe('Collapse: render', () => {
         </CollapseItem>
       </Collapse>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return "accordion" collapse component with two items', () => {
@@ -37,7 +36,7 @@ describe('Collapse: render', () => {
         </CollapseItem>
       </Collapse>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should not render collapse component child if it is not valid react element', () => {
@@ -48,7 +47,7 @@ describe('Collapse: render', () => {
         {"test"}
       </Collapse>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should render collapse component items with custom id', () => {
@@ -62,7 +61,7 @@ describe('Collapse: render', () => {
         </CollapseItem>
       </Collapse>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should render collapse component items and first item should be expanded', () => {
@@ -76,7 +75,7 @@ describe('Collapse: render', () => {
         </CollapseItem>
       </Collapse>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should render collapse component with expanded item by default', () => {
@@ -90,7 +89,7 @@ describe('Collapse: render', () => {
         </CollapseItem>
       </Collapse>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should render collapse component with expanded item based on props when "defaultActiveKey" is provided', () => {
@@ -104,7 +103,7 @@ describe('Collapse: render', () => {
         </CollapseItem>
       </Collapse>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should render collapse component with expanded items based on "defaultActiveKey"', () => {
@@ -118,7 +117,7 @@ describe('Collapse: render', () => {
         </CollapseItem>
       </Collapse>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should render collapse component with icon on the right', () => {
@@ -132,7 +131,7 @@ describe('Collapse: render', () => {
         </CollapseItem>
       </Collapse>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should render collapse with mod', () => {
@@ -146,6 +145,6 @@ describe('Collapse: render', () => {
         </CollapseItem>
       </Collapse>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 });
