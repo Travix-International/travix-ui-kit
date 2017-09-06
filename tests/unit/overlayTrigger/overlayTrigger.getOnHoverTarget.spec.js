@@ -3,16 +3,16 @@ import OverlayTrigger from '../../../components/overlayTrigger/overlayTrigger';
 
 describe('OverlayTrigger: getOnHoverTarget', () => {
   it('should return block with a corresponding onMouseOver and onMouseOut handlers', () => {
-    const prototype = {
-      props: {
-        сhildren: <div className="test-child" />,
-      },
-      toggleElement: jest.fn(),
-    };
+    const toggleElement = jest.fn();
 
-    const result = OverlayTrigger.prototype.getOnHoverTarget.call(prototype);
+    const trigger = new OverlayTrigger({
+      сhildren: <div className="test-child" />,
+    });
+    trigger.toggleElement = toggleElement;
 
-    expect(result.props.onMouseOver).toEqual(prototype.toggleElement);
-    expect(result.props.onMouseOut).toEqual(prototype.toggleElement);
+    const result = trigger.getOnHoverTarget();
+
+    expect(result.props.onMouseOver).toEqual(toggleElement);
+    expect(result.props.onMouseOut).toEqual(toggleElement);
   });
 });

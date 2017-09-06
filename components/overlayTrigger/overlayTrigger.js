@@ -57,7 +57,7 @@ export default class OverlayTrigger extends Component {
 
     this.setState({ active: true });
 
-    onElementShow && onElementShow();
+    onElementShow();
   }
 
   hideElement() {
@@ -65,10 +65,10 @@ export default class OverlayTrigger extends Component {
 
     this.setState({ active: false });
 
-    onElementHide && onElementHide();
+    onElementHide();
   }
 
-  getOnClickTarget() {
+  getOnClickTarget = () => {
     const { children } = this.props;
 
     return (
@@ -78,7 +78,7 @@ export default class OverlayTrigger extends Component {
     );
   }
 
-  getOnHoverTarget() {
+  getOnHoverTarget = () => {
     const { children } = this.props;
 
     return (
@@ -100,7 +100,7 @@ export default class OverlayTrigger extends Component {
       hover: this.getOnHoverTarget,
     };
 
-    const targetElement = actions[triggerAction].call(this);
+    const targetElement = actions[triggerAction]();
 
     const elemToToggle = React.cloneElement(this.props.elemToToggle, {
       active: this.state.active,
@@ -125,8 +125,6 @@ OverlayTrigger.propTypes = {
    */
   children: PropTypes.oneOfType([
     PropTypes.node,
-    PropTypes.string,
-    PropTypes.element,
   ]),
   /**
    * The interactive component to be triggered with a prop (for now: Tooltip)
@@ -152,4 +150,6 @@ OverlayTrigger.propTypes = {
 OverlayTrigger.defaultProps = {
   children: '',
   triggerAction: 'click',
+  onElementHide: () => {},
+  onElementShow: () => {},
 };
