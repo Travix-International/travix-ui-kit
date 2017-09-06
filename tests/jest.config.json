@@ -11,6 +11,7 @@
     "js",
     "json"
   ],
+  "rootDir": "../",
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
   ],

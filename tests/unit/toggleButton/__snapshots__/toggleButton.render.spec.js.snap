@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleButton #render() should not render correct toggleButton component 1`] = `null`;
+
+exports[`ToggleButton #render() should render correct toggleButton component 1`] = `
+<ul
+  className="ui-toggle-button ui-toggle-button_test-test"
+>
+  <li
+    className="ui-toggle-button__item ui-toggle-button__item_active"
+    onClick={[Function]}
+  >
+    Upper deck
+  </li>
+  <li
+    className="ui-toggle-button__item"
+    onClick={[Function]}
+  >
+    Lower deck
+  </li>
+</ul>
+`;
