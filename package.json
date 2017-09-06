@@ -13,7 +13,6 @@
     "test": "TZ=utc jest -c ./tests/jest.config.json",
     "update-snapshots": "TZ=utc jest -c ./tests/jest.config.json -u",
     "cov": "TZ=utc jest -c ./tests/jest.config.json --coverage --no-cache",
-    "coverage:coveralls": "cat ./coverage/lcov.info | coveralls",
     "coverage:report": "codecov",
     "lint": "eslint --color '{components,tests,utils,scripts}/**/*.js'",
     "transpile": "npm run build"
