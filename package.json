@@ -60,7 +60,6 @@
     "cheerio": "^0.22.0",
     "codecov": "^2.3.0",
     "commander": "^2.9.0",
-    "coveralls": "^2.11.12",
     "create-react-class": "^15.5.2",
     "css-loader": "~0.28.1",
     "enzyme": "^2.7.1",
