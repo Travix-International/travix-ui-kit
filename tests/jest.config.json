@@ -13,7 +13,7 @@
   ],
   "rootDir": "../",
   "snapshotSerializers": [
-    "enzyme-to-json/serializer"
+    "jest-serializer-enzyme"
   ],
   "transform": {
     ".*": "babel-jest"
