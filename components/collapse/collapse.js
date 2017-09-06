@@ -3,10 +3,10 @@ import React, {
   Component,
   Children,
   cloneElement,
+  isValidElement,
 } from 'react';
 
 import { getClassNamesWithMods } from '../_helpers';
-import CollapseItem from './collapseItem';
 
 const getNormalizedActiveKey = ({ defaultActiveKey, activeKey }) => {
   if (activeKey === undefined && defaultActiveKey) {
@@ -69,7 +69,7 @@ class Collapse extends Component {
 
     return (
       Children.map(children, (child, index) => {
-        if (!child || child.type !== CollapseItem) {
+        if (!isValidElement(child)) {
           return null;
         }
 
@@ -89,6 +89,7 @@ class Collapse extends Component {
     const {
       isAccordion,
       children,
+      mods = [],
       onChange, // eslint-disable-line no-unused-vars
       ...otherProps
     } = this.props;
@@ -96,12 +97,12 @@ class Collapse extends Component {
       return null;
     }
 
-    const mods = {
+    const collapseMods = {
       accordion: isAccordion,
     };
 
     return (
-      <div {...otherProps} className={getClassNamesWithMods('ui-collapse', mods)}>
+      <div {...otherProps} className={getClassNamesWithMods('ui-collapse', mods, collapseMods)}>
         {this.renderItems()}
       </div>
     );
@@ -135,6 +136,10 @@ Collapse.propTypes = {
    * Determine on which side of the block the icon is shown. On the left by default
    */
   iconPosition: PropTypes.oneOf(['right', 'left']),
+  /**
+   * You can provide set of custom modifications.
+   */
+  mods: PropTypes.arrayOf(PropTypes.string),
   /**
    * Specify a function that will be called when a user click on CollapseItem
    */

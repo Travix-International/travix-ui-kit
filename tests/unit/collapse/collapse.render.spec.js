@@ -40,15 +40,12 @@ describe('Collapse: render', () => {
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 
-  it('should not render collapse component child if it not "CollapseItem"', () => {
+  it('should not render collapse component child if it is not valid react element', () => {
     const component = shallow(
       <Collapse isAccordion>
-        <div>
-          This item should not be rendered
-        </div>
-        <CollapseItem title="Collapse Item 2">
-          <p>Collapse content 2</p>
-        </CollapseItem>
+        {null}
+        {false}
+        {"test"}
       </Collapse>
     );
     expect(shallowToJson(component)).toMatchSnapshot();
@@ -131,6 +128,20 @@ describe('Collapse: render', () => {
           <p>Collapse content 1</p>
         </CollapseItem>
         <CollapseItem id="сid2" title="Collapse Item 2">
+          <p>Collapse content 2</p>
+        </CollapseItem>
+      </Collapse>
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('should render collapse with mod', () => {
+    const component = shallow(
+      <Collapse mods={['collapse-mod']}>
+        <CollapseItem title="Collapse Item 1">
+          <p>Collapse content 1</p>
+        </CollapseItem>
+        <CollapseItem title="Collapse Item 2">
           <p>Collapse content 2</p>
         </CollapseItem>
       </Collapse>
