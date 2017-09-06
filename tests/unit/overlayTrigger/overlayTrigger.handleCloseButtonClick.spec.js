@@ -6,7 +6,9 @@ describe('OverlayTrigger: handleCloseButtonClick', () => {
       hideElement: jest.fn(),
     };
 
-    OverlayTrigger.prototype.handleCloseButtonClick.call(prototype);
+    OverlayTrigger.prototype = prototype;
+    const trigger = new OverlayTrigger();
+    trigger.handleCloseButtonClick();
 
     expect(prototype.hideElement).toBeCalled();
   });

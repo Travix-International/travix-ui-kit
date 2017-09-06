@@ -88,7 +88,7 @@ export default class OverlayTrigger extends Component {
     );
   }
 
-  handleCloseButtonClick() {
+  handleCloseButtonClick = () => {
     this.hideElement();
   }
 
@@ -104,7 +104,7 @@ export default class OverlayTrigger extends Component {
 
     const elemToToggle = React.cloneElement(this.props.elemToToggle, {
       active: this.state.active,
-      onCloseButtonClick: this.handleCloseButtonClick.bind(this), // eslint-disable-line
+      onCloseButtonClick: this.handleCloseButtonClick,
       triggerAction: this.props.triggerAction,
     });
 
