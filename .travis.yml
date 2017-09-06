@@ -7,7 +7,7 @@ script:
   - 'npm run lint'
   - 'npm run cov'
 
-after_success: 'npm run coverage:coveralls'
+after_success: 'npm run coverage:report'
 
 notifications:
   email: false
