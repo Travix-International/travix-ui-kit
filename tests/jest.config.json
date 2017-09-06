@@ -12,10 +12,10 @@
     "json"
   ],
   "snapshotSerializers": [
-    "<rootDir>/node_modules/jest-serializer-enzyme"
+    "enzyme-to-json/serializer"
   ],
   "transform": {
-    ".*": "<rootDir>/node_modules/babel-jest"
+    ".*": "babel-jest"
   },
   "watchman": false
 }

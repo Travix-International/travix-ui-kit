@@ -114,3 +114,32 @@ Open multiple based on props:
         </CollapseItem>
       </Collapse>
     </div>
+
+With custom CollapseItem component:
+
+    const CustomCollapseItem = ({ id, isActive, title, children, onClick }) => (
+      <div style={{ border: '1px solid black', marginBottom: '10px' }}>
+        <div style={{ padding: '10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          {title}
+          <Button onClick={e => onClick(e, id)}>{isActive ? 'Close' : 'Open'}</Button>
+        </div>
+        {isActive && <div style={{ borderTop: '1px dashed black' }}>
+          {children}
+        </div>}
+      </div>
+    );
+
+    initialState = {
+      activeKey: ['example4.1']
+    };
+
+    <div style={{marginTop: '10px'}}>
+      <Collapse activeKey={state.activeKey} isAccordion onChange={key => setState({ activeKey: key })}>
+        <CustomCollapseItem title="Collapse Title 1" id="example4.1">
+          <List items={['London', 'Amsterdam', 'Madrid']} />
+        </CustomCollapseItem>
+        <CustomCollapseItem title="Collapse Title 2" id="example4.2">
+          <List items={['London', 'Amsterdam', 'Madrid']} />
+        </CustomCollapseItem>
+      </Collapse>
+    </div>

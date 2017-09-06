@@ -7,8 +7,7 @@ exports[`Collapse: render should render collapse item component 1`] = `
   <button
     aria-controls="c1"
     aria-expanded={false}
-    className="ui-collapse__label ui-collapse__label--icon_position ui-collapse__label--icon_position_left
-            "
+    className="ui-collapse__label ui-collapse__label--icon_position ui-collapse__label--icon_position_left"
     onClick={[Function]}
     type="button"
   >
@@ -40,8 +39,7 @@ exports[`Collapse: render should render collapse item without id 1`] = `
   <button
     aria-controls={null}
     aria-expanded={false}
-    className="ui-collapse__label ui-collapse__label--icon_position ui-collapse__label--icon_position_left
-            "
+    className="ui-collapse__label ui-collapse__label--icon_position ui-collapse__label--icon_position_left"
     onClick={[Function]}
     type="button"
   >
@@ -73,8 +71,7 @@ exports[`Collapse: render should render collapseItem component with icon on the 
   <button
     aria-controls={null}
     aria-expanded={false}
-    className="ui-collapse__label ui-collapse__label--icon_position ui-collapse__label--icon_position_right
-            "
+    className="ui-collapse__label ui-collapse__label--icon_position ui-collapse__label--icon_position_right"
     onClick={[Function]}
     type="button"
   >
@@ -106,8 +103,7 @@ exports[`Collapse: render should render expanded collapse item component 1`] = `
   <button
     aria-controls="c1"
     aria-expanded={true}
-    className="ui-collapse__label ui-collapse__label--icon_position ui-collapse__label--icon_position_left
-            "
+    className="ui-collapse__label ui-collapse__label--icon_position ui-collapse__label--icon_position_left"
     onClick={[Function]}
     type="button"
   >

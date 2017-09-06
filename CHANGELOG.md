@@ -1,5 +1,51 @@
 # Change Log
 
+## [v0.6.23](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.23) (2017-09-05)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.22...v0.6.23)
+
+**Merged pull requests:**
+
+- Move react-select from devDeps to deps [\#164](https://github.com/Travix-International/travix-ui-kit/pull/164) ([yurist38](https://github.com/yurist38))
+- chore\(package\): update jest to version 21.0.1 [\#162](https://github.com/Travix-International/travix-ui-kit/pull/162) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- chore\(package\): update jest-cli to version 21.0.1 [\#161](https://github.com/Travix-International/travix-ui-kit/pull/161) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Update babel-jest to the latest version 🚀 [\#158](https://github.com/Travix-International/travix-ui-kit/pull/158) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Create CODE\_OF\_CONDUCT.md [\#157](https://github.com/Travix-International/travix-ui-kit/pull/157) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
+## [v0.6.22](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.22) (2017-09-04)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.21...v0.6.22)
+
+**Merged pull requests:**
+
+- collapse component adjustments [\#156](https://github.com/Travix-International/travix-ui-kit/pull/156) ([maximuk](https://github.com/maximuk))
+
+## [v0.6.21](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.21) (2017-09-04)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.20...v0.6.21)
+
+**Closed issues:**
+
+- An in-range update of node-sass is breaking the build 🚨 [\#92](https://github.com/Travix-International/travix-ui-kit/issues/92)
+- An in-range update of react-select is breaking the build 🚨 [\#91](https://github.com/Travix-International/travix-ui-kit/issues/91)
+- An in-range update of create-react-class is breaking the build 🚨 [\#86](https://github.com/Travix-International/travix-ui-kit/issues/86)
+- An in-range update of prop-types is breaking the build 🚨 [\#85](https://github.com/Travix-International/travix-ui-kit/issues/85)
+- An in-range update of react-styleguidist is breaking the build 🚨 [\#71](https://github.com/Travix-International/travix-ui-kit/issues/71)
+- An in-range update of webpack-hot-middleware is breaking the build 🚨 [\#58](https://github.com/Travix-International/travix-ui-kit/issues/58)
+- An in-range update of enzyme is breaking the build 🚨 [\#51](https://github.com/Travix-International/travix-ui-kit/issues/51)
+- An in-range update of css-loader is breaking the build 🚨 [\#30](https://github.com/Travix-International/travix-ui-kit/issues/30)
+- An in-range update of eslint is breaking the build 🚨 [\#29](https://github.com/Travix-International/travix-ui-kit/issues/29)
+- An in-range update of eslint-plugin-babel is breaking the build 🚨 [\#28](https://github.com/Travix-International/travix-ui-kit/issues/28)
+- An in-range update of babel-loader is breaking the build 🚨 [\#27](https://github.com/Travix-International/travix-ui-kit/issues/27)
+- An in-range update of coveralls is breaking the build 🚨 [\#26](https://github.com/Travix-International/travix-ui-kit/issues/26)
+
+**Merged pull requests:**
+
+- Removes autoprefixer-loader and jest-serializer-enzyme from the package.json [\#154](https://github.com/Travix-International/travix-ui-kit/pull/154) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- collapse component adjustments [\#152](https://github.com/Travix-International/travix-ui-kit/pull/152) ([maximuk](https://github.com/maximuk))
+- Update eslint-config-travix to the latest version 🚀 [\#140](https://github.com/Travix-International/travix-ui-kit/pull/140) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update eslint-plugin-react to the latest version 🚀 [\#90](https://github.com/Travix-International/travix-ui-kit/pull/90) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update autoprefixer to the latest version 🚀 [\#82](https://github.com/Travix-International/travix-ui-kit/pull/82) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update jest to the latest version 🚀 [\#81](https://github.com/Travix-International/travix-ui-kit/pull/81) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update jest-cli to the latest version 🚀 [\#80](https://github.com/Travix-International/travix-ui-kit/pull/80) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v0.6.20](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.20) (2017-08-29)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.19...v0.6.20)
 
