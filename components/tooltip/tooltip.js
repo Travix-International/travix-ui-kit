@@ -23,7 +23,7 @@ export default class Tooltip extends Component {
   }
 
   render() {
-    const { align, width, height, active, position } = this.props;
+    const { axisOffsetX, axisOffsetY, align, width, height, active, position } = this.props;
 
     const mods = this.props.mods
       ? this.props.mods.slice()
@@ -41,8 +41,11 @@ export default class Tooltip extends Component {
       height,
     };
 
+    const transformValue = [axisOffsetX, axisOffsetY].filter(x => /((\d)(px|%))|\b0\b/i.test(x)).join(', ');
+
     if (this.container) {
       styles = { ...styles };
+      transformValue && (styles.transform = `translate(${transformValue})`);
     }
 
     return (
@@ -68,6 +71,14 @@ Tooltip.propTypes = {
     'end',
   ]),
   /**
+   * The offset for the axis x (px, %).
+   */
+  axisOffsetX: PropTypes.string,
+  /**
+   * The offset for the axis y (px, %).
+   */
+  axisOffsetY: PropTypes.string,
+  /**
    * Tooltip content.
    */
   children: PropTypes.oneOfType([
@@ -79,10 +90,6 @@ Tooltip.propTypes = {
    */
   height: PropTypes.string,
   /**
-   * Margin between the component and the adjacent rib of the content block (px)
-   */
-  margin: PropTypes.string,
-  /**
    * Set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
@@ -91,9 +98,8 @@ Tooltip.propTypes = {
    */
   onCloseButtonClick: PropTypes.func,
   /**
-   * The offset for the opposite axis (px).
+   * The position.
    */
-  oppositeAxisOffset: PropTypes.string,
   position: PropTypes.oneOf([
     'bottom',
     'left',
@@ -122,11 +128,10 @@ Tooltip.defaultProps = {
   active: false,
   align: 'center',
   children: '',
-  height: '',
-  margin: '15px',
+  height: 'auto',
   oppositeAxisOffset: '0',
   position: 'top',
   showCloseButton: false,
   triggerAction: 'click',
-  width: '',
+  width: 'auto',
 };

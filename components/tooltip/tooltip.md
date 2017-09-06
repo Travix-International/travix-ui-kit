@@ -2,7 +2,6 @@ Also check OverlayTrigger specification.
 
     initialState = {
       align: 'center',
-      customMargin: false,
       customOppositeOffset: false,
       onElementHideAction: false,
       onElementShowAction: false,
@@ -77,14 +76,7 @@ Also check OverlayTrigger specification.
               name="customOppositeOffset"
               onChange={e => setState({ customOppositeOffset: !state.customOppositeOffset })}
             >
-              custom oppositeAxisOffset
-            </Checkbox>
-            <Checkbox
-              checked={state.customMargin}
-              name="customMargin"
-              onChange={e => setState({ customMargin: !state.customMargin })}
-            >
-              custom margin
+              custom axisOffset
             </Checkbox>
         </div>
         <div style={{ marginRight: "15px" }}>
@@ -107,7 +99,8 @@ Also check OverlayTrigger specification.
           <Tooltip
             align={state.align}
             margin={state.customMargin ? '22px' : undefined}
-            oppositeAxisOffset={state.customOppositeOffset ? '70px' : '0'}
+            axisOffsetX={state.customOppositeOffset ? '-50%' : undefined}
+            axisOffsetY={state.customOppositeOffset ? '-100px' : undefined}
             position={state.position}
             showCloseButton={state.showCloseButton}
             width="250px"

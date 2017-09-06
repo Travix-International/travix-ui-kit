@@ -19,8 +19,8 @@ describe('Tooltip: render', () => {
       active: true,
       children: <div> Tooltip content </div>,
       height: '70px',
-      margin: '10px',
-      oppositeAxisOffset: '5px',
+      axisOffsetX: '100px',
+      axisOffsetY: '110px',
       position: 'right',
       showCloseButton: true,
       triggerAction: 'hover',
@@ -32,9 +32,8 @@ describe('Tooltip: render', () => {
     expect(wrapper.find('Tooltip').props().active).toEqual(props.active);
     expect(wrapper.find('Tooltip').props().children).toEqual(props.children);
     expect(wrapper.find('Tooltip').props().height).toEqual(props.height);
-    expect(wrapper.find('Tooltip').props().margin).toEqual(props.margin);
-    expect(wrapper.find('Tooltip').props().oppositeAxisOffset)
-      .toEqual(props.oppositeAxisOffset);
+    expect(wrapper.find('Tooltip').props().axisOffsetX).toEqual(props.axisOffsetX);
+    expect(wrapper.find('Tooltip').props().axisOffsetY).toEqual(props.axisOffsetY);
     expect(wrapper.find('Tooltip').props().showCloseButton)
       .toEqual(props.showCloseButton);
     expect(wrapper.find('Tooltip').props().triggerAction).toEqual(props.triggerAction);
@@ -47,8 +46,8 @@ describe('Tooltip: render', () => {
       active: true,
       children: <div> Tooltip content </div>,
       height: '70px',
-      margin: '10px',
-      oppositeAxisOffset: '5px',
+      axisOffsetX: '100px',
+      axisOffsetY: '110px',
       position: 'right',
       showCloseButton: true,
       triggerAction: 'hover',
@@ -58,19 +57,12 @@ describe('Tooltip: render', () => {
     const prototype = {
       props,
       container: {},
-      countPositionOffset: jest.fn()
-        .mockReturnValue({
-          top: { top: -80, left: '5px' },
-          bottom: { bottom: -80, left: '5px' },
-          right: { right: -130, bottom: '5px' },
-          left: { left: -130, bottom: '5px' },
-        }),
       renderCloseButtonBlock: jest.fn()
         .mockReturnValue(<div />),
     };
 
     const result = Tooltip.prototype.render.call(prototype);
-    const expected = { width: '120px', height: '70px', right: -130, bottom: '5px' };
+    const expected = { width: '120px', height: '70px', transform: 'translate(100px, 110px)' };
     expect(result.props.style).toEqual(expected);
   });
 });
