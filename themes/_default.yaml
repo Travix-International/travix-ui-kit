@@ -502,6 +502,8 @@ carousel:
     font-size: "12px"
     font-family: "var(--tx-generic-font-secondary-font-family)"
 tooltip:
+  margin: 15px
+  arrow-align: 15px
   close-button:
     color: "var(--tx-generic-color-secondary-darker)"
     hover:

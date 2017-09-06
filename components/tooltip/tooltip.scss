@@ -21,21 +21,21 @@
 
 .ui-tooltip_top {
   bottom: 100%;
-  margin-bottom: 15px;
+  margin-bottom: var(--tx-tooltip-margin);
 }
 
 .ui-tooltip_right {
   left: 100%;
-  margin-left: 15px;
+  margin-left: var(--tx-tooltip-margin);
 }
 
 .ui-tooltip_left {
-  margin-right: 15px;
+  margin-right: var(--tx-tooltip-margin);
   right: 100%;
 }
 
 .ui-tooltip_bottom {
-  margin-top: 15px;
+  margin-top: var(--tx-tooltip-margin);
   top: 100%;
 }
 
@@ -69,7 +69,7 @@
 .ui-tooltip_top::before {
   bottom: -7px;
   box-shadow: var(--tx-tooltip-top-shadow);
-  right: 15px;
+  right: var(--tx-tooltip-arrow-align);
 }
 
 .ui-tooltip_bottom::before {
@@ -92,12 +92,12 @@
 
 .ui-tooltip_top.ui-tooltip_start::before,
 .ui-tooltip_bottom.ui-tooltip_start::before {
-  left: 15px;
+  left: var(--tx-tooltip-arrow-align);
 }
 
 .ui-tooltip_top.ui-tooltip_end::before,
 .ui-tooltip_bottom.ui-tooltip_end::before {
-  right: 15px;
+  right: var(--tx-tooltip-arrow-align);
 }
 
 .ui-tooltip_top.ui-tooltip_center::before,
@@ -108,12 +108,12 @@
 
 .ui-tooltip_right.ui-tooltip_start::before,
 .ui-tooltip_left.ui-tooltip_start::before {
-  top: 15px;
+  top: var(--tx-tooltip-arrow-align);
 }
 
 .ui-tooltip_right.ui-tooltip_end::before,
 .ui-tooltip_left.ui-tooltip_end::before {
-  bottom: 15px;
+  bottom: var(--tx-tooltip-arrow-align);
 }
 
 .ui-tooltip_right.ui-tooltip_center::before,
