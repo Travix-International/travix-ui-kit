@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
 import React from 'react';
 import CollapseItem from '../../../components/collapse/collapseItem';
 
@@ -13,7 +12,7 @@ describe('Collapse: render', () => {
         <div>Collapse Item content</div>
       </CollapseItem>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should render expanded collapse item component', () => {
@@ -26,7 +25,7 @@ describe('Collapse: render', () => {
         <div>Collapse Item content</div>
       </CollapseItem>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should render collapse item without id', () => {
@@ -35,7 +34,7 @@ describe('Collapse: render', () => {
         <div>Collapse Item content</div>
       </CollapseItem>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should call onClick after click on label with correct id', () => {
@@ -73,6 +72,6 @@ describe('Collapse: render', () => {
         <div>Collapse Item content</div>
       </CollapseItem>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 });

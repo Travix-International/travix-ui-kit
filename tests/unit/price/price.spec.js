@@ -1,5 +1,4 @@
-import * as enzyme from 'enzyme';
-import * as enzymeToJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import React from 'react';
 import Price, { addThousandsSeparator, ensureDecimalPrecision } from '../../../components/price/price';
 
@@ -33,9 +32,6 @@ describe('Price', () => {
   });
 
   describe('#render()', () => {
-    const shallow = enzyme.shallow;
-    const shallowToJson = enzymeToJson.shallowToJson;
-
     it('should return base class with mods for strings as class and string as mods', () => {
       const dataAttrs = {
         'gtm-id': 'test',
@@ -54,7 +50,7 @@ describe('Price', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should not render underline when underlined flag is missing', () => {
@@ -74,7 +70,7 @@ describe('Price', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render only the amount of decimals defined in the decimalsPrecision', () => {
@@ -88,7 +84,7 @@ describe('Price', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render without thousands separator when overriden to empty string', () => {
@@ -102,7 +98,7 @@ describe('Price', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render without decimals when showDecimals = false', () => {
@@ -119,7 +115,7 @@ describe('Price', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with ui-price_size_xl class', () => {
@@ -130,7 +126,7 @@ describe('Price', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with decimals when value is integer', () => {
@@ -138,7 +134,7 @@ describe('Price', () => {
         <Price value={50153} />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with discount when value is integer not equal 0', () => {
@@ -149,7 +145,7 @@ describe('Price', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with additional text if it is non empty string', () => {
@@ -160,7 +156,7 @@ describe('Price', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with additional text block if it is a node', () => {
@@ -177,7 +173,7 @@ describe('Price', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

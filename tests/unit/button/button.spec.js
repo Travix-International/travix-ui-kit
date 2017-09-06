@@ -1,12 +1,9 @@
-import * as enzyme from 'enzyme';
-import * as enzymeToJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import React from 'react';
 import Button from '../../../components/button/button';
 
 describe('Button', () => {
   describe('#render()', () => {
-    const shallow = enzyme.shallow;
-    const shallowToJson = enzymeToJson.shallowToJson;
     const onClickSpy = () => {};
 
     it('should render disabled link', () => {
@@ -14,7 +11,7 @@ describe('Button', () => {
         <Button disabled href="http://google.com" size="xs" type="link">Extra small</Button>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should return base class with mods for strings as class and string as mods #1', () => {
@@ -22,7 +19,7 @@ describe('Button', () => {
         <Button disabled size="xs" type="link">Extra small</Button>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should not modify mods', () => {
@@ -38,7 +35,7 @@ describe('Button', () => {
 
       expect(mods.length).toEqual(1);
       expect(mods[0]).toEqual('test');
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should return base class with mods for strings as class and string as mods #2', () => {
@@ -46,7 +43,7 @@ describe('Button', () => {
         <Button dataAttrs={{ gtm: 'id' }} size="xs" type="submit">Extra small</Button>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should return base class with mods for strings as class and string as mods #3', () => {
@@ -54,7 +51,7 @@ describe('Button', () => {
         <Button onClick={onClickSpy} size="xs" type="button">Extra small</Button>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render gtm data attribute', () => {
@@ -62,7 +59,7 @@ describe('Button', () => {
         <Button dataAttrs={{ gtm: 'id' }} onClick={onClickSpy}>Extra small</Button>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should return base class with mods for strings as class and string as mods without data-attrs', () => {
@@ -70,7 +67,7 @@ describe('Button', () => {
         <Button onClick={onClickSpy} type="button">Extra small</Button>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render ghost variation', () => {

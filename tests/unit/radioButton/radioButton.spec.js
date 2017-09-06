@@ -1,12 +1,9 @@
-import * as enzyme from 'enzyme';
-import * as enzymeToJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import React from 'react';
 import RadioButton from '../../../components/radioButton/radioButton';
 
 describe('Radio Button', () => {
   describe('#render()', () => {
-    const shallow = enzyme.shallow;
-    const shallowToJson = enzymeToJson.shallowToJson;
     const onChange = () => {};
 
     it('should not modify mods', () => {
@@ -19,7 +16,7 @@ describe('Radio Button', () => {
 
       expect(mods.length).toEqual(1);
       expect(mods[0]).toEqual('test');
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render disabled radio button', () => {
@@ -29,7 +26,7 @@ describe('Radio Button', () => {
         </RadioButton>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render checked radio button', () => {
@@ -39,7 +36,7 @@ describe('Radio Button', () => {
         </RadioButton>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render radio button', () => {
@@ -49,7 +46,7 @@ describe('Radio Button', () => {
         </RadioButton>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });
