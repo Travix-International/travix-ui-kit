@@ -1,12 +1,9 @@
-import * as enzyme from 'enzyme';
-import * as enzymeToJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import React from 'react';
 import DatePicker from '../../../components/datePicker/datePicker';
 
 describe('DatePicker', () => {
   describe('#render()', () => {
-    const shallow = enzyme.shallow;
-    const shallowToJson = enzymeToJson.shallowToJson;
     const onChange = () => {};
     const valueFormatterFn = jest.fn();
 
@@ -19,7 +16,7 @@ describe('DatePicker', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render DatePicker with label', () => {
@@ -31,7 +28,7 @@ describe('DatePicker', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render correct DatePicker with value', () => {
@@ -44,7 +41,7 @@ describe('DatePicker', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render open DatePicker', () => {
@@ -55,7 +52,7 @@ describe('DatePicker', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

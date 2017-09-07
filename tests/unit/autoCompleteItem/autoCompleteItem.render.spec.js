@@ -1,13 +1,9 @@
-import * as enzyme from 'enzyme';
-import * as enzymeToJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import React from 'react';
 import AutoCompleteItem from '../../../components/autoComplete/autoCompleteItem';
 
 describe('AutoCompleteItem', () => {
   describe('#render()', () => {
-    const shallow = enzyme.shallow;
-    const shallowToJson = enzymeToJson.shallowToJson;
-
     it('should render correct autocomplete item', () => {
       const wrapper = shallow(
         <AutoCompleteItem
@@ -17,7 +13,7 @@ describe('AutoCompleteItem', () => {
         </AutoCompleteItem>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should not modify mods', () => {
@@ -32,7 +28,7 @@ describe('AutoCompleteItem', () => {
       );
       expect(mods.length).toEqual(1);
       expect(mods[0]).toEqual('test');
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render autocomplete item with title mode', () => {
@@ -45,7 +41,7 @@ describe('AutoCompleteItem', () => {
         </AutoCompleteItem>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render autocomplete item with active mode', () => {
@@ -58,7 +54,7 @@ describe('AutoCompleteItem', () => {
         </AutoCompleteItem>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

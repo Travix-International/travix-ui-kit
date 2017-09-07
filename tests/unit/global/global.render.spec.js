@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
 import React from 'react';
 import Global from '../../../components/global/global';
 
@@ -10,7 +9,7 @@ describe('Global: render', () => {
         Global Content
       </Global>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return base active modal with close button', () => {
@@ -19,6 +18,6 @@ describe('Global: render', () => {
         Global Content
       </Global>
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 });

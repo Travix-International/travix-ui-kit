@@ -501,6 +501,18 @@ carousel:
     padding: "5px 15px"
     font-size: "12px"
     font-family: "var(--tx-generic-font-secondary-font-family)"
+toggle-button:
+  item:
+    font-size: "14px"
+    line-height: "25px"
+    border:
+      color: "var(--tx-generic-color-secondary-darker)"
+      radius: "4px"
+      size: "2px"
+      style: solid
+  item-active:
+    font-size: "19px"
+    line-height: "24px"
 tooltip:
   margin: 15px
   arrow-align: 15px

@@ -1,13 +1,9 @@
-import * as enzyme from 'enzyme';
-import * as enzymeToJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import React from 'react';
 import Spinner from '../../../components/spinner/spinner';
 
 describe('Spinner', () => {
   describe('#render()', () => {
-    const shallow = enzyme.shallow;
-    const shallowToJson = enzymeToJson.shallowToJson;
-
     it('should not modify mods', () => {
       const mods = ['test'];
       const wrapper = shallow(
@@ -16,7 +12,7 @@ describe('Spinner', () => {
 
       expect(mods.length).toEqual(1);
       expect(mods[0]).toEqual('test');
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should return base class with mods for strings as class and string as mods', () => {
@@ -24,7 +20,7 @@ describe('Spinner', () => {
         <Spinner size="xs">Extra small</Spinner>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should return base class with mods for strings as class and string as mods', () => {
@@ -32,7 +28,7 @@ describe('Spinner', () => {
         <Spinner>Medium/Default</Spinner>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

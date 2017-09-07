@@ -1,13 +1,9 @@
-import * as enzyme from 'enzyme';
-import * as enzymeToJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import React from 'react';
 import MessageBox from '../../../components/messageBox/messageBox';
 
 describe('MessageBox', () => {
   describe('#render()', () => {
-    const shallow = enzyme.shallow;
-    const shallowToJson = enzymeToJson.shallowToJson;
-
     it('should render info message box with test modifications', () => {
       const mods = ['test'];
       const dataAttr = {
@@ -20,7 +16,7 @@ describe('MessageBox', () => {
 
       expect(mods.length).toEqual(1);
       expect(mods[0]).toEqual('test');
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render success message box with title', () => {
@@ -28,7 +24,7 @@ describe('MessageBox', () => {
         <MessageBox title="Success message box title" type="success">Success message box</MessageBox>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render error message box with icon', () => {
@@ -36,7 +32,7 @@ describe('MessageBox', () => {
         <MessageBox icon={<div className="icon" />} type="error">Error message box</MessageBox>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

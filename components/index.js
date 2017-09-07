@@ -21,6 +21,7 @@ import RadioButton from './radioButton/radioButton';
 import Rating from './rating/rating';
 import SlidingPanel from './slidingPanel/slidingPanel';
 import Spinner from './spinner/spinner';
+import ToggleButton from './toggleButton/toggleButton';
 import Tooltip from './tooltip/tooltip';
 
 export default {
@@ -47,5 +48,9 @@ export default {
   Rating,
   SlidingPanel,
   Spinner,
+<<<<<<< HEAD
   Tooltip,
+=======
+  ToggleButton,
+>>>>>>> master
 };
