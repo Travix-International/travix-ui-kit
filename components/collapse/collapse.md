@@ -28,11 +28,11 @@ With icon on the right:
 Open one with expanded first item by default:
 
     <div style={{marginTop: '10px'}}>
-      <Collapse isAccordion defaultActiveKey="example1.1">
-        <CollapseItem title="Collapse Title 1" id="example1.1">
+      <Collapse isAccordion defaultActiveKey={0}>
+        <CollapseItem title="Collapse Title 1" id={0}>
           <List items={['London', 'Amsterdam', 'Madrid']} />
         </CollapseItem>
-        <CollapseItem title="Collapse Title 2" id="example1.2">
+        <CollapseItem title="Collapse Title 2" id={1}>
           <List items={['London', 'Amsterdam', 'Madrid']} />
         </CollapseItem>
       </Collapse>
@@ -130,15 +130,15 @@ With custom CollapseItem component:
     );
 
     initialState = {
-      activeKey: ['example4.1']
+      activeKey: 0
     };
 
     <div style={{marginTop: '10px'}}>
       <Collapse activeKey={state.activeKey} isAccordion onChange={key => setState({ activeKey: key })}>
-        <CustomCollapseItem title="Collapse Title 1" id="example4.1">
+        <CustomCollapseItem title="Collapse Title 1" id={0}>
           <List items={['London', 'Amsterdam', 'Madrid']} />
         </CustomCollapseItem>
-        <CustomCollapseItem title="Collapse Title 2" id="example4.2">
+        <CustomCollapseItem title="Collapse Title 2" id={1}>
           <List items={['London', 'Amsterdam', 'Madrid']} />
         </CustomCollapseItem>
       </Collapse>
