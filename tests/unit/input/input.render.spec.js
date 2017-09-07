@@ -1,12 +1,9 @@
-import * as enzyme from 'enzyme';
-import * as enzymeToJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import React from 'react';
 import Input from '../../../components/input/input';
 
 describe('Input', () => {
   describe('#render()', () => {
-    const shallow = enzyme.shallow;
-    const shallowToJson = enzymeToJson.shallowToJson;
     const onChange = () => {};
 
     it('should render correct input', () => {
@@ -18,7 +15,7 @@ describe('Input', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should not modify mods', () => {
@@ -31,7 +28,7 @@ describe('Input', () => {
 
       expect(mods.length).toEqual(1);
       expect(mods[0]).toEqual('test');
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render multiline input', () => {
@@ -44,7 +41,7 @@ describe('Input', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render span for icon', () => {
@@ -56,7 +53,7 @@ describe('Input', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

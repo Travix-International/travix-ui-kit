@@ -1,12 +1,9 @@
-import * as enzyme from 'enzyme';
-import * as enzymeToJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import React from 'react';
 import Checkbox from '../../../components/checkbox/checkbox';
 
 describe('Checkbox', () => {
   describe('#render()', () => {
-    const shallow = enzyme.shallow;
-    const shallowToJson = enzymeToJson.shallowToJson;
     const onChange = () => {};
 
     it('should render disabled checkbox', () => {
@@ -18,7 +15,7 @@ describe('Checkbox', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should not modify mods', () => {
@@ -31,7 +28,7 @@ describe('Checkbox', () => {
 
       expect(mods.length).toEqual(1);
       expect(mods[0]).toEqual('test');
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render checked checkbox', () => {
@@ -43,7 +40,7 @@ describe('Checkbox', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render checkbox', () => {
@@ -54,7 +51,7 @@ describe('Checkbox', () => {
         />
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

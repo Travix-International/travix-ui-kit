@@ -1,14 +1,10 @@
-import * as enzyme from 'enzyme';
-import * as enzymeToJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import React from 'react';
 import AutoComplete from '../../../components/autoComplete/autoComplete';
 import AutoCompleteItem from '../../../components/autoComplete/autoCompleteItem';
 
 describe('AutoComplete', () => {
   describe('#render()', () => {
-    const shallow = enzyme.shallow;
-    const shallowToJson = enzymeToJson.shallowToJson;
-
     it('should render correct autocomplete component', () => {
       const wrapper = shallow(
         <AutoComplete
@@ -22,7 +18,7 @@ describe('AutoComplete', () => {
         </AutoComplete>
       );
 
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should copy mods', () => {
@@ -42,7 +38,7 @@ describe('AutoComplete', () => {
 
       expect(mods.length).toEqual(1);
       expect(mods[0]).toEqual('test');
-      expect(shallowToJson(wrapper)).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should render correct open autocomplete component', () => {
@@ -60,7 +56,7 @@ describe('AutoComplete', () => {
 
       component.setState({ open: true });
 
-      expect(shallowToJson(component)).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
     });
 
     it('should render correct autocomplete component with label', () => {
@@ -77,7 +73,7 @@ describe('AutoComplete', () => {
         </AutoComplete>
       );
 
-      expect(shallowToJson(component)).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
     });
 
     it('should render correct autocomplete component with title item', () => {
@@ -95,7 +91,7 @@ describe('AutoComplete', () => {
         </AutoComplete>
       );
 
-      expect(shallowToJson(component)).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
     });
 
     it('should render correct autocomplete component with highlighting', () => {
@@ -112,7 +108,7 @@ describe('AutoComplete', () => {
         </AutoComplete>
       );
 
-      expect(shallowToJson(component)).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
     });
 
     it('should render correct autocomplete component with default value', () => {
@@ -130,7 +126,7 @@ describe('AutoComplete', () => {
         </AutoComplete>
       );
 
-      expect(shallowToJson(component)).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
     });
 
     it('should not render item child if it not "AutoCompleteItem"', () => {
@@ -142,7 +138,7 @@ describe('AutoComplete', () => {
         </AutoComplete>
       );
 
-      expect(shallowToJson(component)).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
     });
   });
 });

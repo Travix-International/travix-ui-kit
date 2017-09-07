@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
 import React from 'react';
 import DropDown from '../../../components/dropDown/dropDown';
 
@@ -11,7 +10,7 @@ describe('DropDown: render', () => {
         options={[]}
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return base dropdown with passed string value', () => {
@@ -22,7 +21,7 @@ describe('DropDown: render', () => {
         value="testValue"
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return base dropdown with passed number value', () => {
@@ -33,7 +32,7 @@ describe('DropDown: render', () => {
         value={1}
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return base dropdown with passed array value', () => {
@@ -44,7 +43,7 @@ describe('DropDown: render', () => {
         value={[]}
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return clearable dropdown', () => {
@@ -55,7 +54,7 @@ describe('DropDown: render', () => {
         options={[]}
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return multi dropdown', () => {
@@ -66,7 +65,7 @@ describe('DropDown: render', () => {
         options={[]}
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return dropdown with passed name', () => {
@@ -77,7 +76,7 @@ describe('DropDown: render', () => {
         options={[]}
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return dropdown with shifting viewport enabled', () => {
@@ -88,7 +87,7 @@ describe('DropDown: render', () => {
         scrollMenuIntoView
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return searchable dropdown', () => {
@@ -99,7 +98,7 @@ describe('DropDown: render', () => {
         searchable
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return filter dropdown', () => {
@@ -110,7 +109,7 @@ describe('DropDown: render', () => {
         options={[{ checked: true }]}
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   it('should return dropdown with status', () => {
@@ -121,6 +120,6 @@ describe('DropDown: render', () => {
         status="error"
       />
     );
-    expect(shallowToJson(component)).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 });
