@@ -68,7 +68,10 @@ CollapseItem.propTypes = {
   /**
    * Unique id for collapse item.
    */
-  id: PropTypes.string,
+  id: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]),
   /**
    * Specify a function that will be called when a user click on label
    */
@@ -88,7 +91,6 @@ CollapseItem.propTypes = {
 };
 
 CollapseItem.defaultProps = {
-  id: null,
   isActive: false,
   iconPosition: 'left',
   onClick: null,

@@ -37,7 +37,6 @@ exports[`Collapse: render should render collapse item without id 1`] = `
   className="ui-collapse-item"
 >
   <button
-    aria-controls={null}
     aria-expanded={false}
     className="ui-collapse__label ui-collapse__label--icon_position ui-collapse__label--icon_position_left"
     onClick={[Function]}
@@ -55,7 +54,6 @@ exports[`Collapse: render should render collapse item without id 1`] = `
   <div
     aria-hidden={true}
     className="ui-collapse-item__content"
-    id={null}
   >
     <div>
       Collapse Item content
@@ -69,7 +67,6 @@ exports[`Collapse: render should render collapseItem component with icon on the 
   className="ui-collapse-item"
 >
   <button
-    aria-controls={null}
     aria-expanded={false}
     className="ui-collapse__label ui-collapse__label--icon_position ui-collapse__label--icon_position_right"
     onClick={[Function]}
@@ -87,7 +84,6 @@ exports[`Collapse: render should render collapseItem component with icon on the 
   <div
     aria-hidden={true}
     className="ui-collapse-item__content"
-    id={null}
   >
     <div>
       Collapse Item content

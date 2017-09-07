@@ -9,11 +9,11 @@ import React, {
 import { getClassNamesWithMods } from '../_helpers';
 
 const getNormalizedActiveKey = ({ defaultActiveKey, activeKey }) => {
-  if (activeKey === undefined && defaultActiveKey) {
-    return getNormalizedActiveKey({ activeKey: defaultActiveKey });
-  }
-  if (!activeKey) {
-    activeKey = [];
+  if (typeof activeKey === 'undefined') {
+    if (typeof defaultActiveKey !== 'undefined') {
+      return getNormalizedActiveKey({ activeKey: defaultActiveKey });
+    }
+    return [];
   }
   return activeKey instanceof Array ? activeKey : [activeKey];
 };
@@ -59,7 +59,7 @@ class Collapse extends Component {
       this.setState({ activeKey });
     }
     if (typeof this.props.onChange === 'function') {
-      this.props.onChange(this.props.isAccordion ? (activeKey[0] || null) : activeKey);
+      this.props.onChange(this.props.isAccordion ? activeKey[0] : activeKey);
     }
   }
 
@@ -73,7 +73,9 @@ class Collapse extends Component {
           return null;
         }
 
-        const key = child.props.id || child.key || `ui-collapse-item.${index}`;
+        const key = typeof child.props.id !== 'undefined'
+          ? child.props.id
+          : (child.key || `ui-collapse-item.${index}`);
         const isActive = isAccordion ? activeKey[0] === key : activeKey.indexOf(key) >= 0;
         return cloneElement(child, {
           id: key,
@@ -118,6 +120,8 @@ Collapse.propTypes = {
    * Determine whether items is expanded. You need to provide `id` for `CollapseItem`
    */
   activeKey: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number),
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
   ]),

@@ -59,7 +59,7 @@ describe('Collapse: handleItemClick', () => {
     );
 
     component.instance().handleItemClick(e, 'c1');
-    expect(onChange.mock.calls[0][0]).toEqual(null);
+    expect(onChange.mock.calls[0][0]).toEqual(undefined);
   });
 
   it('should expand more then one "CollapseItem" when "Collapse" is not accordion', () => {
