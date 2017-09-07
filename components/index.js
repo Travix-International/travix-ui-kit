@@ -48,9 +48,6 @@ export default {
   Rating,
   SlidingPanel,
   Spinner,
-<<<<<<< HEAD
-  Tooltip,
-=======
   ToggleButton,
->>>>>>> master
+  Tooltip,
 };
