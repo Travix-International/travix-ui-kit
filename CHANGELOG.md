@@ -1,5 +1,21 @@
 # Change Log
 
+## [v0.6.24](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.24) (2017-09-07)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.23...v0.6.24)
+
+**Closed issues:**
+
+- Tooltip \(or Hint\) [\#54](https://github.com/Travix-International/travix-ui-kit/issues/54)
+
+**Merged pull requests:**
+
+- Changes tests to stop using the shallowToJson\(\) method [\#168](https://github.com/Travix-International/travix-ui-kit/pull/168) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Removes coveralls dependency and changes the badge to connect to Codecov [\#167](https://github.com/Travix-International/travix-ui-kit/pull/167) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Changes our code coverage tool to use Code Cov [\#166](https://github.com/Travix-International/travix-ui-kit/pull/166) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- collapse component adjustments [\#165](https://github.com/Travix-International/travix-ui-kit/pull/165) ([maximuk](https://github.com/maximuk))
+- Implement Toggle button component [\#163](https://github.com/Travix-International/travix-ui-kit/pull/163) ([fope](https://github.com/fope))
+- Tooltip component [\#155](https://github.com/Travix-International/travix-ui-kit/pull/155) ([RumataDeEstor](https://github.com/RumataDeEstor))
+
 ## [v0.6.23](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.23) (2017-09-05)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.22...v0.6.23)
 
