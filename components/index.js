@@ -15,12 +15,14 @@ import Input from './input/input';
 import List from './list/list';
 import MessageBox from './messageBox/messageBox';
 import Modal from './modal/modal';
+import OverlayTrigger from './overlayTrigger/overlayTrigger';
 import Price from './price/price';
 import RadioButton from './radioButton/radioButton';
 import Rating from './rating/rating';
 import SlidingPanel from './slidingPanel/slidingPanel';
 import Spinner from './spinner/spinner';
 import ToggleButton from './toggleButton/toggleButton';
+import Tooltip from './tooltip/tooltip';
 
 export default {
   AutoComplete,
@@ -40,10 +42,12 @@ export default {
   List,
   MessageBox,
   Modal,
+  OverlayTrigger,
   Price,
   RadioButton,
   Rating,
   SlidingPanel,
   Spinner,
   ToggleButton,
+  Tooltip,
 };
