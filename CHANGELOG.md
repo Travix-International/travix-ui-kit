@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.6.25](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.25) (2017-09-08)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.24...v0.6.25)
+
+**Merged pull requests:**
+
+- Tooltip: fixed styling issue [\#169](https://github.com/Travix-International/travix-ui-kit/pull/169) ([RumataDeEstor](https://github.com/RumataDeEstor))
+
 ## [v0.6.24](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.24) (2017-09-07)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.23...v0.6.24)
 
