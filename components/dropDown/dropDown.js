@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Select from 'react-select';
+import Select from 'react-select/dist/react-select';
 
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 import DropdownFilterOptionComponent from './dropdownFilterOptionComponent';

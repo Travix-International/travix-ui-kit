@@ -8,7 +8,7 @@
     "build": "node ./builder/program",
     "ci:lint": "eslint --color --max-warnings 0 --quiet '{components,tests,utils,scripts}/**/*.js'",
     "ci:send-coverage": "codecov",
-    "ci:test": "TZ=utc jest -c ./tests/jest.config.json --bail --ci --coverage --no-cache --silent",
+    "ci:test": "TZ=utc jest -c ./tests/jest.config.json --bail --ci --coverage --maxWorkers=2 --no-cache --silent",
     "lint": "eslint --color '{components,tests,utils,scripts}/**/*.js'",
     "prebuild:watch": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md -w &",
     "prebuild": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md &",
