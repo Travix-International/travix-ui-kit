@@ -1,9 +1,10 @@
 # Travix UI-kit
 
+[![npm](https://img.shields.io/npm/v/travix-ui-kit.svg)](https://www.npmjs.com/package/travix-ui-kit)
+[![Build Status](https://img.shields.io/travis/Travix-International/travix-ui-kit/master.svg)](http://travis-ci.org/Travix-International/travix-ui-kit)
+[![coverage](https://codecov.io/gh/Travix-International/travix-ui-kit/branch/master/graph/badge.svg)](https://codecov.io/gh/Travix-International/travix-ui-kit)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Travix-International/travix-ui-kit.svg)](https://greenkeeper.io/)
-
-[![npm](https://img.shields.io/npm/v/travix-ui-kit.svg)](https://www.npmjs.com/package/travix-ui-kit) [![Build Status](https://img.shields.io/travis/Travix-International/travix-ui-kit/master.svg)](http://travis-ci.org/Travix-International/travix-ui-kit) [![coverage](https://codecov.io/gh/Travix-International/travix-ui-kit/branch/master/graph/badge.svg)](https://codecov.io/gh/Travix-International/travix-ui-kit)
-(https://coveralls.io/github/Travix-International/travix-ui-kit) [![NSP Status](https://nodesecurity.io/orgs/travix-international-bv/projects/4757808e-0ffc-47dd-9c82-c48e782631dd/badge)](https://nodesecurity.io/orgs/travix-international-bv/projects/4757808e-0ffc-47dd-9c82-c48e782631dd)
+[![NSP Status](https://nodesecurity.io/orgs/travix-international-bv/projects/4757808e-0ffc-47dd-9c82-c48e782631dd/badge)](https://nodesecurity.io/orgs/travix-international-bv/projects/4757808e-0ffc-47dd-9c82-c48e782631dd)
 
 Travix UI Components' repository.
 
