@@ -67,16 +67,16 @@
 
 .ui-price_size_xs {
   .ui-price__currency {
-    font-size: var(--tx-price-xs-small-font-size-currency);
+    font-size: var(--tx-price-xsmall-font-size-currency);
   }
 
   .ui-price__decimals {
-    font-size: var(--tx-price-xs-small-font-size-decimals);
+    font-size: var(--tx-price-xsmall-font-size-decimals);
   }
 
   .ui-price__integers {
-    font-size: var(--tx-price-xs-small-font-size-integers);
-    line-height: var(--tx-price-xs-small-line-height-integers);
+    font-size: var(--tx-price-xsmall-font-size-integers);
+    line-height: var(--tx-price-xsmall-line-height-integers);
   }
 
   .ui-price__underline {
@@ -85,11 +85,11 @@
   }
 
   .ui-price__additional-text-block {
-    font-size: var(--tx-price-xs-small-font-size-additional-text);
+    font-size: var(--tx-price-xsmall-font-size-additional-text);
   }
 
   .ui-price__discount {
-    font-size: var(--tx-price-xs-small-font-size-discount);
+    font-size: var(--tx-price-xsmall-font-size-discount);
   }
 }
 
