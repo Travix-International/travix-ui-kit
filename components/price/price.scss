@@ -65,6 +65,34 @@
   order: 5;
 }
 
+.ui-price_size_xs {
+  .ui-price__currency {
+    font-size: 13px; /*15px needed 13px */
+  }
+
+  .ui-price__decimals {
+    font-size: 13px; /*14px approximaly 13px*/
+  }
+
+  .ui-price__integers {
+    font-size: 18px; /*current 30px needed 18px */
+    line-height: 15px; /*current 26px needed 15px*/
+  }
+
+  .ui-price__underline {
+    height: 6px; /*6px */
+    margin-top: 2px; /*2px*/
+  }
+
+  .ui-price__additional-text-block {
+    font-size: 12px; /*13px* approximaly 12px*/
+  }
+
+  .ui-price__discount {
+    font-size: 13px; /*16px approximaly 13px*/
+  }
+}
+
 .ui-price_size_s {
   .ui-price__currency {
     font-size: var(--tx-price-small-font-size-currency);
