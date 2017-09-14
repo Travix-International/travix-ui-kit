@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.6.27](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.27) (2017-09-14)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.26...v0.6.27)
+
+**Merged pull requests:**
+
+- Tooltip fix: increased z-index to prevent overlapping [\#186](https://github.com/Travix-International/travix-ui-kit/pull/186) ([RumataDeEstor](https://github.com/RumataDeEstor))
+
 ## [v0.6.26](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.26) (2017-09-14)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.25...v0.6.26)
 
