@@ -1,5 +1,32 @@
 # Change Log
 
+## [v0.6.26](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.26) (2017-09-14)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.25...v0.6.26)
+
+**Fixed bugs:**
+
+- Removes the remainders of the Coveralls badge and re-orders badges on README.md [\#174](https://github.com/Travix-International/travix-ui-kit/pull/174) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
+**Closed issues:**
+
+- An in-range update of jest is breaking the build 🚨 [\#183](https://github.com/Travix-International/travix-ui-kit/issues/183)
+- An in-range update of jest-cli is breaking the build 🚨 [\#182](https://github.com/Travix-International/travix-ui-kit/issues/182)
+- An in-range update of react-select is breaking the build 🚨 [\#170](https://github.com/Travix-International/travix-ui-kit/issues/170)
+
+**Merged pull requests:**
+
+- chore\(package\): update jest and jest-cli to version 21.1.0 [\#185](https://github.com/Travix-International/travix-ui-kit/pull/185) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Updates the snapshots to fit the latest version of react-select's render [\#184](https://github.com/Travix-International/travix-ui-kit/pull/184) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Update fs-extra to the latest version 🚀 [\#181](https://github.com/Travix-International/travix-ui-kit/pull/181) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update babel-eslint to the latest version 🚀 [\#180](https://github.com/Travix-International/travix-ui-kit/pull/180) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Add xs state to Price component [\#179](https://github.com/Travix-International/travix-ui-kit/pull/179) ([IvanPresmytsky](https://github.com/IvanPresmytsky))
+- Adds the CONTRIBUTING.md to improve our community and contributing guidelines [\#177](https://github.com/Travix-International/travix-ui-kit/pull/177) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Adds the ISSUE\_TEMPLATE.md to improve our contributing guidelines [\#176](https://github.com/Travix-International/travix-ui-kit/pull/176) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Adds the PULL\_REQUEST\_TEMPLATE.md [\#175](https://github.com/Travix-International/travix-ui-kit/pull/175) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Improves the overlayTrigger's unit tests to be back to 100% coverage [\#173](https://github.com/Travix-International/travix-ui-kit/pull/173) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Fixes react-select's import [\#172](https://github.com/Travix-International/travix-ui-kit/pull/172) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Adds 'set -e' to .travis.yml [\#171](https://github.com/Travix-International/travix-ui-kit/pull/171) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.6.25](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.25) (2017-09-08)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.24...v0.6.25)
 
