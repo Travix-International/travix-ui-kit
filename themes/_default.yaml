@@ -400,6 +400,16 @@ price:
     underline: 6px
   margin-top:
     underline: 2px;
+  xsmall:
+    font:
+      size:
+        currency: 13px
+        integers: 18px
+        decimals: 13px
+        additional-text: 12px
+        discount: 13px
+    line-height:
+      integers: 15px
   small:
     font:
       size:

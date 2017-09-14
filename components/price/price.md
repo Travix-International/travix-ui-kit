@@ -22,6 +22,7 @@ Price with discount:
 Sizes:
 
     <div>
+      <Price size="xs" value={50153.30} /><br/><br/>
       <Price size="s" value={50153.30} /><br/><br/>
       <Price size="m" underlined value={50153.30} /><br/><br/>
       <Price size="l" underlined value={50153.30} /><br/><br/>
