@@ -63,7 +63,7 @@
     "create-react-class": "^15.5.2",
     "css-loader": "~0.28.1",
     "enzyme": "^2.7.1",
-    "enzyme-to-json": "^1.1.4",
+    "enzyme-to-json": "^2.0.0",
     "eslint": "^3.14.0",
     "eslint-config-travix": "^3.0.0",
     "eslint-plugin-babel": "^4.0.0",
