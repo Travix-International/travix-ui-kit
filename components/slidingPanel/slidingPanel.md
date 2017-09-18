@@ -5,7 +5,10 @@ Basic Sliding Panel:
         onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
       >Open panel</button>
       <SlidingPanel
+        closeOnOverlayClick={false}
+        closeOnButtonsClick={false}
         active={state.isSlidingPanelOpen}
+        beforeClosing={() => console.log('closiiiing')}
         onClose={() => setState({ isSlidingPanelOpen: false })}
         title="Panel Title"
       >

@@ -27,6 +27,17 @@ export default class SlidingPanel extends Component {
     closeOnOverlayClick: PropTypes.bool,
 
     /**
+     * When true, if the user clicks on the closing buttons, closes the panel.
+     */
+    closeOnButtonsClick: PropTypes.bool,
+
+    /**
+     * When defined, this function is triggered before the panel is closing
+     * (or instead closing in case it can't be closed)
+     */
+    beforeClosing: PropTypes.func,
+
+    /**
      * Data attributes. You can use it to set up any custom data-* attribute
      */
     dataAttrs: PropTypes.object,
@@ -95,9 +106,21 @@ export default class SlidingPanel extends Component {
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
   handleClickOverlay(e) {
+    const { beforeClosing } = this.props;
+
+    // to prevent processing the click on panel itself
+    if (!e.target.contains(this.panel)) {
+      return;
+    }
+
     if ((e.target === e.currentTarget) && this.props.closeOnOverlayClick) {
       this.handleClose();
+      console.log('here');
+      return;
     }
+
+    console.log('here2');
+    beforeClosing && beforeClosing();
   }
 
   /**
@@ -107,6 +130,11 @@ export default class SlidingPanel extends Component {
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
   handleClose() {
+    console.log('here3');
+    const { beforeClosing } = this.props;
+
+    beforeClosing && beforeClosing();
+
     this.setState({ isActive: false });
   }
 
