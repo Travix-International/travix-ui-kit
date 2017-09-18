@@ -34,6 +34,7 @@ exports[`Carousel #render() clicking markers to change pagination 1`] = `
         className="ui-carousel-track"
       >
         <CarouselItem
+          key="0"
           load={true}
           src="http://lorempixel.com/600/400/city"
         >
@@ -53,6 +54,7 @@ exports[`Carousel #render() clicking markers to change pagination 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="1"
           load={true}
           src="http://lorempixel.com/600/400/sports"
         >
@@ -72,6 +74,7 @@ exports[`Carousel #render() clicking markers to change pagination 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="2"
           load={false}
           src="http://lorempixel.com/600/400/people"
         >
@@ -123,13 +126,16 @@ exports[`Carousel #render() clicking markers to change pagination 1`] = `
         >
           <button
             disabled={true}
+            key="0"
           />
           <button
             data-index={1}
+            key="1"
             onClick={[Function]}
           />
           <button
             data-index={2}
+            key="2"
             onClick={[Function]}
           />
         </div>
@@ -173,6 +179,7 @@ exports[`Carousel #render() display markers instead of pagination 1`] = `
         className="ui-carousel-track"
       >
         <CarouselItem
+          key="0"
           load={true}
           src="http://lorempixel.com/600/400/city"
         >
@@ -192,6 +199,7 @@ exports[`Carousel #render() display markers instead of pagination 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="1"
           load={true}
           src="http://lorempixel.com/600/400/sports"
         >
@@ -211,6 +219,7 @@ exports[`Carousel #render() display markers instead of pagination 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="2"
           load={false}
           src="http://lorempixel.com/600/400/people"
         >
@@ -262,13 +271,16 @@ exports[`Carousel #render() display markers instead of pagination 1`] = `
         >
           <button
             disabled={true}
+            key="0"
           />
           <button
             data-index={1}
+            key="1"
             onClick={[Function]}
           />
           <button
             data-index={2}
+            key="2"
             onClick={[Function]}
           />
         </div>
@@ -312,6 +324,7 @@ exports[`Carousel #render() hitting next move to first item 1`] = `
         className="ui-carousel-track"
       >
         <CarouselItem
+          key="0"
           load={true}
           src="http://lorempixel.com/600/400/city"
         >
@@ -331,6 +344,7 @@ exports[`Carousel #render() hitting next move to first item 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="1"
           load={true}
           src="http://lorempixel.com/600/400/sports"
         >
@@ -350,6 +364,7 @@ exports[`Carousel #render() hitting next move to first item 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="2"
           load={false}
           src="http://lorempixel.com/600/400/people"
         >
@@ -442,6 +457,7 @@ exports[`Carousel #render() hitting previous move to last item 1`] = `
         className="ui-carousel-track"
       >
         <CarouselItem
+          key="0"
           load={true}
           src="http://lorempixel.com/600/400/city"
         >
@@ -461,6 +477,7 @@ exports[`Carousel #render() hitting previous move to last item 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="1"
           load={true}
           src="http://lorempixel.com/600/400/sports"
         >
@@ -480,6 +497,7 @@ exports[`Carousel #render() hitting previous move to last item 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="2"
           load={false}
           src="http://lorempixel.com/600/400/people"
         >
@@ -572,6 +590,7 @@ exports[`Carousel #render() prevent swipe after last item 1`] = `
         className="ui-carousel-track"
       >
         <CarouselItem
+          key="0"
           load={true}
           src="http://lorempixel.com/600/400/city"
         >
@@ -591,6 +610,7 @@ exports[`Carousel #render() prevent swipe after last item 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="1"
           load={true}
           src="http://lorempixel.com/600/400/sports"
         >
@@ -610,6 +630,7 @@ exports[`Carousel #render() prevent swipe after last item 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="2"
           load={false}
           src="http://lorempixel.com/600/400/people"
         >
@@ -661,13 +682,16 @@ exports[`Carousel #render() prevent swipe after last item 1`] = `
         >
           <button
             disabled={true}
+            key="0"
           />
           <button
             data-index={1}
+            key="1"
             onClick={[Function]}
           />
           <button
             data-index={2}
+            key="2"
             onClick={[Function]}
           />
         </div>
@@ -711,6 +735,7 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
         className="ui-carousel-track"
       >
         <CarouselItem
+          key="0"
           load={true}
           src="http://lorempixel.com/600/400/city"
         >
@@ -730,6 +755,7 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="1"
           load={true}
           src="http://lorempixel.com/600/400/sports"
         >
@@ -749,6 +775,7 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="2"
           load={false}
           src="http://lorempixel.com/600/400/people"
         >
@@ -800,13 +827,16 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
         >
           <button
             disabled={true}
+            key="0"
           />
           <button
             data-index={1}
+            key="1"
             onClick={[Function]}
           />
           <button
             data-index={2}
+            key="2"
             onClick={[Function]}
           />
         </div>
@@ -855,6 +885,7 @@ exports[`Carousel #render() render with default props and mods 1`] = `
         className="ui-carousel-track"
       >
         <CarouselItem
+          key="0"
           load={true}
           src="http://lorempixel.com/600/400/city"
         >
@@ -874,6 +905,7 @@ exports[`Carousel #render() render with default props and mods 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="1"
           load={true}
           src="http://lorempixel.com/600/400/sports"
         >
@@ -893,6 +925,7 @@ exports[`Carousel #render() render with default props and mods 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="2"
           load={false}
           src="http://lorempixel.com/600/400/people"
         >
@@ -985,6 +1018,7 @@ exports[`Carousel #render() show correct pagination info 1`] = `
         className="ui-carousel-track"
       >
         <CarouselItem
+          key="0"
           load={true}
           src="http://lorempixel.com/600/400/city"
         >
@@ -1004,6 +1038,7 @@ exports[`Carousel #render() show correct pagination info 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="1"
           load={true}
           src="http://lorempixel.com/600/400/sports"
         >
@@ -1023,6 +1058,7 @@ exports[`Carousel #render() show correct pagination info 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="2"
           load={false}
           src="http://lorempixel.com/600/400/people"
         >
@@ -1115,6 +1151,7 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
         className="ui-carousel-track"
       >
         <CarouselItem
+          key="0"
           load={true}
           src="http://lorempixel.com/600/400/city"
         >
@@ -1134,6 +1171,7 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="1"
           load={true}
           src="http://lorempixel.com/600/400/sports"
         >
@@ -1153,6 +1191,7 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
           </div>
         </CarouselItem>
         <CarouselItem
+          key="2"
           load={false}
           src="http://lorempixel.com/600/400/people"
         >
@@ -1204,13 +1243,16 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
         >
           <button
             disabled={true}
+            key="0"
           />
           <button
             data-index={1}
+            key="1"
             onClick={[Function]}
           />
           <button
             data-index={2}
+            key="2"
             onClick={[Function]}
           />
         </div>
