@@ -14,19 +14,29 @@ exports[`Rating #render() renders with custom data attributes 1`] = `
     className="ui-rating"
     data-ui-test="rating"
   >
-    <b>
+    <b
+      key="0"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="1"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="2"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="3"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="4"
+    >
       ★
     </b>
     <div
@@ -37,19 +47,29 @@ exports[`Rating #render() renders with custom data attributes 1`] = `
         }
       }
     >
-      <b>
+      <b
+        key="0"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="1"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="2"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="3"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="4"
+      >
         ★
       </b>
     </div>
@@ -65,34 +85,54 @@ exports[`Rating #render() renders with custom props 1`] = `
   <div
     className="ui-rating"
   >
-    <b>
+    <b
+      key="0"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="1"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="2"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="3"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="4"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="5"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="6"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="7"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="8"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="9"
+    >
       ★
     </b>
     <div
@@ -103,34 +143,54 @@ exports[`Rating #render() renders with custom props 1`] = `
         }
       }
     >
-      <b>
+      <b
+        key="0"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="1"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="2"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="3"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="4"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="5"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="6"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="7"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="8"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="9"
+      >
         ★
       </b>
     </div>
@@ -146,19 +206,29 @@ exports[`Rating #render() renders with default props and mods provided 1`] = `
   <div
     className="ui-rating"
   >
-    <b>
+    <b
+      key="0"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="1"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="2"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="3"
+    >
       ★
     </b>
-    <b>
+    <b
+      key="4"
+    >
       ★
     </b>
     <div
@@ -169,19 +239,29 @@ exports[`Rating #render() renders with default props and mods provided 1`] = `
         }
       }
     >
-      <b>
+      <b
+        key="0"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="1"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="2"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="3"
+      >
         ★
       </b>
-      <b>
+      <b
+        key="4"
+      >
         ★
       </b>
     </div>

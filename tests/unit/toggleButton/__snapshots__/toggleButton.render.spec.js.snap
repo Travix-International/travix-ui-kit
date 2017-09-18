@@ -8,12 +8,14 @@ exports[`ToggleButton #render() should render correct toggleButton component 1`]
 >
   <li
     className="ui-toggle-button__item ui-toggle-button__item_active"
+    key="0"
     onClick={[Function]}
   >
     Upper deck
   </li>
   <li
     className="ui-toggle-button__item"
+    key="1"
     onClick={[Function]}
   >
     Lower deck

@@ -47,6 +47,7 @@ exports[`AutoComplete #render() should copy mods 1`] = `
         index={0}
         isActive={true}
         isTitle={false}
+        key="/.0"
         onClick={[Function]}
         onMouseDown={[Function]}
         value="value"
@@ -141,6 +142,7 @@ exports[`AutoComplete #render() should render correct autocomplete component 1`]
         index={0}
         isActive={true}
         isTitle={false}
+        key="/.0"
         onClick={[Function]}
         onMouseDown={[Function]}
         value="value"
@@ -200,6 +202,7 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
         index={0}
         isActive={true}
         isTitle={false}
+        key="/.0"
         onClick={[Function]}
         onMouseDown={[Function]}
         value="value"
@@ -259,6 +262,7 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
         index={0}
         isActive={true}
         isTitle={false}
+        key="/.0"
         onClick={[Function]}
         onMouseDown={[Function]}
         value="value"
@@ -318,6 +322,7 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
         index={0}
         isActive={true}
         isTitle={false}
+        key="/.0"
         onClick={[Function]}
         onMouseDown={[Function]}
         value="value"
@@ -377,6 +382,7 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
         index={0}
         isActive={false}
         isTitle={true}
+        key="/.0"
         onClick={[Function]}
         onMouseDown={[Function]}
         value="value"
@@ -430,6 +436,7 @@ exports[`AutoComplete #render() should render correct open autocomplete componen
         index={0}
         isActive={true}
         isTitle={false}
+        key="/.0"
         onClick={[Function]}
         onMouseDown={[Function]}
         value="value"

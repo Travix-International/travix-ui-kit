@@ -6,16 +6,19 @@ exports[`List #render() should not modify mods 1`] = `
 >
   <li
     className="ui-list__item"
+    key="0"
   >
     London
   </li>
   <li
     className="ui-list__item"
+    key="1"
   >
     Amsterdam
   </li>
   <li
     className="ui-list__item"
+    key="2"
   >
     Madrid
   </li>
@@ -28,16 +31,19 @@ exports[`List #render() should return base class with mods for strings as class 
 >
   <li
     className="ui-list__item"
+    key="0"
   >
     London
   </li>
   <li
     className="ui-list__item"
+    key="1"
   >
     Amsterdam
   </li>
   <li
     className="ui-list__item"
+    key="2"
   >
     Madrid
   </li>
@@ -50,16 +56,19 @@ exports[`List #render() should return base class with mods for strings as class 
 >
   <li
     className="ui-list__item"
+    key="0"
   >
     London
   </li>
   <li
     className="ui-list__item"
+    key="1"
   >
     Amsterdam
   </li>
   <li
     className="ui-list__item"
+    key="2"
   >
     Madrid
   </li>
@@ -72,16 +81,19 @@ exports[`List #render() should return base class with mods for strings as class 
 >
   <li
     className="ui-list__item"
+    key="0"
   >
     London
   </li>
   <li
     className="ui-list__item"
+    key="1"
   >
     Amsterdam
   </li>
   <li
     className="ui-list__item"
+    key="2"
   >
     Madrid
   </li>
