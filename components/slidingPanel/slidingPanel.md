@@ -16,14 +16,13 @@ Basic Sliding Panel:
       </SlidingPanel>
     </div>
 
-Sliding Panel with preopening and preclosing hooks:
+Sliding Panel with preclosing hook:
 
     <div>
       <button
         onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
       >Open panel</button>
       <SlidingPanel
-        beforeOpening={() => alert('You are trying to open a sidepanel.')}
         active={state.isSlidingPanelOpen}
         beforeClosing={() => alert('You are trying to close a sidepanel.')}
         onClose={() => setState({ isSlidingPanelOpen: false })}
@@ -36,15 +35,15 @@ Sliding Panel with preopening and preclosing hooks:
       </SlidingPanel>
     </div>
 
-Sliding Panel unclosable with buttons:
+Sliding Panel with preclosing hook which prevent closing:
 
     <div>
       <button
         onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
       >Open panel</button>
       <SlidingPanel
-        closeOnButtonsClick={false}
         active={state.isSlidingPanelOpen}
+        beforeClosing={() => { alert('You shall not pass! :)'); return false; }}
         onClose={() => setState({ isSlidingPanelOpen: false })}
         title="Panel Title"
       >
@@ -54,6 +53,7 @@ Sliding Panel unclosable with buttons:
         <button data-rel="close">Close</button>
       </SlidingPanel>
     </div>
+
 
 Sliding Panel with custom left and right blocks in the header:
 
