@@ -11,7 +11,7 @@ export default class SlidingPanel extends Component {
 
     this.handleClickOverlay = this.handleClickOverlay.bind(this);
     this.handleActive = this.handleActive.bind(this);
-    this.handleClose = this.handleClose.bind(this);
+    this.handleClickCloseButton = this.handleClickCloseButton.bind(this);
     this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
   }
 
@@ -36,6 +36,11 @@ export default class SlidingPanel extends Component {
      * (or instead closing in case it can't be closed)
      */
     beforeClosing: PropTypes.func,
+
+    /**
+     * When defined, this function is triggered before the panel is opening
+     */
+    beforeOpening: PropTypes.func,
 
     /**
      * Data attributes. You can use it to set up any custom data-* attribute
@@ -70,6 +75,7 @@ export default class SlidingPanel extends Component {
 
   static defaultProps = {
     closeOnOverlayClick: true,
+    closeOnButtonsClick: true,
   }
 
   componentWillReceiveProps(newProps) {
@@ -91,12 +97,12 @@ export default class SlidingPanel extends Component {
     this.panel.addEventListener('transitionend', this.handleTransitionEnd);
 
     this.closeButtons = this.panel.querySelectorAll('[data-rel="close"]');
-    this.closeButtons.forEach(b => b.addEventListener('click', this.handleClose));
+    this.closeButtons.forEach(b => b.addEventListener('click', this.handleClickCloseButton));
   }
 
   componentWillUnmount() {
     this.panel.removeEventListener('transitionend', this.handleTransitionEnd);
-    this.closeButtons.forEach(b => b.removeEventListener('click', this.handleClose));
+    this.closeButtons.forEach(b => b.removeEventListener('click', this.handleClickCloseButton));
   }
 
   /**
@@ -115,12 +121,21 @@ export default class SlidingPanel extends Component {
 
     if ((e.target === e.currentTarget) && this.props.closeOnOverlayClick) {
       this.handleClose();
-      console.log('here');
       return;
     }
 
-    console.log('here2');
     beforeClosing && beforeClosing();
+  }
+
+  handleClickCloseButton() {
+    const { closeOnButtonsClick, beforeClosing } = this.props;
+
+    if (!closeOnButtonsClick) {
+      beforeClosing && beforeClosing();
+      return;
+    }
+
+    this.handleClose();
   }
 
   /**
@@ -130,7 +145,6 @@ export default class SlidingPanel extends Component {
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
   handleClose() {
-    console.log('here3');
     const { beforeClosing } = this.props;
 
     beforeClosing && beforeClosing();
@@ -144,7 +158,9 @@ export default class SlidingPanel extends Component {
    * @method handleActive
    */
   handleActive() {
-    const { onOpen } = this.props;
+    const { onOpen, beforeOpening } = this.props;
+
+    beforeOpening && beforeOpening();
 
     this.setState({ isOverlayHidden: false }, () => {
       setTimeout(() => {
