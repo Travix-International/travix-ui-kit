@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SlidingPanel #render() calls beforeClosing function when provided and closes a panel if it doesn't return false 1`] = `
+exports[`SlidingPanel #render() calls onTryingToClose function when provided and closes a panel if it doesn't return false 1`] = `
 <SlidingPanel
   active={true}
-  beforeClosing={[Function]}
   closeOnOverlayClick={true}
+  onTryingToClose={[Function]}
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -23,11 +23,11 @@ exports[`SlidingPanel #render() calls beforeClosing function when provided and c
 </SlidingPanel>
 `;
 
-exports[`SlidingPanel #render() calls beforeClosing function when provided and closes a panel if it doesn't return false 2`] = `
+exports[`SlidingPanel #render() calls onTryingToClose function when provided and closes a panel if it doesn't return false 2`] = `
 <SlidingPanel
   active={true}
-  beforeClosing={[Function]}
   closeOnOverlayClick={true}
+  onTryingToClose={[Function]}
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -46,11 +46,11 @@ exports[`SlidingPanel #render() calls beforeClosing function when provided and c
 </SlidingPanel>
 `;
 
-exports[`SlidingPanel #render() calls beforeClosing function when provided via props and prevents closing if it returns false 1`] = `
+exports[`SlidingPanel #render() calls onTryingToClose function when provided via props and prevents closing if it returns false 1`] = `
 <SlidingPanel
   active={true}
-  beforeClosing={[Function]}
   closeOnOverlayClick={true}
+  onTryingToClose={[Function]}
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -69,11 +69,11 @@ exports[`SlidingPanel #render() calls beforeClosing function when provided via p
 </SlidingPanel>
 `;
 
-exports[`SlidingPanel #render() calls beforeClosing function when provided via props and prevents closing if it returns false 2`] = `
+exports[`SlidingPanel #render() calls onTryingToClose function when provided via props and prevents closing if it returns false 2`] = `
 <SlidingPanel
   active={true}
-  beforeClosing={[Function]}
   closeOnOverlayClick={true}
+  onTryingToClose={[Function]}
 >
   <div
     className="ui-sliding-panel-overlay"

@@ -30,7 +30,7 @@ export default class SlidingPanel extends Component {
      * Hook that will be executed when trying to close a panel if exists.
      * If it returns false, the panel won't be closed.
      */
-    beforeClosing: PropTypes.func,
+    onTryingToClose: PropTypes.func,
 
     /**
      * Data attributes. You can use it to set up any custom data-* attribute
@@ -123,9 +123,9 @@ export default class SlidingPanel extends Component {
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
   handleClose() {
-    const { beforeClosing } = this.props;
+    const { onTryingToClose } = this.props;
 
-    if (beforeClosing && beforeClosing() === false) {
+    if (onTryingToClose && onTryingToClose() === false) {
       return;
     }
 

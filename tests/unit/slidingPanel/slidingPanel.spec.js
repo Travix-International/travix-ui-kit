@@ -101,13 +101,13 @@ describe('SlidingPanel', () => {
       expect(onCloseMock.mock.calls.length).toEqual(1);
     });
 
-    it('calls beforeClosing function when provided via props and prevents closing if it returns false', () => {
-      const beforeClosingMock = jest.fn().mockReturnValue(false);
+    it('calls onTryingToClose function when provided via props and prevents closing if it returns false', () => {
+      const onTryingToCloseMock = jest.fn().mockReturnValue(false);
 
       const renderTree = mount(
         <SlidingPanel
           active
-          beforeClosing={beforeClosingMock}
+          onTryingToClose={onTryingToCloseMock}
         >
           Test
         </SlidingPanel>
@@ -124,7 +124,7 @@ describe('SlidingPanel', () => {
 
       overlayElement.simulate('click');
 
-      expect(beforeClosingMock.mock.calls.length).toEqual(1);
+      expect(onTryingToCloseMock.mock.calls.length).toEqual(1);
 
       jest.runAllTimers();
 
@@ -133,13 +133,13 @@ describe('SlidingPanel', () => {
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
     });
 
-    it('calls beforeClosing function when provided and closes a panel if it doesn\'t return false', () => {
-      const beforeClosingMock = jest.fn().mockReturnValue(true);
+    it('calls onTryingToClose function when provided and closes a panel if it doesn\'t return false', () => {
+      const onTryingToCloseMock = jest.fn().mockReturnValue(true);
 
       const renderTree = mount(
         <SlidingPanel
           active
-          beforeClosing={beforeClosingMock}
+          onTryingToClose={onTryingToCloseMock}
         >
           Test
         </SlidingPanel>
@@ -156,7 +156,7 @@ describe('SlidingPanel', () => {
 
       overlayElement.simulate('click');
 
-      expect(beforeClosingMock.mock.calls.length).toEqual(1);
+      expect(onTryingToCloseMock.mock.calls.length).toEqual(1);
 
       jest.runAllTimers();
 
