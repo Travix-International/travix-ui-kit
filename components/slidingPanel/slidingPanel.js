@@ -111,13 +111,9 @@ export default class SlidingPanel extends Component {
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
   handleClickOverlay(e) {
-    const { closeOnOverlayClick } = this.props;
-
-    if (e.target !== e.currentTarget) {
-      return;
+    if ((e.target === e.currentTarget) && this.props.closeOnOverlayClick) {
+      this.handleClose();
     }
-
-    closeOnOverlayClick && this.handleClose();
   }
 
   /**

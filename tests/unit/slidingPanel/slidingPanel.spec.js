@@ -58,30 +58,6 @@ describe('SlidingPanel', () => {
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
-    it('doe\'snt close a panel when clicking on the its content', () => {
-      const renderTree = mount(
-        <SlidingPanel active>Test</SlidingPanel>
-      );
-
-      jest.runAllTimers();
-
-      const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
-      const panelContentElement = overlayElement.find('.ui-sliding-panel__content');
-      const panelElement = overlayElement.find('.ui-sliding-panel');
-
-      expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
-
-      panelContentElement.simulate('click');
-      renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
-      jest.runAllTimers();
-
-      expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
-    });
-
     it('with closeOnOverlayClick=false does not close when overlay clicked', () => {
       const renderTree = mount(
         <SlidingPanel active closeOnOverlayClick={false}>Test</SlidingPanel>
@@ -125,71 +101,13 @@ describe('SlidingPanel', () => {
       expect(onCloseMock.mock.calls.length).toEqual(1);
     });
 
-    it('calls beforeClosing and beforeOpening functions when provided via props', () => {
-      const beforeClosingMock = jest.fn();
-      const beforeOpeningMock = jest.fn();
+    it('calls beforeClosing function when provided via props and prevents closing if it returns false', () => {
+      const beforeClosingMock = jest.fn().mockReturnValue(false);
 
       const renderTree = mount(
         <SlidingPanel
           active
           beforeClosing={beforeClosingMock}
-          beforeOpening={beforeOpeningMock}
-        >Test</SlidingPanel>
-      );
-      const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
-
-      expect(beforeOpeningMock.mock.calls.length).toEqual(1);
-
-      overlayElement.simulate('click');
-
-      expect(beforeClosingMock.mock.calls.length).toEqual(1);
-    });
-
-    it('still calls beforeClosing function when panel can\'t be closed with buttons', () => {
-      const beforeClosingMock = jest.fn();
-      const beforeOpeningMock = jest.fn();
-
-      document.body.insertAdjacentHTML('afterbegin', '<div id="root"></div>');
-      const renderTree = mount(
-        <SlidingPanel
-          active
-          beforeClosing={beforeClosingMock}
-          beforeOpening={beforeOpeningMock}
-          closeOnButtonsClick={false}
-        >
-          <button data-rel="close">Test</button>
-        </SlidingPanel>
-      , { attachTo: document.body.querySelector('#root') });
-      const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
-      const panelElement = overlayElement.find('.ui-sliding-panel');
-
-      jest.runAllTimers();
-
-      const closeButtonElement = document.querySelector('.ui-sliding-panel_active [data-rel="close"]');
-
-      closeButtonElement.dispatchEvent(new Event('click'));
-
-      jest.runAllTimers();
-
-      expect(beforeClosingMock.mock.calls.length).toEqual(1);
-
-      expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
-
-      renderTree.detach();
-    });
-
-    it('still calls beforeClosing function when panel can\'t be closed with clicking on the overlay', () => {
-      const beforeClosingMock = jest.fn();
-      const beforeOpeningMock = jest.fn();
-
-      const renderTree = mount(
-        <SlidingPanel
-          active
-          beforeClosing={beforeClosingMock}
-          beforeOpening={beforeOpeningMock}
-          closeOnOverlayClick={false}
         >
           Test
         </SlidingPanel>
@@ -213,6 +131,37 @@ describe('SlidingPanel', () => {
       expect(renderTree).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+    });
+
+    it('calls beforeClosing function when provided and closes a panel if it doesn\'t return false', () => {
+      const beforeClosingMock = jest.fn().mockReturnValue(true);
+
+      const renderTree = mount(
+        <SlidingPanel
+          active
+          beforeClosing={beforeClosingMock}
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      jest.runAllTimers();
+
+      const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
+      const panelElement = overlayElement.find('.ui-sliding-panel');
+
+      expect(renderTree).toMatchSnapshot();
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+
+      overlayElement.simulate('click');
+
+      expect(beforeClosingMock.mock.calls.length).toEqual(1);
+
+      jest.runAllTimers();
+
+      expect(renderTree).toMatchSnapshot();
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
     it('enables [data-rel="close"] element provided on the children, that closes the overlay', () => {
@@ -241,36 +190,6 @@ describe('SlidingPanel', () => {
       expect(renderTree).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
-
-      renderTree.detach();
-    });
-
-    it('disables [data-rel="close"] element if closeOnButtonsClick=false', () => {
-      document.body.insertAdjacentHTML('afterbegin', '<div id="root"></div>');
-      const renderTree = mount(
-        <SlidingPanel active closeOnButtonsClick={false}>
-          <button data-rel="close">Test</button>
-        </SlidingPanel>
-      , { attachTo: document.body.querySelector('#root') });
-      const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
-      const panelElement = overlayElement.find('.ui-sliding-panel');
-
-      jest.runAllTimers();
-
-      const closeButtonElement = document.querySelector('.ui-sliding-panel_active [data-rel="close"]');
-
-      expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
-
-      closeButtonElement.dispatchEvent(new Event('click'));
-
-      renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
-      jest.runAllTimers();
-
-      expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
 
       renderTree.detach();
     });
