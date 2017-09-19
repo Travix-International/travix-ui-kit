@@ -54,3 +54,23 @@ Sliding Panel unclosable with buttons:
         <button data-rel="close">Close</button>
       </SlidingPanel>
     </div>
+
+Sliding Panel with custom left and right blocks in the header:
+
+    <div>
+      <button
+        onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
+      >Open panel</button>
+      <SlidingPanel
+        active={state.isSlidingPanelOpen}
+        onClose={() => setState({ isSlidingPanelOpen: false })}
+        rightBlock={<button data-rel="close" style={{ marginRight: '15px' }}> close me! </button>}
+        leftBlock={<button data-rel="close" style={{ marginLeft: '15px' }}> ← </button>}
+        title="Panel Title"
+      >
+        This is an example<br/>
+        Of how simple it is to use<br/>
+        Our sliding panel.<br/><br/>
+        <button data-rel="close">Close</button>
+      </SlidingPanel>
+    </div>

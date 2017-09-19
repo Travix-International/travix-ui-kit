@@ -58,6 +58,16 @@ export default class SlidingPanel extends Component {
     onClose: PropTypes.func,
 
     /**
+     * When defined, this custom node appears on the left part of the header
+     */
+    leftBlock: PropTypes.node,
+
+    /**
+     * When defined, this custom node appears on the right part of the header
+     */
+    rightBlock: PropTypes.node,
+
+    /**
      * When defined, this function is triggered when the panel is opening.
      */
     onOpen: PropTypes.func,
@@ -189,6 +199,8 @@ export default class SlidingPanel extends Component {
       dataAttrs,
       children,
       title,
+      leftBlock,
+      rightBlock,
     } = this.props;
 
     const overlayMods = [];
@@ -215,7 +227,12 @@ export default class SlidingPanel extends Component {
           ref={(e) => { this.panel = e; }}
           {...getDataAttributes(dataAttrs)}
         >
-          {title && <SlidingPanelHeader title={title} />}
+          {title &&
+            <SlidingPanelHeader
+              leftBlock={leftBlock}
+              rightBlock={rightBlock}
+              title={title}
+            />}
           <div className="ui-sliding-panel__content">
             {children}
           </div>
