@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.6.28](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.28) (2017-09-20)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.27...v0.6.28)
+
+**Merged pull requests:**
+
+- Sliding panel improvements [\#189](https://github.com/Travix-International/travix-ui-kit/pull/189) ([RumataDeEstor](https://github.com/RumataDeEstor))
+- Update enzyme-to-json to the latest version 🚀 [\#188](https://github.com/Travix-International/travix-ui-kit/pull/188) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v0.6.27](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.27) (2017-09-14)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.26...v0.6.27)
 
