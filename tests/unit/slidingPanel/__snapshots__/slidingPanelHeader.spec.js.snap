@@ -6,6 +6,74 @@ exports[`SlidingPanel #render() render noscript without title 1`] = `
 </SlidingPanelHeader>
 `;
 
+exports[`SlidingPanel #render() render with custom left and right blocks 1`] = `
+<SlidingPanelHeader
+  leftBlock={
+    <button
+      data-rel="close"
+      style={
+        Object {
+          "marginLeft": "15px",
+        }
+      }
+    >
+       ← 
+    </button>
+  }
+  rightBlock={
+    <button
+      data-rel="close"
+      style={
+        Object {
+          "marginRight": "15px",
+        }
+      }
+    >
+       close me! 
+    </button>
+  }
+  title="Test Title"
+>
+  <div
+    className="ui-sliding-panel-header"
+  >
+    <div
+      className="ui-sliding-panel-header__left-block"
+    >
+      <button
+        data-rel="close"
+        style={
+          Object {
+            "marginLeft": "15px",
+          }
+        }
+      >
+         ← 
+      </button>
+    </div>
+    <h3
+      className="ui-sliding-panel-header__title"
+    >
+      Test Title
+    </h3>
+    <div
+      className="ui-sliding-panel-header__right-block"
+    >
+      <button
+        data-rel="close"
+        style={
+          Object {
+            "marginRight": "15px",
+          }
+        }
+      >
+         close me! 
+      </button>
+    </div>
+  </div>
+</SlidingPanelHeader>
+`;
+
 exports[`SlidingPanel #render() render with title 1`] = `
 <SlidingPanelHeader
   title="Test Title"

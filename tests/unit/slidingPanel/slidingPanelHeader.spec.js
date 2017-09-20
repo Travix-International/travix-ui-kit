@@ -30,5 +30,23 @@ describe('SlidingPanel', () => {
       expect(renderTree).toMatchSnapshot();
       expect(titleEl.text()).toEqual(title);
     });
+
+    it('render with custom left and right blocks', () => {
+      const title = 'Test Title';
+      const renderTree = mount(
+        <SlidingPanelHeader
+          leftBlock={<button data-rel="close" style={{ marginLeft: '15px' }}> ← </button>}
+          rightBlock={<button data-rel="close" style={{ marginRight: '15px' }}> close me! </button>}
+          title={title}
+        />
+      );
+
+      const titleEl = renderTree.find('.ui-sliding-panel-header__title');
+
+      jest.runAllTimers();
+
+      expect(renderTree).toMatchSnapshot();
+      expect(titleEl.text()).toEqual(title);
+    });
   });
 });

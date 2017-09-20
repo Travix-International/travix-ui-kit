@@ -27,6 +27,12 @@ export default class SlidingPanel extends Component {
     closeOnOverlayClick: PropTypes.bool,
 
     /**
+     * Hook that will be executed when trying to close a panel if exists.
+     * If it returns false, the panel won't be closed.
+     */
+    onTryingToClose: PropTypes.func,
+
+    /**
      * Data attributes. You can use it to set up any custom data-* attribute
      */
     dataAttrs: PropTypes.object,
@@ -40,6 +46,16 @@ export default class SlidingPanel extends Component {
      * When defined, this function is triggered when the panel is closing.
      */
     onClose: PropTypes.func,
+
+    /**
+     * When defined, this custom node appears on the left part of the header
+     */
+    leftBlock: PropTypes.node,
+
+    /**
+     * When defined, this custom node appears on the right part of the header
+     */
+    rightBlock: PropTypes.node,
 
     /**
      * When defined, this function is triggered when the panel is opening.
@@ -107,6 +123,12 @@ export default class SlidingPanel extends Component {
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
   handleClose() {
+    const { onTryingToClose } = this.props;
+
+    if (onTryingToClose && onTryingToClose() === false) {
+      return;
+    }
+
     this.setState({ isActive: false });
   }
 
@@ -145,6 +167,8 @@ export default class SlidingPanel extends Component {
       dataAttrs,
       children,
       title,
+      leftBlock,
+      rightBlock,
     } = this.props;
 
     const overlayMods = [];
@@ -171,7 +195,12 @@ export default class SlidingPanel extends Component {
           ref={(e) => { this.panel = e; }}
           {...getDataAttributes(dataAttrs)}
         >
-          {title && <SlidingPanelHeader title={title} />}
+          {title &&
+            <SlidingPanelHeader
+              leftBlock={leftBlock}
+              rightBlock={rightBlock}
+              title={title}
+            />}
           <div className="ui-sliding-panel__content">
             {children}
           </div>
