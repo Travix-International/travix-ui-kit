@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.6.29](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.29) (2017-10-02)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.28...v0.6.29)
+
+**Merged pull requests:**
+
+- Modal and price minor improvements [\#193](https://github.com/Travix-International/travix-ui-kit/pull/193) ([RumataDeEstor](https://github.com/RumataDeEstor))
+
 ## [v0.6.28](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.28) (2017-09-20)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.27...v0.6.28)
 
