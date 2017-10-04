@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.6.30](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.30) (2017-10-04)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.29...v0.6.30)
+
+**Merged pull requests:**
+
+- fixes NodeList to Array [\#197](https://github.com/Travix-International/travix-ui-kit/pull/197) ([froskie](https://github.com/froskie))
+
 ## [v0.6.29](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.29) (2017-10-02)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.28...v0.6.29)
 
