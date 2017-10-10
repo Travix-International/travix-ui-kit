@@ -4,6 +4,7 @@ Basic button:
       <Button onClick={alert}>Show alert</Button><br/><br/>
       <Button onClick={alert} disabled={true}>Disabled</Button><br/><br/>
       <Button dataAttrs={{gtm: 'some-id'}} type="reset">With GTM id</Button><br/><br/>
+      <Button className="my-class">Example with custom class set</Button><br/><br/>
     </div>
 
 Sizes:
@@ -34,4 +35,4 @@ Variations - Link:
         You can put a <Button onClick={alert} variation="link">link button</Button><br/> along with regular text.
       </p>
     </div>
-    
+
