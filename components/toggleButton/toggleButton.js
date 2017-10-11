@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { getClassNamesWithMods } from '../_helpers';
@@ -40,11 +41,11 @@ class ToggleButton extends Component {
       const mods = {
         'active': index === this.state.activeItem,
       };
-      const classNameItem = getClassNamesWithMods('ui-toggle-button__item', mods);
+      const classes = getClassNamesWithMods('ui-toggle-button__item', mods);
 
       return (
         <li
-          className={classNameItem}
+          className={classes}
           key={index}
           onClick={this.handleSelectItem}
         >
@@ -56,6 +57,7 @@ class ToggleButton extends Component {
 
   render() {
     const {
+      className,
       mods = [],
       items,
     } = this.props;
@@ -63,10 +65,13 @@ class ToggleButton extends Component {
     if (!Array.isArray(items) || items.length < 2) {
       return null;
     }
-    const className = getClassNamesWithMods('ui-toggle-button', mods);
+    const classes = classnames(
+      getClassNamesWithMods('ui-toggle-button', mods),
+      className,
+    );
 
     return (
-      <ul className={className}>
+      <ul className={classes}>
         {this.renderItems()}
       </ul>
     );
@@ -78,6 +83,12 @@ ToggleButton.defaultProps = {
 };
 
 ToggleButton.propTypes = {
+  /**
+   * Custom className(s) to be concatenated with the default ones
+   * on the component's root element
+   */
+  className: PropTypes.string,
+
   /**
    * List's elements.
    */
