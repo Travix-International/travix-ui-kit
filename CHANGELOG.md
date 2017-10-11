@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.6.31](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.31) (2017-10-11)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.30...v0.6.31)
+
+**Fixed bugs:**
+
+- Side panel \(close button doesn't work\). js error in safari 9.1 [\#192](https://github.com/Travix-International/travix-ui-kit/issues/192)
+
+**Merged pull requests:**
+
+- Add "className" prop to button [\#199](https://github.com/Travix-International/travix-ui-kit/pull/199) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Fixes the demo for the sidepanel [\#198](https://github.com/Travix-International/travix-ui-kit/pull/198) ([RumataDeEstor](https://github.com/RumataDeEstor))
+
 ## [v0.6.30](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.30) (2017-10-04)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.29...v0.6.30)
 
