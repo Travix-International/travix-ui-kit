@@ -18,6 +18,7 @@ function Button(props) {
     variation,
     disabled,
     dataAttrs = {},
+    ...otherProps
   } = props;
   const restProps = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
@@ -41,23 +42,39 @@ function Button(props) {
     }
 
     return (
-      <a className={classes} href={href} {...restProps}>{children}</a>
+      <a
+        {...restProps}
+        {...otherProps}
+        className={classes}
+        href={href}
+      >
+        {children}
+      </a>
     );
   }
 
   if (type === 'submit' || type === 'reset') {
     return (
-      <button className={classes} disabled={disabled} type={type} {...restProps}>{children}</button>
+      <button
+        {...restProps}
+        {...otherProps}
+        className={classes}
+        disabled={disabled}
+        type={type}
+      >
+        {children}
+      </button>
     );
   }
 
   return (
     <button
+      {...restProps}
+      {...otherProps}
       className={classes}
       disabled={disabled}
       onClick={onClick}
       type="button"
-      {...restProps}
     >
       {children}
     </button>
