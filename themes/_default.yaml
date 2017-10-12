@@ -145,6 +145,7 @@ button:
     font-family: "var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family)"
     hover-color: *primary
     hover-border-color: *primary
+    inverted-color: *blank
   link:
     color: *text
     font:

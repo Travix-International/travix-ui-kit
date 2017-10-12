@@ -5,18 +5,18 @@
 }
 
 .ui-button_variation_default {
-  font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
-  font-weight: var(--tx-generic-font-primary-weight-bold);
-  font-size: 23px;
-  padding: 15px 24px;
-  border: none;
-  border-radius: var(--tx-button-size-border-radius);
-  color: var(--tx-button-color-text);
   background-color: var(--tx-button-color-bg-bottom);
   background: linear-gradient(to bottom, var(--tx-button-color-bg-top) 0, var(--tx-button-color-bg-bottom) 100%);
+  border-radius: var(--tx-button-size-border-radius);
+  border: none;
   box-shadow: var(--tx-button-shadow);
-  text-shadow: var(--tx-button-text-shadow);
+  color: var(--tx-button-color-text);
+  font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
+  font-size: 23px;
+  font-weight: var(--tx-generic-font-primary-weight-bold);
+  padding: 15px 24px;
   position: relative;
+  text-shadow: var(--tx-button-text-shadow);
   top: 0;
 
   span:before {
@@ -48,10 +48,11 @@
 
 .ui-button_variation_ghost {
   background: var(--tx-button-ghost-background);
-  border: var(--tx-button-ghost-border);
   border-radius: var(--tx-button-ghost-border-radius);
-  font-family: var(--tx-button-ghost-font-family);
+  border: var(--tx-button-ghost-border);
   color: var(--tx-button-ghost-color);
+  font-family: var(--tx-button-ghost-font-family);
+  font-weight: var(--tx-button-ghost-font-weight);
   &:hover,
   &:focus {
     border-color: var(--tx-button-ghost-hover-border-color);
@@ -63,17 +64,23 @@
   }
 }
 
+.ui-button_variation_ghost-inverted {
+  @extend .ui-button_variation_ghost;
+  color: var(--tx-button-ghost-inverted-color);
+}
+
 .ui-button_disabled_true,
 .ui-button_disabled_true:focus,
 .ui-button_disabled_true:hover,
 .ui-button_disabled_true:active {
-  color: var(--tx-button-color-disabled-text);
-  cursor: default;
   background-color: var(--tx-button-color-disabled-bg-bottom);
   background: linear-gradient(to bottom, var(--tx-button-color-disabled-bg-top) 0, var(--tx-button-color-disabled-bg-bottom) 100%);
   border-bottom: 3px solid var(--tx-button-color-disabled-border-bottom);
   box-shadow: 0 2px var(--tx-button-color-disabled-border);
+  color: var(--tx-button-color-disabled-text);
+  cursor: default;
   position: static;
+  text-shadow: var(--tx-button-text-shadow-disabled);
 }
 
 .ui-button_size_xs {

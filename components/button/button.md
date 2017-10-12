@@ -25,6 +25,9 @@ Variations - Ghost:
       <Button onClick={alert} variation="ghost" size="m">Medium Ghost</Button><br/><br/>
       <Button onClick={alert} variation="ghost" size="l">Large Ghost</Button><br/><br/>
       <Button onClick={alert} variation="ghost" size="xl">Extra large Ghost</Button><br/><br/>
+      <div style={{background: "#005FBB", padding: "10px", display: "inline-block"}}>
+        <Button onClick={alert} variation="ghost-inverted" size="s">Small Ghost Inverted</Button><br/><br/>
+      </div>
     </div>
 
 Variations - Link:
