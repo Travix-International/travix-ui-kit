@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.6.32](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.32) (2017-10-12)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.31...v0.6.32)
+
+**Merged pull requests:**
+
+- Add ability for extending to the button [\#201](https://github.com/Travix-International/travix-ui-kit/pull/201) ([AlleeX](https://github.com/AlleeX))
+- Changes the ToggleButton component to accept classNames [\#200](https://github.com/Travix-International/travix-ui-kit/pull/200) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
 ## [v0.6.31](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.31) (2017-10-11)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.30...v0.6.31)
 
