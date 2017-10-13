@@ -6,7 +6,7 @@ Basic button:
       <Button dataAttrs={{gtm: 'some-id'}} type="reset">With GTM id</Button><br/><br/>
       <Button mods={['test']} type="reset">With mode</Button><br/><br/>
       <Button mods={['test']} className="my-class">Example with custom class set</Button><br/><br/>
-      <Button onMouseUp={alert(onMouseUp)}>Example with custom event (onMouseUp)</Button><br/><br/>
+      <Button onMouseUp={() => alert('onMouseUp')}>Example with custom event (onMouseUp)</Button><br/><br/>
     </div>
 
 Sizes:
