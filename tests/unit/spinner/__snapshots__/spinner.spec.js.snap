@@ -5,7 +5,6 @@ exports[`Spinner #render() should not modify mods 1`] = `
   className="ui-spinner ui-spinner_test ui-spinner_size_xs"
 >
   <svg
-    styles="enable-background:new 0 0 80 80;"
     version="1.1"
     viewBox="0 0 80 80"
     x="0px"
@@ -106,7 +105,6 @@ exports[`Spinner #render() should return base class with mods for strings as cla
   className="ui-spinner ui-spinner_size_xs"
 >
   <svg
-    styles="enable-background:new 0 0 80 80;"
     version="1.1"
     viewBox="0 0 80 80"
     x="0px"
@@ -207,7 +205,6 @@ exports[`Spinner #render() should return base class with mods for strings as cla
   className="ui-spinner ui-spinner_size_m"
 >
   <svg
-    styles="enable-background:new 0 0 80 80;"
     version="1.1"
     viewBox="0 0 80 80"
     x="0px"
