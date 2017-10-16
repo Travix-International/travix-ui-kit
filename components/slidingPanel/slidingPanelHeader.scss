@@ -1,6 +1,8 @@
 .ui-sliding-panel-header {
+  align-items: center;
   background-color: var(--tx-generic-color-blank);
   border-bottom: solid 2px var(--tx-generic-color-secondary-darker);
+  display: flex;
   flex-shrink: 0;
   height: 65px;
   min-height: 65px;
@@ -26,10 +28,8 @@
   line-height: 25px;
   overflow: visible;
   padding: 0;
-  position: absolute;
-  right: var(--tx-sliding-panel-panel-padding);
+  margin-right: var(--tx-sliding-panel-panel-padding);
   text-align: right;
-  top: 20px;
   width: 20px;
 
   &:hover {

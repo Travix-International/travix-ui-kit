@@ -1,5 +1,47 @@
 # Change Log
 
+## [v0.6.32](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.32) (2017-10-12)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.31...v0.6.32)
+
+**Merged pull requests:**
+
+- Add ability for extending to the button [\#201](https://github.com/Travix-International/travix-ui-kit/pull/201) ([AlleeX](https://github.com/AlleeX))
+- Changes the ToggleButton component to accept classNames [\#200](https://github.com/Travix-International/travix-ui-kit/pull/200) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+
+## [v0.6.31](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.31) (2017-10-11)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.30...v0.6.31)
+
+**Fixed bugs:**
+
+- Side panel \(close button doesn't work\). js error in safari 9.1 [\#192](https://github.com/Travix-International/travix-ui-kit/issues/192)
+
+**Merged pull requests:**
+
+- Add "className" prop to button [\#199](https://github.com/Travix-International/travix-ui-kit/pull/199) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Fixes the demo for the sidepanel [\#198](https://github.com/Travix-International/travix-ui-kit/pull/198) ([RumataDeEstor](https://github.com/RumataDeEstor))
+
+## [v0.6.30](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.30) (2017-10-04)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.29...v0.6.30)
+
+**Merged pull requests:**
+
+- fixes NodeList to Array [\#197](https://github.com/Travix-International/travix-ui-kit/pull/197) ([froskie](https://github.com/froskie))
+
+## [v0.6.29](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.29) (2017-10-02)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.28...v0.6.29)
+
+**Merged pull requests:**
+
+- Modal and price minor improvements [\#193](https://github.com/Travix-International/travix-ui-kit/pull/193) ([RumataDeEstor](https://github.com/RumataDeEstor))
+
+## [v0.6.28](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.28) (2017-09-20)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.27...v0.6.28)
+
+**Merged pull requests:**
+
+- Sliding panel improvements [\#189](https://github.com/Travix-International/travix-ui-kit/pull/189) ([RumataDeEstor](https://github.com/RumataDeEstor))
+- Update enzyme-to-json to the latest version 🚀 [\#188](https://github.com/Travix-International/travix-ui-kit/pull/188) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v0.6.27](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.27) (2017-09-14)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.26...v0.6.27)
 

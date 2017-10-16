@@ -58,7 +58,7 @@ describe('SlidingPanel', () => {
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
-    it('render active by default but with closeOnOverlayClick=false does not close when overlay clicked', () => {
+    it('with closeOnOverlayClick=false does not close when overlay clicked', () => {
       const renderTree = mount(
         <SlidingPanel active closeOnOverlayClick={false}>Test</SlidingPanel>
       );
@@ -99,6 +99,69 @@ describe('SlidingPanel', () => {
       renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
 
       expect(onCloseMock.mock.calls.length).toEqual(1);
+    });
+
+    it('calls onTryingToClose function when provided via props and prevents closing if it returns false', () => {
+      const onTryingToCloseMock = jest.fn().mockReturnValue(false);
+
+      const renderTree = mount(
+        <SlidingPanel
+          active
+          onTryingToClose={onTryingToCloseMock}
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      jest.runAllTimers();
+
+      const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
+      const panelElement = overlayElement.find('.ui-sliding-panel');
+
+      expect(renderTree).toMatchSnapshot();
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+
+      overlayElement.simulate('click');
+
+      expect(onTryingToCloseMock.mock.calls.length).toEqual(1);
+
+      jest.runAllTimers();
+
+      expect(renderTree).toMatchSnapshot();
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+    });
+
+    it('calls onTryingToClose function when provided and closes a panel if it doesn\'t return false', () => {
+      const onTryingToCloseMock = jest.fn().mockReturnValue(true);
+
+      const renderTree = mount(
+        <SlidingPanel
+          active
+          onTryingToClose={onTryingToCloseMock}
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      jest.runAllTimers();
+
+      const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
+      const panelElement = overlayElement.find('.ui-sliding-panel');
+
+      expect(renderTree).toMatchSnapshot();
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+
+      overlayElement.simulate('click');
+
+      expect(onTryingToCloseMock.mock.calls.length).toEqual(1);
+
+      jest.runAllTimers();
+
+      expect(renderTree).toMatchSnapshot();
+      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
     it('enables [data-rel="close"] element provided on the children, that closes the overlay', () => {
