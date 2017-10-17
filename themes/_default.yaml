@@ -130,8 +130,12 @@ button:
       border: "transparent"
       border-bottom: "var(--tx-generic-color-secondary-darkest)"
     hover:
+      background: "var(--tx-button-default-hover-background)"
       top: -2px
-      shadow: "0 5px var(--tx-generic-color-accent-border), 0 0 transparent"
+      shadow: "0 3px var(--tx-generic-color-accent-border), 0 0 transparent"
+    active:  
+      text-shadow: "var(--tx-button-defaut-active-text-shadow)" 
+      shadow: "var(--tx-button-defaut-active-shadow)" 
   ghost:
     normal:
       background: "transparent"

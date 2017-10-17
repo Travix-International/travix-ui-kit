@@ -16,7 +16,7 @@
   font-weight: var(--tx-generic-font-primary-weight-bold);
   padding: 15px 24px;
   position: relative;
-  text-shadow: var(--tx-button-text-shadow);
+  text-shadow: var(--tx-button-default-normal-text-shadow);
   top: 0;
 
   span:before {
@@ -25,7 +25,8 @@
 
   &:focus,
   &:hover {
-    box-shadow: 0 5px var(--tx-button-shadow-inner-color), var(--tx-button-shadow-outer-hover-params) var(--tx-button-shadow-outer-color);
+    background: linear-gradient(to bottom, var(--tx-button-default-hover-background) 0, var(--tx-button-default-hover-background) 100%);
+    box-shadow: var(--tx-button-default-hover-shadow);
     outline: none;
     top: var(--tx-button-default-hover-top);
     transition: all .1s ease-in-out;
@@ -36,8 +37,9 @@
   }
 
   &:active {
-    box-shadow: 0 2px var(--tx-button-shadow-inner-color);
+    box-shadow: var(--tx-button-default-active-shadow);
     top: 1px;
+    text-shadow: var(--tx-button-default-active-text-shadow);
     transition: all .1s ease-in-out;
 
     span:before {
