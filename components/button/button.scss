@@ -5,8 +5,8 @@
 }
 
 .ui-button_variation_default {
-  background-color: var(--tx-button-default-normal-bg-bottom);
-  background: linear-gradient(to bottom, var(--tx-button-default-normal-bg-top) 0, var(--tx-button-default-normal-bg-bottom) 100%);
+  background-color: var(--tx-button-default-normal-background);
+  background: var(--tx-button-default-normal-bg-top);
   border-radius: var(--tx-button-default-normal-border-radius);
   border: none;
   box-shadow: var(--tx-button-default-normal-shadow);
@@ -25,7 +25,7 @@
 
   &:focus,
   &:hover {
-    background: linear-gradient(to bottom, var(--tx-button-default-hover-background) 0, var(--tx-button-default-hover-background) 100%);
+    background: var(--tx-button-default-hover-background);
     box-shadow: var(--tx-button-default-hover-shadow);
     outline: none;
     top: var(--tx-button-default-hover-top);
@@ -53,7 +53,7 @@
   border-radius: var(--tx-button-ghost-normal-border-radius);
   border: var(--tx-button-ghost-normal-border);
   color: var(--tx-button-ghost-normal-color);
-  font-family: var(--tx-button-ghost-normal-font-family);
+  font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
   font-weight: var(--tx-button-ghost-normal-font-weight);
   &:hover,
   &:focus {
@@ -61,8 +61,8 @@
     color: var(--tx-button-ghost-hover-color);
   }
   &:active {
-    border-color: var(--tx-button-ghost-border-color);
-    color: var(--tx-button-ghost-normal-color);
+    border-color: var(--tx-button-ghost-active-border-color);
+    color: var(--tx-button-ghost-active-color);
   }
 }
 
