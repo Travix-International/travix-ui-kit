@@ -55,7 +55,6 @@
   font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
   font-weight: var(--tx-button-ghost-normal-font-weight);
   &:hover,
-  &:focus,
   &:active {
     border-color: var(--tx-button-ghost-hover-border-color);
     color: var(--tx-button-ghost-hover-color);
