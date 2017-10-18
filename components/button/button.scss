@@ -5,8 +5,7 @@
 }
 
 .ui-button_variation_default {
-  background-color: var(--tx-button-default-normal-background);
-  background: var(--tx-button-default-normal-bg-top);
+  background: var(--tx-button-default-normal-background);
   border-radius: var(--tx-button-default-normal-border-radius);
   border: none;
   box-shadow: var(--tx-button-default-normal-shadow);
@@ -56,13 +55,10 @@
   font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
   font-weight: var(--tx-button-ghost-normal-font-weight);
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     border-color: var(--tx-button-ghost-hover-border-color);
     color: var(--tx-button-ghost-hover-color);
-  }
-  &:active {
-    border-color: var(--tx-button-ghost-active-border-color);
-    color: var(--tx-button-ghost-active-color);
   }
 }
 

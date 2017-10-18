@@ -116,13 +116,12 @@ badge:
 button:
   default:
     normal:
-      bg-bottom: "var(--tx-generic-color-accent)"
-      bg-top: "var(--tx-generic-color-accent)"
+      background: "var(--tx-button-default-normal-background)"
       border-radius: *border-radius-small
       border: "var(--tx-generic-color-accent-dark)"
       shadow: "0 3px var(--tx-generic-color-accent-border), 0 0 transparent"
       text: "var(--tx-generic-color-blank)"
-      text-shadow: "none"
+      text-shadow: "var(--tx-button-default-normal-text-shadow)"
     disabled:
       bg-top: "var(--tx-generic-color-secondary-dark)"
       bg-bottom: "var(--tx-generic-color-secondary-dark)"
@@ -141,7 +140,7 @@ button:
       background: "transparent"
       color: *accent
       border-color: *accent
-      border: "3px solid var(--tx-button-ghost-normal-border-color)"
+      border: "var(--tx-button-ghost-normal-border)"
       border-radius: "var(--tx-button-ghost-normal-border-radius)"
       font-family: "var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family)"
     hover:
