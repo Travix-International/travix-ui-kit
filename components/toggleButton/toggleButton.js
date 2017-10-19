@@ -1,90 +1,49 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { getClassNamesWithMods } from '../_helpers';
 
-/**
- * ToggleButton component.
- */
-class ToggleButton extends Component {
-  constructor(props) {
-    super(props);
+export default function ToggleButton(props) {
+  const {
+    className,
+    mods = [],
+    handleSelect,
+    items,
+    selectedIndex,
+  } = props;
 
-    /**
-     * Initialize default state
-     */
-    this.state = {
-      activeItem: props.initialSelectedIndex,
+  if (!Array.isArray(items) || items.length < 2) {
+    return <noscript />;
+  }
+  const classes = classnames(
+    getClassNamesWithMods('ui-toggle-button', mods),
+    className,
+  );
+
+  /** Generating the <li> tags */
+  const listItems = items.map((item, itemIndex) => {
+    const itemClasses = getClassNamesWithMods('ui-toggle-button__item', { 'active': itemIndex === selectedIndex });
+    const handleOnClick = (e) => {
+      e.stopPropagation();
+
+      if (handleSelect) {
+        handleSelect(e, itemIndex);
+      }
     };
-  }
 
-  /**
-   * Handlers onClick event
-   *
-   * @method handleSelectItem
-   * @param {Object} event
-   * @private
-   */
-  handleSelectItem = (event) => {
-    event.stopPropagation();
+    return <li className={itemClasses} key={itemIndex} onClick={handleOnClick}>{item}</li>;
+  });
 
-    const index = this.props.items.indexOf(event.target.textContent);
-    this.setState({ activeItem: index });
-    (typeof this.props.handleSelect === 'function') && this.props.handleSelect(index);
-  }
-
-  /**
-   * Renders items markup
-   *
-   * @method renderItems
-   * @returns {JSX}
-   * @private
-   */
-  renderItems() {
-    return this.props.items.map((item, index) => {
-      const mods = {
-        'active': index === this.state.activeItem,
-      };
-      const classes = getClassNamesWithMods('ui-toggle-button__item', mods);
-
-      return (
-        <li
-          className={classes}
-          key={index}
-          onClick={this.handleSelectItem}
-        >
-          {item}
-        </li>
-      );
-    });
-  }
-
-  render() {
-    const {
-      className,
-      mods = [],
-      items,
-    } = this.props;
-
-    if (!Array.isArray(items) || items.length < 2) {
-      return null;
-    }
-    const classes = classnames(
-      getClassNamesWithMods('ui-toggle-button', mods),
-      className,
-    );
-
-    return (
-      <ul className={classes}>
-        {this.renderItems()}
-      </ul>
-    );
-  }
+  return (
+    <ul className={classes}>
+      {listItems}
+    </ul>
+  );
 }
 
 ToggleButton.defaultProps = {
   items: [],
-  initialSelectedIndex: 0,
+  selectedIndex: 0,
 };
 
 ToggleButton.propTypes = {
@@ -95,14 +54,9 @@ ToggleButton.propTypes = {
   className: PropTypes.string,
 
   /**
-   * Specify a function that will be called when a user clicked on  button.
+   * Specify a function that will be called when a user clicked on a given option.
    */
-  handleSelect: PropTypes.func.isRequired,
-
-  /**
-   * Specifies which item of the provided list is selected when **mounting**. By default is 0.
-   */
-  initialSelectedIndex: PropTypes.number,
+  handleSelect: PropTypes.func,
 
   /**
    * List's elements.
@@ -113,6 +67,9 @@ ToggleButton.propTypes = {
    * You can provide set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
-};
 
-export default ToggleButton;
+  /**
+   * Specifies which item of the provided list is selected when **mounting**. By default is 0.
+   */
+  selectedIndex: PropTypes.number,
+};
