@@ -7,11 +7,15 @@ import { getClassNamesWithMods } from '../_helpers';
  * ToggleButton component.
  */
 class ToggleButton extends Component {
-  /**
-   * Initialize default state
-   */
-  state = {
-    activeItem: 0,
+  constructor(props) {
+    super(props);
+
+    /**
+     * Initialize default state
+     */
+    this.state = {
+      activeItem: props.initialSelectedIndex,
+    };
   }
 
   /**
@@ -80,6 +84,7 @@ class ToggleButton extends Component {
 
 ToggleButton.defaultProps = {
   items: [],
+  initialSelectedIndex: 0,
 };
 
 ToggleButton.propTypes = {
@@ -90,6 +95,16 @@ ToggleButton.propTypes = {
   className: PropTypes.string,
 
   /**
+   * Specify a function that will be called when a user clicked on  button.
+   */
+  handleSelect: PropTypes.func.isRequired,
+
+  /**
+   * Specifies which item of the provided list is selected when **mounting**. By default is 0.
+   */
+  initialSelectedIndex: PropTypes.number,
+
+  /**
    * List's elements.
    */
   items: PropTypes.arrayOf(PropTypes.string),
@@ -98,11 +113,6 @@ ToggleButton.propTypes = {
    * You can provide set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
-
-  /**
-   * Specify a function that will be called when a user clicked on  button.
-   */
-  handleSelect: PropTypes.func.isRequired,
 };
 
 export default ToggleButton;
