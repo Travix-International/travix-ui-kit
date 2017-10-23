@@ -39,11 +39,6 @@ Basic dropDown with icon:
 
     <div>
       <div style={{ width: '50%' }}>
-        <style dangerouslySetInnerHTML={{__html: `
-          .testIcon:before {
-            content: '⚡';
-          }
-        `}} />
         <DropDown
           onChange={(opts) => {setState({ value: opts.value })}}
           options={[
@@ -52,7 +47,7 @@ Basic dropDown with icon:
             { value: 3, label: 'Three' },
           ]}
           value={state.value}
-          icon="testIcon"
+          icon
         />
       </div>
     </div>

@@ -27,8 +27,9 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
     font-size: 16px;
     white-space: nowrap;
 
-    .icon {
+    &-icon {
       &:before {
+        content: 	'✈';
         margin-right: 10px;
         vertical-align: bottom;
       }
