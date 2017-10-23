@@ -26,6 +26,13 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
   .Select-value-label {
     font-size: 16px;
     white-space: nowrap;
+
+    .icon {
+      &:before {
+        margin-right: 10px;
+        vertical-align: bottom;
+      }
+    }
   }
 
   .Select-control {
