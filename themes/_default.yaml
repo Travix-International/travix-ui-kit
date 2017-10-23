@@ -42,8 +42,8 @@ generic:
     primary-lighter: &primary-lighter           "#5B6ECA"
 
     secondary-darkest: &secondary-darkest       "#A5AEB4"
-    secondary-darker: &secondary-darker         "#dbdee0"
-    secondary-dark: &secondary-dark             "#BEC3C7"
+    secondary-darker: &secondary-darker         "#BEC3C7"
+    secondary-dark: &secondary-dark             "#dbdee0"
     secondary: &secondary                       "#F8C346"
     secondary-rgb: &secondary-rgb               "248,195,70"
     secondary-light: &secondary-light           "#FFD05E"
@@ -130,7 +130,7 @@ button:
       text: *secondary-darker
       text-shadow: none
       border: "transparent"
-      border-bottom: *secondary-darkest
+      border-bottom: *secondary-darker
     hover:
       bg-top: *accent-dark
       bg-bottom: *accent-dark

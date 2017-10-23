@@ -5,7 +5,6 @@
 }
 
 .ui-button_variation_default {
-  background-color: var(--tx-button-default-normal-bg-bottom);
   background: linear-gradient(to bottom, var(--tx-button-default-normal-bg-top) 0, var(--tx-button-default-normal-bg-bottom) 100%);
   border-radius: var(--tx-button-default-normal-border-radius);
   border: none;
