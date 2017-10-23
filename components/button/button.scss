@@ -5,7 +5,8 @@
 }
 
 .ui-button_variation_default {
-  background: var(--tx-button-default-normal-background);
+  background-color: var(--tx-button-default-normal-bg-bottom);
+  background: linear-gradient(to bottom, var(--tx-button-default-normal-bg-top) 0, var(--tx-button-default-normal-bg-bottom) 100%);
   border-radius: var(--tx-button-default-normal-border-radius);
   border: none;
   box-shadow: var(--tx-button-default-normal-shadow);
@@ -24,7 +25,7 @@
 
   &:focus,
   &:hover {
-    background: var(--tx-button-default-hover-background);
+    background: linear-gradient(to bottom, var(--tx-button-default-hover-bg-top) 0, var(--tx-button-default-hover-bg-bottom) 100%);  
     box-shadow: var(--tx-button-default-hover-shadow);
     outline: none;
     top: var(--tx-button-default-hover-top);
@@ -77,7 +78,7 @@
   color: var(--tx-button-default-disabled-text);
   cursor: default;
   position: static;
-  text-shadow: var(--tx-button-text-shadow-disabled);
+  text-shadow: var(--tx-button-default-disabled-text-shadow);
 }
 
 .ui-button_size_xs {
