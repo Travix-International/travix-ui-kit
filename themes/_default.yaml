@@ -75,7 +75,7 @@ generic:
   separator:
     width: &separator-width 2px
     style: &separator-style dotted
-  size:		
+  size:
     border-radius-small: &border-radius-small 2px
 autocomplete:
   background-color: "var(--tx-generic-color-blank)"
@@ -158,31 +158,31 @@ button:
       normal: "var(--tx-generic-color-primary-lighter)"
       hover: "var(--tx-generic-color-active)"
       active: "var(--tx-generic-color-primary-lighter)"
-  color:		
-    bg-top: "var(--tx-generic-color-accent)"		
-    bg-bottom: "var(--tx-generic-color-accent)"		
-    text: "var(--tx-generic-color-blank)"		
-    border: "var(--tx-generic-color-accent-dark)"		
-    shadow: "transparent"		
-    disabled:		
-      bg-top: "var(--tx-generic-color-secondary-dark)"		
-      bg-bottom: "var(--tx-generic-color-secondary-dark)"		
-      text: "var(--tx-generic-color-secondary-darker)"		
-      border: "transparent"		
-      border-bottom: "var(--tx-generic-color-secondary-darkest)"		
-  size:		
-    border-radius: *border-radius-small		
-  shadow: "0 3px var(--tx-generic-color-accent-border), 0 0 transparent"		
-  shadow-hover: "0 5px var(--tx-generic-color-accent-border), 0 0 transparent"		
-  text-shadow: "none"		
-  ghost:		
-    background: "transparent"		
-    color: *accent		
-    border-color: *accent		
-    border: "3px solid var(--tx-button-ghost-border-color)"		
-    border-radius: "var(--tx-button-size-border-radius)"		
-    font-family: "var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family)"		
-    hover-color: *primary		
+  color:
+    bg-top: "var(--tx-generic-color-accent)"
+    bg-bottom: "var(--tx-generic-color-accent)"
+    text: "var(--tx-generic-color-blank)"
+    border: "var(--tx-generic-color-accent-dark)"
+    shadow: "transparent"
+    disabled:
+      bg-top: "var(--tx-generic-color-secondary-dark)"
+      bg-bottom: "var(--tx-generic-color-secondary-dark)"
+      text: "var(--tx-generic-color-secondary-darker)"
+      border: "transparent"
+      border-bottom: "var(--tx-generic-color-secondary-darkest)"
+  size:
+    border-radius: *border-radius-small
+  shadow: "0 3px var(--tx-generic-color-accent-border), 0 0 transparent"
+  shadow-hover: "0 5px var(--tx-generic-color-accent-border), 0 0 transparent"
+  text-shadow: "none"
+  ghost:
+    background: "transparent"
+    color: *accent
+    border-color: *accent
+    border: "3px solid var(--tx-button-ghost-border-color)"
+    border-radius: "var(--tx-button-size-border-radius)"
+    font-family: "var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family)"
+    hover-color: *primary
     hover-border-color: *primary
   link:
     color: *text
