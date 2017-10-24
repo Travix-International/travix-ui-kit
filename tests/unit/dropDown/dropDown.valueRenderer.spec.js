@@ -1,7 +1,10 @@
+import { shallow } from 'enzyme';
+import React from 'react';
 import DropDown from '../../../components/dropDown/dropDown';
 
 describe('DropDown: valueRenderer', () => {
   it('should Renderer value item with correct props', () => {
+    const onChange = jest.fn();
     const options = [
       { value: 1, label: 'One' },
       { value: 2, label: 'Two' },
@@ -10,11 +13,19 @@ describe('DropDown: valueRenderer', () => {
 
     const props = options[0];
 
-    const value = DropDown.valueRenderer(props);
+    const component = shallow(
+      <DropDown
+        icon="iconClass"
+        onChange={onChange}
+        options={options}
+      />
+    );
+
+    const value = component.instance().valueRenderer(props);
 
     expect(value.props).toEqual({
       children: 'One',
-      className: 'Select-value-label-icon',
+      className: 'Select-value-label-icon iconClass',
     });
   });
 });

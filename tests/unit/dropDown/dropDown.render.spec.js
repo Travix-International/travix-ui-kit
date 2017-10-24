@@ -126,7 +126,7 @@ describe('DropDown: render', () => {
   it('should return dropdown with icon', () => {
     const component = shallow(
       <DropDown
-        icon
+        icon="iconClass"
         onChange={() => {}}
         options={[]}
       />

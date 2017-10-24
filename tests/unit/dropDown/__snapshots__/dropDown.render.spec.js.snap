@@ -310,6 +310,7 @@ exports[`DropDown: render should return dropdown with icon 1`] = `
     tabSelectsValue={true}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={[Function]}
   />
 </div>
 `;
