@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.6.34](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.34) (2017-10-25)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.33...v0.6.34)
+
+**Merged pull requests:**
+
+- Fixed issue with button colors [\#210](https://github.com/Travix-International/travix-ui-kit/pull/210) ([MadinaShad](https://github.com/MadinaShad))
+
 ## [v0.6.33](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.33) (2017-10-25)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.32...v0.6.33)
 
