@@ -117,23 +117,23 @@ badge:
 ui-button:
   default:
     normal:
-      bg-top: *accent
-      bg-bottom: *accent
+      bg-top: "var(--tx-generic-color-accent)"
+      bg-bottom: "var(--tx-generic-color-accent)"
       border-radius: 2px
-      border: *accent-dark
+      border: "var(--tx-generic-color-accent-dark)"
       shadow: "0 3px var(--tx-generic-color-accent-border), 0 0 transparent"
-      text: *blank
+      text: "var(--tx-generic-color-blank)"
       text-shadow: "0px 2px 0px var(--tx-generic-color-accent-border)"
     disabled:
-      bg-top: *secondary-dark
-      bg-bottom: *secondary-dark
-      text: *secondary-darker
+      bg-top: "var(--tx-generic-color-secondary-dark)"
+      bg-bottom: "var(--tx-generic-color-secondary-dark)"
+      text: "var(--tx-generic-color-secondary-darker)"
       text-shadow: none
       border: "transparent"
-      border-bottom: *secondary-darker
+      border-bottom: "var(--tx-generic-color-secondary-darker)"
     hover:
-      bg-top: *accent-dark
-      bg-bottom: *accent-dark
+      bg-top: "var(--tx-generic-color-accent-dark)"
+      bg-bottom: "var(--tx-generic-color-accent-dark)"
       top: 0
       shadow: "0 3px var(--tx-generic-color-accent-border-hover), 0 0 transparent"
     active:  
@@ -141,17 +141,17 @@ ui-button:
       text-shadow: "0px 1px 0px var(--tx-generic-color-accent-border)"  
   ghost:
     normal:
-      background: *blank
-      color: *primary-darker
+      background: "var(--tx-generic-color-blank)"
+      color: "var(--tx-generic-color-primary-darker)"
       border: "3px solid var(--tx-generic-color-secondary-darker)"
       border-radius: 2px
       font-family: "var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family)"
       font-weight: "var(--tx-generic-font-primary-weight-semibold)"
     hover:
-      color: *active
-      border-color: *active
+      color: "var(--tx-generic-color-active)"
+      border-color: "var(--tx-generic-color-active)"
     inverted:
-      color: *primary-darker
+      color: "var(--tx-generic-color-primary-darker)"
 button:
   icon:
     color:
