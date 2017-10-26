@@ -1,6 +1,7 @@
 .ui-tab {
   cursor: pointer;
   flex: 1 1;
+  outline: none;
   padding: 4px 0 0;
   position: relative;
 }
@@ -30,13 +31,19 @@
 
 .ui-tab__content {
   background-color: #FFF;
-  padding: 10px 10px 15px 10px;
   text-align: center;
 }
 
 .ui-tab__content_active {
   background-color: #00B0FF;
   color: #FFF;
+}
+
+.ui-tab__content-paddings {
+  padding: 10px 10px 15px 10px;
+}
+
+.ui-tab__content_active .ui-tab__content-paddings {
   padding-bottom: 19px;
 }
 

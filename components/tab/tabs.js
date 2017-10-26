@@ -34,8 +34,8 @@ class Tabs extends Component {
         tabs.push(child);
 
         if (child.props.children) {
-          const { isActive } = this.getTabInfo(child, idx);
-          contents.push({ isActive, data: child.props.children });
+          const { isActive, value } = this.getTabInfo(child, idx);
+          contents.push({ isActive, value, data: child.props.children });
         }
       }
     });
@@ -61,6 +61,7 @@ class Tabs extends Component {
         children: null,
         key: idx,
         value,
+        name: `${this.props.name}-${value}`,
         onClick: (event, val) => {
           this.handleTabClick(value);
           if (tab.props.onClick) { tab.props.onClick(event, val); }
@@ -69,13 +70,13 @@ class Tabs extends Component {
     });
   }
 
-  static renderTabsContent(contents) {
+  renderTabsContent(contents) {
     if (!contents.length) {
       return null;
     }
 
     const items = contents.map((content, idx) => {
-      const { isActive, data } = content;
+      const { isActive, data, value } = content;
 
       const classes = classnames({
         'ui-tabs__content-item': true,
@@ -83,7 +84,14 @@ class Tabs extends Component {
       });
 
       return (
-        <div className={classes} key={idx}>
+        <div
+          aria-hidden={!isActive}
+          aria-labelledby={`${this.props.name}-${value}`}
+          className={classes}
+          id={`${this.props.name}-${value}-panel`}
+          key={idx}
+          role="tabpanel"
+        >
           {data}
         </div>
       );
@@ -121,10 +129,13 @@ class Tabs extends Component {
         {...otherProps}
         className={classes}
       >
-        <div className="ui-tabs__navigation">
+        <div
+          className="ui-tabs__navigation"
+          role="tablist"
+        >
           {this.renderTabsNavigation(tabs)}
         </div>
-        {Tabs.renderTabsContent(contents)}
+        {this.renderTabsContent(contents)}
       </div>
     );
   }
@@ -165,6 +176,11 @@ Tabs.propTypes = {
    * Set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * Represents the element's name.
+   */
+  name: PropTypes.string.isRequired,
 
   /**
    * The callback for onChange tabs event.

@@ -14,7 +14,33 @@ class Tab extends Component {
     if (this.props.onClick) {
       this.props.onClick(event, value);
     }
-  };
+  }
+
+  renderTabContent() {
+    const {
+      active,
+      title,
+    } = this.props;
+
+    const titleBlock = typeof title === 'string'
+    ? (
+      <div className="ui-tab__content-paddings">
+        {title}
+      </div>
+    )
+    : title;
+
+    const contentClasses = classnames({
+      'ui-tab__content': true,
+      'ui-tab__content_active': active,
+    });
+
+    return (
+      <div className={contentClasses}>
+        {titleBlock}
+      </div>
+    );
+  }
 
   render() {
     const {
@@ -22,8 +48,8 @@ class Tab extends Component {
       className,
       dataAttrs = {},
       mods = [],
+      name,
       onClick,
-      title,
       value,
       ...otherProps
     } = this.props;
@@ -34,22 +60,20 @@ class Tab extends Component {
       className
     );
 
-    const contentClasses = classnames({
-      'ui-tab__content': true,
-      'ui-tab__content_active': active,
-    });
-
     return (
       <div
         {...getDataAttributes(dataAttrs)}
         {...otherProps}
+        aria-controls={`${name}-panel`}
+        aria-selected={active}
         className={classes}
+        id={name}
         onClick={this.handleTabClick}
+        role="tab"
+        tabIndex="0"
       >
         <div className="ui-tab__shadow-wrapper">
-          <div className={contentClasses}>
-            {title}
-          </div>
+          {this.renderTabContent()}
         </div>
       </div>
     );
@@ -86,17 +110,19 @@ Tab.propTypes = {
   mods: PropTypes.arrayOf(PropTypes.string),
 
   /**
-   * The tabs title.
+   * Represents the element's name.
    */
-  title: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  name: PropTypes.string.isRequired,
 
   /**
    * The callback for onClick tab event.
    */
   onClick: PropTypes.func,
+
+  /**
+   * The tab title.
+   */
+  title: PropTypes.node.isRequired,
 
   /**
    * Determine value for tab
