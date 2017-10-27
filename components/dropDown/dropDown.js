@@ -101,6 +101,7 @@ class DropDown extends Component {
       clearable,
       dataAttrs = {},
       filterMode,
+      icon,
       mods = [],
       multi,
       name,
@@ -110,7 +111,6 @@ class DropDown extends Component {
       searchable,
       status,
       value,
-      icon,
       ...otherProps
     } = this.props;
 
@@ -174,6 +174,10 @@ DropDown.propTypes = {
  */
   filterMode: PropTypes.bool,
   /**
+   * Icon className for value label
+   */
+  icon: PropTypes.string,
+  /**
  * Set of custom modifications.
  */
   mods: PropTypes.arrayOf(PropTypes.string),
@@ -213,10 +217,6 @@ DropDown.propTypes = {
  * Initial field value
  */
   value: PropTypes.any,
-  /**
-   * Icon className for value label
-   */
-  icon: PropTypes.string,
 };
 
 export default DropDown;
