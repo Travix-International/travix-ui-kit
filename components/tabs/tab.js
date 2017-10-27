@@ -43,6 +43,7 @@ class Tab extends Component {
       mods = [],
       name,
       onClick,
+      title,
       value,
       ...otherProps
     } = this.props;
@@ -64,6 +65,7 @@ class Tab extends Component {
         onClick={this.handleTabClick}
         role="tab"
         tabIndex="0"
+        title={typeof title === 'string' ? title : ''}
       >
         <div className="ui-tab__shadow-wrapper">
           {this.renderTabContent()}

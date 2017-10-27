@@ -1,5 +1,139 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Radio Button #render() should call onChange method 1`] = `
+<Tabs
+  activeTab="1"
+  name="tabs1"
+  onChange={[Function]}
+  open={false}
+  selectionType="normal"
+>
+  <div
+    activeTab="1"
+    className="ui-tabs"
+    name="tabs1"
+    onChange={[Function]}
+    open={false}
+    selectionType="normal"
+  >
+    <div
+      className="ui-tabs__navigation"
+      role="tablist"
+    >
+      <Tab
+        active={true}
+        key="0"
+        name="tabs1-1"
+        onClick={[Function]}
+        title="One"
+        value="1"
+      >
+        <div
+          aria-controls="tabs1-1-panel"
+          aria-selected={true}
+          className="ui-tab ui-tab_active"
+          id="tabs1-1"
+          onClick={[Function]}
+          role="tab"
+          tabIndex="0"
+          title="One"
+        >
+          <div
+            className="ui-tab__shadow-wrapper"
+          >
+            <div
+              className="ui-tab__content ui-tab__content_active ui-tab__content-paddings"
+            >
+              One
+            </div>
+          </div>
+        </div>
+      </Tab>
+    </div>
+    <div
+      className="ui-tabs__content"
+    >
+      <div
+        aria-hidden={false}
+        aria-labelledby="tabs1-1"
+        className="ui-tabs__content-item ui-tabs__content-item_active"
+        id="tabs1-1-panel"
+        key="0"
+        role="tabpanel"
+      >
+        text
+      </div>
+    </div>
+  </div>
+</Tabs>
+`;
+
+exports[`Radio Button #render() should call onClick method 1`] = `
+<Tabs
+  activeTab="1"
+  name="tabs1"
+  open={false}
+  selectionType="normal"
+>
+  <div
+    activeTab="1"
+    className="ui-tabs"
+    name="tabs1"
+    open={false}
+    selectionType="normal"
+  >
+    <div
+      className="ui-tabs__navigation"
+      role="tablist"
+    >
+      <Tab
+        active={true}
+        key="0"
+        name="tabs1-1"
+        onClick={[Function]}
+        title="One"
+        value="1"
+      >
+        <div
+          aria-controls="tabs1-1-panel"
+          aria-selected={true}
+          className="ui-tab ui-tab_active"
+          id="tabs1-1"
+          onClick={[Function]}
+          role="tab"
+          tabIndex="0"
+          title="One"
+        >
+          <div
+            className="ui-tab__shadow-wrapper"
+          >
+            <div
+              className="ui-tab__content ui-tab__content_active ui-tab__content-paddings"
+            >
+              One
+            </div>
+          </div>
+        </div>
+      </Tab>
+    </div>
+    <div
+      className="ui-tabs__content"
+    >
+      <div
+        aria-hidden={false}
+        aria-labelledby="tabs1-1"
+        className="ui-tabs__content-item ui-tabs__content-item_active"
+        id="tabs1-1-panel"
+        key="0"
+        role="tabpanel"
+      >
+        text
+      </div>
+    </div>
+  </div>
+</Tabs>
+`;
+
 exports[`Radio Button #render() should change "activeTab" after receive new props when "activeTab" was provided 1`] = `
 <div
   activeTab="0"
@@ -99,9 +233,72 @@ exports[`Radio Button #render() should change "activeTab" after receive new prop
 </div>
 `;
 
+exports[`Radio Button #render() should not call onClick method 1`] = `
+<Tab
+  active={false}
+  name=""
+  title="One"
+  value="1"
+>
+  <div
+    aria-controls="-panel"
+    aria-selected={false}
+    className="ui-tab"
+    id=""
+    onClick={[Function]}
+    role="tab"
+    tabIndex="0"
+    title="One"
+  >
+    <div
+      className="ui-tab__shadow-wrapper"
+    >
+      <div
+        className="ui-tab__content ui-tab__content-paddings"
+      >
+        One
+      </div>
+    </div>
+  </div>
+</Tab>
+`;
+
 exports[`Radio Button #render() should not render correct with other tags 1`] = `null`;
 
-exports[`Radio Button #render() should not render correct with other tags 2`] = `
+exports[`Radio Button #render() should render correct component with basic data 1`] = `
+<div
+  activeTab="0"
+  className="ui-tabs"
+  name="tabs1"
+  onChange={[Function]}
+  open={false}
+  selectionType="normal"
+>
+  <div
+    className="ui-tabs__navigation"
+    role="tablist"
+  >
+    <Tab
+      active={true}
+      key="0"
+      name="tabs1-0"
+      onClick={[Function]}
+      title="One"
+      value="0"
+    />
+    <Tab
+      active={false}
+      key="1"
+      name="tabs1-1"
+      onClick={[Function]}
+      title="Two"
+      value="1"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio Button #render() should render correct data with content 1`] = `
 <div
   activeTab="0"
   className="ui-tabs"
@@ -140,7 +337,7 @@ exports[`Radio Button #render() should not render correct with other tags 2`] = 
 </div>
 `;
 
-exports[`Radio Button #render() should not render correct with other tags 3`] = `
+exports[`Radio Button #render() should render correct data with custome values 1`] = `
 <div
   activeTab="0"
   className="ui-tabs"
@@ -179,7 +376,7 @@ exports[`Radio Button #render() should not render correct with other tags 3`] = 
 </div>
 `;
 
-exports[`Radio Button #render() should not render correct with other tags 4`] = `
+exports[`Radio Button #render() should render correct data with init value 1`] = `
 <div
   activeTab="1"
   className="ui-tabs"
@@ -214,203 +411,6 @@ exports[`Radio Button #render() should not render correct with other tags 4`] = 
     >
       text
     </div>
-  </div>
-</div>
-`;
-
-exports[`Radio Button #render() should not render correct with other tags 5`] = `
-<Tabs
-  activeTab="1"
-  name="tabs1"
-  onChange={[Function]}
-  open={false}
-  selectionType="normal"
->
-  <div
-    activeTab="1"
-    className="ui-tabs"
-    name="tabs1"
-    onChange={[Function]}
-    open={false}
-    selectionType="normal"
-  >
-    <div
-      className="ui-tabs__navigation"
-      role="tablist"
-    >
-      <Tab
-        active={true}
-        key="0"
-        name="tabs1-1"
-        onClick={[Function]}
-        title="One"
-        value="1"
-      >
-        <div
-          aria-controls="tabs1-1-panel"
-          aria-selected={true}
-          className="ui-tab ui-tab_active"
-          id="tabs1-1"
-          onClick={[Function]}
-          role="tab"
-          tabIndex="0"
-          title="One"
-        >
-          <div
-            className="ui-tab__shadow-wrapper"
-          >
-            <div
-              className="ui-tab__content ui-tab__content_active ui-tab__content-paddings"
-            >
-              One
-            </div>
-          </div>
-        </div>
-      </Tab>
-    </div>
-    <div
-      className="ui-tabs__content"
-    >
-      <div
-        aria-hidden={false}
-        aria-labelledby="tabs1-1"
-        className="ui-tabs__content-item ui-tabs__content-item_active"
-        id="tabs1-1-panel"
-        key="0"
-        role="tabpanel"
-      >
-        text
-      </div>
-    </div>
-  </div>
-</Tabs>
-`;
-
-exports[`Radio Button #render() should not render correct with other tags 6`] = `
-<Tabs
-  activeTab="1"
-  name="tabs1"
-  open={false}
-  selectionType="normal"
->
-  <div
-    activeTab="1"
-    className="ui-tabs"
-    name="tabs1"
-    open={false}
-    selectionType="normal"
-  >
-    <div
-      className="ui-tabs__navigation"
-      role="tablist"
-    >
-      <Tab
-        active={true}
-        key="0"
-        name="tabs1-1"
-        onClick={[Function]}
-        title="One"
-        value="1"
-      >
-        <div
-          aria-controls="tabs1-1-panel"
-          aria-selected={true}
-          className="ui-tab ui-tab_active"
-          id="tabs1-1"
-          onClick={[Function]}
-          role="tab"
-          tabIndex="0"
-          title="One"
-        >
-          <div
-            className="ui-tab__shadow-wrapper"
-          >
-            <div
-              className="ui-tab__content ui-tab__content_active ui-tab__content-paddings"
-            >
-              One
-            </div>
-          </div>
-        </div>
-      </Tab>
-    </div>
-    <div
-      className="ui-tabs__content"
-    >
-      <div
-        aria-hidden={false}
-        aria-labelledby="tabs1-1"
-        className="ui-tabs__content-item ui-tabs__content-item_active"
-        id="tabs1-1-panel"
-        key="0"
-        role="tabpanel"
-      >
-        text
-      </div>
-    </div>
-  </div>
-</Tabs>
-`;
-
-exports[`Radio Button #render() should not render correct with other tags 7`] = `
-<Tab
-  active={false}
-  name=""
-  title="One"
-  value="1"
->
-  <div
-    aria-controls="-panel"
-    aria-selected={false}
-    className="ui-tab"
-    id=""
-    onClick={[Function]}
-    role="tab"
-    tabIndex="0"
-    title="One"
-  >
-    <div
-      className="ui-tab__shadow-wrapper"
-    >
-      <div
-        className="ui-tab__content ui-tab__content-paddings"
-      >
-        One
-      </div>
-    </div>
-  </div>
-</Tab>
-`;
-
-exports[`Radio Button #render() should render correct component with basic data 1`] = `
-<div
-  activeTab="0"
-  className="ui-tabs"
-  name="tabs1"
-  onChange={[Function]}
-  open={false}
-  selectionType="normal"
->
-  <div
-    className="ui-tabs__navigation"
-    role="tablist"
-  >
-    <Tab
-      active={true}
-      key="0"
-      name="tabs1-0"
-      onClick={[Function]}
-      title="One"
-      value="0"
-    />
-    <Tab
-      active={false}
-      key="1"
-      name="tabs1-1"
-      onClick={[Function]}
-      title="Two"
-      value="1"
-    />
   </div>
 </div>
 `;
