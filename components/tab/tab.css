@@ -1,9 +1,13 @@
 .ui-tab {
   cursor: pointer;
   flex: 1 1;
-  outline: none;
   padding: 4px 0 0;
   position: relative;
+}
+
+.ui-tab:focus {
+  border: none;
+  outline: 0;
 }
 
 .ui-tab_active {
@@ -13,7 +17,7 @@
 .ui-tab_active:before {
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-top: 11px solid #00B0FF;
+  border-top: 11px solid var(--tx-tab-arrow-color);
   bottom: -11px;
   content: '';
   left: 50%;
@@ -22,29 +26,30 @@
 }
 
 .ui-tab:first-child .ui-tab__content {
-  border-top-left-radius: 8px;
+  border-top-left-radius: var(--tx-tab-left-radius);
 }
   
 .ui-tab:last-child .ui-tab__content {
-  border-top-right-radius: 8px;
+  border-top-right-radius: var(--tx-tab-left-radius);
 }
 
 .ui-tab__content {
-  background-color: #FFF;
+  background-color: var(--tx-tab-content-background-color);
+  color: var(--tx-tab-content-color);
   text-align: center;
 }
 
 .ui-tab__content_active {
-  background-color: #00B0FF;
-  color: #FFF;
+  background-color: var(--tx-tab-content-active-background-color);
+  color: var(--tx-tab-content-active-color);
 }
 
 .ui-tab__content-paddings {
-  padding: 10px 10px 15px 10px;
+  padding: var(--tx-tab-content-paddings);
 }
 
-.ui-tab__content_active .ui-tab__content-paddings {
-  padding-bottom: 19px;
+.ui-tab__content_active.ui-tab__content-paddings {
+  padding-bottom: var(--tx-tab-content-paddings-active-bottom);
 }
 
 .ui-tab__shadow-wrapper {

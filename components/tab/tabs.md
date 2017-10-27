@@ -1,7 +1,7 @@
 Basic
 
     initialState = {
-      value: 0,
+      value: '0',
     };
 
     <div style={{ marginTop: '15px' }}>
@@ -17,6 +17,10 @@ Basic
     </div>
 
 With content:
+
+    initialState = {
+      value: '2',
+    };
 
     renderContent = (value) => {
       return (
@@ -34,11 +38,26 @@ With content:
       );
     };
 
-    <div style={{ marginTop: '15px', paddingTop: '15px', backgroundColor: '#FFD05E' }}>
-      <Tabs name="tabs2" initValue="2" onChange={(value) => {setState({ value });}}>
-        <Tab value="1" title={this.renderTabContent('One')}>{this.renderContent('One content')}</Tab>
-        <Tab value="2" title={this.renderTabContent('Two')}>{this.renderContent('Two content')}</Tab>
-        <Tab value="3" title={this.renderTabContent('Three')}>{this.renderContent('Three content')}</Tab>
-        <Tab value="4" title={this.renderTabContent('Four')}>{this.renderContent('Four content')}</Tab>
-      </Tabs>
+    handleChange = (event) => {
+      setState({value: event.target.value.toString()});
+    },
+
+    <div>
+      <div>Selected tab:</div>
+      <input 
+        type="range" 
+        min="1" max="4"
+        value={state.value} 
+        onChange={this.handleChange}
+        step="1"
+      />
+      <br/>
+      <div style={{ marginTop: '15px', paddingTop: '15px', backgroundColor: '#FFD05E' }}>
+        <Tabs name="tabs2" initValue={state.value} onChange={(value) => {setState({ value });}}>
+          <Tab value="1" title={this.renderTabContent('One')}>{this.renderContent('One content')}</Tab>
+          <Tab value="2" title={this.renderTabContent('Two')}>{this.renderContent('Two content')}</Tab>
+          <Tab value="3" title={this.renderTabContent('Three')}>{this.renderContent('Three content')}</Tab>
+          <Tab value="4" title={this.renderTabContent('Four')}>{this.renderContent('Four content')}</Tab>
+        </Tabs>
+      </div>
     </div>

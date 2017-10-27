@@ -17,6 +17,14 @@ class Tabs extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if ('initValue' in nextProps) {
+      this.setState({
+        active: nextProps.initValue,
+      });
+    }
+  }
+
   handleTabClick = (value) => {
     this.setState({ active: value });
 
@@ -142,6 +150,7 @@ class Tabs extends Component {
 }
 
 Tabs.defaultProps = {
+  initValue: '0',
   open: false,
   selectionType: 'normal',
   name: '',

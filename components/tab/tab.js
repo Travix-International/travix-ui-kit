@@ -22,22 +22,15 @@ class Tab extends Component {
       title,
     } = this.props;
 
-    const titleBlock = typeof title === 'string'
-    ? (
-      <div className="ui-tab__content-paddings">
-        {title}
-      </div>
-    )
-    : title;
-
     const contentClasses = classnames({
       'ui-tab__content': true,
       'ui-tab__content_active': active,
+      'ui-tab__content-paddings': typeof title === 'string',
     });
 
     return (
       <div className={contentClasses}>
-        {titleBlock}
+        {title}
       </div>
     );
   }
@@ -82,6 +75,7 @@ class Tab extends Component {
 
 Tab.defaultProps = {
   active: false,
+  name: '',
   title: '',
 };
 
