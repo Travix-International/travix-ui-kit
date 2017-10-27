@@ -134,7 +134,7 @@ ui-button:
     hover:
       bg-top: "var(--tx-generic-color-accent-dark)"
       bg-bottom: "var(--tx-generic-color-accent-dark)"
-      top: 0
+      top: "0"
       shadow: "0 3px var(--tx-generic-color-accent-border-hover), 0 0 transparent"
     active:  
       shadow: "0 2px var(--tx-generic-color-accent-border), 0 0 transparent"  
