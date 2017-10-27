@@ -59,7 +59,7 @@
 }
 
 .ui-tab_active + .ui-tab .ui-tab__shadow-wrapper:before {
-  background-color: #D5E8F8;
+  background-color: var(--tx-tab-shadow-background-color);
   bottom: 0;
   content: ' ';
   left: -8px;

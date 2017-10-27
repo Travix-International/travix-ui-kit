@@ -5,7 +5,7 @@ Basic
     };
 
     <div style={{ marginTop: '15px' }}>
-      <div style={{ paddingTop: '15px', backgroundColor: '#FFD05E' }} >
+      <div style={{ paddingTop: '15px', backgroundColor: '#bb9d52' }} >
         <Tabs name="tabs1" onChange={(value) => {setState({ value });}}>
           <Tab title="One" />
           <Tab title="Two" />
@@ -16,7 +16,7 @@ Basic
       <div>Selected tab: {state.value}</div>
     </div>
 
-With content:
+With content and custom tabs:
 
     initialState = {
       value: '2',
@@ -52,8 +52,8 @@ With content:
         step="1"
       />
       <br/>
-      <div style={{ marginTop: '15px', paddingTop: '15px', backgroundColor: '#FFD05E' }}>
-        <Tabs name="tabs2" initValue={state.value} onChange={(value) => {setState({ value });}}>
+      <div style={{ marginTop: '15px', paddingTop: '15px', backgroundColor: '#bb9d52' }}>
+        <Tabs name="tabs2" activeTab={state.value} onChange={(value) => {setState({ value });}}>
           <Tab value="1" title={this.renderTabContent('One')}>{this.renderContent('One content')}</Tab>
           <Tab value="2" title={this.renderTabContent('Two')}>{this.renderContent('Two content')}</Tab>
           <Tab value="3" title={this.renderTabContent('Three')}>{this.renderContent('Three content')}</Tab>

@@ -13,20 +13,20 @@ class Tabs extends Component {
     super(props);
 
     this.state = {
-      active: this.props.initValue,
+      activeTab: this.props.activeTab,
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    if ('initValue' in nextProps && nextProps.initValue !== this.props.initValue) {
+    if ('activeTab' in nextProps && nextProps.activeTab !== this.props.activeTab) {
       this.setState({
-        active: nextProps.initValue,
+        activeTab: nextProps.activeTab,
       });
     }
   }
 
   handleTabClick = (value) => {
-    this.setState({ active: value });
+    this.setState({ activeTab: value });
 
     if (this.props.onChange) {
       this.props.onChange(value);
@@ -52,10 +52,11 @@ class Tabs extends Component {
   }
 
   getTabInfo(tab, idx) {
-    const value = tab.props.value === undefined ? idx.toString() : tab.props.value;
-    const isActive = tab.props.initValue === undefined && this.state.active === undefined
+    const isTabValueUndefined = tab.props.value === undefined;
+    const value = isTabValueUndefined ? idx.toString() : tab.props.value;
+    const isActive = this.state.activeTab === '0' && isTabValueUndefined
       ? idx === 0
-      : value === this.state.active;
+      : value === this.state.activeTab;
 
     return { value, isActive };
   }
@@ -150,13 +151,18 @@ class Tabs extends Component {
 }
 
 Tabs.defaultProps = {
-  initValue: '0',
+  activeTab: '0',
   open: false,
   selectionType: 'normal',
   name: '',
 };
 
 Tabs.propTypes = {
+  /**
+   * Determine whether tab is active by default
+   */
+  activeTab: PropTypes.string,
+
   /**
    * Tab's content.
    */
@@ -175,11 +181,6 @@ Tabs.propTypes = {
     PropTypes.bool,
     PropTypes.object,
   ]),
-
-  /**
-   * Determine whether tab is active by default
-   */
-  initValue: PropTypes.string,
 
   /**
    * Set of custom modifications.
