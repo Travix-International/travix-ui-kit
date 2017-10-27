@@ -9,12 +9,12 @@ import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
  */
 class Tab extends Component {
   handleTabClick = (event) => {
-    const { value } = this.props;
+    const { value, onClick } = this.props;
 
-    if (this.props.onClick) {
-      this.props.onClick(event, value);
+    if (onClick) {
+      onClick(event, value);
     }
-  }
+  };
 
   renderTabContent() {
     const {
