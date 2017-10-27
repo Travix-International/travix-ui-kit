@@ -108,5 +108,11 @@ describe('Radio Button', () => {
 
       expect(renderTree).toMatchSnapshot();
     });
+
+    it('should render with custom tab content', () => {
+      const wrapper = shallow(<Tab title={(<div>abc</div>)} value="1">text</Tab>);
+
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

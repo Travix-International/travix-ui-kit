@@ -414,3 +414,28 @@ exports[`Radio Button #render() should render correct data with init value 1`] =
   </div>
 </div>
 `;
+
+exports[`Radio Button #render() should render with custom tab content 1`] = `
+<div
+  aria-controls="-panel"
+  aria-selected={false}
+  className="ui-tab"
+  id=""
+  onClick={[Function]}
+  role="tab"
+  tabIndex="0"
+  title=""
+>
+  <div
+    className="ui-tab__shadow-wrapper"
+  >
+    <div
+      className="ui-tab__content"
+    >
+      <div>
+        abc
+      </div>
+    </div>
+  </div>
+</div>
+`;
