@@ -6,7 +6,7 @@ Basic button:
       <Button dataAttrs={{gtm: 'some-id'}} type="reset">With GTM id</Button><br/><br/>
       <Button mods={['test']} type="reset">With mode</Button><br/><br/>
       <Button mods={['test']} className="my-class">Example with custom class set</Button><br/><br/>
-      <Button onMouseUp={() => alert('onMouseUp')}>Example with custom event (onMouseUp)</Button><br/><br/>
+      <Button onMouseUp={() => alert('Mouse Up')}>Example with custom event (onMouseUp)</Button><br/><br/>
     </div>
 
 Sizes:
@@ -27,6 +27,9 @@ Variations - Ghost:
       <Button onClick={alert} variation="ghost" size="m">Medium Ghost</Button><br/><br/>
       <Button onClick={alert} variation="ghost" size="l">Large Ghost</Button><br/><br/>
       <Button onClick={alert} variation="ghost" size="xl">Extra large Ghost</Button><br/><br/>
+      <div style={{background: "#005FBB", padding: "10px", display: "inline-block"}}>
+        <Button onClick={alert} variation="ghost-inverted" size="s">Small Ghost Inverted</Button><br/><br/>
+      </div>
     </div>
 
 Variations - Link:
