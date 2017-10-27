@@ -18,7 +18,7 @@ class Tabs extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if ('initValue' in nextProps) {
+    if ('initValue' in nextProps && nextProps.initValue !== this.props.initValue) {
       this.setState({
         active: nextProps.initValue,
       });
