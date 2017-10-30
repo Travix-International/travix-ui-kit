@@ -3,7 +3,7 @@ import React from 'react';
 import Tabs from '../../../components/tabs/tabs';
 import Tab from '../../../components/tabs/tab';
 
-describe('Radio Button', () => {
+describe('Tabs', () => {
   describe('#render()', () => {
     const onChange = () => {};
 

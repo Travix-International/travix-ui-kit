@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Radio Button #render() should call onChange method 1`] = `
+exports[`Tabs #render() should call onChange method 1`] = `
 <Tabs
   activeTab="1"
   name="tabs1"
@@ -68,7 +68,7 @@ exports[`Radio Button #render() should call onChange method 1`] = `
 </Tabs>
 `;
 
-exports[`Radio Button #render() should call onClick method 1`] = `
+exports[`Tabs #render() should call onClick method 1`] = `
 <Tabs
   activeTab="1"
   name="tabs1"
@@ -134,7 +134,7 @@ exports[`Radio Button #render() should call onClick method 1`] = `
 </Tabs>
 `;
 
-exports[`Radio Button #render() should change "activeTab" after receive new props when "activeTab" was provided 1`] = `
+exports[`Tabs #render() should change "activeTab" after receive new props when "activeTab" was provided 1`] = `
 <div
   activeTab="0"
   className="ui-tabs"
@@ -167,7 +167,7 @@ exports[`Radio Button #render() should change "activeTab" after receive new prop
 </div>
 `;
 
-exports[`Radio Button #render() should change "activeTab" after receive new props when "activeTab" was provided 2`] = `
+exports[`Tabs #render() should change "activeTab" after receive new props when "activeTab" was provided 2`] = `
 <div
   activeTab="1"
   className="ui-tabs"
@@ -200,7 +200,7 @@ exports[`Radio Button #render() should change "activeTab" after receive new prop
 </div>
 `;
 
-exports[`Radio Button #render() should change "activeTab" after receive new props when "activeTab" was provided 3`] = `
+exports[`Tabs #render() should change "activeTab" after receive new props when "activeTab" was provided 3`] = `
 <div
   activeTab="1"
   className="ui-tabs"
@@ -233,7 +233,7 @@ exports[`Radio Button #render() should change "activeTab" after receive new prop
 </div>
 `;
 
-exports[`Radio Button #render() should not call onClick method 1`] = `
+exports[`Tabs #render() should not call onClick method 1`] = `
 <Tab
   active={false}
   name=""
@@ -263,9 +263,9 @@ exports[`Radio Button #render() should not call onClick method 1`] = `
 </Tab>
 `;
 
-exports[`Radio Button #render() should not render correct with other tags 1`] = `null`;
+exports[`Tabs #render() should not render correct with other tags 1`] = `null`;
 
-exports[`Radio Button #render() should render correct component with basic data 1`] = `
+exports[`Tabs #render() should render correct component with basic data 1`] = `
 <div
   activeTab="0"
   className="ui-tabs"
@@ -298,7 +298,7 @@ exports[`Radio Button #render() should render correct component with basic data 
 </div>
 `;
 
-exports[`Radio Button #render() should render correct data with content 1`] = `
+exports[`Tabs #render() should render correct data with content 1`] = `
 <div
   activeTab="0"
   className="ui-tabs"
@@ -337,7 +337,7 @@ exports[`Radio Button #render() should render correct data with content 1`] = `
 </div>
 `;
 
-exports[`Radio Button #render() should render correct data with custome values 1`] = `
+exports[`Tabs #render() should render correct data with custome values 1`] = `
 <div
   activeTab="0"
   className="ui-tabs"
@@ -376,7 +376,7 @@ exports[`Radio Button #render() should render correct data with custome values 1
 </div>
 `;
 
-exports[`Radio Button #render() should render correct data with init value 1`] = `
+exports[`Tabs #render() should render correct data with init value 1`] = `
 <div
   activeTab="1"
   className="ui-tabs"
@@ -415,7 +415,7 @@ exports[`Radio Button #render() should render correct data with init value 1`] =
 </div>
 `;
 
-exports[`Radio Button #render() should render with custom tab content 1`] = `
+exports[`Tabs #render() should render with custom tab content 1`] = `
 <div
   aria-controls="-panel"
   aria-selected={false}
