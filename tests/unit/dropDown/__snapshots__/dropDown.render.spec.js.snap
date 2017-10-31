@@ -48,6 +48,7 @@ exports[`DropDown: render should return base dropdown with passed array value 1`
     value={Array []}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
   />
 </div>
 `;
@@ -100,6 +101,7 @@ exports[`DropDown: render should return base dropdown with passed number value 1
     value={1}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
   />
 </div>
 `;
@@ -152,6 +154,7 @@ exports[`DropDown: render should return base dropdown with passed string value 1
     value="testValue"
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
   />
 </div>
 `;
@@ -203,6 +206,7 @@ exports[`DropDown: render should return base dropdown with required fields 1`] =
     tabSelectsValue={true}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
   />
 </div>
 `;
@@ -254,6 +258,59 @@ exports[`DropDown: render should return clearable dropdown 1`] = `
     tabSelectsValue={true}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
+  />
+</div>
+`;
+
+exports[`DropDown: render should return dropdown with icon 1`] = `
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={[Function]}
   />
 </div>
 `;
@@ -306,6 +363,7 @@ exports[`DropDown: render should return dropdown with passed name 1`] = `
     tabSelectsValue={true}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
   />
 </div>
 `;
@@ -357,6 +415,7 @@ exports[`DropDown: render should return dropdown with shifting viewport enabled 
     tabSelectsValue={true}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
   />
 </div>
 `;
@@ -408,6 +467,7 @@ exports[`DropDown: render should return dropdown with status 1`] = `
     tabSelectsValue={true}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
   />
 </div>
 `;
@@ -465,6 +525,7 @@ exports[`DropDown: render should return filter dropdown 1`] = `
     tabSelectsValue={true}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
   />
 </div>
 `;
@@ -516,6 +577,7 @@ exports[`DropDown: render should return multi dropdown 1`] = `
     tabSelectsValue={true}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
   />
 </div>
 `;
@@ -567,6 +629,7 @@ exports[`DropDown: render should return searchable dropdown 1`] = `
     tabSelectsValue={true}
     valueComponent={[Function]}
     valueKey="value"
+    valueRenderer={null}
   />
 </div>
 `;
