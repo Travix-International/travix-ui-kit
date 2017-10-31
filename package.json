@@ -59,7 +59,7 @@
     "babel-preset-travix": "^1.1.0",
     "babel-register": "^6.16.3",
     "cheerio": "^0.22.0",
-    "codecov": "^2.3.0",
+    "codecov": "^3.0.0",
     "commander": "^2.9.0",
     "create-react-class": "^15.5.2",
     "css-loader": "~0.28.1",
