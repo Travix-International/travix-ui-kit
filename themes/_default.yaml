@@ -550,6 +550,20 @@ carousel:
     padding: "5px 15px"
     font-size: "12px"
     font-family: "var(--tx-generic-font-secondary-font-family)"
+tab:
+  arrow-color: "var(--tx-generic-color-active)"
+  left-radius: "8px"
+  right-radius: "8px"
+  content:
+    background-color: "var(--tx-generic-color-blank)"
+    color: "var(--tx-generic-color-primary-dark)"
+    paddings: "10px 10px 15px 10px"
+    paddings-active-bottom: "19px"
+    active:
+      background-color: "var(--tx-generic-color-active)"
+      color: "var(--tx-generic-color-blank)"
+  shadow:
+    background-color: "var(--tx-generic-color-secondary)"
 toggle-button:
   item:
     font-size: "14px"
