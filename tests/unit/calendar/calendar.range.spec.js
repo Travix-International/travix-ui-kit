@@ -94,7 +94,6 @@ describe('Calendar (range mode)', () => {
 
       const startRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       startRangeOption.simulate('click');
-      console.log(startRangeOption.debug());
 
       expect(startRangeOption.props().className.includes('ui-calendar-days-option_selected-start')).toEqual(true);
       expect(wrapper.state().minLimit).toEqual(expectedStartDate);
