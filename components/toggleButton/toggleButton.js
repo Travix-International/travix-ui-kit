@@ -13,7 +13,7 @@ export default function ToggleButton(props) {
   } = props;
 
   if (!Array.isArray(items) || items.length < 2) {
-    return <noscript />;
+    return null;
   }
   const classes = classnames(
     getClassNamesWithMods('ui-toggle-button', mods),

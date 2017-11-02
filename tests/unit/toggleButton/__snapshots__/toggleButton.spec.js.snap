@@ -28,7 +28,7 @@ exports[`ToggleButton passing a value in selectedIndex will select the proper in
 </ul>
 `;
 
-exports[`ToggleButton renders noscript when no items are provided to ToggleButton 1`] = `<noscript />`;
+exports[`ToggleButton renders noscript when no items are provided to ToggleButton 1`] = `null`;
 
 exports[`ToggleButton renders the ToggleButton component with the defaults 1`] = `
 <ul
