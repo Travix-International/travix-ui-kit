@@ -22,55 +22,56 @@ generic:
       font-family: "Handlee"
       generic-family: "cursive"
   color:
-    accent-darker: &accent-darker   "#0B4848"
-    accent-dark: &accent-dark       "#177D7D"
-    accent: &accent                 "#2A9595"
-    accent-border: &accent-border   "#E6BB00"
-    accent-bottom: &accent-bottom   "#FFD05E"
-    accent-light: &accent-light     "#46BCBC"
-    accent-lighter: &accent-lighter "#6EE1E1"
-    accent-top: &accent-top         "#FFD97C"
+    accent: &accent                             "#56B99D"
+    accent-border: &accent-border               "#3E8A74"
+    accent-border-hover: &accent-border-hover   "#177D7D"
+    accent-bottom: &accent-bottom               "#FFD05E"
+    accent-dark: &accent-dark                   "#4baf93"
+    accent-darker: &accent-darker               "#0B4848"
+    accent-light: &accent-light                 "#46BCBC"
+    accent-lighter: &accent-lighter             "#6EE1E1"
+    accent-top: &accent-top                     "#FFD97C"
 
-    primary-darker: &primary-darker     "#162052"
-    primary-dark: &primary-dark         "#283A8E"
-    primary-dark-rgb: &primary-dark-rgb "40,58,142"
-    primary: &primary                   "#3F52A9"
-    primary-light: &primary-light       "#7F92E7"
-    primary-lighter: &primary-lighter   "#5B6ECA"
+    primary-darker: &primary-darker             "#979ea3"
+    primary-dark: &primary-dark                 "#283A8E"
+    primary-dark-rgb: &primary-dark-rgb         "40,58,142"
+    primary: &primary                           "#3F52A9"
+    primary-light: &primary-light               "#7F92E7"
+    primary-lighter: &primary-lighter           "#5B6ECA"
 
-    secondary-darkest: &secondary-darkest "#57410f"
-    secondary-darker: &secondary-darker   "#785A13"
-    secondary-dark: &secondary-dark       "#CF9E26"
-    secondary: &secondary                 "#F8C346"
-    secondary-rgb: &secondary-rgb         "248,195,70"
-    secondary-light: &secondary-light     "#FFD05E"
-    secondary-lighter: &secondary-lighter "#FFD97C"
+    secondary-darkest: &secondary-darkest       "#A5AEB4"
+    secondary-darker: &secondary-darker         "#BEC3C7"
+    secondary-dark: &secondary-dark             "#dbdee0"
+    secondary: &secondary                       "#F8C346"
+    secondary-rgb: &secondary-rgb               "248,195,70"
+    secondary-light: &secondary-light           "#FFD05E"
+    secondary-lighter: &secondary-lighter       "#FFD97C"
 
-    text-dark: &text-dark "#333"
-    text: &text "#666"
-    text-light: &text-light "#999"
-    text-lighter: &text-lighter "#998"
-    text-lighter-rgb: &text-lighter-rgb "153,153,136"
+    text-dark: &text-dark                       "#333"
+    text: &text                                 "#666"
+    text-light: &text-light                     "#999"
+    text-lighter: &text-lighter                 "#998"
+    text-lighter-rgb: &text-lighter-rgb         "153,153,136"
 
-    active: &active "#3892e7"
-    positive: &positive "#2ca937"
-    positive-light: &positive "#9edb97"
-    negative: &negative "#c54229"
-    negative-light: &negative-light "#f0d0c9"
+    active: &active                             "#4baf93"
+    positive: &positive                         "#2ca937"
+    positive-light: &positive                   "#9edb97"
+    negative: &negative                         "#c54229"
+    negative-light: &negative-light             "#f0d0c9"
 
-    shadow: &shadow "#000000"
-    shadow-rgb: &shadow-rgb "0,0,0"
-    shadow-alt: &shadow-alt "#00196F"
-    blank: &blank "#FFFFFF"
+    shadow: &shadow                             "#000000"
+    shadow-rgb: &shadow-rgb                     "0,0,0"
+    shadow-alt: &shadow-alt                     "#00196F"
+    blank: &blank                               "#FFFFFF"
 
-    facebook: &facebook "#45619D"
-    facebook-border: &facebook-border "#324A87"
-    twitter: &twitter "#08ACEE"
-    twitter-border: &twitter-border "#1871C0"
-    google: &google "#B30303"
-    google-border: &google-border "#670E00"
-    mail: &mail "#ec7c1b"
-    mail-border: &mail-border "#cd6612"
+    facebook: &facebook                         "#45619D"
+    facebook-border: &facebook-border           "#324A87"
+    twitter: &twitter                           "#08ACEE"
+    twitter-border: &twitter-border             "#1871C0"
+    google: &google                             "#B30303"
+    google-border: &google-border               "#670E00"
+    mail: &mail                                 "#ec7c1b"
+    mail-border: &mail-border                   "#cd6612"
   separator:
     width: &separator-width 2px
     style: &separator-style dotted
@@ -113,6 +114,44 @@ badge:
   padding:
     right-left: 8px
     top-bottom: 6px
+ui-button:
+  default:
+    normal:
+      bg-top: "var(--tx-generic-color-accent)"
+      bg-bottom: "var(--tx-generic-color-accent)"
+      border-radius: 2px
+      border: "var(--tx-generic-color-accent-dark)"
+      shadow: "0 3px var(--tx-generic-color-accent-border), 0 0 transparent"
+      text: "var(--tx-generic-color-blank)"
+      text-shadow: "0px 2px 0px var(--tx-generic-color-accent-border)"
+    disabled:
+      bg-top: "var(--tx-generic-color-secondary-dark)"
+      bg-bottom: "var(--tx-generic-color-secondary-dark)"
+      text: "var(--tx-generic-color-secondary-darker)"
+      text-shadow: none
+      border: "transparent"
+      border-bottom: "var(--tx-generic-color-secondary-darker)"
+    hover:
+      bg-top: "var(--tx-generic-color-accent-dark)"
+      bg-bottom: "var(--tx-generic-color-accent-dark)"
+      top: "0"
+      shadow: "0 3px var(--tx-generic-color-accent-border-hover), 0 0 transparent"
+    active:  
+      shadow: "0 2px var(--tx-generic-color-accent-border), 0 0 transparent"  
+      text-shadow: "0px 1px 0px var(--tx-generic-color-accent-border)"  
+  ghost:
+    normal:
+      background: "var(--tx-generic-color-blank)"
+      color: "var(--tx-generic-color-primary-darker)"
+      border: "3px solid var(--tx-generic-color-secondary-darker)"
+      border-radius: 2px
+      font-family: "var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family)"
+      font-weight: "var(--tx-generic-font-primary-weight-semibold)"
+    hover:
+      color: "var(--tx-generic-color-active)"
+      border-color: "var(--tx-generic-color-active)"
+    inverted:
+      color: "var(--tx-generic-color-primary-darker)"
 button:
   icon:
     color:
@@ -511,6 +550,20 @@ carousel:
     padding: "5px 15px"
     font-size: "12px"
     font-family: "var(--tx-generic-font-secondary-font-family)"
+tab:
+  arrow-color: "var(--tx-generic-color-active)"
+  left-radius: "8px"
+  right-radius: "8px"
+  content:
+    background-color: "var(--tx-generic-color-blank)"
+    color: "var(--tx-generic-color-primary-dark)"
+    paddings: "10px 10px 15px 10px"
+    paddings-active-bottom: "19px"
+    active:
+      background-color: "var(--tx-generic-color-active)"
+      color: "var(--tx-generic-color-blank)"
+  shadow:
+    background-color: "var(--tx-generic-color-secondary)"
 toggle-button:
   item:
     font-size: "14px"

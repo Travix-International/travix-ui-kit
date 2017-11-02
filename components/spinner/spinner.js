@@ -18,7 +18,6 @@ function Spinner(props) {
   return (
     <div className={className}>
       <svg
-        styles="enable-background:new 0 0 80 80;"
         version="1.1"
         viewBox="0 0 80 80"
         x="0px"

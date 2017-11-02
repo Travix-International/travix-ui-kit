@@ -25,6 +25,25 @@ exports[`List #render() should not modify mods 1`] = `
 </ul>
 `;
 
+exports[`List #render() should not render empty items if an appropriate prop is false 1`] = `
+<ul
+  className="ui-list ui-list_align_vertical"
+>
+  <li
+    className="ui-list__item"
+    key="0"
+  >
+    London
+  </li>
+  <li
+    className="ui-list__item"
+    key="1"
+  >
+    Madrid
+  </li>
+</ul>
+`;
+
 exports[`List #render() should return base class with mods for strings as class and string as mods 1`] = `
 <ul
   className="ui-list ui-list_align_vertical"

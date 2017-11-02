@@ -95,7 +95,7 @@ export default class SlidingPanel extends Component {
 
     this.panel.addEventListener('transitionend', this.handleTransitionEnd);
 
-    this.closeButtons = this.panel.querySelectorAll('[data-rel="close"]');
+    this.closeButtons = [].slice.call(this.panel.querySelectorAll('[data-rel="close"]'));
     this.closeButtons.forEach(b => b.addEventListener('click', this.handleClose));
   }
 

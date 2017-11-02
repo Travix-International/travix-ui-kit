@@ -43,7 +43,7 @@ Sliding Panel with preclosing hook which prevent closing:
       >Open panel</button>
       <SlidingPanel
         active={state.isSlidingPanelOpen}
-        onTryingToClose={() => { alert('You shall not pass! :)'); return false; }}
+        onTryingToClose={() => confirm('Are you sure you want to exit?')}
         onClose={() => setState({ isSlidingPanelOpen: false })}
         title="Panel Title"
       >

@@ -4,6 +4,11 @@ exports[`Button #render() should not modify mods 1`] = `
 <button
   className="ui-button ui-button_test ui-button_size_m ui-button_variation_default"
   disabled={false}
+  mods={
+    Array [
+      "test",
+    ]
+  }
   onClick={[Function]}
   type="button"
 >

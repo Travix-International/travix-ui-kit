@@ -46,6 +46,7 @@ describe('SlidingPanel', () => {
       const panelElement = overlayElement.find('.ui-sliding-panel');
 
       expect(renderTree).toMatchSnapshot();
+
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
 

@@ -30,6 +30,33 @@ Searchable dropDown:
       </div>
     </div>
 
+
+Basic dropDown with icon:
+
+    initialState={
+      value: 1
+    };
+
+    <div>
+      <div style={{ width: '50%' }}>
+        <style dangerouslySetInnerHTML={{__html: `
+          .valueIcon:before {
+            content: '✈';
+          }
+        `}} />
+        <DropDown
+          onChange={(opts) => {setState({ value: opts.value })}}
+          options={[
+            { value: 1, label: 'One' },
+            { value: 2, label: 'Two' },
+            { value: 3, label: 'Three' },
+          ]}
+          value={state.value}
+          icon="valueIcon"
+        />
+      </div>
+    </div>
+
 Basic dropDown with status:
 
     <div>

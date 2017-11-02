@@ -122,4 +122,15 @@ describe('DropDown: render', () => {
     );
     expect(component).toMatchSnapshot();
   });
+
+  it('should return dropdown with icon', () => {
+    const component = shallow(
+      <DropDown
+        icon="iconClass"
+        onChange={() => {}}
+        options={[]}
+      />
+    );
+    expect(component).toMatchSnapshot();
+  });
 });
