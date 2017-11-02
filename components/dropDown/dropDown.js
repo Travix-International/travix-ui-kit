@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Select from 'react-select/dist/react-select';
+import classnames from 'classnames';
 
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 import DropdownFilterOptionComponent from './dropdownFilterOptionComponent';
@@ -14,6 +15,7 @@ class DropDown extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.menuRenderer = this.menuRenderer.bind(this);
+    this.valueRenderer = this.valueRenderer.bind(this);
   }
 
   static optionRef(onOptionRef, isSelected) {
@@ -70,6 +72,17 @@ class DropDown extends Component {
   }
 
   /**
+   * Overriding the internal method of react-select to add icon to value label
+   */
+  valueRenderer({ label }) {
+    const iconClasses = classnames('Select-value-label-icon', this.props.icon);
+
+    return (
+      <span className={iconClasses}>{label}</span>
+    );
+  }
+
+  /**
    * @param {Array} changedOptions
    */
   onChange(changedOptions) {
@@ -88,6 +101,7 @@ class DropDown extends Component {
       clearable,
       dataAttrs = {},
       filterMode,
+      icon,
       mods = [],
       multi,
       name,
@@ -123,6 +137,7 @@ class DropDown extends Component {
           scrollMenuIntoView={scrollMenuIntoView}
           searchable={searchable}
           value={value}
+          valueRenderer={icon ? this.valueRenderer : null}
         />
       </div>
     );
@@ -158,6 +173,10 @@ DropDown.propTypes = {
  * Filter mode
  */
   filterMode: PropTypes.bool,
+  /**
+   * Icon className for value label
+   */
+  icon: PropTypes.string,
   /**
  * Set of custom modifications.
  */

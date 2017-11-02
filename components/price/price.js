@@ -55,6 +55,11 @@ function Price(props) {
     underlined,
     value,
   } = props;
+
+  if (!value) {
+    return <noscript />;
+  }
+
   const mods = props.mods ? props.mods.slice() : [];
 
   const rootClass = 'ui-price';

@@ -47,7 +47,7 @@ class Modal extends Component {
   open() {
     global.window.requestAnimationFrame(() => {
       this.setState({ isActive: true });
-      setTimeout(() => this.setState({ isOpen: true }), 300);
+      setTimeout(() => this.setState({ isOpen: true }), this.props.delay);
     });
   }
 
@@ -57,7 +57,7 @@ class Modal extends Component {
     }
     global.window.requestAnimationFrame(() => {
       this.setState({ isActive: false });
-      setTimeout(() => this.setState({ isOpen: false }), 300);
+      setTimeout(() => this.setState({ isOpen: false }), this.props.delay);
     });
   }
 
@@ -195,6 +195,7 @@ Modal.defaultProps = {
   closeButtonText: null,
   closeOnEsc: true,
   closeOnOverlayClick: true,
+  delay: 0,
   footer: null,
   fullscreen: false,
   onClose: null,
@@ -228,6 +229,10 @@ Modal.propTypes = {
    * Determine whether to close the modal dialog when clicked on overlay.
    */
   closeOnOverlayClick: PropTypes.bool,
+  /**
+   * Determine the additional delay for modal to be present
+   */
+  delay: PropTypes.number,
   /**
    * Footer content
    */
