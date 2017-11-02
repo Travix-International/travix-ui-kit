@@ -3,6 +3,8 @@ import React from 'react';
 import Calendar from '../../../components/calendar/calendar';
 import { leftPad, normalizeDate } from '../../../components/_helpers';
 
+jest.useFakeTimers();
+
 describe('Calendar (range mode)', () => {
   describe('#render()', () => {
     it('should render the calendar with selectionType as range, initialized in the current date', () => {
@@ -92,6 +94,8 @@ describe('Calendar (range mode)', () => {
 
       const startRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       startRangeOption.simulate('click');
+      console.log(startRangeOption.debug());
+
       expect(startRangeOption.props().className.includes('ui-calendar-days-option_selected-start')).toEqual(true);
       expect(wrapper.state().minLimit).toEqual(expectedStartDate);
       expect(wrapper.state().selectedDates[0]).toEqual(expectedStartDate);
