@@ -78,6 +78,11 @@ export default class SlidingPanel extends Component {
     width: PropTypes.string,
 
     /**
+     * If defined, can contain any subheader information which is displayed without default paddings
+     */
+    subheader: PropTypes.node,
+
+    /**
      * Defines title for header. Optional. If it's defined header will be shown.
      */
     title: PropTypes.node,
@@ -86,6 +91,7 @@ export default class SlidingPanel extends Component {
   static defaultProps = {
     closeOnOverlayClick: true,
     direction: 'right',
+    subheader: null,
     width: '470px',
   }
 
@@ -176,12 +182,13 @@ export default class SlidingPanel extends Component {
 
   render() {
     const {
-      dataAttrs,
       children,
-      title,
+      dataAttrs,
+      direction,
       leftBlock,
       rightBlock,
-      direction,
+      subheader,
+      title,
       width,
     } = this.props;
 
@@ -204,6 +211,8 @@ export default class SlidingPanel extends Component {
     const overlayClass = 'ui-sliding-panel-overlay';
     const overlayClassName = getClassNamesWithMods(overlayClass, overlayMods);
 
+    const subheaderClass = 'ui-sliding-panel__subheader';
+
     return (
       <div className={overlayClassName} onClick={this.handleClickOverlay}>
         <div
@@ -218,6 +227,13 @@ export default class SlidingPanel extends Component {
               rightBlock={rightBlock}
               title={title}
             />}
+          {
+            subheader && (
+              <div className={subheaderClass}>
+                {subheader}
+              </div>
+            )
+          }
           <div className="ui-sliding-panel__content">
             {children}
           </div>

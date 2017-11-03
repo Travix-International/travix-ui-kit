@@ -23,13 +23,14 @@ h3.ui-sliding-panel-header__title {
   color: var(--tx-generic-color-secondary-darker);
   cursor: pointer;
   font-family: Arial, sans-serif;
-  font-size: 40px;
-  font-weight: 400;
+  font-size: 32px;
+  font-weight: 600;
   height: 25px;
   line-height: 25px;
+  margin-right: var(--tx-sliding-panel-panel-padding);
+  outline: 0;
   overflow: visible;
   padding: 0;
-  margin-right: var(--tx-sliding-panel-panel-padding);
   text-align: right;
   width: 20px;
 
