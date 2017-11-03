@@ -1,4 +1,5 @@
 // Imports
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
@@ -9,6 +10,7 @@ import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 function Button(props) {
   const {
     children,
+    className,
     size,
     href,
     onClick,
@@ -16,6 +18,7 @@ function Button(props) {
     variation,
     disabled,
     dataAttrs = {},
+    ...otherProps
   } = props;
   const restProps = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
@@ -27,7 +30,10 @@ function Button(props) {
     mods.push(`disabled_true`);
   }
 
-  const className = getClassNamesWithMods('ui-button', mods);
+  const classes = classnames(
+    getClassNamesWithMods('ui-button', mods),
+    className
+  );
 
   if (type === 'link') {
     if (!href) {
@@ -36,23 +42,39 @@ function Button(props) {
     }
 
     return (
-      <a className={className} href={href} {...restProps}>{children}</a>
+      <a
+        {...restProps}
+        {...otherProps}
+        className={classes}
+        href={href}
+      >
+        {children}
+      </a>
     );
   }
 
   if (type === 'submit' || type === 'reset') {
     return (
-      <button className={className} disabled={disabled} type={type} {...restProps}>{children}</button>
+      <button
+        {...restProps}
+        {...otherProps}
+        className={classes}
+        disabled={disabled}
+        type={type}
+      >
+        {children}
+      </button>
     );
   }
 
   return (
     <button
-      className={className}
+      {...restProps}
+      {...otherProps}
+      className={classes}
       disabled={disabled}
       onClick={onClick}
       type="button"
-      {...restProps}
     >
       {children}
     </button>
@@ -75,6 +97,12 @@ Button.propTypes = {
     PropTypes.element,
     PropTypes.node,
   ]).isRequired,
+
+  /**
+   * Attribute used to set specific classes which will be combined
+   * with the "ui-button" class + mods.
+   */
+  className: PropTypes.string,
 
   /**
    * Data attribute. You can use it to set up GTM key or any custom data-* attribute
@@ -113,7 +141,7 @@ Button.propTypes = {
   /**
    * Button's apperance.
    */
-  variation: PropTypes.oneOf(['default', 'ghost']),
+  variation: PropTypes.oneOf(['default', 'ghost', 'ghost-inverted', 'link']),
 };
 
 export default Button;

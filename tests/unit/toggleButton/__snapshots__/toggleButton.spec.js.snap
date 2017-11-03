@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleButton passing a value in selectedIndex will select the proper index of the list of items 1`] = `
+<ul
+  className="ui-toggle-button"
+>
+  <li
+    className="ui-toggle-button__item"
+    key="0"
+    onClick={[Function]}
+  >
+    First item
+  </li>
+  <li
+    className="ui-toggle-button__item"
+    key="1"
+    onClick={[Function]}
+  >
+    Second item
+  </li>
+  <li
+    className="ui-toggle-button__item ui-toggle-button__item_active"
+    key="2"
+    onClick={[Function]}
+  >
+    Third item
+  </li>
+</ul>
+`;
+
+exports[`ToggleButton renders noscript when no items are provided to ToggleButton 1`] = `null`;
+
+exports[`ToggleButton renders the ToggleButton component with the defaults 1`] = `
+<ul
+  className="ui-toggle-button"
+>
+  <li
+    className="ui-toggle-button__item ui-toggle-button__item_active"
+    key="0"
+    onClick={[Function]}
+  >
+    First item
+  </li>
+  <li
+    className="ui-toggle-button__item"
+    key="1"
+    onClick={[Function]}
+  >
+    Second item
+  </li>
+  <li
+    className="ui-toggle-button__item"
+    key="2"
+    onClick={[Function]}
+  >
+    Third item
+  </li>
+</ul>
+`;
+
+exports[`ToggleButton when a "handleSelect" function is passed it gets executed when clicking on an option 1`] = `
+<ul
+  className="ui-toggle-button"
+>
+  <li
+    className="ui-toggle-button__item ui-toggle-button__item_active"
+    key="0"
+    onClick={[Function]}
+  >
+    First item
+  </li>
+  <li
+    className="ui-toggle-button__item"
+    key="1"
+    onClick={[Function]}
+  >
+    Second item
+  </li>
+  <li
+    className="ui-toggle-button__item"
+    key="2"
+    onClick={[Function]}
+  >
+    Third item
+  </li>
+</ul>
+`;

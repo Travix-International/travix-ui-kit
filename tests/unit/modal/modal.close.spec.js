@@ -15,11 +15,12 @@ describe('Modal: open', () => {
     global.window.requestAnimationFrame = requestAnimationFrame;
   });
 
-  it('should change state "isOpen" in setTimeout', () => {
+  it('should change state "isOpen" in setTimeout with given delay', () => {
     const onClose = jest.fn();
     const component = shallow(
       <Modal
         active
+        delay={250}
         onClose={onClose}
       >
         Modal Content
@@ -31,7 +32,7 @@ describe('Modal: open', () => {
     component.setState({ isOpen: true, isActive: true });
 
     component.instance().close();
-    expect(setTimeout.mock.calls[0][1]).toBe(300);
+    expect(setTimeout.mock.calls[0][1]).toBe(250);
     expect(component.state().isOpen).toBe(true);
     expect(component.state().isActive).toBe(false);
 
@@ -54,7 +55,7 @@ describe('Modal: open', () => {
     component.setState({ isOpen: true });
 
     component.instance().close();
-    expect(setTimeout.mock.calls[0][1]).toBe(300);
+    expect(setTimeout.mock.calls[0][1]).toBe(250);
     expect(component.state().isOpen).toBe(true);
 
     jest.runAllTimers();

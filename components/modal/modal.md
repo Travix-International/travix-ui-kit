@@ -57,4 +57,14 @@ Basic Modal:
             <List items={['London', 'Amsterdam', 'Madrid']} />
         </Modal>
       </div>
+      <br/>
+      <div>
+        <Button size="s" onClick={() => setState({ isOpenModalWithDelay: true })}>Open modal with delay</Button>
+        <Modal
+          active={state.isOpenModalWithDelay}
+          delay={600}
+          onClose={() => setState({ isOpenModalWithDelay: false })}>
+            Modal Content
+        </Modal>
+      </div>
     </div>

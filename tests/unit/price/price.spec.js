@@ -175,5 +175,29 @@ describe('Price', () => {
 
       expect(wrapper).toMatchSnapshot();
     });
+
+    it('should return noscript if value is null', () => {
+      const wrapper = shallow(
+        <Price
+          additionalText={'per day'}
+          value={null}
+        />
+      );
+
+      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find('noscript')).toHaveLength(1);
+    });
+
+    it('should return noscript if value is undefined', () => {
+      const wrapper = shallow(
+        <Price
+          additionalText={'per day'}
+          value={undefined}
+        />
+      );
+
+      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find('noscript')).toHaveLength(1);
+    });
   });
 });
