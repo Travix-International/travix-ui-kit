@@ -75,7 +75,7 @@ export default class SlidingPanel extends Component {
     /**
      * Defines title for header. Optional. If it's defined header will be shown.
      */
-    title: PropTypes.string,
+    title: PropTypes.node,
   }
 
   static defaultProps = {
