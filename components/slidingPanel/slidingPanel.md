@@ -16,6 +16,25 @@ Basic Sliding Panel:
       </SlidingPanel>
     </div>
 
+Sliding Panel with custom width:
+
+    <div>
+      <button
+        onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
+      >Open panel</button>
+      <SlidingPanel
+        active={state.isSlidingPanelOpen}
+        onClose={() => setState({ isSlidingPanelOpen: false })}
+        width="720px"
+        title="Panel Title"
+      >
+        This is an example<br/>
+        Of how simple it is to use<br/>
+        Our sliding panel.<br/><br/>
+        <button data-rel="close">Close</button>
+      </SlidingPanel>
+    </div>
+
 Sliding Panel with preclosing hook:
 
     <div>

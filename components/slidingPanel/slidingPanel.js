@@ -73,6 +73,11 @@ export default class SlidingPanel extends Component {
     active: PropTypes.bool,
 
     /**
+     * Defines the width of the panel.
+     */
+    width: PropTypes.string,
+
+    /**
      * Defines title for header. Optional. If it's defined header will be shown.
      */
     title: PropTypes.node,
@@ -81,6 +86,7 @@ export default class SlidingPanel extends Component {
   static defaultProps = {
     closeOnOverlayClick: true,
     direction: 'right',
+    width: '470px',
   }
 
   componentWillReceiveProps(newProps) {
@@ -176,6 +182,7 @@ export default class SlidingPanel extends Component {
       leftBlock,
       rightBlock,
       direction,
+      width,
     } = this.props;
 
     const overlayMods = [];
@@ -202,6 +209,7 @@ export default class SlidingPanel extends Component {
         <div
           className={panelClassName}
           ref={(e) => { this.panel = e; }}
+          style={{ width }}
           {...getDataAttributes(dataAttrs)}
         >
           {title &&

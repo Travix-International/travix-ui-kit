@@ -299,5 +299,22 @@ describe('SlidingPanel', () => {
       expect(panelElement.hasClass('ui-sliding-panel_left')).toEqual(true);
       expect(mainContent.text()).toEqual('Test');
     });
+
+    it('render with custom width', () => {
+      const width = '720px';
+      const renderTree = mount(
+        <SlidingPanel
+          direction="left"
+          width={width}
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      jest.runAllTimers();
+
+      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.props().width).toEqual(width);
+    });
   });
 });

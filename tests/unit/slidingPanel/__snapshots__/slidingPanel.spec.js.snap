@@ -6,6 +6,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
   closeOnOverlayClick={true}
   direction="right"
   onTryingToClose={[Function]}
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -13,6 +14,11 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -30,6 +36,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
   closeOnOverlayClick={true}
   direction="right"
   onTryingToClose={[Function]}
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -37,6 +44,11 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -54,6 +66,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
   closeOnOverlayClick={true}
   direction="right"
   onTryingToClose={[Function]}
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -61,6 +74,11 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -78,6 +96,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
   closeOnOverlayClick={true}
   direction="right"
   onTryingToClose={[Function]}
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -85,6 +104,11 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -101,6 +125,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
   active={true}
   closeOnOverlayClick={true}
   direction="right"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -108,6 +133,11 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -124,6 +154,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
   active={false}
   closeOnOverlayClick={true}
   direction="right"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -131,6 +162,11 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -147,6 +183,7 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
   active={true}
   closeOnOverlayClick={false}
   direction="right"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -154,6 +191,11 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -174,6 +216,7 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
   active={true}
   closeOnOverlayClick={false}
   direction="right"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -181,6 +224,11 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -200,6 +248,7 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
 <SlidingPanel
   closeOnOverlayClick={true}
   direction="right"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -207,6 +256,11 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -223,6 +277,7 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
   active={true}
   closeOnOverlayClick={true}
   direction="right"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -230,6 +285,11 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -246,6 +306,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
   active={true}
   closeOnOverlayClick={true}
   direction="right"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -253,6 +314,11 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -269,6 +335,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
   active={true}
   closeOnOverlayClick={true}
   direction="right"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -276,6 +343,11 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -297,6 +369,7 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
     ]
   }
   title="Test Title"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -304,6 +377,11 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <SlidingPanelHeader
         title="Test Title"
@@ -334,6 +412,34 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
 </SlidingPanel>
 `;
 
+exports[`SlidingPanel #render() render with custom width 1`] = `
+<SlidingPanel
+  closeOnOverlayClick={true}
+  direction="left"
+  width="720px"
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_left"
+      style={
+        Object {
+          "width": "720px",
+        }
+      }
+    >
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
 exports[`SlidingPanel #render() render with default props and mods provided 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
@@ -343,6 +449,7 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
       "test",
     ]
   }
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -350,6 +457,11 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -370,6 +482,7 @@ exports[`SlidingPanel #render() render with left direction 1`] = `
       "test",
     ]
   }
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -377,6 +490,11 @@ exports[`SlidingPanel #render() render with left direction 1`] = `
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_left"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -393,6 +511,7 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
   active={true}
   closeOnOverlayClick={false}
   direction="right"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -400,6 +519,11 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -416,6 +540,7 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
   active={true}
   closeOnOverlayClick={false}
   direction="right"
+  width="470px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -423,6 +548,11 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
