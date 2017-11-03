@@ -4,6 +4,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
 <SlidingPanel
   active={true}
   closeOnOverlayClick={true}
+  direction="right"
   onTryingToClose={[Function]}
 >
   <div
@@ -11,7 +12,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -27,6 +28,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
 <SlidingPanel
   active={true}
   closeOnOverlayClick={true}
+  direction="right"
   onTryingToClose={[Function]}
 >
   <div
@@ -34,7 +36,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel"
+      className="ui-sliding-panel ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -50,6 +52,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
 <SlidingPanel
   active={true}
   closeOnOverlayClick={true}
+  direction="right"
   onTryingToClose={[Function]}
 >
   <div
@@ -57,7 +60,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -73,6 +76,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
 <SlidingPanel
   active={true}
   closeOnOverlayClick={true}
+  direction="right"
   onTryingToClose={[Function]}
 >
   <div
@@ -80,7 +84,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -96,13 +100,14 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
 <SlidingPanel
   active={true}
   closeOnOverlayClick={true}
+  direction="right"
 >
   <div
     className="ui-sliding-panel-overlay"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -118,13 +123,14 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
 <SlidingPanel
   active={false}
   closeOnOverlayClick={true}
+  direction="right"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel"
+      className="ui-sliding-panel ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -140,13 +146,14 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
 <SlidingPanel
   active={true}
   closeOnOverlayClick={false}
+  direction="right"
 >
   <div
     className="ui-sliding-panel-overlay"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -166,13 +173,14 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
 <SlidingPanel
   active={true}
   closeOnOverlayClick={false}
+  direction="right"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel"
+      className="ui-sliding-panel ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -191,13 +199,14 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
 exports[`SlidingPanel #render() opens the panel when active prop changes to true 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
+  direction="right"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel"
+      className="ui-sliding-panel ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -213,13 +222,14 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
 <SlidingPanel
   active={true}
   closeOnOverlayClick={true}
+  direction="right"
 >
   <div
     className="ui-sliding-panel-overlay"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -235,13 +245,14 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
 <SlidingPanel
   active={true}
   closeOnOverlayClick={true}
+  direction="right"
 >
   <div
     className="ui-sliding-panel-overlay"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -257,13 +268,14 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
 <SlidingPanel
   active={true}
   closeOnOverlayClick={true}
+  direction="right"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel"
+      className="ui-sliding-panel ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -278,6 +290,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
 exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
+  direction="right"
   mods={
     Array [
       "test",
@@ -290,7 +303,7 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_test"
+      className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_right"
     >
       <SlidingPanelHeader
         title="Test Title"
@@ -324,6 +337,7 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
 exports[`SlidingPanel #render() render with default props and mods provided 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
+  direction="right"
   mods={
     Array [
       "test",
@@ -335,7 +349,34 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_test"
+      className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_right"
+    >
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
+exports[`SlidingPanel #render() render with left direction 1`] = `
+<SlidingPanel
+  closeOnOverlayClick={true}
+  direction="left"
+  mods={
+    Array [
+      "test",
+    ]
+  }
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_left"
     >
       <div
         className="ui-sliding-panel__content"
@@ -351,13 +392,14 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
 <SlidingPanel
   active={true}
   closeOnOverlayClick={false}
+  direction="right"
 >
   <div
     className="ui-sliding-panel-overlay"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"
@@ -373,13 +415,14 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
 <SlidingPanel
   active={true}
   closeOnOverlayClick={false}
+  direction="right"
 >
   <div
     className="ui-sliding-panel-overlay"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
     >
       <div
         className="ui-sliding-panel__content"

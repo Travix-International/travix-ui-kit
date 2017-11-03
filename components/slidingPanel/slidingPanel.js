@@ -53,6 +53,11 @@ export default class SlidingPanel extends Component {
     leftBlock: PropTypes.node,
 
     /**
+     * Defines the direction of sidepanel.
+     */
+    direction: PropTypes.oneOf(['left', 'right']),
+
+    /**
      * When defined, this custom node appears on the right part of the header
      */
     rightBlock: PropTypes.node,
@@ -75,6 +80,7 @@ export default class SlidingPanel extends Component {
 
   static defaultProps = {
     closeOnOverlayClick: true,
+    direction: 'right',
   }
 
   componentWillReceiveProps(newProps) {
@@ -169,6 +175,7 @@ export default class SlidingPanel extends Component {
       title,
       leftBlock,
       rightBlock,
+      direction,
     } = this.props;
 
     const overlayMods = [];
@@ -181,6 +188,8 @@ export default class SlidingPanel extends Component {
     if (this.state.isActive) {
       panelMods.push('active');
     }
+
+    panelMods.push(direction);
 
     const panelClass = 'ui-sliding-panel';
     const panelClassName = getClassNamesWithMods(panelClass, panelMods);
