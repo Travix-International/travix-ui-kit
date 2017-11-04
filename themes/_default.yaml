@@ -503,11 +503,9 @@ sliding-panel:
   panel:
     background-color: "var(--tx-generic-color-blank)"
     bottom: "0"
-    box-shadow: "3px 0 3px -3px var(--tx-generic-color-shadow)"
     flex-flow: "column"
     margin: "0"
     max-width: "100%"
-    min-width: "150px"
     opacity: "1"
     padding: "24px"
     position: "absolute"

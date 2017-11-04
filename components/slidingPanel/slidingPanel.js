@@ -212,17 +212,12 @@ export default class SlidingPanel extends Component {
       onBackButtonClick,
     } = this.props;
 
-    const onBackButtonClickSafe = onBackButtonClick && typeof onBackButtonClick === 'function'
-      ? onBackButtonClick
-      : () => {};
-
-
     const headerLeftBlock = useDefaultLeftBlock
       ? (
         <span>
           <button
             className="ui-sliding-panel-header__left-block-back"
-            onClick={onBackButtonClickSafe}
+            onClick={onBackButtonClick}
           >
             <span className="ui-sliding-panel-header__left-block-back-icon">‹</span>
             <span className="ui-sliding-panel-header__left-block-back-text">

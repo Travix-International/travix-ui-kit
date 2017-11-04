@@ -28,11 +28,9 @@
 .ui-sliding-panel {
   background-color: var(--tx-sliding-panel-panel-background-color);
   bottom: var(--tx-sliding-panel-panel-bottom);
-  box-shadow: var(--tx-sliding-panel-panel-box-shadow);
   display: flex;
   flex-flow: var(--tx-sliding-panel-panel-flex-flow);
   font-family: var(--tx-generic-font-primary-font-family);
-  font-weight: var(--tx-generic-font-primary-weight-bold);
   margin: var(--tx-sliding-panel-panel-margin);
   max-width: var(--tx-sliding-panel-panel-max-width);
   min-width: var(--tx-sliding-panel-panel-min-width);

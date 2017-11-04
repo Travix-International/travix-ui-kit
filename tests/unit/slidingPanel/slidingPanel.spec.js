@@ -330,5 +330,33 @@ describe('SlidingPanel', () => {
 
       expect(renderTree).toMatchSnapshot();
     });
+
+    it('render with default block with back button and arrow with callback', () => {
+      const backButtonClick = jest.fn();
+      const renderTree = mount(
+        <SlidingPanel
+          backButtonLabel="Back"
+          onBackButtonClick={backButtonClick}
+          useDefaultLeftBlock
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      expect(renderTree).toMatchSnapshot();
+    });
+
+    it('render with default block with back button and arrow without callback', () => {
+      const renderTree = mount(
+        <SlidingPanel
+          backButtonLabel="Back"
+          useDefaultLeftBlock
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      expect(renderTree).toMatchSnapshot();
+    });
   });
 });

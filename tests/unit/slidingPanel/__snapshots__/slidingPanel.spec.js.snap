@@ -7,6 +7,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
   direction="right"
   onTryingToClose={[Function]}
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -38,6 +39,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
   direction="right"
   onTryingToClose={[Function]}
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -69,6 +71,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
   direction="right"
   onTryingToClose={[Function]}
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -100,6 +103,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
   direction="right"
   onTryingToClose={[Function]}
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -130,6 +134,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
   closeOnOverlayClick={true}
   direction="right"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -160,6 +165,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
   closeOnOverlayClick={true}
   direction="right"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -190,6 +196,7 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
   closeOnOverlayClick={false}
   direction="right"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -224,6 +231,7 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
   closeOnOverlayClick={false}
   direction="right"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -257,6 +265,7 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
   closeOnOverlayClick={true}
   direction="right"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -287,6 +296,7 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
   closeOnOverlayClick={true}
   direction="right"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -317,6 +327,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
   closeOnOverlayClick={true}
   direction="right"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -347,6 +358,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
   closeOnOverlayClick={true}
   direction="right"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -382,6 +394,7 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
   }
   subheader={null}
   title="Test Title"
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -434,6 +447,7 @@ exports[`SlidingPanel #render() render with custom subheader 1`] = `
       className="custom-class"
     />
   }
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -470,6 +484,7 @@ exports[`SlidingPanel #render() render with custom width 1`] = `
   closeOnOverlayClick={true}
   direction="left"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="720px"
 >
   <div
@@ -494,6 +509,69 @@ exports[`SlidingPanel #render() render with custom width 1`] = `
 </SlidingPanel>
 `;
 
+exports[`SlidingPanel #render() render with default block with back button and arrow with callback 1`] = `
+<SlidingPanel
+  backButtonLabel="Back"
+  closeOnOverlayClick={true}
+  direction="right"
+  onBackButtonClick={[Function]}
+  subheader={null}
+  useDefaultLeftBlock={true}
+  width="470px"
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
+    >
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
+exports[`SlidingPanel #render() render with default block with back button and arrow without callback 1`] = `
+<SlidingPanel
+  backButtonLabel="Back"
+  closeOnOverlayClick={true}
+  direction="right"
+  subheader={null}
+  useDefaultLeftBlock={true}
+  width="470px"
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
+    >
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
 exports[`SlidingPanel #render() render with default props and mods provided 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
@@ -504,6 +582,7 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
     ]
   }
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -538,6 +617,7 @@ exports[`SlidingPanel #render() render with left direction 1`] = `
     ]
   }
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -568,6 +648,7 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
   closeOnOverlayClick={false}
   direction="right"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
@@ -598,6 +679,7 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
   closeOnOverlayClick={false}
   direction="right"
   subheader={null}
+  useDefaultLeftBlock={false}
   width="470px"
 >
   <div
