@@ -137,3 +137,27 @@ Sliding Panel with custom subheader
         <button data-rel="close">Close</button>
       </SlidingPanel>
     </div>
+
+Sliding Panel with default block with back button
+
+    <div>
+      <button
+        onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
+      >Open panel</button>
+      <SlidingPanel
+        active={state.isSlidingPanelOpen}
+        onClose={() => setState({ isSlidingPanelOpen: false })}
+        useDefaultLeftBlock={true}
+        backButtonLabel="Back"
+        onBackButtonClick={() => {
+          alert('Going back...');
+          setState({ isSlidingPanelOpen: false });
+        }}
+        title="Panel Title"
+      >
+        This is an example<br/>
+        Of how simple it is to use<br/>
+        Our sliding panel.<br/><br/>
+        <button data-rel="close">Close</button>
+      </SlidingPanel>
+    </div>

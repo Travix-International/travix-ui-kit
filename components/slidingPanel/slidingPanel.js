@@ -27,6 +27,22 @@ export default class SlidingPanel extends Component {
     closeOnOverlayClick: PropTypes.bool,
 
     /**
+     * When true, it will show the block with arrow icon and passed text (optional).
+     * You can either enable it, or use leftBlock property to have more customization.
+     */
+    useDefaultLeftBlock: PropTypes.bool,
+
+    /**
+     * The text for default back button that will appear near the arrow icon
+     */
+    backButtonLabel: PropTypes.node,
+
+    /**
+     * Callback for back button
+     */
+    onBackButtonClick: PropTypes.function,
+
+    /**
      * Hook that will be executed when trying to close a panel if exists.
      * If it returns false, the panel won't be closed.
      */
@@ -92,6 +108,7 @@ export default class SlidingPanel extends Component {
     closeOnOverlayClick: true,
     direction: 'right',
     subheader: null,
+    useDefaultLeftBlock: false,
     width: '470px',
   }
 
@@ -190,7 +207,31 @@ export default class SlidingPanel extends Component {
       subheader,
       title,
       width,
+      useDefaultLeftBlock,
+      backButtonLabel,
+      onBackButtonClick,
     } = this.props;
+
+    const onBackButtonClickSafe = onBackButtonClick && typeof onBackButtonClick === 'function'
+      ? onBackButtonClick
+      : () => {};
+
+
+    const headerLeftBlock = useDefaultLeftBlock
+      ? (
+        <span>
+          <button
+            className="ui-sliding-panel-header__left-block-back"
+            onClick={onBackButtonClickSafe}
+          >
+            <span className="ui-sliding-panel-header__left-block-back-icon">‹</span>
+            <span className="ui-sliding-panel-header__left-block-back-text">
+              {backButtonLabel}
+            </span>
+          </button>
+        </span>
+      )
+      : leftBlock;
 
     const overlayMods = [];
     const panelMods = this.props.mods ? this.props.mods.slice() : [];
@@ -223,7 +264,7 @@ export default class SlidingPanel extends Component {
         >
           {title &&
             <SlidingPanelHeader
-              leftBlock={leftBlock}
+              leftBlock={headerLeftBlock}
               rightBlock={rightBlock}
               title={title}
             />}
