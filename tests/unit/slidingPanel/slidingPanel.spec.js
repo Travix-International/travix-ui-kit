@@ -316,5 +316,19 @@ describe('SlidingPanel', () => {
       expect(renderTree).toMatchSnapshot();
       expect(renderTree.props().width).toEqual(width);
     });
+
+    it('render with custom subheader', () => {
+      const subheader = <div className="custom-class" />;
+      const renderTree = mount(
+        <SlidingPanel
+          direction="left"
+          subheader={subheader}
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      expect(renderTree).toMatchSnapshot();
+    });
   });
 });

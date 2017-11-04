@@ -6,6 +6,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
   closeOnOverlayClick={true}
   direction="right"
   onTryingToClose={[Function]}
+  subheader={null}
   width="470px"
 >
   <div
@@ -36,6 +37,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
   closeOnOverlayClick={true}
   direction="right"
   onTryingToClose={[Function]}
+  subheader={null}
   width="470px"
 >
   <div
@@ -66,6 +68,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
   closeOnOverlayClick={true}
   direction="right"
   onTryingToClose={[Function]}
+  subheader={null}
   width="470px"
 >
   <div
@@ -96,6 +99,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
   closeOnOverlayClick={true}
   direction="right"
   onTryingToClose={[Function]}
+  subheader={null}
   width="470px"
 >
   <div
@@ -125,6 +129,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
   active={true}
   closeOnOverlayClick={true}
   direction="right"
+  subheader={null}
   width="470px"
 >
   <div
@@ -154,6 +159,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
   active={false}
   closeOnOverlayClick={true}
   direction="right"
+  subheader={null}
   width="470px"
 >
   <div
@@ -183,6 +189,7 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
   active={true}
   closeOnOverlayClick={false}
   direction="right"
+  subheader={null}
   width="470px"
 >
   <div
@@ -216,6 +223,7 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
   active={true}
   closeOnOverlayClick={false}
   direction="right"
+  subheader={null}
   width="470px"
 >
   <div
@@ -248,6 +256,7 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
 <SlidingPanel
   closeOnOverlayClick={true}
   direction="right"
+  subheader={null}
   width="470px"
 >
   <div
@@ -277,6 +286,7 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
   active={true}
   closeOnOverlayClick={true}
   direction="right"
+  subheader={null}
   width="470px"
 >
   <div
@@ -306,6 +316,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
   active={true}
   closeOnOverlayClick={true}
   direction="right"
+  subheader={null}
   width="470px"
 >
   <div
@@ -335,6 +346,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
   active={true}
   closeOnOverlayClick={true}
   direction="right"
+  subheader={null}
   width="470px"
 >
   <div
@@ -368,6 +380,7 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
       "test",
     ]
   }
+  subheader={null}
   title="Test Title"
   width="470px"
 >
@@ -412,10 +425,51 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
 </SlidingPanel>
 `;
 
+exports[`SlidingPanel #render() render with custom subheader 1`] = `
+<SlidingPanel
+  closeOnOverlayClick={true}
+  direction="left"
+  subheader={
+    <div
+      className="custom-class"
+    />
+  }
+  width="470px"
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_left"
+      style={
+        Object {
+          "width": "470px",
+        }
+      }
+    >
+      <div
+        className="ui-sliding-panel__subheader"
+      >
+        <div
+          className="custom-class"
+        />
+      </div>
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
 exports[`SlidingPanel #render() render with custom width 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
   direction="left"
+  subheader={null}
   width="720px"
 >
   <div
@@ -449,6 +503,7 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
       "test",
     ]
   }
+  subheader={null}
   width="470px"
 >
   <div
@@ -482,6 +537,7 @@ exports[`SlidingPanel #render() render with left direction 1`] = `
       "test",
     ]
   }
+  subheader={null}
   width="470px"
 >
   <div
@@ -511,6 +567,7 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
   active={true}
   closeOnOverlayClick={false}
   direction="right"
+  subheader={null}
   width="470px"
 >
   <div
@@ -540,6 +597,7 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
   active={true}
   closeOnOverlayClick={false}
   direction="right"
+  subheader={null}
   width="470px"
 >
   <div
