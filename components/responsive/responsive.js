@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import sizes from 'travix-breakpoints/sizes';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash/debounce';
+import { isBrowser } from '../_helpers';
 
 const sizesNumbers = Object.keys(sizes).reduce((base, key) => {
   base[key] = {
@@ -30,40 +31,44 @@ export default class Responsive extends Component {
       PropTypes.element,
       PropTypes.node,
     ]).isRequired,
+
     /**
      * Show if screen size is greater then
      */
     gt: PropTypes.oneOf([
       'tiny',
       'small',
-      'meduim',
+      'medium',
       'large',
       'xlarge',
     ]),
+
     /**
      * Show if screen size is less then
      */
     lt: PropTypes.oneOf([
       'tiny',
       'small',
-      'meduim',
+      'medium',
       'large',
       'xlarge',
     ]),
+
     /**
      * Show if screen size is exact
      */
     only: PropTypes.oneOf([
       'tiny',
       'small',
-      'meduim',
+      'medium',
       'large',
       'xlarge',
     ]),
+
     /**
      * If you render a string you need a wrapper element, like `div` or `span`
      */
-    wrap: PropTypes.element,
+    wrap: PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.func]),
   };
 
   static defaultProps = {
@@ -84,7 +89,7 @@ export default class Responsive extends Component {
     }
 
     return {
-      width: window.innerWidth,
+      width: isBrowser ? window.innerWidth : sizesNumbers.tiny.max - 1,
       min: frameSize.min,
       max: frameSize.max,
     };
@@ -97,7 +102,7 @@ export default class Responsive extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.state = Responsive.getState(nextProps);
+    this.setState(Responsive.getState(nextProps));
   }
 
   componentDidMount() {
