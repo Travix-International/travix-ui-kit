@@ -263,8 +263,6 @@ exports[`Tabs #render() should not call onClick method 1`] = `
 </Tab>
 `;
 
-exports[`Tabs #render() should not render correct with other tags 1`] = `null`;
-
 exports[`Tabs #render() should render correct component with basic data 1`] = `
 <div
   activeTab="0"
