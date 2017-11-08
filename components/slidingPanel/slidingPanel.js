@@ -59,7 +59,7 @@ export default class SlidingPanel extends Component {
     /**
      * Callback for back button
      */
-    onBackButtonClick: PropTypes.function,
+    onBackButtonClick: PropTypes.func,
 
     /**
      * When defined, this function is triggered when the panel is closing.
