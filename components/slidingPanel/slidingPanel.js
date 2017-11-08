@@ -16,6 +16,16 @@ export default class SlidingPanel extends Component {
   }
 
   static propTypes = {
+    /**
+     * Defines if the panel is open.
+     */
+    active: PropTypes.bool,
+
+    /**
+     * The text for default back button that will appear near the arrow icon
+     */
+    backButtonLabel: PropTypes.node,
+
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node,
@@ -27,20 +37,39 @@ export default class SlidingPanel extends Component {
     closeOnOverlayClick: PropTypes.bool,
 
     /**
-     * When true, it will show the block with arrow icon and passed text (optional).
-     * You can either enable it, or use leftBlock property to have more customization.
+     * Data attributes. You can use it to set up any custom data-* attribute
      */
-    useDefaultLeftBlock: PropTypes.bool,
+    dataAttrs: PropTypes.object,
 
     /**
-     * The text for default back button that will appear near the arrow icon
+     * Defines the direction of sidepanel.
      */
-    backButtonLabel: PropTypes.node,
+    direction: PropTypes.oneOf(['left', 'right']),
+
+    /**
+     * When defined, this custom node appears on the left part of the header
+     */
+    leftBlock: PropTypes.node,
+
+    /**
+     * You can provide set of custom modifications.
+     */
+    mods: PropTypes.arrayOf(PropTypes.string),
 
     /**
      * Callback for back button
      */
     onBackButtonClick: PropTypes.function,
+
+    /**
+     * When defined, this function is triggered when the panel is closing.
+     */
+    onClose: PropTypes.func,
+
+    /**
+     * When defined, this function is triggered when the panel is opening.
+     */
+    onOpen: PropTypes.func,
 
     /**
      * Hook that will be executed when trying to close a panel if exists.
@@ -49,49 +78,9 @@ export default class SlidingPanel extends Component {
     onTryingToClose: PropTypes.func,
 
     /**
-     * Data attributes. You can use it to set up any custom data-* attribute
-     */
-    dataAttrs: PropTypes.object,
-
-    /**
-     * You can provide set of custom modifications.
-     */
-    mods: PropTypes.arrayOf(PropTypes.string),
-
-    /**
-     * When defined, this function is triggered when the panel is closing.
-     */
-    onClose: PropTypes.func,
-
-    /**
-     * When defined, this custom node appears on the left part of the header
-     */
-    leftBlock: PropTypes.node,
-
-    /**
-     * Defines the direction of sidepanel.
-     */
-    direction: PropTypes.oneOf(['left', 'right']),
-
-    /**
      * When defined, this custom node appears on the right part of the header
      */
     rightBlock: PropTypes.node,
-
-    /**
-     * When defined, this function is triggered when the panel is opening.
-     */
-    onOpen: PropTypes.func,
-
-    /**
-     * Defines if the panel is open.
-     */
-    active: PropTypes.bool,
-
-    /**
-     * Defines the width of the panel.
-     */
-    width: PropTypes.string,
 
     /**
      * If defined, can contain any subheader information which is displayed without default paddings
@@ -102,14 +91,26 @@ export default class SlidingPanel extends Component {
      * Defines title for header. Optional. If it's defined header will be shown.
      */
     title: PropTypes.node,
+
+    /**
+     * When true, it will show the block with arrow icon and passed text (optional).
+     * You can either enable it, or use leftBlock property to have more customization.
+     */
+    useDefaultLeftBlock: PropTypes.bool,
+
+    /**
+     * Defines the width of the panel.
+     */
+    width: PropTypes.string,
   }
+
 
   static defaultProps = {
     closeOnOverlayClick: true,
     direction: 'right',
     subheader: null,
     useDefaultLeftBlock: false,
-    width: '470px',
+    width: '480px',
   }
 
   componentWillReceiveProps(newProps) {
@@ -197,6 +198,23 @@ export default class SlidingPanel extends Component {
     }
   }
 
+  getDefaultLeftBlock() {
+    const { backButtonLabel, onBackButtonClick } = this.props;
+    return (
+      <span>
+        <button
+          className="ui-sliding-panel-header__left-block-back"
+          onClick={onBackButtonClick}
+        >
+          <span className="ui-sliding-panel-header__left-block-back-icon"/>
+          <span className="ui-sliding-panel-header__left-block-back-text">
+            {backButtonLabel}
+          </span>
+        </button>
+      </span>
+    );
+  }
+
   render() {
     const {
       children,
@@ -206,26 +224,12 @@ export default class SlidingPanel extends Component {
       rightBlock,
       subheader,
       title,
-      width,
       useDefaultLeftBlock,
-      backButtonLabel,
-      onBackButtonClick,
+      width,
     } = this.props;
 
     const headerLeftBlock = useDefaultLeftBlock
-      ? (
-        <span>
-          <button
-            className="ui-sliding-panel-header__left-block-back"
-            onClick={onBackButtonClick}
-          >
-            <span className="ui-sliding-panel-header__left-block-back-icon">‹</span>
-            <span className="ui-sliding-panel-header__left-block-back-text">
-              {backButtonLabel}
-            </span>
-          </button>
-        </span>
-      )
+      ? this.getDefaultLeftBlock()
       : leftBlock;
 
     const overlayMods = [];
