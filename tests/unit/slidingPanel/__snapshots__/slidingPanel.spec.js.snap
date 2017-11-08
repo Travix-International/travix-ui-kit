@@ -8,7 +8,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
   onTryingToClose={[Function]}
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -18,7 +18,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -40,7 +40,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
   onTryingToClose={[Function]}
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -50,7 +50,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided and
       className="ui-sliding-panel ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -72,7 +72,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
   onTryingToClose={[Function]}
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -82,7 +82,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -104,7 +104,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
   onTryingToClose={[Function]}
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -114,7 +114,7 @@ exports[`SlidingPanel #render() calls onTryingToClose function when provided via
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -135,7 +135,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
   direction="right"
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -145,7 +145,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -166,7 +166,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
   direction="right"
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -176,7 +176,7 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
       className="ui-sliding-panel ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -197,7 +197,7 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
   direction="right"
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -207,7 +207,7 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -232,7 +232,7 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
   direction="right"
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -242,7 +242,7 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
       className="ui-sliding-panel ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -266,7 +266,7 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
   direction="right"
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -276,7 +276,7 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
       className="ui-sliding-panel ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -297,7 +297,7 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
   direction="right"
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -307,7 +307,7 @@ exports[`SlidingPanel #render() opens the panel when active prop changes to true
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -328,7 +328,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
   direction="right"
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -338,7 +338,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -359,7 +359,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
   direction="right"
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -369,7 +369,7 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
       className="ui-sliding-panel ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -395,7 +395,7 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
   subheader={null}
   title="Test Title"
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -405,7 +405,7 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
       className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -448,7 +448,7 @@ exports[`SlidingPanel #render() render with custom subheader 1`] = `
     />
   }
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -458,7 +458,7 @@ exports[`SlidingPanel #render() render with custom subheader 1`] = `
       className="ui-sliding-panel ui-sliding-panel_left"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -517,7 +517,7 @@ exports[`SlidingPanel #render() render with default block with back button and a
   onBackButtonClick={[Function]}
   subheader={null}
   useDefaultLeftBlock={true}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -527,7 +527,7 @@ exports[`SlidingPanel #render() render with default block with back button and a
       className="ui-sliding-panel ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -548,7 +548,7 @@ exports[`SlidingPanel #render() render with default block with back button and a
   direction="right"
   subheader={null}
   useDefaultLeftBlock={true}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -558,7 +558,7 @@ exports[`SlidingPanel #render() render with default block with back button and a
       className="ui-sliding-panel ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -583,7 +583,7 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
   }
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -593,7 +593,7 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
       className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -618,7 +618,7 @@ exports[`SlidingPanel #render() render with left direction 1`] = `
   }
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
@@ -628,7 +628,7 @@ exports[`SlidingPanel #render() render with left direction 1`] = `
       className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_left"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -649,7 +649,7 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
   direction="right"
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -659,7 +659,7 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
@@ -680,7 +680,7 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
   direction="right"
   subheader={null}
   useDefaultLeftBlock={false}
-  width="470px"
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay"
@@ -690,7 +690,7 @@ exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close wh
       className="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
       style={
         Object {
-          "width": "470px",
+          "width": "480px",
         }
       }
     >
