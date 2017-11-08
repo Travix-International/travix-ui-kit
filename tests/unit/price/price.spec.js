@@ -118,6 +118,20 @@ describe('Price', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render asterisk when showAsterisk is true', () => {
+      const wrapper = shallow(
+        <Price
+          decimalsSeparator=","
+          showAsterisk
+          thousandsSeparator="."
+          underlined
+          value={50153.30}
+        />
+      );
+
+      expect(wrapper).toMatchSnapshot();
+    });
+
     it('should render with ui-price_size_xl class', () => {
       const wrapper = shallow(
         <Price

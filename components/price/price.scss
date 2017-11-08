@@ -40,7 +40,7 @@
 
   &.ui-price__currency_right {
     margin-left: 5px;
-    order: 4;
+    order: 5;
   }
 }
 
@@ -49,6 +49,13 @@
   display: flex;
   flex: 0 0 auto;
   order: 3;
+}
+
+.ui-price__asterisk {
+  align-self: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  order: 4;
 }
 
 .ui-price__integers {
@@ -62,7 +69,7 @@
   background-color: var(--tx-generic-color-accent);
   display: flex;
   flex: 1 1 auto;
-  order: 5;
+  order: 6;
 }
 
 .ui-price_size_xs {
@@ -71,6 +78,10 @@
   }
 
   .ui-price__decimals {
+    font-size: var(--tx-price-xsmall-font-size-decimals);
+  }
+
+  .ui-price__asterisk {
     font-size: var(--tx-price-xsmall-font-size-decimals);
   }
 
@@ -102,6 +113,10 @@
     font-size: var(--tx-price-small-font-size-decimals);
   }
 
+  .ui-price__asterisk {
+    font-size: var(--tx-price-small-font-size-decimals);
+  }
+
   .ui-price__integers {
     font-size: var(--tx-price-small-font-size-integers);
     line-height: var(--tx-price-small-line-height-integers);
@@ -128,6 +143,10 @@
 
   .ui-price__decimals {
     font-size: var(--tx-price-medium-font-size-decimals)
+  }
+
+  .ui-price__asterisk {
+    font-size: var(--tx-price-medium-font-size-decimals);
   }
 
   .ui-price__integers {
@@ -158,6 +177,10 @@
     font-size: var(--tx-price-large-font-size-decimals)
   }
 
+  .ui-price__asterisk {
+    font-size: var(--tx-price-large-font-size-decimals);
+  }
+
   .ui-price__integers {
     font-size: var(--tx-price-large-font-size-integers);
     line-height: var(--tx-price-large-line-height-integers);
@@ -184,6 +207,10 @@
 
   .ui-price__decimals {
     font-size: var(--tx-price-xlarge-font-size-decimals)
+  }
+
+  .ui-price__asterisk {
+    font-size: var(--tx-price-xlarge-font-size-decimals);
   }
 
   .ui-price__integers {
