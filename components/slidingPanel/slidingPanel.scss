@@ -51,25 +51,3 @@
   overflow-y: var(--tx-sliding-panel-content-overflow-y);
   padding: var(--tx-sliding-panel-panel-padding);
 }
-
-button.ui-sliding-panel-header__left-block-back {
-  align-items: center;
-  background: transparent;
-  border: 0;
-  color: var(--tx-generic-color-text-dark);
-  cursor: pointer;
-  display: flex;
-  font-family: var(--tx-generic-font-secondary-font-family);
-  font-size: 13px;
-  font-weight: var(--tx-generic-font-secondary-variants-bold);
-  margin-left: 15px;
-  outline: 0;
-}
-
-.ui-sliding-panel-header__left-block-back-icon {
-  color: var(--tx-generic-color-secondary-darker);
-  display: inline-block;
-  font-size: 25px;
-  margin-right: 4px;
-  transform: translateY(-2px);
-}

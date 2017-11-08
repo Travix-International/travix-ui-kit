@@ -145,10 +145,11 @@ Sliding Panel with default block with back button
         onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
       >Open panel</button>
       <SlidingPanel
+        width="750px"
         active={state.isSlidingPanelOpen}
         onClose={() => setState({ isSlidingPanelOpen: false })}
         useDefaultLeftBlock={true}
-        backButtonLabel="Back"
+        backButtonLabel="Back to the website"
         onBackButtonClick={() => {
           alert('Going back...');
           setState({ isSlidingPanelOpen: false });
