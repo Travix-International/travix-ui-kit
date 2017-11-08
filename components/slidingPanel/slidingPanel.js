@@ -198,7 +198,7 @@ export default class SlidingPanel extends Component {
     }
   }
 
-  getDefaultLeftBlock() {
+  renderDefaultLeftBlock() {
     const { backButtonLabel, onBackButtonClick } = this.props;
     return (
       <span>
@@ -229,7 +229,7 @@ export default class SlidingPanel extends Component {
     } = this.props;
 
     const headerLeftBlock = useDefaultLeftBlock
-      ? this.getDefaultLeftBlock()
+      ? this.renderDefaultLeftBlock()
       : leftBlock;
 
     const overlayMods = [];
