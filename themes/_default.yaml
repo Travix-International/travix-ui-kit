@@ -447,6 +447,8 @@ price:
         decimals: 13px
         additional-text: 12px
         discount: 13px
+    height:
+      underline: 3px
     line-height:
       integers: 15px
   small:
@@ -457,6 +459,8 @@ price:
         decimals: 14px
         additional-text: 13px
         discount: 16px
+    height:
+      underline: 4px
     line-height:
       integers: 26px
   medium:

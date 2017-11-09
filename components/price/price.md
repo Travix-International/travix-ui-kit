@@ -29,8 +29,8 @@ Price with discount:
 Sizes:
 
     <div>
-      <Price showAsterisk size="xs" value={50153.30} /><br/><br/>
-      <Price showAsterisk size="s" value={50153.30} /><br/><br/>
+      <Price showAsterisk size="xs" underlined value={50153.30} /><br/><br/>
+      <Price showAsterisk size="s" underlined value={50153.30} /><br/><br/>
       <Price showAsterisk size="m" underlined value={50153.30} /><br/><br/>
       <Price showAsterisk size="l" underlined value={50153.30} /><br/><br/>
       <Price showAsterisk size="xl" underlined value={50153.30} /><br/><br/>
