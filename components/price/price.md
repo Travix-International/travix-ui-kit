@@ -17,6 +17,7 @@ Price with asterisk:
     <div>
       <Price discount={50200.30} showAsterisk size="s" underlined value={50153.30} /><br/><br/>
       <Price additionalText="total" discount={50200.30} showAsterisk size="m" symbolPosition="right" underlined value={50153.30} /><br/><br/>
+      <Price additionalText="total" discount={50200.30} showAsterisk size="xl" value={50153.30} /><br/><br/>
     </div>
 
 Price with discount:
@@ -30,8 +31,8 @@ Sizes:
 
     <div>
       <Price showAsterisk size="xs" underlined value={50153.30} /><br/><br/>
-      <Price showAsterisk size="s" underlined value={50153.30} /><br/><br/>
-      <Price showAsterisk size="m" underlined value={50153.30} /><br/><br/>
+      <Price size="s" underlined value={50153.30} /><br/><br/>
+      <Price size="m" underlined value={50153.30} /><br/><br/>
       <Price showAsterisk size="l" underlined value={50153.30} /><br/><br/>
-      <Price showAsterisk size="xl" underlined value={50153.30} /><br/><br/>
+      <Price size="xl" underlined value={50153.30} /><br/><br/>
     </div>
