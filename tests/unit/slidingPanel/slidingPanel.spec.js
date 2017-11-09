@@ -20,6 +20,7 @@ describe('SlidingPanel', () => {
       expect(renderTree).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_test')).toEqual(true);
+      expect(panelElement.hasClass('ui-sliding-panel_right')).toEqual(true);
       expect(mainContent.text()).toEqual('Test');
     });
 
@@ -274,6 +275,88 @@ describe('SlidingPanel', () => {
       expect(instance.setState.mock.calls.length).toEqual(0);
 
       renderTree.unmount();
+    });
+
+    it('render with left direction', () => {
+      const renderTree = mount(
+        <SlidingPanel
+          direction="left"
+          mods={['test']}
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
+      const panelElement = overlayElement.find('.ui-sliding-panel');
+      const mainContent = panelElement.find('.ui-sliding-panel__content');
+
+      jest.runAllTimers();
+
+      expect(renderTree).toMatchSnapshot();
+      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
+      expect(panelElement.hasClass('ui-sliding-panel_test')).toEqual(true);
+      expect(panelElement.hasClass('ui-sliding-panel_left')).toEqual(true);
+      expect(mainContent.text()).toEqual('Test');
+    });
+
+    it('render with custom width', () => {
+      const width = '720px';
+      const renderTree = mount(
+        <SlidingPanel
+          direction="left"
+          width={width}
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      jest.runAllTimers();
+
+      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.props().width).toEqual(width);
+    });
+
+    it('render with custom subheader', () => {
+      const subheader = <div className="custom-class" />;
+      const renderTree = mount(
+        <SlidingPanel
+          direction="left"
+          subheader={subheader}
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      expect(renderTree).toMatchSnapshot();
+    });
+
+    it('render with default block with back button and arrow with callback', () => {
+      const backButtonClick = jest.fn();
+      const renderTree = mount(
+        <SlidingPanel
+          backButtonLabel="Back"
+          onBackButtonClick={backButtonClick}
+          useDefaultLeftBlock
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      expect(renderTree).toMatchSnapshot();
+    });
+
+    it('render with default block with back button and arrow without callback', () => {
+      const renderTree = mount(
+        <SlidingPanel
+          backButtonLabel="Back"
+          useDefaultLeftBlock
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      expect(renderTree).toMatchSnapshot();
     });
   });
 });
