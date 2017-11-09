@@ -9,7 +9,7 @@ describe('Global: render', () => {
         Global Content
       </Global>
     );
-    expect(component).toMatchSnapshot();
+    expect(component.type()).toEqual(null);
   });
 
   it('should return base active modal with close button', () => {
@@ -18,6 +18,6 @@ describe('Global: render', () => {
         Global Content
       </Global>
     );
-    expect(component).toMatchSnapshot();
+    expect(component.type()).toEqual(null);
   });
 });
