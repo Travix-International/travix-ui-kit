@@ -75,14 +75,25 @@
 .ui-price_size_xs {
   .ui-price__currency {
     font-size: var(--tx-price-xsmall-font-size-currency);
+    line-height: var(--tx-price-currency-xsmall-line-height);
+
+    &.ui-price__currency_left {
+      margin-right: var(--tx-price-currency-xsmall-margin-right);
+    }
+
+    &.ui-price__currency_right {
+      margin-left: var(--tx-price-currency-xsmall-margin-left);
+    }
   }
 
   .ui-price__decimals {
     font-size: var(--tx-price-xsmall-font-size-decimals);
+    line-height: var(--tx-price-decimals-xsmall-line-height);
   }
 
   .ui-price__asterisk {
     font-size: var(--tx-price-xsmall-font-size-decimals);
+    line-height: var(--tx-price-asterisk-xsmall-line-height);
   }
 
   .ui-price__integers {
@@ -107,19 +118,31 @@
 .ui-price_size_s {
   .ui-price__currency {
     font-size: var(--tx-price-small-font-size-currency);
+    line-height: var(--tx-price-currency-small-line-height);
+
+    &.ui-price__currency_left {
+      margin-right: var(--tx-price-currency-small-margin-right);
+    }
+
+    &.ui-price__currency_right {
+      margin-left: var(--tx-price-currency-small-margin-left);
+    }
   }
 
   .ui-price__decimals {
     font-size: var(--tx-price-small-font-size-decimals);
+    line-height: var(--tx-price-decimals-small-line-height);
   }
 
   .ui-price__asterisk {
     font-size: var(--tx-price-small-font-size-decimals);
+    line-height: var(--tx-price-asterisk-small-line-height);
   }
 
   .ui-price__integers {
     font-size: var(--tx-price-small-font-size-integers);
     line-height: var(--tx-price-small-line-height-integers);
+    margin-right: var(--tx-price-integers-small-margin-right);
   }
 
   .ui-price__underline {
@@ -139,19 +162,31 @@
 .ui-price_size_m {
   .ui-price__currency {
     font-size: var(--tx-price-medium-font-size-currency);
+    line-height: var(--tx-price-currency-medium-line-height);
+
+    &.ui-price__currency_left {
+      margin-right: var(--tx-price-currency-medium-margin-right);
+    }
+
+    &.ui-price__currency_right {
+      margin-left: var(--tx-price-currency-medium-margin-left);
+    }
   }
 
   .ui-price__decimals {
-    font-size: var(--tx-price-medium-font-size-decimals)
+    font-size: var(--tx-price-medium-font-size-decimals);
+    line-height: var(--tx-price-decimals-medium-line-height);
   }
 
   .ui-price__asterisk {
     font-size: var(--tx-price-medium-font-size-decimals);
+    line-height: var(--tx-price-asterisk-medium-line-height);
   }
 
   .ui-price__integers {
     font-size: var(--tx-price-medium-font-size-integers);
     line-height: var(--tx-price-medium-line-height-integers);
+    margin-right: var(--tx-price-integers-medium-margin-right);
   }
 
   .ui-price__underline {
@@ -171,19 +206,31 @@
 .ui-price_size_l {
   .ui-price__currency {
     font-size: var(--tx-price-large-font-size-currency);
+    line-height: var(--tx-price-currency-large-line-height);
+
+    &.ui-price__currency_left {
+      margin-right: var(--tx-price-currency-large-margin-right);
+    }
+
+    &.ui-price__currency_right {
+      margin-left: var(--tx-price-currency-large-margin-left);
+    }
   }
 
   .ui-price__decimals {
-    font-size: var(--tx-price-large-font-size-decimals)
+    font-size: var(--tx-price-large-font-size-decimals);
+    line-height: var(--tx-price-decimals-large-line-height);
   }
 
   .ui-price__asterisk {
     font-size: var(--tx-price-large-font-size-decimals);
+    line-height: var(--tx-price-asterisk-large-line-height);
   }
 
   .ui-price__integers {
     font-size: var(--tx-price-large-font-size-integers);
     line-height: var(--tx-price-large-line-height-integers);
+    margin-right: var(--tx-price-integers-large-margin-right);
   }
 
   .ui-price__underline {
@@ -203,19 +250,31 @@
 .ui-price_size_xl {
   .ui-price__currency {
     font-size: var(--tx-price-xlarge-font-size-currency);
+    line-height: var(--tx-price-currency-xlarge-line-height);
+
+    &.ui-price__currency_left {
+      margin-right: var(--tx-price-currency-xlarge-margin-right);
+    }
+
+    &.ui-price__currency_right {
+      margin-left: var(--tx-price-currency-xlarge-margin-left);
+    }
   }
 
   .ui-price__decimals {
-    font-size: var(--tx-price-xlarge-font-size-decimals)
+    font-size: var(--tx-price-xlarge-font-size-decimals);
+    line-height: var(--tx-price-decimals-xlarge-line-height);
   }
 
   .ui-price__asterisk {
     font-size: var(--tx-price-xlarge-font-size-decimals);
+    line-height: var(--tx-price-asterisk-xlarge-line-height);
   }
 
   .ui-price__integers {
     font-size: var(--tx-price-xlarge-font-size-integers);
     line-height: var(--tx-price-xlarge-line-height-integers);
+    margin-right: var(--tx-price-integers-xlarge-margin-right);
   }
 
   .ui-price__underline {
