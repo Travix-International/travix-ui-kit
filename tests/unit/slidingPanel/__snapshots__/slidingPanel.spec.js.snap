@@ -248,6 +248,7 @@ exports[`SlidingPanel #render() render with custom subheader 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
   direction="left"
+  global={false}
   subheader={
     <div
       className="custom-class"
@@ -289,6 +290,7 @@ exports[`SlidingPanel #render() render with custom width 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
   direction="left"
+  global={false}
   subheader={null}
   useDefaultLeftBlock={false}
   width="720px"
@@ -320,6 +322,7 @@ exports[`SlidingPanel #render() render with default block with back button and a
   backButtonLabel="Back"
   closeOnOverlayClick={true}
   direction="right"
+  global={false}
   onBackButtonClick={[Function]}
   subheader={null}
   useDefaultLeftBlock={true}
@@ -352,6 +355,7 @@ exports[`SlidingPanel #render() render with default block with back button and a
   backButtonLabel="Back"
   closeOnOverlayClick={true}
   direction="right"
+  global={false}
   subheader={null}
   useDefaultLeftBlock={true}
   width="480px"
@@ -395,10 +399,26 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
 </div>
 `;
 
+exports[`SlidingPanel #render() render with global mode 1`] = `
+<SlidingPanel
+  closeOnOverlayClick={true}
+  direction="right"
+  global={true}
+  subheader={null}
+  useDefaultLeftBlock={false}
+  width="480px"
+>
+  <Global
+    noscroll={false}
+  />
+</SlidingPanel>
+`;
+
 exports[`SlidingPanel #render() render with left direction 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
   direction="left"
+  global={false}
   mods={
     Array [
       "test",

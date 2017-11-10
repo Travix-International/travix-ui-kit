@@ -162,3 +162,29 @@ Sliding Panel with default block with back button
         <button data-rel="close">Close</button>
       </SlidingPanel>
     </div>
+
+Sliding Panel with global
+
+    <div>
+      <button
+        onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
+      >Open panel</button>
+      <SlidingPanel
+        global
+        width="750px"
+        active={state.isSlidingPanelOpen}
+        onClose={() => setState({ isSlidingPanelOpen: false })}
+        useDefaultLeftBlock={true}
+        backButtonLabel="Back to the website"
+        onBackButtonClick={() => {
+          alert('Going back...');
+          setState({ isSlidingPanelOpen: false });
+        }}
+        title="Panel Title"
+      >
+        This is an example<br/>
+        Of how simple it is to use<br/>
+        Our sliding panel.<br/><br/>
+        <button data-rel="close">Close</button>
+      </SlidingPanel>
+    </div>

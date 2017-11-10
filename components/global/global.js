@@ -5,23 +5,30 @@ import {
   unmountComponentAtNode,
 } from 'react-dom';
 
+function setGlobalNoscroll(flag) {
+  const body = global.window.document.body;
+  flag
+    ? body.classList.add('ui-global_noscroll')
+    : body.classList.remove('ui-global_noscroll');
+}
+
 /**
  * Global component
  * React component for transportation of modals, lightboxes, loading bars... to document.body
  */
 class Global extends Component {
   componentDidMount() {
-    if (this.props.noscroll) {
-      global.window.document.body.classList.add('ui-global_noscroll');
-    }
-
     this.target = global.window.document.createElement('div');
     this.target.classList.add('ui-global');
     global.window.document.body.appendChild(this.target);
-    this.componentDidUpdate();
+    this.componentDidUpdate({ noscroll: false });
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prev) {
+    const { noscroll } = this.props;
+    if (prev.noscroll !== noscroll) {
+      setGlobalNoscroll(noscroll);
+    }
     unstable_renderSubtreeIntoContainer(this, (
       <div className={this.props.className}>
         {this.props.children}
@@ -31,7 +38,7 @@ class Global extends Component {
 
   componentWillUnmount() {
     if (this.props.noscroll) {
-      global.window.document.body.classList.remove('ui-global_noscroll');
+      setGlobalNoscroll(false);
     }
     unmountComponentAtNode(this.target);
     global.window.document.body.removeChild(this.target);
