@@ -78,11 +78,11 @@
     line-height: var(--tx-price-currency-xsmall-line-height);
 
     &.ui-price__currency_left {
-      margin-right: var(--tx-price-currency-xsmall-margin-right);
+      margin-right: 1px;
     }
 
     &.ui-price__currency_right {
-      margin-left: var(--tx-price-currency-xsmall-margin-left);
+      margin-left: 1px;
     }
   }
 
@@ -121,11 +121,11 @@
     line-height: var(--tx-price-currency-small-line-height);
 
     &.ui-price__currency_left {
-      margin-right: var(--tx-price-currency-small-margin-right);
+      margin-right: 2px;
     }
 
     &.ui-price__currency_right {
-      margin-left: var(--tx-price-currency-small-margin-left);
+      margin-left: 2px;
     }
   }
 
@@ -142,7 +142,7 @@
   .ui-price__integers {
     font-size: var(--tx-price-small-font-size-integers);
     line-height: var(--tx-price-small-line-height-integers);
-    margin-right: var(--tx-price-integers-small-margin-right);
+    margin-right: 1px;
   }
 
   .ui-price__underline {
@@ -165,11 +165,11 @@
     line-height: var(--tx-price-currency-medium-line-height);
 
     &.ui-price__currency_left {
-      margin-right: var(--tx-price-currency-medium-margin-right);
+      margin-right: 2px;
     }
 
     &.ui-price__currency_right {
-      margin-left: var(--tx-price-currency-medium-margin-left);
+      margin-left: 2px;
     }
   }
 
@@ -186,7 +186,7 @@
   .ui-price__integers {
     font-size: var(--tx-price-medium-font-size-integers);
     line-height: var(--tx-price-medium-line-height-integers);
-    margin-right: var(--tx-price-integers-medium-margin-right);
+    margin-right: 1px;
   }
 
   .ui-price__underline {
@@ -209,11 +209,11 @@
     line-height: var(--tx-price-currency-large-line-height);
 
     &.ui-price__currency_left {
-      margin-right: var(--tx-price-currency-large-margin-right);
+      margin-right: 3px;
     }
 
     &.ui-price__currency_right {
-      margin-left: var(--tx-price-currency-large-margin-left);
+      margin-left: 3px;
     }
   }
 
@@ -230,7 +230,7 @@
   .ui-price__integers {
     font-size: var(--tx-price-large-font-size-integers);
     line-height: var(--tx-price-large-line-height-integers);
-    margin-right: var(--tx-price-integers-large-margin-right);
+    margin-right: 2px;
   }
 
   .ui-price__underline {
@@ -251,14 +251,6 @@
   .ui-price__currency {
     font-size: var(--tx-price-xlarge-font-size-currency);
     line-height: var(--tx-price-currency-xlarge-line-height);
-
-    &.ui-price__currency_left {
-      margin-right: var(--tx-price-currency-xlarge-margin-right);
-    }
-
-    &.ui-price__currency_right {
-      margin-left: var(--tx-price-currency-xlarge-margin-left);
-    }
   }
 
   .ui-price__decimals {
@@ -274,7 +266,7 @@
   .ui-price__integers {
     font-size: var(--tx-price-xlarge-font-size-integers);
     line-height: var(--tx-price-xlarge-line-height-integers);
-    margin-right: var(--tx-price-integers-xlarge-margin-right);
+    margin-right: 3px;
   }
 
   .ui-price__underline {
