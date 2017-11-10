@@ -310,5 +310,3 @@ exports[`Collapse: render should return collapse component with two items 1`] = 
   </CollapseItem>
 </div>
 `;
-
-exports[`Collapse: render should return empty collapse component 1`] = `null`;

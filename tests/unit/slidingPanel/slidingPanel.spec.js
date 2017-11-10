@@ -17,7 +17,7 @@ describe('SlidingPanel', () => {
 
       jest.runAllTimers();
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_test')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_right')).toEqual(true);
@@ -32,7 +32,7 @@ describe('SlidingPanel', () => {
 
       jest.runAllTimers();
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(header).toHaveLength(1);
     });
 
@@ -46,17 +46,17 @@ describe('SlidingPanel', () => {
       const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
       const panelElement = overlayElement.find('.ui-sliding-panel');
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
 
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(true);
 
       overlayElement.simulate('click');
       renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
       jest.runAllTimers();
 
-      expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
+      expect(renderTree.render()).toMatchSnapshot();
+      expect(overlayElement.render().hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
@@ -70,17 +70,17 @@ describe('SlidingPanel', () => {
       const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
       const panelElement = overlayElement.find('.ui-sliding-panel');
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(true);
 
       overlayElement.simulate('click');
 
       jest.runAllTimers();
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(true);
     });
 
     it('calls onOpen and onClose functions when provided via props', () => {
@@ -120,9 +120,9 @@ describe('SlidingPanel', () => {
       const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
       const panelElement = overlayElement.find('.ui-sliding-panel');
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(true);
 
       overlayElement.simulate('click');
 
@@ -130,9 +130,9 @@ describe('SlidingPanel', () => {
 
       jest.runAllTimers();
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(true);
     });
 
     it('calls onTryingToClose function when provided and closes a panel if it doesn\'t return false', () => {
@@ -152,9 +152,9 @@ describe('SlidingPanel', () => {
       const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
       const panelElement = overlayElement.find('.ui-sliding-panel');
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(true);
 
       overlayElement.simulate('click');
 
@@ -162,7 +162,7 @@ describe('SlidingPanel', () => {
 
       jest.runAllTimers();
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
@@ -180,17 +180,17 @@ describe('SlidingPanel', () => {
 
       const closeButtonElement = document.querySelector('.ui-sliding-panel_active [data-rel="close"]');
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(true);
 
       closeButtonElement.dispatchEvent(new Event('click'));
 
       renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
       jest.runAllTimers();
 
-      expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
+      expect(renderTree.render()).toMatchSnapshot();
+      expect(overlayElement.render().hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
 
       renderTree.detach();
@@ -206,7 +206,7 @@ describe('SlidingPanel', () => {
 
       jest.runAllTimers();
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
 
@@ -215,9 +215,9 @@ describe('SlidingPanel', () => {
       jest.runAllTimers();
       renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
 
-      expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+      expect(renderTree.render()).toMatchSnapshot();
+      expect(overlayElement.render().hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(true);
     });
 
     it('closes the panel when active prop changes to false', () => {
@@ -229,17 +229,17 @@ describe('SlidingPanel', () => {
 
       jest.runAllTimers();
 
-      expect(renderTree).toMatchSnapshot();
+      expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(true);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(true);
 
       renderTree.setProps({ active: false });
 
       renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
       jest.runAllTimers();
 
-      expect(renderTree).toMatchSnapshot();
-      expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
+      expect(renderTree.render()).toMatchSnapshot();
+      expect(overlayElement.render().hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
       expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 

@@ -27,7 +27,7 @@ describe('Carousel', () => {
       const items = renderTree.find('.ui-carousel-item');
 
       expect(renderTree).toMatchSnapshot();
-      expect(renderTree.hasClass('ui-carousel_small')).toEqual(true);
+      expect(renderTree.children('.ui-carousel').hasClass('ui-carousel_small')).toEqual(true);
       expect(items.length).toEqual(images.length);
     });
 

@@ -41,7 +41,7 @@ describe('Tabs', () => {
         </Tabs>
       );
 
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.type()).toEqual(null);
     });
 
     it('should render correct data with content', () => {
