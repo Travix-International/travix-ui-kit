@@ -21,19 +21,11 @@ class Global extends Component {
     this.target = global.window.document.createElement('div');
     this.target.classList.add('ui-global');
     global.window.document.body.appendChild(this.target);
-    this.componentDidUpdate({ noscroll: false });
+    this.updateContainerAndBody(false);
   }
 
   componentDidUpdate(prev) {
-    const { noscroll } = this.props;
-    if (prev.noscroll !== noscroll) {
-      setGlobalNoscroll(noscroll);
-    }
-    unstable_renderSubtreeIntoContainer(this, (
-      <div className={this.props.className}>
-        {this.props.children}
-      </div>
-    ), this.target);
+    this.updateContainerAndBody(prev.noscroll);
   }
 
   componentWillUnmount() {
@@ -42,6 +34,18 @@ class Global extends Component {
     }
     unmountComponentAtNode(this.target);
     global.window.document.body.removeChild(this.target);
+  }
+
+  updateContainerAndBody(prevNoscrollValue) {
+    const { noscroll } = this.props;
+    if (prevNoscrollValue !== noscroll) {
+      setGlobalNoscroll(noscroll);
+    }
+    unstable_renderSubtreeIntoContainer(this, (
+      <div className={this.props.className}>
+        {this.props.children}
+      </div>
+    ), this.target);
   }
 
   render() { // eslint-disable-line
