@@ -57,16 +57,26 @@ export default class Responsive extends Component {
     /**
      * Show if screen size is exact
      */
-    only: PropTypes.oneOf([
-      'tiny',
-      'small',
-      'medium',
-      'large',
-      'xlarge',
+    only: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'tiny',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
+      PropTypes.arrayOf(PropTypes.oneOf([
+        'tiny',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ])),
     ]),
 
     /**
-     * If you render a string you need a wrapper element, like `div` or `span`
+     * **Warning**: If you render a string or multiple elements you need a wrapper element, like `div` or `span`.
+     * Keep it until React 16, when we can return fragments
      */
     wrap: PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.func]),
   };
@@ -75,9 +85,18 @@ export default class Responsive extends Component {
     wrap: 'span',
   };
 
+  /**
+   * Get initial or updated state for the component
+   * @private
+   */
   static getState = (props) => {
     const { gt, lt, only } = props;
-    let frameSize = sizesNumbers[only || gt || lt];
+    let frameSize = null;
+    if (only !== undefined && Array.isArray(only)) {
+      frameSize = only.map(frame => sizesNumbers[frame]);
+    } else {
+      frameSize = sizesNumbers[only || gt || lt];
+    }
 
     if (!frameSize) {
       console.warn(`Responsive: Passed unknown frame size name: ${only || gt || lt}. Ignoring any window width`);
@@ -87,12 +106,18 @@ export default class Responsive extends Component {
     if ((gt && lt) || (gt && only) || (lt && only)) {
       console.warn('Responsive: Passed more than one frame size. `only` has a priority');
     }
-
-    return {
-      width: isBrowser ? window.innerWidth : sizesNumbers.tiny.max - 1,
-      min: frameSize.min,
-      max: frameSize.max,
+    const state = {
+      width: isBrowser ? global.window.innerWidth : sizesNumbers.tiny.max - 1,
     };
+
+    if (Array.isArray(frameSize)) {
+      state.frames = frameSize;
+    } else {
+      state.min = frameSize.min;
+      state.max = frameSize.max;
+    }
+
+    return state;
   }
 
   constructor(props) {
@@ -114,17 +139,20 @@ export default class Responsive extends Component {
   }
 
   bindEvents = () => {
-    window.addEventListener('resize', this.handleUpdate);
+    global.window.addEventListener('resize', this.handleResize);
   }
 
   unbindEvents = () => {
-    window.removeEventListener('resize', this.handleUpdate);
+    global.window.removeEventListener('resize', this.handleResize);
   }
 
   isVisible = () => {
-    const { width, max, min } = this.state;
+    const { width, max, min, frames } = this.state;
+    if (max || min) {
+      return (width >= min) && (width <= max);
+    }
 
-    return (width >= min) && (width <= max);
+    return frames.find(frame => (width >= frame.min) && (width <= frame.max));
   }
 
   handleResize = debounce(() => {
@@ -132,14 +160,14 @@ export default class Responsive extends Component {
   }, 300)
 
   handleUpdate = () => {
-    this.setState({ width: window.innerWidth });
+    this.setState({ width: global.window.innerWidth });
   }
 
   render() {
     const { children, wrap } = this.props;
 
     if (this.isVisible()) {
-      if (typeof children === 'string') {
+      if (typeof children === 'string' || Array.isArray(children)) {
         return React.createElement(wrap, null, children);
       }
 

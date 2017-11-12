@@ -7,5 +7,6 @@ Sizes:
       <Responsive only="medium">medium</Responsive>
       <Responsive only="large">large</Responsive>
       <Responsive only="xlarge">xlarge</Responsive>
+      <Responsive only={["large", "small"]}><br />large and small only</Responsive>
       <Responsive only="large" wrap={({children}) => <div>wrapper for: {children}</div>}>large</Responsive>
     </div>
