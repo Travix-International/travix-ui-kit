@@ -435,10 +435,6 @@ modal:
     icon:
       color: "var(--tx-generic-color-secondary-darker)"
 price:
-  height:
-    underline: 6px
-  margin-top:
-    underline: 2px
   xsmall:
     font:
       size:
@@ -447,10 +443,11 @@ price:
         decimals: 13px
         additional-text: 12px
         discount: 13px
-    height:
-      underline: 3px
     line-height:
       integers: 15px
+    underline:
+      height: 3px
+      margin-top: 2px
   small:
     font:
       size:
@@ -459,10 +456,11 @@ price:
         decimals: 14px
         additional-text: 13px
         discount: 16px
-    height:
-      underline: 4px
     line-height:
       integers: 26px
+    underline:
+      height: 4px
+      margin-top: 2px
   medium:
     font:
       size:
@@ -473,6 +471,9 @@ price:
         discount: 16px
     line-height:
       integers: 26px
+    underline:
+      height: 6px
+      margin-top: 2px
   large:
     font:
       size:
@@ -483,6 +484,9 @@ price:
         discount: 20px
     line-height:
       integers: 31px
+    underline:
+      height: 6px
+      margin-top: 2px
   xlarge:
     font:
       size:
@@ -493,8 +497,9 @@ price:
         discount: 22px
     line-height:
       integers: 51px
-    height:
-      underline: 8px
+    underline:
+      height: 8px
+      margin-top: 2px
 sliding-panel:
   content:
     flex: "1 1 100%"
