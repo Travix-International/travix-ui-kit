@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import omit from 'lodash.omit';
 
 import Input from '../input/input';
 import Calendar from '../calendar/calendar';
@@ -97,8 +98,14 @@ class DatePicker extends Component {
       placeholder,
       value,
       valueFormatterFn,
-      ...otherProps
     } = this.props;
+
+    const otherProps = omit(this.props, [
+      'initialDates',
+      'minDate',
+      'selectionType',
+      'valueFormatterFn',
+    ]);
 
     let displayValue = value;
     if (value && typeof valueFormatterFn === 'function') {

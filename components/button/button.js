@@ -2,6 +2,8 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import omit from 'lodash.omit';
+
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 /**
@@ -18,10 +20,16 @@ function Button(props) {
     variation,
     disabled,
     dataAttrs = {},
-    ...otherProps
   } = props;
   const restProps = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
+
+  const otherProps = omit(props, [
+    'dataAttrs',
+    'mods',
+    'variation',
+  ]);
+
   /** This props have default values */
   mods.push(`size_${size}`);
   mods.push(`variation_${variation}`);

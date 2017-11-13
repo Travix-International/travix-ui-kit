@@ -4,12 +4,8 @@ exports[`Button #render() should not modify mods 1`] = `
 <button
   className="ui-button ui-button_test ui-button_size_m ui-button_variation_default"
   disabled={false}
-  mods={
-    Array [
-      "test",
-    ]
-  }
   onClick={[Function]}
+  size="m"
   type="button"
 >
   Button
@@ -19,7 +15,10 @@ exports[`Button #render() should not modify mods 1`] = `
 exports[`Button #render() should render disabled link 1`] = `
 <a
   className="ui-button ui-button_size_xs ui-button_variation_default ui-button_disabled_true"
+  disabled={true}
   href="http://google.com"
+  size="xs"
+  type="link"
 >
   Extra small
 </a>
@@ -31,6 +30,7 @@ exports[`Button #render() should render gtm data attribute 1`] = `
   data-gtm="id"
   disabled={false}
   onClick={[Function]}
+  size="m"
   type="button"
 >
   Extra small
@@ -44,6 +44,7 @@ exports[`Button #render() should return base class with mods for strings as clas
   className="ui-button ui-button_size_xs ui-button_variation_default"
   data-gtm="id"
   disabled={false}
+  size="xs"
   type="submit"
 >
   Extra small
@@ -55,6 +56,7 @@ exports[`Button #render() should return base class with mods for strings as clas
   className="ui-button ui-button_size_xs ui-button_variation_default"
   disabled={false}
   onClick={[Function]}
+  size="xs"
   type="button"
 >
   Extra small
@@ -66,6 +68,7 @@ exports[`Button #render() should return base class with mods for strings as clas
   className="ui-button ui-button_size_m ui-button_variation_default"
   disabled={false}
   onClick={[Function]}
+  size="m"
   type="button"
 >
   Extra small

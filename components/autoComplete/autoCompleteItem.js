@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import omit from 'lodash.omit';
 
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
@@ -29,12 +30,18 @@ class AutoCompleteItem extends Component {
     const {
       children,
       dataAttrs = {},
-      onClick,
       isActive,
       isTitle,
-      ...otherProps
     } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
+
+    const otherProps = omit(this.props, [
+      'code',
+      'index',
+      'isActive',
+      'isTitle',
+      'onClick',
+    ]);
 
     isTitle && mods.push('title');
     isActive && mods.push('active');

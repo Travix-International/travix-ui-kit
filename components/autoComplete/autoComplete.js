@@ -4,6 +4,7 @@ import React, {
   Children,
   cloneElement,
 } from 'react';
+import omit from 'lodash.omit';
 
 import AutoCompleteItem from './autoCompleteItem';
 import Input from '../input/input';
@@ -289,9 +290,13 @@ class AutoComplete extends Component {
       label,
       name,
       placeholder,
-      ...otherProps
     } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
+
+    const otherProps = omit(this.props, [
+      'onUpdateInput',
+      'highlighted',
+    ]);
 
     this.state.open && mods.push('open');
     const className = getClassNamesWithMods('ui-autocomplete', mods);

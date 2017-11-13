@@ -10,6 +10,7 @@ exports[`Radio Button #render() should not modify mods 1`] = `
     disabled={true}
     id="disabledRadio"
     onChange={[Function]}
+    readOnly={false}
     type="radio"
   />
   <label
@@ -33,6 +34,7 @@ exports[`Radio Button #render() should render checked radio button 1`] = `
     disabled={false}
     id="radio1"
     onChange={[Function]}
+    readOnly={false}
     type="radio"
   />
   <label
@@ -56,6 +58,7 @@ exports[`Radio Button #render() should render disabled radio button 1`] = `
     disabled={true}
     id="disabledRadio"
     onChange={[Function]}
+    readOnly={false}
     type="radio"
   />
   <label
@@ -79,6 +82,7 @@ exports[`Radio Button #render() should render radio button 1`] = `
     disabled={false}
     id="radio2"
     onChange={[Function]}
+    readOnly={false}
     type="radio"
   />
   <label

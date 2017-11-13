@@ -32,6 +32,7 @@ function Checkbox(props) {
         disabled={disabled}
         id={name}
         onChange={onChange}
+        readOnly={!onChange}
         role="radio"
         type="checkbox"
       />

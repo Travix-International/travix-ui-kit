@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import omit from 'lodash.omit';
 
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
@@ -73,9 +74,15 @@ class Input extends Component {
       multiline,
       status,
       value,
-      ...otherProps
     } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
+
+    const otherProps = omit(this.props, [
+      'mods',
+      'multiline',
+      'status',
+      'value',
+    ]);
 
     (!this.state.isFocused && status) && mods.push(status);
     this.state.isFocused && mods.push('focused');

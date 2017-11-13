@@ -5,6 +5,7 @@ import React, {
   cloneElement,
   isValidElement,
 } from 'react';
+import omit from 'lodash.omit';
 
 import { getClassNamesWithMods } from '../_helpers';
 
@@ -92,9 +93,16 @@ class Collapse extends Component {
       isAccordion,
       children,
       mods = [],
-      onChange, // eslint-disable-line no-unused-vars
-      ...otherProps
     } = this.props;
+
+    const otherProps = omit(this.props, [
+      'activeKey',
+      'defaultActiveKey',
+      'iconPosition',
+      'isAccordion',
+      'onChange',
+    ]);
+
     if (Children.count(children) === 0) {
       return null;
     }
@@ -133,6 +141,8 @@ Collapse.propTypes = {
    * Determine whether item is expanded by default
    */
   defaultActiveKey: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number),
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
   ]),

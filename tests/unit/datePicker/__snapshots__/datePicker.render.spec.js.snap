@@ -3,9 +3,10 @@
 exports[`DatePicker #render() should render DatePicker with label 1`] = `
 <div
   className="ui-datepicker"
+  label="label"
+  name="date-picker"
   onChange={[Function]}
   open={false}
-  selectionType="normal"
 >
   <label
     htmlFor="ui-datepicker-input-date-picker"
@@ -45,9 +46,10 @@ exports[`DatePicker #render() should render DatePicker with label 1`] = `
 exports[`DatePicker #render() should render correct DatePicker with value 1`] = `
 <div
   className="ui-datepicker"
+  name="date-picker"
   onChange={[Function]}
   open={false}
-  selectionType="normal"
+  value="2017-03-20"
 >
   <Input
     disabled={false}
@@ -81,9 +83,10 @@ exports[`DatePicker #render() should render correct DatePicker with value 1`] = 
 exports[`DatePicker #render() should render disabled DatePicker 1`] = `
 <div
   className="ui-datepicker"
+  disabled={true}
+  name="date-picker"
   onChange={[Function]}
   open={false}
-  selectionType="normal"
 >
   <Input
     disabled={true}
@@ -117,8 +120,8 @@ exports[`DatePicker #render() should render disabled DatePicker 1`] = `
 exports[`DatePicker #render() should render open DatePicker 1`] = `
 <div
   className="ui-datepicker ui-datepicker_active"
+  name="date-picker"
   open={true}
-  selectionType="normal"
 >
   <Input
     disabled={false}

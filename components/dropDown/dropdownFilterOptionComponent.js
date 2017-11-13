@@ -21,7 +21,7 @@ class DropdownFilterOptionComponent extends Component {
         <Checkbox
           checked={this.props.option.checked}
           disabled={this.props.option.disabled}
-          name={this.props.option.value}
+          name={`ui-dropdown-filter-${this.props.option.value}`}
           onChange={this.onChange}
         >
           {this.props.children}
