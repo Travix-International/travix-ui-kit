@@ -95,7 +95,7 @@ describe('Calendar (range mode)', () => {
       const startRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       startRangeOption.simulate('click');
 
-      expect(startRangeOption.props().className.includes('ui-calendar-days-option_selected-start')).toEqual(true);
+      expect(startRangeOption.render().hasClass('ui-calendar-days-option_selected-start')).toEqual(true);
       expect(wrapper.state().minLimit).toEqual(expectedStartDate);
       expect(wrapper.state().selectedDates[0]).toEqual(expectedStartDate);
       expect(wrapper.find(`[data-date="${dayBeforeStart}"]`).props().disabled).toEqual(true);
@@ -106,7 +106,7 @@ describe('Calendar (range mode)', () => {
 
       const betweenRangeOption = wrapper.find(`[data-date="${dayBetweenStartAndEnd}"]`);
 
-      expect(endRangeOption.props().className.includes('ui-calendar-days-option_selected-end')).toEqual(true);
+      expect(endRangeOption.render().hasClass('ui-calendar-days-option_selected-end')).toEqual(true);
       expect(wrapper.state().selectedDates[1]).toEqual(expectedEndDate);
       expect(betweenRangeOption.props().className.includes('ui-calendar-days-option_selected-between')).toEqual(true);
 
@@ -133,7 +133,7 @@ describe('Calendar (range mode)', () => {
 
       const startRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       startRangeOption.simulate('click');
-      expect(startRangeOption.props().className.includes('ui-calendar-days-option_selected-start')).toEqual(true);
+      expect(startRangeOption.render().hasClass('ui-calendar-days-option_selected-start')).toEqual(true);
       expect(wrapper.state().minLimit).toEqual(expectedStartDate);
       expect(wrapper.state().selectedDates[0]).toEqual(expectedStartDate);
 
@@ -141,7 +141,7 @@ describe('Calendar (range mode)', () => {
       const endRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       endRangeOption.simulate('click');
 
-      expect(endRangeOption.props().className.includes('ui-calendar-days-option_selected')).toEqual(true);
+      expect(endRangeOption.render().hasClass('ui-calendar-days-option_selected')).toEqual(true);
       expect(wrapper.state().minLimit).toEqual(null);
       expect(wrapper.state().selectedDates[1]).toEqual(expectedEndDate);
     });
@@ -171,7 +171,7 @@ describe('Calendar (range mode)', () => {
 
       const startRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       startRangeOption.simulate('click');
-      expect(startRangeOption.props().className.includes('ui-calendar-days-option_selected-start')).toEqual(true);
+      expect(startRangeOption.render().hasClass('ui-calendar-days-option_selected-start')).toEqual(true);
       expect(wrapper.state().minLimit).toEqual(expectedStartDate);
       expect(wrapper.state().selectedDates[0]).toEqual(expectedStartDate);
 
@@ -179,7 +179,7 @@ describe('Calendar (range mode)', () => {
       const endRangeOption = wrapper.find(`[data-date="${expectedStart}"]`);
       endRangeOption.simulate('click');
 
-      expect(endRangeOption.props().className.includes('ui-calendar-days-option_selected')).toEqual(true);
+      expect(endRangeOption.render().hasClass('ui-calendar-days-option_selected')).toEqual(true);
       expect(wrapper.state().minLimit).toEqual(expectedInitialMinLimit);
       expect(wrapper.state().selectedDates[1]).toEqual(expectedEndDate);
 

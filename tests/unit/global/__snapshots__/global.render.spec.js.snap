@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Global: render should return base active modal with close button 1`] = `null`;
-
-exports[`Global: render should return base active modal with close button 2`] = `null`;
