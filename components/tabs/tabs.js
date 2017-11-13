@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import omit from 'lodash.omit';
+import omit from 'lodash/omit';
 
 import Tab from './tab';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';

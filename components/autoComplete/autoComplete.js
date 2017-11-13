@@ -4,7 +4,7 @@ import React, {
   Children,
   cloneElement,
 } from 'react';
-import omit from 'lodash.omit';
+import omit from 'lodash/omit';
 
 import AutoCompleteItem from './autoCompleteItem';
 import Input from '../input/input';

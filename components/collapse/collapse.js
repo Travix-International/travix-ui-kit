@@ -5,7 +5,7 @@ import React, {
   cloneElement,
   isValidElement,
 } from 'react';
-import omit from 'lodash.omit';
+import omit from 'lodash/omit';
 
 import { getClassNamesWithMods } from '../_helpers';
 

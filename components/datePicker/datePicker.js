@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import omit from 'lodash.omit';
+import omit from 'lodash/omit';
 
 import Input from '../input/input';
 import Calendar from '../calendar/calendar';
