@@ -101,13 +101,8 @@ function Price(props) {
       )
     : null;
 
-  const asteriskSymbol = '*';
   const asterisk = showAsterisk
-    ? (
-      <div className={`${rootClass}__asterisk`}>
-        {asteriskSymbol}
-      </div>
-      )
+    ? (<div className={`${rootClass}__asterisk`}>*</div>)
     : null;
 
   const underlineMarkup = underlined
