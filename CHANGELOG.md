@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.6.38](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.38) (2017-11-15)
+
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.37...v0.6.38)
+
+**Merged pull requests:**
+
+- Update price with asterisk and vertical align [\#224](https://github.com/Travix-International/travix-ui-kit/pull/224) ([IvanPresmytsky](https://github.com/IvanPresmytsky))
+
 ## [v0.6.37](https://github.com/Travix-International/travix-ui-kit/tree/v0.6.37) (2017-11-09)
 
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.36...v0.6.37)
