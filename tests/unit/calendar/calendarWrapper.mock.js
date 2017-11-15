@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 const Calendar = require('../../../components/calendar/calendar');
 
 export default class CalendarWrapper extends React.Component {
@@ -39,6 +40,6 @@ export default class CalendarWrapper extends React.Component {
 }
 
 CalendarWrapper.propTypes = {
-  initialDates: React.PropTypes.arrayOf(String),
-  minDate: React.PropTypes.string,
+  initialDates: PropTypes.arrayOf(String),
+  minDate: PropTypes.string,
 };

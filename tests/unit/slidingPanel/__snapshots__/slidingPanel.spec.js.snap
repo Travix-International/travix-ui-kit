@@ -320,7 +320,7 @@ exports[`SlidingPanel #render() render with default block with back button and a
   backButtonLabel="Back"
   closeOnOverlayClick={true}
   direction="right"
-  onBackButtonClick={[Function]}
+  onBackButtonClick={[MockFunction]}
   subheader={null}
   useDefaultLeftBlock={true}
   width="480px"

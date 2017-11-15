@@ -14,7 +14,6 @@ describe('SlidingPanel', () => {
       jest.runAllTimers();
 
       expect(renderTree).toMatchSnapshot();
-      expect(renderTree.find('noscript')).toHaveLength(1);
     });
 
     it('render with title', () => {

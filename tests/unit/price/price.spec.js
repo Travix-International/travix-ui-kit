@@ -190,7 +190,7 @@ describe('Price', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should return noscript if value is null', () => {
+    it('should return null if value is null', () => {
       const wrapper = shallow(
         <Price
           additionalText={'per day'}
@@ -199,10 +199,10 @@ describe('Price', () => {
       );
 
       expect(wrapper).toMatchSnapshot();
-      expect(wrapper.find('noscript')).toHaveLength(1);
+      expect(wrapper.html()).toEqual(null);
     });
 
-    it('should return noscript if value is undefined', () => {
+    it('should return null if value is undefined', () => {
       const wrapper = shallow(
         <Price
           additionalText={'per day'}
@@ -211,7 +211,7 @@ describe('Price', () => {
       );
 
       expect(wrapper).toMatchSnapshot();
-      expect(wrapper.find('noscript')).toHaveLength(1);
+      expect(wrapper.html()).toEqual(null);
     });
   });
 });
