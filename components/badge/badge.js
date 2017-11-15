@@ -8,7 +8,7 @@ import { getClassNamesWithMods } from '../_helpers';
  */
 const Badge = ({ arrow, border, children, mods, position, title, visible, ...otherProps }) => {
   if (!children && !title) {
-    return <noscript />;
+    return null;
   }
 
   let badge = null;
