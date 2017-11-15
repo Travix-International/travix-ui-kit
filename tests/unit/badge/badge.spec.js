@@ -9,6 +9,7 @@ describe('Badge', () => {
     );
 
     expect(wrapper).toMatchSnapshot();
+    expect(wrapper.html()).toEqual(null);
   });
 
   it('should return content inside container if title not provided', () => {
