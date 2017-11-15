@@ -198,7 +198,6 @@ describe('Price', () => {
         />
       );
 
-      expect(wrapper).toMatchSnapshot();
       expect(wrapper.html()).toEqual(null);
     });
 
@@ -210,7 +209,6 @@ describe('Price', () => {
         />
       );
 
-      expect(wrapper).toMatchSnapshot();
       expect(wrapper.html()).toEqual(null);
     });
   });

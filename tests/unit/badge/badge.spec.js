@@ -8,7 +8,6 @@ describe('Badge', () => {
       <Badge />
     );
 
-    expect(wrapper).toMatchSnapshot();
     expect(wrapper.html()).toEqual(null);
   });
 
