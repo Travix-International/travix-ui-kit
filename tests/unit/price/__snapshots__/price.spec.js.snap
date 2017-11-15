@@ -317,7 +317,3 @@ exports[`Price #render() should return base class with mods for strings as class
   />
 </div>
 `;
-
-exports[`Price #render() should return null if value is null 1`] = `""`;
-
-exports[`Price #render() should return null if value is undefined 1`] = `""`;

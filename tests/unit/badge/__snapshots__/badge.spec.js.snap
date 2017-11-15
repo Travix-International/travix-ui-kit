@@ -52,8 +52,6 @@ exports[`Badge should return content inside container if title not provided 1`] 
 </div>
 `;
 
-exports[`Badge should return noscript if children and title not provided 1`] = `""`;
-
 exports[`Badge should return only badge if content not provided 1`] = `
 <div
   className="ui-badge-badge"
