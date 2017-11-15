@@ -13,7 +13,6 @@ exports[`Badge should render content without badge when badge is not visible 1`]
   className="ui-badge"
 >
   Badge Content
-  <noscript />
 </div>
 `;
 

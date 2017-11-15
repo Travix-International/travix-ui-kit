@@ -30,7 +30,7 @@ const Badge = ({ arrow, border, children, mods, position, title, visible, ...oth
         {border && <div className="ui-badge__border" />}
         {arrow && (position === 'right' || position === 'left') ? <span className="ui-badge-badge-arrow" /> : null}
       </div>
-    ) : <noscript />;
+    ) : null;
   }
 
   if (!children) {

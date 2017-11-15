@@ -1,1452 +1,635 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropDown: render should return base dropdown with passed array value 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={false}
-  multi={false}
-  onChange={[Function]}
-  options={Array []}
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={false}
-  value={Array []}
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={false}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={Array []}
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      value={Array []}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown Select--single has-value"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-5--value"
-          >
-            <Value
-              disabled={false}
-              id="react-select-5--value-item"
-              instancePrefix="react-select-5-"
-              onClick={null}
-              value={Array []}
-            >
-              <div
-                className="Select-value"
-              >
-                <span
-                  aria-selected="true"
-                  className="Select-value-label"
-                  id="react-select-5--value-item"
-                  role="option"
-                />
-              </div>
-            </Value>
-            <div
-              aria-activedescendant="react-select-5--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    value={Array []}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return base dropdown with passed number value 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={false}
-  multi={false}
-  onChange={[Function]}
-  options={Array []}
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={false}
-  value={1}
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={false}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={Array []}
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      value={1}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown Select--single"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-4--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <div
-              aria-activedescendant="react-select-4--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    value={1}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return base dropdown with passed string value 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={false}
-  multi={false}
-  onChange={[Function]}
-  options={Array []}
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={false}
-  value="testValue"
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={false}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={Array []}
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      value="testValue"
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown Select--single"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-3--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <div
-              aria-activedescendant="react-select-3--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    value="testValue"
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return base dropdown with required fields 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={false}
-  multi={false}
-  onChange={[Function]}
-  options={Array []}
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={false}
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={false}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={Array []}
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown Select--single"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-2--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <div
-              aria-activedescendant="react-select-2--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return clearable dropdown 1`] = `
-<DropDown
-  clearable={true}
-  filterMode={false}
-  multi={false}
-  onChange={[Function]}
-  options={Array []}
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={false}
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={true}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={false}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={Array []}
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown Select--single is-clearable"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-6--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <div
-              aria-activedescendant="react-select-6--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={true}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return dropdown with icon 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={false}
-  icon="iconClass"
-  multi={false}
-  onChange={[Function]}
-  options={
-    Array [
-      Object {
-        "checked": true,
-        "label": "One",
-        "value": "one",
-      },
-      Object {
-        "checked": false,
-        "label": "Two",
-        "value": "two",
-      },
-    ]
-  }
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={false}
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={false}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={
-        Array [
-          Object {
-            "checked": true,
-            "label": "One",
-            "value": "one",
-          },
-          Object {
-            "checked": false,
-            "label": "Two",
-            "value": "two",
-          },
-        ]
-      }
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={[Function]}
-    >
-      <div
-        className="Select ui-dropdown Select--single"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-13--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <div
-              aria-activedescendant="react-select-13--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={[Function]}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return dropdown with passed name 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={false}
-  multi={false}
-  name="testName"
-  onChange={[Function]}
-  options={Array []}
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={false}
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={false}
-      name="testName"
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={Array []}
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown Select--single"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-8--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <div
-              aria-activedescendant="react-select-8--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    name="testName"
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return dropdown with shifting viewport enabled 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={false}
-  multi={false}
-  onChange={[Function]}
-  options={Array []}
-  placeholder=""
-  scrollMenuIntoView={true}
-  searchable={false}
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={false}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={Array []}
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={true}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown Select--single"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-9--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <div
-              aria-activedescendant="react-select-9--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={true}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return dropdown with status 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={false}
-  multi={false}
-  onChange={[Function]}
-  options={Array []}
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={false}
-  status="error"
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown ui-dropdown_error"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={false}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={Array []}
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown ui-dropdown_error Select--single"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-12--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <div
-              aria-activedescendant="react-select-12--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown ui-dropdown_error"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return filter dropdown 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={true}
-  multi={false}
-  onChange={[Function]}
-  options={
-    Array [
-      Object {
-        "checked": true,
-      },
-    ]
-  }
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={false}
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown ui-dropdown_filter ui-dropdown_state-active"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={true}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={
-        Array [
-          Object {
-            "checked": true,
-          },
-        ]
-      }
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown ui-dropdown_filter ui-dropdown_state-active Select--multi"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-11--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <div
-              aria-activedescendant="react-select-11--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown ui-dropdown_filter ui-dropdown_state-active"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={true}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={
+      Array [
+        Object {
+          "checked": true,
+        },
+      ]
+    }
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return multi dropdown 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={false}
-  multi={true}
-  onChange={[Function]}
-  options={Array []}
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={false}
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={true}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={Array []}
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={false}
-      simpleValue={false}
-      tabSelectsValue={true}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown Select--multi"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-7--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <div
-              aria-activedescendant="react-select-7--value"
-              aria-expanded={false}
-              aria-owns=""
-              aria-readonly="false"
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={true}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={false}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;
 
 exports[`DropDown: render should return searchable dropdown 1`] = `
-<DropDown
-  clearable={false}
-  filterMode={false}
-  multi={false}
-  onChange={[Function]}
-  options={Array []}
-  placeholder=""
-  scrollMenuIntoView={false}
-  searchable={true}
->
-  <div>
-    <Select
-      addLabelText="Add \\"{label}\\"?"
-      arrowRenderer={[Function]}
-      autosize={true}
-      backspaceRemoves={true}
-      backspaceToRemoveMessage="Press backspace to remove {label}"
-      className="ui-dropdown"
-      clearAllText="Clear all"
-      clearRenderer={[Function]}
-      clearValueText="Clear value"
-      clearable={false}
-      closeOnSelect={true}
-      deleteRemoves={true}
-      delimiter=","
-      disabled={false}
-      escapeClearsValue={true}
-      filterOptions={[Function]}
-      ignoreAccents={true}
-      ignoreCase={true}
-      inputProps={Object {}}
-      isLoading={false}
-      joinValues={false}
-      labelKey="label"
-      matchPos="any"
-      matchProp="any"
-      menuBuffer={0}
-      menuRenderer={[Function]}
-      multi={false}
-      noResultsText="No results found"
-      onBlurResetsInput={true}
-      onChange={[Function]}
-      onCloseResetsInput={true}
-      onSelectResetsInput={true}
-      openOnClick={true}
-      optionComponent={[Function]}
-      options={Array []}
-      pageSize={5}
-      placeholder=""
-      required={false}
-      scrollMenuIntoView={false}
-      searchable={true}
-      simpleValue={false}
-      tabSelectsValue={true}
-      valueComponent={[Function]}
-      valueKey="value"
-      valueRenderer={null}
-    >
-      <div
-        className="Select ui-dropdown Select--single is-searchable"
-      >
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-10--value"
-          >
-            <div
-              className="Select-placeholder"
-            />
-            <AutosizeInput
-              aria-activedescendant="react-select-10--value"
-              aria-expanded="false"
-              aria-haspopup="false"
-              aria-owns=""
-              className="Select-input"
-              minWidth="5"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              required={false}
-              role="combobox"
-              value=""
-            >
-              <div
-                className="Select-input"
-                style={
-                  Object {
-                    "display": "inline-block",
-                  }
-                }
-              >
-                <style
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "input#undefined::-ms-clear {display: none;}",
-                    }
-                  }
-                />
-                <input
-                  aria-activedescendant="react-select-10--value"
-                  aria-expanded="false"
-                  aria-haspopup="false"
-                  aria-owns=""
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  required={false}
-                  role="combobox"
-                  style={
-                    Object {
-                      "boxSizing": "content-box",
-                      "width": "5px",
-                    }
-                  }
-                  value=""
-                />
-                <div
-                  style={
-                    Object {
-                      "height": 0,
-                      "left": 0,
-                      "overflow": "scroll",
-                      "position": "absolute",
-                      "top": 0,
-                      "visibility": "hidden",
-                      "whiteSpace": "pre",
-                    }
-                  }
-                />
-              </div>
-            </AutosizeInput>
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </Select>
-  </div>
-</DropDown>
+<div>
+  <Select
+    addLabelText="Add \\"{label}\\"?"
+    arrowRenderer={[Function]}
+    autosize={true}
+    backspaceRemoves={true}
+    backspaceToRemoveMessage="Press backspace to remove {label}"
+    className="ui-dropdown"
+    clearAllText="Clear all"
+    clearRenderer={[Function]}
+    clearValueText="Clear value"
+    clearable={false}
+    closeOnSelect={true}
+    deleteRemoves={true}
+    delimiter=","
+    disabled={false}
+    escapeClearsValue={true}
+    filterOptions={[Function]}
+    ignoreAccents={true}
+    ignoreCase={true}
+    inputProps={Object {}}
+    isLoading={false}
+    joinValues={false}
+    labelKey="label"
+    matchPos="any"
+    matchProp="any"
+    menuBuffer={0}
+    menuRenderer={[Function]}
+    multi={false}
+    noResultsText="No results found"
+    onBlurResetsInput={true}
+    onChange={[Function]}
+    onCloseResetsInput={true}
+    onSelectResetsInput={true}
+    openOnClick={true}
+    optionComponent={[Function]}
+    options={Array []}
+    pageSize={5}
+    placeholder=""
+    required={false}
+    scrollMenuIntoView={false}
+    searchable={true}
+    simpleValue={false}
+    tabSelectsValue={true}
+    valueComponent={[Function]}
+    valueKey="value"
+    valueRenderer={null}
+  />
+</div>
 `;

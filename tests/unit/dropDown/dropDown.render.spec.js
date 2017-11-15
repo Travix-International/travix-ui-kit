@@ -1,10 +1,10 @@
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import DropDown from '../../../components/dropDown/dropDown';
 
 describe('DropDown: render', () => {
   it('should return base dropdown with required fields', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         onChange={() => {}}
         options={[]}
@@ -14,7 +14,7 @@ describe('DropDown: render', () => {
   });
 
   it('should return base dropdown with passed string value', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         onChange={() => {}}
         options={[]}
@@ -25,7 +25,7 @@ describe('DropDown: render', () => {
   });
 
   it('should return base dropdown with passed number value', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         onChange={() => {}}
         options={[]}
@@ -36,7 +36,7 @@ describe('DropDown: render', () => {
   });
 
   it('should return base dropdown with passed array value', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         onChange={() => {}}
         options={[]}
@@ -47,7 +47,7 @@ describe('DropDown: render', () => {
   });
 
   it('should return clearable dropdown', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         clearable
         onChange={() => {}}
@@ -58,7 +58,7 @@ describe('DropDown: render', () => {
   });
 
   it('should return multi dropdown', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         multi
         onChange={() => {}}
@@ -69,7 +69,7 @@ describe('DropDown: render', () => {
   });
 
   it('should return dropdown with passed name', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         name="testName"
         onChange={() => {}}
@@ -80,7 +80,7 @@ describe('DropDown: render', () => {
   });
 
   it('should return dropdown with shifting viewport enabled', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         onChange={() => {}}
         options={[]}
@@ -91,7 +91,7 @@ describe('DropDown: render', () => {
   });
 
   it('should return searchable dropdown', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         onChange={() => {}}
         options={[]}
@@ -102,7 +102,7 @@ describe('DropDown: render', () => {
   });
 
   it('should return filter dropdown', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         filterMode
         onChange={() => {}}
@@ -113,7 +113,7 @@ describe('DropDown: render', () => {
   });
 
   it('should return dropdown with status', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         onChange={() => {}}
         options={[]}
@@ -124,19 +124,13 @@ describe('DropDown: render', () => {
   });
 
   it('should return dropdown with icon', () => {
-    const component = mount(
+    const component = shallow(
       <DropDown
         icon="iconClass"
         onChange={() => {}}
-        options={[{ checked: true, label: 'One', value: 'one' }, { checked: false, label: 'Two', value: 'two' }]}
+        options={[]}
       />
     );
-
-    component
-      .find('.Select-arrow')
-      .at(0)
-      .simulate('mousedown', {});
-
     expect(component).toMatchSnapshot();
   });
 });
