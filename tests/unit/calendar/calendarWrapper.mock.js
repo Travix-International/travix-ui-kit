@@ -40,6 +40,6 @@ export default class CalendarWrapper extends React.Component {
 }
 
 CalendarWrapper.propTypes = {
-  initialDates: PropTypes.arrayOf(String),
+  initialDates: PropTypes.arrayOf(PropTypes.string),
   minDate: PropTypes.string,
 };
