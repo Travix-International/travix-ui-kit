@@ -11,7 +11,6 @@ function List(props) {
     align,
     hideBullets,
     items,
-    renderEmptyItems,
   } = props;
 
   const mods = props.mods ? props.mods.slice() : [];
@@ -26,9 +25,7 @@ function List(props) {
 
   const notEmpty = i => i !== '' && i !== null;
 
-  const itemsToRender = (renderEmptyItems === false) ? items.filter(notEmpty) : items;
-
-  const itemsBlock = itemsToRender.map((item, index) => (
+  const itemsBlock = items.filter(notEmpty).map((item, index) => (
     <li className="ui-list__item" key={index}>
       {item}
     </li>
@@ -44,7 +41,6 @@ function List(props) {
 List.defaultProps = {
   align: 'vertical',
   hideBullets: false,
-  renderEmptyItems: true,
 };
 
 List.propTypes = {
@@ -70,11 +66,6 @@ List.propTypes = {
    * You can provide set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
-
-  /**
-   * Specify that should be empty items are rendered or hidden.
-   */
-  renderEmptyItems: PropTypes.bool,
 };
 
 export default List;

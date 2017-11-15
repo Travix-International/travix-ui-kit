@@ -43,9 +43,9 @@ describe('List', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should not render empty items if an appropriate prop is false', () => {
+    it('should not render empty items', () => {
       const wrapper = shallow(
-        <List items={['London', '', 'Madrid', null]} renderEmptyItems={false} />
+        <List items={['London', '', 'Madrid', null]} />
       );
 
       expect(wrapper).toMatchSnapshot();
