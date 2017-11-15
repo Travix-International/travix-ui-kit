@@ -3,7 +3,7 @@ import React from 'react';
 
 const SlidingPanelHeader = ({ title, leftBlock, rightBlock }) => {
   if (!title) {
-    return <noscript />;
+    return null;
   }
 
   const defaultCloseButton = (

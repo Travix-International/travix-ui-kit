@@ -58,7 +58,7 @@ function Price(props) {
   } = props;
 
   if (!value) {
-    return <noscript />;
+    return null;
   }
 
   const mods = props.mods ? props.mods.slice() : [];

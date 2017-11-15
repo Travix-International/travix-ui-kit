@@ -38,7 +38,7 @@ function Button(props) {
   if (type === 'link') {
     if (!href) {
       console.warn('Missing href'); // eslint-disable-line no-console
-      return <noscript />;
+      return null;
     }
 
     return (

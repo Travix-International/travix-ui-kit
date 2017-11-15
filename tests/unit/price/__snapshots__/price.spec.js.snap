@@ -317,7 +317,3 @@ exports[`Price #render() should return base class with mods for strings as class
   />
 </div>
 `;
-
-exports[`Price #render() should return noscript if value is null 1`] = `<noscript />`;
-
-exports[`Price #render() should return noscript if value is undefined 1`] = `<noscript />`;
