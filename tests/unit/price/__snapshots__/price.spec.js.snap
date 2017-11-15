@@ -27,6 +27,40 @@ exports[`Price #render() should not render underline when underlined flag is mis
 </div>
 `;
 
+exports[`Price #render() should render asterisk when showAsterisk is true 1`] = `
+<div
+  className="ui-price ui-price_size_l"
+>
+  <div
+    className="ui-price__value-delimiter"
+  >
+    <div
+      className="ui-price__currency ui-price__currency_left"
+    >
+      €
+    </div>
+    <div
+      className="ui-price__integers"
+    >
+      50.153
+    </div>
+    <div
+      className="ui-price__decimals"
+    >
+      ,30
+    </div>
+    <div
+      className="ui-price__asterisk"
+    >
+      *
+    </div>
+  </div>
+  <div
+    className="ui-price__underline"
+  />
+</div>
+`;
+
 exports[`Price #render() should render only the amount of decimals defined in the decimalsPrecision 1`] = `
 <div
   className="ui-price ui-price_size_l"
