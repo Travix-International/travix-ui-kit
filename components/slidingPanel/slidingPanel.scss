@@ -51,3 +51,13 @@
   overflow-y: var(--tx-sliding-panel-content-overflow-y);
   padding: var(--tx-sliding-panel-panel-padding);
 }
+
+.ui-sliding-panel__footer {
+  align-items: center;
+  background-color: var(--tx-generic-color-blank);
+  border-top: var(--tx-sliding-panel-footer-border-top);
+  display: flex;
+  height: var(--tx-sliding-panel-footer-height);
+  justify-content: space-between;
+  padding: 0 var(--tx-sliding-panel-panel-padding);
+}

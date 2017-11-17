@@ -47,6 +47,11 @@ export default class SlidingPanel extends Component {
     direction: PropTypes.oneOf(['left', 'right']),
 
     /**
+     * Defines the footer's content.
+     */
+    footer: PropTypes.node,
+
+    /**
      * When defined, this custom node appears on the left part of the header
      */
     leftBlock: PropTypes.node,
@@ -220,6 +225,7 @@ export default class SlidingPanel extends Component {
       children,
       dataAttrs,
       direction,
+      footer,
       leftBlock,
       rightBlock,
       subheader,
@@ -253,6 +259,12 @@ export default class SlidingPanel extends Component {
 
     const subheaderClass = 'ui-sliding-panel__subheader';
 
+    const footerBlock = footer ? (
+      <div className="ui-sliding-panel__footer">
+        {footer}
+      </div>
+    ) : null;
+
     return (
       <div className={overlayClassName} onClick={this.handleClickOverlay}>
         <div
@@ -277,6 +289,7 @@ export default class SlidingPanel extends Component {
           <div className="ui-sliding-panel__content">
             {children}
           </div>
+          {footerBlock}
         </div>
       </div>
     );

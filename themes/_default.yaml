@@ -505,6 +505,9 @@ sliding-panel:
     flex: "1 1 100%"
     overflow: "hidden"
     overflow-y: "auto"
+  footer:
+    border-top: "2px solid var(--tx-generic-color-secondary-darker)"
+    height: "80px"
   header:
     height: "61px"
     padding: "50px"
