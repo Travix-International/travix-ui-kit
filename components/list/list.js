@@ -23,9 +23,7 @@ function List(props) {
 
   const className = getClassNamesWithMods('ui-list', mods);
 
-  const notEmpty = i => i !== '' && i !== null;
-
-  const itemsBlock = items.filter(notEmpty).map((item, index) => (
+  const itemsBlock = items.filter(Boolean).map((item, index) => (
     <li className="ui-list__item" key={index}>
       {item}
     </li>
