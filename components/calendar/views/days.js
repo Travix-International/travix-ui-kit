@@ -92,7 +92,7 @@ class Days extends Component {
       (maxDate && (maxDate.getTime() < dateToBeRendered.getTime())) ||
       (minDate && (minDate.getTime() > dateToBeRendered.getTime())) ||
       (isDaySelectableFn && !isDaySelectableFn(dateToBeRendered))
-     ) {
+    ) {
       return false;
     }
 

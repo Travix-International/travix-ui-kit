@@ -26,18 +26,18 @@ class DropDown extends Component {
    * Overriding the internal method of react-select for fix autoscrolling
    */
   menuRenderer({
-      focusedOption,
-      instancePrefix,
-      onFocus,
-      onSelect,
-      optionClassName,
-      optionComponent,
-      optionRenderer,
-      options,
-      valueArray,
-      valueKey,
-      onOptionRef,
-    }) {
+    focusedOption,
+    instancePrefix,
+    onFocus,
+    onSelect,
+    optionClassName,
+    optionComponent,
+    optionRenderer,
+    options,
+    valueArray,
+    valueKey,
+    onOptionRef,
+  }) {
     let Option = optionComponent;
 
     return options.map((option, i) => {
