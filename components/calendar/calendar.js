@@ -231,7 +231,7 @@ export default class Calendar extends Component {
           onMouseDown={this.handleItemMouseDown}
           onNavNextMonth={() => this.moveToMonth(CALENDAR_MOVE_TO_NEXT)}
           onNavPreviousMonth={() => this.moveToMonth(CALENDAR_MOVE_TO_PREVIOUS)}
-          onSelectDay={dt => this.onSelectDay(dt)}
+          onSelectDay={e => this.onSelectDay(new Date(e.currentTarget.getAttribute('data-date')))}
           renderDate={renderDate}
           selectedDates={selectedDates}
           selectionType={selectionType}
