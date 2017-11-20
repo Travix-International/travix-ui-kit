@@ -11,7 +11,6 @@ import CarouselTrack from './carouselTrack';
  * Carousel component
  */
 export default class Carousel extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -94,15 +93,15 @@ export default class Carousel extends React.Component {
 
         {
           this.props.markers
-          ? <CarouselMarkers
-            current={this.state.currentItem}
-            images={this.props.images}
-            onClick={this.handleClickGoTo}
-          />
-          : <CarouselPage
-            current={this.state.currentItem}
-            images={this.props.images}
-          />
+            ? <CarouselMarkers
+              current={this.state.currentItem}
+              images={this.props.images}
+              onClick={this.handleClickGoTo}
+            />
+            : <CarouselPage
+              current={this.state.currentItem}
+              images={this.props.images}
+            />
         }
       </div>
     );
