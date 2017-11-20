@@ -55,9 +55,9 @@
 .ui-sliding-panel__footer {
   align-items: center;
   background-color: var(--tx-generic-color-blank);
-  border-top: var(--tx-sliding-panel-footer-border-top);
+  border-top: 2px solid var(--tx-generic-color-secondary-darker);
   display: flex;
-  height: var(--tx-sliding-panel-footer-height);
+  height: 80px;
   justify-content: space-between;
   padding: 0 var(--tx-sliding-panel-panel-padding);
 }
