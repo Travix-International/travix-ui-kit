@@ -54,7 +54,7 @@ class CollapseItem extends Component {
       </div>
     );
   }
- }
+}
 
 CollapseItem.propTypes = {
   /**

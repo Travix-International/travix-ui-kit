@@ -172,7 +172,7 @@ describe('SlidingPanel', () => {
         <SlidingPanel active closeOnOverlayClick={false}>
           <button data-rel="close">Test</button>
         </SlidingPanel>
-      , { attachTo: document.body.querySelector('#root') });
+        , { attachTo: document.body.querySelector('#root') });
       const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
       const panelElement = overlayElement.find('.ui-sliding-panel');
 

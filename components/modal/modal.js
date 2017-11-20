@@ -9,7 +9,6 @@ import { getClassNamesWithMods } from '../_helpers';
  * Modal component
  */
 class Modal extends Component {
-
   constructor(props) {
     super(props);
 

@@ -110,12 +110,12 @@ class DatePicker extends Component {
     inputMods.push('datepicker');
 
     const labelBlock = label
-    ? (
-      <label htmlFor={`ui-datepicker-input-${name}`} id={`ui-datepicker-label-${name}`}>
-        {label}
-      </label>
-    )
-    : '';
+      ? (
+        <label htmlFor={`ui-datepicker-input-${name}`} id={`ui-datepicker-label-${name}`}>
+          {label}
+        </label>
+      )
+      : '';
 
     return (
       <div

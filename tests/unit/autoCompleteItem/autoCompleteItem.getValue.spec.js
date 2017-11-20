@@ -15,10 +15,10 @@ describe('AutoCompleteItem: getValue', () => {
 
     component.instance().getValue();
     expect(component.instance().getValue())
-    .toEqual({
-      index: 1,
-      value: 'value',
-    });
+      .toEqual({
+        index: 1,
+        value: 'value',
+      });
   });
 
   it('should return correct value with code', () => {
@@ -34,10 +34,10 @@ describe('AutoCompleteItem: getValue', () => {
 
     component.instance().getValue();
     expect(component.instance().getValue())
-    .toEqual({
-      code: 'code',
-      index: 1,
-      value: 'value',
-    });
+      .toEqual({
+        code: 'code',
+        index: 1,
+        value: 'value',
+      });
   });
 });
