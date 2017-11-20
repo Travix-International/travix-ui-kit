@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { getClassNamesWithMods } from '../_helpers';
 import Checkbox from '../checkbox/checkbox';
 
-  /**
+/**
    * Replasing ReactSelect item for filter mode.
    */
 class DropdownFilterOptionComponent extends Component {

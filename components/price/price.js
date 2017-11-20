@@ -75,7 +75,7 @@ function Price(props) {
       <div className={`${rootClass}__additional-text-block`}>
         {additionalText}
       </div>
-      )
+    )
     : null;
 
   let discountBlock = null;
@@ -98,7 +98,7 @@ function Price(props) {
       <div className={`${rootClass}__decimals`}>
         {decimalsSeparator + ensureDecimalPrecision(decValue, decimalsPrecision)}
       </div>
-      )
+    )
     : null;
 
   const asterisk = showAsterisk
