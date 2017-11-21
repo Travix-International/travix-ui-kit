@@ -102,6 +102,34 @@ exports[`SlidingPanel #render() closes the panel when active prop changes to fal
 </div>
 `;
 
+exports[`SlidingPanel #render() do not render footer if prop is not passed or falsy 1`] = `
+<SlidingPanel
+  closeOnOverlayClick={true}
+  direction="right"
+  subheader={null}
+  useDefaultLeftBlock={false}
+  width="480px"
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "480px",
+        }
+      }
+    >
+      <div
+        className="ui-sliding-panel__content"
+      />
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
 exports[`SlidingPanel #render() enables [data-rel="close"] element provided on the children, that closes the overlay 1`] = `
 <div
   class="ui-sliding-panel-overlay"
@@ -210,6 +238,42 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
     </div>
   </div>
 </div>
+`;
+
+exports[`SlidingPanel #render() render footer if prop has been passed and it is truthy 1`] = `
+<SlidingPanel
+  closeOnOverlayClick={true}
+  direction="right"
+  footer="test"
+  subheader={null}
+  useDefaultLeftBlock={false}
+  width="480px"
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_right"
+      style={
+        Object {
+          "width": "480px",
+        }
+      }
+    >
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
+      <div
+        className="ui-sliding-panel__footer"
+      >
+        test
+      </div>
+    </div>
+  </div>
+</SlidingPanel>
 `;
 
 exports[`SlidingPanel #render() render header if title prop is passed 1`] = `

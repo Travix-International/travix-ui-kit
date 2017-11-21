@@ -358,5 +358,23 @@ describe('SlidingPanel', () => {
 
       expect(renderTree).toMatchSnapshot();
     });
+
+    it('do not render footer if prop is not passed or falsy', () => {
+      const renderTree = mount(<SlidingPanel />);
+
+      expect(renderTree).toMatchSnapshot();
+    });
+
+    it('render footer if prop has been passed and it is truthy', () => {
+      const renderTree = mount(
+        <SlidingPanel
+          footer="test"
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      expect(renderTree).toMatchSnapshot();
+    });
   });
 });
