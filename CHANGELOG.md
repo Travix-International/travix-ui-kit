@@ -1,5 +1,26 @@
 # Change Log
 
+## [v0.7.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.7.2) (2017-11-21)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.7.0...v0.7.2)
+
+**Closed issues:**
+
+- \[slidingPanel\] Refactor width prop to do not use inline styling [\#240](https://github.com/Travix-International/travix-ui-kit/issues/240)
+- Bug: GH-Pages - Show code button does not work [\#234](https://github.com/Travix-International/travix-ui-kit/issues/234)
+- Bug: GH-pages broken link "back" in isolated mode [\#233](https://github.com/Travix-International/travix-ui-kit/issues/233)
+- Deploy feature branch \(styleguide\) to test server [\#229](https://github.com/Travix-International/travix-ui-kit/issues/229)
+- Refactor slidingPanel \(add sticky footer\) [\#220](https://github.com/Travix-International/travix-ui-kit/issues/220)
+- Refactor List component to get rid of renderEmptyItems attr [\#215](https://github.com/Travix-International/travix-ui-kit/issues/215)
+- Extend Price component to support ability to add symbols after the price [\#194](https://github.com/Travix-International/travix-ui-kit/issues/194)
+
+**Merged pull requests:**
+
+- Improves the calendar/views/days.js to not use .bind\(\) according to react/jsx-no-bind lint rule [\#239](https://github.com/Travix-International/travix-ui-kit/pull/239) ([mAiNiNfEcTiOn](https://github.com/mAiNiNfEcTiOn))
+- Setup Now for deploying to accp [\#238](https://github.com/Travix-International/travix-ui-kit/pull/238) ([yurist38](https://github.com/yurist38))
+- Update react-styleguide to v6 [\#236](https://github.com/Travix-International/travix-ui-kit/pull/236) ([yurist38](https://github.com/yurist38))
+- Add footer to sliding panel [\#235](https://github.com/Travix-International/travix-ui-kit/pull/235) ([yurist38](https://github.com/yurist38))
+- Refactoring of List component [\#232](https://github.com/Travix-International/travix-ui-kit/pull/232) ([yurist38](https://github.com/yurist38))
+
 ## [v0.7.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.7.0) (2017-11-15)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.6.38...v0.7.0)
 
