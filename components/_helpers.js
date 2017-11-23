@@ -67,10 +67,15 @@ function normalizeDate(dateObject, hours = 0, minutes = 0, seconds = 0, millisec
   return dateObject;
 }
 
+function checkIsBrowser() {
+  return (typeof window !== 'undefined') && (typeof document !== 'undefined');
+}
+
 // Exports
 export default {
   getClassNamesWithMods,
   getDataAttributes,
+  isBrowser: checkIsBrowser(),
   leftPad,
   normalizeDate,
 };
