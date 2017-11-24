@@ -6,10 +6,12 @@
   "scripts": {
     "build:watch": "node ./builder/program -w",
     "build": "node ./builder/program",
+    "ci:comment-url": "curl https://api.github.com/repos/$TRAVIS_REPO_SLUG/issues/$TRAVIS_PULL_REQUEST/comments -u \"$TRAVIX_SERVICE_ACCOUNT:$TRAVIX_SERVICE_ACCOUNT_TOKEN\" --data \"{ \\\"body\\\": \\\"A new acceptance URL has been deployed: [$ACCP_URL]($ACCP_URL)\\\" }\"",
     "ci:lint": "eslint --color --max-warnings 0 --quiet '{components,tests,utils,scripts}/**/*.js'",
     "ci:send-coverage": "codecov",
     "ci:test": "TZ=utc jest -c ./tests/jest.config.json --bail --ci --coverage --maxWorkers=2 --no-cache --silent",
-    "deploy:accp": "make prepare-site && now _site --public",
+    "deploy:accp": "BRANCH=$(git rev-parse --abbrev-ref HEAD); make prepare-site && now rm -y $BRANCH 2>/dev/null; now _site --public -n $BRANCH",
+    "deploy:accp:ci": "now -t \"${NOW_SH_AUTH_TOKEN}\" rm -y \"${TRAVIS_PULL_REQUEST_BRANCH}\" 2>/dev/null; now -t \"${NOW_SH_AUTH_TOKEN}\" _site --public -n \"${TRAVIS_PULL_REQUEST_BRANCH}\"",
     "lint": "eslint --color '{components,tests,utils,scripts}/**/*.js'",
     "prebuild:watch": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md -w &",
     "prebuild": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md &",
@@ -48,7 +50,7 @@
   ],
   "dependencies": {
     "classnames": "^2.2.5",
-    "react-select": "^1.0.0-rc.5"
+    "react-select": "1.0.0-rc.10"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
