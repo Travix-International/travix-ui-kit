@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import omit from 'lodash/omit';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
 
 /**
  * General Input component.
@@ -77,12 +76,7 @@ class Input extends Component {
     } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
 
-    const otherProps = omit(this.props, [
-      'mods',
-      'multiline',
-      'status',
-      'value',
-    ]);
+    const otherProps = ejectOtherProps(this.props, Input.propTypes);
 
     (!this.state.isFocused && status) && mods.push(status);
     this.state.isFocused && mods.push('focused');

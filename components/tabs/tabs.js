@@ -1,10 +1,9 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import omit from 'lodash/omit';
 
 import Tab from './tab';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
 
 /**
  * Tabs component
@@ -127,10 +126,7 @@ class Tabs extends Component {
       mods = [],
     } = this.props;
 
-    const otherProps = omit(this.props, [
-      'activeTab',
-      'selectionType',
-    ]);
+    const otherProps = ejectOtherProps(this.props, Tabs.propTypes);
 
     const classes = classnames(
       getClassNamesWithMods('ui-tabs', mods),
@@ -158,7 +154,6 @@ class Tabs extends Component {
 Tabs.defaultProps = {
   activeTab: '0',
   open: false,
-  selectionType: 'normal',
   name: '',
 };
 

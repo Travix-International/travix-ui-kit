@@ -2,9 +2,8 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import omit from 'lodash/omit';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
 
 /**
  * General Button component. Use when you need button or a link that looks like button
@@ -24,11 +23,7 @@ function Button(props) {
   const restProps = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
 
-  const otherProps = omit(props, [
-    'dataAttrs',
-    'mods',
-    'variation',
-  ]);
+  const otherProps = ejectOtherProps(props, Button.propTypes);
 
   /** This props have default values */
   mods.push(`size_${size}`);
@@ -46,7 +41,7 @@ function Button(props) {
   if (type === 'link') {
     if (!href) {
       console.warn('Missing href'); // eslint-disable-line no-console
-      return <noscript />;
+      return null;
     }
 
     return (

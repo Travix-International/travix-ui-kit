@@ -4,12 +4,11 @@ import React, {
   Children,
   cloneElement,
 } from 'react';
-import omit from 'lodash/omit';
 
 import AutoCompleteItem from './autoCompleteItem';
 import Input from '../input/input';
 import KEY_CODE from '../constants/keyCode';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
 
 function getNextKey(keys, key) {
   return keys[keys.indexOf(key) + 1] || key;
@@ -293,10 +292,7 @@ class AutoComplete extends Component {
     } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
 
-    const otherProps = omit(this.props, [
-      'onUpdateInput',
-      'highlighted',
-    ]);
+    const otherProps = ejectOtherProps(this.props, AutoComplete.propTypes);
 
     this.state.open && mods.push('open');
     const className = getClassNamesWithMods('ui-autocomplete', mods);

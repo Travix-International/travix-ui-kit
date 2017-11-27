@@ -118,6 +118,20 @@ describe('Price', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render asterisk when showAsterisk is true', () => {
+      const wrapper = shallow(
+        <Price
+          decimalsSeparator=","
+          showAsterisk
+          thousandsSeparator="."
+          underlined
+          value={50153.30}
+        />
+      );
+
+      expect(wrapper).toMatchSnapshot();
+    });
+
     it('should render with ui-price_size_xl class', () => {
       const wrapper = shallow(
         <Price
@@ -176,7 +190,7 @@ describe('Price', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should return noscript if value is null', () => {
+    it('should return null if value is null', () => {
       const wrapper = shallow(
         <Price
           additionalText={'per day'}
@@ -184,11 +198,10 @@ describe('Price', () => {
         />
       );
 
-      expect(wrapper).toMatchSnapshot();
-      expect(wrapper.find('noscript')).toHaveLength(1);
+      expect(wrapper.html()).toEqual(null);
     });
 
-    it('should return noscript if value is undefined', () => {
+    it('should return null if value is undefined', () => {
       const wrapper = shallow(
         <Price
           additionalText={'per day'}
@@ -196,8 +209,7 @@ describe('Price', () => {
         />
       );
 
-      expect(wrapper).toMatchSnapshot();
-      expect(wrapper.find('noscript')).toHaveLength(1);
+      expect(wrapper.html()).toEqual(null);
     });
   });
 });

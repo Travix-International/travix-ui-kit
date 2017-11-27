@@ -162,3 +162,25 @@ Sliding Panel with default block with back button
         <button data-rel="close">Close</button>
       </SlidingPanel>
     </div>
+
+Sliding Panel with the sticky footer
+
+    <div>
+      <button
+        onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
+      >Open panel</button>
+      <SlidingPanel
+        active={state.isSlidingPanelOpen}
+        footer={[
+          <button data-rel="close">Close</button>,
+          <button>Action button</button>
+          ]}
+        onClose={() => setState({ isSlidingPanelOpen: false })}
+        title="Panel Title"
+      >
+        This is an example<br/>
+        Of how simple it is to use<br/>
+        Our sliding panel.<br/><br/>
+        This is an example<br/>
+      </SlidingPanel>
+    </div>

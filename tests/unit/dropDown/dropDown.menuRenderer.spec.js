@@ -1,5 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
+import PropTypes from 'prop-types';
 import DropDown from '../../../components/dropDown/dropDown';
 
 const Wrapper = function Wrapper(props) {
@@ -7,9 +8,9 @@ const Wrapper = function Wrapper(props) {
 };
 
 Wrapper.propTypes = {
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
   ]),
 };
 

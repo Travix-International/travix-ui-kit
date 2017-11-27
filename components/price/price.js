@@ -47,6 +47,7 @@ function Price(props) {
     decimalsPrecision,
     decimalsSeparator,
     discount,
+    showAsterisk,
     showDecimals,
     size,
     symbol,
@@ -57,7 +58,7 @@ function Price(props) {
   } = props;
 
   if (!value) {
-    return <noscript />;
+    return null;
   }
 
   const mods = props.mods ? props.mods.slice() : [];
@@ -74,7 +75,7 @@ function Price(props) {
       <div className={`${rootClass}__additional-text-block`}>
         {additionalText}
       </div>
-      )
+    )
     : null;
 
   let discountBlock = null;
@@ -97,7 +98,11 @@ function Price(props) {
       <div className={`${rootClass}__decimals`}>
         {decimalsSeparator + ensureDecimalPrecision(decValue, decimalsPrecision)}
       </div>
-      )
+    )
+    : null;
+
+  const asterisk = showAsterisk
+    ? (<div className={`${rootClass}__asterisk`}>*</div>)
     : null;
 
   const underlineMarkup = underlined
@@ -111,6 +116,7 @@ function Price(props) {
         <div className={`${rootClass}__currency ${rootClass}__currency_${symbolPosition}`}>{symbol}</div>
         <div className={`${rootClass}__integers`}>{addThousandsSeparator(intValue, thousandsSeparator)}</div>
         {decimalsMarkup}
+        {asterisk}
       </div>
       {underlineMarkup}
       {textBlock}
@@ -123,6 +129,7 @@ Price.defaultProps = {
   decimalsPrecision: 2,
   decimalsSeparator: '.',
   discount: 0,
+  showAsterisk: false,
   showDecimals: true,
   size: 'l',
   symbol: '€',
@@ -168,6 +175,11 @@ Price.propTypes = {
    * You can provide set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * Defines if it should show the asterisk or not.
+   */
+  showAsterisk: PropTypes.bool,
 
   /**
    * Defines if it should show the decimals or not.

@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import omit from 'lodash/omit';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
 
 /**
  * AutoCompleteItem component
@@ -35,13 +34,7 @@ class AutoCompleteItem extends Component {
     } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
 
-    const otherProps = omit(this.props, [
-      'code',
-      'index',
-      'isActive',
-      'isTitle',
-      'onClick',
-    ]);
+    const otherProps = ejectOtherProps(this.props, AutoCompleteItem.propTypes);
 
     isTitle && mods.push('title');
     isActive && mods.push('active');
@@ -52,7 +45,7 @@ class AutoCompleteItem extends Component {
         {...getDataAttributes(dataAttrs)}
         {...otherProps}
         className={className}
-        onClick={!isTitle && this.handleItemClick}
+        onClick={!isTitle ? this.handleItemClick : undefined}
         role="listitem"
         role="option"
         tabIndex="-1"

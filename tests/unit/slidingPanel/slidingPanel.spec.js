@@ -172,7 +172,7 @@ describe('SlidingPanel', () => {
         <SlidingPanel active closeOnOverlayClick={false}>
           <button data-rel="close">Test</button>
         </SlidingPanel>
-      , { attachTo: document.body.querySelector('#root') });
+        , { attachTo: document.body.querySelector('#root') });
       const overlayElement = renderTree.find('.ui-sliding-panel-overlay');
       const panelElement = overlayElement.find('.ui-sliding-panel');
 
@@ -351,6 +351,24 @@ describe('SlidingPanel', () => {
         <SlidingPanel
           backButtonLabel="Back"
           useDefaultLeftBlock
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      expect(renderTree).toMatchSnapshot();
+    });
+
+    it('do not render footer if prop is not passed or falsy', () => {
+      const renderTree = mount(<SlidingPanel />);
+
+      expect(renderTree).toMatchSnapshot();
+    });
+
+    it('render footer if prop has been passed and it is truthy', () => {
+      const renderTree = mount(
+        <SlidingPanel
+          footer="test"
         >
           Test
         </SlidingPanel>

@@ -21,7 +21,6 @@ exports[`Input #render() should render correct input 1`] = `
   <input
     className="ui-input"
     disabled={true}
-    name="input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -36,7 +35,6 @@ exports[`Input #render() should render multiline input 1`] = `
   <textarea
     className="ui-input"
     disabled={true}
-    name="input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -51,7 +49,6 @@ exports[`Input #render() should render span for icon 1`] = `
   <input
     className="ui-input ui-input_error"
     disabled={false}
-    name="input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}

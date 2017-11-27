@@ -5,9 +5,8 @@ import React, {
   cloneElement,
   isValidElement,
 } from 'react';
-import omit from 'lodash/omit';
 
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, ejectOtherProps } from '../_helpers';
 
 const getNormalizedActiveKey = ({ defaultActiveKey, activeKey }) => {
   if (typeof activeKey === 'undefined') {
@@ -95,13 +94,7 @@ class Collapse extends Component {
       mods = [],
     } = this.props;
 
-    const otherProps = omit(this.props, [
-      'activeKey',
-      'defaultActiveKey',
-      'iconPosition',
-      'isAccordion',
-      'onChange',
-    ]);
+    const otherProps = ejectOtherProps(this.props, Collapse.propTypes);
 
     if (Children.count(children) === 0) {
       return null;

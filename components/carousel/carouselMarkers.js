@@ -7,8 +7,8 @@ export default function CarouselMarkers({ images, current, onClick }) {
       {
         images.map((src, i) => (
           i === current
-          ? <button disabled key={i} />
-          : <button data-index={i} key={i} onClick={onClick} />
+            ? <button disabled key={i} />
+            : <button data-index={i} key={i} onClick={onClick} />
         ))
       }
     </div>

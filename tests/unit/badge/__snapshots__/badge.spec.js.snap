@@ -13,7 +13,6 @@ exports[`Badge should render content without badge when badge is not visible 1`]
   className="ui-badge"
 >
   Badge Content
-  <noscript />
 </div>
 `;
 
@@ -52,8 +51,6 @@ exports[`Badge should return content inside container if title not provided 1`] 
   Badge Content
 </div>
 `;
-
-exports[`Badge should return noscript if children and title not provided 1`] = `<noscript />`;
 
 exports[`Badge should return only badge if content not provided 1`] = `
 <div

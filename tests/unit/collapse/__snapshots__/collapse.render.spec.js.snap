@@ -195,11 +195,6 @@ exports[`Collapse: render should render collapse component with icon on the righ
 exports[`Collapse: render should render collapse with mod 1`] = `
 <div
   className="ui-collapse ui-collapse_collapse-mod"
-  mods={
-    Array [
-      "collapse-mod",
-    ]
-  }
 >
   <CollapseItem
     iconPosition="left"

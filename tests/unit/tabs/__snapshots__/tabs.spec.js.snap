@@ -6,12 +6,9 @@ exports[`Tabs #render() should call onChange method 1`] = `
   name="tabs1"
   onChange={[Function]}
   open={false}
-  selectionType="normal"
 >
   <div
     className="ui-tabs"
-    name="tabs1"
-    onChange={[Function]}
     open={false}
   >
     <div
@@ -71,11 +68,9 @@ exports[`Tabs #render() should call onClick method 1`] = `
   activeTab="1"
   name="tabs1"
   open={false}
-  selectionType="normal"
 >
   <div
     className="ui-tabs"
-    name="tabs1"
     open={false}
   >
     <div
@@ -133,8 +128,6 @@ exports[`Tabs #render() should call onClick method 1`] = `
 exports[`Tabs #render() should change "activeTab" after receive new props when "activeTab" was provided 1`] = `
 <div
   className="ui-tabs"
-  name="tabs1"
-  onChange={[Function]}
   open={false}
 >
   <div
@@ -164,8 +157,6 @@ exports[`Tabs #render() should change "activeTab" after receive new props when "
 exports[`Tabs #render() should change "activeTab" after receive new props when "activeTab" was provided 2`] = `
 <div
   className="ui-tabs"
-  name="tabs1"
-  onChange={[Function]}
   open={false}
 >
   <div
@@ -195,8 +186,6 @@ exports[`Tabs #render() should change "activeTab" after receive new props when "
 exports[`Tabs #render() should change "activeTab" after receive new props when "activeTab" was provided 3`] = `
 <div
   className="ui-tabs"
-  name="tabs1"
-  onChange={[Function]}
   open={false}
 >
   <div
@@ -256,8 +245,6 @@ exports[`Tabs #render() should not call onClick method 1`] = `
 exports[`Tabs #render() should render correct component with basic data 1`] = `
 <div
   className="ui-tabs"
-  name="tabs1"
-  onChange={[Function]}
   open={false}
 >
   <div
@@ -287,8 +274,6 @@ exports[`Tabs #render() should render correct component with basic data 1`] = `
 exports[`Tabs #render() should render correct data with content 1`] = `
 <div
   className="ui-tabs"
-  name="tabs1"
-  onChange={[Function]}
   open={false}
 >
   <div
@@ -324,8 +309,6 @@ exports[`Tabs #render() should render correct data with content 1`] = `
 exports[`Tabs #render() should render correct data with custome values 1`] = `
 <div
   className="ui-tabs"
-  name="tabs1"
-  onChange={[Function]}
   open={false}
 >
   <div
@@ -361,8 +344,6 @@ exports[`Tabs #render() should render correct data with custome values 1`] = `
 exports[`Tabs #render() should render correct data with init value 1`] = `
 <div
   className="ui-tabs"
-  name="tabs1"
-  onChange={[Function]}
   open={false}
 >
   <div
