@@ -211,5 +211,11 @@ describe('Price', () => {
 
       expect(wrapper.html()).toEqual(null);
     });
+
+    it('should render unstyled block if an appropriate prop is passed', () => {
+      const wrapper = shallow(<Price unstyled value={50153} />);
+
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

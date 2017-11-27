@@ -87,6 +87,12 @@ exports[`Price #render() should render only the amount of decimals defined in th
 </div>
 `;
 
+exports[`Price #render() should render unstyled block if an appropriate prop is passed 1`] = `
+<span>
+  € 50153
+</span>
+`;
+
 exports[`Price #render() should render with additional text block if it is a node 1`] = `
 <div
   className="ui-price ui-price_size_l"

@@ -54,6 +54,7 @@ function Price(props) {
     symbolPosition,
     thousandsSeparator,
     underlined,
+    unstyled,
     value,
   } = props;
 
@@ -64,6 +65,11 @@ function Price(props) {
   const mods = props.mods ? props.mods.slice() : [];
 
   const rootClass = 'ui-price';
+
+  if (unstyled) {
+    return <span>{`${symbol} ${value}`}</span>;
+  }
+
   const [intValue, decValue] = value.toString().split('.');
 
   mods.push(`size_${size}`);
@@ -136,6 +142,7 @@ Price.defaultProps = {
   symbolPosition: 'left',
   thousandsSeparator: ',',
   underlined: false,
+  unstyled: false,
 };
 
 Price.propTypes = {
@@ -210,6 +217,11 @@ Price.propTypes = {
    * Flag defining if the price should be underlined.
    */
   underlined: PropTypes.bool,
+
+  /**
+   * Flag defining if the price should be rendered without any styles.
+   */
+  unstyled: PropTypes.bool,
 
   /**
    * Price to be displayed.
