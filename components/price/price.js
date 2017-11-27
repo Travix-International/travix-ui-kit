@@ -66,11 +66,27 @@ function Price(props) {
 
   const rootClass = 'ui-price';
 
-  if (unstyled) {
-    return <span>{`${symbol} ${value}`}</span>;
-  }
-
   const [intValue, decValue] = value.toString().split('.');
+
+  if (unstyled) {
+    const priceFormatted = [
+      addThousandsSeparator(intValue, thousandsSeparator),
+      showDecimals && ensureDecimalPrecision(decValue, decimalsPrecision),
+    ].filter(i => i !== false).join(decimalsSeparator);
+
+    const unstyledValue = [
+      symbolPosition === 'left' && symbol,
+      priceFormatted,
+      symbolPosition === 'right' && symbol,
+      showAsterisk && '*',
+    ].filter(i => i !== false).join(' ');
+
+    return (
+      <span {...getDataAttributes(dataAttrs)}>
+        {unstyledValue}
+      </span>
+    );
+  }
 
   mods.push(`size_${size}`);
 
