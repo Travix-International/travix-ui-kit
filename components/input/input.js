@@ -71,6 +71,7 @@ class Input extends Component {
       dataAttrs = {},
       disabled,
       multiline,
+      name,
       status,
       value,
     } = this.props;
@@ -91,6 +92,7 @@ class Input extends Component {
           {...otherProps}
           className={className}
           disabled={disabled}
+          name={name}
           onBlur={this.handleInputBlur}
           onChange={this.handleInputChange}
           onFocus={this.handleInputFocus}
