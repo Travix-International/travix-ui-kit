@@ -211,5 +211,29 @@ describe('Price', () => {
 
       expect(wrapper.html()).toEqual(null);
     });
+
+    it('should render unstyled block if an appropriate prop is passed', () => {
+      const wrapper = shallow(<Price unstyled value={50153.123} />);
+
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render unstyled block with no decimals', () => {
+      const wrapper = shallow(<Price showDecimals={false} unstyled value={50153.123} />);
+
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render unstyled block with right symbol position', () => {
+      const wrapper = shallow(<Price symbolPosition="right" unstyled value={50153.123} />);
+
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render unstyled block with asterisk', () => {
+      const wrapper = shallow(<Price showAsterisk unstyled value={50153.123} />);
+
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

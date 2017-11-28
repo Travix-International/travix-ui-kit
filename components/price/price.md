@@ -27,6 +27,12 @@ Price with discount:
       <Price additionalText="total" discount={50200.30} size="m" underlined value={50153.30} /><br/><br/>
     </div>
 
+Unstyled price:
+
+    <div>
+      <Price value={12345.67} unstyled />
+    </div>
+
 Sizes:
 
     <div>

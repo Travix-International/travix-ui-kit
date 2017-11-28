@@ -54,17 +54,39 @@ function Price(props) {
     symbolPosition,
     thousandsSeparator,
     underlined,
+    unstyled,
     value,
   } = props;
 
-  if (!value) {
+  if (!value && value !== 0) {
     return null;
   }
 
   const mods = props.mods ? props.mods.slice() : [];
 
   const rootClass = 'ui-price';
+
   const [intValue, decValue] = value.toString().split('.');
+
+  if (unstyled) {
+    const priceFormatted = [
+      addThousandsSeparator(intValue, thousandsSeparator),
+      showDecimals && ensureDecimalPrecision(decValue, decimalsPrecision),
+    ].filter(i => i !== false).join(decimalsSeparator);
+
+    const unstyledValue = [
+      symbolPosition === 'left' && symbol,
+      priceFormatted,
+      symbolPosition === 'right' && symbol,
+      showAsterisk && '*',
+    ].filter(i => i !== false).join(' ');
+
+    return (
+      <span {...getDataAttributes(dataAttrs)}>
+        {unstyledValue}
+      </span>
+    );
+  }
 
   mods.push(`size_${size}`);
 
@@ -136,6 +158,7 @@ Price.defaultProps = {
   symbolPosition: 'left',
   thousandsSeparator: ',',
   underlined: false,
+  unstyled: false,
 };
 
 Price.propTypes = {
@@ -210,6 +233,11 @@ Price.propTypes = {
    * Flag defining if the price should be underlined.
    */
   underlined: PropTypes.bool,
+
+  /**
+   * Flag defining if the price should be rendered without any styles.
+   */
+  unstyled: PropTypes.bool,
 
   /**
    * Price to be displayed.
