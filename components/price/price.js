@@ -58,7 +58,7 @@ function Price(props) {
     value,
   } = props;
 
-  if (!value) {
+  if (!value && value !== 0) {
     return null;
   }
 
