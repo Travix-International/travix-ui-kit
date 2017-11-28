@@ -3,12 +3,6 @@
 exports[`AutoComplete #render() should copy mods 1`] = `
 <div
   className="ui-autocomplete ui-autocomplete_test"
-  highlighted={false}
-  mods={
-    Array [
-      "test",
-    ]
-  }
 >
   <Input
     aria-activedescendant="ui-autocomplete-item-autocomplete-0"
@@ -62,7 +56,6 @@ exports[`AutoComplete #render() should copy mods 1`] = `
 exports[`AutoComplete #render() should not render item child if it not "AutoCompleteItem" 1`] = `
 <div
   className="ui-autocomplete"
-  highlighted={false}
 >
   <Input
     aria-activedescendant="ui-autocomplete-item-autocomplete-0"
@@ -103,7 +96,6 @@ exports[`AutoComplete #render() should not render item child if it not "AutoComp
 exports[`AutoComplete #render() should render correct autocomplete component 1`] = `
 <div
   className="ui-autocomplete"
-  highlighted={false}
 >
   <Input
     aria-activedescendant="ui-autocomplete-item-autocomplete-0"
@@ -157,12 +149,6 @@ exports[`AutoComplete #render() should render correct autocomplete component 1`]
 exports[`AutoComplete #render() should render correct autocomplete component with default value 1`] = `
 <div
   className="ui-autocomplete"
-  defaultValue={
-    Object {
-      "value": "value",
-    }
-  }
-  highlighted={true}
 >
   <Input
     aria-activedescendant="ui-autocomplete-item-autocomplete-0"
@@ -223,7 +209,6 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
 exports[`AutoComplete #render() should render correct autocomplete component with highlighting 1`] = `
 <div
   className="ui-autocomplete"
-  highlighted={true}
 >
   <Input
     aria-activedescendant="ui-autocomplete-item-autocomplete-0"
@@ -277,7 +262,6 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
 exports[`AutoComplete #render() should render correct autocomplete component with label 1`] = `
 <div
   className="ui-autocomplete"
-  highlighted={false}
 >
   <label
     htmlFor="ui-autocomplete-input-autocomplete"
@@ -337,7 +321,6 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
 exports[`AutoComplete #render() should render correct autocomplete component with title item 1`] = `
 <div
   className="ui-autocomplete"
-  highlighted={false}
 >
   <label
     htmlFor="ui-autocomplete-input-autocomplete"
@@ -397,7 +380,6 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
 exports[`AutoComplete #render() should render correct open autocomplete component 1`] = `
 <div
   className="ui-autocomplete ui-autocomplete_open"
-  highlighted={false}
 >
   <Input
     aria-activedescendant="ui-autocomplete-item-autocomplete-0"

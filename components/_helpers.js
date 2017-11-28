@@ -67,8 +67,26 @@ function normalizeDate(dateObject, hours = 0, minutes = 0, seconds = 0, millisec
   return dateObject;
 }
 
+/**
+ * Eject real custom users props from props
+ *
+ * @method ejectOtherProps
+ * @param {Object} props conponent props.
+ * @param {Object} propTypes conponent props types.
+ * @return {Object} custom props.
+ */
+function ejectOtherProps(props, propTypes) {
+  const propTypesKeys = Object.keys(propTypes);
+  return Object.keys(props)
+    .filter(x => !propTypesKeys.includes(x))
+    .reduce((prev, item) => {
+      return { ...prev, [item]: props[item] };
+    }, {});
+}
+
 // Exports
 export default {
+  ejectOtherProps,
   getClassNamesWithMods,
   getDataAttributes,
   leftPad,
