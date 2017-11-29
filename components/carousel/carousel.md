@@ -1,7 +1,19 @@
 Carousel:
 
+    initialState = {
+      touchable: true,
+    };
+
     <div>
+      <Checkbox
+        checked={state.touchable}
+        name="touchable"
+        onChange={() => setState({ touchable: !state.touchable })}
+      >
+        touchable
+      </Checkbox>
       <Carousel
+        touchable={state.touchable}
         images={[
           'http://lorempixel.com/600/400/city',
           'http://lorempixel.com/600/400/sports',

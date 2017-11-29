@@ -92,6 +92,38 @@ describe('Carousel Track', () => {
       expect(instance.$elm.style.transform).toEqual('translateX(-600px)');
     });
 
+    it('changing touchable behavior', () => {
+      const renderTree = mount(
+        <CarouselTrack
+          onNext={mockOnNext}
+          onPrev={mockOnPrev}
+        />
+      );
+
+      const instance = renderTree.instance();
+
+      const ctx = {
+        bindEvents: jest.fn(),
+        unbindEvents: jest.fn(),
+        resetSlidePosition: jest.fn(),
+        props: {
+          touchable: false,
+        },
+      };
+
+      instance.componentWillReceiveProps.call(ctx, { touchable: true });
+
+      expect(ctx.bindEvents).toHaveBeenCalledTimes(1);
+      expect(ctx.unbindEvents).toHaveBeenCalledTimes(0);
+
+      ctx.props.touchable = true;
+
+      instance.componentWillReceiveProps.call(ctx, { touchable: false });
+
+      expect(ctx.bindEvents).toHaveBeenCalledTimes(1);
+      expect(ctx.unbindEvents).toHaveBeenCalledTimes(1);
+    });
+
     it('small move wont fire prev event', () => {
       const renderTree = mount(
         <CarouselTrack
