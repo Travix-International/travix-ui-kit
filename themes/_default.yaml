@@ -523,13 +523,11 @@ sliding-panel:
     position: "fixed"
     z-index: "3"
   panel:
-    background-color: "var(--tx-generic-color-secondary)"
     bottom: "0"
     flex-flow: "column"
     margin: "0"
     max-width: "100%"
     opacity: "1"
-    padding: "20px"
     position: "absolute"
     top: "0"
     transition: "transform 195ms cubic-bezier(0.0, 0.0, 0.2, 1)"
