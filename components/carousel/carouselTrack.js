@@ -67,7 +67,6 @@ class CarouselTrack extends Component {
   }
 
   handleStart(evt) {
-    evt.preventDefault();
     this.isDragging = true;
     // setup element boundaries
     this.resetSlidePosition(this.props.current);
