@@ -26,7 +26,7 @@
 }
 
 .ui-sliding-panel {
-  background-color: var(--tx-sliding-panel-panel-background-color);
+  background-color: var(--tx-generic-color-secondary);
   bottom: var(--tx-sliding-panel-panel-bottom);
   display: flex;
   flex-flow: var(--tx-sliding-panel-panel-flex-flow);
@@ -49,7 +49,7 @@
   flex: var(--tx-sliding-panel-content-flex);
   overflow: var(--tx-sliding-panel-content-overflow);
   overflow-y: var(--tx-sliding-panel-content-overflow-y);
-  padding: var(--tx-sliding-panel-panel-padding);
+  padding: 20px;
 }
 
 .ui-sliding-panel__footer {
@@ -59,5 +59,5 @@
   display: flex;
   height: 80px;
   justify-content: space-between;
-  padding: 0 var(--tx-sliding-panel-panel-padding);
+  padding: 0 20px;
 }

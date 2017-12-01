@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.7.4](https://github.com/Travix-International/travix-ui-kit/tree/v0.7.4) (2017-11-29)
+
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.7.3...v0.7.4)
+
+**Merged pull requests:**
+
+- Update slidingPanel theme variables [\#251](https://github.com/Travix-International/travix-ui-kit/pull/251) ([yurist38](https://github.com/yurist38))
+
 ## [v0.7.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.7.3) (2017-11-28)
 
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.7.2...v0.7.3)
