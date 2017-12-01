@@ -521,7 +521,7 @@ sliding-panel:
   overlay:
     background-color: "rgba(var(--tx-generic-color-primary-dark-rgb), .65)"
     position: "fixed"
-    z-index: "3"
+    z-index: "999"
   panel:
     background-color: "var(--tx-generic-color-blank)"
     bottom: "0"
