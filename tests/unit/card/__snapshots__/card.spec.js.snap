@@ -16,6 +16,15 @@ exports[`Card should return content inside Card container with checked state 1`]
 </div>
 `;
 
+exports[`Card should return content inside Card container with data attributes 1`] = `
+<div
+  className="ui-card ui-card_checked"
+  data-gtm-id="card1"
+>
+  Card Content
+</div>
+`;
+
 exports[`Card should return content inside Card container with default props 1`] = `
 <div
   className="ui-card"

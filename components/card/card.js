@@ -4,7 +4,7 @@ import React from 'react';
 
 import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
 
-const Card = ({ className, children, checked, showIcon, transparent, hovering, mods, dataAttrs, ...props }) => {
+const Card = ({ className, children, checked, showIcon, transparent, hovering, mods, dataAttrs, tag, ...props }) => {
   const otherProps = ejectOtherProps(props, Card.propTypes);
   const cardMods = {
     checked,
@@ -12,15 +12,16 @@ const Card = ({ className, children, checked, showIcon, transparent, hovering, m
     hovering,
     'show-icon': showIcon,
   };
+  const Tag = tag;
 
   return (
-    <div
+    <Tag
       className={classnames(className, getClassNamesWithMods('ui-card', cardMods, mods))}
       {...getDataAttributes(dataAttrs)}
       {...otherProps}
     >
       {children}
-    </div>
+    </Tag>
   );
 };
 
@@ -44,11 +45,17 @@ Card.propTypes = {
     PropTypes.bool,
     PropTypes.object,
   ]),
+  /**
+   * Whether to enable hover effect on mouse over
+   */
   hovering: PropTypes.bool,
   /**
    * Set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Set of custom tag.
+   */
   tag: PropTypes.string,
   transparent: PropTypes.bool,
   showIcon: PropTypes.bool,

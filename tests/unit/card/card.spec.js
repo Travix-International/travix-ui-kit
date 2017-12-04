@@ -72,4 +72,14 @@ describe('Card', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should return content inside Card container with data attributes', () => {
+    const wrapper = shallow(
+      <Card checked dataAttrs={{ 'gtm-id': 'card1' }}>
+        Card Content
+      </Card>
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });

@@ -4,6 +4,7 @@ Position top:
       isCardChecked: true,
       isCardTransparent: false,
       isCardShowIcon: false,
+      cardTag: 'div',
     };
 
     <div style={{ background: 'var(--tx-generic-color-secondary)', padding: '15px' }}>
@@ -35,8 +36,11 @@ Position top:
       >
         Show icon
       </Checkbox>
+      <div>Tag:</div>
+      <RadioButton checked={state.cardTag === 'div'} id="div" name="cardTag" onChange={() => setState({ cardTag: 'div' })}>div</RadioButton>
+      <RadioButton checked={state.cardTag === 'section'} id="section" name="cardTag" onChange={() => setState({ cardTag: 'section' })}>section</RadioButton>
 
-      <Card checked={state.isCardChecked} showIcon={state.isCardShowIcon} transparent={state.isCardTransparent} hovering={state.isCardHovering} onClick={() => setState({ isCardChecked: !state.isCardChecked })}>
+      <Card checked={state.isCardChecked} showIcon={state.isCardShowIcon} transparent={state.isCardTransparent} hovering={state.isCardHovering} tag={state.cardTag} onClick={() => setState({ isCardChecked: !state.isCardChecked })} dataAttrs={{'gtm-id': 'card1'}}>
         <p>Card content</p>
       </Card>
     </div>
