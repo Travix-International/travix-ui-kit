@@ -1,0 +1,42 @@
+.ui-card {
+  border-radius: var(--tx-card-border-radius);
+  flex: 1 1 auto;
+  position: relative;
+  background: var(--tx-card-color-background);
+  border: var(--tx-card-border-width) var(--tx-card-border-style) var(--tx-card-color-background);
+}
+
+.ui-card_checked.ui-card_show-icon {
+  &:before {
+    border-bottom: var(--tx-card-border-triangle-size) solid transparent;
+    border-left: var(--tx-card-border-triangle-size) solid transparent;
+    border-top: var(--tx-card-border-triangle-size) solid var(--tx-card-border-triangle-color);
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:after {
+    color: var(--tx-card-border-triangle-icon-color);
+    content: '\2705';
+    position: absolute;
+    right: 6px;
+    top: 6px;
+  }
+}
+
+.ui-card_transparent {
+  background: none;
+  border-color: transparent;
+}
+
+.ui-card_checked,
+.ui-card_checked.ui-card_hovering:hover {
+  border-color: var(--tx-card-border-color);
+}
+
+.ui-card_hovering:hover {
+  border-color: var(--tx-generic-color-secondary-darker);
+}
+

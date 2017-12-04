@@ -1,6 +1,8 @@
 generic:
   border:
     radius: &border-radius 8px
+    width: &border-width 2px
+    style: &border-style solid
   font:
     primary:
       weight:
@@ -302,6 +304,19 @@ collapse:
           color: "var(--tx-generic-color-secondary-darker)"
       border:
         radius: *border-radius
+card:
+  color:
+    background: "var(--tx-generic-color-blank)"
+    text: "var(--tx-generic-color-primary-darker)"
+  border:
+    color: *active
+    radius: *border-radius
+    style: *border-style
+    width: *border-width
+    triangle:
+      color: *active
+      icon-color: *blank
+      size: "41px"
 datepicker:
   calendar-wrapper:
     background-color: "var(--tx-generic-color-blank)"
