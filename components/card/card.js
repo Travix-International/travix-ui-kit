@@ -57,7 +57,13 @@ Card.propTypes = {
    * Set of custom tag.
    */
   tag: PropTypes.string,
+  /**
+   * Whether to use background or not
+   */
   transparent: PropTypes.bool,
+  /**
+   * Whether to show icon or not
+   */
   showIcon: PropTypes.bool,
 };
 
