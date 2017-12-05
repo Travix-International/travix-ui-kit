@@ -4,12 +4,26 @@ import React from 'react';
 
 import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
 
-const Card = ({ className, children, checked, showIcon, transparent, hovering, mods, dataAttrs, tag, ...props }) => {
-  const otherProps = ejectOtherProps(props, Card.propTypes);
+const Card = (props) => {
+  const {
+    checked,
+    children,
+    className,
+    dataAttrs,
+    hovering,
+    mods,
+    onClick,
+    showIcon,
+    tag,
+    transparent,
+    ...other
+  } = props;
+  const otherProps = ejectOtherProps(other, Card.propTypes);
   const cardMods = {
     checked,
     transparent,
     hovering,
+    clickable: typeof onClick === 'function',
     'show-icon': showIcon,
   };
   const Tag = tag;
@@ -17,6 +31,7 @@ const Card = ({ className, children, checked, showIcon, transparent, hovering, m
   return (
     <Tag
       className={classnames(className, getClassNamesWithMods('ui-card', cardMods, mods))}
+      onClick={onClick}
       {...getDataAttributes(dataAttrs)}
       {...otherProps}
     >
@@ -54,6 +69,10 @@ Card.propTypes = {
    */
   mods: PropTypes.arrayOf(PropTypes.string),
   /**
+   * The callback for onClick event
+   */
+  onClick: PropTypes.func,
+  /**
    * Set of custom tag.
    */
   tag: PropTypes.string,
@@ -72,6 +91,7 @@ Card.defaultProps = {
   dataAttrs: null,
   hovering: false,
   mods: [],
+  onClick: null,
   tag: 'div',
   transparent: false,
   showIcon: false,

@@ -26,6 +26,10 @@
   }
 }
 
+.ui-card_clickable {
+  cursor: pointer;
+}
+
 .ui-card_transparent {
   background: none;
   border-color: transparent;
