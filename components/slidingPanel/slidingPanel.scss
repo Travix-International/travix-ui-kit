@@ -13,18 +13,6 @@
   }
 }
 
-.ui-sliding-panel_right {
-  left: var(--tx-sliding-panel-right-direction-left);
-  right: var(--tx-sliding-panel-right-direction-right);
-  transform: var(--tx-sliding-panel-right-direction-transform);
-}
-
-.ui-sliding-panel_left {
-  left: var(--tx-sliding-panel-left-direction-left);
-  right: var(--tx-sliding-panel-left-direction-right);
-  transform: var(--tx-sliding-panel-left-direction-transform);
-}
-
 .ui-sliding-panel {
   background-color: var(--tx-generic-color-secondary);
   bottom: var(--tx-sliding-panel-panel-bottom);
@@ -37,11 +25,29 @@
   opacity: var(--tx-sliding-panel-panel-opacity);
   position: var(--tx-sliding-panel-panel-position);
   top: var(--tx-sliding-panel-panel-top);
-  transition: var(--tx-sliding-panel-panel-transition);
 
   &.ui-sliding-panel_active {
     opacity: var(--tx-sliding-panel-panel-open-opacity);
-    transform: var(--tx-sliding-panel-panel-open-transform);
+  }
+}
+
+.ui-sliding-panel_right {
+  animation: sidePanelClose 195ms ease-in-out 0s 1 both;
+  left: var(--tx-sliding-panel-right-direction-left);
+  right: var(--tx-sliding-panel-right-direction-right);
+
+  &.ui-sliding-panel_active  {
+    animation: sidePanelOpen 195ms ease-in-out 0s 1 both;
+  }
+}
+
+.ui-sliding-panel_left {
+  animation: sidePanelLeftClose 195ms ease-in-out 0s 1 both;
+  left: var(--tx-sliding-panel-left-direction-left);
+  right: var(--tx-sliding-panel-left-direction-right);
+
+  &.ui-sliding-panel_active  {
+    animation: sidePanelLeftOpen 195ms ease-in-out 0s 1 both;
   }
 }
 
@@ -60,4 +66,40 @@
   height: 80px;
   justify-content: space-between;
   padding: 0 20px;
+}
+
+@keyframes sidePanelOpen {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sidePanelClose {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes sidePanelLeftOpen {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sidePanelLeftClose {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
