@@ -23,18 +23,22 @@ class CarouselTrack extends Component {
   }
 
   componentDidMount() {
-    this.bindEvents();
+    this.props.touchable && this.bindEvents();
     this.$elm.style.willChange = 'transform';
     this.setupSlidePosition();
   }
 
   componentWillUnmount() {
-    this.unbindEvents();
+    this.props.touchable && this.unbindEvents();
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.current !== this.props.current) {
       this.resetSlidePosition(nextProps.current);
+    }
+
+    if (nextProps.touchable !== this.props.touchable) {
+      nextProps.touchable ? this.bindEvents() : this.unbindEvents();
     }
   }
 
@@ -63,7 +67,6 @@ class CarouselTrack extends Component {
   }
 
   handleStart(evt) {
-    evt.preventDefault();
     this.isDragging = true;
     // setup element boundaries
     this.resetSlidePosition(this.props.current);
@@ -136,9 +139,11 @@ CarouselTrack.propTypes = {
   onNext: PropTypes.func.isRequired,
   onPrev: PropTypes.func.isRequired,
   current: PropTypes.number,
+  touchable: PropTypes.bool,
 };
 
 CarouselTrack.defaultProps = {
+  touchable: true,
   current: 0,
 };
 
