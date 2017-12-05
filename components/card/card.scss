@@ -1,28 +1,30 @@
 .ui-card {
-  border-radius: var(--tx-card-border-radius);
+  border-radius: var(--tx-generic-border-radius);
   flex: 1 1 auto;
   position: relative;
-  background: var(--tx-card-color-background);
-  border: var(--tx-card-border-width) var(--tx-card-border-style) var(--tx-card-color-background);
+  background: var(--tx-generic-color-blank);
+  border: var(--tx-generic-border-width) var(--tx-generic-border-style) var(--tx-generic-color-blank);
 }
 
 .ui-card_checked.ui-card_show-icon {
-  &:before {
-    border-bottom: var(--tx-card-border-triangle-size) solid transparent;
-    border-left: var(--tx-card-border-triangle-size) solid transparent;
-    border-top: var(--tx-card-border-triangle-size) solid var(--tx-card-border-triangle-color);
+  &:after {
+    border-bottom: 41px solid transparent;
+    border-left: 41px solid transparent;
+    border-top: 41px solid var(--tx-generic-color-active);
     content: "";
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 5;
   }
 
-  &:after {
-    color: var(--tx-card-border-triangle-icon-color);
+  &:before {
+    color: var(--tx-generic-color-blank);
     content: '\2705';
     position: absolute;
-    right: 6px;
-    top: 6px;
+    right: 4px;
+    top: 4px;
+    z-index: 10;
   }
 }
 
@@ -37,7 +39,7 @@
 
 .ui-card_checked,
 .ui-card_checked.ui-card_hovering:hover {
-  border-color: var(--tx-card-border-color);
+  border-color: var(--tx-generic-color-active);
 }
 
 .ui-card_hovering:hover {
