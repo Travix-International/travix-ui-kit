@@ -5,6 +5,7 @@ exports[`Carousel Track #render() changing current will move element 1`] = `
   current={3}
   onNext={[MockFunction]}
   onPrev={[MockFunction]}
+  touchable={true}
 >
   <div
     className="ui-carousel-track"
@@ -17,6 +18,7 @@ exports[`Carousel Track #render() changing custom initial item to same dont chan
   current={2}
   onNext={[MockFunction]}
   onPrev={[MockFunction]}
+  touchable={true}
 >
   <div
     className="ui-carousel-track"
@@ -35,6 +37,7 @@ exports[`Carousel Track #render() handle touch events event 1`] = `
       ],
     }
   }
+  touchable={true}
 >
   <div
     className="ui-carousel-track"
@@ -53,6 +56,7 @@ exports[`Carousel Track #render() moving to left will fire next event 1`] = `
     }
   }
   onPrev={[MockFunction]}
+  touchable={true}
 >
   <div
     className="ui-carousel-track"
@@ -71,6 +75,7 @@ exports[`Carousel Track #render() moving to right will fire prev event 1`] = `
       ],
     }
   }
+  touchable={true}
 >
   <div
     className="ui-carousel-track"
@@ -83,6 +88,7 @@ exports[`Carousel Track #render() render with custom initial item 1`] = `
   current={2}
   onNext={[MockFunction]}
   onPrev={[MockFunction]}
+  touchable={true}
 >
   <div
     className="ui-carousel-track"
@@ -95,6 +101,7 @@ exports[`Carousel Track #render() render with default props 1`] = `
   current={0}
   onNext={[MockFunction]}
   onPrev={[MockFunction]}
+  touchable={true}
 >
   <div
     className="ui-carousel-track"
@@ -107,6 +114,7 @@ exports[`Carousel Track #render() small move wont fire prev event 1`] = `
   current={0}
   onNext={[MockFunction]}
   onPrev={[MockFunction]}
+  touchable={true}
 >
   <div
     className="ui-carousel-track"
@@ -119,6 +127,7 @@ exports[`Carousel Track #render() wont move element if touch didnt start 1`] = `
   current={0}
   onNext={[MockFunction]}
   onPrev={[MockFunction]}
+  touchable={true}
 >
   <div
     className="ui-carousel-track"

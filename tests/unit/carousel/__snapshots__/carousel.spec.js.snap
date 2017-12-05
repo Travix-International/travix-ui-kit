@@ -21,6 +21,7 @@ exports[`Carousel #render() clicking markers to change pagination 1`] = `
       ‹
     </span>
   }
+  touchable={true}
 >
   <div
     className="ui-carousel"
@@ -29,6 +30,7 @@ exports[`Carousel #render() clicking markers to change pagination 1`] = `
       current={0}
       onNext={[Function]}
       onPrev={[Function]}
+      touchable={true}
     >
       <div
         className="ui-carousel-track"
@@ -166,6 +168,7 @@ exports[`Carousel #render() display markers instead of pagination 1`] = `
       ‹
     </span>
   }
+  touchable={true}
 >
   <div
     className="ui-carousel"
@@ -174,6 +177,7 @@ exports[`Carousel #render() display markers instead of pagination 1`] = `
       current={0}
       onNext={[Function]}
       onPrev={[Function]}
+      touchable={true}
     >
       <div
         className="ui-carousel-track"
@@ -311,6 +315,7 @@ exports[`Carousel #render() hitting next move to first item 1`] = `
       ‹
     </span>
   }
+  touchable={true}
 >
   <div
     className="ui-carousel"
@@ -319,6 +324,7 @@ exports[`Carousel #render() hitting next move to first item 1`] = `
       current={0}
       onNext={[Function]}
       onPrev={[Function]}
+      touchable={true}
     >
       <div
         className="ui-carousel-track"
@@ -444,6 +450,7 @@ exports[`Carousel #render() hitting previous move to last item 1`] = `
       ‹
     </span>
   }
+  touchable={true}
 >
   <div
     className="ui-carousel"
@@ -452,6 +459,7 @@ exports[`Carousel #render() hitting previous move to last item 1`] = `
       current={0}
       onNext={[Function]}
       onPrev={[Function]}
+      touchable={true}
     >
       <div
         className="ui-carousel-track"
@@ -577,6 +585,7 @@ exports[`Carousel #render() prevent swipe after last item 1`] = `
       ‹
     </span>
   }
+  touchable={true}
 >
   <div
     className="ui-carousel"
@@ -585,6 +594,7 @@ exports[`Carousel #render() prevent swipe after last item 1`] = `
       current={0}
       onNext={[Function]}
       onPrev={[Function]}
+      touchable={true}
     >
       <div
         className="ui-carousel-track"
@@ -722,6 +732,7 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
       ‹
     </span>
   }
+  touchable={true}
 >
   <div
     className="ui-carousel"
@@ -730,6 +741,7 @@ exports[`Carousel #render() prevent swipe before first item 1`] = `
       current={0}
       onNext={[Function]}
       onPrev={[Function]}
+      touchable={true}
     >
       <div
         className="ui-carousel-track"
@@ -872,6 +884,7 @@ exports[`Carousel #render() render with default props and mods 1`] = `
       ‹
     </span>
   }
+  touchable={true}
 >
   <div
     className="ui-carousel ui-carousel_small"
@@ -880,6 +893,7 @@ exports[`Carousel #render() render with default props and mods 1`] = `
       current={0}
       onNext={[Function]}
       onPrev={[Function]}
+      touchable={true}
     >
       <div
         className="ui-carousel-track"
@@ -1005,6 +1019,7 @@ exports[`Carousel #render() show correct pagination info 1`] = `
       ‹
     </span>
   }
+  touchable={true}
 >
   <div
     className="ui-carousel"
@@ -1013,6 +1028,7 @@ exports[`Carousel #render() show correct pagination info 1`] = `
       current={0}
       onNext={[Function]}
       onPrev={[Function]}
+      touchable={true}
     >
       <div
         className="ui-carousel-track"
@@ -1138,6 +1154,7 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
       ‹
     </span>
   }
+  touchable={true}
 >
   <div
     className="ui-carousel"
@@ -1146,6 +1163,7 @@ exports[`Carousel #render() swiping will change the current item 1`] = `
       current={0}
       onNext={[Function]}
       onPrev={[Function]}
+      touchable={true}
     >
       <div
         className="ui-carousel-track"
