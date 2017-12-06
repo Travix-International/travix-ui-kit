@@ -1,8 +1,6 @@
 generic:
   border:
     radius: &border-radius 8px
-    width: &border-width 2px
-    style: &border-style solid
   font:
     primary:
       weight:

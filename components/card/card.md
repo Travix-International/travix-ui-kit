@@ -3,7 +3,8 @@ Position top:
     initialState = {
       isCardChecked: true,
       isCardTransparent: false,
-      isCardShowIcon: false,
+      isCardShowIcon: true,
+      isCardHovering: true,
       cardTag: 'div',
     };
 
