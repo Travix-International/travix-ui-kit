@@ -1,0 +1,45 @@
+.ui-card {
+  border-radius: var(--tx-generic-border-radius);
+  flex: 1 1 auto;
+  position: relative;
+  background: var(--tx-generic-color-blank);
+  border: 2px solid var(--tx-generic-color-blank);
+}
+
+.ui-card_checked.ui-card_show-icon :before {
+  color: var(--tx-generic-color-blank);
+  content: '\2705';
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  z-index: 10;
+}
+
+.ui-card_checked.ui-card_show-icon :after {
+  border-bottom: 41px solid transparent;
+  border-left: 41px solid transparent;
+  border-top: 41px solid var(--tx-generic-color-active);
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+
+.ui-card_clickable {
+  cursor: pointer;
+}
+
+.ui-card_transparent {
+  background: none;
+  border-color: transparent;
+}
+
+.ui-card_checked,
+.ui-card_checked.ui-card_hovering:hover {
+  border-color: var(--tx-generic-color-active);
+}
+
+.ui-card_hovering:hover {
+  border-color: var(--tx-generic-color-secondary-darker);
+}
