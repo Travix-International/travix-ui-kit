@@ -4,6 +4,7 @@ import Badge from './badge/badge';
 import Button from './button/button';
 import Calendar from './calendar/calendar';
 import Carousel from './carousel/carousel';
+import Card from './card/card';
 import Checkbox from './checkbox/checkbox';
 import Collapse from './collapse/collapse';
 import CollapseItem from './collapse/collapseItem';
@@ -33,6 +34,7 @@ export default {
   Button,
   Calendar,
   Carousel,
+  Card,
   Checkbox,
   Collapse,
   CollapseItem,
