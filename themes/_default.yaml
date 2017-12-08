@@ -530,17 +530,12 @@ sliding-panel:
     opacity: "1"
     position: "absolute"
     top: "0"
-    transition: "transform 195ms cubic-bezier(0.0, 0.0, 0.2, 1)"
-  panel-open:
-    transform: "translateX(0)"
   left-direction:
     left: "0"
     right: "auto"
-    transform: "translateX(-100%)"
   right-direction:
     left: "auto"
     right: "0"
-    transform: "translateX(100%)"
 spinner:
   color:
     light: "var(--tx-generic-color-accent-lighter)"
