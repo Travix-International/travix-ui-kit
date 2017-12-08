@@ -52,12 +52,12 @@ describe('SlidingPanel', () => {
       expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(true);
 
       overlayElement.simulate('click');
-      renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
+      renderTree.instance().handleAnimationEnd({ type: 'animationend' });
       jest.runAllTimers();
 
       expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.render().hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
     it('with closeOnOverlayClick=false does not close when overlay clicked', () => {
@@ -98,7 +98,7 @@ describe('SlidingPanel', () => {
       overlayElement.simulate('click');
 
       jest.runAllTimers();
-      renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
+      renderTree.instance().handleAnimationEnd({ type: 'animationend' });
 
       expect(onCloseMock.mock.calls.length).toEqual(1);
     });
@@ -163,7 +163,7 @@ describe('SlidingPanel', () => {
       jest.runAllTimers();
 
       expect(renderTree.render()).toMatchSnapshot();
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
     it('enables [data-rel="close"] element provided on the children, that closes the overlay', () => {
@@ -186,12 +186,12 @@ describe('SlidingPanel', () => {
 
       closeButtonElement.dispatchEvent(new Event('click'));
 
-      renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
+      renderTree.instance().handleAnimationEnd({ type: 'animationend' });
       jest.runAllTimers();
 
       expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.render().hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(false);
 
       renderTree.detach();
     });
@@ -208,12 +208,12 @@ describe('SlidingPanel', () => {
 
       expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(false);
 
       renderTree.setProps({ active: true });
 
       jest.runAllTimers();
-      renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
+      renderTree.instance().handleAnimationEnd({ type: 'animationend' });
 
       expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.render().hasClass('ui-sliding-panel-overlay_hidden')).toEqual(false);
@@ -235,12 +235,12 @@ describe('SlidingPanel', () => {
 
       renderTree.setProps({ active: false });
 
-      renderTree.instance().handleTransitionEnd({ propertyName: 'transform' });
+      renderTree.instance().handleAnimationEnd({ type: 'animationend' });
       jest.runAllTimers();
 
       expect(renderTree.render()).toMatchSnapshot();
       expect(overlayElement.render().hasClass('ui-sliding-panel-overlay_hidden')).toEqual(true);
-      expect(panelElement.hasClass('ui-sliding-panel_active')).toEqual(false);
+      expect(panelElement.render().hasClass('ui-sliding-panel_active')).toEqual(false);
     });
 
     it('ignores the new active prop value if its the same as the state', () => {
@@ -258,23 +258,6 @@ describe('SlidingPanel', () => {
 
       expect(instance.handleClose.mock.calls.length).toEqual(0);
       expect(instance.handleOpen.mock.calls.length).toEqual(0);
-    });
-
-    it('ignores the transitionend event when it is not related to the transform CSS prop', () => {
-      const renderTree = mount(
-        <SlidingPanel active>Test</SlidingPanel>
-      );
-      const instance = renderTree.instance();
-
-      jest.runAllTimers();
-
-      instance.setState = jest.fn();
-
-      instance.handleTransitionEnd({ propertyName: 'fakeProp' });
-
-      expect(instance.setState.mock.calls.length).toEqual(0);
-
-      renderTree.unmount();
     });
 
     it('render with left direction', () => {

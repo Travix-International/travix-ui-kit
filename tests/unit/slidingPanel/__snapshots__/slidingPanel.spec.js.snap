@@ -116,6 +116,7 @@ exports[`SlidingPanel #render() do not render footer if prop is not passed or fa
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_right"
+      onAnimationEnd={[Function]}
       style={
         Object {
           "width": "480px",
@@ -255,6 +256,7 @@ exports[`SlidingPanel #render() render footer if prop has been passed and it is 
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_right"
+      onAnimationEnd={[Function]}
       style={
         Object {
           "width": "480px",
@@ -326,6 +328,7 @@ exports[`SlidingPanel #render() render with custom subheader 1`] = `
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_left"
+      onAnimationEnd={[Function]}
       style={
         Object {
           "width": "480px",
@@ -363,6 +366,7 @@ exports[`SlidingPanel #render() render with custom width 1`] = `
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_left"
+      onAnimationEnd={[Function]}
       style={
         Object {
           "width": "720px",
@@ -395,6 +399,7 @@ exports[`SlidingPanel #render() render with default block with back button and a
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_right"
+      onAnimationEnd={[Function]}
       style={
         Object {
           "width": "480px",
@@ -426,6 +431,7 @@ exports[`SlidingPanel #render() render with default block with back button and a
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_right"
+      onAnimationEnd={[Function]}
       style={
         Object {
           "width": "480px",
@@ -478,6 +484,7 @@ exports[`SlidingPanel #render() render with left direction 1`] = `
   >
     <div
       className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_left"
+      onAnimationEnd={[Function]}
       style={
         Object {
           "width": "480px",
