@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.7.7](https://github.com/Travix-International/travix-ui-kit/tree/v0.7.7) (2017-12-12)
+
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.7.6...v0.7.7)
+
+**Merged pull requests:**
+
+- Card component [\#261](https://github.com/Travix-International/travix-ui-kit/pull/261) ([EduardTrutsyk](https://github.com/EduardTrutsyk))
+
 ## [v0.7.6](https://github.com/Travix-International/travix-ui-kit/tree/v0.7.6) (2017-12-11)
 
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.7.5...v0.7.6)
