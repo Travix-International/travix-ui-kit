@@ -6,7 +6,7 @@
   border: 2px solid var(--tx-generic-color-blank);
 }
 
-.ui-card_checked.ui-card_show-icon :before {
+.ui-card_checked.ui-card_show-icon:before {
   color: var(--tx-generic-color-blank);
   content: '\2705';
   position: absolute;
@@ -15,7 +15,7 @@
   z-index: 10;
 }
 
-.ui-card_checked.ui-card_show-icon :after {
+.ui-card_checked.ui-card_show-icon:after {
   border-bottom: 41px solid transparent;
   border-left: 41px solid transparent;
   border-top: 41px solid var(--tx-generic-color-active);
