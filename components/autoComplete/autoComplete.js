@@ -234,8 +234,8 @@ class AutoComplete extends Component {
     if (!this.state.inputValue) {
       return str;
     }
-    const value = this.state.inputValue;
-    const descriptionRule = this.props.highlightRule || /(`${value}`)/i;
+    const value = this.state.inputValue.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const descriptionRule = this.props.highlightRule || new RegExp(`(${value})`, 'i');
     const highlighted = str.replace(descriptionRule, '<span class="ui-autocomplete-item_highlight">$1</span>');
 
     return (
