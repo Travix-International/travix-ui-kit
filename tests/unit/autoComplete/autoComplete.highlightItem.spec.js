@@ -15,6 +15,6 @@ describe('AutoComplete: highlightItem', () => {
   it('should not be RegExp exeption', () => {
     expect(() => {
       AutoComplete.prototype.highlightItem.call(self, str);
-    }).not.toThrow(SyntaxError.RegExpType);
+    }).not.toThrow(SyntaxError);
   });
 });
