@@ -1,39 +1,20 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import AutoCompleteItem from '../../../components/autoComplete/autoCompleteItem';
+import AutoComplete from '../../../components/autoComplete/autoComplete';
 
-describe('AutoCompleteItem: handleItemClick', () => {
-  it('should call passed onClick handler if onClick is function', () => {
-    AutoCompleteItem.prototype.getValue = jest.fn(() => 'result');
-    const e = { target: {} };
-    const onClick = jest.fn();
+describe('AutoComplete: highlightItem', () => {
+  const self = {
+    state: {
+      inputValue: 'Berlin (?#',
+    },
+    props: {
+      highlightRule: null,
+    },
+  };
 
-    const component = shallow(
-      <AutoCompleteItem
-        onClick={onClick}
-        value="value"
-      >
-        item
-      </AutoCompleteItem>
-    );
+  const str = 'Berlin';
 
-    component.instance().handleItemClick(e);
-    expect(onClick).toBeCalledWith(e, 'result');
-  });
-
-  it('should not call passed onClick handler if onClick is not a function', () => {
-    const e = { target: {} };
-    const onClick = jest.fn();
-
-    const component = shallow(
-      <AutoCompleteItem
-        value="value"
-      >
-        item
-      </AutoCompleteItem>
-    );
-
-    component.instance().handleItemClick(e);
-    expect(onClick).not.toBeCalled();
+  it('should not be RegExp exeption', () => {
+    expect(() => {
+      AutoComplete.prototype.highlightItem.call(self, str);
+    }).not.toThrow(SyntaxError.RegExpType);
   });
 });
