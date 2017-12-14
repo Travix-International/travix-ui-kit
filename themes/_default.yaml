@@ -513,11 +513,12 @@ sliding-panel:
       font-size: "32px"
       height: "25px"
       width: "20px"
-      right: "15px"
     back-block:
       font-size: "13px"
       icon:
         font-size: "25px"
+    block:
+      lateral-margin: "15px"
   overlay:
     background-color: "rgba(var(--tx-generic-color-primary-dark-rgb), .65)"
     position: "fixed"
