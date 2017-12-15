@@ -180,7 +180,7 @@ class AutoComplete extends Component {
       && this.items[activeKey] && this.items[activeKey].getValue();
     const value = this.state.inputValue;
 
-    const isPreviousValue = (this.state.selectedKey === item.key
+    const isPreviousValue = item && (this.state.selectedKey === item.key
       && (this.state.selectedValue === item.code || this.state.selectedValue === item.value));
 
     if (!item || (!value && e.keyCode !== KEY_CODE.ENTER)) {
