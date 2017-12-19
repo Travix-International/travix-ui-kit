@@ -42,9 +42,7 @@ class Tab extends Component {
       dataAttrs = {},
       mods = [],
       name,
-      onClick,
       title,
-      value,
     } = this.props;
 
     const classes = classnames(
