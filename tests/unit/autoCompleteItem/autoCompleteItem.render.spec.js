@@ -7,27 +7,13 @@ describe('AutoCompleteItem', () => {
     it('should render correct autocomplete item', () => {
       const wrapper = shallow(
         <AutoCompleteItem
+          className="test-auto-complete-item"
           value="value"
         >
           item
         </AutoCompleteItem>
       );
 
-      expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should not modify mods', () => {
-      const mods = ['test'];
-      const wrapper = shallow(
-        <AutoCompleteItem
-          mods={mods}
-          value="value"
-        >
-          item
-        </AutoCompleteItem>
-      );
-      expect(mods.length).toEqual(1);
-      expect(mods[0]).toEqual('test');
       expect(wrapper).toMatchSnapshot();
     });
 

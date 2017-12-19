@@ -8,6 +8,7 @@ describe('AutoComplete', () => {
     it('should render correct autocomplete component', () => {
       const wrapper = shallow(
         <AutoComplete
+          className="test-auto-complete"
           name="autocomplete"
         >
           <AutoCompleteItem
@@ -18,26 +19,6 @@ describe('AutoComplete', () => {
         </AutoComplete>
       );
 
-      expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should copy mods', () => {
-      const mods = ['test'];
-      const wrapper = shallow(
-        <AutoComplete
-          mods={mods}
-          name="autocomplete"
-        >
-          <AutoCompleteItem
-            value="value"
-          >
-            item
-          </AutoCompleteItem>
-        </AutoComplete>
-      );
-
-      expect(mods.length).toEqual(1);
-      expect(mods[0]).toEqual('test');
       expect(wrapper).toMatchSnapshot();
     });
 

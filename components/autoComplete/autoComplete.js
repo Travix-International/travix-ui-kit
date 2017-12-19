@@ -4,6 +4,7 @@ import React, {
   Children,
   cloneElement,
 } from 'react';
+import classnames from 'classnames';
 
 import AutoCompleteItem from './autoCompleteItem';
 import Input from '../input/input';
@@ -284,18 +285,23 @@ class AutoComplete extends Component {
 
   render() {
     const {
+      className,
       dataAttrs = {},
       disabled,
       label,
       name,
       placeholder,
     } = this.props;
-    const mods = this.props.mods ? this.props.mods.slice() : [];
+    const mods = [];
 
     const otherProps = ejectOtherProps(this.props, AutoComplete.propTypes);
 
     this.state.open && mods.push('open');
-    const className = getClassNamesWithMods('ui-autocomplete', mods);
+
+    const classNames = classnames(
+      getClassNamesWithMods('ui-autocomplete', mods),
+      className
+    );
     const activeKey = this.state.activeKey || 0;
 
     const labelBlock = label ? (
@@ -306,7 +312,7 @@ class AutoComplete extends Component {
       <div
         {...getDataAttributes(dataAttrs)}
         {...otherProps}
-        className={className}
+        className={classNames}
       >
         {labelBlock}
         <Input
@@ -359,16 +365,16 @@ AutoComplete.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
+   * Custom className.
+   */
+  className: PropTypes.string,
+  /**
    * Data attribute. You can use it to set up GTM key or any custom data-* attribute.
    */
   dataAttrs: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.object,
   ]),
-  /**
-   * Disable autocomplete.
-   */
-  disabled: PropTypes.bool,
   /**
    * Default selected option.
    */
@@ -383,6 +389,10 @@ AutoComplete.propTypes = {
     ]),
   }),
   /**
+   * Disable autocomplete.
+   */
+  disabled: PropTypes.bool,
+  /**
    * Highlighting of found items.
    */
   highlighted: PropTypes.bool,
@@ -394,10 +404,6 @@ AutoComplete.propTypes = {
    * Label for autocomplete.
    */
   label: PropTypes.string,
-  /**
-   * Set of custom modifications.
-   */
-  mods: PropTypes.arrayOf(PropTypes.string),
   /**
    * Represents the element's name.
    */
@@ -419,13 +425,13 @@ AutoComplete.propTypes = {
    */
   onFocus: PropTypes.func,
   /**
-   * Function to be triggered when the autocomplete input is updated.
-   */
-  onUpdateInput: PropTypes.func,
-  /**
    * Function to be triggered when key is pressed.
    */
   onKeyDown: PropTypes.func,
+  /**
+   * Function to be triggered when the autocomplete input is updated.
+   */
+  onUpdateInput: PropTypes.func,
   /**
    * Placeholder for input element .
    */

@@ -1,16 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AutoCompleteItem #render() should not modify mods 1`] = `
-<li
-  className="ui-autocomplete-item ui-autocomplete-item_test"
-  onClick={[Function]}
-  role="option"
-  tabIndex="-1"
->
-  item
-</li>
-`;
-
 exports[`AutoCompleteItem #render() should render autocomplete item with active mode 1`] = `
 <li
   className="ui-autocomplete-item ui-autocomplete-item_active"
@@ -34,7 +23,7 @@ exports[`AutoCompleteItem #render() should render autocomplete item with title m
 
 exports[`AutoCompleteItem #render() should render correct autocomplete item 1`] = `
 <li
-  className="ui-autocomplete-item"
+  className="ui-autocomplete-item test-auto-complete-item"
   onClick={[Function]}
   role="option"
   tabIndex="-1"
