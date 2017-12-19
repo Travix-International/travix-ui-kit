@@ -10,7 +10,7 @@
       (function () {
         'use strict';
 
-        if (window.CSS && CSS.supports('color', 'var(--primary)')) {
+        if (window.CSS && CSS.supports('color', 'var(--primary)') && navigator.userAgent.indexOf('Edge/15') === -1) {
           return;
         }
 
