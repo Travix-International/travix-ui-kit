@@ -9,7 +9,7 @@ import classnames from 'classnames';
 import AutoCompleteItem from './autoCompleteItem';
 import Input from '../input/input';
 import KEY_CODE from '../constants/keyCode';
-import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 function getNextKey(keys, key) {
   return keys[keys.indexOf(key) + 1] || key;
@@ -294,8 +294,6 @@ class AutoComplete extends Component {
     } = this.props;
     const mods = [];
 
-    const otherProps = ejectOtherProps(this.props, AutoComplete.propTypes);
-
     this.state.open && mods.push('open');
 
     const classNames = classnames(
@@ -311,7 +309,6 @@ class AutoComplete extends Component {
     return (
       <div
         {...getDataAttributes(dataAttrs)}
-        {...otherProps}
         className={classNames}
       >
         {labelBlock}
