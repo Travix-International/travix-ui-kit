@@ -46,16 +46,16 @@ describe('helpers', () => {
     it('returns difference of two objects', () => {
       const propTypes = {
         name: 'string',
-        value: 'bool'
+        value: 'bool',
       };
 
       const props = {
         name: 'string',
-        otherProp: 'test'
+        otherProp: 'test',
       };
 
       const expected = {
-        otherProp: 'test'
+        otherProp: 'test',
       };
 
       expect(ejectOtherProps(props, propTypes)).toEqual(expected);
