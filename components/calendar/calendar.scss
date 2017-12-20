@@ -111,6 +111,7 @@ _:-ms-lang(x), .ui-calendar-days__nav {
   width: 14.285%;
   font-size: var(--tx-calendar-options-option-font-size);
   outline: none;
+  margin: 0;
 
   &:nth-of-type(7),
   &:nth-of-type(14),
