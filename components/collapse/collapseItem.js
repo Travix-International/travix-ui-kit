@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import classnames from 'classnames';
 
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
@@ -17,6 +18,7 @@ class CollapseItem extends Component {
 
   render() {
     const {
+      className,
       id,
       isActive,
       title,
@@ -25,13 +27,17 @@ class CollapseItem extends Component {
       dataAttrs,
       labelDataAttrs,
     } = this.props;
+
     const mods = {
       active: isActive,
     };
+
+    const classNames = classnames(getClassNamesWithMods('ui-collapse-item', mods), className);
+
     return (
       <div
         {...getDataAttributes(dataAttrs)}
-        className={getClassNamesWithMods('ui-collapse-item', mods)}
+        className={classNames}
       >
         <button
           {...getDataAttributes(labelDataAttrs)}
@@ -94,6 +100,10 @@ CollapseItem.propTypes = {
    * Data attributes for header label. You can use it to set up any custom data-* attribute
    */
   labelDataAttrs: PropTypes.object,
+  /**
+   * Custom className.
+   */
+  className: PropTypes.string,
 };
 
 CollapseItem.defaultProps = {

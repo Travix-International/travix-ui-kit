@@ -5,6 +5,7 @@ import React, {
   cloneElement,
   isValidElement,
 } from 'react';
+import classnames from 'classnames';
 
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
@@ -89,6 +90,7 @@ class Collapse extends Component {
 
   render() {
     const {
+      className,
       isAccordion,
       children,
       mods = [],
@@ -103,8 +105,10 @@ class Collapse extends Component {
       accordion: isAccordion,
     };
 
+    const classNames = classnames(getClassNamesWithMods('ui-collapse', mods, collapseMods), className);
+
     return (
-      <div {...getDataAttributes(dataAttrs)} className={getClassNamesWithMods('ui-collapse', mods, collapseMods)}>
+      <div {...getDataAttributes(dataAttrs)} className={classNames}>
         {this.renderItems()}
       </div>
     );
@@ -154,6 +158,10 @@ Collapse.propTypes = {
    * Data attributes. You can use it to set up any custom data-* attribute
    */
   dataAttrs: PropTypes.object,
+  /**
+   * Custom className.
+   */
+  className: PropTypes.string,
 };
 
 Collapse.defaultProps = {
