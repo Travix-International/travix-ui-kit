@@ -33,6 +33,16 @@
   width: 100%;
 }
 
+/* IE11 and Edge border bug fixes... hooray! */
+_:-ms-fullscreen, :root .ui-calendar-days__nav {
+  width: calc(100% + 0.5px);
+}
+
+_:-ms-lang(x), .ui-calendar-days__nav {
+  position: relative;
+  bottom: -1px;
+}
+
 .ui-calendar-days__previous-month,
 .ui-calendar-days__next-month {
   align-self: center;
@@ -176,11 +186,4 @@
 
 .ui-calendar-days-option_next-month {
   background: var(--tx-calendar-options-option-next-month-background-color);
-}
-
-/* IE11 border bug fixes... hooray! */
-_:-ms-fullscreen, :root .ui-calendar-days__nav {
-  position: relative;
-  bottom: -1px;
-  width: 100.2%;
 }
