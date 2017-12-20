@@ -11,6 +11,7 @@ import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_h
 function Button(props) {
   const {
     children,
+    id,
     className,
     size,
     href,
@@ -50,6 +51,7 @@ function Button(props) {
         {...otherProps}
         className={classes}
         href={href}
+        id={id}
       >
         {children}
       </a>
@@ -63,6 +65,7 @@ function Button(props) {
         {...otherProps}
         className={classes}
         disabled={disabled}
+        id={id}
         type={type}
       >
         {children}
@@ -76,6 +79,7 @@ function Button(props) {
       {...otherProps}
       className={classes}
       disabled={disabled}
+      id={id}
       onClick={onClick}
       type="button"
     >
@@ -100,6 +104,11 @@ Button.propTypes = {
     PropTypes.element,
     PropTypes.node,
   ]).isRequired,
+
+  /**
+   * Attribute used to set specific id
+   */
+  id: PropTypes.string,
 
   /**
    * Attribute used to set specific classes which will be combined
