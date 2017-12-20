@@ -43,7 +43,8 @@
   box-shadow: 0 2px var(--tx-calendar-nav-button-box-shadow-color);
   cursor: pointer;
   color: var(--tx-calendar-nav-button-color);
-  flex: 0 0 var(--tx-calendar-nav-button-width);
+  flex: 0 0 auto;
+  width: var(--tx-calendar-nav-button-width);
   font-weight: var(--tx-calendar-nav-button-font-weight);
   height: var(--tx-calendar-nav-button-height);
   margin: var(--tx-calendar-nav-button-margin);
@@ -90,12 +91,14 @@
 
 .ui-calendar-days-option {
   background: var(--tx-calendar-options-option-background-color);
-  border: none;
   border-bottom: 1px solid var(--tx-calendar-options-option-border-bottom);
   border-right: 1px solid var(--tx-calendar-options-option-border-right);
+  border: none;
+  box-sizing: border-box;
   color: var(--tx-calendar-options-option-color);
   cursor: pointer;
-  flex: 1 1 14.285%;
+  flex: 1 1 auto;
+  width: 14.285%;
   font-size: var(--tx-calendar-options-option-font-size);
   outline: none;
 
