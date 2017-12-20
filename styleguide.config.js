@@ -7,6 +7,7 @@ module.exports = {
   getExampleFilename: function(componentPath) {
     return componentPath.replace(/\.jsx?$/, '.md');
   },
+  require: ['babel-polyfill'],
   webpackConfig: {
     module: {
       rules: [
