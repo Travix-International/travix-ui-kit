@@ -41,7 +41,7 @@
             },
           }
         }}
-        onSelectDay={dt => (document.getElementById('output_1').value = dt[0].toDateString())}
+        onSelectDay={dt => (document.getElementById('output_1').innerText = dt[0].toDateString())}
       />
       <output id="output_1"></output>
     </div>
@@ -68,7 +68,7 @@
           }
         }}
         onSelectDay={dt => {
-          document.getElementById('output_2').value = dt
+          document.getElementById('output_2').innerText = dt
             .filter(item => !!item)
             .map(item => item.toDateString())
             .join('-');

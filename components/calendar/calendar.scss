@@ -146,6 +146,7 @@
 .ui-calendar-days-option_selected-start,
 .ui-calendar-days-option_selected-end {
   position: relative;
+  overflow: visible;
 
   &:before,
   &:after {
@@ -175,4 +176,11 @@
 
 .ui-calendar-days-option_next-month {
   background: var(--tx-calendar-options-option-next-month-background-color);
+}
+
+/* IE11 border bug fixes... hooray! */
+_:-ms-fullscreen, :root .ui-calendar-days__nav {
+  position: relative;
+  bottom: -1px;
+  width: 100.2%;
 }
