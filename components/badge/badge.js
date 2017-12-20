@@ -6,7 +6,7 @@ import { getClassNamesWithMods } from '../_helpers';
 /**
  * Badge component
  */
-const Badge = ({ arrow, border, children, mods, position, title, visible, ...otherProps }) => {
+const Badge = ({ arrow, border, children, mods, position, title, visible }) => {
   if (!children && !title) {
     return null;
   }
@@ -25,7 +25,7 @@ const Badge = ({ arrow, border, children, mods, position, title, visible, ...oth
     }
 
     badge = visible ? (
-      <div {...otherProps} className={getClassNamesWithMods('ui-badge-badge', mods, badgeMods)}>
+      <div className={getClassNamesWithMods('ui-badge-badge', mods, badgeMods)}>
         {title}
         {border && <div className="ui-badge__border" />}
         {arrow && (position === 'right' || position === 'left') ? <span className="ui-badge-badge-arrow" /> : null}

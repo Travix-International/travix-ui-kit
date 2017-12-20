@@ -73,7 +73,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
     &:before {
       border-bottom: $border-filled;
       border-left: $border-transparent;
-      left: calc(-1 * var(--tx-badge-after-border-size));
+      right: 100%;
       top: 0;
     }
   }
@@ -100,7 +100,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
       border-left: $border-transparent;
       border-top: $border-filled;
       bottom: calc(-1 * var(--tx-badge-border-bottom-width));
-      left: calc(-1 * var(--tx-badge-after-border-size));
+      right: 100%;
     }
 
     &.ui-badge-badge_no-border:before {
@@ -125,7 +125,6 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
 
   $arrow-border-big: calc(var(--tx-badge-font-size) / 2 + var(--tx-badge-padding-top-bottom));
   $arrow-border-small: calc((var(--tx-badge-font-size) / 2 + var(--tx-badge-padding-top-bottom)) * var(--tx-badge-arrow-angle-coefficient));
-  $arrow-position: calc((var(--tx-badge-font-size) / 2 + var(--tx-badge-padding-top-bottom)) * var(--tx-badge-arrow-angle-coefficient) * -1);
 
   &.ui-badge-badge_arrow-left {
     border-bottom-left-radius: 0;
@@ -136,15 +135,16 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
       border: $arrow-border-big solid transparent;
       border-left: none;
       border-right: $arrow-border-small solid var(--tx-badge-color-background);
-      left: $arrow-position;
+      right: 100%;
       top: 0;
     }
 
     &:after {
-      left: 0;
-      top: 100%;
       border-top: var(--tx-badge-border-bottom-width) solid var(--tx-badge-border-bottom-color);
       border-left: $ui-badge__arrow-border-fix solid transparent;
+      left: 0;
+      top: 100%;
+      width: 1px;
     }
 
     &.ui-badge-badge_no-border:after {
@@ -161,15 +161,16 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
       border: $arrow-border-big solid transparent;
       border-left: $arrow-border-small solid var(--tx-badge-color-background);
       border-right: none;
-      right: $arrow-position;
+      left: 100%;
       top: 0;
     }
 
     &:after {
-      right: 0;
-      top: 100%;
       border-top: var(--tx-badge-border-bottom-width) solid var(--tx-badge-border-bottom-color);
       border-right: $ui-badge__arrow-border-fix solid transparent;
+      right: 0;
+      top: 100%;
+      width: 1px;
     }
 
     &.ui-badge-badge_no-border:after {
