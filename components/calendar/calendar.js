@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import { getClassNamesWithMods, getDataAttributes, normalizeDate } from '../_helpers';
 import DaysPanel from './panels/days';
 import calendarConstants from './constants/calendar';
@@ -213,15 +214,19 @@ export default class Calendar extends Component {
   }
 
   render() {
-    const { dataAttrs = {}, isDaySelectableFn, locale, navButtons, selectionType } = this.props;
+    const { dataAttrs = {}, isDaySelectableFn, locale, navButtons, selectionType, className } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
     const { maxLimit, minLimit, renderDate, selectedDates } = this.state;
 
     const restProps = getDataAttributes(dataAttrs);
-    const className = getClassNamesWithMods('ui-calendar', mods);
+
+    const classes = classnames(
+      getClassNamesWithMods('ui-calendar', mods),
+      className
+    );
 
     return (
-      <div className={className} {...restProps}>
+      <div className={classes} {...restProps}>
         <DaysPanel
           isDaySelectableFn={isDaySelectableFn}
           locale={locale}
@@ -242,11 +247,18 @@ export default class Calendar extends Component {
 }
 
 Calendar.defaultProps = {
-  selectionType: 'normal',
+  className: '',
   multiplemode: false,
+  selectionType: 'normal',
 };
 
 Calendar.propTypes = {
+  /**
+   * Attribute used to set specific classes which will be combined
+   * with the component class + mods.
+   */
+  className: PropTypes.string,
+
   /**
    * Data attribute. You can use it to set up GTM key or any custom data-* attribute
    */
