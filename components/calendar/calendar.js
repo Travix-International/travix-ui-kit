@@ -247,7 +247,6 @@ export default class Calendar extends Component {
 }
 
 Calendar.defaultProps = {
-  className: '',
   multiplemode: false,
   selectionType: 'normal',
 };
