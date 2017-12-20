@@ -21,26 +21,17 @@
   display: flex;
   flex-flow: column wrap;
   flex: 1 1 100%;
+  border-radius: var(--tx-calendar-nav-border-radius);
+  overflow: hidden;
 }
 
 .ui-calendar-days__nav {
   align-items: stretch;
   background: var(--tx-calendar-nav-background);
-  border-radius: var(--tx-calendar-nav-border-radius);
   display: flex;
   flex: 0 0 var(--tx-calendar-nav-height);
   flex-flow: row nowrap;
   width: 100%;
-}
-
-/* IE11 and Edge border bug fixes... hooray! */
-_:-ms-fullscreen, :root .ui-calendar-days__nav {
-  width: calc(100% + 0.5px);
-}
-
-_:-ms-lang(x), .ui-calendar-days__nav {
-  position: relative;
-  bottom: -1px;
 }
 
 .ui-calendar-days__previous-month,

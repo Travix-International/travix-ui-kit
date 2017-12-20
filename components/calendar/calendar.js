@@ -214,7 +214,7 @@ export default class Calendar extends Component {
   }
 
   render() {
-    const { dataAttrs = {}, isDaySelectableFn, locale, navButtons, selectionType, className } = this.props;
+    const { dataAttrs, isDaySelectableFn, locale, navButtons, selectionType, className } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
     const { maxLimit, minLimit, renderDate, selectedDates } = this.state;
 
