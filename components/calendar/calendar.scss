@@ -21,8 +21,6 @@
   display: flex;
   flex-flow: column wrap;
   flex: 1 1 100%;
-  border-radius: var(--tx-calendar-nav-border-radius);
-  overflow: hidden;
 }
 
 .ui-calendar-days__nav {
@@ -32,6 +30,13 @@
   flex: 0 0 var(--tx-calendar-nav-height);
   flex-flow: row nowrap;
   width: 100%;
+}
+
+.ui-calendar-days__head {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--tx-calendar-head-border-radius);
+  overflow: hidden;
 }
 
 .ui-calendar-days__previous-month,
