@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 /**
  * Collapse item component
@@ -21,18 +21,20 @@ class CollapseItem extends Component {
       isActive,
       title,
       children,
-      onClick, // eslint-disable-line no-unused-vars
       iconPosition,
-      labelProps = {},
-      ...otherProps
+      dataAttrs,
+      labelDataAttrs,
     } = this.props;
     const mods = {
       active: isActive,
     };
     return (
-      <div {...otherProps} className={getClassNamesWithMods('ui-collapse-item', mods)}>
+      <div
+        {...getDataAttributes(dataAttrs)}
+        className={getClassNamesWithMods('ui-collapse-item', mods)}
+      >
         <button
-          {...labelProps}
+          {...getDataAttributes(labelDataAttrs)}
           aria-controls={id}
           aria-expanded={isActive}
           className={
@@ -85,9 +87,13 @@ CollapseItem.propTypes = {
    */
   iconPosition: PropTypes.oneOf(['right', 'left']),
   /**
-   * Specify props for label
+   * Data attributes. You can use it to set up any custom data-* attribute
    */
-  labelProps: PropTypes.object,
+  dataAttrs: PropTypes.object,
+  /**
+   * Data attributes for header label. You can use it to set up any custom data-* attribute
+   */
+  labelDataAttrs: PropTypes.object,
 };
 
 CollapseItem.defaultProps = {
