@@ -85,7 +85,8 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
   &.ui-badge-badge_right {
     border-radius: $border-radius-end $border-radius-start 0 $border-radius-end;
 
-    .ui-badge__border:before, &.ui-badge-badge_no-border:before {
+    .ui-badge__border:before,
+    &.ui-badge-badge_no-border:before {
       border-bottom: $border-transparent;
       border-left: $border-filled;
       top: 100%;
@@ -111,7 +112,8 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
   &.ui-badge-badge_left {
     border-radius: $border-radius-start $border-radius-end $border-radius-end 0;
 
-    .ui-badge__border:before, &.ui-badge-badge_no-border:before {
+    .ui-badge__border:before,
+    &.ui-badge-badge_no-border:before {
       border-bottom: $border-transparent;
       border-right: $border-filled;
       left: 0;
