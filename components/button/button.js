@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 /**
  * General Button component. Use when you need button or a link that looks like button
@@ -23,8 +23,6 @@ function Button(props) {
   } = props;
   const restProps = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
-
-  const otherProps = ejectOtherProps(props, Button.propTypes);
 
   /** This props have default values */
   mods.push(`size_${size}`);
@@ -48,7 +46,6 @@ function Button(props) {
     return (
       <a
         {...restProps}
-        {...otherProps}
         className={classes}
         href={href}
         id={id}
@@ -62,7 +59,6 @@ function Button(props) {
     return (
       <button
         {...restProps}
-        {...otherProps}
         className={classes}
         disabled={disabled}
         id={id}
@@ -76,7 +72,6 @@ function Button(props) {
   return (
     <button
       {...restProps}
-      {...otherProps}
       className={classes}
       disabled={disabled}
       id={id}
