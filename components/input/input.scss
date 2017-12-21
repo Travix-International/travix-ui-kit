@@ -53,6 +53,14 @@
     border-color: var(--tx-input-border-hover-color);
   }
 
+  &.ui-input_disabled {
+    opacity: 0.5;
+
+    &:hover {
+      border-color: var(--tx-input-border-color);
+    }
+  }
+
   &::-ms-clear {
     display: none;
   }
