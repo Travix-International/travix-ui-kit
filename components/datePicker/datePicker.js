@@ -150,6 +150,7 @@ DatePicker.defaultProps = {
   open: false,
   selectionType: 'normal',
   name: '',
+  value: '',
 };
 
 DatePicker.propTypes = {
