@@ -1,6 +1,7 @@
+import classnames from "classnames";
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 export default class Tooltip extends Component {
   linkChild = (ref) => {
@@ -23,18 +24,28 @@ export default class Tooltip extends Component {
   }
 
   render() {
-    const { axisOffsetX, axisOffsetY, align, width, height, active, position } = this.props;
+    const {
+      active,
+      align,
+      axisOffsetX,
+      axisOffsetY,
+      className,
+      dataAttrs,
+      height,
+      position,
+      width,
+    } = this.props;
 
     const mods = this.props.mods
       ? this.props.mods.slice()
       : [];
 
-    const className = getClassNamesWithMods('ui-tooltip', [
+    const classNames = classnames(className, getClassNamesWithMods('ui-tooltip', [
       ...mods,
       active ? 'active' : 'inactive',
       position,
       align,
-    ]);
+    ]));
 
     let styles = {
       width,
@@ -49,7 +60,7 @@ export default class Tooltip extends Component {
     }
 
     return (
-      <div className={className} ref={this.linkChild} style={styles}>
+      <div className={classNames} ref={this.linkChild} style={styles} {...getDataAttributes(dataAttrs)}>
         {this.renderCloseButtonBlock()}
         {this.props.children}
       </div>
@@ -84,6 +95,18 @@ Tooltip.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.string,
+  ]),
+  /**
+   * Custom className(s) to be concatenated with the default ones
+   * on the component's root element
+   */
+  className: PropTypes.string,
+  /**
+   * Data attribute. You can use it to set up GTM key or any custom data-* attribute
+   */
+  dataAttrs: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
   ]),
   /**
    * The height of the component (px)
@@ -128,8 +151,8 @@ Tooltip.defaultProps = {
   active: false,
   align: 'center',
   children: '',
+  dataAttrs: null,
   height: 'auto',
-  oppositeAxisOffset: '0',
   position: 'top',
   showCloseButton: false,
   triggerAction: 'click',
