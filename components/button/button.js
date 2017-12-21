@@ -11,15 +11,15 @@ import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 function Button(props) {
   const {
     children,
-    id,
     className,
-    size,
+    dataAttrs = {},
+    disabled,
     href,
+    id,
     onClick,
+    size,
     type,
     variation,
-    disabled,
-    dataAttrs = {},
   } = props;
   const restProps = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
@@ -101,11 +101,6 @@ Button.propTypes = {
   ]).isRequired,
 
   /**
-   * Attribute used to set specific id
-   */
-  id: PropTypes.string,
-
-  /**
    * Attribute used to set specific classes which will be combined
    * with the "ui-button" class + mods.
    */
@@ -127,6 +122,11 @@ Button.propTypes = {
    * This field will be used for link buttons.
    */
   href: PropTypes.string,
+
+  /**
+   * Attribute used to set specific id
+   */
+  id: PropTypes.string,
 
   /**
    * You can provide set of custom modifications.
