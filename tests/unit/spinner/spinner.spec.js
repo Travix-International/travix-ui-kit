@@ -30,5 +30,13 @@ describe('Spinner', () => {
 
       expect(wrapper).toMatchSnapshot();
     });
+
+    it('should return spinner with custom class name', () => {
+      const wrapper = shallow(
+        <Spinner className="my-custom-class">Medium/Default</Spinner>
+      );
+
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });
