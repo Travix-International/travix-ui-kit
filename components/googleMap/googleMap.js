@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import classnames from 'classnames';
 
 /**
  * Initializes custom marker constructor
@@ -231,10 +232,10 @@ export default class GoogleMap extends Component {
   }
 
   render() {
-    const { width, height } = this.props;
+    const { width, height, className } = this.props;
     return (
       <div
-        className="ui-google-map"
+        className={classnames(className, 'ui-google-map')}
         ref={this.linkRef}
         style={{ width, height }}
       />
@@ -247,6 +248,10 @@ GoogleMap.propTypes = {
    * Map center coordinates.
    */
   center: PropTypes.object,
+  /**
+   * Attribute used to set specific classes
+   */
+  className: PropTypes.string,
   /**
    * Special google api object.
    */
