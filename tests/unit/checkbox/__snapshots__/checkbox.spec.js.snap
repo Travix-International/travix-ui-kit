@@ -41,6 +41,27 @@ exports[`Checkbox #render() should render checkbox 1`] = `
 </label>
 `;
 
+exports[`Checkbox #render() should render checkbox with provided className 1`] = `
+<label
+  className="test-class ui-checkbox"
+  htmlFor=""
+>
+  <input
+    aria-checked={false}
+    checked={false}
+    disabled={false}
+    id=""
+    onChange={[Function]}
+    readOnly={false}
+    role="radio"
+    type="checkbox"
+  />
+  <span
+    className="ui-checkbox__text"
+  />
+</label>
+`;
+
 exports[`Checkbox #render() should render checked checkbox 1`] = `
 <label
   className="ui-checkbox"

@@ -95,3 +95,27 @@ exports[`Radio Button #render() should render radio button 1`] = `
   </label>
 </div>
 `;
+
+exports[`Radio Button #render() should render radio button with provided className 1`] = `
+<div
+  className="test-class ui-radio"
+>
+  <input
+    checked={false}
+    className="ui-radio__input-radio"
+    disabled={false}
+    id="radio1"
+    onChange={[Function]}
+    readOnly={false}
+    type="radio"
+  />
+  <label
+    aria-checked={false}
+    className="ui-radio__label"
+    htmlFor="radio1"
+    role="radio"
+  >
+    Radio 1
+  </label>
+</div>
+`;

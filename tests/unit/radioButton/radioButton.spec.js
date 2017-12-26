@@ -48,5 +48,15 @@ describe('Radio Button', () => {
 
       expect(wrapper).toMatchSnapshot();
     });
+
+    it('should render radio button with provided className', () => {
+      const wrapper = shallow(
+        <RadioButton className="test-class" id="radio1" onChange={onChange}>
+          Radio 1
+        </RadioButton>
+      );
+
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });
