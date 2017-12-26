@@ -359,5 +359,11 @@ describe('SlidingPanel', () => {
 
       expect(renderTree).toMatchSnapshot();
     });
+
+    it('should render SlidingPanel with provided className', () => {
+      const renderTree = mount(<SlidingPanel className="test-class" />);
+
+      expect(renderTree).toMatchSnapshot();
+    });
   });
 });

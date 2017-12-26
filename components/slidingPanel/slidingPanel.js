@@ -197,6 +197,9 @@ SlidingPanel.propTypes = {
    */
   backButtonLabel: PropTypes.node,
 
+  /**
+   * Content, that will be wrapped by SlidingPanel
+   */
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
