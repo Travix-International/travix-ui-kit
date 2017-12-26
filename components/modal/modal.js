@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import Global from '../global/global';
 import KEY_CODE from '../constants/keyCode';
-import { getClassNamesWithMods, warnAboutDeprecatedProp } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Modal component
@@ -157,9 +157,10 @@ class Modal extends Component {
 
   render() {
     const {
-      className,
-      fullscreen,
       children,
+      className,
+      dataAttrs,
+      fullscreen,
       isSmall,
     } = this.props;
     const { isActive, isOpen } = this.state;
@@ -188,7 +189,7 @@ class Modal extends Component {
     const classes = classnames(className, classNameWithMods);
 
     return (
-      <Global className={classes}>
+      <Global className={classes} {...getDataAttributes(dataAttrs)}>
         {this.renderOverlay()}
         <div className={'ui-modal__container'}>
           {this.renderHeader()}
@@ -248,6 +249,13 @@ Modal.propTypes = {
    * Determine whether to close the modal dialog when clicked on overlay.
    */
   closeOnOverlayClick: PropTypes.bool,
+  /**
+   * Data attribute. You can use it to set up any custom data-* attribute.
+   */
+  dataAttrs: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
+  ]),
   /**
    * Determine the additional delay for modal to be present
    */
