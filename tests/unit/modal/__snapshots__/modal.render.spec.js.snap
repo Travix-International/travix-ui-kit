@@ -365,6 +365,95 @@ exports[`Modal: render should render modal with custom title 1`] = `
 </Modal>
 `;
 
+exports[`Modal: render should render modal with provided className 1`] = `
+<Modal
+  active={true}
+  className="test-cls"
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  delay={0}
+  footer={null}
+  fullscreen={false}
+  isSmall={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
+>
+  <Global
+    className="test-cls ui-modal ui-modal_active"
+    noscroll={true}
+  >
+    <div
+      className="test-cls ui-modal ui-modal_active"
+    >
+      <div
+        className="ui-modal__overlay"
+        onClick={[Function]}
+      />
+      <div
+        className="ui-modal__container"
+      >
+        <section
+          className="ui-modal__content"
+        >
+          Modal Content
+        </section>
+      </div>
+    </div>
+  </Global>
+</Modal>
+`;
+
+exports[`Modal: render should render modal with provided dataAttrs 1`] = `
+<Modal
+  active={true}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  dataAttrs={
+    Object {
+      "gtm": "id",
+    }
+  }
+  delay={0}
+  footer={null}
+  fullscreen={false}
+  isSmall={false}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
+>
+  <Global
+    className="ui-modal ui-modal_active"
+    data-gtm="id"
+    noscroll={true}
+  >
+    <div
+      className="ui-modal ui-modal_active"
+    >
+      <div
+        className="ui-modal__overlay"
+        onClick={[Function]}
+      />
+      <div
+        className="ui-modal__container"
+      >
+        <section
+          className="ui-modal__content"
+        >
+          Modal Content
+        </section>
+      </div>
+    </div>
+  </Global>
+</Modal>
+`;
+
 exports[`Modal: render should render modal without overlay 1`] = `
 <Modal
   active={true}
