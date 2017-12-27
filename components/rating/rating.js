@@ -5,7 +5,7 @@ import React from 'react';
 import { getDataAttributes } from '../_helpers';
 
 /**
- * Ratint component
+ * Rating component
  */
 function Rating({ rate, dataAttrs, size }) {
   const restProps = getDataAttributes(dataAttrs);
