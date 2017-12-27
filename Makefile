@@ -28,8 +28,10 @@ push-changelog:
 prepare-site:
 	npm run styleguide-build
 	rm -rf ./_site
-	mkdir _site
-	cp -r ./styleguide/ ./_site/
+	mkdir -p _site/build
+	ls ./styleguide/
+	cp -rf ./styleguide/* ./_site/
+	ls ./_site/
 	cp ./dist/*.css ./_site/build/
 	cp ./dist/theme.js ./_site/build/
 	cp ./css-vars-polyfill.js ./_site/build/

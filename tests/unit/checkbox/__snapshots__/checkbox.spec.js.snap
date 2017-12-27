@@ -10,6 +10,7 @@ exports[`Checkbox #render() should not modify mods 1`] = `
     checked={false}
     disabled={false}
     id=""
+    readOnly={true}
     role="radio"
     type="checkbox"
   />
@@ -30,6 +31,7 @@ exports[`Checkbox #render() should render checkbox 1`] = `
     disabled={false}
     id="checkbox"
     onChange={[Function]}
+    readOnly={false}
     role="radio"
     type="checkbox"
   />
@@ -50,6 +52,7 @@ exports[`Checkbox #render() should render checked checkbox 1`] = `
     disabled={false}
     id="checked"
     onChange={[Function]}
+    readOnly={false}
     role="radio"
     type="checkbox"
   />
@@ -70,6 +73,7 @@ exports[`Checkbox #render() should render disabled checkbox 1`] = `
     disabled={true}
     id="disabled"
     onChange={[Function]}
+    readOnly={false}
     role="radio"
     type="checkbox"
   />

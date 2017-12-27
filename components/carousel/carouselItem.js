@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class CarouselItem extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {

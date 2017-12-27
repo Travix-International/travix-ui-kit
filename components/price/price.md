@@ -12,6 +12,14 @@ Price with additional text:
       <Price additionalText="per day" underlined value={50153.30} />
     </div>
 
+Price with asterisk:
+
+    <div>
+      <Price discount={50200.30} showAsterisk size="s" underlined value={50153.30} /><br/><br/>
+      <Price additionalText="total" discount={50200.30} showAsterisk size="m" symbolPosition="right" underlined value={50153.30} /><br/><br/>
+      <Price additionalText="total" discount={50200.30} showAsterisk size="xl" value={50153.30} /><br/><br/>
+    </div>
+
 Price with discount:
 
     <div>
@@ -19,12 +27,18 @@ Price with discount:
       <Price additionalText="total" discount={50200.30} size="m" underlined value={50153.30} /><br/><br/>
     </div>
 
+Unstyled price:
+
+    <div>
+      <Price value={12345.67} unstyled />
+    </div>
+
 Sizes:
 
     <div>
-      <Price size="xs" value={50153.30} /><br/><br/>
-      <Price size="s" value={50153.30} /><br/><br/>
+      <Price showAsterisk size="xs" underlined value={50153.30} /><br/><br/>
+      <Price size="s" underlined value={50153.30} /><br/><br/>
       <Price size="m" underlined value={50153.30} /><br/><br/>
-      <Price size="l" underlined value={50153.30} /><br/><br/>
+      <Price showAsterisk size="l" underlined value={50153.30} /><br/><br/>
       <Price size="xl" underlined value={50153.30} /><br/><br/>
     </div>

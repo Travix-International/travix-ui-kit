@@ -40,7 +40,7 @@
 
   &.ui-price__currency_right {
     margin-left: 5px;
-    order: 4;
+    order: 5;
   }
 }
 
@@ -49,6 +49,13 @@
   display: flex;
   flex: 0 0 auto;
   order: 3;
+}
+
+.ui-price__asterisk {
+  align-self: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  order: 4;
 }
 
 .ui-price__integers {
@@ -62,16 +69,31 @@
   background-color: var(--tx-generic-color-accent);
   display: flex;
   flex: 1 1 auto;
-  order: 5;
+  order: 6;
 }
 
 .ui-price_size_xs {
   .ui-price__currency {
     font-size: var(--tx-price-xsmall-font-size-currency);
+    line-height: var(--tx-price-currency-xsmall-line-height);
+
+    &.ui-price__currency_left {
+      margin-right: 1px;
+    }
+
+    &.ui-price__currency_right {
+      margin-left: 1px;
+    }
   }
 
   .ui-price__decimals {
     font-size: var(--tx-price-xsmall-font-size-decimals);
+    line-height: var(--tx-price-decimals-xsmall-line-height);
+  }
+
+  .ui-price__asterisk {
+    font-size: var(--tx-price-xsmall-font-size-decimals);
+    line-height: var(--tx-price-asterisk-xsmall-line-height);
   }
 
   .ui-price__integers {
@@ -80,8 +102,8 @@
   }
 
   .ui-price__underline {
-    height: var(--tx-price-height-underline);
-    margin-top: var(--tx-price-margin-top-underline);
+    height: var(--tx-price-xsmall-underline-height);
+    margin-top: var(--tx-price-xsmall-underline-margin-top);
   }
 
   .ui-price__additional-text-block {
@@ -96,20 +118,36 @@
 .ui-price_size_s {
   .ui-price__currency {
     font-size: var(--tx-price-small-font-size-currency);
+    line-height: var(--tx-price-currency-small-line-height);
+
+    &.ui-price__currency_left {
+      margin-right: 2px;
+    }
+
+    &.ui-price__currency_right {
+      margin-left: 2px;
+    }
   }
 
   .ui-price__decimals {
     font-size: var(--tx-price-small-font-size-decimals);
+    line-height: var(--tx-price-decimals-small-line-height);
+  }
+
+  .ui-price__asterisk {
+    font-size: var(--tx-price-small-font-size-decimals);
+    line-height: var(--tx-price-asterisk-small-line-height);
   }
 
   .ui-price__integers {
     font-size: var(--tx-price-small-font-size-integers);
     line-height: var(--tx-price-small-line-height-integers);
+    margin-right: 1px;
   }
 
   .ui-price__underline {
-    height: var(--tx-price-height-underline);
-    margin-top: var(--tx-price-margin-top-underline);
+    height: var(--tx-price-small-underline-height);
+    margin-top: var(--tx-price-small-underline-margin-top);
   }
 
   .ui-price__additional-text-block {
@@ -124,20 +162,36 @@
 .ui-price_size_m {
   .ui-price__currency {
     font-size: var(--tx-price-medium-font-size-currency);
+    line-height: var(--tx-price-currency-medium-line-height);
+
+    &.ui-price__currency_left {
+      margin-right: 2px;
+    }
+
+    &.ui-price__currency_right {
+      margin-left: 2px;
+    }
   }
 
   .ui-price__decimals {
-    font-size: var(--tx-price-medium-font-size-decimals)
+    font-size: var(--tx-price-medium-font-size-decimals);
+    line-height: var(--tx-price-decimals-medium-line-height);
+  }
+
+  .ui-price__asterisk {
+    font-size: var(--tx-price-medium-font-size-decimals);
+    line-height: var(--tx-price-asterisk-medium-line-height);
   }
 
   .ui-price__integers {
     font-size: var(--tx-price-medium-font-size-integers);
     line-height: var(--tx-price-medium-line-height-integers);
+    margin-right: 1px;
   }
 
   .ui-price__underline {
-    height: var(--tx-price-height-underline);
-    margin-top: var(--tx-price-margin-top-underline);
+    height: var(--tx-price-medium-underline-height);
+    margin-top: var(--tx-price-medium-underline-margin-top);
   }
 
   .ui-price__additional-text-block {
@@ -152,20 +206,36 @@
 .ui-price_size_l {
   .ui-price__currency {
     font-size: var(--tx-price-large-font-size-currency);
+    line-height: var(--tx-price-currency-large-line-height);
+
+    &.ui-price__currency_left {
+      margin-right: 3px;
+    }
+
+    &.ui-price__currency_right {
+      margin-left: 3px;
+    }
   }
 
   .ui-price__decimals {
-    font-size: var(--tx-price-large-font-size-decimals)
+    font-size: var(--tx-price-large-font-size-decimals);
+    line-height: var(--tx-price-decimals-large-line-height);
+  }
+
+  .ui-price__asterisk {
+    font-size: var(--tx-price-large-font-size-decimals);
+    line-height: var(--tx-price-asterisk-large-line-height);
   }
 
   .ui-price__integers {
     font-size: var(--tx-price-large-font-size-integers);
     line-height: var(--tx-price-large-line-height-integers);
+    margin-right: 2px;
   }
 
   .ui-price__underline {
-    height: var(--tx-price-height-underline);
-    margin-top: var(--tx-price-margin-top-underline);
+    height: var(--tx-price-large-underline-height);
+    margin-top: var(--tx-price-large-underline-margin-top);
   }
 
   .ui-price__additional-text-block {
@@ -180,20 +250,28 @@
 .ui-price_size_xl {
   .ui-price__currency {
     font-size: var(--tx-price-xlarge-font-size-currency);
+    line-height: var(--tx-price-currency-xlarge-line-height);
   }
 
   .ui-price__decimals {
-    font-size: var(--tx-price-xlarge-font-size-decimals)
+    font-size: var(--tx-price-xlarge-font-size-decimals);
+    line-height: var(--tx-price-decimals-xlarge-line-height);
+  }
+
+  .ui-price__asterisk {
+    font-size: var(--tx-price-xlarge-font-size-decimals);
+    line-height: var(--tx-price-asterisk-xlarge-line-height);
   }
 
   .ui-price__integers {
     font-size: var(--tx-price-xlarge-font-size-integers);
     line-height: var(--tx-price-xlarge-line-height-integers);
+    margin-right: 3px;
   }
 
   .ui-price__underline {
-    height: var(--tx-price-xlarge-height-underline);
-    margin-top: var(--tx-price-margin-top-underline);
+    height: var(--tx-price-xlarge-underline-height);
+    margin-top: var(--tx-price-xlarge-underline-margin-top);
   }
 
   .ui-price__additional-text-block {

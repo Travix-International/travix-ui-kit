@@ -6,7 +6,7 @@ import React, {
   isValidElement,
 } from 'react';
 
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, ejectOtherProps } from '../_helpers';
 
 const getNormalizedActiveKey = ({ defaultActiveKey, activeKey }) => {
   if (typeof activeKey === 'undefined') {
@@ -92,9 +92,10 @@ class Collapse extends Component {
       isAccordion,
       children,
       mods = [],
-      onChange, // eslint-disable-line no-unused-vars
-      ...otherProps
     } = this.props;
+
+    const otherProps = ejectOtherProps(this.props, Collapse.propTypes);
+
     if (Children.count(children) === 0) {
       return null;
     }
@@ -133,6 +134,8 @@ Collapse.propTypes = {
    * Determine whether item is expanded by default
    */
   defaultActiveKey: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number),
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
   ]),

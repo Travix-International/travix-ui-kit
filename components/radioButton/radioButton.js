@@ -35,6 +35,7 @@ function RadioButton(props) {
         id={id}
         name={name}
         onChange={onChange}
+        readOnly={!onChange}
         type="radio"
       />
       <label aria-checked={checked} className="ui-radio__label" htmlFor={id} role="radio">

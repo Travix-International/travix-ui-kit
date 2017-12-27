@@ -52,8 +52,8 @@ Multiple datePicker with range mode:
       currentDate: this.formatDate(new Date()),
       maxDate: null,
       minDate: null,
-      date1: null,
-      date2: null,
+      date1: '',
+      date2: '',
     };
 
     <div style={{ width: '90%', display: 'flex' }}>

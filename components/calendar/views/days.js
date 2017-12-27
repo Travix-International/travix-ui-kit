@@ -92,7 +92,7 @@ class Days extends Component {
       (maxDate && (maxDate.getTime() < dateToBeRendered.getTime())) ||
       (minDate && (minDate.getTime() > dateToBeRendered.getTime())) ||
       (isDaySelectableFn && !isDaySelectableFn(dateToBeRendered))
-     ) {
+    ) {
       return false;
     }
 
@@ -166,8 +166,6 @@ class Days extends Component {
         currentDate.getFullYear(),
       ].join(' ');
 
-      const onClickHandler = onSelectDay.bind(null, new Date(currentDate.toDateString()));
-
       options.push(
         <button
           aria-label={ariaLabel}
@@ -176,7 +174,7 @@ class Days extends Component {
           data-date={dateInYYYYMMDD}
           disabled={!this.isOptionEnabled(currentDate)}
           key={`option_${counter}`}
-          onClick={onClickHandler}
+          onClick={onSelectDay}
           role="gridcell"
           type="button"
         >{currentDate.getDate()}</button>
