@@ -179,10 +179,18 @@ Sliding Panel with global
         onClose={() => setState({ isSlidingPanelOpen: false })}
         title="Panel Title"
       >
+        <div>
         This is an example<br/>
         Of how simple it is to use<br/>
         Our sliding panel.<br/><br/>
         This is an example<br/>
+        </div>
+        <Button onClick={() => setState({ isOpenBaseModal: !state.isOpenBaseModal })} >Open Modal </Button>
+        <Modal
+          active={state.isOpenBaseModal}
+          onClose={() => setState({ isOpenBaseModal: false })}>
+            Modal Content
+        </Modal>
       </SlidingPanel>
     </div>
 
