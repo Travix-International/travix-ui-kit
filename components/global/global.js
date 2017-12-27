@@ -13,8 +13,6 @@ class Global extends Component {
     super(props);
 
     this.isSettedNoScroll = false;
-    this.setNoScroll = this.setNoScroll.bind(this);
-    this.toggleGlobalNoscroll = this.toggleGlobalNoscroll.bind(this);
     this.target = global.window.document.createElement('div');
     this.target.classList.add('ui-global');
     global.window.document.body.appendChild(this.target);
@@ -22,28 +20,30 @@ class Global extends Component {
 
   toggleGlobalNoscroll(flag) {
     const body = global.window.document.body;
+    if (!this.isSettedNoScroll) {
+      return;
+    }
     flag
-      ? this.isSettedNoScroll && body.classList.add('ui-global_noscroll')
-      : this.isSettedNoScroll && body.classList.remove('ui-global_noscroll');
+      ? body.classList.add('ui-global_noscroll')
+      : body.classList.remove('ui-global_noscroll');
   }
 
   setNoScroll() {
     const body = global.window.document.body;
-    if (!body.classList.contains('ui-global_noscroll')) {
-      this.isSettedNoScroll = true;
-    }
+    this.isSettedNoScroll = !body.classList.contains('ui-global_noscroll');
   }
 
   componentWillUpdate(nextProps) {
-    if (nextProps.noscroll) {
-      this.setNoScroll();
-      this.toggleGlobalNoscroll(true);
+    if (nextProps.noscroll !== this.props.noscroll) {
+      nextProps.noscroll && this.setNoScroll();
+      this.toggleGlobalNoscroll(nextProps.noscroll);
     }
   }
 
   componentWillMount() {
     if (this.props.noscroll) {
       this.setNoScroll();
+      this.toggleGlobalNoscroll();
     }
   }
 

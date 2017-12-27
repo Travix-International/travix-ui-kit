@@ -1,5 +1,3 @@
-import React from 'react';
-import { mount } from 'enzyme';
 import Global from '../../../components/global/global';
 
 describe('Global: componentWillUnmount', () => {
@@ -8,13 +6,7 @@ describe('Global: componentWillUnmount', () => {
     const removeStub = jest.fn();
     global.window.document.body.classList.add = addStub;
     global.window.document.body.classList.remove = removeStub;
-    const wrapper = mount(
-      <Global noscroll>
-        Global Content
-      </Global>
-    );
-    wrapper.instance().isSettedNoScroll = true;
-    wrapper.instance().toggleGlobalNoscroll(false);
+    Global.prototype.toggleGlobalNoscroll.call({ isSettedNoScroll: true }, false);
     expect(addStub).toHaveBeenCalledTimes(0);
     expect(removeStub).toHaveBeenCalledTimes(1);
   });
@@ -24,13 +16,7 @@ describe('Global: componentWillUnmount', () => {
     const removeStub = jest.fn();
     global.window.document.body.classList.add = addStub;
     global.window.document.body.classList.remove = removeStub;
-    const wrapper = mount(
-      <Global noscroll>
-        Global Content
-      </Global>
-    );
-    wrapper.instance().isSettedNoScroll = true;
-    wrapper.instance().toggleGlobalNoscroll(true);
+    Global.prototype.toggleGlobalNoscroll.call({ isSettedNoScroll: true }, true);
     expect(addStub).toHaveBeenCalledTimes(1);
     expect(removeStub).toHaveBeenCalledTimes(0);
   });
@@ -39,13 +25,7 @@ describe('Global: componentWillUnmount', () => {
     const removeStub = jest.fn();
     global.window.document.body.classList.add = addStub;
     global.window.document.body.classList.remove = removeStub;
-    const wrapper = mount(
-      <Global noscroll>
-        Global Content
-      </Global>
-    );
-    wrapper.instance().isSettedNoScroll = false;
-    wrapper.instance().toggleGlobalNoscroll(true);
+    Global.prototype.toggleGlobalNoscroll.call({ isSettedNoScroll: false }, true);
     expect(addStub).toHaveBeenCalledTimes(0);
     expect(removeStub).toHaveBeenCalledTimes(0);
   });
