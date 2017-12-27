@@ -170,28 +170,19 @@ Sliding Panel with global
         onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
       >Open panel</button>
       <SlidingPanel
-
-    <div>
-      <button
-        onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
-      >Open panel</button>
-      <SlidingPanel
-        global
-        width="750px"
         active={state.isSlidingPanelOpen}
+        global
+        footer={[
+          <button data-rel="close">Close</button>,
+          <button>Action button</button>
+          ]}
         onClose={() => setState({ isSlidingPanelOpen: false })}
-        useDefaultLeftBlock={true}
-        backButtonLabel="Back to the website"
-        onBackButtonClick={() => {
-          alert('Going back...');
-          setState({ isSlidingPanelOpen: false });
-        }}
         title="Panel Title"
       >
         This is an example<br/>
         Of how simple it is to use<br/>
         Our sliding panel.<br/><br/>
-        <button data-rel="close">Close</button>
+        This is an example<br/>
       </SlidingPanel>
     </div>
 

@@ -1,55 +1,63 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import {
-  unstable_renderSubtreeIntoContainer, // eslint-disable-line
-  unmountComponentAtNode,
+  createPortal,
 } from 'react-dom';
-
-function setGlobalNoscroll(flag) {
-  const body = global.window.document.body;
-  flag
-    ? body.classList.add('ui-global_noscroll')
-    : body.classList.remove('ui-global_noscroll');
-}
 
 /**
  * Global component
  * React component for transportation of modals, lightboxes, loading bars... to document.body
  */
 class Global extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+
+    this.isSettedNoScroll = false;
+    this.setNoScroll = this.setNoScroll.bind(this);
+    this.toggleGlobalNoscroll = this.toggleGlobalNoscroll.bind(this);
     this.target = global.window.document.createElement('div');
     this.target.classList.add('ui-global');
     global.window.document.body.appendChild(this.target);
-    this.updateContainerAndBody(false);
   }
 
-  componentDidUpdate(prev) {
-    this.updateContainerAndBody(prev.noscroll);
+  toggleGlobalNoscroll(flag) {
+    const body = global.window.document.body;
+    flag
+      ? this.isSettedNoScroll && body.classList.add('ui-global_noscroll')
+      : this.isSettedNoScroll && body.classList.remove('ui-global_noscroll');
+  }
+
+  setNoScroll() {
+    const body = global.window.document.body;
+    if (!body.classList.contains('ui-global_noscroll')) {
+      this.isSettedNoScroll = true;
+    }
+  }
+
+  componentWillUpdate(nextProps) {
+    if (nextProps.noscroll) {
+      this.setNoScroll();
+      this.toggleGlobalNoscroll(true);
+    }
+  }
+
+  componentWillMount() {
+    if (this.props.noscroll) {
+      this.setNoScroll();
+    }
   }
 
   componentWillUnmount() {
-    if (this.props.noscroll) {
-      setGlobalNoscroll(false);
-    }
-    unmountComponentAtNode(this.target);
+    this.toggleGlobalNoscroll(false);
     global.window.document.body.removeChild(this.target);
   }
 
-  updateContainerAndBody(prevNoscrollValue) {
-    const { noscroll } = this.props;
-    if (prevNoscrollValue !== noscroll) {
-      setGlobalNoscroll(noscroll);
-    }
-    unstable_renderSubtreeIntoContainer(this, (
+  render() {
+    return createPortal((
       <div className={this.props.className}>
         {this.props.children}
       </div>
     ), this.target);
-  }
-
-  render() { // eslint-disable-line
-    return null;
   }
 }
 

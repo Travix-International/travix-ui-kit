@@ -293,11 +293,11 @@ export default class SlidingPanel extends Component {
     );
 
     return global
-     ? (
-       <Global noscroll={this.state.isActive}>
-         {content}
-       </Global>
-     )
-     : content;
+      ? (
+        <Global noscroll={this.state.isActive}>
+          {content}
+        </Global>
+      )
+      : content;
   }
 }
