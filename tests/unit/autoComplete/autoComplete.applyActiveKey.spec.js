@@ -217,4 +217,50 @@ describe('AutoComplete: applyActiveKey', () => {
     expect(e.preventDefault).toBeCalled();
     expect(component.instance().close).toBeCalled();
   });
+
+  it('should update input value and state with correct data', () => {
+    const data = {
+      index: 1,
+      value: 'test_test',
+      code: 'C',
+    };
+    const instance = AutoComplete.prototype;
+    instance.updateInput = jest.fn();
+    instance.change = jest.fn();
+    instance.blurInput = jest.fn();
+    instance.close = jest.fn();
+    instance.render = jest.fn();
+    instance.items = [
+      { getValue: jest.fn(() => data) },
+    ];
+
+    const e = {
+      preventDefault: jest.fn(),
+      keyCode: 13,
+    };
+
+    const component = shallow(
+      <AutoComplete
+        name="autocomplete"
+      >
+        <AutoCompleteItem
+          value="value"
+        >
+          item
+        </AutoCompleteItem>
+      </AutoComplete>
+    );
+
+    component.instance().setState({ inputValue: 'test', selectedValue: data.code, activeKey: 0 });
+    component.instance().applyActiveKey(e);
+    expect(component.instance().state).toEqual({
+      activeKey: 0,
+      inputValue: data.value,
+      open: false,
+      selectedKey: undefined,
+      selectedValue: data.code,
+    });
+    expect(e.preventDefault).toBeCalled();
+    expect(component.instance().updateInput).toBeCalledWith(data.value);
+  });
 });
