@@ -1,12 +1,13 @@
 const path = require('path');
 const { outputFile } = require('fs-extra');
 const themeBuilder = require('theme-builder');
+const { getAvailableSets, getThemeFiles } = require('travix-themes');
 
 const runWebpackAndCopyFilesToFinalDestination = require('./runWebpackAndCopyFilesToFinalDestination');
 const webpackConfig = require('./webpack.config');
 
 const defaultThemeYamlPath = path.join(__dirname, '..', 'themes', '_default.yaml');
-const defaultOutputThemeFile = path.join(__dirname, '..', 'dist', 'theme.css');
+const defaultOutputThemeDir = path.join(__dirname, '..', 'dist');
 
 function buildTheme(builder, themeFiles) {
   return builder.build(themeFiles);
@@ -37,41 +38,48 @@ module.exports = (options) => {
     cssDir,
     environment = 'development',
     jsDir,
-    output = defaultOutputThemeFile,
-    themeFile,
     watch,
   } = options;
 
-  const themeFiles = [defaultThemeYamlPath].concat(themeFile).filter(Boolean);
+  const bundles = [{
+    themeFiles: [defaultThemeYamlPath],
+    output: path.join(defaultOutputThemeDir, 'default'),
+  }];
+  getAvailableSets().forEach((themeOptions) => {
+    bundles.push({
+      themeFiles: [defaultThemeYamlPath].concat(getThemeFiles(themeOptions)),
+      output: path.join(defaultOutputThemeDir, `${themeOptions.brand}-${themeOptions.affiliate}`),
+    });
+  });
 
   const builder = themeBuilder({
     format: 'cssvars',
     prefix: 'tx',
   });
 
-  const outputThemeJs = path.join(
-    path.dirname(output),
-    `${path.basename(output, path.extname(output))}.js`
-  );
   const builderJS = themeBuilder({
     format: 'jsflat',
     prefix: 'tx',
   });
 
   if (watch) {
-    builder.watch(themeFiles, (result) => {
-      outputFile(output, result);
-    });
+    bundles.forEach(({ themeFiles, output }) => {
+      builder.watch(themeFiles, (result) => {
+        outputFile(`${output}.css`, result);
+      });
 
-    builderJS.watch(themeFiles, (result) => {
-      outputFile(outputThemeJs, `window.TravixTheme = ${JSON.stringify(result)};`);
+      builderJS.watch(themeFiles, (result) => {
+        outputFile(`${output}.js`, `window.TravixTheme = ${JSON.stringify(result)};`);
+      });
     });
   }
 
-  return Promise.all([
-    buildThemeCSS(builder, themeFiles, output),
-    buildThemeJS(builderJS, themeFiles, outputThemeJs),
-  ]).then(() => runWebpackAndCopyFilesToFinalDestination({
+  return Promise.all(bundles.reduce((result, { themeFiles, output }) => {
+    return result.concat(
+      buildThemeCSS(builder, themeFiles, `${output}.css`),
+      buildThemeJS(builderJS, themeFiles, `${output}.js`),
+    );
+  }, [])).then(() => runWebpackAndCopyFilesToFinalDestination({
     cssDir,
     jsDir,
     watch,

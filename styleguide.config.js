@@ -1,4 +1,6 @@
+const webpack = require('webpack');
 const path = require('path');
+const { getAvailableSets } = require('travix-themes');
 
 module.exports = {
   title: 'Travix styleguide',
@@ -8,6 +10,9 @@ module.exports = {
   skipComponentsWithoutExample: true,
   getExampleFilename: function(componentPath) {
     return componentPath.replace(/\.jsx?$/, '.md');
+  },
+  styleguideComponents: {
+    Logo: path.join(__dirname, '/components/logoRenderer'),
   },
   require: ['babel-polyfill'],
   webpackConfig: {
@@ -20,5 +25,12 @@ module.exports = {
         },
       ],
     },
+    plugins: [
+      new webpack.DefinePlugin({
+        THEME_VARIANTS: JSON.stringify(getAvailableSets().map(
+          ({ brand, affiliate }) => ({ value: `${brand}-${affiliate}`, label: `${brand}-${affiliate}` })
+        )),
+      }),
+    ],
   },
 };

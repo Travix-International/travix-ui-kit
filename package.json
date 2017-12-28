@@ -65,7 +65,6 @@
     "cheerio": "^0.22.0",
     "codecov": "^3.0.0",
     "commander": "^2.9.0",
-    "create-react-class": "^15.5.2",
     "css-loader": "~0.28.1",
     "enzyme": "^3.1.1",
     "enzyme-adapter-react-16": "^1.0.4",
@@ -91,6 +90,7 @@
     "sass-loader": "~6.0.4",
     "style-loader": "~0.18.2",
     "theme-builder": "~0.5.0",
+    "travix-themes": "git+ssh://git@bitbucket.org/xivart/travix-themes.git#ui-kit-plus-travix-themes-poc",
     "webpack": "~2.5.1",
     "webpack-hot-middleware": "^2.15.0"
   },
