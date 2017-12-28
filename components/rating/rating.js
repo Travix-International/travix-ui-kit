@@ -7,7 +7,9 @@ import { getDataAttributes } from '../_helpers';
 /**
  * Rating component
  */
-function Rating({ rate, dataAttrs, size }) {
+function Rating(props) {
+  const { rate, dataAttrs, size } = props;
+
   const restProps = getDataAttributes(dataAttrs);
 
   const stars = Array.from(Array(size).keys());
