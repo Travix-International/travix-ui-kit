@@ -1,14 +1,18 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { getClassNamesWithMods } from '../_helpers';
 
 /**
  * General Spinner component. Use when you need spinner
  */
 function Spinner(props) {
   const { className, size } = props;
+  const mods = props.mods ? props.mods.slice() : [];
 
-  const classes = classnames('ui-spinner', `ui-spinner_size_${size}`, className);
+  mods.push(`size_${size}`);
+
+  const classes = classnames(getClassNamesWithMods('ui-spinner', mods), className);
 
   /* eslint-disable max-len */
   return (
@@ -120,6 +124,11 @@ Spinner.propTypes = {
    * Custom class name
    */
   className: PropTypes.string,
+
+  /**
+   * You can provide set of custom modifications.
+   */
+  mods: PropTypes.arrayOf(PropTypes.string),
 
   /**
    * Spinner size.
