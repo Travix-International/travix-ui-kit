@@ -9,7 +9,7 @@ import { getDataAttributes } from '../_helpers';
  * Rating component
  */
 function Rating(props) {
-  const { className, rate, dataAttrs, size } = props;
+  const { className, dataAttrs, rate, size } = props;
 
   const restProps = getDataAttributes(dataAttrs);
 
@@ -32,16 +32,16 @@ Rating.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * Rate percentage
-   */
-  rate: PropTypes.number,
-  /**
    * Data attribute. You can use it to set up any custom data-* attribute.
    */
   dataAttrs: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.object,
   ]),
+  /**
+   * Rate percentage
+   */
+  rate: PropTypes.number,
   /**
    * Size of the rating (how many stars)
    */
