@@ -215,6 +215,12 @@ class AutoComplete extends Component {
         this.blurInput();
       });
       return;
+    } else if (value !== item.value) {
+      this.setState({
+        inputValue: item.value,
+      }, () => {
+        this.updateInput(item.value);
+      });
     }
 
     this.close();
@@ -290,13 +296,18 @@ class AutoComplete extends Component {
       name,
       placeholder,
     } = this.props;
+    const {
+      activeKey = 0,
+      open, inputValue = '',
+      selectedValue = '',
+    } = this.state;
+
     const mods = this.props.mods ? this.props.mods.slice() : [];
 
     const otherProps = ejectOtherProps(this.props, AutoComplete.propTypes);
 
-    this.state.open && mods.push('open');
+    open && mods.push('open');
     const className = getClassNamesWithMods('ui-autocomplete', mods);
-    const activeKey = this.state.activeKey || 0;
 
     const labelBlock = label ? (
       <label htmlFor={`ui-autocomplete-input-${name}`} id={`ui-autocomplete-label-${name}`}>{label}</label>
@@ -312,8 +323,8 @@ class AutoComplete extends Component {
         <Input
           aria-activedescendant={`ui-autocomplete-item-${name}-${activeKey}`}
           aria-autocomplete="list"
-          aria-expanded={this.state.open}
-          aria-haspopup={this.state.open}
+          aria-expanded={open}
+          aria-haspopup={open}
           aria-labelledby={label ? `ui-autocomplete-label-${name}` : ''}
           aria-owns={`ui-autocomplete-list-${name}`}
           autoComplete="off"
@@ -326,16 +337,16 @@ class AutoComplete extends Component {
           placeholder={placeholder}
           ref={this.initInputRef}
           role="combobox"
-          value={this.state.inputValue}
+          value={inputValue}
         />
         <Input
           hidden
           name={name}
-          value={this.state.selectedValue}
+          value={selectedValue}
         />
         <div className="ui-autocomplete__popunder">
           <ul
-            aria-expanded={this.state.open}
+            aria-expanded={open}
             className="ui-autocomplete__popunder-list"
             id={`ui-autocomplete-list-${name}`}
             role="listbox"
