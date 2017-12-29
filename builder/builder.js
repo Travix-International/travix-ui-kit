@@ -1,7 +1,6 @@
 const path = require('path');
 const { outputFile } = require('fs-extra');
 const themeBuilder = require('theme-builder');
-const { getAvailableSets, getThemeFiles } = require('travix-themes');
 
 const runWebpackAndCopyFilesToFinalDestination = require('./runWebpackAndCopyFilesToFinalDestination');
 const webpackConfig = require('./webpack.config');
@@ -27,10 +26,10 @@ function buildThemeJS(builder, themeFiles, output) {
  * Triggers the build process.
  *
  * @module builder
- * @param {String}  cssDir     Destination folder for the ui-bundle.css
- * @param {String}  jsDir      Destination folder for the ui-bundle.js
- * @param {Array, String}  themeFile  Path where a custom YAML w/ styles' definitions
- * @param {Boolean} watch      Flag to determine if it should run in 'watch' mode
+ * @param {String}  cssDir        Destination folder for the ui-bundle.css
+ * @param {String}  jsDir         Destination folder for the ui-bundle.js
+ * @param {String}  themePackage  Path to a theme package to override default UI Kit styles
+ * @param {Boolean} watch         Flag to determine if it should run in 'watch' mode
  * @return {Promise}
  */
 module.exports = (options) => {
@@ -39,20 +38,22 @@ module.exports = (options) => {
     environment = 'development',
     jsDir,
     watch,
+    themePackage,
   } = options;
+
+  const { getAvailableSets, getThemeFiles } = require(themePackage); // eslint-disable-line
 
   const bundles = [{
     themeFiles: [defaultThemeYamlPath],
     output: path.join(defaultOutputThemeDir, 'default'),
   }];
   getAvailableSets().forEach((themeOptions) => {
-    bundles.push({
-      themeFiles: [defaultThemeYamlPath].concat(getThemeFiles(themeOptions)),
-      output: path.join(defaultOutputThemeDir, `${themeOptions.brand}-${themeOptions.affiliate}`),
-    });
+    const themeFiles = [defaultThemeYamlPath].concat(getThemeFiles(themeOptions));
+    const output = path.join(defaultOutputThemeDir, `${themeOptions.brand}-${themeOptions.affiliate}`);
+    bundles.push({ themeFiles, output });
   });
 
-  const builder = themeBuilder({
+  const builderCSS = themeBuilder({
     format: 'cssvars',
     prefix: 'tx',
   });
@@ -64,7 +65,7 @@ module.exports = (options) => {
 
   if (watch) {
     bundles.forEach(({ themeFiles, output }) => {
-      builder.watch(themeFiles, (result) => {
+      builderCSS.watch(themeFiles, (result) => {
         outputFile(`${output}.css`, result);
       });
 
@@ -76,7 +77,7 @@ module.exports = (options) => {
 
   return Promise.all(bundles.reduce((result, { themeFiles, output }) => {
     return result.concat(
-      buildThemeCSS(builder, themeFiles, `${output}.css`),
+      buildThemeCSS(builderCSS, themeFiles, `${output}.css`),
       buildThemeJS(builderJS, themeFiles, `${output}.js`),
     );
   }, [])).then(() => runWebpackAndCopyFilesToFinalDestination({

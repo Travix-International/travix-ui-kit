@@ -1,6 +1,7 @@
+/* eslint-disable */
 const webpack = require('webpack');
 const path = require('path');
-const { getAvailableSets } = require('travix-themes');
+const { getAvailableSets } = require(process.argv[3] || 'travix-themes');
 
 module.exports = {
   title: 'Travix styleguide',

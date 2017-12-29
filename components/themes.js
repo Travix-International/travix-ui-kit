@@ -2,27 +2,30 @@ import React, { Component } from 'react';
 
 import Dropdown from './dropDown/dropDown';
 
+const CURRENT_THEME_KEY = 'current_theme';
+
 class Themes extends Component {
   state = {
-    value: 'default',
+    value: sessionStorage.getItem(CURRENT_THEME_KEY) || 'default',
   };
 
-  onChange = (option) => {
-    this.setState({ value: option.value });
+  onChange = ({ label }) => {
+    this.setState({ value: label });
+    sessionStorage.setItem(CURRENT_THEME_KEY, label);
+  }
 
+  applyThemeCss() {
     if (this.themeCSS) {
       this.themeCSS.parentNode.removeChild(this.themeCSS);
     }
 
     this.themeCSS = document.createElement('link');
-    this.themeCSS.href = `/${option.value}.css`;
+    this.themeCSS.href = `/${this.state.value}.css`;
     this.themeCSS.rel = 'stylesheet';
     document.head.appendChild(this.themeCSS);
-
-    this.applyCssPolyfill(option);
   }
 
-  applyCssPolyfill(option) {
+  applyCssPolyfill() {
     if (window.CSS && CSS.supports('color', 'var(--primary)') && navigator.userAgent.indexOf('Edge/15') === -1) {
       return;
     }
@@ -33,7 +36,7 @@ class Themes extends Component {
     }
 
     this.themeJS = document.createElement('script');
-    this.themeJS.src = `/${option.value}.js`;
+    this.themeJS.src = `/${this.state.value}.js`;
     this.themeJS.async = false;
     document.head.appendChild(this.themeJS);
 
@@ -44,7 +47,14 @@ class Themes extends Component {
   }
 
   componentWillMount() {
-    this.onChange(this.state);
+    this.applyThemeCss();
+    this.applyCssPolyfill();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.value !== this.state.value) {
+      this.componentWillMount();
+    }
   }
 
   render() {
