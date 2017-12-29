@@ -171,7 +171,7 @@ Price.propTypes = {
   additionalText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 
   /**
-   * Classname for input
+   * Custom className(s) to be concatenated with the default ones on the component's root element
    */
   className: PropTypes.string,
 
