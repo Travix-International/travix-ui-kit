@@ -1,4 +1,5 @@
 // Imports
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -8,7 +9,7 @@ import { getDataAttributes } from '../_helpers';
  * Rating component
  */
 function Rating(props) {
-  const { rate, dataAttrs, size } = props;
+  const { className, rate, dataAttrs, size } = props;
 
   const restProps = getDataAttributes(dataAttrs);
 
@@ -16,7 +17,7 @@ function Rating(props) {
   const value = Math.ceil((rate / size) * 100);
 
   return (
-    <div className="ui-rating" {...restProps}>
+    <div className={classnames('ui-rating', className)} {...restProps}>
       {stars.map(v => <b key={v}>★</b>)}
       <div className="ui-rating-value" style={{ width: `${value}%` }}>
         {stars.map(v => <b key={v}>★</b>)}
@@ -26,6 +27,10 @@ function Rating(props) {
 }
 
 Rating.propTypes = {
+  /**
+   * Optional class for component
+   */
+  className: PropTypes.string,
   /**
    * Rate percentage
    */
