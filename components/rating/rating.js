@@ -1,20 +1,23 @@
 // Imports
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import { getDataAttributes } from '../_helpers';
 
 /**
- * Ratint component
+ * Rating component
  */
-function Rating({ rate, dataAttrs, size }) {
+function Rating(props) {
+  const { className, dataAttrs, rate, size } = props;
+
   const restProps = getDataAttributes(dataAttrs);
 
   const stars = Array.from(Array(size).keys());
   const value = Math.ceil((rate / size) * 100);
 
   return (
-    <div className="ui-rating" {...restProps}>
+    <div className={classnames('ui-rating', className)} {...restProps}>
       {stars.map(v => <b key={v}>★</b>)}
       <div className="ui-rating-value" style={{ width: `${value}%` }}>
         {stars.map(v => <b key={v}>★</b>)}
@@ -25,9 +28,9 @@ function Rating({ rate, dataAttrs, size }) {
 
 Rating.propTypes = {
   /**
-   * Rate percentage
+   * Optional class for component
    */
-  rate: PropTypes.number,
+  className: PropTypes.string,
   /**
    * Data attribute. You can use it to set up any custom data-* attribute.
    */
@@ -35,6 +38,10 @@ Rating.propTypes = {
     PropTypes.bool,
     PropTypes.object,
   ]),
+  /**
+   * Rate percentage
+   */
+  rate: PropTypes.number,
   /**
    * Size of the rating (how many stars)
    */
