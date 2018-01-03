@@ -36,8 +36,11 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
   }
 
   .Select-control {
+    display: flex;
+    justify-content: space-between;
+
     .Select-placeholder {
-      color: var(--tx-generic-color-secondary-darker);
+      color: var(--tx-generic-color-text-light);
     }
   }
 
@@ -59,7 +62,7 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
     &:hover {
       .Select-control {
         .Select-placeholder {
-          color: var(--tx-generic-color-secondary-darker);
+          color: var(--tx-generic-color-text-light);
         }
       }
     }
@@ -118,8 +121,11 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
   }
 
   .Select-arrow-zone {
-    border-left: dashed 1px var(--tx-dropdown-select-arrow-zone-border-color-left);
+    align-items: center;
+    border-left: var(--tx-dropdown-select-arrow-zone-border-style) 2px var(--tx-dropdown-select-arrow-zone-border-color-left);
     color: var(--tx-dropdown-select-arrow-zone-color);
+    display: flex;
+    justify-content: center;
     margin: 7px 0;
     padding: 0;
     width: 45px;
@@ -227,7 +233,7 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
 .ui-dropdown_filter {
   .Select-control,
   .Select-input {
-    height: 28px;
+    height: 32px;
   }
 
   &.is-open .Select-control,
