@@ -13,7 +13,7 @@ module.exports = {
     return componentPath.replace(/\.jsx?$/, '.md');
   },
   styleguideComponents: {
-    Logo: path.join(__dirname, '/components/logoRenderer'),
+    Logo: path.join(__dirname, '/styleguideComponents/logoRenderer'),
   },
   require: ['babel-polyfill'],
   webpackConfig: {
@@ -21,7 +21,7 @@ module.exports = {
       rules: [
         {
           test: /\.js?$/,
-          include: path.join(__dirname, 'components'),
+          include: [path.join(__dirname, 'components'), path.join(__dirname, 'styleguideComponents')],
           use: 'babel-loader',
         },
       ],

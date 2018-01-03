@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Dropdown from './dropDown/dropDown';
+import Dropdown from '../components/dropDown/dropDown';
 
 const CURRENT_THEME_KEY = 'current_theme';
 
