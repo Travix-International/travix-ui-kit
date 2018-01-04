@@ -49,11 +49,6 @@ export default class SlidingPanel extends Component {
     direction: PropTypes.oneOf(['left', 'right']),
 
     /**
-     * Global positioning (also this mode make body not scrollable).
-     */
-    global: PropTypes.bool,
-
-    /**
      * Defines the footer's content.
      */
 
@@ -120,7 +115,6 @@ export default class SlidingPanel extends Component {
   static defaultProps = {
     closeOnOverlayClick: true,
     direction: 'right',
-    global: false,
     subheader: null,
     useDefaultLeftBlock: false,
     width: '480px',
@@ -224,7 +218,6 @@ export default class SlidingPanel extends Component {
       direction,
       footer,
       leftBlock,
-      global,
       rightBlock,
       subheader,
       title,
@@ -292,12 +285,10 @@ export default class SlidingPanel extends Component {
       </div>
     );
 
-    return global
-      ? (
-        <Global noscroll={this.state.isActive}>
-          {content}
-        </Global>
-      )
-      : content;
+    return (
+      <Global noscroll={this.state.isActive}>
+        {content}
+      </Global>
+    );
   }
 }
