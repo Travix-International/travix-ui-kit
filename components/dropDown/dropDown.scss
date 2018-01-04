@@ -23,6 +23,10 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
     }
   }
 
+  &.is-focused:not(.is-open) .Select-control {
+    border-color: $override-select-input-border-color;
+  }
+
   .Select-value-label {
     font-size: 16px;
     white-space: nowrap;
@@ -277,7 +281,6 @@ $select-arrow-color: var(--tx-dropdown-arrow-color);
   &.ui-dropdown_state-active {
     .Select-control {
       background-color: var(--tx-dropdown-active-select-control-background-color);
-      border-color: var(--tx-dropdown-active-select-control-border-color);
     }
   }
 }

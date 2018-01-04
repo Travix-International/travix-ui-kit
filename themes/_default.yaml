@@ -309,7 +309,7 @@ datepicker:
 dropdown:
   input:
     background-color: "var(--tx-generic-color-blank)"
-    border-color: "var(--tx-generic-color-secondary)"
+    border-color: "var(--tx-generic-color-secondary-darker)"
   option:
     color: "var(--tx-generic-color-text-dark)"
   arrow:
@@ -319,7 +319,7 @@ dropdown:
   select-menu-outer:
     box-shadow: "0 0 5px 0 rgba(var(--tx-generic-color-shadow-rgb), .18)"
   select-arrow-zone:
-    border-color-left: "var(--tx-generic-color-secondary-light)"
+    border-color-left: "var(--tx-generic-color-secondary-darker)"
     border-style: "dotted"
     color: "var(--tx-generic-color-primary)"
     hover:
@@ -327,7 +327,7 @@ dropdown:
   select-option:
     color: "var(--tx-generic-color-text)"
     hover:
-      background-color: "var(--tx-generic-color-secondary-light)"
+      background-color: "var(--tx-generic-color-secondary-dark)"
     is-selected:
       background-color: "var(--tx-generic-color-active)"
       color: "var(--tx-generic-color-blank)"
