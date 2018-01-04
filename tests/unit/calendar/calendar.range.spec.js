@@ -6,6 +6,21 @@ import { leftPad, normalizeDate } from '../../../components/_helpers';
 jest.useFakeTimers();
 
 describe('Calendar (range mode)', () => {
+  let RealDate;
+
+  beforeAll(() => {
+    RealDate = Date;
+    global.Date = function FakeDate(...args) {
+      const date = args.length === 0 ? new RealDate('2017-03-01') : new RealDate(...args);
+      return date;
+    };
+    Object.setPrototypeOf(global.Date, RealDate);
+  });
+
+  afterAll(() => {
+    global.Date = RealDate;
+  });
+
   describe('#render()', () => {
     it('should render the calendar with selectionType as range, initialized in the current date', () => {
       const todayDate = normalizeDate(new Date());
