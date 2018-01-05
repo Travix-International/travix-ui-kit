@@ -1,7 +1,8 @@
 // Imports
 import PropTypes from 'prop-types';
 import React from 'react';
-import { getClassNamesWithMods } from '../_helpers';
+import classNames from 'classnames';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 /**
  * General List component. Use when you need to display array of elements
@@ -9,6 +10,8 @@ import { getClassNamesWithMods } from '../_helpers';
 function List(props) {
   const {
     align,
+    className,
+    dataAttrs,
     hideBullets,
     items,
   } = props;
@@ -21,7 +24,7 @@ function List(props) {
     mods.push("no-bullets");
   }
 
-  const className = getClassNamesWithMods('ui-list', mods);
+  const listClasses = classNames(getClassNamesWithMods('ui-list', mods), className);
 
   const itemsBlock = items.filter(Boolean).map((item, index) => (
     <li className="ui-list__item" key={index}>
@@ -30,7 +33,7 @@ function List(props) {
   ));
 
   return (
-    <ul className={className}>
+    <ul className={listClasses} {...getDataAttributes(dataAttrs)}>
       {itemsBlock}
     </ul>
   );
@@ -46,6 +49,16 @@ List.propTypes = {
    * List's apperance.
    */
   align: PropTypes.oneOf(['vertical', 'horizontal']),
+
+  /**
+   * Class for the list
+   */
+  className: PropTypes.string,
+
+  /**
+   * Data attributes. You can use it to set up any custom data-* attribute
+   */
+  dataAttrs: PropTypes.object,
 
   /**
    * Hide list's bullets
