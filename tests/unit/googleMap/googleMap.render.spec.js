@@ -6,7 +6,7 @@ import GoogleMap from '../../../components/googleMap/googleMap';
 describe('GoogleMap: render', () => {
   it('should return base GoogleMap container', () => {
     const component = shallow(
-      <GoogleMap google={google}/>
+      <GoogleMap google={google} />
     );
     expect(component).toMatchSnapshot();
   });
@@ -36,5 +36,21 @@ describe('GoogleMap: render', () => {
       />
     );
     expect(component).toMatchSnapshot();
+  });
+
+  it('should render GoogleMap container with provided className', () => {
+    const wrapper = shallow(
+      <GoogleMap className="test-class" google={google} />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render GoogleMap container with provided dataAttrs', () => {
+    const wrapper = shallow(
+      <GoogleMap dataAttrs={{ 'test-data-attr': 'test' }} google={google} />
+    );
+
+    expect(wrapper).toMatchSnapshot();
   });
 });
