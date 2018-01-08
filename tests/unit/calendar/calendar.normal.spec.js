@@ -5,6 +5,21 @@ import CalendarWrapper from './calendarWrapper.mock';
 import { leftPad, normalizeDate } from '../../../components/_helpers';
 
 describe('Calendar (normal mode)', () => {
+  let RealDate;
+
+  beforeAll(() => {
+    RealDate = Date;
+    global.Date = function FakeDate(...args) {
+      const date = args.length === 0 ? new RealDate('2017-03-01') : new RealDate(...args);
+      return date;
+    };
+    Object.setPrototypeOf(global.Date, RealDate);
+  });
+
+  afterAll(() => {
+    global.Date = RealDate;
+  });
+
   describe('#render()', () => {
     it('should render the calendar with selectionType as normal, initialized in the current date', () => {
       const todayDate = normalizeDate(new Date());
@@ -284,7 +299,7 @@ describe('Calendar (normal mode)', () => {
 
       expect(onSelectDayMock.mock.calls.length).toEqual(1);
       expect(onSelectDayMock.mock.calls[0][0]).toBeInstanceOf(Array);
-      expect(onSelectDayMock.mock.calls[0][0][0]).toBeInstanceOf(Date);
+      expect(onSelectDayMock.mock.calls[0][0][0]).toBeInstanceOf(RealDate);
       expect(onSelectDayMock.mock.calls[0][0][1]).toEqual(null);
     });
 
