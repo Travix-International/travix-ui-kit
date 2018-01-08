@@ -4,7 +4,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
   position: relative;
 
   .ui-badge-badge {
-    $position: calc(-1 * var(--tx-badge-after-border-size));
+    $position: calc(-1 * var(--tx-badge-before-border-size));
 
     &.ui-badge-badge_top,
     &.ui-badge-badge_right,
@@ -20,6 +20,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
 
     &.ui-badge-badge_right {
       right: $position;
+      padding-right: var(--tx-badge-padding-corner-side);
       top: var(--tx-badge-indent);
     }
 
@@ -30,6 +31,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
 
     &.ui-badge-badge_left {
       left: $position;
+      padding-left: var(--tx-badge-padding-corner-side);
       top: var(--tx-badge-indent);
     }
   }
@@ -37,7 +39,8 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
 
 .ui-badge-badge {
   $border-radius-start: var(--tx-badge-border-radius-start);
-  $border-radius-end: var(--tx-badge-border-radius-end);
+  $border-radius-end-top: var(--tx-badge-border-radius-end-top);
+  $border-radius-end-bottom: var(--tx-badge-border-radius-end-bottom);
 
   background-clip: padding-box;
   background-color: var(--tx-badge-color-background);
@@ -69,7 +72,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
   }
 
   $border-transparent: var(--tx-badge-after-border-size) solid transparent;
-  $border-filled: var(--tx-badge-after-border-size) solid var(--tx-badge-after-border-color);
+  $border-filled: var(--tx-badge-before-border-size) solid var(--tx-badge-before-border-color);
 
   &.ui-badge-badge_top {
     border-radius: 0 $border-radius-start $border-radius-start;
@@ -83,7 +86,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
   }
 
   &.ui-badge-badge_right {
-    border-radius: $border-radius-end $border-radius-start 0 $border-radius-end;
+    border-radius: $border-radius-end-top $border-radius-start 0 $border-radius-end-bottom;
 
     .ui-badge__border:before,
     &.ui-badge-badge_no-border:before {
@@ -110,7 +113,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
   }
 
   &.ui-badge-badge_left {
-    border-radius: $border-radius-start $border-radius-end $border-radius-end 0;
+    border-radius: $border-radius-start $border-radius-end-top $border-radius-end-bottom 0;
 
     .ui-badge__border:before,
     &.ui-badge-badge_no-border:before {
