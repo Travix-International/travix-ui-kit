@@ -55,7 +55,8 @@ generic:
 
     active: &active                             "#4baf93"
     positive: &positive                         "#2ca937"
-    positive-light: &positive                   "#9edb97"
+    positive-light: &positive-light             "#9edb97"
+    positive-lighter: &positive-lighter         "#9EDBC0"
     negative: &negative                         "#c54229"
     negative-light: &negative-light             "#f0d0c9"
 
