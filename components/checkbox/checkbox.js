@@ -21,7 +21,7 @@ function Checkbox(props) {
   const dataAttributes = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
   disabled && mods.push('is-disabled');
-  const classNames = classnames(className, getClassNamesWithMods('ui-checkbox', mods));
+  const classNames = classnames(getClassNamesWithMods('ui-checkbox', mods), className);
 
   return (
     <label

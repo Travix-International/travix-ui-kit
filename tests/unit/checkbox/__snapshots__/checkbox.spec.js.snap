@@ -43,7 +43,7 @@ exports[`Checkbox #render() should render checkbox 1`] = `
 
 exports[`Checkbox #render() should render checkbox with provided className 1`] = `
 <label
-  className="test-class ui-checkbox"
+  className="ui-checkbox test-class"
   htmlFor=""
 >
   <input

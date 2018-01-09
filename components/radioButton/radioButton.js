@@ -26,7 +26,7 @@ function RadioButton(props) {
     mods.push('disabled');
   }
 
-  const classNames = classnames(className, getClassNamesWithMods('ui-radio', mods));
+  const classNames = classnames(getClassNamesWithMods('ui-radio', mods), className);
 
   return (
     <div className={classNames} {...dataAttributes}>

@@ -98,7 +98,7 @@ exports[`Radio Button #render() should render radio button 1`] = `
 
 exports[`Radio Button #render() should render radio button with provided className 1`] = `
 <div
-  className="test-class ui-radio"
+  className="ui-radio test-class"
 >
   <input
     checked={false}
