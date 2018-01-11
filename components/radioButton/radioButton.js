@@ -1,6 +1,7 @@
 // Imports
 import PropTypes from 'prop-types';
 import React from 'react';
+import classnames from 'classnames';
 
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
@@ -11,23 +12,24 @@ function RadioButton(props) {
   const {
     checked,
     children,
+    className,
     dataAttrs = {},
     disabled,
     id,
     name,
     onChange,
   } = props;
-  const restProps = getDataAttributes(dataAttrs);
+  const dataAttributes = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
 
   if (disabled) {
     mods.push('disabled');
   }
 
-  const className = getClassNamesWithMods('ui-radio', mods);
+  const classNames = classnames(getClassNamesWithMods('ui-radio', mods), className);
 
   return (
-    <div className={className} {...restProps}>
+    <div className={classNames} {...dataAttributes}>
       <input
         checked={checked}
         className="ui-radio__input-radio"
@@ -64,6 +66,11 @@ RadioButton.propTypes = {
     PropTypes.element,
     PropTypes.node,
   ]),
+
+  /**
+   * Attribute used to set specific classes
+   */
+  className: PropTypes.string,
 
   /**
    * Data attribute. You can use it to set up any custom data-* attribute.
