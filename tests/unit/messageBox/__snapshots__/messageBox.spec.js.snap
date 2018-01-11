@@ -59,3 +59,19 @@ exports[`MessageBox #render() should render success message box with title 1`] =
   </div>
 </div>
 `;
+
+exports[`MessageBox #render() should render message box with provided className 1`] = `
+<div
+  className="ui-messageBox ui-messageBox_info test-cls"
+>
+  <div
+    className="ui-messageBox__content"
+  >
+    <div
+      className="ui-messageBox__content-body"
+    >
+      Message box
+    </div>
+  </div>
+</div>
+`;

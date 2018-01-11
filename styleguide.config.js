@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   title: 'Travix styleguide',
   assetsDir: 'dist',
@@ -13,7 +15,7 @@ module.exports = {
       rules: [
         {
           test: /\.js?$/,
-          include: __dirname + '/components',
+          include: path.join(__dirname, 'components'),
           use: 'babel-loader',
         },
       ],

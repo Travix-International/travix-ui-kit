@@ -24,6 +24,7 @@ exports[`DatePicker #render() should render DatePicker with label 1`] = `
     onFocus={[Function]}
     readOnly={true}
     type="text"
+    value=""
   />
   <div
     aria-hidden={false}
@@ -90,6 +91,7 @@ exports[`DatePicker #render() should render disabled DatePicker 1`] = `
     onFocus={[Function]}
     readOnly={true}
     type="text"
+    value=""
   />
   <div
     aria-hidden={false}
@@ -123,6 +125,7 @@ exports[`DatePicker #render() should render open DatePicker 1`] = `
     onFocus={[Function]}
     readOnly={true}
     type="text"
+    value=""
   />
   <div
     aria-hidden={true}
