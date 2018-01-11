@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import React, { Component } from 'react';
 
-import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 /**
  * General Input component.
@@ -68,6 +69,7 @@ class Input extends Component {
 
   render() {
     const {
+      className,
       dataAttrs = {},
       disabled,
       multiline,
@@ -76,12 +78,13 @@ class Input extends Component {
       value,
     } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
-
-    const otherProps = ejectOtherProps(this.props, Input.propTypes);
+    if (disabled) {
+      mods.push('disabled');
+    }
 
     (!this.state.isFocused && status) && mods.push(status);
     this.state.isFocused && mods.push('focused');
-    const className = getClassNamesWithMods('ui-input', mods);
+    const inputClasses = classnames(getClassNamesWithMods('ui-input', mods), className);
 
     let Element = multiline ? 'textarea' : 'input';
 
@@ -89,8 +92,7 @@ class Input extends Component {
       <div className="ui-input-container">
         <Element
           {...getDataAttributes(dataAttrs)}
-          {...otherProps}
-          className={className}
+          className={inputClasses}
           disabled={disabled}
           name={name}
           onBlur={this.handleInputBlur}
@@ -111,6 +113,10 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
+  /**
+   * Classname for input
+   */
+  className: PropTypes.string,
   /**
    * Data attribute. You can use it to set up GTM key or any custom data-* attribute
    */
