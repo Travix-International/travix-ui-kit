@@ -17,6 +17,7 @@ function Button(props) {
     href,
     id,
     onClick,
+    onMouseUp,
     size,
     type,
     variation,
@@ -49,6 +50,7 @@ function Button(props) {
         className={classes}
         href={href}
         id={id}
+        onMouseUp={onMouseUp}
       >
         {children}
       </a>
@@ -62,6 +64,7 @@ function Button(props) {
         className={classes}
         disabled={disabled}
         id={id}
+        onMouseUp={onMouseUp}
         type={type}
       >
         {children}
@@ -76,6 +79,7 @@ function Button(props) {
       disabled={disabled}
       id={id}
       onClick={onClick}
+      onMouseUp={onMouseUp}
       type="button"
     >
       {children}
@@ -137,14 +141,22 @@ Button.propTypes = {
    * The callback for onClick event. Using with default `type` or `type="button"`.
    */
   onClick: PropTypes.func,
+
+  /**
+   * The callback for onMouseUp event.
+   */
+  onMouseUp: PropTypes.func,
+
   /**
    * Button size.
    */
   size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
+
   /**
    * To define button's behavior.
    */
   type: PropTypes.oneOf(['button', 'link', 'submit', 'reset']),
+
   /**
    * Button's apperance.
    */
