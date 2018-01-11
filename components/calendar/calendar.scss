@@ -33,27 +33,27 @@
 }
 
 .ui-calendar-days__head {
+  border-radius: 5px 5px 0 0;
   display: flex;
   flex-direction: column;
-  border-radius: 5px 5px 0 0;
   overflow: hidden;
 }
 
 .ui-calendar-days__previous-month,
 .ui-calendar-days__next-month {
   align-self: center;
-  background: var(--tx-calendar-nav-button-background-color-end);
   background: linear-gradient(to bottom,var(--tx-calendar-nav-button-background-color-start) 0,var(--tx-calendar-nav-button-background-color-end) 100%);
-  border: none;
+  background: var(--tx-calendar-nav-button-background-color-end);
   border-radius: var(--tx-calendar-nav-button-border-radius);
+  border: none;
   box-shadow: 0 2px var(--tx-calendar-nav-button-box-shadow-color);
-  cursor: pointer;
   color: var(--tx-calendar-nav-button-color);
+  cursor: pointer;
   flex: 0 0 auto;
-  width: var(--tx-calendar-nav-button-width);
   font-weight: var(--tx-calendar-nav-button-font-weight);
   height: var(--tx-calendar-nav-button-height);
   margin: var(--tx-calendar-nav-button-margin);
+  width: var(--tx-calendar-nav-button-width);
 
   &[disabled] {
     visibility: hidden;
@@ -152,8 +152,8 @@
 
 .ui-calendar-days-option_selected-start,
 .ui-calendar-days-option_selected-end {
-  position: relative;
   overflow: visible;
+  position: relative;
 
   &:before,
   &:after {
