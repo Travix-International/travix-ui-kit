@@ -34,5 +34,13 @@ describe('MessageBox', () => {
 
       expect(wrapper).toMatchSnapshot();
     });
+
+    it('should render message box with provided className', () => {
+      const wrapper = shallow(
+        <MessageBox className={"test-cls"}>Message box</MessageBox>
+      );
+
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

@@ -1,5 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`GoogleMap: render should render GoogleMap container with provided className 1`] = `
+<div
+  className="test-class ui-google-map"
+  style={
+    Object {
+      "height": "400px",
+      "width": "400px",
+    }
+  }
+/>
+`;
+
+exports[`GoogleMap: render should render GoogleMap container with provided dataAttrs 1`] = `
+<div
+  className="ui-google-map"
+  data-test-data-attr="test"
+  style={
+    Object {
+      "height": "400px",
+      "width": "400px",
+    }
+  }
+/>
+`;
+
 exports[`GoogleMap: render should return base GoogleMap container 1`] = `
 <div
   className="ui-google-map"
