@@ -1,5 +1,6 @@
 const getClassNamesWithMods = require('../../../components/_helpers.js').getClassNamesWithMods;
 const getDataAttributes = require('../../../components/_helpers.js').getDataAttributes;
+const ejectOtherProps = require('../../../components/_helpers.js').ejectOtherProps;
 
 describe('helpers', () => {
   describe('#getClassNamesWithMods()', () => {
@@ -38,6 +39,26 @@ describe('helpers', () => {
     it('returns an empty object when no object is provided or an empty object is provided', () => {
       expect(getDataAttributes()).toEqual({});
       expect(getDataAttributes({})).toEqual({});
+    });
+  });
+
+  describe('#ejectOtherProps()', () => {
+    it('returns difference of two objects', () => {
+      const propTypes = {
+        name: 'string',
+        value: 'bool',
+      };
+
+      const props = {
+        name: 'string',
+        otherProp: 'test',
+      };
+
+      const expected = {
+        otherProp: 'test',
+      };
+
+      expect(ejectOtherProps(props, propTypes)).toEqual(expected);
     });
   });
 });
