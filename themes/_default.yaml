@@ -95,7 +95,7 @@ badge:
   before:
     border:
       size: 6px
-      color: "#8b9296"
+      color: "var(--tx-generic-color-accent-border)"
   after:
     border:
       size: 4px
