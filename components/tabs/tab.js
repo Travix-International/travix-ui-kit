@@ -42,10 +42,7 @@ class Tab extends Component {
       dataAttrs = {},
       mods = [],
       name,
-      onClick,
       title,
-      value,
-      ...otherProps
     } = this.props;
 
     const classes = classnames(
@@ -57,7 +54,6 @@ class Tab extends Component {
     return (
       <div
         {...getDataAttributes(dataAttrs)}
-        {...otherProps}
         aria-controls={`${name}-panel`}
         aria-selected={active}
         className={classes}
