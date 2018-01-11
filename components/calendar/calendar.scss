@@ -97,9 +97,9 @@
 
 .ui-calendar-days-option {
   background: var(--tx-calendar-options-option-background-color);
+  border: none;
   border-bottom: 1px solid var(--tx-calendar-options-option-border-bottom);
   border-right: 1px solid var(--tx-calendar-options-option-border-right);
-  border: none;
   box-sizing: border-box;
   color: var(--tx-calendar-options-option-color);
   cursor: pointer;
