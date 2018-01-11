@@ -202,8 +202,6 @@ button:
       decoration: "underline"
 calendar:
   height: 300px
-  head:
-    border-radius: "5px 5px 0 0"
   nav:
     background: "var(--tx-generic-color-primary-lighter)"
     button:

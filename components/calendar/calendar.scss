@@ -35,7 +35,7 @@
 .ui-calendar-days__head {
   display: flex;
   flex-direction: column;
-  border-radius: var(--tx-calendar-head-border-radius);
+  border-radius: 5px 5px 0 0;
   overflow: hidden;
 }
 
