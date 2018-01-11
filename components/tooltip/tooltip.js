@@ -40,7 +40,7 @@ export default class Tooltip extends Component {
       ? this.props.mods.slice()
       : [];
 
-    const classNames = classnames(className, getClassNamesWithMods('ui-tooltip', [
+    const classes = classnames(className, getClassNamesWithMods('ui-tooltip', [
       ...mods,
       active ? 'active' : 'inactive',
       position,
@@ -60,7 +60,7 @@ export default class Tooltip extends Component {
     }
 
     return (
-      <div className={classNames} ref={this.linkChild} style={styles} {...getDataAttributes(dataAttrs)}>
+      <div className={classes} ref={this.linkChild} style={styles} {...getDataAttributes(dataAttrs)}>
         {this.renderCloseButtonBlock()}
         {this.props.children}
       </div>
