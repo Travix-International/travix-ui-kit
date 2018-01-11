@@ -133,4 +133,26 @@ describe('DropDown: render', () => {
     );
     expect(component).toMatchSnapshot();
   });
+
+  it('should return dropdown with custom class name', () => {
+    const component = shallow(
+      <DropDown
+        className="my-custom-class"
+        onChange={() => {}}
+        options={[]}
+      />
+    );
+    expect(component).toMatchSnapshot();
+  });
+
+  it('should return disabled dropdown', () => {
+    const component = shallow(
+      <DropDown
+        disabled
+        onChange={() => {}}
+        options={[]}
+      />
+    );
+    expect(component).toMatchSnapshot();
+  });
 });
