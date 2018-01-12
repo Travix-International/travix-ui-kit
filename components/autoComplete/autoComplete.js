@@ -292,7 +292,7 @@ class AutoComplete extends Component {
       name,
       placeholder,
     } = this.props;
-    const mods = [];
+    const mods = this.props.mods ? this.props.mods.slice() : [];
 
     this.state.open && mods.push('open');
 
@@ -401,6 +401,10 @@ AutoComplete.propTypes = {
    * Label for autocomplete.
    */
   label: PropTypes.string,
+  /**
+   * Set of custom modifications.
+   */
+  mods: PropTypes.arrayOf(PropTypes.string),
   /**
    * Represents the element's name.
    */
