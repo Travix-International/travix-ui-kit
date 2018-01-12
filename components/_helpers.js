@@ -92,14 +92,14 @@ function ejectOtherProps(props, propTypes) {
  * Warn about usage of deprecated prop
  *
  * @method warnAboutDeprecatedProp
- * @param {Any} oldPropValue value of deprecated prop.
+ * @param {Any} propValue value of deprecated prop.
  * @param {String} oldPropName deprecated prop name.
  * @param {String} newPropName new prop name.
  */
-function warnAboutDeprecatedProp(oldPropValue, oldPropName, newPropName) {
-  oldPropValue !== undefined && console.warn(
-    `[DEPRECATED] the property "${oldPropName}" has been deprecated, use "${newPropName}" instead`
-  );
+function warnAboutDeprecatedProp(propValue, oldPropName, newPropName) {
+  if (propValue !== undefined) {
+    console.warn(`[DEPRECATED] the property "${oldPropName}" has been deprecated, use "${newPropName}" instead`);
+  }
 }
 
 // Exports
