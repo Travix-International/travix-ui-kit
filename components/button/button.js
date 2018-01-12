@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 /**
  * General Button component. Use when you need button or a link that looks like button
@@ -12,18 +12,18 @@ function Button(props) {
   const {
     children,
     className,
-    size,
+    dataAttrs = {},
+    disabled,
     href,
+    id,
     onClick,
+    onMouseUp,
+    size,
     type,
     variation,
-    disabled,
-    dataAttrs = {},
   } = props;
   const restProps = getDataAttributes(dataAttrs);
   const mods = props.mods ? props.mods.slice() : [];
-
-  const otherProps = ejectOtherProps(props, Button.propTypes);
 
   /** This props have default values */
   mods.push(`size_${size}`);
@@ -47,9 +47,10 @@ function Button(props) {
     return (
       <a
         {...restProps}
-        {...otherProps}
         className={classes}
         href={href}
+        id={id}
+        onMouseUp={onMouseUp}
       >
         {children}
       </a>
@@ -60,9 +61,10 @@ function Button(props) {
     return (
       <button
         {...restProps}
-        {...otherProps}
         className={classes}
         disabled={disabled}
+        id={id}
+        onMouseUp={onMouseUp}
         type={type}
       >
         {children}
@@ -73,10 +75,11 @@ function Button(props) {
   return (
     <button
       {...restProps}
-      {...otherProps}
       className={classes}
       disabled={disabled}
+      id={id}
       onClick={onClick}
+      onMouseUp={onMouseUp}
       type="button"
     >
       {children}
@@ -125,6 +128,11 @@ Button.propTypes = {
   href: PropTypes.string,
 
   /**
+   * Attribute used to set specific id
+   */
+  id: PropTypes.string,
+
+  /**
    * You can provide set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
@@ -133,14 +141,22 @@ Button.propTypes = {
    * The callback for onClick event. Using with default `type` or `type="button"`.
    */
   onClick: PropTypes.func,
+
+  /**
+   * The callback for onMouseUp event.
+   */
+  onMouseUp: PropTypes.func,
+
   /**
    * Button size.
    */
   size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
+
   /**
    * To define button's behavior.
    */
   type: PropTypes.oneOf(['button', 'link', 'submit', 'reset']),
+
   /**
    * Button's apperance.
    */
