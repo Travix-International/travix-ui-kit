@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 import Tab from './tab';
-import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 /**
  * Tabs component
@@ -126,8 +126,6 @@ class Tabs extends Component {
       mods = [],
     } = this.props;
 
-    const otherProps = ejectOtherProps(this.props, Tabs.propTypes);
-
     const classes = classnames(
       getClassNamesWithMods('ui-tabs', mods),
       className
@@ -136,7 +134,6 @@ class Tabs extends Component {
     return (
       <div
         {...getDataAttributes(dataAttrs)}
-        {...otherProps}
         className={classes}
       >
         <div
@@ -153,7 +150,6 @@ class Tabs extends Component {
 
 Tabs.defaultProps = {
   activeTab: '0',
-  open: false,
   name: '',
 };
 

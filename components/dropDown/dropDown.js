@@ -98,8 +98,10 @@ class DropDown extends Component {
 
   render() {
     const {
+      className,
       clearable,
       dataAttrs = {},
+      disabled,
       filterMode,
       icon,
       mods = [],
@@ -114,19 +116,20 @@ class DropDown extends Component {
       ...otherProps
     } = this.props;
 
-    const className = getClassNamesWithMods('ui-dropdown', [
+    const selectClasses = classnames(getClassNamesWithMods('ui-dropdown', [
       ...mods,
       filterMode && 'filter',
       filterMode && options.some(option => option.checked) && 'state-active',
       status,
-    ]);
+    ]), className);
 
     return (
       <div {...getDataAttributes(dataAttrs)}>
         <Select
           {...otherProps}
-          className={className}
+          className={selectClasses}
           clearable={clearable}
+          disabled={disabled}
           menuRenderer={this.menuRenderer}
           multi={filterMode ? true : multi}
           name={name}
@@ -155,6 +158,11 @@ DropDown.defaultProps = {
 
 DropDown.propTypes = {
   /**
+   * Attribute used to set specific classes which will be combined
+   * with the "ui-dropdown" class + mods.
+   */
+  className: PropTypes.string,
+  /**
  * Should it be possible to reset value
  */
   clearable: PropTypes.bool,
@@ -165,6 +173,10 @@ DropDown.propTypes = {
     PropTypes.bool,
     PropTypes.object,
   ]),
+  /**
+   * Current activity state of DropDown
+   */
+  disabled: PropTypes.bool,
   /**
  * Filter key
  */

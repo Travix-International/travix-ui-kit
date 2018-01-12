@@ -260,8 +260,10 @@ class Days extends Component {
         onMouseDown={onMouseDown}
         {...restProps}
       >
-        {this.renderNav()}
-        {this.renderWeekDays()}
+        <div className="ui-calendar-days__head">
+          {this.renderNav()}
+          {this.renderWeekDays()}
+        </div>
         {this.renderDays()}
       </div>
     );

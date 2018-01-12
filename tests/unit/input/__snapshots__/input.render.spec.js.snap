@@ -19,7 +19,7 @@ exports[`Input #render() should render correct input 1`] = `
   className="ui-input-container"
 >
   <input
-    className="ui-input"
+    className="ui-input ui-input_disabled"
     disabled={true}
     name="input"
     onBlur={[Function]}
@@ -34,7 +34,7 @@ exports[`Input #render() should render multiline input 1`] = `
   className="ui-input-container"
 >
   <textarea
-    className="ui-input"
+    className="ui-input ui-input_disabled"
     disabled={true}
     name="input"
     onBlur={[Function]}

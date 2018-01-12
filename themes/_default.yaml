@@ -204,7 +204,6 @@ calendar:
   height: 300px
   nav:
     background: "var(--tx-generic-color-primary-lighter)"
-    border-radius: "5px 5px 0 0"
     button:
       background-color-end: "var(--tx-generic-color-accent-bottom)"
       background-color-start: "var(--tx-generic-color-accent-top)"

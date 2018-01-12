@@ -34,7 +34,7 @@ exports[`AutoCompleteItem #render() should render autocomplete item with title m
 
 exports[`AutoCompleteItem #render() should render correct autocomplete item 1`] = `
 <li
-  className="ui-autocomplete-item"
+  className="ui-autocomplete-item test-auto-complete-item"
   onClick={[Function]}
   role="option"
   tabIndex="-1"
