@@ -98,6 +98,8 @@ Also check OverlayTrigger specification.
         elemToToggle={
           <Tooltip
             align={state.align}
+            className={'costumClass'}
+            dataAttrs={{'gtm-id': 'tooltip-gtm'}}
             margin={state.customMargin ? '22px' : undefined}
             axisOffsetX={state.customOppositeOffset ? '-50%' : undefined}
             axisOffsetY={state.customOppositeOffset ? '-100px' : undefined}

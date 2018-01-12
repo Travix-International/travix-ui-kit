@@ -17,6 +17,21 @@ describe('AutoCompleteItem', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    it('should not modify mods', () => {
+      const mods = ['test'];
+      const wrapper = shallow(
+        <AutoCompleteItem
+          mods={mods}
+          value="value"
+        >
+          item
+        </AutoCompleteItem>
+      );
+      expect(mods.length).toEqual(1);
+      expect(mods[0]).toEqual('test');
+      expect(wrapper).toMatchSnapshot();
+    });
+
     it('should render autocomplete item with title mode', () => {
       const wrapper = shallow(
         <AutoCompleteItem

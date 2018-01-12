@@ -34,7 +34,7 @@ class AutoCompleteItem extends Component {
       isActive,
       isTitle,
     } = this.props;
-    const mods = [];
+    const mods = this.props.mods ? this.props.mods.slice() : [];
 
     isTitle && mods.push('title');
     isActive && mods.push('active');
@@ -99,6 +99,10 @@ AutoCompleteItem.propTypes = {
    * Is item has title mode.
    */
   isTitle: PropTypes.bool,
+  /**
+   * Set of custom modifications.
+   */
+  mods: PropTypes.arrayOf(PropTypes.string),
   /**
    * Function to be triggered when the autocomplete item is selected.
    */
