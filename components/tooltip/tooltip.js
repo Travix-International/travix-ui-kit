@@ -1,9 +1,13 @@
 import classnames from "classnames";
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 export default class Tooltip extends Component {
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
+  }
+
   linkChild = (ref) => {
     this.container = ref;
   }

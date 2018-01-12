@@ -1,12 +1,21 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
+import {
+  getClassNamesWithMods,
+  getDataAttributes,
+  ejectOtherProps,
+  warnAboutDeprecatedProp,
+} from '../_helpers';
 
 /**
  * AutoCompleteItem component
  */
 class AutoCompleteItem extends Component {
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
+  }
+
   handleItemClick = (e) => {
     const { onClick } = this.props;
 

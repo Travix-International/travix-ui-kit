@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import ReactDom from 'react-dom';
 import React, { Component } from 'react';
 import SlidingPanelHeader from './slidingPanelHeader';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 export default class SlidingPanel extends Component {
   constructor(props) {
@@ -14,6 +14,10 @@ export default class SlidingPanel extends Component {
     this.handleActive = this.handleActive.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   static propTypes = {

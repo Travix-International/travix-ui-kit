@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Badge component
  */
 const Badge = ({ arrow, border, children, mods, position, title, visible, ...otherProps }) => {
+  warnAboutDeprecatedProp(mods, 'mods', 'className');
+
   if (!children && !title) {
     return null;
   }
@@ -25,7 +27,7 @@ const Badge = ({ arrow, border, children, mods, position, title, visible, ...oth
     }
 
     badge = visible ? (
-      <div {...otherProps} className={getClassNamesWithMods('ui-badge-badge', mods, badgeMods)}>
+      <div {...otherProps} className={getClassNamesWithMods('ui-badge-badge', mods || [], badgeMods)}>
         {title}
         {border && <div className="ui-badge__border" />}
         {arrow && (position === 'right' || position === 'left') ? <span className="ui-badge-badge-arrow" /> : null}
@@ -38,7 +40,7 @@ const Badge = ({ arrow, border, children, mods, position, title, visible, ...oth
   }
 
   return (
-    <div className={getClassNamesWithMods('ui-badge', { visible }, mods)}>
+    <div className={getClassNamesWithMods('ui-badge', { visible }, mods || [])}>
       {children}
       {badge}
     </div>
@@ -80,7 +82,6 @@ Badge.defaultProps = {
   arrow: false,
   border: true,
   children: null,
-  mods: [],
   title: '',
   visible: true,
 };
