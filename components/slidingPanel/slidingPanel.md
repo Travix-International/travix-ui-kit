@@ -171,6 +171,7 @@ Sliding Panel with global
       >Open panel</button>
       <SlidingPanel
         active={state.isSlidingPanelOpen}
+        global
         footer={[
           <button data-rel="close">Close</button>,
           <button>Action button</button>
