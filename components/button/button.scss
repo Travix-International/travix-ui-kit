@@ -6,8 +6,10 @@
 
 .ui-button_variation_default {
   background: linear-gradient(to bottom, var(--tx-ui-button-default-normal-bg-top) 0, var(--tx-ui-button-default-normal-bg-bottom) 100%);
-  border-radius: var(--tx-ui-button-default-normal-border-radius);
   border: none;
+  border-bottom: var(--tx-ui-button-default-normal-bg-bottom) solid 1px;
+  border-radius: var(--tx-ui-button-default-normal-border-radius);
+  border-top: var(--tx-ui-button-default-normal-bg-top) solid 1px;
   box-shadow: var(--tx-ui-button-default-normal-shadow);
   color: var(--tx-ui-button-default-normal-text);
   font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
@@ -25,6 +27,8 @@
   &:focus,
   &:hover {
     background: linear-gradient(to bottom, var(--tx-ui-button-default-hover-bg-top) 0, var(--tx-ui-button-default-hover-bg-bottom) 100%);
+    border-bottom: var(--tx-ui-button-default-hover-bg-bottom) solid 1px;
+    border-top: var(--tx-ui-button-default-hover-bg-top) solid 1px;
     box-shadow: var(--tx-ui-button-default-hover-shadow);
     outline: none;
     top: var(--tx-ui-button-default-hover-top);
@@ -72,12 +76,33 @@
 .ui-button_disabled_true:active {
   background-color: var(--tx-ui-button-default-disabled-bg-bottom);
   background: linear-gradient(to bottom, var(--tx-ui-button-default-disabled-bg-top) 0, var(--tx-ui-button-default-disabled-bg-bottom) 100%);
+  border: none;
   border-bottom: 3px solid var(--tx-ui-button-default-disabled-border-bottom);
   box-shadow: 0 2px var(--tx-ui-button-default-disabled-border);
   color: var(--tx-ui-button-default-disabled-text);
   cursor: default;
   position: static;
   text-shadow: var(--tx-ui-button-default-disabled-text-shadow);
+
+  &.ui-button_size_xs {
+    padding: 3px 6px;
+  }
+
+  &.ui-button_size_s {
+    padding: 5px 10px;
+  }
+
+  &.ui-button_size_m {
+    line-height: 40px;
+  }
+
+  &.ui-button_size_l {
+    padding: 12px 17px;
+  }
+
+  &.ui-button_size_xl {
+    padding: 15px 20px;
+  }
 
   &.ui-button_variation_ghost {
     border: 3px solid var(--tx-ui-button-default-disabled-border-bottom);
@@ -90,26 +115,28 @@
 
 .ui-button_size_xs {
   font-size: 15px;
-  padding: 3px 6px;
+  padding: 2px 6px;
 }
+
 .ui-button_size_s {
   font-size: 18px;
-  padding: 5px 10px;
+  padding: 4px 10px;
 }
 
 .ui-button_size_m {
   font-size: 22px;
   padding: 0 24px;
-  line-height: 40px;
+  line-height: 38px;
 }
 
 .ui-button_size_l {
   font-size: 26px;
-  padding: 12px 17px;
+  padding: 11px 17px;
 }
+
 .ui-button_size_xl {
   font-size: 28px;
-  padding: 15px 20px;
+  padding: 14px 20px;
 }
 
 .ui-button_variation_link {
