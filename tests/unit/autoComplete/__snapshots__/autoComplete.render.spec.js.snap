@@ -5,12 +5,12 @@ exports[`AutoComplete #render() should copy mods 1`] = `
   className="ui-autocomplete ui-autocomplete_test"
 >
   <Input
-    aria-activedescendant="ui-autocomplete-item-autocomplete-0"
-    aria-autocomplete="list"
-    aria-expanded={false}
-    aria-haspopup={false}
-    aria-labelledby=""
-    aria-owns="ui-autocomplete-list-autocomplete"
+    ariaActivedescendant="ui-autocomplete-item-autocomplete-0"
+    ariaAutocomplete="list"
+    ariaExpanded={false}
+    ariaHaspopup={false}
+    ariaLabelledby=""
+    ariaOwns="ui-autocomplete-list-autocomplete"
     autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
@@ -60,12 +60,12 @@ exports[`AutoComplete #render() should not render item child if it not "AutoComp
   className="ui-autocomplete"
 >
   <Input
-    aria-activedescendant="ui-autocomplete-item-autocomplete-0"
-    aria-autocomplete="list"
-    aria-expanded={false}
-    aria-haspopup={false}
-    aria-labelledby=""
-    aria-owns="ui-autocomplete-list-autocomplete"
+    ariaActivedescendant="ui-autocomplete-item-autocomplete-0"
+    ariaAutocomplete="list"
+    ariaExpanded={false}
+    ariaHaspopup={false}
+    ariaLabelledby=""
+    ariaOwns="ui-autocomplete-list-autocomplete"
     autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
@@ -102,12 +102,12 @@ exports[`AutoComplete #render() should render correct autocomplete component 1`]
   className="ui-autocomplete"
 >
   <Input
-    aria-activedescendant="ui-autocomplete-item-autocomplete-0"
-    aria-autocomplete="list"
-    aria-expanded={false}
-    aria-haspopup={false}
-    aria-labelledby=""
-    aria-owns="ui-autocomplete-list-autocomplete"
+    ariaActivedescendant="ui-autocomplete-item-autocomplete-0"
+    ariaAutocomplete="list"
+    ariaExpanded={false}
+    ariaHaspopup={false}
+    ariaLabelledby=""
+    ariaOwns="ui-autocomplete-list-autocomplete"
     autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
@@ -157,12 +157,12 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
   className="ui-autocomplete"
 >
   <Input
-    aria-activedescendant="ui-autocomplete-item-autocomplete-0"
-    aria-autocomplete="list"
-    aria-expanded={false}
-    aria-haspopup={false}
-    aria-labelledby=""
-    aria-owns="ui-autocomplete-list-autocomplete"
+    ariaActivedescendant="ui-autocomplete-item-autocomplete-0"
+    ariaAutocomplete="list"
+    ariaExpanded={false}
+    ariaHaspopup={false}
+    ariaLabelledby=""
+    ariaOwns="ui-autocomplete-list-autocomplete"
     autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
@@ -218,12 +218,12 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
   className="ui-autocomplete"
 >
   <Input
-    aria-activedescendant="ui-autocomplete-item-autocomplete-0"
-    aria-autocomplete="list"
-    aria-expanded={false}
-    aria-haspopup={false}
-    aria-labelledby=""
-    aria-owns="ui-autocomplete-list-autocomplete"
+    ariaActivedescendant="ui-autocomplete-item-autocomplete-0"
+    ariaAutocomplete="list"
+    ariaExpanded={false}
+    ariaHaspopup={false}
+    ariaLabelledby=""
+    ariaOwns="ui-autocomplete-list-autocomplete"
     autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
@@ -279,12 +279,12 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
     label
   </label>
   <Input
-    aria-activedescendant="ui-autocomplete-item-autocomplete-0"
-    aria-autocomplete="list"
-    aria-expanded={false}
-    aria-haspopup={false}
-    aria-labelledby="ui-autocomplete-label-autocomplete"
-    aria-owns="ui-autocomplete-list-autocomplete"
+    ariaActivedescendant="ui-autocomplete-item-autocomplete-0"
+    ariaAutocomplete="list"
+    ariaExpanded={false}
+    ariaHaspopup={false}
+    ariaLabelledby="ui-autocomplete-label-autocomplete"
+    ariaOwns="ui-autocomplete-list-autocomplete"
     autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
@@ -340,12 +340,12 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
     label
   </label>
   <Input
-    aria-activedescendant="ui-autocomplete-item-autocomplete-0"
-    aria-autocomplete="list"
-    aria-expanded={false}
-    aria-haspopup={false}
-    aria-labelledby="ui-autocomplete-label-autocomplete"
-    aria-owns="ui-autocomplete-list-autocomplete"
+    ariaActivedescendant="ui-autocomplete-item-autocomplete-0"
+    ariaAutocomplete="list"
+    ariaExpanded={false}
+    ariaHaspopup={false}
+    ariaLabelledby="ui-autocomplete-label-autocomplete"
+    ariaOwns="ui-autocomplete-list-autocomplete"
     autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"
@@ -395,12 +395,12 @@ exports[`AutoComplete #render() should render correct open autocomplete componen
   className="ui-autocomplete ui-autocomplete_open"
 >
   <Input
-    aria-activedescendant="ui-autocomplete-item-autocomplete-0"
-    aria-autocomplete="list"
-    aria-expanded={true}
-    aria-haspopup={true}
-    aria-labelledby=""
-    aria-owns="ui-autocomplete-list-autocomplete"
+    ariaActivedescendant="ui-autocomplete-item-autocomplete-0"
+    ariaAutocomplete="list"
+    ariaExpanded={true}
+    ariaHaspopup={true}
+    ariaLabelledby=""
+    ariaOwns="ui-autocomplete-list-autocomplete"
     autoComplete="off"
     disabled={false}
     id="ui-autocomplete-input-autocomplete"

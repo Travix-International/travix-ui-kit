@@ -69,6 +69,12 @@ class Input extends Component {
 
   render() {
     const {
+      ariaActivedescendant,
+      ariaAutocomplete,
+      ariaExpanded,
+      ariaHaspopup,
+      ariaLabelledby,
+      ariaOwns,
       autoComplete,
       className,
       dataAttrs = {},
@@ -101,12 +107,12 @@ class Input extends Component {
       <div className="ui-input-container">
         <Element
           {...getDataAttributes(dataAttrs)}
-          aria-activedescendant={this.props['aria-activedescendant']}
-          aria-autocomplete={this.props['aria-autocomplete']}
-          aria-expanded={this.props['aria-expanded']}
-          aria-haspopup={this.props['aria-haspopup']}
-          aria-labelledby={this.props['aria-labelledby']}
-          aria-owns={this.props['aria-owns']}
+          aria-activedescendant={ariaActivedescendant}
+          aria-autocomplete={ariaAutocomplete}
+          aria-expanded={ariaExpanded}
+          aria-haspopup={ariaHaspopup}
+          aria-labelledby={ariaLabelledby}
+          aria-owns={ariaOwns}
           autoComplete={autoComplete}
           className={inputClasses}
           disabled={disabled}
@@ -140,27 +146,27 @@ Input.propTypes = {
   /**
    * Aria active descendant
    */
-  'aria-activedescendant': PropTypes.string,
+  ariaActivedescendant: PropTypes.string,
   /**
    * Aria autocomplete
    */
-  'aria-autocomplete': PropTypes.string,
+  ariaAutocomplete: PropTypes.string,
   /**
    * If aria is expanded
    */
-  'aria-expanded': PropTypes.bool,
+  ariaExpanded: PropTypes.bool,
   /**
    * If aria has popup
    */
-  'aria-haspopup': PropTypes.bool,
+  ariaHaspopup: PropTypes.bool,
   /**
    * Aria label led by
    */
-  'aria-labelledby': PropTypes.string,
+  ariaLabelledby: PropTypes.string,
   /**
    * Aria owns
    */
-  'aria-owns': PropTypes.string,
+  ariaOwns: PropTypes.string,
   /**
    * Is autocomplete on
    */
