@@ -4,11 +4,12 @@ import React, {
   Children,
   cloneElement,
 } from 'react';
+import classnames from 'classnames';
 
 import AutoCompleteItem from './autoCompleteItem';
 import Input from '../input/input';
 import KEY_CODE from '../constants/keyCode';
-import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 function getNextKey(keys, key) {
   return keys[keys.indexOf(key) + 1] || key;
@@ -215,6 +216,12 @@ class AutoComplete extends Component {
         this.blurInput();
       });
       return;
+    } else if (value !== item.value) {
+      this.setState({
+        inputValue: item.value,
+      }, () => {
+        this.updateInput(item.value);
+      });
     }
 
     this.close();
@@ -284,19 +291,27 @@ class AutoComplete extends Component {
 
   render() {
     const {
+      className,
       dataAttrs = {},
       disabled,
       label,
       name,
       placeholder,
     } = this.props;
+    const {
+      activeKey = 0,
+      open, inputValue = '',
+      selectedValue = '',
+    } = this.state;
+
     const mods = this.props.mods ? this.props.mods.slice() : [];
 
-    const otherProps = ejectOtherProps(this.props, AutoComplete.propTypes);
+    open && mods.push('open');
 
-    this.state.open && mods.push('open');
-    const className = getClassNamesWithMods('ui-autocomplete', mods);
-    const activeKey = this.state.activeKey || 0;
+    const classNames = classnames(
+      getClassNamesWithMods('ui-autocomplete', mods),
+      className
+    );
 
     const labelBlock = label ? (
       <label htmlFor={`ui-autocomplete-input-${name}`} id={`ui-autocomplete-label-${name}`}>{label}</label>
@@ -305,15 +320,14 @@ class AutoComplete extends Component {
     return (
       <div
         {...getDataAttributes(dataAttrs)}
-        {...otherProps}
-        className={className}
+        className={classNames}
       >
         {labelBlock}
         <Input
           aria-activedescendant={`ui-autocomplete-item-${name}-${activeKey}`}
           aria-autocomplete="list"
-          aria-expanded={this.state.open}
-          aria-haspopup={this.state.open}
+          aria-expanded={open}
+          aria-haspopup={open}
           aria-labelledby={label ? `ui-autocomplete-label-${name}` : ''}
           aria-owns={`ui-autocomplete-list-${name}`}
           autoComplete="off"
@@ -326,16 +340,16 @@ class AutoComplete extends Component {
           placeholder={placeholder}
           ref={this.initInputRef}
           role="combobox"
-          value={this.state.inputValue}
+          value={inputValue}
         />
         <Input
           hidden
           name={name}
-          value={this.state.selectedValue}
+          value={selectedValue}
         />
         <div className="ui-autocomplete__popunder">
           <ul
-            aria-expanded={this.state.open}
+            aria-expanded={open}
             className="ui-autocomplete__popunder-list"
             id={`ui-autocomplete-list-${name}`}
             role="listbox"
@@ -359,16 +373,16 @@ AutoComplete.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
+   * Custom className.
+   */
+  className: PropTypes.string,
+  /**
    * Data attribute. You can use it to set up GTM key or any custom data-* attribute.
    */
   dataAttrs: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.object,
   ]),
-  /**
-   * Disable autocomplete.
-   */
-  disabled: PropTypes.bool,
   /**
    * Default selected option.
    */
@@ -382,6 +396,10 @@ AutoComplete.propTypes = {
       PropTypes.number,
     ]),
   }),
+  /**
+   * Disable autocomplete.
+   */
+  disabled: PropTypes.bool,
   /**
    * Highlighting of found items.
    */
@@ -419,13 +437,13 @@ AutoComplete.propTypes = {
    */
   onFocus: PropTypes.func,
   /**
-   * Function to be triggered when the autocomplete input is updated.
-   */
-  onUpdateInput: PropTypes.func,
-  /**
    * Function to be triggered when key is pressed.
    */
   onKeyDown: PropTypes.func,
+  /**
+   * Function to be triggered when the autocomplete input is updated.
+   */
+  onUpdateInput: PropTypes.func,
   /**
    * Placeholder for input element .
    */

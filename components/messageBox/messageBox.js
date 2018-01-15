@@ -1,9 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import classnames from 'classnames';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
-const MessageBox = ({ children, dataAttrs, icon, mods, title, type }) => {
-  const className = getClassNamesWithMods('ui-messageBox', [...mods, type]);
+const MessageBox = (props) => {
+  const {
+    children,
+    className,
+    dataAttrs,
+    icon,
+    mods,
+    title,
+    type,
+  } = props;
+  const classNames = classnames(getClassNamesWithMods('ui-messageBox', [...mods, type]), className);
 
   const logo = icon && (
     <div className="ui-messageBox__content-icon">
@@ -18,7 +28,7 @@ const MessageBox = ({ children, dataAttrs, icon, mods, title, type }) => {
   );
 
   return (
-    <div {...getDataAttributes(dataAttrs)} className={className}>
+    <div {...getDataAttributes(dataAttrs)} className={classNames}>
       {logo}
       <div className="ui-messageBox__content">
         {header}
@@ -35,6 +45,11 @@ MessageBox.propTypes = {
    * Content that will be wrapped by MessageBox
    */
   children: PropTypes.node,
+
+  /**
+   * Custom classname
+   */
+  className: PropTypes.string,
 
   /**
    * Data attribute. You can use it to set up any custom data-* attribute.

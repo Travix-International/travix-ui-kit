@@ -20,12 +20,14 @@ exports[`AutoComplete #render() should copy mods 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="combobox"
+    value=""
   />
   <Input
     disabled={false}
     hidden={true}
     multiline={false}
     name="autocomplete"
+    value=""
   />
   <div
     className="ui-autocomplete__popunder"
@@ -73,12 +75,14 @@ exports[`AutoComplete #render() should not render item child if it not "AutoComp
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="combobox"
+    value=""
   />
   <Input
     disabled={false}
     hidden={true}
     multiline={false}
     name="autocomplete"
+    value=""
   />
   <div
     className="ui-autocomplete__popunder"
@@ -95,7 +99,7 @@ exports[`AutoComplete #render() should not render item child if it not "AutoComp
 
 exports[`AutoComplete #render() should render correct autocomplete component 1`] = `
 <div
-  className="ui-autocomplete"
+  className="ui-autocomplete test-auto-complete"
 >
   <Input
     aria-activedescendant="ui-autocomplete-item-autocomplete-0"
@@ -113,12 +117,14 @@ exports[`AutoComplete #render() should render correct autocomplete component 1`]
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="combobox"
+    value=""
   />
   <Input
     disabled={false}
     hidden={true}
     multiline={false}
     name="autocomplete"
+    value=""
   />
   <div
     className="ui-autocomplete__popunder"
@@ -173,6 +179,7 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
     hidden={true}
     multiline={false}
     name="autocomplete"
+    value=""
   />
   <div
     className="ui-autocomplete__popunder"
@@ -226,12 +233,14 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="combobox"
+    value=""
   />
   <Input
     disabled={false}
     hidden={true}
     multiline={false}
     name="autocomplete"
+    value=""
   />
   <div
     className="ui-autocomplete__popunder"
@@ -285,12 +294,14 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="combobox"
+    value=""
   />
   <Input
     disabled={false}
     hidden={true}
     multiline={false}
     name="autocomplete"
+    value=""
   />
   <div
     className="ui-autocomplete__popunder"
@@ -344,12 +355,14 @@ exports[`AutoComplete #render() should render correct autocomplete component wit
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="combobox"
+    value=""
   />
   <Input
     disabled={false}
     hidden={true}
     multiline={false}
     name="autocomplete"
+    value=""
   />
   <div
     className="ui-autocomplete__popunder"
@@ -397,12 +410,14 @@ exports[`AutoComplete #render() should render correct open autocomplete componen
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="combobox"
+    value=""
   />
   <Input
     disabled={false}
     hidden={true}
     multiline={false}
     name="autocomplete"
+    value=""
   />
   <div
     className="ui-autocomplete__popunder"
