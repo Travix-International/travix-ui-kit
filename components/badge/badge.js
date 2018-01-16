@@ -1,17 +1,32 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import classnames from 'classnames';
 
-import { getClassNamesWithMods, warnAboutDeprecatedProp } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Badge component
  */
-const Badge = ({ arrow, border, children, mods, position, title, visible, ...otherProps }) => {
-  warnAboutDeprecatedProp(mods, 'mods', 'className');
+const Badge = (props) => {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
+  const {
+    arrow,
+    border,
+    children,
+    className,
+    dataAttrs = {},
+    mods = [],
+    position,
+    title,
+    visible,
+  } = props;
 
   if (!children && !title) {
     return null;
   }
+
+  const dataAttributes = getDataAttributes(dataAttrs);
 
   let badge = null;
 
@@ -27,7 +42,10 @@ const Badge = ({ arrow, border, children, mods, position, title, visible, ...oth
     }
 
     badge = visible ? (
-      <div {...otherProps} className={getClassNamesWithMods('ui-badge-badge', mods || [], badgeMods)}>
+      <div
+        {...dataAttributes}
+        className={classnames(className, getClassNamesWithMods('ui-badge-badge', mods, badgeMods))}
+      >
         {title}
         {border && <div className="ui-badge__border" />}
         {arrow && (position === 'right' || position === 'left') ? <span className="ui-badge-badge-arrow" /> : null}
@@ -40,7 +58,7 @@ const Badge = ({ arrow, border, children, mods, position, title, visible, ...oth
   }
 
   return (
-    <div className={getClassNamesWithMods('ui-badge', { visible }, mods || [])}>
+    <div className={getClassNamesWithMods('ui-badge', { visible }, mods)}>
       {children}
       {badge}
     </div>
@@ -60,6 +78,14 @@ Badge.propTypes = {
    * Content, that will be wrapped by Badge
    */
   children: PropTypes.node,
+  /**
+   * Specify a CSS class
+   */
+  className: PropTypes.string,
+  /**
+   * Data attribute. You can use it to set up any custom data-* attribute.
+   */
+  dataAttrs: PropTypes.object,
   /**
    * Set of custom modifications.
    */

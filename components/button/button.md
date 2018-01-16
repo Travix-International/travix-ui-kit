@@ -16,6 +16,7 @@ Basic button:
       <Button disabled={state.isDisabled} onClick={alert}>Show alert</Button><br/><br/>
       <Button disabled={state.isDisabled} dataAttrs={{gtm: 'some-id'}} type="reset">With GTM id</Button><br/><br/>
       <Button disabled={state.isDisabled} mods={['test']} type="reset">With mode</Button><br/><br/>
+      <Button disabled={state.isDisabled} mods={['test']} id="my-button-id">Example with custom id set</Button><br/><br/>
       <Button disabled={state.isDisabled} mods={['test']} className="my-class">Example with custom class set</Button><br/><br/>
       <Button disabled={state.isDisabled} onMouseUp={() => alert('Mouse Up')}>Example with custom event (onMouseUp)</Button><br/><br/>
     </div>

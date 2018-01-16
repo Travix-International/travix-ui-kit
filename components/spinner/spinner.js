@@ -1,4 +1,4 @@
-// Imports
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { getClassNamesWithMods, warnAboutDeprecatedProp } from '../_helpers';
@@ -9,16 +9,16 @@ import { getClassNamesWithMods, warnAboutDeprecatedProp } from '../_helpers';
 function Spinner(props) {
   warnAboutDeprecatedProp(props.mods, 'mods', 'className');
 
-  const { size } = props;
+  const { className, size } = props;
   const mods = props.mods ? props.mods.slice() : [];
 
   mods.push(`size_${size}`);
 
-  const className = getClassNamesWithMods('ui-spinner', mods);
+  const classes = classnames(getClassNamesWithMods('ui-spinner', mods), className);
 
   /* eslint-disable max-len */
   return (
-    <div className={className}>
+    <div className={classes}>
       <svg
         version="1.1"
         viewBox="0 0 80 80"
@@ -122,6 +122,11 @@ Spinner.defaultProps = {
 };
 
 Spinner.propTypes = {
+  /**
+   * Custom class name
+   */
+  className: PropTypes.string,
+
   /**
    * You can provide set of custom modifications.
    */

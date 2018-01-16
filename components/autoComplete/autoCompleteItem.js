@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import classnames from 'classnames';
 
 import {
   getClassNamesWithMods,
   getDataAttributes,
-  ejectOtherProps,
   warnAboutDeprecatedProp,
 } from '../_helpers';
 
@@ -37,23 +37,25 @@ class AutoCompleteItem extends Component {
   render() {
     const {
       children,
+      className,
       dataAttrs = {},
       isActive,
       isTitle,
     } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
 
-    const otherProps = ejectOtherProps(this.props, AutoCompleteItem.propTypes);
-
     isTitle && mods.push('title');
     isActive && mods.push('active');
-    const className = getClassNamesWithMods('ui-autocomplete-item', mods);
+
+    const classNames = classnames(
+      getClassNamesWithMods('ui-autocomplete-item', mods),
+      className
+    );
 
     return (
       <li
         {...getDataAttributes(dataAttrs)}
-        {...otherProps}
-        className={className}
+        className={classNames}
         onClick={!isTitle ? this.handleItemClick : undefined}
         role="listitem"
         role="option"
@@ -75,6 +77,10 @@ AutoCompleteItem.propTypes = {
    * The data for autocomplet item.
    */
   children: PropTypes.node.isRequired,
+  /**
+   * Custom className.
+   */
+  className: PropTypes.string,
   /**
    * Code of the item.
    */
