@@ -542,6 +542,15 @@ spinner:
     lighter: "var(--tx-generic-color-accent)"
     dark: "var(--tx-generic-color-active)"
     darker: "var(--tx-generic-color-primary-lighter)"
+  text:
+    font-size: "19px"
+  wrapper:
+    border-radius: "8px"
+    z-index: "100"
+    transparent:
+      opacity: "0.5"
+  content:
+    z-index: "99"
 carousel:
   track:
     transition: "transform 0.5s cubic-bezier(0.2, 1, 0.3, 1)"
