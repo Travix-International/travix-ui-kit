@@ -125,7 +125,7 @@
   color: var(--tx-generic-color-primary);
   font-family: var(--tx-generic-font-primary-font-family);
   font-size: 19px;
-  font-weight: bold;
+  font-weight: var(--tx-generic-font-primary-weight-semibold);
   margin-left: 8px;
 }
 
