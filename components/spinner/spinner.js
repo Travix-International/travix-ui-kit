@@ -7,7 +7,7 @@ import { getClassNamesWithMods } from '../_helpers';
  * General Spinner component.
  */
 function Spinner(props) {
-  const { size, children, loading, loadingMessage, transparent } = props;
+  const { size, children, loading, loadingMessage, transparent, wrapperClassName } = props;
   const mods = props.mods ? props.mods.slice() : [];
 
   mods.push(`size_${size}`);
@@ -129,7 +129,7 @@ function Spinner(props) {
   }
 
   return (
-    <div className={getClassNamesWithMods('ui-spinner__wrapper', { loading, transparent })}>
+    <div className={getClassNamesWithMods('ui-spinner__wrapper', { loading, transparent, [wrapperClassName]: wrapperClassName })}>
       {loadingSection}
       <div className="ui-spinner__content">
         {children}
@@ -140,21 +140,14 @@ function Spinner(props) {
 }
 
 Spinner.defaultProps = {
-  size: 'm',
   loading: true,
   loadingMessage: '',
+  size: 'm',
   transparent: false,
+  wrapperClassName: '',
 };
 
 Spinner.propTypes = {
-  /**
-   * You can provide set of custom modifications.
-   */
-  mods: PropTypes.arrayOf(PropTypes.string),
-  /**
-   * Spinner size.
-   */
-  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
   /**
    * You can pass child component(s) which will be wrapped into the loading section.
    */
@@ -168,9 +161,21 @@ Spinner.propTypes = {
    */
   loadingMessage: PropTypes.node,
   /**
+   * You can provide set of custom modifications.
+   */
+  mods: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Spinner size.
+   */
+  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
+  /**
    * Enable translucency for the loading section. You will partially see the content while loading.
    */
   transparent: PropTypes.bool,
+  /**
+   * Custom className that can be passed to root wrapper container.
+   */
+  wrapperClassName: PropTypes.string,
 };
 
 export default Spinner;
