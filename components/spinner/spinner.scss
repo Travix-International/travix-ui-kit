@@ -131,6 +131,7 @@
 
 .ui-spinner__wrapper {
   border-radius: var(--tx-spinner-wrapper-border-radius);
+  overflow: hidden;
   position: relative;
 }
 
