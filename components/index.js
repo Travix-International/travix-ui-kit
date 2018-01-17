@@ -20,6 +20,7 @@ import OverlayTrigger from './overlayTrigger/overlayTrigger';
 import Price from './price/price';
 import RadioButton from './radioButton/radioButton';
 import Rating from './rating/rating';
+import SelectionBlock from './selectionBlock/selectionBlock';
 import SlidingPanel from './slidingPanel/slidingPanel';
 import Spinner from './spinner/spinner';
 import Tab from './tabs/tab';
@@ -50,6 +51,7 @@ export default {
   Price,
   RadioButton,
   Rating,
+  SelectionBlock,
   SlidingPanel,
   Spinner,
   Tab,
