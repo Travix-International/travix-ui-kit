@@ -99,7 +99,7 @@ exports[`AutoComplete #render() should not render item child if it not "AutoComp
 
 exports[`AutoComplete #render() should render correct autocomplete component 1`] = `
 <div
-  className="ui-autocomplete"
+  className="ui-autocomplete test-auto-complete"
 >
   <Input
     ariaActivedescendant="ui-autocomplete-item-autocomplete-0"
