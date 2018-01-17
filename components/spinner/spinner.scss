@@ -123,7 +123,7 @@
 
 .ui-spinner__loading-text {
   color: var(--tx-generic-color-primary);
-  font-family: var(--tx-generic-font-primary-font-family);
+  font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
   font-size: 19px;
   font-weight: var(--tx-generic-font-primary-weight-semibold);
   margin-left: 8px;
