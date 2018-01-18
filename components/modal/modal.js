@@ -101,6 +101,7 @@ class Modal extends Component {
     return (
       <header className="ui-modal__header">
         {modalTitle}
+        {this.renderCloseButton()}
       </header>
     );
   }
@@ -150,9 +151,10 @@ class Modal extends Component {
   }
 
   render() {
-    const { fullscreen, children } = this.props;
+    const { fullscreen, children, size } = this.props;
     const { isActive, isOpen } = this.state;
     const mods = this.props.mods ? this.props.mods.slice() : [];
+    mods.push(`size_${size}`);
 
     if (isActive) {
       mods.push('active');
@@ -175,7 +177,6 @@ class Modal extends Component {
       <Global className={className}>
         {this.renderOverlay()}
         <div className={'ui-modal__container'}>
-          {this.renderCloseButton()}
           {this.renderHeader()}
           <section className="ui-modal__content">
             {children}
@@ -200,6 +201,7 @@ Modal.defaultProps = {
   onClose: null,
   onOverlayClick: null,
   overlay: true,
+  size: 'big',
   title: null,
 };
 
@@ -256,6 +258,10 @@ Modal.propTypes = {
    * Determine whether a overlay is visible or not
    */
   overlay: PropTypes.bool,
+  /**
+   * Price's size
+   */
+  size: PropTypes.oneOf(['small', 'big']),
   /**
    * The modal dialog's title
    */
