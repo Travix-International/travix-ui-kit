@@ -1,4 +1,3 @@
-
 .ui-selection-block__section {
   display: flex;
   flex-flow: row nowrap;
@@ -26,7 +25,6 @@
 
 .ui-selection-block__title {
   color: var(--tx-generic-color-primary);
-  font-family: "Khand", "sans-serif";
   font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
   font-size: 35px;
   font-weight: var(--tx-generic-font-primary-weight-medium);
