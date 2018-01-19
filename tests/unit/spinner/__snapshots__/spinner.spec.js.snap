@@ -2,7 +2,7 @@
 
 exports[`Spinner #render() should handle custom className passed to the wrapper 1`] = `
 <div
-  className="ui-spinner__wrapper ui-spinner__wrapper_loading ui-spinner__wrapper_my-custom-class"
+  className="ui-spinner__wrapper ui-spinner__wrapper_loading my-custom-class"
 >
   <div
     className="ui-spinner__loading-section"

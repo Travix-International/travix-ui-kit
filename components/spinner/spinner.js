@@ -1,6 +1,7 @@
 // Imports
 import PropTypes from 'prop-types';
 import React from 'react';
+import classnames from 'classnames';
 import { getClassNamesWithMods } from '../_helpers';
 
 /**
@@ -129,7 +130,14 @@ function Spinner(props) {
   }
 
   return (
-    <div className={getClassNamesWithMods('ui-spinner__wrapper', { loading, transparent, [wrapperClassName]: wrapperClassName })}>
+    <div
+      className={
+        classnames(
+          getClassNamesWithMods('ui-spinner__wrapper', { loading, transparent }),
+          wrapperClassName,
+        )
+      }
+    >
       {loadingSection}
       <div className="ui-spinner__content">
         {children}
