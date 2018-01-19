@@ -1,13 +1,14 @@
 // Imports
 import PropTypes from 'prop-types';
 import React from 'react';
+import classnames from 'classnames';
 import { getClassNamesWithMods } from '../_helpers';
 
 /**
- * General Spinner component. Use when you need spinner
+ * General Spinner component.
  */
 function Spinner(props) {
-  const { size } = props;
+  const { size, children, loading, loadingMessage, transparent, wrapperClassName } = props;
   const mods = props.mods ? props.mods.slice() : [];
 
   mods.push(`size_${size}`);
@@ -15,7 +16,7 @@ function Spinner(props) {
   const className = getClassNamesWithMods('ui-spinner', mods);
 
   /* eslint-disable max-len */
-  return (
+  const spinner = (
     <div className={className}>
       <svg
         version="1.1"
@@ -112,24 +113,77 @@ function Spinner(props) {
       </svg>
     </div>
   );
+
+  if (!children) {
+    return spinner;
+  }
+
+  let loadingSection = null;
+
+  if (loading) {
+    loadingSection = (
+      <div className="ui-spinner__loading-section">
+        {spinner}
+        <span className="ui-spinner__loading-text"> {loadingMessage} </span>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={
+        classnames(
+          getClassNamesWithMods('ui-spinner__wrapper', { loading, transparent }),
+          wrapperClassName
+        )
+      }
+    >
+      {loadingSection}
+      <div className="ui-spinner__content">
+        {children}
+      </div>
+    </div>
+  );
   /* eslint-enable max-len */
 }
 
 Spinner.defaultProps = {
+  loading: true,
+  loadingMessage: '',
   size: 'm',
+  transparent: false,
+  wrapperClassName: '',
 };
 
 Spinner.propTypes = {
   /**
+   * You can pass child component(s) which will be wrapped into the loading section.
+   */
+  children: PropTypes.node,
+  /**
+   * When used with children, determines whether to show spinner or content.
+   */
+  loading: PropTypes.bool,
+  /**
+   * Simple text to be shown next to the spinner.
+   */
+  loadingMessage: PropTypes.node,
+  /**
    * You can provide set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
-
   /**
    * Spinner size.
    */
   size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
-
+  /**
+   * Enable translucency for the loading section. You will partially see the content while loading.
+   */
+  transparent: PropTypes.bool,
+  /**
+   * Custom className that can be passed to root wrapper container.
+   */
+  wrapperClassName: PropTypes.string,
 };
 
 export default Spinner;
