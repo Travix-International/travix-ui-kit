@@ -134,7 +134,7 @@ function Spinner(props) {
       className={
         classnames(
           getClassNamesWithMods('ui-spinner__wrapper', { loading, transparent }),
-          wrapperClassName,
+          wrapperClassName
         )
       }
     >
