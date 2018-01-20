@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 import { getClassNamesWithMods } from '../_helpers';
-import Spinner from '../';
+import { Spinner } from '../';
 
 const LoadingOverlay = ({
   children,
@@ -20,16 +20,24 @@ const LoadingOverlay = ({
   let loadingSection = null;
 
   const spinnerComponent = (
-    <Spinner/>
+    <Spinner size="s"/>
   );
 
   if (loading) {
     loadingSection = (
-      <div className="ui-loading-overlay__loading-container">
+      <div
+        className="ui-loading-overlay__loading-container"
+        className={
+          getClassNamesWithMods(
+            'ui-loading-overlay__loading-container',
+            [spinner && message && `message-${messageDirection}`]
+          )
+        }
+      >
         {spinner && spinnerComponent}
         <span
-          classNames={
-            getClassNamesWithMods('ui-loading-overlay__loading-message', { [messageDirection]: messageDirection })
+          className={
+            getClassNamesWithMods('ui-loading-overlay__loading-message', [spinner && message && messageDirection])
           }
         >
           {message}
@@ -67,13 +75,13 @@ LoadingOverlay.propTypes = {
   /**
    * Child component(s) which will be wrapped into the loading section.
    */
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   /**
    * Custom className that can be passed to the root wrapper container.
    */
   className: PropTypes.string,
   /**
-   * If loading is enabled, it'll show the spinner / loading message. If not, then content.
+   * If loading is enabled, it'll show the overlay and, optionally, spinner / message. If not, then content.
    */
   loading: PropTypes.bool,
   /**

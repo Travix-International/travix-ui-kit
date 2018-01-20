@@ -17,11 +17,13 @@ exports[`LoadingOverlay #render() render loading overlay in loading mode 1`] = `
   className="ui-loading-overlay ui-loading-overlay_loading my-custom-class"
 >
   <div
-    className="ui-loading-overlay__loading-container"
+    className="ui-loading-overlay__loading-container ui-loading-overlay__loading-container_message-right"
   >
-    <[object Object] />
+    <Spinner
+      size="s"
+    />
     <span
-      classNames="ui-loading-overlay__loading-message ui-loading-overlay__loading-message_right"
+      className="ui-loading-overlay__loading-message ui-loading-overlay__loading-message_right"
     />
   </div>
   <div
@@ -49,11 +51,13 @@ exports[`LoadingOverlay #render() render loading overlay with left message direc
   className="ui-loading-overlay ui-loading-overlay_loading my-custom-class"
 >
   <div
-    className="ui-loading-overlay__loading-container"
+    className="ui-loading-overlay__loading-container ui-loading-overlay__loading-container_message-left"
   >
-    <[object Object] />
+    <Spinner
+      size="s"
+    />
     <span
-      classNames="ui-loading-overlay__loading-message ui-loading-overlay__loading-message_left"
+      className="ui-loading-overlay__loading-message ui-loading-overlay__loading-message_left"
     />
   </div>
   <div
@@ -69,11 +73,13 @@ exports[`LoadingOverlay #render() render loading overlay with loading message 1`
   className="ui-loading-overlay ui-loading-overlay_loading my-custom-class"
 >
   <div
-    className="ui-loading-overlay__loading-container"
+    className="ui-loading-overlay__loading-container ui-loading-overlay__loading-container_message-right"
   >
-    <[object Object] />
+    <Spinner
+      size="s"
+    />
     <span
-      classNames="ui-loading-overlay__loading-message ui-loading-overlay__loading-message_right"
+      className="ui-loading-overlay__loading-message ui-loading-overlay__loading-message_right"
     >
       Loading your data...
     </span>
@@ -103,11 +109,13 @@ exports[`LoadingOverlay #render() render loading overlay with transparency in lo
   className="ui-loading-overlay ui-loading-overlay_loading ui-loading-overlay_transparent my-custom-class"
 >
   <div
-    className="ui-loading-overlay__loading-container"
+    className="ui-loading-overlay__loading-container ui-loading-overlay__loading-container_message-right"
   >
-    <[object Object] />
+    <Spinner
+      size="s"
+    />
     <span
-      classNames="ui-loading-overlay__loading-message ui-loading-overlay__loading-message_right"
+      className="ui-loading-overlay__loading-message ui-loading-overlay__loading-message_right"
     />
   </div>
   <div
@@ -128,7 +136,7 @@ exports[`LoadingOverlay #render() render without spinner 1`] = `
     className="ui-loading-overlay__loading-container"
   >
     <span
-      classNames="ui-loading-overlay__loading-message ui-loading-overlay__loading-message_right"
+      className="ui-loading-overlay__loading-message"
     />
   </div>
   <div
