@@ -35,13 +35,15 @@ const LoadingOverlay = ({
         }
       >
         {spinner && spinnerComponent}
-        <span
-          className={
-            getClassNamesWithMods('ui-loading-overlay__loading-message', [spinner && !!message && messageDirection])
-          }
-        >
-          {message}
-        </span>
+        {message && (
+          <span
+            className={
+              getClassNamesWithMods('ui-loading-overlay__loading-message', [spinner && !!message && messageDirection])
+            }
+          >
+            {message}
+          </span>
+        )}
       </div>
     );
   }

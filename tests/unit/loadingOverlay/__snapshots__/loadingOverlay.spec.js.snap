@@ -22,9 +22,6 @@ exports[`LoadingOverlay #render() render loading overlay in loading mode 1`] = `
     <Spinner
       size="s"
     />
-    <span
-      className="ui-loading-overlay__loading-message"
-    />
   </div>
   <div
     className="ui-loading-overlay__content"
@@ -55,9 +52,6 @@ exports[`LoadingOverlay #render() render loading overlay with left message direc
   >
     <Spinner
       size="s"
-    />
-    <span
-      className="ui-loading-overlay__loading-message"
     />
   </div>
   <div
@@ -114,9 +108,6 @@ exports[`LoadingOverlay #render() render loading overlay with transparency in lo
     <Spinner
       size="s"
     />
-    <span
-      className="ui-loading-overlay__loading-message"
-    />
   </div>
   <div
     className="ui-loading-overlay__content"
@@ -134,11 +125,7 @@ exports[`LoadingOverlay #render() render without spinner 1`] = `
 >
   <div
     className="ui-loading-overlay__loading-container"
-  >
-    <span
-      className="ui-loading-overlay__loading-message"
-    />
-  </div>
+  />
   <div
     className="ui-loading-overlay__content"
   >
