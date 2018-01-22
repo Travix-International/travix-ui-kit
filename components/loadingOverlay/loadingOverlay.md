@@ -36,7 +36,7 @@ Loading overlay:
         <Checkbox
           checked={state.loading && state.spinner}
           disabled={!state.loading}
-          name="spinner"
+          name="showSpinner"
           onChange={() => setState({ spinner: !state.spinner })}
         >
           Show spinner
