@@ -1,3 +1,5 @@
+@value messageMargin: 8px;
+
 .ui-loading-overlay {
   border-radius: 8px;
   overflow: hidden;
@@ -34,19 +36,19 @@
 }
 
 .ui-loading-overlay__loading-message_left {
-  margin-right: 8px;
+  margin-right: messageMargin;
 }
 
 .ui-loading-overlay__loading-message_right {
-  margin-left: 8px;
+  margin-left: messageMargin;
 }
 
 .ui-loading-overlay__loading-message_top {
-  margin-bottom: 8px;
+  margin-bottom: messageMargin;
 }
 
 .ui-loading-overlay__loading-message_bottom {
-  margin-top: 8px;
+  margin-top: messageMargin;
 }
 
 .ui-loading-overlay__content {
