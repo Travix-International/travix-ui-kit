@@ -1,0 +1,19 @@
+.ui-modal-content {
+  background-color: var(--tx-modal-content-background-color);
+}
+
+.ui-modal-content__container {
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--tx-modal-modal-content-background-color);
+  overflow-y: auto;
+  border-radius: var(--tx-modal-modal-content-border-radius);
+  margin: 18px;
+  padding: 24px;
+}
+
+.ui-modal_size_small {
+  .ui-modal-content__container {
+    margin: 8px;
+    padding: 18px;
+  }
+}

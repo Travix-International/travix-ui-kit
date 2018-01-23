@@ -434,6 +434,13 @@ modal:
       color: "var(--tx-generic-color-active)"
     icon:
       color: "var(--tx-generic-color-secondary-darker)"
+  modal-content:
+    background:
+      color: "var(--tx-generic-color-blank)"
+    border-radius: 8px;
+    padding:
+      left-right: 18px;
+      top-bottom: 18px;
 price:
   xsmall:
     font:

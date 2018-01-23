@@ -41,6 +41,23 @@ Basic Modal:
       </div>
       <br/>
       <div>
+        <Button size="s" onClick={() => setState({ isOpenModalWithContent: true })}>Open modal with content</Button>
+        <Modal
+          active={state.isOpenModalWithContent}
+          title="Modal with title"
+          closable={true}
+          closeOnOverlayClick={false}
+          closeOnEsc={false}
+          onClose={() => setState({ isOpenModalWithContent: false })}
+        >
+          <ModalContent title="Modal content title">
+            You can't close this modal on ESC or overlay click
+            <Button size="s" onClick={() => setState({ isOpenModalWithContent: false })}>Close</Button>
+          </ModalContent>
+        </Modal>
+      </div>
+      <br/>
+      <div>
         <Button size="s" onClick={() => setState({ isOpenCustomModal: true })}>Open custom modal</Button>
         <Modal
           active={state.isOpenCustomModal}

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
+import ModalContent from './modalContent';
 import Global from '../global/global';
 import KEY_CODE from '../constants/keyCode';
 import { getClassNamesWithMods } from '../_helpers';
@@ -151,7 +152,7 @@ class Modal extends Component {
   }
 
   render() {
-    const { fullscreen, children, size } = this.props;
+    const { fullscreen, content, children, size } = this.props;
     const { isActive, isOpen } = this.state;
     const mods = this.props.mods ? this.props.mods.slice() : [];
     mods.push(`size_${size}`);
@@ -171,6 +172,14 @@ class Modal extends Component {
       mods.push('fullscreen');
     }
 
+    const contentSection = children && children.type === ModalContent
+      ? children
+      : (
+        <section className="ui-modal__content">
+          {children}
+        </section>
+      );
+
     const className = getClassNamesWithMods('ui-modal', mods);
 
     return (
@@ -178,9 +187,7 @@ class Modal extends Component {
         {this.renderOverlay()}
         <div className={'ui-modal__container'}>
           {this.renderHeader()}
-          <section className="ui-modal__content">
-            {children}
-          </section>
+          {contentSection}
           {this.renderFooter()}
         </div>
       </Global>

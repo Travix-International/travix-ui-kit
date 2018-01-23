@@ -13,14 +13,15 @@ exports[`Modal: render should add correct className after change state to "open"
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={null}
 >
   <Global
-    className="ui-modal ui-modal_active ui-modal_open"
+    className="ui-modal ui-modal_size_big ui-modal_active ui-modal_open"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_active ui-modal_open"
+      className="ui-modal ui-modal_size_big ui-modal_active ui-modal_open"
     >
       <div
         className="ui-modal__overlay"
@@ -53,14 +54,15 @@ exports[`Modal: render should render closable modal with close button text 1`] =
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={null}
 >
   <Global
-    className="ui-modal ui-modal_active"
+    className="ui-modal ui-modal_size_big ui-modal_active"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_active"
+      className="ui-modal ui-modal_size_big ui-modal_active"
     >
       <div
         className="ui-modal__overlay"
@@ -93,6 +95,7 @@ exports[`Modal: render should render empty modal when status is not active 1`] =
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={null}
 />
 `;
@@ -110,14 +113,15 @@ exports[`Modal: render should render fullscreen modal 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={null}
 >
   <Global
-    className="ui-modal ui-modal_active ui-modal_fullscreen"
+    className="ui-modal ui-modal_size_big ui-modal_active ui-modal_fullscreen"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_active ui-modal_fullscreen"
+      className="ui-modal ui-modal_size_big ui-modal_active ui-modal_fullscreen"
     >
       <div
         className="ui-modal__overlay"
@@ -150,6 +154,7 @@ exports[`Modal: render should render inactive modal 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={null}
 />
 `;
@@ -173,14 +178,15 @@ exports[`Modal: render should render modal with custom footer 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={null}
 >
   <Global
-    className="ui-modal ui-modal_active"
+    className="ui-modal ui-modal_size_big ui-modal_active"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_active"
+      className="ui-modal ui-modal_size_big ui-modal_active"
     >
       <div
         className="ui-modal__overlay"
@@ -220,6 +226,7 @@ exports[`Modal: render should render modal with custom header 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={
     <header>
       <h1>
@@ -229,11 +236,11 @@ exports[`Modal: render should render modal with custom header 1`] = `
   }
 >
   <Global
-    className="ui-modal ui-modal_active"
+    className="ui-modal ui-modal_size_big ui-modal_active"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_active"
+      className="ui-modal ui-modal_size_big ui-modal_active"
     >
       <div
         className="ui-modal__overlay"
@@ -278,14 +285,15 @@ exports[`Modal: render should render modal with custom mods 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={null}
 >
   <Global
-    className="ui-modal ui-modal_my-custom-mod ui-modal_active"
+    className="ui-modal ui-modal_my-custom-mod ui-modal_size_big ui-modal_active"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_my-custom-mod ui-modal_active"
+      className="ui-modal ui-modal_my-custom-mod ui-modal_size_big ui-modal_active"
     >
       <div
         className="ui-modal__overlay"
@@ -318,6 +326,7 @@ exports[`Modal: render should render modal with custom title 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={
     <h2>
       h2 Custom Title
@@ -325,11 +334,11 @@ exports[`Modal: render should render modal with custom title 1`] = `
   }
 >
   <Global
-    className="ui-modal ui-modal_active"
+    className="ui-modal ui-modal_size_big ui-modal_active"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_active"
+      className="ui-modal ui-modal_size_big ui-modal_active"
     >
       <div
         className="ui-modal__overlay"
@@ -369,14 +378,15 @@ exports[`Modal: render should render modal without overlay 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={false}
+  size="big"
   title={null}
 >
   <Global
-    className="ui-modal ui-modal_active"
+    className="ui-modal ui-modal_size_big ui-modal_active"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_active"
+      className="ui-modal ui-modal_size_big ui-modal_active"
     >
       <div
         className="ui-modal__container"
@@ -405,14 +415,15 @@ exports[`Modal: render should render non closable modal 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={null}
 >
   <Global
-    className="ui-modal ui-modal_active"
+    className="ui-modal ui-modal_size_big ui-modal_active"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_active"
+      className="ui-modal ui-modal_size_big ui-modal_active"
     >
       <div
         className="ui-modal__overlay"
@@ -449,14 +460,15 @@ exports[`Modal: render should return active modal with title and footer 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title="Test Modal Title"
 >
   <Global
-    className="ui-modal ui-modal_active"
+    className="ui-modal ui-modal_size_big ui-modal_active"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_active"
+      className="ui-modal ui-modal_size_big ui-modal_active"
     >
       <div
         className="ui-modal__overlay"
@@ -505,14 +517,15 @@ exports[`Modal: render should return base active modal with close button 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
+  size="big"
   title={null}
 >
   <Global
-    className="ui-modal ui-modal_active"
+    className="ui-modal ui-modal_size_big ui-modal_active"
     noscroll={true}
   >
     <div
-      className="ui-modal ui-modal_active"
+      className="ui-modal ui-modal_size_big ui-modal_active"
     >
       <div
         className="ui-modal__overlay"
