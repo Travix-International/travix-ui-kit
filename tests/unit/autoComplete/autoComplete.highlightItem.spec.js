@@ -12,7 +12,7 @@ describe('AutoComplete: highlightItem', () => {
 
   const str = 'Berlin';
 
-  it('should not be RegExp exeption', () => {
+  it('should not be RegExp exсeption', () => {
     expect(() => {
       AutoComplete.prototype.highlightItem.call(self, str);
     }).not.toThrow(SyntaxError);
