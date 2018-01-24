@@ -1,5 +1,46 @@
 # Change Log
 
+## [v0.7.8](https://github.com/Travix-International/travix-ui-kit/tree/v0.7.8) (2018-01-24)
+
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.7.7...v0.7.8)
+
+**Fixed bugs:**
+
+- fixed tests for calendar [\#303](https://github.com/Travix-International/travix-ui-kit/pull/303) ([maximuk](https://github.com/maximuk))
+- fix for autocomplete behavior [\#273](https://github.com/Travix-International/travix-ui-kit/pull/273) ([maximuk](https://github.com/maximuk))
+- fixed css for autocomplete and input [\#269](https://github.com/Travix-International/travix-ui-kit/pull/269) ([maximuk](https://github.com/maximuk))
+
+**Merged pull requests:**
+
+- Implement loading overlay component [\#315](https://github.com/Travix-International/travix-ui-kit/pull/315) ([RumataDeEstor](https://github.com/RumataDeEstor))
+- Add selection block component [\#313](https://github.com/Travix-International/travix-ui-kit/pull/313) ([AlleeX](https://github.com/AlleeX))
+- Fixed input properties [\#308](https://github.com/Travix-International/travix-ui-kit/pull/308) ([annavolkovskaya](https://github.com/annavolkovskaya))
+- Fix dropdown styles [\#302](https://github.com/Travix-International/travix-ui-kit/pull/302) ([svetlanamorozko](https://github.com/svetlanamorozko))
+- Rename [\#299](https://github.com/Travix-International/travix-ui-kit/pull/299) ([ibsukru](https://github.com/ibsukru))
+- Toggle button component add dataAttrs [\#297](https://github.com/Travix-International/travix-ui-kit/pull/297) ([sleepwalky](https://github.com/sleepwalky))
+- Add missed props for Dropdown component [\#295](https://github.com/Travix-International/travix-ui-kit/pull/295) ([svetlanamorozko](https://github.com/svetlanamorozko))
+- Fixed price component [\#292](https://github.com/Travix-International/travix-ui-kit/pull/292) ([annavolkovskaya](https://github.com/annavolkovskaya))
+- Fix Spinner [\#290](https://github.com/Travix-International/travix-ui-kit/pull/290) ([svetlanamorozko](https://github.com/svetlanamorozko))
+- fix styling issue with custom marker; add className and dataAttr properties [\#289](https://github.com/Travix-International/travix-ui-kit/pull/289) ([AntonTsymuk](https://github.com/AntonTsymuk))
+- added className and dataAttrs props and removed dead prop [\#288](https://github.com/Travix-International/travix-ui-kit/pull/288) ([iwwwi](https://github.com/iwwwi))
+- DatePicker component: styling and warning fixes [\#287](https://github.com/Travix-International/travix-ui-kit/pull/287) ([juliamaksimchik](https://github.com/juliamaksimchik))
+- Fix theme for messagebox [\#286](https://github.com/Travix-International/travix-ui-kit/pull/286) ([sleepwalky](https://github.com/sleepwalky))
+- Fixed input component [\#285](https://github.com/Travix-International/travix-ui-kit/pull/285) ([annavolkovskaya](https://github.com/annavolkovskaya))
+- Add className property Checkbox and RadioButton components [\#284](https://github.com/Travix-International/travix-ui-kit/pull/284) ([AntonTsymuk](https://github.com/AntonTsymuk))
+- Fix styleguide.config.js for Windows [\#283](https://github.com/Travix-International/travix-ui-kit/pull/283) ([sleepwalky](https://github.com/sleepwalky))
+- Fix Button [\#282](https://github.com/Travix-International/travix-ui-kit/pull/282) ([svetlanamorozko](https://github.com/svetlanamorozko))
+- fix badge component [\#281](https://github.com/Travix-International/travix-ui-kit/pull/281) ([AntonTsymuk](https://github.com/AntonTsymuk))
+- Calendar component fixes for IE and Edge [\#280](https://github.com/Travix-International/travix-ui-kit/pull/280) ([juliamaksimchik](https://github.com/juliamaksimchik))
+- Collapse fix [\#279](https://github.com/Travix-International/travix-ui-kit/pull/279) ([maximuk](https://github.com/maximuk))
+- List component fixes [\#278](https://github.com/Travix-International/travix-ui-kit/pull/278) ([annavolkovskaya](https://github.com/annavolkovskaya))
+- Remove otherProps from Tab/Tabs components [\#277](https://github.com/Travix-International/travix-ui-kit/pull/277) ([juliamaksimchik](https://github.com/juliamaksimchik))
+- Carousel - fixed transition for Safary 9 [\#276](https://github.com/Travix-International/travix-ui-kit/pull/276) ([maximuk](https://github.com/maximuk))
+- since edge does not fully support css variables load the css-vars-pol… [\#275](https://github.com/Travix-International/travix-ui-kit/pull/275) ([AntonTsymuk](https://github.com/AntonTsymuk))
+- removed mods prop from AutoComplete and AutoCompleteItem components [\#274](https://github.com/Travix-International/travix-ui-kit/pull/274) ([maximuk](https://github.com/maximuk))
+- added polyfill for Array.prototype.includes [\#267](https://github.com/Travix-International/travix-ui-kit/pull/267) ([maximuk](https://github.com/maximuk))
+- fixed Regex issue in autocomplete component [\#264](https://github.com/Travix-International/travix-ui-kit/pull/264) ([fope](https://github.com/fope))
+- Added global mode for sliding panel and some improvements for global component [\#226](https://github.com/Travix-International/travix-ui-kit/pull/226) ([AlleeX](https://github.com/AlleeX))
+
 ## [v0.7.7](https://github.com/Travix-International/travix-ui-kit/tree/v0.7.7) (2017-12-12)
 
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.7.6...v0.7.7)
