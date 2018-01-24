@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should return content inside Card container with checked and transparent state 1`] = `
+<div
+  className="ui-card ui-card_checked ui-card_transparent"
+  onClick={null}
+>
+  Card Content
+</div>
+`;
+
+exports[`Card should return content inside Card container with checked state 1`] = `
+<div
+  className="ui-card ui-card_checked"
+  onClick={null}
+>
+  Card Content
+</div>
+`;
+
+exports[`Card should return content inside Card container with data attributes 1`] = `
+<div
+  className="ui-card ui-card_checked"
+  data-gtm-id="card1"
+  onClick={null}
+>
+  Card Content
+</div>
+`;
+
+exports[`Card should return content inside Card container with default props 1`] = `
+<div
+  className="ui-card"
+  onClick={null}
+>
+  Card Content
+</div>
+`;
+
+exports[`Card should return content inside Card container with hovering state 1`] = `
+<div
+  className="ui-card ui-card_hovering"
+  onClick={null}
+>
+  Card Content
+</div>
+`;
+
+exports[`Card should return content inside Card container with icon 1`] = `
+<div
+  className="ui-card ui-card_checked ui-card_show-icon"
+  onClick={null}
+>
+  Card Content
+</div>
+`;
+
+exports[`Card should return content inside Card container with transparent and hovering state 1`] = `
+<div
+  className="ui-card ui-card_transparent ui-card_hovering"
+  onClick={null}
+>
+  Card Content
+</div>
+`;
+
+exports[`Card should return content inside Card container with transparent state 1`] = `
+<div
+  className="ui-card ui-card_transparent"
+  onClick={null}
+>
+  Card Content
+</div>
+`;

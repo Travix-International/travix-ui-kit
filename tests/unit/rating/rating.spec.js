@@ -11,13 +11,13 @@ describe('Rating', () => {
 
       const ratingElement = renderTree.find('.ui-rating');
       const valueElement = ratingElement.find('.ui-rating-value');
-      const ratingStars = ratingElement.find('> b');
-      const valueStars = valueElement.find('> b');
+      const ratingStars = ratingElement.children('b');
+      const valueStars = valueElement.children('b');
 
       expect(renderTree).toMatchSnapshot();
       expect(ratingStars.length).toEqual(5);
       expect(valueStars.length).toEqual(5);
-      expect(valueElement.node.style.width).toEqual("0%");
+      expect(valueElement.instance().style.width).toEqual("0%");
     });
 
     it('renders with custom data attributes', () => {
@@ -40,13 +40,13 @@ describe('Rating', () => {
 
       const ratingElement = renderTree.find('.ui-rating');
       const valueElement = ratingElement.find('.ui-rating-value');
-      const ratingStars = ratingElement.find('> b');
-      const valueStars = valueElement.find('> b');
+      const ratingStars = ratingElement.children('b');
+      const valueStars = valueElement.children('b');
 
       expect(renderTree).toMatchSnapshot();
       expect(ratingStars.length).toEqual(size);
       expect(valueStars.length).toEqual(size);
-      expect(valueElement.node.style.width).toEqual("15%");
+      expect(valueElement.instance().style.width).toEqual("15%");
     });
   });
 });

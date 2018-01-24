@@ -3,6 +3,7 @@ import AutoCompleteItem from './autoComplete/autoCompleteItem';
 import Badge from './badge/badge';
 import Button from './button/button';
 import Calendar from './calendar/calendar';
+import Card from './card/card';
 import Carousel from './carousel/carousel';
 import Checkbox from './checkbox/checkbox';
 import Collapse from './collapse/collapse';
@@ -13,12 +14,14 @@ import Global from './global/global';
 import GoogleMap from './googleMap/googleMap';
 import Input from './input/input';
 import List from './list/list';
+import LoadingOverlay from './loadingOverlay/loadingOverlay';
 import MessageBox from './messageBox/messageBox';
 import Modal from './modal/modal';
 import OverlayTrigger from './overlayTrigger/overlayTrigger';
 import Price from './price/price';
 import RadioButton from './radioButton/radioButton';
 import Rating from './rating/rating';
+import SelectionBlock from './selectionBlock/selectionBlock';
 import SlidingPanel from './slidingPanel/slidingPanel';
 import Spinner from './spinner/spinner';
 import Tab from './tabs/tab';
@@ -32,6 +35,7 @@ export default {
   Badge,
   Button,
   Calendar,
+  Card,
   Carousel,
   Checkbox,
   Collapse,
@@ -42,12 +46,14 @@ export default {
   GoogleMap,
   Input,
   List,
+  LoadingOverlay,
   MessageBox,
   Modal,
   OverlayTrigger,
   Price,
   RadioButton,
   Rating,
+  SelectionBlock,
   SlidingPanel,
   Spinner,
   Tab,

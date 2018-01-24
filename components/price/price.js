@@ -47,23 +47,46 @@ function Price(props) {
     decimalsPrecision,
     decimalsSeparator,
     discount,
+    showAsterisk,
     showDecimals,
     size,
     symbol,
     symbolPosition,
     thousandsSeparator,
     underlined,
+    unstyled,
     value,
   } = props;
 
-  if (!value) {
-    return <noscript />;
+  if (!value && value !== 0) {
+    return null;
   }
 
   const mods = props.mods ? props.mods.slice() : [];
 
   const rootClass = 'ui-price';
+
   const [intValue, decValue] = value.toString().split('.');
+
+  if (unstyled) {
+    const priceFormatted = [
+      addThousandsSeparator(intValue, thousandsSeparator),
+      showDecimals && ensureDecimalPrecision(decValue, decimalsPrecision),
+    ].filter(i => i !== false).join(decimalsSeparator);
+
+    const unstyledValue = [
+      symbolPosition === 'left' && symbol,
+      priceFormatted,
+      symbolPosition === 'right' && symbol,
+      showAsterisk && '*',
+    ].filter(i => i !== false).join(' ');
+
+    return (
+      <span {...getDataAttributes(dataAttrs)}>
+        {unstyledValue}
+      </span>
+    );
+  }
 
   mods.push(`size_${size}`);
 
@@ -74,7 +97,7 @@ function Price(props) {
       <div className={`${rootClass}__additional-text-block`}>
         {additionalText}
       </div>
-      )
+    )
     : null;
 
   let discountBlock = null;
@@ -97,7 +120,11 @@ function Price(props) {
       <div className={`${rootClass}__decimals`}>
         {decimalsSeparator + ensureDecimalPrecision(decValue, decimalsPrecision)}
       </div>
-      )
+    )
+    : null;
+
+  const asterisk = showAsterisk
+    ? (<div className={`${rootClass}__asterisk`}>*</div>)
     : null;
 
   const underlineMarkup = underlined
@@ -111,6 +138,7 @@ function Price(props) {
         <div className={`${rootClass}__currency ${rootClass}__currency_${symbolPosition}`}>{symbol}</div>
         <div className={`${rootClass}__integers`}>{addThousandsSeparator(intValue, thousandsSeparator)}</div>
         {decimalsMarkup}
+        {asterisk}
       </div>
       {underlineMarkup}
       {textBlock}
@@ -123,12 +151,14 @@ Price.defaultProps = {
   decimalsPrecision: 2,
   decimalsSeparator: '.',
   discount: 0,
+  showAsterisk: false,
   showDecimals: true,
   size: 'l',
   symbol: '€',
   symbolPosition: 'left',
   thousandsSeparator: ',',
   underlined: false,
+  unstyled: false,
 };
 
 Price.propTypes = {
@@ -170,6 +200,11 @@ Price.propTypes = {
   mods: PropTypes.arrayOf(PropTypes.string),
 
   /**
+   * Defines if it should show the asterisk or not.
+   */
+  showAsterisk: PropTypes.bool,
+
+  /**
    * Defines if it should show the decimals or not.
    */
   showDecimals: PropTypes.bool,
@@ -198,6 +233,11 @@ Price.propTypes = {
    * Flag defining if the price should be underlined.
    */
   underlined: PropTypes.bool,
+
+  /**
+   * Flag defining if the price should be rendered without any styles.
+   */
+  unstyled: PropTypes.bool,
 
   /**
    * Price to be displayed.

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import Input from '../input/input';
 import Calendar from '../calendar/calendar';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
 
 /**
  * DatePicker component
@@ -97,8 +97,9 @@ class DatePicker extends Component {
       placeholder,
       value,
       valueFormatterFn,
-      ...otherProps
     } = this.props;
+
+    const otherProps = ejectOtherProps(this.props, DatePicker.propTypes);
 
     let displayValue = value;
     if (value && typeof valueFormatterFn === 'function') {
@@ -110,12 +111,12 @@ class DatePicker extends Component {
     inputMods.push('datepicker');
 
     const labelBlock = label
-    ? (
-      <label htmlFor={`ui-datepicker-input-${name}`} id={`ui-datepicker-label-${name}`}>
-        {label}
-      </label>
-    )
-    : '';
+      ? (
+        <label htmlFor={`ui-datepicker-input-${name}`} id={`ui-datepicker-label-${name}`}>
+          {label}
+        </label>
+      )
+      : '';
 
     return (
       <div

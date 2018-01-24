@@ -7,11 +7,6 @@ exports[`Input #render() should not modify mods 1`] = `
   <input
     className="ui-input ui-input_test"
     disabled={false}
-    mods={
-      Array [
-        "test",
-      ]
-    }
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}

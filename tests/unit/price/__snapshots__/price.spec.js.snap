@@ -27,6 +27,40 @@ exports[`Price #render() should not render underline when underlined flag is mis
 </div>
 `;
 
+exports[`Price #render() should render asterisk when showAsterisk is true 1`] = `
+<div
+  className="ui-price ui-price_size_l"
+>
+  <div
+    className="ui-price__value-delimiter"
+  >
+    <div
+      className="ui-price__currency ui-price__currency_left"
+    >
+      €
+    </div>
+    <div
+      className="ui-price__integers"
+    >
+      50.153
+    </div>
+    <div
+      className="ui-price__decimals"
+    >
+      ,30
+    </div>
+    <div
+      className="ui-price__asterisk"
+    >
+      *
+    </div>
+  </div>
+  <div
+    className="ui-price__underline"
+  />
+</div>
+`;
+
 exports[`Price #render() should render only the amount of decimals defined in the decimalsPrecision 1`] = `
 <div
   className="ui-price ui-price_size_l"
@@ -51,6 +85,30 @@ exports[`Price #render() should render only the amount of decimals defined in th
     </div>
   </div>
 </div>
+`;
+
+exports[`Price #render() should render unstyled block if an appropriate prop is passed 1`] = `
+<span>
+  € 50,153.12
+</span>
+`;
+
+exports[`Price #render() should render unstyled block with asterisk 1`] = `
+<span>
+  € 50,153.12 *
+</span>
+`;
+
+exports[`Price #render() should render unstyled block with no decimals 1`] = `
+<span>
+  € 50,153
+</span>
+`;
+
+exports[`Price #render() should render unstyled block with right symbol position 1`] = `
+<span>
+  50,153.12 €
+</span>
 `;
 
 exports[`Price #render() should render with additional text block if it is a node 1`] = `
@@ -283,7 +341,3 @@ exports[`Price #render() should return base class with mods for strings as class
   />
 </div>
 `;
-
-exports[`Price #render() should return noscript if value is null 1`] = `<noscript />`;
-
-exports[`Price #render() should return noscript if value is undefined 1`] = `<noscript />`;

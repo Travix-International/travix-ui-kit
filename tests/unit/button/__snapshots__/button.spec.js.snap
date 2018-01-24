@@ -4,11 +4,6 @@ exports[`Button #render() should not modify mods 1`] = `
 <button
   className="ui-button ui-button_test ui-button_size_m ui-button_variation_default"
   disabled={false}
-  mods={
-    Array [
-      "test",
-    ]
-  }
   onClick={[Function]}
   type="button"
 >
@@ -37,7 +32,7 @@ exports[`Button #render() should render gtm data attribute 1`] = `
 </button>
 `;
 
-exports[`Button #render() should return base class with mods for strings as class and string as mods #1 1`] = `<noscript />`;
+exports[`Button #render() should return base class with mods for strings as class and string as mods #1 1`] = `""`;
 
 exports[`Button #render() should return base class with mods for strings as class and string as mods #2 1`] = `
 <button

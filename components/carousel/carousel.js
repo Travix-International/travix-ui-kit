@@ -11,7 +11,6 @@ import CarouselTrack from './carouselTrack';
  * Carousel component
  */
 export default class Carousel extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -94,22 +93,23 @@ export default class Carousel extends React.Component {
 
         {
           this.props.markers
-          ? <CarouselMarkers
-            current={this.state.currentItem}
-            images={this.props.images}
-            onClick={this.handleClickGoTo}
-          />
-          : <CarouselPage
-            current={this.state.currentItem}
-            images={this.props.images}
-          />
+            ? <CarouselMarkers
+              current={this.state.currentItem}
+              images={this.props.images}
+              onClick={this.handleClickGoTo}
+            />
+            : <CarouselPage
+              current={this.state.currentItem}
+              images={this.props.images}
+            />
         }
       </div>
     );
   }
 
   render() {
-    const restProps = getDataAttributes(this.props.dataAttrs);
+    const { touchable, dataAttrs, images } = this.props;
+    const restProps = getDataAttributes(dataAttrs);
 
     const carouselMods = this.props.mods ? this.props.mods.slice() : [];
     const carouselClass = getClassNamesWithMods('ui-carousel', carouselMods);
@@ -120,10 +120,11 @@ export default class Carousel extends React.Component {
           current={this.state.currentItem}
           onNext={this.handleSwipeNext}
           onPrev={this.handleSwipePrev}
+          touchable={touchable}
         >
-          {this.props.images.map((src, i) => <CarouselItem key={i} load={this.shouldLoad(i)} src={src} />)}
+          {images.map((src, i) => <CarouselItem key={i} load={this.shouldLoad(i)} src={src} />)}
         </CarouselTrack>
-        {this.props.images.length > 1 && this.renderNavigation()}
+        {images.length > 1 && this.renderNavigation()}
       </div>
     );
   }
@@ -158,12 +159,17 @@ Carousel.propTypes = {
    * Initial index being displayed
    */
   current: PropTypes.number,
+  /**
+   * Ability to use touch events for track
+   */
+  touchable: PropTypes.bool,
 };
 
 Carousel.defaultProps = {
+  current: 0,
   images: [],
   markers: false,
-  prevButton: <span>&lsaquo;</span>,
   nextButton: <span>&rsaquo;</span>,
-  current: 0,
+  prevButton: <span>&lsaquo;</span>,
+  touchable: true,
 };

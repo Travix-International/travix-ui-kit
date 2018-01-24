@@ -16,7 +16,7 @@ release:
 changelog:
 	git checkout master
 	git pull origin master
-	github_changelog_generator -t $(GITHUB_API_TOKEN)
+	github_changelog_generator -t $(GITHUB_API_TOKEN) -u Travix-International -p travix-ui-kit
 
 push-changelog:
 	git checkout master
@@ -28,8 +28,10 @@ push-changelog:
 prepare-site:
 	npm run styleguide-build
 	rm -rf ./_site
-	mkdir _site
-	cp -r ./styleguide/ ./_site/
+	mkdir -p _site/build
+	ls ./styleguide/
+	cp -rf ./styleguide/* ./_site/
+	ls ./_site/
 	cp ./dist/*.css ./_site/build/
 	cp ./dist/theme.js ./_site/build/
 	cp ./css-vars-polyfill.js ./_site/build/

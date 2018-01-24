@@ -25,7 +25,7 @@ exports[`List #render() should not modify mods 1`] = `
 </ul>
 `;
 
-exports[`List #render() should not render empty items if an appropriate prop is false 1`] = `
+exports[`List #render() should not render empty items 1`] = `
 <ul
   className="ui-list ui-list_align_vertical"
 >

@@ -136,9 +136,9 @@ ui-button:
       bg-bottom: "var(--tx-generic-color-accent-dark)"
       top: "0"
       shadow: "0 3px var(--tx-generic-color-accent-border-hover), 0 0 transparent"
-    active:  
-      shadow: "0 2px var(--tx-generic-color-accent-border), 0 0 transparent"  
-      text-shadow: "0px 1px 0px var(--tx-generic-color-accent-border)"  
+    active:
+      shadow: "0 2px var(--tx-generic-color-accent-border), 0 0 transparent"
+      text-shadow: "0px 1px 0px var(--tx-generic-color-accent-border)"
   ghost:
     normal:
       background: "var(--tx-generic-color-blank)"
@@ -409,7 +409,7 @@ messagebox:
     padding-bottom: "0px"
   padding: "24px"
 modal:
-  z-index: "100"
+  z-index: "999"
   color:
     dark: "var(--tx-generic-color-primary-dark)"
     secondary: "var(--tx-generic-color-secondary)"
@@ -435,10 +435,6 @@ modal:
     icon:
       color: "var(--tx-generic-color-secondary-darker)"
 price:
-  height:
-    underline: 6px
-  margin-top:
-    underline: 2px;
   xsmall:
     font:
       size:
@@ -449,6 +445,9 @@ price:
         discount: 13px
     line-height:
       integers: 15px
+    underline:
+      height: 3px
+      margin-top: 2px
   small:
     font:
       size:
@@ -459,6 +458,9 @@ price:
         discount: 16px
     line-height:
       integers: 26px
+    underline:
+      height: 4px
+      margin-top: 2px
   medium:
     font:
       size:
@@ -469,6 +471,9 @@ price:
         discount: 16px
     line-height:
       integers: 26px
+    underline:
+      height: 6px
+      margin-top: 2px
   large:
     font:
       size:
@@ -479,6 +484,9 @@ price:
         discount: 20px
     line-height:
       integers: 31px
+    underline:
+      height: 6px
+      margin-top: 2px
   xlarge:
     font:
       size:
@@ -489,35 +497,45 @@ price:
         discount: 22px
     line-height:
       integers: 51px
-    height:
-      underline: 8px
+    underline:
+      height: 8px
+      margin-top: 2px
 sliding-panel:
   content:
     flex: "1 1 100%"
     overflow: "hidden"
     overflow-y: "auto"
+  header:
+    height: "61px"
+    padding: "50px"
+    border-bottom: "2px solid var(--tx-generic-color-secondary-darker)"
+    close-button:
+      font-size: "32px"
+      height: "25px"
+      width: "20px"
+      right: "15px"
+    back-block:
+      font-size: "13px"
+      icon:
+        font-size: "25px"
   overlay:
     background-color: "rgba(var(--tx-generic-color-primary-dark-rgb), .65)"
     position: "fixed"
-    z-index: "3"
+    z-index: "999"
   panel:
-    background-color: "var(--tx-generic-color-blank)"
     bottom: "0"
-    box-shadow: "3px 0 3px -3px var(--tx-generic-color-shadow)"
     flex-flow: "column"
-    left: "0"
     margin: "0"
     max-width: "100%"
-    min-width: "150px"
     opacity: "1"
-    padding: "15px"
     position: "absolute"
-    right: "auto"
     top: "0"
-    transform: "translateX(-100%)"
-    transition: "transform 195ms cubic-bezier(0.0, 0.0, 0.2, 1)"
-  panel-open:
-    transform: "translateX(0)"
+  left-direction:
+    left: "0"
+    right: "auto"
+  right-direction:
+    left: "auto"
+    right: "0"
 spinner:
   color:
     light: "var(--tx-generic-color-accent-lighter)"

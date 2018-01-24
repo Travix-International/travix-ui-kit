@@ -1,274 +1,279 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SlidingPanel #render() calls onTryingToClose function when provided and closes a panel if it doesn't return false 1`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={true}
-  onTryingToClose={[Function]}
+<div
+  class="ui-sliding-panel-overlay"
 >
   <div
-    className="ui-sliding-panel-overlay"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      Test
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() calls onTryingToClose function when provided and closes a panel if it doesn't return false 2`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={true}
-  onTryingToClose={[Function]}
+<div
+  class="ui-sliding-panel-overlay"
 >
   <div
-    className="ui-sliding-panel-overlay"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      Test
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() calls onTryingToClose function when provided via props and prevents closing if it returns false 1`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={true}
-  onTryingToClose={[Function]}
+<div
+  class="ui-sliding-panel-overlay"
 >
   <div
-    className="ui-sliding-panel-overlay"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      Test
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() calls onTryingToClose function when provided via props and prevents closing if it returns false 2`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={true}
-  onTryingToClose={[Function]}
+<div
+  class="ui-sliding-panel-overlay"
 >
   <div
-    className="ui-sliding-panel-overlay"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      Test
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() closes the panel when active prop changes to false 1`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={true}
+<div
+  class="ui-sliding-panel-overlay"
 >
   <div
-    className="ui-sliding-panel-overlay"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      Test
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() closes the panel when active prop changes to false 2`] = `
+<div
+  class="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+>
+  <div
+    class="ui-sliding-panel ui-sliding-panel_right"
+    style="width: 480px;"
+  >
+    <div
+      class="ui-sliding-panel__content"
+    >
+      Test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SlidingPanel #render() do not render footer if prop is not passed or falsy 1`] = `
 <SlidingPanel
-  active={false}
   closeOnOverlayClick={true}
+  direction="right"
+  global={false}
+  subheader={null}
+  useDefaultLeftBlock={false}
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel"
+      className="ui-sliding-panel ui-sliding-panel_right"
+      onAnimationEnd={[Function]}
+      style={
+        Object {
+          "width": "480px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      />
     </div>
   </div>
 </SlidingPanel>
 `;
 
 exports[`SlidingPanel #render() enables [data-rel="close"] element provided on the children, that closes the overlay 1`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={false}
+<div
+  class="ui-sliding-panel-overlay"
 >
   <div
-    className="ui-sliding-panel-overlay"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
+      <button
+        data-rel="close"
       >
-        <button
-          data-rel="close"
-        >
-          Test
-        </button>
-      </div>
+        Test
+      </button>
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() enables [data-rel="close"] element provided on the children, that closes the overlay 2`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={false}
+<div
+  class="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
 >
   <div
-    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
+      <button
+        data-rel="close"
       >
-        <button
-          data-rel="close"
-        >
-          Test
-        </button>
-      </div>
+        Test
+      </button>
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() opens the panel when active prop changes to true 1`] = `
-<SlidingPanel
-  closeOnOverlayClick={true}
+<div
+  class="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
 >
   <div
-    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      Test
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() opens the panel when active prop changes to true 2`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={true}
+<div
+  class="ui-sliding-panel-overlay"
 >
   <div
-    className="ui-sliding-panel-overlay"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      Test
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() render active by default and when clicking on the overlay it closes it 1`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={true}
+<div
+  class="ui-sliding-panel-overlay"
 >
   <div
-    className="ui-sliding-panel-overlay"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      Test
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() render active by default and when clicking on the overlay it closes it 2`] = `
+<div
+  class="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+>
+  <div
+    class="ui-sliding-panel ui-sliding-panel_right"
+    style="width: 480px;"
+  >
+    <div
+      class="ui-sliding-panel__content"
+    >
+      Test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SlidingPanel #render() render footer if prop has been passed and it is truthy 1`] = `
 <SlidingPanel
-  active={true}
   closeOnOverlayClick={true}
+  direction="right"
+  footer="test"
+  global={false}
+  subheader={null}
+  useDefaultLeftBlock={false}
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel"
+      className="ui-sliding-panel ui-sliding-panel_right"
+      onAnimationEnd={[Function]}
+      style={
+        Object {
+          "width": "480px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
       >
         Test
+      </div>
+      <div
+        className="ui-sliding-panel__footer"
+      >
+        test
       </div>
     </div>
   </div>
@@ -276,41 +281,169 @@ exports[`SlidingPanel #render() render active by default and when clicking on th
 `;
 
 exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
+<div
+  class="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+>
+  <div
+    class="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_right"
+    style="width: 480px;"
+  >
+    <div
+      class="ui-sliding-panel-header"
+    >
+      <h3
+        class="ui-sliding-panel-header__title"
+      >
+        Test Title
+      </h3>
+      <button
+        class="ui-sliding-panel-header__close-button"
+        data-rel="close"
+      >
+        ×
+      </button>
+    </div>
+    <div
+      class="ui-sliding-panel__content"
+    >
+      Test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SlidingPanel #render() render with custom subheader 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
-  mods={
-    Array [
-      "test",
-    ]
+  direction="left"
+  global={false}
+  subheader={
+    <div
+      className="custom-class"
+    />
   }
-  title="Test Title"
+  useDefaultLeftBlock={false}
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_test"
+      className="ui-sliding-panel ui-sliding-panel_left"
+      onAnimationEnd={[Function]}
+      style={
+        Object {
+          "width": "480px",
+        }
+      }
     >
-      <SlidingPanelHeader
-        title="Test Title"
+      <div
+        className="ui-sliding-panel__subheader"
       >
         <div
-          className="ui-sliding-panel-header"
-        >
-          <h3
-            className="ui-sliding-panel-header__title"
-          >
-            Test Title
-          </h3>
-          <button
-            className="ui-sliding-panel-header__close-button"
-            data-rel="close"
-          >
-            ×
-          </button>
-        </div>
-      </SlidingPanelHeader>
+          className="custom-class"
+        />
+      </div>
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
+exports[`SlidingPanel #render() render with custom width 1`] = `
+<SlidingPanel
+  closeOnOverlayClick={true}
+  direction="left"
+  global={false}
+  subheader={null}
+  useDefaultLeftBlock={false}
+  width="720px"
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_left"
+      onAnimationEnd={[Function]}
+      style={
+        Object {
+          "width": "720px",
+        }
+      }
+    >
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
+exports[`SlidingPanel #render() render with default block with back button and arrow with callback 1`] = `
+<SlidingPanel
+  backButtonLabel="Back"
+  closeOnOverlayClick={true}
+  direction="right"
+  global={false}
+  onBackButtonClick={[MockFunction]}
+  subheader={null}
+  useDefaultLeftBlock={true}
+  width="480px"
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_right"
+      onAnimationEnd={[Function]}
+      style={
+        Object {
+          "width": "480px",
+        }
+      }
+    >
+      <div
+        className="ui-sliding-panel__content"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
+exports[`SlidingPanel #render() render with default block with back button and arrow without callback 1`] = `
+<SlidingPanel
+  backButtonLabel="Back"
+  closeOnOverlayClick={true}
+  direction="right"
+  global={false}
+  subheader={null}
+  useDefaultLeftBlock={true}
+  width="480px"
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_right"
+      onAnimationEnd={[Function]}
+      style={
+        Object {
+          "width": "480px",
+        }
+      }
+    >
       <div
         className="ui-sliding-panel__content"
       >
@@ -322,20 +455,86 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
 `;
 
 exports[`SlidingPanel #render() render with default props and mods provided 1`] = `
+<div
+  class="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+>
+  <div
+    class="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_right"
+    style="width: 480px;"
+  >
+    <div
+      class="ui-sliding-panel__content"
+    >
+      Test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SlidingPanel #render() render with global mode 1`] = `
 <SlidingPanel
   closeOnOverlayClick={true}
+  direction="right"
+  global={true}
+  subheader={null}
+  useDefaultLeftBlock={false}
+  width="480px"
+>
+  <Global
+    noscroll={false}
+  >
+    <div>
+      <div
+        className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+        onClick={[Function]}
+      >
+        <div
+          className="ui-sliding-panel ui-sliding-panel_right"
+          onAnimationEnd={[Function]}
+          style={
+            Object {
+              "width": "480px",
+            }
+          }
+        >
+          <div
+            className="ui-sliding-panel__content"
+          >
+            Test
+          </div>
+        </div>
+      </div>
+    </div>
+  </Global>
+</SlidingPanel>
+`;
+
+exports[`SlidingPanel #render() render with left direction 1`] = `
+<SlidingPanel
+  closeOnOverlayClick={true}
+  direction="left"
+  global={false}
   mods={
     Array [
       "test",
     ]
   }
+  subheader={null}
+  useDefaultLeftBlock={false}
+  width="480px"
 >
   <div
     className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
     onClick={[Function]}
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_test"
+      className="ui-sliding-panel ui-sliding-panel_test ui-sliding-panel_left"
+      onAnimationEnd={[Function]}
+      style={
+        Object {
+          "width": "480px",
+        }
+      }
     >
       <div
         className="ui-sliding-panel__content"
@@ -348,45 +547,35 @@ exports[`SlidingPanel #render() render with default props and mods provided 1`] 
 `;
 
 exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close when overlay clicked 1`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={false}
+<div
+  class="ui-sliding-panel-overlay"
 >
   <div
-    className="ui-sliding-panel-overlay"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      Test
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;
 
 exports[`SlidingPanel #render() with closeOnOverlayClick=false does not close when overlay clicked 2`] = `
-<SlidingPanel
-  active={true}
-  closeOnOverlayClick={false}
+<div
+  class="ui-sliding-panel-overlay"
 >
   <div
-    className="ui-sliding-panel-overlay"
-    onClick={[Function]}
+    class="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
+    style="width: 480px;"
   >
     <div
-      className="ui-sliding-panel ui-sliding-panel_active"
+      class="ui-sliding-panel__content"
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      Test
     </div>
   </div>
-</SlidingPanel>
+</div>
 `;

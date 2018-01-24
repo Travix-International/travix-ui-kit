@@ -8,7 +8,7 @@ describe('Collapse: render', () => {
     const component = shallow(
       <Collapse />
     );
-    expect(component).toMatchSnapshot();
+    expect(component.type()).toEqual(null);
   });
 
   it('should return collapse component with two items', () => {

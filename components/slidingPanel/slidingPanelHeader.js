@@ -3,7 +3,7 @@ import React from 'react';
 
 const SlidingPanelHeader = ({ title, leftBlock, rightBlock }) => {
   if (!title) {
-    return <noscript />;
+    return null;
   }
 
   const defaultCloseButton = (
@@ -43,7 +43,7 @@ const SlidingPanelHeader = ({ title, leftBlock, rightBlock }) => {
 };
 
 SlidingPanelHeader.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
   leftBlock: PropTypes.node,
   rightBlock: PropTypes.node,
 };

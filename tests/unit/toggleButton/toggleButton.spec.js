@@ -3,9 +3,9 @@ import React from 'react';
 import ToggleButton from '../../../components/toggleButton/toggleButton';
 
 describe('ToggleButton', () => {
-  it('renders noscript when no items are provided to ToggleButton', () => {
+  it('renders null when no items are provided to ToggleButton', () => {
     const wrapper = shallow(<ToggleButton />);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.type()).toEqual(null);
   });
 
   it('renders the ToggleButton component with the defaults', () => {
