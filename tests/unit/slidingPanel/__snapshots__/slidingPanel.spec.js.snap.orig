@@ -106,7 +106,6 @@ exports[`SlidingPanel #render() do not render footer if prop is not passed or fa
 <SlidingPanel
   closeOnOverlayClick={true}
   direction="right"
-  global={false}
   subheader={null}
   useDefaultLeftBlock={false}
   width="480px"
@@ -247,7 +246,6 @@ exports[`SlidingPanel #render() render footer if prop has been passed and it is 
   closeOnOverlayClick={true}
   direction="right"
   footer="test"
-  global={false}
   subheader={null}
   useDefaultLeftBlock={false}
   width="480px"
@@ -296,16 +294,12 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
       >
         Test Title
       </h3>
-      <div
-        class="ui-sliding-panel-header__right-block"
+      <button
+        class="ui-sliding-panel-header__close-button"
+        data-rel="close"
       >
-        <button
-          class="ui-sliding-panel-header__close-button"
-          data-rel="close"
-        >
-          ×
-        </button>
-      </div>
+        ×
+      </button>
     </div>
     <div
       class="ui-sliding-panel__content"
@@ -396,8 +390,14 @@ exports[`SlidingPanel #render() render with default block with back button and a
   backButtonLabel="Back"
   closeOnOverlayClick={true}
   direction="right"
+<<<<<<< HEAD
   global={false}
+  onBackButtonClick={[Function]}
+||||||| merged common ancestors
+  onBackButtonClick={[Function]}
+=======
   onBackButtonClick={[MockFunction]}
+>>>>>>> origin/master
   subheader={null}
   useDefaultLeftBlock={true}
   width="480px"
@@ -486,30 +486,7 @@ exports[`SlidingPanel #render() render with global mode 1`] = `
 >
   <Global
     noscroll={false}
-  >
-    <div>
-      <div
-        className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
-        onClick={[Function]}
-      >
-        <div
-          className="ui-sliding-panel ui-sliding-panel_right"
-          onAnimationEnd={[Function]}
-          style={
-            Object {
-              "width": "480px",
-            }
-          }
-        >
-          <div
-            className="ui-sliding-panel__content"
-          >
-            Test
-          </div>
-        </div>
-      </div>
-    </div>
-  </Global>
+  />
 </SlidingPanel>
 `;
 

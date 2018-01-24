@@ -409,7 +409,7 @@ messagebox:
     padding-bottom: "0px"
   padding: "24px"
 modal:
-  z-index: "100"
+  z-index: "999"
   color:
     dark: "var(--tx-generic-color-primary-dark)"
     secondary: "var(--tx-generic-color-secondary)"

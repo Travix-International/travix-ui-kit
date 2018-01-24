@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import {
-  unstable_renderSubtreeIntoContainer, // eslint-disable-line
-  unmountComponentAtNode,
+  createPortal,
 } from 'react-dom';
 
 /**
@@ -10,35 +9,55 @@ import {
  * React component for transportation of modals, lightboxes, loading bars... to document.body
  */
 class Global extends Component {
-  componentDidMount() {
-    if (this.props.noscroll) {
-      global.window.document.body.classList.add('ui-global_noscroll');
-    }
+  constructor(props) {
+    super(props);
 
+    this.isSettedNoScroll = false;
     this.target = global.window.document.createElement('div');
     this.target.classList.add('ui-global');
     global.window.document.body.appendChild(this.target);
-    this.componentDidUpdate();
   }
 
-  componentDidUpdate() {
-    unstable_renderSubtreeIntoContainer(this, (
+  toggleGlobalNoscroll(flag) {
+    const body = global.window.document.body;
+    if (!this.isSettedNoScroll) {
+      return;
+    }
+    flag
+      ? body.classList.add('ui-global_noscroll')
+      : body.classList.remove('ui-global_noscroll');
+  }
+
+  setNoScroll() {
+    const body = global.window.document.body;
+    this.isSettedNoScroll = !body.classList.contains('ui-global_noscroll');
+  }
+
+  componentWillUpdate(nextProps) {
+    if (nextProps.noscroll !== this.props.noscroll) {
+      nextProps.noscroll && this.setNoScroll();
+      this.toggleGlobalNoscroll(nextProps.noscroll);
+    }
+  }
+
+  componentWillMount() {
+    if (this.props.noscroll) {
+      this.setNoScroll();
+      this.toggleGlobalNoscroll();
+    }
+  }
+
+  componentWillUnmount() {
+    this.toggleGlobalNoscroll(false);
+    global.window.document.body.removeChild(this.target);
+  }
+
+  render() {
+    return createPortal((
       <div className={this.props.className}>
         {this.props.children}
       </div>
     ), this.target);
-  }
-
-  componentWillUnmount() {
-    if (this.props.noscroll) {
-      global.window.document.body.classList.remove('ui-global_noscroll');
-    }
-    unmountComponentAtNode(this.target);
-    global.window.document.body.removeChild(this.target);
-  }
-
-  render() { // eslint-disable-line
-    return null;
   }
 }
 
