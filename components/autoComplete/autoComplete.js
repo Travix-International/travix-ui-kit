@@ -180,7 +180,7 @@ class AutoComplete extends Component {
       && this.items[activeKey] && this.items[activeKey].getValue();
     const value = this.state.inputValue;
 
-    const isPreviousValue = (this.state.selectedKey === item.key
+    const isPreviousValue = item && (this.state.selectedKey === item.key
       && (this.state.selectedValue === item.code || this.state.selectedValue === item.value));
 
     if (!item || (!value && e.keyCode !== KEY_CODE.ENTER)) {
@@ -234,7 +234,8 @@ class AutoComplete extends Component {
     if (!this.state.inputValue) {
       return str;
     }
-    const value = this.state.inputValue;
+    // escape special characters
+    const value = this.state.inputValue.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
     const descriptionRule = this.props.highlightRule || new RegExp(`(${value})`, 'i');
     const highlighted = str.replace(descriptionRule, '<span class="ui-autocomplete-item_highlight">$1</span>');
 
