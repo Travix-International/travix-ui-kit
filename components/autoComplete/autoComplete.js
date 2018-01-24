@@ -332,12 +332,12 @@ class AutoComplete extends Component {
       >
         {labelBlock}
         <Input
-          aria-activedescendant={`ui-autocomplete-item-${name}-${activeKey}`}
-          aria-autocomplete="list"
-          aria-expanded={open}
-          aria-haspopup={open}
-          aria-labelledby={label ? `ui-autocomplete-label-${name}` : ''}
-          aria-owns={`ui-autocomplete-list-${name}`}
+          ariaActivedescendant={`ui-autocomplete-item-${name}-${activeKey}`}
+          ariaAutocomplete="list"
+          ariaExpanded={open}
+          ariaHaspopup={open}
+          ariaLabelledby={label ? `ui-autocomplete-label-${name}` : ''}
+          ariaOwns={`ui-autocomplete-list-${name}`}
           autoComplete="off"
           disabled={disabled}
           id={`ui-autocomplete-input-${name}`}
