@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+import ReactDom from 'react-dom';
 import React, { Component } from 'react';
 import SlidingPanelHeader from './slidingPanelHeader';
+import Global from '../global/global';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 export default class SlidingPanel extends Component {
@@ -12,7 +14,7 @@ export default class SlidingPanel extends Component {
     this.handleClickOverlay = this.handleClickOverlay.bind(this);
     this.handleActive = this.handleActive.bind(this);
     this.handleClose = this.handleClose.bind(this);
-    this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
+    this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
   }
 
   static propTypes = {
@@ -47,10 +49,15 @@ export default class SlidingPanel extends Component {
     direction: PropTypes.oneOf(['left', 'right']),
 
     /**
+     * Global positioning (also this mode make body not scrollable).
+     */
+    global: PropTypes.bool,
+
+    /**
      * Defines the footer's content.
      */
-    footer: PropTypes.node,
 
+    footer: PropTypes.node,
     /**
      * When defined, this custom node appears on the left part of the header
      */
@@ -113,6 +120,7 @@ export default class SlidingPanel extends Component {
   static defaultProps = {
     closeOnOverlayClick: true,
     direction: 'right',
+    global: false,
     subheader: null,
     useDefaultLeftBlock: false,
     width: '480px',
@@ -134,14 +142,11 @@ export default class SlidingPanel extends Component {
       this.handleActive();
     }
 
-    this.panel.addEventListener('transitionend', this.handleTransitionEnd);
-
-    this.closeButtons = [].slice.call(this.panel.querySelectorAll('[data-rel="close"]'));
+    this.closeButtons = [].slice.call(ReactDom.findDOMNode(this).querySelectorAll('[data-rel="close"]'));
     this.closeButtons.forEach(b => b.addEventListener('click', this.handleClose));
   }
 
   componentWillUnmount() {
-    this.panel.removeEventListener('transitionend', this.handleTransitionEnd);
     this.closeButtons.forEach(b => b.removeEventListener('click', this.handleClose));
   }
 
@@ -181,26 +186,18 @@ export default class SlidingPanel extends Component {
   handleActive() {
     const { onOpen } = this.props;
 
-    this.setState({ isOverlayHidden: false }, () => {
-      setTimeout(() => {
-        this.setState({ isActive: true }, () => {
-          if (onOpen) {
-            onOpen();
-          }
-        });
-      }, 0);
+    this.setState({ isOverlayHidden: false, isActive: true }, () => {
+      onOpen && onOpen();
     });
   }
 
-  handleTransitionEnd(e) {
+  handleAnimationEnd() {
     const { onClose } = this.props;
-    if (e.propertyName === 'transform') {
-      this.setState({ isOverlayHidden: !this.state.isActive }, () => {
-        if (this.state.isOverlayHidden && onClose) {
-          onClose();
-        }
-      });
-    }
+    this.setState({ isOverlayHidden: !this.state.isActive }, () => {
+      if (this.state.isOverlayHidden && onClose) {
+        onClose();
+      }
+    });
   }
 
   renderDefaultLeftBlock() {
@@ -227,6 +224,7 @@ export default class SlidingPanel extends Component {
       direction,
       footer,
       leftBlock,
+      global,
       rightBlock,
       subheader,
       title,
@@ -265,11 +263,11 @@ export default class SlidingPanel extends Component {
       </div>
     ) : null;
 
-    return (
+    const content = (
       <div className={overlayClassName} onClick={this.handleClickOverlay}>
         <div
           className={panelClassName}
-          ref={(e) => { this.panel = e; }}
+          onAnimationEnd={this.handleAnimationEnd}
           style={{ width }}
           {...getDataAttributes(dataAttrs)}
         >
@@ -293,5 +291,13 @@ export default class SlidingPanel extends Component {
         </div>
       </div>
     );
+
+    return global
+      ? (
+        <Global noscroll={this.state.isActive}>
+          {content}
+        </Global>
+      )
+      : content;
   }
 }

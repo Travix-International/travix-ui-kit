@@ -24,7 +24,7 @@
 
   &:focus,
   &:hover {
-    background: linear-gradient(to bottom, var(--tx-ui-button-default-hover-bg-top) 0, var(--tx-ui-button-default-hover-bg-bottom) 100%);  
+    background: linear-gradient(to bottom, var(--tx-ui-button-default-hover-bg-top) 0, var(--tx-ui-button-default-hover-bg-bottom) 100%);
     box-shadow: var(--tx-ui-button-default-hover-shadow);
     outline: none;
     top: var(--tx-ui-button-default-hover-top);
@@ -78,6 +78,14 @@
   cursor: default;
   position: static;
   text-shadow: var(--tx-ui-button-default-disabled-text-shadow);
+
+  &.ui-button_variation_ghost {
+    border: 3px solid var(--tx-ui-button-default-disabled-border-bottom);
+  }
+
+  &.ui-button_variation_link {
+    border: none;
+  }
 }
 
 .ui-button_size_xs {

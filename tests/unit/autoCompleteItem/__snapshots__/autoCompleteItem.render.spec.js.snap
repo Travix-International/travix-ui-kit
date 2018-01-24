@@ -3,15 +3,9 @@
 exports[`AutoCompleteItem #render() should not modify mods 1`] = `
 <li
   className="ui-autocomplete-item ui-autocomplete-item_test"
-  mods={
-    Array [
-      "test",
-    ]
-  }
   onClick={[Function]}
   role="option"
   tabIndex="-1"
-  value="value"
 >
   item
 </li>
@@ -23,7 +17,6 @@ exports[`AutoCompleteItem #render() should render autocomplete item with active 
   onClick={[Function]}
   role="option"
   tabIndex="-1"
-  value="value"
 >
   item
 </li>
@@ -32,10 +25,8 @@ exports[`AutoCompleteItem #render() should render autocomplete item with active 
 exports[`AutoCompleteItem #render() should render autocomplete item with title mode 1`] = `
 <li
   className="ui-autocomplete-item ui-autocomplete-item_title"
-  onClick={false}
   role="option"
   tabIndex="-1"
-  value="value"
 >
   item
 </li>
@@ -47,7 +38,6 @@ exports[`AutoCompleteItem #render() should render correct autocomplete item 1`] 
   onClick={[Function]}
   role="option"
   tabIndex="-1"
-  value="value"
 >
   item
 </li>

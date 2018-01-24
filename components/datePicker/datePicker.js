@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import Input from '../input/input';
 import Calendar from '../calendar/calendar';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
 
 /**
  * DatePicker component
@@ -97,8 +97,9 @@ class DatePicker extends Component {
       placeholder,
       value,
       valueFormatterFn,
-      ...otherProps
     } = this.props;
+
+    const otherProps = ejectOtherProps(this.props, DatePicker.propTypes);
 
     let displayValue = value;
     if (value && typeof valueFormatterFn === 'function') {

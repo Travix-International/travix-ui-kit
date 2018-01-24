@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectionBlock #render() should render base selection block 1`] = `
+<div
+  className="ui-selection-block ui-selection-block_align-center"
+>
+  <div
+    className="ui-selection-block__section"
+  >
+    <header
+      className="ui-selection-block__header"
+    >
+      <div
+        className="ui-selection-block__titles"
+      >
+        <h2
+          className="ui-selection-block__title"
+        >
+          Title
+        </h2>
+        <h5
+          className="ui-selection-block__subtitle"
+        >
+          Subtitle
+        </h5>
+      </div>
+    </header>
+    <div
+      className="ui-selection-block__body"
+    >
+      <div>
+        body
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectionBlock #render() should render selection block with logo and icon 1`] = `
+<div
+  className="ui-selection-block ui-selection-block_align-center"
+>
+  <div
+    className="ui-selection-block__section"
+  >
+    <header
+      className="ui-selection-block__header"
+    >
+      <div
+        className="ui-selection-block__titles"
+      >
+        <div
+          className="ui-selection-block__icon"
+        >
+          <span>
+            ☻
+          </span>
+        </div>
+        <h2
+          className="ui-selection-block__title"
+        >
+          Title
+        </h2>
+        <h5
+          className="ui-selection-block__subtitle"
+        >
+          Subtitle
+        </h5>
+      </div>
+      <div
+        className="ui-selection-block__logo"
+      >
+        <span
+          className="ui-selection-block__logo-label"
+        />
+        <img
+          src="https://www.travix.com/wp-content/uploads/2015/09/travix-logo_blue.png"
+        />
+      </div>
+    </header>
+    <div
+      className="ui-selection-block__body"
+    >
+      <div>
+        body
+      </div>
+    </div>
+  </div>
+  <div
+    className="ui-selection-block__logo"
+  >
+    <span
+      className="ui-selection-block__logo-label"
+    />
+    <img
+      src="https://www.travix.com/wp-content/uploads/2015/09/travix-logo_blue.png"
+    />
+  </div>
+</div>
+`;

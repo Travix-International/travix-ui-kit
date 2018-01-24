@@ -10,7 +10,7 @@ Preselected input:
 
     <div>
       <div style={{ width: '50%' }}>
-        <Input value={state.value !== undefined ? state.value : 'value'} onChange={(e, value) => {setState({ value })}}/>
+        <Input value={state.value !== undefined ? state.value : 'value'} onChange={(e, value) => { setState({ value: e.target.value }); }}/>
       </div>
     </div>
 

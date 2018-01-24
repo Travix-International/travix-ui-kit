@@ -409,7 +409,7 @@ messagebox:
     padding-bottom: "0px"
   padding: "24px"
 modal:
-  z-index: "100"
+  z-index: "999"
   color:
     dark: "var(--tx-generic-color-primary-dark)"
     secondary: "var(--tx-generic-color-secondary)"
@@ -521,28 +521,21 @@ sliding-panel:
   overlay:
     background-color: "rgba(var(--tx-generic-color-primary-dark-rgb), .65)"
     position: "fixed"
-    z-index: "3"
+    z-index: "999"
   panel:
-    background-color: "var(--tx-generic-color-blank)"
     bottom: "0"
     flex-flow: "column"
     margin: "0"
     max-width: "100%"
     opacity: "1"
-    padding: "24px"
     position: "absolute"
     top: "0"
-    transition: "transform 195ms cubic-bezier(0.0, 0.0, 0.2, 1)"
-  panel-open:
-    transform: "translateX(0)"
   left-direction:
     left: "0"
     right: "auto"
-    transform: "translateX(-100%)"
   right-direction:
     left: "auto"
     right: "0"
-    transform: "translateX(100%)"
 spinner:
   color:
     light: "var(--tx-generic-color-accent-lighter)"

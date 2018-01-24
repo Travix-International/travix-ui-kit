@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
 
 /**
  * General Input component.
@@ -71,11 +71,13 @@ class Input extends Component {
       dataAttrs = {},
       disabled,
       multiline,
+      name,
       status,
       value,
-      ...otherProps
     } = this.props;
     const mods = this.props.mods ? this.props.mods.slice() : [];
+
+    const otherProps = ejectOtherProps(this.props, Input.propTypes);
 
     (!this.state.isFocused && status) && mods.push(status);
     this.state.isFocused && mods.push('focused');
@@ -90,6 +92,7 @@ class Input extends Component {
           {...otherProps}
           className={className}
           disabled={disabled}
+          name={name}
           onBlur={this.handleInputBlur}
           onChange={this.handleInputChange}
           onFocus={this.handleInputFocus}
