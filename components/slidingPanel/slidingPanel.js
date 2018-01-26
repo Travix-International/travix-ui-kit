@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import SlidingPanelHeader from './slidingPanelHeader';
+import Global from '../global/global';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 export default class SlidingPanel extends Component {
@@ -100,7 +101,7 @@ export default class SlidingPanel extends Component {
           className="ui-sliding-panel-header__left-block-back"
           onClick={onBackButtonClick}
         >
-          <span className="ui-sliding-panel-header__left-block-back-icon"/>
+          <span className="ui-sliding-panel-header__left-block-back-icon" />
           <span className="ui-sliding-panel-header__left-block-back-text">
             {backButtonLabel}
           </span>
@@ -117,6 +118,7 @@ export default class SlidingPanel extends Component {
       direction,
       footer,
       leftBlock,
+      global,
       rightBlock,
       subheader,
       title,
@@ -155,13 +157,13 @@ export default class SlidingPanel extends Component {
       </div>
     ) : null;
 
-    return (
+    const content = (
       <div className={overlayClassName} onClick={this.handleClickOverlay}>
         <div
           className={panelClassName}
           onAnimationEnd={this.handleAnimationEnd}
           style={{ width }}
-          {...getDataAttributes(dataAttrs)}
+          {...getDataAttributes(dataAttrs) }
         >
           {title &&
             <SlidingPanelHeader
@@ -183,6 +185,14 @@ export default class SlidingPanel extends Component {
         </div>
       </div>
     );
+
+    return global
+      ? (
+        <Global noscroll={this.state.isActive}>
+          {content}
+        </Global>
+      )
+      : content;
   }
 }
 
@@ -224,6 +234,11 @@ SlidingPanel.propTypes = {
    * Defines the direction of sidepanel.
    */
   direction: PropTypes.oneOf(['left', 'right']),
+
+  /**
+     * Global positioning (also this mode make body not scrollable).
+     */
+  global: PropTypes.bool,
 
   /**
    * Defines the footer's content.
@@ -291,6 +306,7 @@ SlidingPanel.propTypes = {
 SlidingPanel.defaultProps = {
   closeOnOverlayClick: true,
   direction: 'right',
+  global: false,
   subheader: null,
   useDefaultLeftBlock: false,
   width: '480px',

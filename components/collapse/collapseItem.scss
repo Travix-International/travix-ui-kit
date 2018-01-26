@@ -31,16 +31,20 @@
       content: '\25bc\0020';
     }
   }
-}
 
-.ui-collapse__label--icon_position_right {
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  &::-moz-focus-inner {
+    border: 0;
+  }
 }
 
 .ui-collapse__label-icon {
   flex-shrink: 0;
   margin-right: 10px;
+
+  .ui-collapse__label--icon_position_right & {
+    margin-left: auto;
+    order: 1;
+  }
 
   &:before {
     color: var(--tx-collapse-item-label-icon-color);

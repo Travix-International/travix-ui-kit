@@ -5,6 +5,10 @@
   .ui-input_datepicker {
     box-sizing: border-box;
     cursor: pointer;
+
+    &:focus {
+      text-indent: -999999em;  // Fix for blinking cursor in IE11
+    }
   }
 }
 
@@ -17,6 +21,7 @@
   left: 0;
   max-height: 80vw;
   max-width: 80vw;
+  min-width: 15vw;
   padding: 23px;
   position: absolute;
   top: 46px;

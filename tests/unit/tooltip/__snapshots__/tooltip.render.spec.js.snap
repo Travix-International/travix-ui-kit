@@ -6,8 +6,8 @@ exports[`Tooltip: render should render active tooltip with all passed props 1`] 
   align="center"
   axisOffsetX="100px"
   axisOffsetY="110px"
+  dataAttrs={null}
   height="70px"
-  oppositeAxisOffset="0"
   position="right"
   showCloseButton={true}
   triggerAction="hover"

@@ -25,5 +25,7 @@
   border-top: 10px solid var(--tx-generic-color-active);
   bottom: -7px;
   content: '';
+  left: 50%;
   position: absolute;
+  transform: translateX(-50%);
 }

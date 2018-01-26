@@ -365,5 +365,17 @@ describe('SlidingPanel', () => {
 
       expect(renderTree).toMatchSnapshot();
     });
+
+    it('render with global mode', () => {
+      const renderTree = mount(
+        <SlidingPanel
+          global
+        >
+          Test
+        </SlidingPanel>
+      );
+
+      expect(renderTree).toMatchSnapshot();
+    });
   });
 });
