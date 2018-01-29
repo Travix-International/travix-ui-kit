@@ -163,7 +163,7 @@ export default class SlidingPanel extends Component {
           className={panelClassName}
           onAnimationEnd={this.handleAnimationEnd}
           style={{ width }}
-          {...getDataAttributes(dataAttrs) }
+          {...getDataAttributes(dataAttrs)}
         >
           {title &&
             <SlidingPanelHeader
