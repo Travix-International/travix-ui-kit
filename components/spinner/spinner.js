@@ -4,7 +4,7 @@ import React from 'react';
 import { getClassNamesWithMods, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
- * General Spinner component. Use when you need spinner
+ * General Spinner component.
  */
 function Spinner(props) {
   warnAboutDeprecatedProp(props.mods, 'mods', 'className');
