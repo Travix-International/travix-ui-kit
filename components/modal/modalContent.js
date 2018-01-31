@@ -5,16 +5,16 @@ import React from 'react';
 const ModalContent = ({ children, title }) => {
   const header = title
     ? (
-      <div className="ui-modal-content__title">
+      <div className="ui-modal-content-block__title">
         {title}
       </div>
     )
     : null;
 
   return (
-    <section className="ui-modal-content">
+    <section className="ui-modal-content-block">
       {header}
-      <div className="ui-modal-content__container">
+      <div className="ui-modal-content-block__container">
         {children}
       </div>
     </section>

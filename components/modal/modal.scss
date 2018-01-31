@@ -124,12 +124,12 @@
 
 .ui-modal__title {
   flex-basis: 100%;
-  font-size: 27px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 600;
   height: auto;
   margin: 0;
   text-align: center;
-  vertical-align: bottom;
+  vertical-align: baseline;
 }
 
 .ui-modal__content {
@@ -148,5 +148,8 @@
 .ui-modal_size_small {
   .ui-modal__container {
     width: 480px;
+  }
+  .ui-modal__content {
+    padding: 8px;
   }
 }

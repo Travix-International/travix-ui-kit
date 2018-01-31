@@ -49,11 +49,19 @@ Basic Modal:
           closeOnOverlayClick={false}
           closeOnEsc={false}
           onClose={() => setState({ isOpenModalWithContent: false })}
+          size="small"
         >
           <ModalContent title="Modal content title">
-            You can't close this modal on ESC or overlay click
+            First content body
+          </ModalContent>
+          <ModalContent>
+            <List items={Array.apply(null, Array(10)).map(() => 'List Item')} />
+          </ModalContent>
+          <ModalContent>
+            Last content body
             <Button size="s" onClick={() => setState({ isOpenModalWithContent: false })}>Close</Button>
           </ModalContent>
+          <div>You can put your own content outside background container</div>
         </Modal>
       </div>
       <br/>
