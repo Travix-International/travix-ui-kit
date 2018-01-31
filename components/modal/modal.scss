@@ -136,7 +136,7 @@
   -webkit-overflow-scrolling: touch;
   background-color: var(--tx-modal-content-background-color);
   overflow-y: auto;
-  padding: 22px var(--tx-modal-content-padding-left-right);
+  padding: 18px;
 }
 
 .ui-modal__footer {
@@ -150,6 +150,6 @@
     width: 480px;
   }
   .ui-modal__content {
-    padding: 8px;
+    padding: 12px;
   }
 }
