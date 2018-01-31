@@ -35,8 +35,10 @@ Basic Modal:
           onClose={() => setState({ isOpenSmallModal: false })}
           size="small"
         >
-          You can't close this modal on ESC or overlay click
-          <Button size="s" onClick={() => setState({ isOpenSmallModal: false })}>Close</Button>
+          <ModalContent>
+            You can't close this modal on ESC or overlay click
+            <Button size="s" onClick={() => setState({ isOpenSmallModal: false })}>Close</Button>
+          </ModalContent>
         </Modal>
       </div>
       <br/>
@@ -49,13 +51,16 @@ Basic Modal:
           closeOnOverlayClick={false}
           closeOnEsc={false}
           onClose={() => setState({ isOpenModalWithContent: false })}
-          size="small"
         >
           <ModalContent title="Modal content title">
             First content body
           </ModalContent>
           <ModalContent>
-            <List items={Array.apply(null, Array(10)).map(() => 'List Item')} />
+            <List items={Array.apply(null, Array(5)).map(() => 'List Item')} />
+          </ModalContent>
+          <ModalContent>
+            Last content body
+            <Button size="s" onClick={() => setState({ isOpenModalWithContent: false })}>Close</Button>
           </ModalContent>
           <ModalContent>
             Last content body

@@ -172,14 +172,6 @@ class Modal extends Component {
       mods.push('fullscreen');
     }
 
-    const contentSection = children && children.type === ModalContent
-      ? children
-      : (
-        <section className="ui-modal__content">
-          {children}
-        </section>
-      );
-
     const className = getClassNamesWithMods('ui-modal', mods);
 
     return (
@@ -187,7 +179,9 @@ class Modal extends Component {
         {this.renderOverlay()}
         <div className={'ui-modal__container'}>
           {this.renderHeader()}
-          {contentSection}
+          <section className="ui-modal__content">
+            {children}
+          </section>
           {this.renderFooter()}
         </div>
       </Global>

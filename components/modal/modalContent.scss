@@ -5,6 +5,7 @@
 }
 
 .ui-modal-content-block__title {
+  font-weight: 600;
   background-color: var(--tx-modal-modal-content-background-color);
   border-bottom: 2px solid var(--tx-modal-content-background-color);
   border-radius: var(--tx-modal-modal-content-border-radius) var(--tx-modal-modal-content-border-radius) 0 0;
@@ -12,7 +13,6 @@
 }
 
 .ui-modal-content-block__container {
-  background-color: var(--tx-modal-modal-content-background-color);
   border-radius: var(--tx-modal-modal-content-border-radius);
   overflow-y: auto;
   padding: 24px;
