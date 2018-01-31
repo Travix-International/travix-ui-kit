@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import ModalContent from './modalContent';
 import Global from '../global/global';
 import KEY_CODE from '../constants/keyCode';
 import { getClassNamesWithMods } from '../_helpers';
@@ -152,7 +151,7 @@ class Modal extends Component {
   }
 
   render() {
-    const { fullscreen, content, children, size } = this.props;
+    const { fullscreen, children, size } = this.props;
     const { isActive, isOpen } = this.state;
     const mods = this.props.mods ? this.props.mods.slice() : [];
     mods.push(`size_${size}`);

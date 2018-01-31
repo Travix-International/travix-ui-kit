@@ -15,7 +15,7 @@ describe('Modal: render', () => {
 
   it('should return base active modal with close button', () => {
     const component = mount(
-      <Modal active>
+      <Modal active onClose={() => {}} title="Title">
         Modal Content
       </Modal>
     );

@@ -3,10 +3,10 @@
 exports[`Modal: render Should redner modal content 1`] = `
 <ModalContent>
   <section
-    className="ui-modal-content"
+    className="ui-modal-content-block"
   >
     <div
-      className="ui-modal-content__container"
+      className="ui-modal-content-block__container"
     >
       Modal Content
     </div>
@@ -19,15 +19,15 @@ exports[`Modal: render Should redner modal content with title 1`] = `
   title="Modal content title"
 >
   <section
-    className="ui-modal-content"
+    className="ui-modal-content-block"
   >
     <div
-      className="ui-modal-content__title"
+      className="ui-modal-content-block__title"
     >
       Modal content title
     </div>
     <div
-      className="ui-modal-content__container"
+      className="ui-modal-content-block__container"
     >
       Modal Content
     </div>

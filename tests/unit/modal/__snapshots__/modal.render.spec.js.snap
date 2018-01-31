@@ -514,11 +514,11 @@ exports[`Modal: render should return base active modal with close button 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
-  onClose={null}
+  onClose={[Function]}
   onOverlayClick={null}
   overlay={true}
   size="big"
-  title={null}
+  title="Title"
 >
   <Global
     className="ui-modal ui-modal_size_big ui-modal_active"
@@ -534,6 +534,22 @@ exports[`Modal: render should return base active modal with close button 1`] = `
       <div
         className="ui-modal__container"
       >
+        <header
+          className="ui-modal__header"
+        >
+          <h3
+            className="ui-modal__title"
+          >
+            Title
+          </h3>
+          <button
+            className="ui-modal__close-button"
+            onClick={[Function]}
+            type="button"
+          >
+            <span />
+          </button>
+        </header>
         <section
           className="ui-modal__content"
         >

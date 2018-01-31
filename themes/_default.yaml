@@ -438,9 +438,6 @@ modal:
     background:
       color: "var(--tx-generic-color-blank)"
     border-radius: 8px;
-    padding:
-      left-right: 18px;
-      top-bottom: 18px;
 price:
   xsmall:
     font:
