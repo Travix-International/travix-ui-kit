@@ -36,6 +36,7 @@
     "max-len": [2, {"code": 120, "comments": 120, "tabWidth": 4}],
     "react/jsx-indent": [2, 2],
     "react/react-in-jsx-scope": 0,
+    "no-console": ["warn", { "allow": ["warn"] }],
     "no-else-return": 0,
     "react/prefer-stateless-function": ["error"],
     "multiline-ternary": ["off"],

@@ -2,19 +2,21 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Badge component
  */
 const Badge = (props) => {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const {
     arrow,
     border,
     children,
     className,
     dataAttrs = {},
-    mods,
+    mods = [],
     position,
     title,
     visible,
@@ -106,7 +108,6 @@ Badge.defaultProps = {
   arrow: false,
   border: true,
   children: null,
-  mods: [],
   title: '',
   visible: true,
 };

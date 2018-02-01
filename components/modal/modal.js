@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import Global from '../global/global';
 import KEY_CODE from '../constants/keyCode';
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Modal component
@@ -16,6 +16,10 @@ class Modal extends Component {
       isActive: props.active || false,
       isOpen: false,
     };
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   componentDidMount() {

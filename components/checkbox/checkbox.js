@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Checkbox component.
  */
 function Checkbox(props) {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const {
     checked,
     children,

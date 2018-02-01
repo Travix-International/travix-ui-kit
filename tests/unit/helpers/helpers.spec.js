@@ -1,6 +1,7 @@
 const getClassNamesWithMods = require('../../../components/_helpers.js').getClassNamesWithMods;
 const getDataAttributes = require('../../../components/_helpers.js').getDataAttributes;
 const ejectOtherProps = require('../../../components/_helpers.js').ejectOtherProps;
+const warnAboutDeprecatedProp = require('../../../components/_helpers.js').warnAboutDeprecatedProp;
 
 describe('helpers', () => {
   describe('#getClassNamesWithMods()', () => {
@@ -59,6 +60,30 @@ describe('helpers', () => {
       };
 
       expect(ejectOtherProps(props, propTypes)).toEqual(expected);
+    });
+  });
+
+  describe('#warnAboutDeprecatedProp()', () => {
+    const consoleWarn = console.warn;
+
+    beforeEach(() => {
+      console.warn = jest.fn();
+    });
+
+    afterEach(() => {
+      console.warn = consoleWarn;
+    });
+
+    it('should log warn message', () => {
+      warnAboutDeprecatedProp('propValue');
+
+      expect(console.warn).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not log warn message if prop is undefined', () => {
+      warnAboutDeprecatedProp(undefined);
+
+      expect(console.warn).toHaveBeenCalledTimes(0);
     });
   });
 });

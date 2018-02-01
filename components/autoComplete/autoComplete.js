@@ -9,7 +9,11 @@ import classnames from 'classnames';
 import AutoCompleteItem from './autoCompleteItem';
 import Input from '../input/input';
 import KEY_CODE from '../constants/keyCode';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import {
+  getClassNamesWithMods,
+  getDataAttributes,
+  warnAboutDeprecatedProp,
+} from '../_helpers';
 
 function getNextKey(keys, key) {
   return keys[keys.indexOf(key) + 1] || key;
@@ -34,6 +38,10 @@ class AutoComplete extends Component {
       selectedValue: undefined,
       selectedKey: undefined,
     };
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   handleInputChange = (e) => {

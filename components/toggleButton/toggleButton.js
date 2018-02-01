@@ -1,9 +1,11 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 export default function ToggleButton(props) {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const {
     className,
     dataAttrs,
