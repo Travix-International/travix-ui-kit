@@ -4,7 +4,12 @@ import classnames from 'classnames';
 
 import Input from '../input/input';
 import Calendar from '../calendar/calendar';
-import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
+import {
+  getClassNamesWithMods,
+  getDataAttributes,
+  ejectOtherProps,
+  warnAboutDeprecatedProp,
+} from '../_helpers';
 
 /**
  * DatePicker component
@@ -16,6 +21,10 @@ class DatePicker extends Component {
     this.state = {
       active: this.props.open,
     };
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   initInputRef = (elem) => {

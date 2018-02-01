@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 import Tab from './tab';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Tabs component
@@ -15,6 +15,10 @@ class Tabs extends Component {
     this.state = {
       activeTab: this.props.activeTab,
     };
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   componentWillReceiveProps(nextProps) {

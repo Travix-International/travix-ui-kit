@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 const MessageBox = (props) => {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const {
     children,
     className,
     dataAttrs,
     icon,
-    mods,
+    mods = [],
     title,
     type,
   } = props;
@@ -85,7 +87,6 @@ MessageBox.propTypes = {
 
 MessageBox.defaultProps = {
   icon: null,
-  mods: [],
   title: null,
   type: 'info',
 };

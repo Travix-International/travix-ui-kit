@@ -416,7 +416,7 @@ messagebox:
     padding-bottom: "0px"
   padding: "24px"
 modal:
-  z-index: "100"
+  z-index: "999"
   color:
     dark: "var(--tx-generic-color-primary-dark)"
     secondary: "var(--tx-generic-color-secondary)"
@@ -550,8 +550,6 @@ spinner:
     dark: "var(--tx-generic-color-active)"
     darker: "var(--tx-generic-color-primary-lighter)"
 carousel:
-  track:
-    transition: "transform 0.5s cubic-bezier(0.2, 1, 0.3, 1)"
   item:
     min-height: "400px"
   button:

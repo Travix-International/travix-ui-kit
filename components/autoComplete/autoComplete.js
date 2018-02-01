@@ -9,7 +9,11 @@ import classnames from 'classnames';
 import AutoCompleteItem from './autoCompleteItem';
 import Input from '../input/input';
 import KEY_CODE from '../constants/keyCode';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import {
+  getClassNamesWithMods,
+  getDataAttributes,
+  warnAboutDeprecatedProp,
+} from '../_helpers';
 
 function getNextKey(keys, key) {
   return keys[keys.indexOf(key) + 1] || key;
@@ -34,6 +38,10 @@ class AutoComplete extends Component {
       selectedValue: undefined,
       selectedKey: undefined,
     };
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   handleInputChange = (e) => {
@@ -181,7 +189,7 @@ class AutoComplete extends Component {
       && this.items[activeKey] && this.items[activeKey].getValue();
     const value = this.state.inputValue;
 
-    const isPreviousValue = (this.state.selectedKey === item.key
+    const isPreviousValue = item && (this.state.selectedKey === item.key
       && (this.state.selectedValue === item.code || this.state.selectedValue === item.value));
 
     if (!item || (!value && e.keyCode !== KEY_CODE.ENTER)) {
@@ -241,7 +249,8 @@ class AutoComplete extends Component {
     if (!this.state.inputValue) {
       return str;
     }
-    const value = this.state.inputValue;
+    // escape special characters
+    const value = this.state.inputValue.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
     const descriptionRule = this.props.highlightRule || new RegExp(`(${value})`, 'i');
     const highlighted = str.replace(descriptionRule, '<span class="ui-autocomplete-item_highlight">$1</span>');
 
@@ -324,12 +333,12 @@ class AutoComplete extends Component {
       >
         {labelBlock}
         <Input
-          aria-activedescendant={`ui-autocomplete-item-${name}-${activeKey}`}
-          aria-autocomplete="list"
-          aria-expanded={open}
-          aria-haspopup={open}
-          aria-labelledby={label ? `ui-autocomplete-label-${name}` : ''}
-          aria-owns={`ui-autocomplete-list-${name}`}
+          ariaActivedescendant={`ui-autocomplete-item-${name}-${activeKey}`}
+          ariaAutocomplete="list"
+          ariaExpanded={open}
+          ariaHaspopup={open}
+          ariaLabelledby={label ? `ui-autocomplete-label-${name}` : ''}
+          ariaOwns={`ui-autocomplete-list-${name}`}
           autoComplete="off"
           disabled={disabled}
           id={`ui-autocomplete-input-${name}`}

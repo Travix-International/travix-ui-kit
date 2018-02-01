@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 const getNormalizedActiveKey = ({ defaultActiveKey, activeKey }) => {
   if (typeof activeKey === 'undefined') {
@@ -26,6 +26,10 @@ class Collapse extends Component {
     this.state = {
       activeKey: getNormalizedActiveKey(props),
     };
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   componentWillReceiveProps(nextProps) {

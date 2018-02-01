@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Adds the thousands separator to a given value.
@@ -42,6 +42,8 @@ export function ensureDecimalPrecision(value = '', decimalsPrecision = 2) {
  * Price component
  */
 function Price(props) {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const {
     additionalText,
     className,
