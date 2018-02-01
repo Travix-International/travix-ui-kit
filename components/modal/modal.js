@@ -259,7 +259,7 @@ Modal.propTypes = {
    */
   overlay: PropTypes.bool,
   /**
-   * Price's size
+   * Modal size
    */
   size: PropTypes.oneOf(['small', 'big']),
   /**

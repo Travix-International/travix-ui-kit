@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-
 const ModalContent = ({ children, title }) => {
   const header = title
     ? (
