@@ -5,9 +5,7 @@
 
 .ui-modal-content-block__title {
   font-weight: 600;
-  background-color: var(--tx-generic-color-blank);
   border-bottom: 2px solid var(--tx-modal-content-background-color);
-  border-radius: 8px 8px 0 0;
   padding: 24px;
 }
 
