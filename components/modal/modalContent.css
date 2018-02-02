@@ -1,6 +1,6 @@
 .ui-modal-content-block {
   background-color: var(--tx-generic-color-blank);
-  border-radius: 8px;
+  border-radius: var(--tx-generic-border-radius);
   font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
   color: var(--tx-generic-color-text-dark);
 }
@@ -15,7 +15,7 @@
 }
 
 .ui-modal-content-block__container {
-  border-radius: 8px;
+  border-radius: var(--tx-generic-border-radius);
   font-size: 16px;
   line-height: 1.75;
   overflow-y: auto;
@@ -23,17 +23,17 @@
 }
 
 .ui-modal-content-block__title+.ui-modal-content-block__container {
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 var(--tx-generic-border-radius) var(--tx-generic-border-radius);
   margin-top: 2px;
 }
 
 .ui-modal-content-block+.ui-modal-content-block {
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 var(--tx-generic-border-radius) var(--tx-generic-border-radius);
   border-top: 2px solid var(--tx-modal-content-background-color);
 }
 
 .ui-modal-content-block:not(:last-of-type) {
-  border-radius: 8px 8px 0 0;
+  border-radius: var(--tx-generic-border-radius) var(--tx-generic-border-radius) 0 0;
 }
 
 .ui-modal-content-block:not(:last-of-type):not(:first-of-type) {

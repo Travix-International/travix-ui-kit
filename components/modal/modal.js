@@ -246,6 +246,10 @@ Modal.propTypes = {
    */
   fullscreen: PropTypes.bool,
   /**
+   * Determain if modal should be displayed in small size
+   */
+  isSmall: PropTypes.bool,
+  /**
    * Set of custom modifications.
    */
   mods: PropTypes.arrayOf(PropTypes.string),
@@ -261,10 +265,6 @@ Modal.propTypes = {
    * Determine whether a overlay is visible or not
    */
   overlay: PropTypes.bool,
-  /**
-   * Determain if modal should be displayed in small size
-   */
-  isSmall: PropTypes.bool,
   /**
    * The modal dialog's title
    */

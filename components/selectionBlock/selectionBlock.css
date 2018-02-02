@@ -65,8 +65,8 @@
   display: flex;
   justify-content: center;
   margin: 0;
-  width: 290px;
   min-width: 290px;
+  width: 290px;
 }
 
 .ui-selection-block_vertical
