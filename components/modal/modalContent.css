@@ -1,9 +1,14 @@
 .ui-modal-content-block {
   background-color: var(--tx-generic-color-blank);
   border-radius: 8px;
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
+  color: var(--tx-generic-color-text-dark);
 }
 
 .ui-modal-content-block__title {
+  color: var(--tx-modal-color-dark);
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
+  font-size: 16px;
   font-weight: 600;
   border-bottom: 2px solid var(--tx-modal-content-background-color);
   padding: 24px;
@@ -11,6 +16,8 @@
 
 .ui-modal-content-block__container {
   border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.75;
   overflow-y: auto;
   padding: 24px;
 }

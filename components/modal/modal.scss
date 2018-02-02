@@ -118,6 +118,7 @@
   color: var(--tx-modal-color-dark);
   display: flex;
   flex-shrink: 0;
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
   min-height: 13px;
   padding: 24px var(--tx-modal-content-padding-left-right);
 }
