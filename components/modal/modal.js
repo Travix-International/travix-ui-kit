@@ -151,10 +151,13 @@ class Modal extends Component {
   }
 
   render() {
-    const { fullscreen, children, size } = this.props;
+    const { fullscreen, children, isSmall } = this.props;
     const { isActive, isOpen } = this.state;
     const mods = this.props.mods ? this.props.mods.slice() : [];
-    mods.push(`size_${size}`);
+
+    if (isSmall) {
+      mods.push('size_small');
+    }
 
     if (isActive) {
       mods.push('active');
@@ -201,7 +204,7 @@ Modal.defaultProps = {
   onClose: null,
   onOverlayClick: null,
   overlay: true,
-  size: 'big',
+  size: false,
   title: null,
 };
 
@@ -259,9 +262,9 @@ Modal.propTypes = {
    */
   overlay: PropTypes.bool,
   /**
-   * Modal size
+   * Determain if modal should be displayed in small size
    */
-  size: PropTypes.oneOf(['small', 'big']),
+  isSmall: PropTypes.bool,
   /**
    * The modal dialog's title
    */

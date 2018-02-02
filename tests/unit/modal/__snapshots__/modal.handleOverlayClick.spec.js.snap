@@ -2,7 +2,7 @@
 
 exports[`Modal: handleOverlayClick should call "onOverlayClick" prop after click on overlay 1`] = `
 <Global
-  className="ui-modal ui-modal_size_big ui-modal_active"
+  className="ui-modal ui-modal_active"
   noscroll={true}
 >
   <div

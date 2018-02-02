@@ -186,4 +186,16 @@ describe('Modal: render', () => {
     expect(component.state().isOpen).toBe(true);
     expect(component).toMatchSnapshot();
   });
+
+  it('should render small modal', () => {
+    const wrapper = mount(
+      <Modal
+        isSmall
+      >
+        Modal Content
+      </Modal>
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });

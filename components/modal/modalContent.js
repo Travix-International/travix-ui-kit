@@ -29,10 +29,6 @@ ModalContent.propTypes = {
    * Title text of content
    */
   title: PropTypes.node,
-  /**
-   * Set of custom modifications.
-   */
-  mods: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default ModalContent;
