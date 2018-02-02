@@ -28,12 +28,12 @@ Basic Modal:
         <Button size="s" onClick={() => setState({ isOpenSmallModal: true })}>Open small modal</Button>
         <Modal
           active={state.isOpenSmallModal}
-          title="Modal with title"
           closable={true}
           closeOnOverlayClick={false}
           closeOnEsc={false}
+          isSmall
           onClose={() => setState({ isOpenSmallModal: false })}
-          size="small"
+          title="Modal with title"
         >
           <ModalContent>
             You can't close this modal on ESC or overlay click

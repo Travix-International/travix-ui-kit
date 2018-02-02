@@ -1,8 +1,11 @@
 .ui-modal-content-block {
   background-color: var(--tx-generic-color-blank);
   border-radius: var(--tx-generic-border-radius);
-  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
   color: var(--tx-generic-color-text-dark);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
 }
 
 .ui-modal-content-block__title {
