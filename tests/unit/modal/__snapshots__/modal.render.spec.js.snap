@@ -10,10 +10,10 @@ exports[`Modal: render should add correct className after change state to "open"
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={null}
 >
   <Global
@@ -51,10 +51,10 @@ exports[`Modal: render should render closable modal with close button text 1`] =
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={null}
 >
   <Global
@@ -92,10 +92,10 @@ exports[`Modal: render should render empty modal when status is not active 1`] =
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={null}
 />
 `;
@@ -110,10 +110,10 @@ exports[`Modal: render should render fullscreen modal 1`] = `
   delay={0}
   footer={null}
   fullscreen={true}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={null}
 >
   <Global
@@ -151,10 +151,10 @@ exports[`Modal: render should render inactive modal 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={null}
 />
 `;
@@ -175,10 +175,10 @@ exports[`Modal: render should render modal with custom footer 1`] = `
     </footer>
   }
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={null}
 >
   <Global
@@ -223,10 +223,10 @@ exports[`Modal: render should render modal with custom header 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={
     <header>
       <h1>
@@ -277,6 +277,7 @@ exports[`Modal: render should render modal with custom mods 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   mods={
     Array [
       "my-custom-mod",
@@ -285,7 +286,6 @@ exports[`Modal: render should render modal with custom mods 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={null}
 >
   <Global
@@ -323,10 +323,10 @@ exports[`Modal: render should render modal with custom title 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={
     <h2>
       h2 Custom Title
@@ -375,10 +375,10 @@ exports[`Modal: render should render modal without overlay 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={false}
-  size={false}
   title={null}
 >
   <Global
@@ -412,10 +412,10 @@ exports[`Modal: render should render non closable modal 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={null}
 >
   <Global
@@ -457,7 +457,6 @@ exports[`Modal: render should render small modal 1`] = `
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title={null}
 />
 `;
@@ -476,10 +475,10 @@ exports[`Modal: render should return active modal with title and footer 1`] = `
     </div>
   }
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title="Test Modal Title"
 >
   <Global
@@ -533,10 +532,10 @@ exports[`Modal: render should return base active modal with close button 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={[Function]}
   onOverlayClick={null}
   overlay={true}
-  size={false}
   title="Title"
 >
   <Global
