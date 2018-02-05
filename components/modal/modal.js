@@ -208,10 +208,10 @@ Modal.defaultProps = {
   delay: 0,
   footer: null,
   fullscreen: false,
+  isSmall: false,
   onClose: null,
   onOverlayClick: null,
   overlay: true,
-  size: false,
   title: null,
 };
 

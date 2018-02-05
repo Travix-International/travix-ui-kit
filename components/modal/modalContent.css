@@ -2,9 +2,6 @@
   background-color: var(--tx-generic-color-blank);
   border-radius: var(--tx-generic-border-radius);
   color: var(--tx-generic-color-text-dark);
-  display: flex;
-  flex-direction: column;
-  flex: 1;
   font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
 }
 
@@ -12,15 +9,15 @@
   color: var(--tx-modal-color-dark);
   font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
   font-size: 16px;
-  font-weight: 600;
-  border-bottom: 2px solid var(--tx-modal-content-background-color);
+  font-weight: 500;
+  border-bottom: 2px solid var(--tx-generic-color-secondary);
   padding: 24px;
 }
 
 .ui-modal-content-block__container {
   border-radius: var(--tx-generic-border-radius);
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: 14px;
+  line-height: 1.4;
   overflow-y: auto;
   padding: 24px;
 }
@@ -32,7 +29,7 @@
 
 .ui-modal-content-block+.ui-modal-content-block {
   border-radius: 0 0 var(--tx-generic-border-radius) var(--tx-generic-border-radius);
-  border-top: 2px solid var(--tx-modal-content-background-color);
+  border-top: 2px solid var(--tx-generic-color-secondary);
 }
 
 .ui-modal-content-block:not(:last-of-type) {
@@ -43,6 +40,10 @@
   border-radius: 0;
 }
 
+.ui-modal-content-block:last-of-type {
+  height: 100%;
+}
+
 .ui-modal_size_small .ui-modal-content-block__container {
-    padding: 24px;
+  padding: 24px;
 }
