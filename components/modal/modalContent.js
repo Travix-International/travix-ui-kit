@@ -1,7 +1,8 @@
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const ModalContent = ({ children, title }) => {
+const ModalContent = ({ children, className, title }) => {
   const header = title
     ? (
       <div className="ui-modal-content-block__title">
@@ -10,8 +11,9 @@ const ModalContent = ({ children, title }) => {
     )
     : null;
 
+  const classes = classnames(className, 'ui-modal-content-block');
   return (
-    <section className="ui-modal-content-block">
+    <section className={classes}>
       {header}
       <div className="ui-modal-content-block__container">
         {children}
@@ -21,6 +23,10 @@ const ModalContent = ({ children, title }) => {
 };
 
 ModalContent.propTypes = {
+  /**
+   * Specify a CSS class
+   */
+  className: PropTypes.string,
   /**
    * The modal dialog's body
    */

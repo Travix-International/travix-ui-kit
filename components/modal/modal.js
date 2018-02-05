@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
@@ -151,7 +152,12 @@ class Modal extends Component {
   }
 
   render() {
-    const { fullscreen, children, isSmall } = this.props;
+    const {
+      className,
+      fullscreen,
+      children,
+      isSmall,
+    } = this.props;
     const { isActive, isOpen } = this.state;
     const mods = this.props.mods ? this.props.mods.slice() : [];
 
@@ -174,10 +180,11 @@ class Modal extends Component {
       mods.push('fullscreen');
     }
 
-    const className = getClassNamesWithMods('ui-modal', mods);
+    const classNameWithMods = getClassNamesWithMods('ui-modal', mods);
+    const classes = classnames(className, classNameWithMods);
 
     return (
-      <Global className={className}>
+      <Global className={classes}>
         {this.renderOverlay()}
         <div className={'ui-modal__container'}>
           {this.renderHeader()}
@@ -217,6 +224,10 @@ Modal.propTypes = {
    * The modal dialog's body
    */
   children: PropTypes.node,
+  /**
+   * Specify a CSS class
+   */
+  className: PropTypes.string,
   /**
    * Determine whether a close button is visible on top right of the modal dialog or not
    */
