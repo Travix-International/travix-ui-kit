@@ -1,12 +1,14 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * General Spinner component.
  */
 function Spinner(props) {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const { className, size } = props;
   const mods = props.mods ? props.mods.slice() : [];
 

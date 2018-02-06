@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Select from 'react-select/dist/react-select';
 import classnames from 'classnames';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 import DropdownFilterOptionComponent from './dropdownFilterOptionComponent';
 
 /**
@@ -16,6 +16,10 @@ class DropDown extends Component {
     this.onChange = this.onChange.bind(this);
     this.menuRenderer = this.menuRenderer.bind(this);
     this.valueRenderer = this.valueRenderer.bind(this);
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   static optionRef(onOptionRef, isSelected) {

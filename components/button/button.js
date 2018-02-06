@@ -3,12 +3,18 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import {
+  getClassNamesWithMods,
+  getDataAttributes,
+  warnAboutDeprecatedProp,
+} from '../_helpers';
 
 /**
  * General Button component. Use when you need button or a link that looks like button
  */
 function Button(props) {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const {
     children,
     className,

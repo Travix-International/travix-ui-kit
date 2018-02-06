@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { getClassNamesWithMods, getDataAttributes, normalizeDate } from '../_helpers';
+import {
+  getClassNamesWithMods,
+  getDataAttributes,
+  normalizeDate,
+  warnAboutDeprecatedProp,
+} from '../_helpers';
 import DaysPanel from './panels/days';
 import calendarConstants from './constants/calendar';
 
@@ -86,6 +91,10 @@ export default class Calendar extends Component {
 
     this.moveToMonth = this.moveToMonth.bind(this);
     this.state = processProps(props);
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   componentWillReceiveProps(newProps) {

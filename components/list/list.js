@@ -2,12 +2,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * General List component. Use when you need to display array of elements
  */
 function List(props) {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const {
     align,
     className,

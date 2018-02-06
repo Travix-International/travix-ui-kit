@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import SlidingPanelHeader from './slidingPanelHeader';
 import Global from '../global/global';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 export default class SlidingPanel extends Component {
   constructor(props) {
@@ -17,6 +17,10 @@ export default class SlidingPanel extends Component {
     this.handleActive = this.handleActive.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   componentWillReceiveProps(newProps) {

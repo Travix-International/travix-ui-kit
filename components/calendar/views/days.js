@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import { getClassNamesWithMods, getDataAttributes, leftPad } from '../../_helpers';
+import {
+  getClassNamesWithMods,
+  getDataAttributes,
+  leftPad,
+  warnAboutDeprecatedProp,
+} from '../../_helpers';
 import calendarConstants from '../constants/calendar';
 
 const { CALENDAR_SELECTION_TYPE_RANGE } = calendarConstants;
@@ -18,6 +23,10 @@ class Days extends Component {
 
     this.locale = this.getLocale();
     this.navButtons = this.getNavButtons();
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   /**
@@ -250,7 +259,7 @@ class Days extends Component {
   }
 
   render() {
-    const { dataAttrs, mods, onMouseDown } = this.props;
+    const { dataAttrs, mods = [], onMouseDown } = this.props;
     const className = getClassNamesWithMods('ui-calendar-days', mods);
     const restProps = getDataAttributes(dataAttrs);
 
@@ -275,7 +284,6 @@ Days.defaultProps = {
   hide: false,
   maxDate: null,
   minDate: null,
-  mods: [],
 };
 
 Days.propTypes = {

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import React, { Component } from 'react';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * General Input component.
@@ -14,6 +14,10 @@ class Input extends Component {
     this.state = {
       isFocused: false,
     };
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   handleInputBlur = (e) => {
