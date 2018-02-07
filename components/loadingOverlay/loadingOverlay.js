@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 import { getClassNamesWithMods } from '../_helpers';
-import { Spinner } from '../';
+import Spinner from '../spinner/spinner';
 
 const LoadingOverlay = ({
   children,
