@@ -92,6 +92,10 @@ autocomplete-item:
   highlight:
     color: "var(--tx-generic-color-active)"
 badge:
+  before:
+    border:
+      size: 6px
+      color: "var(--tx-generic-color-accent-border)"
   after:
     border:
       size: 4px
@@ -101,12 +105,13 @@ badge:
       coefficient: "0.6"
   border:
     bottom:
-      width: 4px
+      width: 5px
       style: solid
       color: "var(--tx-generic-color-primary-darker)"
     radius:
       start: 0px
-      end: 0px
+      end-top: 0px
+      end-bottom: 0px
   color:
     background: "var(--tx-generic-color-accent)"
     text: "var(--tx-generic-color-primary-darker)"
@@ -115,6 +120,7 @@ badge:
   padding:
     right-left: 8px
     top-bottom: 6px
+    corner-side: 12px
 ui-button:
   default:
     normal:
