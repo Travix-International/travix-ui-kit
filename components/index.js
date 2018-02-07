@@ -17,6 +17,7 @@ import List from './list/list';
 import LoadingOverlay from './loadingOverlay/loadingOverlay';
 import MessageBox from './messageBox/messageBox';
 import Modal from './modal/modal';
+import ModalContent from './modal/modalContent';
 import OverlayTrigger from './overlayTrigger/overlayTrigger';
 import Price from './price/price';
 import RadioButton from './radioButton/radioButton';
@@ -49,6 +50,7 @@ export default {
   LoadingOverlay,
   MessageBox,
   Modal,
+  ModalContent,
   OverlayTrigger,
   Price,
   RadioButton,

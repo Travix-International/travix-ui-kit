@@ -65,6 +65,7 @@
   display: flex;
   justify-content: center;
   margin: 0;
+  min-width: 290px;
   width: 290px;
 }
 
