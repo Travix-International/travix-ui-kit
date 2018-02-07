@@ -366,6 +366,7 @@ describe('SlidingPanel', () => {
 
       const panelElement = renderTree.find('.ui-sliding-panel');
 
+      expect(renderTree).toMatchSnapshot();
       expect(panelElement.hasClass(className)).toEqual(true);
     });
 
