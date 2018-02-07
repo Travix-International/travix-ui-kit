@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.8.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.8.0) (2018-02-07)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.7.10...v0.8.0)
+
+**Merged pull requests:**
+
+- Update modal design [\#321](https://github.com/Travix-International/travix-ui-kit/pull/321) ([spzm](https://github.com/spzm))
+- warning of usage of deprecated "mods" prop [\#309](https://github.com/Travix-International/travix-ui-kit/pull/309) ([AntonTsymuk](https://github.com/AntonTsymuk))
+
 ## [v0.7.10](https://github.com/Travix-International/travix-ui-kit/tree/v0.7.10) (2018-01-25)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.7.9...v0.7.10)
 
