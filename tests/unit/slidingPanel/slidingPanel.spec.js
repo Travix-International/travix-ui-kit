@@ -361,9 +361,12 @@ describe('SlidingPanel', () => {
     });
 
     it('should render SlidingPanel with provided className', () => {
-      const renderTree = mount(<SlidingPanel className="test-class" />);
+      const className = 'test-class';
+      const renderTree = mount(<SlidingPanel className={className} />);
 
-      expect(renderTree).toMatchSnapshot();
+      const panelElement = renderTree.find('.ui-sliding-panel');
+
+      expect(panelElement.hasClass(className)).toEqual(true);
     });
 
     it('render with global mode', () => {
