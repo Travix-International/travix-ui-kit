@@ -82,7 +82,7 @@ function normalizeDate(dateObject, hours = 0, minutes = 0, seconds = 0, millisec
 function ejectOtherProps(props, propTypes) {
   const propTypesKeys = Object.keys(propTypes);
   return Object.keys(props)
-    .filter(x => !propTypesKeys.includes(x))
+    .filter(x => propTypesKeys.indexOf(x) === -1)
     .reduce((prev, item) => {
       return { ...prev, [item]: props[item] };
     }, {});
