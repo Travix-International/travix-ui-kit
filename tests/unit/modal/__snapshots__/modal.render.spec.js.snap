@@ -10,6 +10,7 @@ exports[`Modal: render should add correct className after change state to "open"
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
@@ -50,6 +51,7 @@ exports[`Modal: render should render closable modal with close button text 1`] =
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
@@ -90,6 +92,7 @@ exports[`Modal: render should render empty modal when status is not active 1`] =
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
@@ -107,6 +110,7 @@ exports[`Modal: render should render fullscreen modal 1`] = `
   delay={0}
   footer={null}
   fullscreen={true}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
@@ -147,6 +151,7 @@ exports[`Modal: render should render inactive modal 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
@@ -170,6 +175,7 @@ exports[`Modal: render should render modal with custom footer 1`] = `
     </footer>
   }
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
@@ -217,6 +223,7 @@ exports[`Modal: render should render modal with custom header 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
@@ -270,6 +277,7 @@ exports[`Modal: render should render modal with custom mods 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   mods={
     Array [
       "my-custom-mod",
@@ -315,6 +323,7 @@ exports[`Modal: render should render modal with custom title 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
@@ -366,6 +375,7 @@ exports[`Modal: render should render modal without overlay 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={false}
@@ -402,6 +412,7 @@ exports[`Modal: render should render non closable modal 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
@@ -432,6 +443,24 @@ exports[`Modal: render should render non closable modal 1`] = `
 </Modal>
 `;
 
+exports[`Modal: render should render small modal 1`] = `
+<Modal
+  active={false}
+  closable={true}
+  closeButtonText={null}
+  closeOnEsc={true}
+  closeOnOverlayClick={true}
+  delay={0}
+  footer={null}
+  fullscreen={false}
+  isSmall={true}
+  onClose={null}
+  onOverlayClick={null}
+  overlay={true}
+  title={null}
+/>
+`;
+
 exports[`Modal: render should return active modal with title and footer 1`] = `
 <Modal
   active={true}
@@ -446,6 +475,7 @@ exports[`Modal: render should return active modal with title and footer 1`] = `
     </div>
   }
   fullscreen={false}
+  isSmall={false}
   onClose={null}
   onOverlayClick={null}
   overlay={true}
@@ -502,10 +532,11 @@ exports[`Modal: render should return base active modal with close button 1`] = `
   delay={0}
   footer={null}
   fullscreen={false}
-  onClose={null}
+  isSmall={false}
+  onClose={[Function]}
   onOverlayClick={null}
   overlay={true}
-  title={null}
+  title="Title"
 >
   <Global
     className="ui-modal ui-modal_active"
@@ -521,6 +552,22 @@ exports[`Modal: render should return base active modal with close button 1`] = `
       <div
         className="ui-modal__container"
       >
+        <header
+          className="ui-modal__header"
+        >
+          <h3
+            className="ui-modal__title"
+          >
+            Title
+          </h3>
+          <button
+            className="ui-modal__close-button"
+            onClick={[Function]}
+            type="button"
+          >
+            <span />
+          </button>
+        </header>
         <section
           className="ui-modal__content"
         >

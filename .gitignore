@@ -9,4 +9,3 @@ themes/theme.scss
 .DS_Store
 wallaby.js
 _site
-package-lock.json
