@@ -79,7 +79,7 @@
     "jest": "^21.3.0-beta",
     "jest-cli": "^21.3.0-beta",
     "node-sass": "^4.3.0",
-    "now": "9.2.7",
+    "now": "9.2.8",
     "postcss-loader": "~2.1.0",
     "prop-types": "^15.5.8",
     "raf": "^3.4.0",
