@@ -15,7 +15,7 @@ describe('Modal: render', () => {
 
   it('should return base active modal with close button', () => {
     const component = mount(
-      <Modal active>
+      <Modal active onClose={() => {}} title="Title">
         Modal Content
       </Modal>
     );
@@ -185,5 +185,17 @@ describe('Modal: render', () => {
 
     expect(component.state().isOpen).toBe(true);
     expect(component).toMatchSnapshot();
+  });
+
+  it('should render small modal', () => {
+    const wrapper = mount(
+      <Modal
+        isSmall
+      >
+        Modal Content
+      </Modal>
+    );
+
+    expect(wrapper).toMatchSnapshot();
   });
 });
