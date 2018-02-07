@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal: render Should redner modal content 1`] = `
+<ModalContent>
+  <section
+    className="ui-modal-content-block"
+  >
+    <div
+      className="ui-modal-content-block__container"
+    >
+      Modal Content
+    </div>
+  </section>
+</ModalContent>
+`;
+
+exports[`Modal: render Should redner modal content with title 1`] = `
+<ModalContent
+  title="Modal content title"
+>
+  <section
+    className="ui-modal-content-block"
+  >
+    <div
+      className="ui-modal-content-block__title"
+    >
+      Modal content title
+    </div>
+    <div
+      className="ui-modal-content-block__container"
+    >
+      Modal Content
+    </div>
+  </section>
+</ModalContent>
+`;
