@@ -25,6 +25,52 @@ Basic Modal:
       </div>
       <br/>
       <div>
+        <Button size="s" onClick={() => setState({ isOpenSmallModal: true })}>Open small modal</Button>
+        <Modal
+          active={state.isOpenSmallModal}
+          closable={true}
+          closeOnOverlayClick={false}
+          closeOnEsc={false}
+          isSmall
+          onClose={() => setState({ isOpenSmallModal: false })}
+          title="Modal with title"
+        >
+          <ModalContent>
+            You can't close this modal on ESC or overlay click
+            <Button size="s" onClick={() => setState({ isOpenSmallModal: false })}>Close</Button>
+          </ModalContent>
+        </Modal>
+      </div>
+      <br/>
+      <div>
+        <Button size="s" onClick={() => setState({ isOpenModalWithContent: true })}>Open modal with content</Button>
+        <Modal
+          active={state.isOpenModalWithContent}
+          title="Modal with title"
+          closable={true}
+          closeOnOverlayClick={false}
+          closeOnEsc={false}
+          onClose={() => setState({ isOpenModalWithContent: false })}
+        >
+          <ModalContent title="Modal content title">
+            First content body
+          </ModalContent>
+          <ModalContent>
+            <List items={Array.apply(null, Array(5)).map(() => 'List Item')} />
+          </ModalContent>
+          <ModalContent>
+            Last content body
+            <Button size="s" onClick={() => setState({ isOpenModalWithContent: false })}>Close</Button>
+          </ModalContent>
+          <ModalContent>
+            Last content body
+            <Button size="s" onClick={() => setState({ isOpenModalWithContent: false })}>Close</Button>
+          </ModalContent>
+          <div>You can put your own content outside background container</div>
+        </Modal>
+      </div>
+      <br/>
+      <div>
         <Button size="s" onClick={() => setState({ isOpenCustomModal: true })}>Open custom modal</Button>
         <Modal
           active={state.isOpenCustomModal}
