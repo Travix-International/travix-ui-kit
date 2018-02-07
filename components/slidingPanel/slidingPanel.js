@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import ReactDom from 'react-dom';
 import React, { Component } from 'react';
 import SlidingPanelHeader from './slidingPanelHeader';
+import Global from '../global/global';
 import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
 
 export default class SlidingPanel extends Component {
@@ -48,10 +49,15 @@ export default class SlidingPanel extends Component {
     direction: PropTypes.oneOf(['left', 'right']),
 
     /**
+     * Global positioning (also this mode make body not scrollable).
+     */
+    global: PropTypes.bool,
+
+    /**
      * Defines the footer's content.
      */
-    footer: PropTypes.node,
 
+    footer: PropTypes.node,
     /**
      * When defined, this custom node appears on the left part of the header
      */
@@ -114,6 +120,7 @@ export default class SlidingPanel extends Component {
   static defaultProps = {
     closeOnOverlayClick: true,
     direction: 'right',
+    global: false,
     subheader: null,
     useDefaultLeftBlock: false,
     width: '480px',
@@ -217,6 +224,7 @@ export default class SlidingPanel extends Component {
       direction,
       footer,
       leftBlock,
+      global,
       rightBlock,
       subheader,
       title,
@@ -255,7 +263,7 @@ export default class SlidingPanel extends Component {
       </div>
     ) : null;
 
-    return (
+    const content = (
       <div className={overlayClassName} onClick={this.handleClickOverlay}>
         <div
           className={panelClassName}
@@ -283,5 +291,13 @@ export default class SlidingPanel extends Component {
         </div>
       </div>
     );
+
+    return global
+      ? (
+        <Global noscroll={this.state.isActive}>
+          {content}
+        </Global>
+      )
+      : content;
   }
 }

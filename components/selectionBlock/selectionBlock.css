@@ -1,0 +1,117 @@
+.ui-selection-block__section {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.ui-selection-block_vertical
+.ui-selection-block__section {
+  display: block;
+}
+
+.ui-selection-block_vertical
+.ui-selection-block__header
+.ui-selection-block__logo {
+  display: flex;
+}
+
+.ui-selection-block__header
+.ui-selection-block__logo,
+.ui-selection-block_vertical
+.ui-selection-block__icon,
+.ui-selection-block_vertical >
+.ui-selection-block__logo {
+  display: none;
+}
+
+.ui-selection-block__title {
+  color: var(--tx-generic-color-primary);
+  font-family: var(--tx-generic-font-primary-font-family), var(--tx-generic-font-primary-generic-family);
+  font-size: 35px;
+  font-weight: var(--tx-generic-font-primary-weight-medium);
+  line-height: 40px;
+  margin: 0;
+}
+
+.ui-selection-block__subtitle {
+  color: var(--tx-generic-color-primary-lighter);
+  font-family: var(--tx-generic-font-alternative-font-family), var(--tx-generic-font-alternative-generic-family);
+  font-size: 18px;
+  font-weight: 400;
+  font-weight: var(--tx-generic-font-alternative-weight-regular);
+  margin: 3px 0 0;
+}
+
+.ui-selection-block__title,
+.ui-selection-block__subtitle {
+  padding: 0 5px;
+}
+
+.ui-selection-block__logo {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.ui-selection-block__logo-label {
+  color: var(--tx-generic-color-text);
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
+  font-size: 13px;
+  font-weight: var(--tx-generic-font-secondary-weight-regular);
+  padding: 0 8px 0 5px;
+}
+
+.ui-selection-block__header {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  min-width: 290px;
+  width: 290px;
+}
+
+.ui-selection-block_vertical
+.ui-selection-block__header {
+  justify-content: space-between;
+  padding-bottom: 25px;
+  width: auto;
+}
+
+.ui-selection-block__header h2,
+.ui-selection-block__header h5 {
+  text-align: center;
+}
+
+.ui-selection-block_vertical .ui-selection-block__header h2,
+.ui-selection-block_vertical .ui-selection-block__header h5 {
+  text-align: left;
+}
+
+.ui-selection-block__titles {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ui-selection-block_vertical
+.ui-selection-block__titles {
+  align-items: flex-start;
+}
+
+.ui-selection-block_align-start
+.ui-selection-block__titles {
+  justify-content: flex-start;
+}
+
+.ui-selection-block_align-end
+.ui-selection-block__titles {
+  justify-content: flex-end;
+}
+
+.ui-selection-block__body {
+  flex: 1 1 auto;
+}
+
+.ui-selection-block__icon {
+  text-align: right;
+}

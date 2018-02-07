@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingOverlay #render() render basic loading overlay 1`] = `
+<div
+  className="ui-loading-overlay"
+>
+  <div
+    className="ui-loading-overlay__content"
+  >
+    Some data
+  </div>
+</div>
+`;
+
+exports[`LoadingOverlay #render() render loading overlay in loading mode 1`] = `
+<div
+  className="ui-loading-overlay ui-loading-overlay_loading my-custom-class"
+>
+  <div
+    className="ui-loading-overlay__loading-container"
+  >
+    <Spinner
+      size="s"
+    />
+  </div>
+  <div
+    className="ui-loading-overlay__content"
+  >
+    Data is loading...
+  </div>
+</div>
+`;
+
+exports[`LoadingOverlay #render() render loading overlay with custom class 1`] = `
+<div
+  className="ui-loading-overlay my-custom-class"
+>
+  <div
+    className="ui-loading-overlay__content"
+  >
+    Some data
+  </div>
+</div>
+`;
+
+exports[`LoadingOverlay #render() render loading overlay with left message direction 1`] = `
+<div
+  className="ui-loading-overlay ui-loading-overlay_loading my-custom-class"
+>
+  <div
+    className="ui-loading-overlay__loading-container"
+  >
+    <Spinner
+      size="s"
+    />
+  </div>
+  <div
+    className="ui-loading-overlay__content"
+  >
+    Data is loading...
+  </div>
+</div>
+`;
+
+exports[`LoadingOverlay #render() render loading overlay with loading message 1`] = `
+<div
+  className="ui-loading-overlay ui-loading-overlay_loading my-custom-class"
+>
+  <div
+    className="ui-loading-overlay__loading-container ui-loading-overlay__loading-container_message-right"
+  >
+    <Spinner
+      size="s"
+    />
+    <span
+      className="ui-loading-overlay__loading-message ui-loading-overlay__loading-message_right"
+    >
+      Loading your data...
+    </span>
+  </div>
+  <div
+    className="ui-loading-overlay__content"
+  >
+    Data is loading...
+  </div>
+</div>
+`;
+
+exports[`LoadingOverlay #render() render loading overlay with transparency 1`] = `
+<div
+  className="ui-loading-overlay ui-loading-overlay_transparent my-custom-class"
+>
+  <div
+    className="ui-loading-overlay__content"
+  >
+    Some data
+  </div>
+</div>
+`;
+
+exports[`LoadingOverlay #render() render loading overlay with transparency in loading mode 1`] = `
+<div
+  className="ui-loading-overlay ui-loading-overlay_loading ui-loading-overlay_transparent my-custom-class"
+>
+  <div
+    className="ui-loading-overlay__loading-container"
+  >
+    <Spinner
+      size="s"
+    />
+  </div>
+  <div
+    className="ui-loading-overlay__content"
+  >
+    Data is loading... You can see that message.
+  </div>
+</div>
+`;
+
+exports[`LoadingOverlay #render() render without children - should return null 1`] = `""`;
+
+exports[`LoadingOverlay #render() render without spinner 1`] = `
+<div
+  className="ui-loading-overlay ui-loading-overlay_loading my-custom-class"
+>
+  <div
+    className="ui-loading-overlay__loading-container"
+  />
+  <div
+    className="ui-loading-overlay__content"
+  >
+    Data is loading...
+  </div>
+</div>
+`;
