@@ -6,7 +6,7 @@ const runWebpackAndCopyFilesToFinalDestination = require('./runWebpackAndCopyFil
 const webpackConfig = require('./webpack.config');
 
 const defaultThemeYamlPath = path.join(__dirname, '..', 'themes', '_default.yaml');
-const defaultOutputThemeFile = path.join(__dirname, '..', 'dist', 'theme.css');
+const defaultOutputThemeDir = path.join(__dirname, '..', 'dist');
 
 function buildTheme(builder, themeFiles) {
   return builder.build(themeFiles);
@@ -26,10 +26,10 @@ function buildThemeJS(builder, themeFiles, output) {
  * Triggers the build process.
  *
  * @module builder
- * @param {String}  cssDir     Destination folder for the ui-bundle.css
- * @param {String}  jsDir      Destination folder for the ui-bundle.js
- * @param {Array, String}  themeFile  Path where a custom YAML w/ styles' definitions
- * @param {Boolean} watch      Flag to determine if it should run in 'watch' mode
+ * @param {String}  cssDir        Destination folder for the ui-bundle.css
+ * @param {String}  jsDir         Destination folder for the ui-bundle.js
+ * @param {String}  themePackage  Path to a theme package to override default UI Kit styles
+ * @param {Boolean} watch         Flag to determine if it should run in 'watch' mode
  * @return {Promise}
  */
 module.exports = (options) => {
@@ -37,41 +37,50 @@ module.exports = (options) => {
     cssDir,
     environment = 'development',
     jsDir,
-    output = defaultOutputThemeFile,
-    themeFile,
     watch,
+    themePackage,
   } = options;
 
-  const themeFiles = [defaultThemeYamlPath].concat(themeFile).filter(Boolean);
+  const { getAvailableSets, getThemeFiles } = require(themePackage); // eslint-disable-line
 
-  const builder = themeBuilder({
+  const bundles = [{
+    themeFiles: [defaultThemeYamlPath],
+    output: path.join(defaultOutputThemeDir, 'default'),
+  }];
+  getAvailableSets().forEach((themeOptions) => {
+    const themeFiles = [defaultThemeYamlPath].concat(getThemeFiles(themeOptions));
+    const output = path.join(defaultOutputThemeDir, `${themeOptions.brand}-${themeOptions.affiliate}`);
+    bundles.push({ themeFiles, output });
+  });
+
+  const builderCSS = themeBuilder({
     format: 'cssvars',
     prefix: 'tx',
   });
 
-  const outputThemeJs = path.join(
-    path.dirname(output),
-    `${path.basename(output, path.extname(output))}.js`
-  );
   const builderJS = themeBuilder({
     format: 'jsflat',
     prefix: 'tx',
   });
 
   if (watch) {
-    builder.watch(themeFiles, (result) => {
-      outputFile(output, result);
-    });
+    bundles.forEach(({ themeFiles, output }) => {
+      builderCSS.watch(themeFiles, (result) => {
+        outputFile(`${output}.css`, result);
+      });
 
-    builderJS.watch(themeFiles, (result) => {
-      outputFile(outputThemeJs, `window.TravixTheme = ${JSON.stringify(result)};`);
+      builderJS.watch(themeFiles, (result) => {
+        outputFile(`${output}.js`, `window.TravixTheme = ${JSON.stringify(result)};`);
+      });
     });
   }
 
-  return Promise.all([
-    buildThemeCSS(builder, themeFiles, output),
-    buildThemeJS(builderJS, themeFiles, outputThemeJs),
-  ]).then(() => runWebpackAndCopyFilesToFinalDestination({
+  return Promise.all(bundles.reduce((result, { themeFiles, output }) => {
+    return result.concat(
+      buildThemeCSS(builderCSS, themeFiles, `${output}.css`),
+      buildThemeJS(builderJS, themeFiles, `${output}.js`),
+    );
+  }, [])).then(() => runWebpackAndCopyFilesToFinalDestination({
     cssDir,
     jsDir,
     watch,

@@ -28,7 +28,8 @@
     "it": true,
     "jest": true,
     "React": true,
-    "ReactDOM": true
+    "ReactDOM": true,
+    "THEME_VARIANTS": true
   },
   "rules": {
     "comma-dangle": ["error", "always-multiline"],

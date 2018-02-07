@@ -3,26 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/ui-bundle.css" data-cssvars />
-    <link rel="stylesheet" href="/theme.css" />
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.27&key=AIzaSyAqvSFBj-lPSA8BsEbSoqU7dzRlQxPUf8I"></script>
-    <script>
-      (function () {
-        'use strict';
-
-        if (window.CSS && CSS.supports('color', 'var(--primary)') && navigator.userAgent.indexOf('Edge/15') === -1) {
-          return;
-        }
-
-        var themejs = document.createElement('script');
-        var polyfilljs = document.createElement('script');
-        themejs.src = "/theme.js";
-        polyfilljs.src = "/css-vars-polyfill.js";
-        themejs.async = false;
-        polyfilljs.async = false;
-        document.head.appendChild(themejs);
-        document.head.appendChild(polyfilljs);
-      }());
-    </script>
     <title><%=htmlWebpackPlugin.options.title%></title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <style type="text/css">

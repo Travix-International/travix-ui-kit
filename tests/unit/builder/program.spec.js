@@ -34,8 +34,9 @@ describe('Builder › generateThemeFile.js', () => {
       'Destination directory of the ui-kit.js'
     );
     expect(commander.option).toHaveBeenCalledWith(
-      '-t, --theme-file <path>',
-      'Path to a theme file to override default UI Kit styles'
+      '-t, --theme-package <path>',
+      'Path to a theme package to override default UI Kit styles',
+      'travix-themes'
     );
     expect(commander.option).toHaveBeenCalledWith(
       '-w, --watch',

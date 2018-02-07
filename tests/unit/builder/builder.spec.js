@@ -9,17 +9,25 @@ jest.mock('fs-extra', () => ({
   outputFile: jest.fn(),
 }));
 jest.mock('theme-builder', () => () => ({
-  watch: (file, cb) => cb(),
+  watch: (file, cb) => cb('theme-builder-result-watch'),
   build: jest.fn(() => Promise.resolve('theme-builder-result')),
+}));
+jest.mock('travix-themes', () => ({
+  getAvailableSets: jest.fn(() => [{ brand: 'cheaptickets', affiliate: 'default' }]),
+  getThemeFiles: jest.fn(() => ['theme-file.yaml']),
 }));
 
 describe('Builder › builder.js', () => {
-  it('should call the dependencies\' functions with the proper args', () => {
+  afterEach(() => {
+    outputFile.mockReset();
+  });
+
+  it('should call the dependencies\' functions with the proper args', async () => {
     const args = {
       cssDir: 'myCssDir',
       environment: process.env.NODE_ENV,
       jsDir: 'myJsDir',
-      themeFile: 'myThemeFile',
+      themePackage: 'travix-themes',
       watch: true,
     };
 
@@ -27,65 +35,88 @@ describe('Builder › builder.js', () => {
 
     expect(result).toBeInstanceOf(Promise);
 
-    return result.then(() => {
-      const outputPath = path.join(__dirname, '../../../dist/theme.css');
-      expect(outputFile).toHaveBeenCalledWith(outputPath, 'theme-builder-result');
+    await result;
 
-      expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
-        cssDir: args.cssDir,
-        jsDir: args.jsDir,
-        watch: args.watch,
-        webpackConfig: webpackConfig,
-        webpackNodeEnv: { 'process.env.NODE_ENV': process.env.NODE_ENV },
-      });
+    const outputPath = path.join(__dirname, '../../../dist/');
+
+    expect(outputFile).toHaveBeenCalledTimes(8);
+    expect(outputFile.mock.calls).toEqual([
+      [path.join(outputPath, 'default.css'), 'theme-builder-result-watch'],
+      [path.join(outputPath, 'default.js'), 'window.TravixTheme = "theme-builder-result-watch";'],
+      [path.join(outputPath, 'cheaptickets-default.css'), 'theme-builder-result-watch'],
+      [path.join(outputPath, 'cheaptickets-default.js'), 'window.TravixTheme = "theme-builder-result-watch";'],
+      [path.join(outputPath, 'default.css'), 'theme-builder-result'],
+      [path.join(outputPath, 'default.js'), 'window.TravixTheme = "theme-builder-result";'],
+      [path.join(outputPath, 'cheaptickets-default.css'), 'theme-builder-result'],
+      [path.join(outputPath, 'cheaptickets-default.js'), 'window.TravixTheme = "theme-builder-result";'],
+    ]);
+
+    expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
+      cssDir: args.cssDir,
+      jsDir: args.jsDir,
+      watch: args.watch,
+      webpackConfig: webpackConfig,
+      webpackNodeEnv: { 'process.env.NODE_ENV': process.env.NODE_ENV },
     });
   });
 
-  it('should pass on the environment if different from the process.env.NODE_ENV', () => {
+  it('should pass on the environment if different from the process.env.NODE_ENV', async () => {
     const args = {
       cssDir: 'myCssDir',
       environment: 'myOwnEnv',
       jsDir: 'myJsDir',
+      themePackage: 'travix-themes',
     };
 
     const result = builder(args);
 
     expect(result).toBeInstanceOf(Promise);
 
-    return result.then(() => {
-      expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
-        cssDir: args.cssDir,
-        jsDir: args.jsDir,
-        watch: args.watch,
-        webpackConfig: webpackConfig,
-        webpackNodeEnv: { 'process.env.NODE_ENV': 'myOwnEnv' },
-      });
+    await result;
+
+    expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
+      cssDir: args.cssDir,
+      jsDir: args.jsDir,
+      watch: args.watch,
+      webpackConfig: webpackConfig,
+      webpackNodeEnv: { 'process.env.NODE_ENV': 'myOwnEnv' },
     });
   });
 
-  it('should default the environment to "development" when not provided', () => {
+  it('should default the environment to "development" when not provided', async () => {
     const args = {
       cssDir: 'myCssDir',
       jsDir: 'myJsDir',
-      themeFile: 'myThemeFile',
+      themePackage: 'travix-themes',
       watch: true,
-      output: '/output/path/to/file.scss',
     };
 
     const result = builder(args);
 
     expect(result).toBeInstanceOf(Promise);
 
-    return result.then(() => {
-      expect(outputFile).toHaveBeenCalledWith(args.output, 'theme-builder-result');
+    await result;
 
-      expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
-        cssDir: args.cssDir,
-        jsDir: args.jsDir,
-        watch: args.watch,
-        webpackConfig: webpackConfig,
-        webpackNodeEnv: { 'process.env.NODE_ENV': 'development' },
-      });
+    const outputPath = path.join(__dirname, '../../../dist/');
+
+    expect(outputFile).toHaveBeenCalledTimes(8);
+    expect(outputFile.mock.calls).toEqual([
+      [path.join(outputPath, 'default.css'), 'theme-builder-result-watch'],
+      [path.join(outputPath, 'default.js'), 'window.TravixTheme = "theme-builder-result-watch";'],
+      [path.join(outputPath, 'cheaptickets-default.css'), 'theme-builder-result-watch'],
+      [path.join(outputPath, 'cheaptickets-default.js'), 'window.TravixTheme = "theme-builder-result-watch";'],
+      [path.join(outputPath, 'default.css'), 'theme-builder-result'],
+      [path.join(outputPath, 'default.js'), 'window.TravixTheme = "theme-builder-result";'],
+      [path.join(outputPath, 'cheaptickets-default.css'), 'theme-builder-result'],
+      [path.join(outputPath, 'cheaptickets-default.js'), 'window.TravixTheme = "theme-builder-result";'],
+    ]);
+
+    expect(runWebpackAndCopyFilesToFinalDestination).toHaveBeenCalledWith({
+      cssDir: args.cssDir,
+      jsDir: args.jsDir,
+      watch: args.watch,
+      webpackConfig: webpackConfig,
+      webpackNodeEnv: { 'process.env.NODE_ENV': 'development' },
     });
   });
 });
