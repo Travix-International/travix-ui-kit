@@ -119,7 +119,7 @@
   flex-shrink: 0;
   font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
   min-height: 13px;
-  padding: 24px var(--tx-modal-content-padding-left-right);
+  padding: 22px var(--tx-modal-content-padding-left-right);
 }
 
 .ui-modal__title,
@@ -127,8 +127,6 @@
   font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
   font-size: 18px;
   max-height: 20vh;
-  min-height: 120px;
-  padding: 22px var(--tx-modal-content-padding-left-right);
 }
 
 .ui-modal__title {
@@ -144,7 +142,7 @@
   -webkit-overflow-scrolling: touch;
   background-color: var(--tx-generic-color-secondary);
   height: 100%;
-  max-height: calc(54vh);
+  max-height: 54vh;
   box-sizing: border-box;
   overflow-y: auto;
   padding: 12px;
@@ -167,5 +165,16 @@
     flex-direction: column;
     height: 100%;
     padding: 12px;
+  }
+}
+
+.ui-modal_fullscreen {
+  .ui-modal__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ui-modal__content {
+    max-height: none;
   }
 }
