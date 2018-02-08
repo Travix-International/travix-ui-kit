@@ -113,4 +113,32 @@ Basic Modal:
             Modal Content
         </Modal>
       </div>
+      <br/>
+      <div>
+        <Card 
+          checked={state.isSelectCard} 
+          showIcon hovering 
+          onClick={(e) => setState({ isSelectCard: !state.isSelectCard })}
+        >
+          <div style={{ padding: '15px' }}>
+            <Button size="s" onClick={(e) => { 
+              e.stopPropagation();
+              setState({ isOpenModalWithCard: true });
+            }}>
+              Open modal on card with click handler
+            </Button>
+            <Modal
+              active={state.isOpenModalWithCard}
+              isSmall
+              onClose={(e) => {
+                e && e.stopPropagation();
+                console.log(e);
+                setState({ isOpenModalWithCard: false });
+              }}>
+                Modal Content
+            </Modal>
+          </div>
+        </Card>
+
+      </div>
     </div>
