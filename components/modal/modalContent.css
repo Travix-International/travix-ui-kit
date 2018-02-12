@@ -40,10 +40,6 @@
   border-radius: 0;
 }
 
-.ui-modal-content-block:last-of-type {
-  height: 100%;
-}
-
 .ui-modal_size_small .ui-modal-content-block__container {
   padding: 24px;
 }
