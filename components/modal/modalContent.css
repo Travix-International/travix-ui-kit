@@ -3,6 +3,7 @@
   border-radius: var(--tx-generic-border-radius);
   color: var(--tx-generic-color-text-dark);
   font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
+  flex: 1 0 auto;
 }
 
 .ui-modal-content-block__title {
