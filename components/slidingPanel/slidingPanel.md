@@ -173,8 +173,8 @@ Sliding Panel with global
         active={state.isSlidingPanelOpen}
         global
         footer={[
-          <button data-rel="close">Close</button>,
-          <button>Action button</button>
+          <button data-rel="close" key="1">Close</button>,
+          <button key="2">Action button</button>
           ]}
         onClose={() => setState({ isSlidingPanelOpen: false })}
         title="Panel Title"

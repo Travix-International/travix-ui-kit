@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import classnames from 'classnames';
+
+import { getDataAttributes } from '../_helpers';
 
 /**
  * Initializes custom marker constructor
@@ -231,10 +234,14 @@ export default class GoogleMap extends Component {
   }
 
   render() {
-    const { width, height } = this.props;
+    const { className, dataAttrs, height, width } = this.props;
+
+    const dataAttributes = getDataAttributes(dataAttrs);
+
     return (
       <div
-        className="ui-google-map"
+        {...dataAttributes}
+        className={classnames(className, 'ui-google-map')}
         ref={this.linkRef}
         style={{ width, height }}
       />
@@ -247,6 +254,17 @@ GoogleMap.propTypes = {
    * Map center coordinates.
    */
   center: PropTypes.object,
+  /**
+   * Attribute used to set specific classes
+   */
+  className: PropTypes.string,
+  /**
+   * Data attribute. You can use it to set up GTM key or any custom data-* attribute
+   */
+  dataAttrs: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
+  ]),
   /**
    * Special google api object.
    */
@@ -293,6 +311,7 @@ GoogleMap.propTypes = {
 
 GoogleMap.defaultProps = {
   center: { lat: 52.379189, lng: 4.899431 },
+  dataAttrs: {},
   height: '400px',
   mapTypeControl: true,
   points: [
@@ -300,8 +319,8 @@ GoogleMap.defaultProps = {
       position: { lat: 52.379189, lng: 4.899431 },
     },
   ],
+  styles: [],
   width: '400px',
   zoom: 10,
   zoomControl: true,
-  styles: [],
 };

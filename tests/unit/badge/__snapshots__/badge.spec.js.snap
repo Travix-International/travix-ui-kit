@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Badge should render badge with provided className 1`] = `
+<div
+  className="test-class ui-badge-badge"
+>
+  Badge title
+  <div
+    className="ui-badge__border"
+  />
+</div>
+`;
+
+exports[`Badge should render badge with provided dataAttrs 1`] = `
+<div
+  className="ui-badge-badge"
+  data-test-data-attr="test"
+>
+  Badge title
+  <div
+    className="ui-badge__border"
+  />
+</div>
+`;
+
 exports[`Badge should render badge without border 1`] = `
 <div
   className="ui-badge-badge ui-badge-badge_no-border"

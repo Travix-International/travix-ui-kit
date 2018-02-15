@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import classnames from 'classnames';
 
 import Input from '../input/input';
 import Calendar from '../calendar/calendar';
-import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
+import {
+  getClassNamesWithMods,
+  getDataAttributes,
+  ejectOtherProps,
+  warnAboutDeprecatedProp,
+} from '../_helpers';
 
 /**
  * DatePicker component
@@ -15,6 +21,10 @@ class DatePicker extends Component {
     this.state = {
       active: this.props.open,
     };
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   initInputRef = (elem) => {
@@ -87,6 +97,7 @@ class DatePicker extends Component {
 
   render() {
     const {
+      className,
       dataAttrs = {},
       disabled,
       inputMods = [],
@@ -107,7 +118,10 @@ class DatePicker extends Component {
     }
 
     this.state.active && mods.push('active');
-    const className = getClassNamesWithMods('ui-datepicker', mods);
+    const classes = classnames(
+      getClassNamesWithMods('ui-datepicker', mods),
+      className
+    );
     inputMods.push('datepicker');
 
     const labelBlock = label
@@ -122,7 +136,7 @@ class DatePicker extends Component {
       <div
         {...getDataAttributes(dataAttrs)}
         {...otherProps}
-        className={className}
+        className={classes}
       >
         {labelBlock}
         <Input
@@ -150,9 +164,16 @@ DatePicker.defaultProps = {
   open: false,
   selectionType: 'normal',
   name: '',
+  value: '',
 };
 
 DatePicker.propTypes = {
+  /**
+   * Attribute used to set specific classes which will be combined
+   * with the component class + mods.
+   */
+  className: PropTypes.string,
+
   /**
    * Data attribute. You can use it to set up GTM key or any custom data-* attribute.
    */

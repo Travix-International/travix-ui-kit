@@ -72,4 +72,20 @@ describe('Badge', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render badge with provided className', () => {
+    const wrapper = shallow(
+      <Badge className="test-class" title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render badge with provided dataAttrs', () => {
+    const wrapper = shallow(
+      <Badge dataAttrs={{ 'test-data-attr': 'test' }} title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
