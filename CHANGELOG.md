@@ -1,5 +1,33 @@
 # Change Log
 
+## [v0.9.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.9.0) (2018-02-15)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.9.0-0...v0.9.0)
+
+**Merged pull requests:**
+
+- \[WIP\] Integration branch for fixing bugs in different browsers [\#304](https://github.com/Travix-International/travix-ui-kit/pull/304) ([iwwwi](https://github.com/iwwwi))
+
+## [v0.9.0-0](https://github.com/Travix-International/travix-ui-kit/tree/v0.9.0-0) (2018-02-08)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.8.0...v0.9.0-0)
+
+**Closed issues:**
+
+- Fix styleguidist errors in IE [\#259](https://github.com/Travix-International/travix-ui-kit/issues/259)
+
+**Merged pull requests:**
+
+- Update jest-cli to the latest version 🚀 [\#328](https://github.com/Travix-International/travix-ui-kit/pull/328) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- chore\(package\): update style-loader to version 0.20.1 [\#327](https://github.com/Travix-International/travix-ui-kit/pull/327) ([froskie](https://github.com/froskie))
+- Update now to the latest version 🚀 [\#326](https://github.com/Travix-International/travix-ui-kit/pull/326) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update postcss-loader to the latest version 🚀 [\#324](https://github.com/Travix-International/travix-ui-kit/pull/324) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Fix badge styles [\#305](https://github.com/Travix-International/travix-ui-kit/pull/305) ([svetlanamorozko](https://github.com/svetlanamorozko))
+- replace usage of static properties; add className property [\#293](https://github.com/Travix-International/travix-ui-kit/pull/293) ([AntonTsymuk](https://github.com/AntonTsymuk))
+- Update jest to the latest version 🚀 [\#271](https://github.com/Travix-International/travix-ui-kit/pull/271) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update jest-cli to the latest version 🚀 [\#270](https://github.com/Travix-International/travix-ui-kit/pull/270) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update babel-jest to the latest version 🚀 [\#268](https://github.com/Travix-International/travix-ui-kit/pull/268) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Fix styleguidist errors in IE [\#266](https://github.com/Travix-International/travix-ui-kit/pull/266) ([JutIgor](https://github.com/JutIgor))
+- Update fs-extra to the latest version 🚀 [\#260](https://github.com/Travix-International/travix-ui-kit/pull/260) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v0.8.0](https://github.com/Travix-International/travix-ui-kit/tree/v0.8.0) (2018-02-07)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.7.10...v0.8.0)
 

@@ -1,7 +1,8 @@
 // Imports
 import PropTypes from 'prop-types';
 import React from 'react';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import classnames from 'classnames';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Adds the thousands separator to a given value.
@@ -41,8 +42,11 @@ export function ensureDecimalPrecision(value = '', decimalsPrecision = 2) {
  * Price component
  */
 function Price(props) {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const {
     additionalText,
+    className,
     dataAttrs = {},
     decimalsPrecision,
     decimalsSeparator,
@@ -90,7 +94,7 @@ function Price(props) {
 
   mods.push(`size_${size}`);
 
-  const className = getClassNamesWithMods(rootClass, mods);
+  const priceClasses = classnames(getClassNamesWithMods(rootClass, mods), className);
 
   const textBlock = additionalText
     ? (
@@ -132,7 +136,7 @@ function Price(props) {
     : null;
 
   return (
-    <div className={className} {...getDataAttributes(dataAttrs)}>
+    <div className={priceClasses} {...getDataAttributes(dataAttrs)}>
       {discountBlock}
       <div className={`${rootClass}__value-delimiter`}>
         <div className={`${rootClass}__currency ${rootClass}__currency_${symbolPosition}`}>{symbol}</div>
@@ -167,6 +171,11 @@ Price.propTypes = {
    * E.g.: 'per day'.
    */
   additionalText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+
+  /**
+   * Custom className(s) to be concatenated with the default ones on the component's root element
+   */
+  className: PropTypes.string,
 
   /**
    * Data attribute. You can use it to set up GTM key or any custom data-* attribute
