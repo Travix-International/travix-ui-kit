@@ -80,18 +80,13 @@
 }
 
 .ui-modal__close-button {
-  align-items: center;
   background: transparent;
   border: 0;
   color: var(--tx-modal-close-button-color);
   cursor: pointer;
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 13px;
-  justify-content: center;
+  margin-left: 10px;
   outline: 0;
-  position: absolute;
-  right: 24px;
+  padding: 0;
   transition: color .1s ease-in-out;
   z-index: var(--tx-modal-z-index);
 
@@ -99,7 +94,6 @@
     color: var(--tx-modal-close-button-icon-color);
     content: '✖';
     font-size: 20px;
-    margin-left: 9px;
     transition: inherit;
   }
 
@@ -117,7 +111,7 @@
   border-bottom: 2px solid var(--tx-modal-content-devider-color);
   color: var(--tx-modal-color-dark);
   display: flex;
-  flex-shrink: 0;
+  flex-shrink: 1;
   font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
   min-height: 13px;
   padding: 24px var(--tx-modal-content-padding-left-right);
