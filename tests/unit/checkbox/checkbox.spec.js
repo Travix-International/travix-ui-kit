@@ -53,5 +53,13 @@ describe('Checkbox', () => {
 
       expect(wrapper).toMatchSnapshot();
     });
+
+    it('should render checkbox with provided className', () => {
+      const wrapper = shallow(
+        <Checkbox className="test-class" onChange={onChange} />
+      );
+
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

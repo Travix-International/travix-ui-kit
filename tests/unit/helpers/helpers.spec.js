@@ -1,5 +1,7 @@
 const getClassNamesWithMods = require('../../../components/_helpers.js').getClassNamesWithMods;
 const getDataAttributes = require('../../../components/_helpers.js').getDataAttributes;
+const ejectOtherProps = require('../../../components/_helpers.js').ejectOtherProps;
+const warnAboutDeprecatedProp = require('../../../components/_helpers.js').warnAboutDeprecatedProp;
 
 describe('helpers', () => {
   describe('#getClassNamesWithMods()', () => {
@@ -38,6 +40,50 @@ describe('helpers', () => {
     it('returns an empty object when no object is provided or an empty object is provided', () => {
       expect(getDataAttributes()).toEqual({});
       expect(getDataAttributes({})).toEqual({});
+    });
+  });
+
+  describe('#ejectOtherProps()', () => {
+    it('returns difference of two objects', () => {
+      const propTypes = {
+        name: 'string',
+        value: 'bool',
+      };
+
+      const props = {
+        name: 'string',
+        otherProp: 'test',
+      };
+
+      const expected = {
+        otherProp: 'test',
+      };
+
+      expect(ejectOtherProps(props, propTypes)).toEqual(expected);
+    });
+  });
+
+  describe('#warnAboutDeprecatedProp()', () => {
+    const consoleWarn = console.warn;
+
+    beforeEach(() => {
+      console.warn = jest.fn();
+    });
+
+    afterEach(() => {
+      console.warn = consoleWarn;
+    });
+
+    it('should log warn message', () => {
+      warnAboutDeprecatedProp('propValue');
+
+      expect(console.warn).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not log warn message if prop is undefined', () => {
+      warnAboutDeprecatedProp(undefined);
+
+      expect(console.warn).toHaveBeenCalledTimes(0);
     });
   });
 });

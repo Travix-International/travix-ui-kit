@@ -55,7 +55,8 @@ generic:
 
     active: &active                             "#4baf93"
     positive: &positive                         "#2ca937"
-    positive-light: &positive                   "#9edb97"
+    positive-light: &positive-light             "#9edb97"
+    positive-lighter: &positive-lighter         "#9EDBC0"
     negative: &negative                         "#c54229"
     negative-light: &negative-light             "#f0d0c9"
 
@@ -91,6 +92,10 @@ autocomplete-item:
   highlight:
     color: "var(--tx-generic-color-active)"
 badge:
+  before:
+    border:
+      size: 6px
+      color: "var(--tx-generic-color-accent-border)"
   after:
     border:
       size: 4px
@@ -100,12 +105,13 @@ badge:
       coefficient: "0.6"
   border:
     bottom:
-      width: 4px
+      width: 5px
       style: solid
       color: "var(--tx-generic-color-primary-darker)"
     radius:
       start: 0px
-      end: 0px
+      end-top: 0px
+      end-bottom: 0px
   color:
     background: "var(--tx-generic-color-accent)"
     text: "var(--tx-generic-color-primary-darker)"
@@ -114,6 +120,7 @@ badge:
   padding:
     right-left: 8px
     top-bottom: 6px
+    corner-side: 12px
 ui-button:
   default:
     normal:
@@ -203,7 +210,6 @@ calendar:
   height: 300px
   nav:
     background: "var(--tx-generic-color-primary-lighter)"
-    border-radius: "5px 5px 0 0"
     button:
       background-color-end: "var(--tx-generic-color-accent-bottom)"
       background-color-start: "var(--tx-generic-color-accent-top)"
@@ -320,13 +326,14 @@ dropdown:
     box-shadow: "0 0 5px 0 rgba(var(--tx-generic-color-shadow-rgb), .18)"
   select-arrow-zone:
     border-color-left: "var(--tx-generic-color-secondary-darker)"
-    color: "var(--tx-generic-color-active)"
+    border-style: "dotted"
+    color: "var(--tx-generic-color-primary)"
     hover:
       color: "var(--tx-generic-color-active)"
   select-option:
     color: "var(--tx-generic-color-text)"
     hover:
-      background-color: "var(--tx-generic-color-secondary-light)"
+      background-color: "var(--tx-generic-color-secondary-dark)"
     is-selected:
       background-color: "var(--tx-generic-color-active)"
       color: "var(--tx-generic-color-blank)"
@@ -543,8 +550,6 @@ spinner:
     dark: "var(--tx-generic-color-active)"
     darker: "var(--tx-generic-color-primary-lighter)"
 carousel:
-  track:
-    transition: "transform 0.5s cubic-bezier(0.2, 1, 0.3, 1)"
   item:
     min-height: "400px"
   button:

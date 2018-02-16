@@ -1,11 +1,14 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 export default function ToggleButton(props) {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const {
     className,
+    dataAttrs,
     mods = [],
     handleSelect,
     items,
@@ -35,7 +38,7 @@ export default function ToggleButton(props) {
   });
 
   return (
-    <ul className={classes}>
+    <ul className={classes} {...getDataAttributes(dataAttrs)}>
       {listItems}
     </ul>
   );
@@ -52,6 +55,14 @@ ToggleButton.propTypes = {
    * on the component's root element
    */
   className: PropTypes.string,
+
+  /**
+   * Data attribute. You can use it to set up GTM key or any custom data-* attribute.
+   */
+  dataAttrs: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
+  ]),
 
   /**
    * Specify a function that will be called when a user clicked on a given option.
