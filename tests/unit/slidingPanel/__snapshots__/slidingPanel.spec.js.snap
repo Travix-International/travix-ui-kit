@@ -483,7 +483,9 @@ exports[`SlidingPanel #render() render with global mode 1`] = `
   <Global
     noscroll={false}
   >
-    <div>
+    <div
+      onClick={[Function]}
+    >
       <div
         className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
         onClick={[Function]}
