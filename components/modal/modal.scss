@@ -12,7 +12,7 @@
 
   &.ui-modal_active,
   &.ui-modal_open {
-    display:block;
+    display: block;
   }
 }
 
@@ -84,13 +84,17 @@
   border: 0;
   color: var(--tx-modal-close-button-color);
   cursor: pointer;
-  margin-left: 10px;
+  flex: 1 0 auto;
   outline: 0;
   padding: 0;
   transition: color .1s ease-in-out;
   z-index: var(--tx-modal-z-index);
 
-  &:before {
+  .ui-modal__close-button-text {
+    margin: 0 5px;
+  }
+
+  &:after {
     color: var(--tx-modal-close-button-icon-color);
     content: '✖';
     font-size: 20px;
@@ -98,9 +102,9 @@
   }
 
   &:hover {
-   color: var(--tx-modal-close-button-hover-color);
+    color: var(--tx-modal-close-button-hover-color);
 
-    &:before {
+    &:after {
       color: var(--tx-modal-close-button-hover-color);
     }
   }
