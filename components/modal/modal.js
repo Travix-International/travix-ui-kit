@@ -143,7 +143,7 @@ class Modal extends Component {
         onClick={this.handleClose}
         type="button"
       >
-        <span>{this.props.closeButtonText}</span>
+        <span className="ui-modal__close-button-text">{this.props.closeButtonText}</span>
       </button>
     );
   }

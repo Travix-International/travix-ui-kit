@@ -576,7 +576,9 @@ exports[`Modal: render should return base active modal with close button 1`] = `
             onClick={[Function]}
             type="button"
           >
-            <span />
+            <span
+              className="ui-modal__close-button-text"
+            />
           </button>
         </header>
         <section
