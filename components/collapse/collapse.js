@@ -5,8 +5,9 @@ import React, {
   cloneElement,
   isValidElement,
 } from 'react';
+import classnames from 'classnames';
 
-import { getClassNamesWithMods, ejectOtherProps } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 const getNormalizedActiveKey = ({ defaultActiveKey, activeKey }) => {
   if (typeof activeKey === 'undefined') {
@@ -25,6 +26,10 @@ class Collapse extends Component {
     this.state = {
       activeKey: getNormalizedActiveKey(props),
     };
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   componentWillReceiveProps(nextProps) {
@@ -89,12 +94,12 @@ class Collapse extends Component {
 
   render() {
     const {
+      className,
       isAccordion,
       children,
       mods = [],
+      dataAttrs,
     } = this.props;
-
-    const otherProps = ejectOtherProps(this.props, Collapse.propTypes);
 
     if (Children.count(children) === 0) {
       return null;
@@ -104,8 +109,10 @@ class Collapse extends Component {
       accordion: isAccordion,
     };
 
+    const classNames = classnames(getClassNamesWithMods('ui-collapse', mods, collapseMods), className);
+
     return (
-      <div {...otherProps} className={getClassNamesWithMods('ui-collapse', mods, collapseMods)}>
+      <div {...getDataAttributes(dataAttrs)} className={classNames}>
         {this.renderItems()}
       </div>
     );
@@ -151,6 +158,14 @@ Collapse.propTypes = {
    * Specify a function that will be called when a user click on CollapseItem
    */
   onChange: PropTypes.func,
+  /**
+   * Data attributes. You can use it to set up any custom data-* attribute
+   */
+  dataAttrs: PropTypes.object,
+  /**
+   * Custom className.
+   */
+  className: PropTypes.string,
 };
 
 Collapse.defaultProps = {

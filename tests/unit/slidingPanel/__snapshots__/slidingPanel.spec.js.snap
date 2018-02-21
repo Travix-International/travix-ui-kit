@@ -487,7 +487,9 @@ exports[`SlidingPanel #render() render with global mode 1`] = `
   <Global
     noscroll={false}
   >
-    <div>
+    <div
+      onClick={[Function]}
+    >
       <div
         className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
         onClick={[Function]}
@@ -545,6 +547,37 @@ exports[`SlidingPanel #render() render with left direction 1`] = `
       >
         Test
       </div>
+    </div>
+  </div>
+</SlidingPanel>
+`;
+
+exports[`SlidingPanel #render() should render SlidingPanel with provided className 1`] = `
+<SlidingPanel
+  className="test-class"
+  closeOnOverlayClick={true}
+  direction="right"
+  global={false}
+  subheader={null}
+  useDefaultLeftBlock={false}
+  width="480px"
+>
+  <div
+    className="ui-sliding-panel-overlay ui-sliding-panel-overlay_hidden"
+    onClick={[Function]}
+  >
+    <div
+      className="ui-sliding-panel ui-sliding-panel_right test-class"
+      onAnimationEnd={[Function]}
+      style={
+        Object {
+          "width": "480px",
+        }
+      }
+    >
+      <div
+        className="ui-sliding-panel__content"
+      />
     </div>
   </div>
 </SlidingPanel>

@@ -2,16 +2,23 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { getClassNamesWithMods, getDataAttributes, ejectOtherProps } from '../_helpers';
+import {
+  getClassNamesWithMods,
+  getDataAttributes,
+  ejectOtherProps,
+  warnAboutDeprecatedProp,
+} from '../_helpers';
 
 const Card = (props) => {
+  warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+
   const {
     checked,
     children,
     className,
     dataAttrs,
     hovering,
-    mods,
+    mods = [],
     onClick,
     showIcon,
     tag,
@@ -90,7 +97,6 @@ Card.defaultProps = {
   className: null,
   dataAttrs: null,
   hovering: false,
-  mods: [],
   onClick: null,
   tag: 'div',
   transparent: false,

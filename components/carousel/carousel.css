@@ -82,5 +82,5 @@
 .ui-carousel-track {
   display: flex;
   position: relative;
-  transition: var(--tx-carousel-track-transition);
+  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }

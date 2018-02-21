@@ -7,6 +7,7 @@ describe('AutoCompleteItem', () => {
     it('should render correct autocomplete item', () => {
       const wrapper = shallow(
         <AutoCompleteItem
+          className="test-auto-complete-item"
           value="value"
         >
           item

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 import CarouselItem from './carouselItem';
 import CarouselMarkers from './carouselMarkers';
@@ -25,6 +25,10 @@ export default class Carousel extends React.Component {
     this.handleClickGoTo = this.handleClickGoTo.bind(this);
     this.handleSwipeNext = this.handleSwipeNext.bind(this);
     this.handleSwipePrev = this.handleSwipePrev.bind(this);
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   setNextItem(next) {
