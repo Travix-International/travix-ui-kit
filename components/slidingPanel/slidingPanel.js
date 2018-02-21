@@ -100,17 +100,15 @@ export default class SlidingPanel extends Component {
   renderDefaultLeftBlock() {
     const { backButtonLabel, onBackButtonClick } = this.props;
     return (
-      <span>
-        <button
-          className="ui-sliding-panel-header__left-block-back"
-          onClick={onBackButtonClick}
-        >
-          <span className="ui-sliding-panel-header__left-block-back-icon" />
-          <span className="ui-sliding-panel-header__left-block-back-text">
-            {backButtonLabel}
-          </span>
-        </button>
-      </span>
+      <button
+        className="ui-sliding-panel-header__left-block-back"
+        onClick={onBackButtonClick}
+      >
+        <span className="ui-sliding-panel-header__left-block-back-icon" />
+        <span className="ui-sliding-panel-header__left-block-back-text">
+          {backButtonLabel}
+        </span>
+      </button>
     );
   }
 

@@ -296,12 +296,16 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
       >
         Test Title
       </h3>
-      <button
-        class="ui-sliding-panel-header__close-button"
-        data-rel="close"
+      <div
+        class="ui-sliding-panel-header__right-block"
       >
-        ×
-      </button>
+        <button
+          class="ui-sliding-panel-header__close-button"
+          data-rel="close"
+        >
+          ×
+        </button>
+      </div>
     </div>
     <div
       class="ui-sliding-panel__content"
