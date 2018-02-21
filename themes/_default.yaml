@@ -524,8 +524,6 @@ sliding-panel:
       font-size: "13px"
       icon:
         font-size: "25px"
-    block:
-      lateral-margin: "15px"
   overlay:
     background-color: "rgba(var(--tx-generic-color-primary-dark-rgb), .65)"
     position: "fixed"
