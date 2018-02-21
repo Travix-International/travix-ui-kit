@@ -13,6 +13,7 @@ const Badge = (props) => {
   const {
     arrow,
     border,
+    centered,
     children,
     className,
     dataAttrs = {},
@@ -35,6 +36,7 @@ const Badge = (props) => {
       'arrow-left': arrow && position === 'right',
       'arrow-right': arrow && position === 'left',
       'no-border': !border,
+      centered,
     };
 
     if (position && children) {
@@ -75,6 +77,10 @@ Badge.propTypes = {
    */
   border: PropTypes.bool,
   /**
+   * Define if badge should be centered instead of showing on default position
+   */
+  centered: PropTypes.bool,
+  /**
    * Content, that will be wrapped by Badge
    */
   children: PropTypes.node,
@@ -107,6 +113,7 @@ Badge.propTypes = {
 Badge.defaultProps = {
   arrow: false,
   border: true,
+  centered: false,
   children: null,
   title: '',
   visible: true,

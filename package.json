@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build:watch": "node ./builder/program -w",
+    "build:watch:theme": "node builder/program.js -t ./themes/_default.yaml -w",
     "build": "node ./builder/program",
     "ci:comment-url": "curl https://api.github.com/repos/$TRAVIS_REPO_SLUG/issues/$TRAVIS_PULL_REQUEST/comments -u \"$TRAVIX_SERVICE_ACCOUNT:$TRAVIX_SERVICE_ACCOUNT_TOKEN\" --data \"{ \\\"body\\\": \\\"A new acceptance URL has been deployed: [$ACCP_URL]($ACCP_URL)\\\" }\"",
     "ci:lint": "eslint --color --max-warnings 0 --quiet '{components,tests,utils,scripts}/**/*.js'",
@@ -17,6 +18,7 @@
     "prebuild": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md &",
     "styleguide-build": "styleguidist build",
     "styleguide-server": "styleguidist server",
+    "styleguide:dev": "npm run styleguide-build && npm run styleguide-server",
     "test": "TZ=utc jest -c ./tests/jest.config.json",
     "transpile": "npm run build",
     "update-snapshots": "TZ=utc jest -c ./tests/jest.config.json -u"

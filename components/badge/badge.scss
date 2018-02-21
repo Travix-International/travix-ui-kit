@@ -16,23 +16,43 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
     &.ui-badge-badge_top {
       top: $position;
       left: var(--tx-badge-indent);
+
+      &.ui-badge-badge_centered {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
 
     &.ui-badge-badge_right {
       right: $position;
       padding-right: var(--tx-badge-padding-corner-side);
       top: var(--tx-badge-indent);
+
+      &.ui-badge-badge_centered {
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
 
     &.ui-badge-badge_bottom {
       bottom: $position;
       right: var(--tx-badge-indent);
+
+      &.ui-badge-badge_centered {
+        right: 50%;
+        transform: translateX(50%);
+      }
     }
 
     &.ui-badge-badge_left {
       left: $position;
       padding-left: var(--tx-badge-padding-corner-side);
       top: var(--tx-badge-indent);
+
+      &.ui-badge-badge_centered {
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 }
