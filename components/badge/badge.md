@@ -6,6 +6,7 @@ Position top:
       isBorder: true,
       isCentered: false,
       isColorBackground: false,
+      isReversed: false,
       labelText: 'Label'
     };
 
@@ -73,11 +74,20 @@ Position top:
       >
         centered
       </Checkbox>
+      <Checkbox
+        checked={state.isReversed}
+        name="isReversed"
+        onChange={() => setState({ isReversed: !state.isReversed })}
+      >
+        reversed
+      </Checkbox>
+
       <Badge
         arrow={state.isArrow}
         border={state.isBorder}
         centered={state.isCentered}
         position={state.position}
+        reversed={state.isReversed}
         title={state.labelText}
         visible={state.isVisibleTop}
       >

@@ -19,6 +19,7 @@ const Badge = (props) => {
     dataAttrs = {},
     mods = [],
     position,
+    reversed,
     title,
     visible,
   } = props;
@@ -37,6 +38,7 @@ const Badge = (props) => {
       'arrow-right': arrow && position === 'left',
       'no-border': !border,
       centered,
+      'reversed': !centered && reversed,
     };
 
     if (position && children) {
@@ -100,6 +102,13 @@ Badge.propTypes = {
    * The Badge's position
    */
   position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  /**
+   * Define if we want to show the badge on the opposite side.
+   * For example, for top position we show badge in left corner by default.
+   * With this prop we are able to show it in the right corner instead.
+   * This prop is not working if component has the prop `centered`.
+   */
+  reversed: PropTypes.bool,
   /**
    * The Badge's title
    */
