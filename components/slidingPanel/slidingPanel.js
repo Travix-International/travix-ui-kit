@@ -55,7 +55,7 @@ export default class SlidingPanel extends Component {
    */
   handleClickOverlay(e) {
     if ((e.target === e.currentTarget) && this.props.closeOnOverlayClick) {
-      this.handleClose();
+      this.handleClose(e);
     }
   }
 
@@ -63,12 +63,12 @@ export default class SlidingPanel extends Component {
    * Closes the panel.
    *
    * @method handleClose
-   * @param {SyntheticEvent} e Click event trapped in the overlay element
+   * @param {SyntheticEvent} e Click event trapped in the overlay element or close button
    */
-  handleClose() {
+  handleClose(e) {
     const { onTryingToClose } = this.props;
 
-    if (onTryingToClose && onTryingToClose() === false) {
+    if (onTryingToClose && onTryingToClose(e) === false) {
       return;
     }
 
