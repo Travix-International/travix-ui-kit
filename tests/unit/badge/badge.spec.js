@@ -88,4 +88,28 @@ describe('Badge', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render badge with "centered" prop provided', () => {
+    const wrapper = shallow(
+      <Badge centered title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render badge with "reversed" prop provided', () => {
+    const wrapper = shallow(
+      <Badge reversed title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render centered badge if both are "reversed" and "centered" props provided', () => {
+    const wrapper = shallow(
+      <Badge centered reversed title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });

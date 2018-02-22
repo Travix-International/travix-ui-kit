@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Badge should render badge with "centered" prop provided 1`] = `
+<div
+  className="ui-badge-badge ui-badge-badge_centered"
+>
+  Badge title
+  <div
+    className="ui-badge__border"
+  />
+</div>
+`;
+
+exports[`Badge should render badge with "reversed" prop provided 1`] = `
+<div
+  className="ui-badge-badge ui-badge-badge_reversed"
+>
+  Badge title
+  <div
+    className="ui-badge__border"
+  />
+</div>
+`;
+
 exports[`Badge should render badge with provided className 1`] = `
 <div
   className="test-class ui-badge-badge"
@@ -28,6 +50,17 @@ exports[`Badge should render badge without border 1`] = `
   className="ui-badge-badge ui-badge-badge_no-border"
 >
   Badge title
+</div>
+`;
+
+exports[`Badge should render centered badge if both are "reversed" and "centered" props provided 1`] = `
+<div
+  className="ui-badge-badge ui-badge-badge_centered"
+>
+  Badge title
+  <div
+    className="ui-badge__border"
+  />
 </div>
 `;
 
