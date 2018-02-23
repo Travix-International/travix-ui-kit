@@ -13,13 +13,11 @@ const Badge = (props) => {
   const {
     arrow,
     border,
-    centered,
     children,
     className,
     dataAttrs = {},
     mods = [],
     position,
-    reversed,
     title,
     visible,
   } = props;
@@ -27,6 +25,9 @@ const Badge = (props) => {
   if (!children && !title) {
     return null;
   }
+
+  // For the bottom badge we have default alignment is the `end`, for other positions it should be `start`.
+  const align = props.align || (position === 'bottom' ? 'end' : 'start');
 
   const dataAttributes = getDataAttributes(dataAttrs);
 
@@ -37,8 +38,7 @@ const Badge = (props) => {
       'arrow-left': arrow && position === 'right',
       'arrow-right': arrow && position === 'left',
       'no-border': !border,
-      centered,
-      'reversed': !centered && reversed,
+      [align]: true,
     };
 
     if (position && children) {
@@ -71,6 +71,11 @@ const Badge = (props) => {
 
 Badge.propTypes = {
   /**
+   * Alignment relatively the `position` prop [start|center|end]
+   * `start` means left for `top` and `bottom` positions. Also it means top for `left` and `right` positions.
+   */
+  align: PropTypes.oneOf(['start', 'center', 'end']),
+  /**
    * Does the Badge have an arrow
    */
   arrow: PropTypes.bool,
@@ -78,10 +83,6 @@ Badge.propTypes = {
    * Does the Badge have a bottom border
    */
   border: PropTypes.bool,
-  /**
-   * Define if badge should be centered instead of showing on default position
-   */
-  centered: PropTypes.bool,
   /**
    * Content, that will be wrapped by Badge
    */
@@ -103,13 +104,6 @@ Badge.propTypes = {
    */
   position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
   /**
-   * Define if we want to show the badge on the opposite side.
-   * For example, for top position we show badge in left corner by default.
-   * With this prop we are able to show it in the right corner instead.
-   * This prop is not working if component has the prop `centered`.
-   */
-  reversed: PropTypes.bool,
-  /**
    * The Badge's title
    */
   title: PropTypes.node,
@@ -122,7 +116,6 @@ Badge.propTypes = {
 Badge.defaultProps = {
   arrow: false,
   border: true,
-  centered: false,
   children: null,
   title: '',
   visible: true,

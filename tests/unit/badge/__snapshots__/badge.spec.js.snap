@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Badge should render badge with "centered" prop provided 1`] = `
+exports[`Badge should render badge with "center" alignment 1`] = `
 <div
-  className="ui-badge-badge ui-badge-badge_centered"
+  className="ui-badge-badge ui-badge-badge_center"
 >
   Badge title
   <div
@@ -11,9 +11,42 @@ exports[`Badge should render badge with "centered" prop provided 1`] = `
 </div>
 `;
 
-exports[`Badge should render badge with "reversed" prop provided 1`] = `
+exports[`Badge should render badge with "end" alignment 1`] = `
 <div
-  className="ui-badge-badge ui-badge-badge_reversed"
+  className="ui-badge-badge ui-badge-badge_end"
+>
+  Badge title
+  <div
+    className="ui-badge__border"
+  />
+</div>
+`;
+
+exports[`Badge should render badge with "end" alignment by default for "bottom" position 1`] = `
+<div
+  className="ui-badge-badge ui-badge-badge_end"
+>
+  Badge title
+  <div
+    className="ui-badge__border"
+  />
+</div>
+`;
+
+exports[`Badge should render badge with "start" alignment 1`] = `
+<div
+  className="ui-badge-badge ui-badge-badge_start"
+>
+  Badge title
+  <div
+    className="ui-badge__border"
+  />
+</div>
+`;
+
+exports[`Badge should render badge with "start" alignment by default for "top" position 1`] = `
+<div
+  className="ui-badge-badge ui-badge-badge_start"
 >
   Badge title
   <div
@@ -24,7 +57,7 @@ exports[`Badge should render badge with "reversed" prop provided 1`] = `
 
 exports[`Badge should render badge with provided className 1`] = `
 <div
-  className="test-class ui-badge-badge"
+  className="test-class ui-badge-badge ui-badge-badge_start"
 >
   Badge title
   <div
@@ -35,7 +68,7 @@ exports[`Badge should render badge with provided className 1`] = `
 
 exports[`Badge should render badge with provided dataAttrs 1`] = `
 <div
-  className="ui-badge-badge"
+  className="ui-badge-badge ui-badge-badge_start"
   data-test-data-attr="test"
 >
   Badge title
@@ -47,20 +80,9 @@ exports[`Badge should render badge with provided dataAttrs 1`] = `
 
 exports[`Badge should render badge without border 1`] = `
 <div
-  className="ui-badge-badge ui-badge-badge_no-border"
+  className="ui-badge-badge ui-badge-badge_no-border ui-badge-badge_start"
 >
   Badge title
-</div>
-`;
-
-exports[`Badge should render centered badge if both are "reversed" and "centered" props provided 1`] = `
-<div
-  className="ui-badge-badge ui-badge-badge_centered"
->
-  Badge title
-  <div
-    className="ui-badge__border"
-  />
 </div>
 `;
 
@@ -74,7 +96,7 @@ exports[`Badge should render content without badge when badge is not visible 1`]
 
 exports[`Badge should render left arrow 1`] = `
 <div
-  className="ui-badge-badge ui-badge-badge_arrow-left"
+  className="ui-badge-badge ui-badge-badge_arrow-left ui-badge-badge_start"
 >
   Badge title
   <div
@@ -88,7 +110,7 @@ exports[`Badge should render left arrow 1`] = `
 
 exports[`Badge should render right arrow 1`] = `
 <div
-  className="ui-badge-badge ui-badge-badge_arrow-right"
+  className="ui-badge-badge ui-badge-badge_arrow-right ui-badge-badge_start"
 >
   Badge title
   <div
@@ -110,7 +132,7 @@ exports[`Badge should return content inside container if title not provided 1`] 
 
 exports[`Badge should return only badge if content not provided 1`] = `
 <div
-  className="ui-badge-badge"
+  className="ui-badge-badge ui-badge-badge_start"
 >
   Badge title
   <div
@@ -125,7 +147,7 @@ exports[`Badge should use position prop if content provided 1`] = `
 >
   Badge Content
   <div
-    className="ui-badge-badge ui-badge-badge_right"
+    className="ui-badge-badge ui-badge-badge_start ui-badge-badge_right"
   >
     Badge title
     <div

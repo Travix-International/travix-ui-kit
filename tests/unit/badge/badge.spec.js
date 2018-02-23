@@ -89,25 +89,41 @@ describe('Badge', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render badge with "centered" prop provided', () => {
+  it('should render badge with "start" alignment', () => {
     const wrapper = shallow(
-      <Badge centered title="Badge title" />
+      <Badge align="start" title="Badge title" />
     );
 
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render badge with "reversed" prop provided', () => {
+  it('should render badge with "center" alignment', () => {
     const wrapper = shallow(
-      <Badge reversed title="Badge title" />
+      <Badge align="center" title="Badge title" />
     );
 
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render centered badge if both are "reversed" and "centered" props provided', () => {
+  it('should render badge with "end" alignment', () => {
     const wrapper = shallow(
-      <Badge centered reversed title="Badge title" />
+      <Badge align="end" title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render badge with "start" alignment by default for "top" position', () => {
+    const wrapper = shallow(
+      <Badge position="top" title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render badge with "end" alignment by default for "bottom" position', () => {
+    const wrapper = shallow(
+      <Badge position="bottom" title="Badge title" />
     );
 
     expect(wrapper).toMatchSnapshot();

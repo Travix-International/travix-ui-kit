@@ -15,14 +15,17 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
 
     &.ui-badge-badge_top {
       top: $position;
-      left: var(--tx-badge-indent);
 
-      &.ui-badge-badge_centered {
+      &.ui-badge-badge_start {
+        left: var(--tx-badge-indent);
+      }
+
+      &.ui-badge-badge_center {
         left: 50%;
         transform: translateX(-50%);
       }
 
-      &.ui-badge-badge_reversed {
+      &.ui-badge-badge_end {
         left: auto;
         right: var(--tx-badge-indent);
       }
@@ -32,14 +35,17 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
       max-width: 100%;
       right: $position;
       padding-right: var(--tx-badge-padding-corner-side);
-      top: var(--tx-badge-indent);
 
-      &.ui-badge-badge_centered {
+      &.ui-badge-badge_start {
+        top: var(--tx-badge-indent);
+      }
+
+      &.ui-badge-badge_center {
         top: 50%;
         transform: translateY(-50%);
       }
 
-      &.ui-badge-badge_reversed {
+      &.ui-badge-badge_end {
         bottom: var(--tx-badge-indent);
         top: auto;
       }
@@ -47,16 +53,19 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
 
     &.ui-badge-badge_bottom {
       bottom: $position;
-      right: var(--tx-badge-indent);
 
-      &.ui-badge-badge_centered {
+      &.ui-badge-badge_start {
+        left: var(--tx-badge-indent);
+        right: auto;
+      }
+
+      &.ui-badge-badge_center {
         right: 50%;
         transform: translateX(50%);
       }
 
-      &.ui-badge-badge_reversed {
-        left: var(--tx-badge-indent);
-        right: auto;
+      &.ui-badge-badge_end {
+        right: var(--tx-badge-indent);
       }
     }
 
@@ -64,14 +73,17 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
       left: $position;
       max-width: 100%;
       padding-left: var(--tx-badge-padding-corner-side);
-      top: var(--tx-badge-indent);
 
-      &.ui-badge-badge_centered {
+      &.ui-badge-badge_start {
+        top: var(--tx-badge-indent);
+      }
+
+      &.ui-badge-badge_center {
         top: 50%;
         transform: translateY(-50%);
       }
 
-      &.ui-badge-badge_reversed {
+      &.ui-badge-badge_end {
         bottom: var(--tx-badge-indent);
         top: auto;
       }
