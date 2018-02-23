@@ -274,6 +274,9 @@ SlidingPanel.propTypes = {
 
   /**
    * Hook that will be executed when trying to close a panel if exists.
+   * In case, of an event is passed as argument into this function it
+   * was triggered as handler for click on some DOM element.
+   * In another case, panel is trying to close via changing props.
    * If it returns false, the panel won't be closed.
    */
   onTryingToClose: PropTypes.func,
