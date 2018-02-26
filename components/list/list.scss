@@ -4,7 +4,7 @@
 
   &.ui-list_align_vertical {
     .ui-list__item {
-      display: block;
+      display: flex;
       line-height: var(--tx-list-line-height);
 
       &:before {
@@ -12,7 +12,6 @@
         color: var(--tx-list-bullets-color);
         display: inline-block;
         font-size: 22px;
-        margin-left: -1em;
         vertical-align: bottom;
         width: 1em;
       }
@@ -33,6 +32,9 @@
 
     .ui-list__item {
       display: block;
+      &:before {
+        display: none;
+      }
     }
   }
 
