@@ -13,7 +13,7 @@
         display: inline-block;
         font-size: 22px;
         vertical-align: bottom;
-        width: 1em;
+        margin-right: 10px;
       }
     }
   }
@@ -31,7 +31,6 @@
     padding: 0;
 
     .ui-list__item {
-      display: block;
       &:before {
         display: none;
       }
