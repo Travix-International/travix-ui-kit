@@ -5,9 +5,7 @@ Position top:
       position: 'top',
       isArrow: false,
       isBorder: true,
-      isCentered: false,
       isColorBackground: false,
-      isReversed: false,
       labelText: 'Label'
     };
 

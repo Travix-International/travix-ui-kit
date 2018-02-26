@@ -55,6 +55,17 @@ exports[`Badge should render badge with "start" alignment by default for "top" p
 </div>
 `;
 
+exports[`Badge should render badge with both are position and alignment passed 1`] = `
+<div
+  className="ui-badge-badge ui-badge-badge_center"
+>
+  Badge title
+  <div
+    className="ui-badge__border"
+  />
+</div>
+`;
+
 exports[`Badge should render badge with provided className 1`] = `
 <div
   className="test-class ui-badge-badge ui-badge-badge_start"

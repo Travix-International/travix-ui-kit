@@ -128,4 +128,12 @@ describe('Badge', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render badge with both are position and alignment passed', () => {
+    const wrapper = shallow(
+      <Badge align="center" position="top" title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
