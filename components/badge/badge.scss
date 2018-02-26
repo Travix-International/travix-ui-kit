@@ -210,12 +210,12 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
         background: linear-gradient(
             to bottom left,
             var(--tx-badge-color-background) 50%,
-            transparent 50%
+            transparent 51%
           )
           bottom
           left
           no-repeat
-          rgba(255, 255, 255, 0);
+          transparent;
         top: 50%;
       }
 
@@ -223,12 +223,12 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
         background: linear-gradient(
             to top left,
             var(--tx-badge-color-background) 50%,
-            transparent 50%
+            transparent 51%
           )
           bottom
           left
           no-repeat
-          rgba(255, 255, 255, 0);
+          transparent;
         top: 0;
       }
     }
@@ -258,12 +258,12 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
         background: linear-gradient(
             to bottom right,
             var(--tx-badge-color-background) 50%,
-            transparent 50%
+            transparent 51%
           )
           bottom
           left
           no-repeat
-          rgba(255, 255, 255, 0);
+          transparent;
         top: 50%;
       }
 
@@ -271,12 +271,12 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
         background: linear-gradient(
             to top right,
             var(--tx-badge-color-background) 50%,
-            transparent 50%
+            transparent 51%
           )
           bottom
           left
           no-repeat
-          rgba(255, 255, 255, 0);
+          transparent;
         top: 0;
       }
     }
