@@ -210,7 +210,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
         background: linear-gradient(
             to bottom left,
             var(--tx-badge-color-background) 50%,
-            transparent 51%
+            transparent calc(50% + 1px)
           )
           bottom
           left
@@ -223,7 +223,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
         background: linear-gradient(
             to top left,
             var(--tx-badge-color-background) 50%,
-            transparent 51%
+            transparent calc(50% + 1px)
           )
           bottom
           left
@@ -258,7 +258,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
         background: linear-gradient(
             to bottom right,
             var(--tx-badge-color-background) 50%,
-            transparent 51%
+            transparent calc(50% + 1px)
           )
           bottom
           left
@@ -271,7 +271,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
         background: linear-gradient(
             to top right,
             var(--tx-badge-color-background) 50%,
-            transparent 51%
+            transparent calc(50% + 1px)
           )
           bottom
           left
