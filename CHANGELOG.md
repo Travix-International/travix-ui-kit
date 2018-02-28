@@ -704,7 +704,7 @@
 
 **Closed issues:**
 
-- 'npm run styleguide-build' fails with an error after fresh node modules installation  [\#64](https://github.com/Travix-International/travix-ui-kit/issues/64)
+- 'npm run styleguide:build' fails with an error after fresh node modules installation  [\#64](https://github.com/Travix-International/travix-ui-kit/issues/64)
 - Can't pass custom modifications \(eg. mods\) to Modal component  [\#62](https://github.com/Travix-International/travix-ui-kit/issues/62)
 
 **Merged pull requests:**
