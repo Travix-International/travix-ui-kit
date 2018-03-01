@@ -2,12 +2,16 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import { getClassNamesWithMods, getDataAttributes } from '../_helpers';
+import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Tab component
  */
 class Tab extends Component {
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
+  }
+
   handleTabClick = (event) => {
     const { value, onClick } = this.props;
 
@@ -42,10 +46,7 @@ class Tab extends Component {
       dataAttrs = {},
       mods = [],
       name,
-      onClick,
       title,
-      value,
-      ...otherProps
     } = this.props;
 
     const classes = classnames(
@@ -57,7 +58,6 @@ class Tab extends Component {
     return (
       <div
         {...getDataAttributes(dataAttrs)}
-        {...otherProps}
         aria-controls={`${name}-panel`}
         aria-selected={active}
         className={classes}

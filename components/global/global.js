@@ -47,6 +47,10 @@ class Global extends Component {
     }
   }
 
+  handleClick = (e) => {
+    e.stopPropagation();
+  }
+
   componentWillUnmount() {
     this.toggleGlobalNoscroll(false);
     global.window.document.body.removeChild(this.target);
@@ -54,7 +58,10 @@ class Global extends Component {
 
   render() {
     return createPortal((
-      <div className={this.props.className}>
+      <div
+        className={this.props.className}
+        onClick={this.handleClick}
+      >
         {this.props.children}
       </div>
     ), this.target);

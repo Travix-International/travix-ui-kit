@@ -83,8 +83,8 @@ Sliding Panel with custom left and right blocks in the header:
       <SlidingPanel
         active={state.isSlidingPanelOpen}
         onClose={() => setState({ isSlidingPanelOpen: false })}
-        rightBlock={<button data-rel="close" style={{ marginRight: '15px' }}> close me! </button>}
-        leftBlock={<button data-rel="close" style={{ marginLeft: '15px' }}> ← </button>}
+        rightBlock={<button data-rel="close"> close me! </button>}
+        leftBlock={<button data-rel="close"> ← </button>}
         title="Panel Title"
       >
         This is an example<br/>
@@ -173,8 +173,8 @@ Sliding Panel with global
         active={state.isSlidingPanelOpen}
         global
         footer={[
-          <button data-rel="close">Close</button>,
-          <button>Action button</button>
+          <button data-rel="close" key="1">Close</button>,
+          <button key="2">Action button</button>
           ]}
         onClose={() => setState({ isSlidingPanelOpen: false })}
         title="Panel Title"

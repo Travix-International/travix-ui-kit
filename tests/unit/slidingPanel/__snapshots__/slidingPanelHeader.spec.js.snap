@@ -82,12 +82,16 @@ exports[`SlidingPanel #render() render with title 1`] = `
     >
       Test Title
     </h3>
-    <button
-      className="ui-sliding-panel-header__close-button"
-      data-rel="close"
+    <div
+      className="ui-sliding-panel-header__right-block"
     >
-      ×
-    </button>
+      <button
+        className="ui-sliding-panel-header__close-button"
+        data-rel="close"
+      >
+        ×
+      </button>
+    </div>
   </div>
 </SlidingPanelHeader>
 `;

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import Global from '../global/global';
 import KEY_CODE from '../constants/keyCode';
-import { getClassNamesWithMods } from '../_helpers';
+import { getClassNamesWithMods, warnAboutDeprecatedProp } from '../_helpers';
 
 /**
  * Modal component
@@ -17,6 +17,10 @@ class Modal extends Component {
       isActive: props.active || false,
       isOpen: false,
     };
+  }
+
+  componentWillMount() {
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
   }
 
   componentDidMount() {
@@ -33,7 +37,7 @@ class Modal extends Component {
       if (newProps.active) {
         this.open();
       } else {
-        this.close();
+        this.state.isActive && this.close();
       }
     }
   }
@@ -52,12 +56,15 @@ class Modal extends Component {
   }
 
   close(e) {
-    if (typeof this.props.onClose === 'function') {
-      this.props.onClose(e);
-    }
     global.window.requestAnimationFrame(() => {
       this.setState({ isActive: false });
-      setTimeout(() => this.setState({ isOpen: false }), this.props.delay);
+      setTimeout(() => {
+        this.setState({ isOpen: false }, () => {
+          if (typeof this.props.onClose === 'function') {
+            this.props.onClose(e);
+          }
+        });
+      }, this.props.delay);
     });
   }
 
@@ -136,7 +143,7 @@ class Modal extends Component {
         onClick={this.handleClose}
         type="button"
       >
-        <span>{this.props.closeButtonText}</span>
+        <span className="ui-modal__close-button-text">{this.props.closeButtonText}</span>
       </button>
     );
   }

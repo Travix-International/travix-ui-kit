@@ -1,6 +1,6 @@
 {
   "name": "travix-ui-kit",
-  "version": "0.9.0-0",
+  "version": "0.9.1",
   "description": "Travix UI kit",
   "main": "lib/index.js",
   "scripts": {
@@ -15,8 +15,9 @@
     "lint": "eslint --color '{components,tests,utils,scripts}/**/*.js'",
     "prebuild:watch": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md -w &",
     "prebuild": "babel --copy-files ./components --out-dir lib --ignore *.scss,*.md &",
-    "styleguide-build": "styleguidist build",
-    "styleguide-server": "styleguidist server",
+    "styleguide:build": "styleguidist build",
+    "styleguide:server": "styleguidist server",
+    "styleguide:dev": "npm run styleguide:build && npm run styleguide:server",
     "test": "TZ=utc jest -c ./tests/jest.config.json",
     "transpile": "npm run build",
     "update-snapshots": "TZ=utc jest -c ./tests/jest.config.json -u"
@@ -59,6 +60,7 @@
     "babel-eslint": "^8.0.0",
     "babel-jest": "^22.0.0",
     "babel-loader": "^7.0.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-travix": "^1.1.0",
     "babel-register": "^6.16.3",
     "cheerio": "^0.22.0",
