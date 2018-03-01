@@ -4,7 +4,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
   position: relative;
 
   .ui-badge-badge {
-    $position: calc(-1 * var(--tx-badge-after-border-size));
+    $position: calc(-1 * var(--tx-badge-before-border-size));
 
     &.ui-badge-badge_top,
     &.ui-badge-badge_right,
@@ -15,29 +15,86 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
 
     &.ui-badge-badge_top {
       top: $position;
-      left: var(--tx-badge-indent);
+
+      &.ui-badge-badge_start {
+        left: var(--tx-badge-indent);
+      }
+
+      &.ui-badge-badge_center {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &.ui-badge-badge_end {
+        left: auto;
+        right: var(--tx-badge-indent);
+      }
     }
 
     &.ui-badge-badge_right {
+      max-width: 100%;
       right: $position;
-      top: var(--tx-badge-indent);
+      padding-right: var(--tx-badge-padding-corner-side);
+
+      &.ui-badge-badge_start {
+        top: var(--tx-badge-indent);
+      }
+
+      &.ui-badge-badge_center {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &.ui-badge-badge_end {
+        bottom: var(--tx-badge-indent);
+        top: auto;
+      }
     }
 
     &.ui-badge-badge_bottom {
       bottom: $position;
-      right: var(--tx-badge-indent);
+
+      &.ui-badge-badge_start {
+        left: var(--tx-badge-indent);
+        right: auto;
+      }
+
+      &.ui-badge-badge_center {
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      &.ui-badge-badge_end {
+        right: var(--tx-badge-indent);
+      }
     }
 
     &.ui-badge-badge_left {
       left: $position;
-      top: var(--tx-badge-indent);
+      max-width: 100%;
+      padding-left: var(--tx-badge-padding-corner-side);
+
+      &.ui-badge-badge_start {
+        top: var(--tx-badge-indent);
+      }
+
+      &.ui-badge-badge_center {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &.ui-badge-badge_end {
+        bottom: var(--tx-badge-indent);
+        top: auto;
+      }
     }
   }
 }
 
 .ui-badge-badge {
   $border-radius-start: var(--tx-badge-border-radius-start);
-  $border-radius-end: var(--tx-badge-border-radius-end);
+  $border-radius-end-top: var(--tx-badge-border-radius-end-top);
+  $border-radius-end-bottom: var(--tx-badge-border-radius-end-bottom);
 
   background-clip: padding-box;
   background-color: var(--tx-badge-color-background);
@@ -57,15 +114,36 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
     border-bottom: none;
   }
 
-  &:before, &:after, & .ui-badge-badge-arrow {
+  &:before,
+  &:after,
+  & .ui-badge__border:after,
+  & .ui-badge__border:before {
     content: '';
     height: 0;
     position: absolute;
     width: 0;
   }
 
+  & .ui-badge-badge-arrow {
+    border: none;
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+    &:before,
+    &:after {
+      background-size: 50% 100%;
+      content: '';
+      display: block;
+      height: 50%;
+      position: absolute;
+      width: 8px;
+    }
+  }
+
   $border-transparent: var(--tx-badge-after-border-size) solid transparent;
-  $border-filled: var(--tx-badge-after-border-size) solid var(--tx-badge-after-border-color);
+  $border-filled: var(--tx-badge-before-border-size) solid var(--tx-badge-before-border-color);
 
   &.ui-badge-badge_top {
     border-radius: 0 $border-radius-start $border-radius-start;
@@ -73,23 +151,20 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
     &:before {
       border-bottom: $border-filled;
       border-left: $border-transparent;
-      left: calc(-1 * var(--tx-badge-after-border-size));
+      right: 100%;
       top: 0;
     }
   }
 
   &.ui-badge-badge_right {
-    border-radius: $border-radius-end $border-radius-start 0 $border-radius-end;
+    border-radius: $border-radius-end-top $border-radius-start 0 $border-radius-end-bottom;
 
-    &:before {
+    .ui-badge__border:before,
+    &.ui-badge-badge_no-border:before {
       border-bottom: $border-transparent;
       border-left: $border-filled;
-      bottom: calc(-1 * (var(--tx-badge-border-bottom-width) + var(--tx-badge-after-border-size)));
+      top: 100%;
       right: 0;
-    }
-
-    &.ui-badge-badge_no-border:before {
-      bottom: calc(-1 * var(--tx-badge-after-border-size));
     }
   }
 
@@ -100,7 +175,7 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
       border-left: $border-transparent;
       border-top: $border-filled;
       bottom: calc(-1 * var(--tx-badge-border-bottom-width));
-      left: calc(-1 * var(--tx-badge-after-border-size));
+      right: 100%;
     }
 
     &.ui-badge-badge_no-border:before {
@@ -109,23 +184,19 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
   }
 
   &.ui-badge-badge_left {
-    border-radius: $border-radius-start $border-radius-end $border-radius-end 0;
+    border-radius: $border-radius-start $border-radius-end-top $border-radius-end-bottom 0;
 
-    &:before {
+    .ui-badge__border:before,
+    &.ui-badge-badge_no-border:before {
       border-bottom: $border-transparent;
       border-right: $border-filled;
-      bottom: calc(-1 * (var(--tx-badge-border-bottom-width) + var(--tx-badge-after-border-size)));
       left: 0;
-    }
-
-    &.ui-badge-badge_no-border:before {
-      bottom: calc(-1 * var(--tx-badge-after-border-size));
+      top: 100%;
     }
   }
 
   $arrow-border-big: calc(var(--tx-badge-font-size) / 2 + var(--tx-badge-padding-top-bottom));
   $arrow-border-small: calc((var(--tx-badge-font-size) / 2 + var(--tx-badge-padding-top-bottom)) * var(--tx-badge-arrow-angle-coefficient));
-  $arrow-position: calc((var(--tx-badge-font-size) / 2 + var(--tx-badge-padding-top-bottom)) * var(--tx-badge-arrow-angle-coefficient) * -1);
 
   &.ui-badge-badge_arrow-left {
     border-bottom-left-radius: 0;
@@ -133,22 +204,41 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
     margin-left: $arrow-border-small;
 
     & .ui-badge-badge-arrow {
-      border: $arrow-border-big solid transparent;
-      border-left: none;
-      border-right: $arrow-border-small solid var(--tx-badge-color-background);
-      left: $arrow-position;
-      top: 0;
+      left: -8px;
+
+      &:before {
+        background: linear-gradient(
+          to bottom left,
+          var(--tx-badge-color-background) 0,
+          var(--tx-badge-color-background) 50%,
+          transparent calc(50% + 1px),
+          transparent 100%
+        );
+        top: 50%;
+      }
+
+      &:after {
+        background: linear-gradient(
+          to top left,
+          var(--tx-badge-color-background) 0,
+          var(--tx-badge-color-background) 50%,
+          transparent calc(50% + 1px),
+          transparent 100%
+        );
+        top: 0;
+      }
     }
 
-    &:after {
-      left: 0;
-      top: 100%;
-      border-top: var(--tx-badge-border-bottom-width) solid var(--tx-badge-border-bottom-color);
+    .ui-badge__border:after {
       border-left: $ui-badge__arrow-border-fix solid transparent;
+      border-top: var(--tx-badge-border-bottom-width) solid var(--tx-badge-border-bottom-color);
+      right: 100%;
     }
 
-    &.ui-badge-badge_no-border:after {
-      border: none;
+    &.ui-badge-badge_no-border {
+      .ui-badge__border:after {
+        border: none;
+      }
     }
   }
 
@@ -158,22 +248,41 @@ $ui-badge__arrow-border-fix: calc(var(--tx-badge-border-bottom-width) * var(--tx
     margin-right: $arrow-border-small;
 
     & .ui-badge-badge-arrow {
-      border: $arrow-border-big solid transparent;
-      border-left: $arrow-border-small solid var(--tx-badge-color-background);
-      border-right: none;
-      right: $arrow-position;
-      top: 0;
-    }
-
-    &:after {
       right: 0;
-      top: 100%;
-      border-top: var(--tx-badge-border-bottom-width) solid var(--tx-badge-border-bottom-color);
-      border-right: $ui-badge__arrow-border-fix solid transparent;
+
+      &:before {
+        background: linear-gradient(
+          to bottom right,
+          var(--tx-badge-color-background) 0,
+          var(--tx-badge-color-background) 50%,
+          transparent calc(50% + 1px),
+          transparent 100%
+        );
+        top: 50%;
+      }
+
+      &:after {
+        background: linear-gradient(
+          to top right,
+          var(--tx-badge-color-background) 0,
+          var(--tx-badge-color-background) 50%,
+          transparent calc(50% + 1px),
+          transparent 100%
+        );
+        top: 0;
+      }
     }
 
-    &.ui-badge-badge_no-border:after {
-      border: none;
+    .ui-badge__border:after {
+      border-right: $ui-badge__arrow-border-fix solid transparent;
+      border-top: var(--tx-badge-border-bottom-width) solid var(--tx-badge-border-bottom-color);
+      left: 100%;
+    }
+
+    &.ui-badge-badge_no-border {
+      .ui-badge__border:after {
+        border: none;
+      }
     }
   }
 }

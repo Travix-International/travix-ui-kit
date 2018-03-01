@@ -105,7 +105,7 @@ DropDown with filter mode:
     initialState = {filterOptions1: [
       { label: 'One', value: 'One', disabled: true },
       { label: 'Two', value: 'Two', checked: true },
-      { label: 'Three', value: 'Three' },
+      { label: 'Very very very very very long option', value: 'Three' },
       { label: 'Four', value: 'Four' },
     ], filterOptions2: [
       { label: 'One', value: '1' },

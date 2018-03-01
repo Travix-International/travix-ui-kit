@@ -23,13 +23,11 @@ const SlidingPanelHeader = ({ title, leftBlock, rightBlock }) => {
     )
     : null;
 
-  const right = rightBlock
-    ? (
-      <div className="ui-sliding-panel-header__right-block">
-        {rightBlock}
-      </div>
-    )
-    : defaultCloseButton;
+  const right = (
+    <div className="ui-sliding-panel-header__right-block">
+      {rightBlock || defaultCloseButton}
+    </div>
+  );
 
   return (
     <div className="ui-sliding-panel-header">

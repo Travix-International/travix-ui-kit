@@ -1,78 +1,130 @@
 Position top:
 
     initialState = {
-      isVisibleTop: false,
-      isVisibleRight: true,
-      isVisibleBottom: true,
-      isVisibleLeft: true,
+      align: 'start',
+      position: 'top',
       isArrow: false,
       isBorder: true,
       isColorBackground: false,
+      labelText: 'Label'
     };
 
     <div>
-      <Checkbox
-        checked={state.isVisibleTop}
-        name="isVisibleTop"
-        onChange={() => setState({ isVisibleTop: !state.isVisibleTop })}
-      >
-        top
-      </Checkbox>
-      <Checkbox
-        checked={state.isVisibleRight}
-        name="isVisibleRight"
-        onChange={() => setState({ isVisibleRight: !state.isVisibleRight })}
-      >
-        right
-      </Checkbox>
-      <Checkbox
-        checked={state.isVisibleBottom}
-        name="isVisibleBottom"
-        onChange={() => setState({ isVisibleBottom: !state.isVisibleBottom })}
-      >
-        bottom
-      </Checkbox>
-      <Checkbox
-        checked={state.isVisibleLeft}
-        name="isVisibleLeft"
-        onChange={() => setState({ isVisibleLeft: !state.isVisibleLeft })}
-      >
-        left
-      </Checkbox>
+      <div style={{display: 'flex'}}>
+        <div>
+          <h3>Position:</h3>
+          <RadioButton
+            checked={state.position === 'top'}
+            id="position-top"
+            name="position"
+            onChange={() => setState({ position: 'top' })}
+          >
+            Top
+          </RadioButton>
+          <RadioButton
+            checked={state.position === 'bottom'}
+            id="position-bottom"
+            name="position"
+            onChange={() => setState({ position: 'bottom' })}
+          >
+            Bottom
+          </RadioButton>
+          <RadioButton
+            checked={state.position === 'left'}
+            id="position-left"
+            name="position"
+            onChange={() => setState({ position: 'left' })}
+          >
+            Left
+          </RadioButton>
+          <RadioButton
+            checked={state.position === 'right'}
+            id="position-right"
+            name="position"
+            onChange={() => setState({ position: 'right' })}
+          >
+            Right
+          </RadioButton>
+        </div>
 
-      <br/>
+        <div>
+          <h3>Align:</h3>
+          <RadioButton
+            checked={state.align === 'start'}
+            id="align-start"
+            name="align"
+            onChange={() => setState({ align: 'start' })}
+          >
+            Start
+          </RadioButton>
+          <RadioButton
+            checked={state.align === 'center'}
+            id="align-center"
+            name="align"
+            onChange={() => setState({ align: 'center' })}
+          >
+            Center
+          </RadioButton>
+          <RadioButton
+            checked={state.align === 'end'}
+            id="align-end"
+            name="align"
+            onChange={() => setState({ align: 'end' })}
+          >
+            End
+          </RadioButton>
+        </div>
 
-      <Checkbox
-        checked={state.isArrow}
-        name="isArrow"
-        onChange={() => setState({ isArrow: !state.isArrow })}
+        <div>
+          <h3>Additional props:</h3>
+          <Checkbox
+            checked={state.isArrow}
+            name="isArrow"
+            onChange={() => setState({ isArrow: !state.isArrow })}
+          >
+            arrow
+          </Checkbox>
+          <Checkbox
+            checked={state.isBorder}
+            name="isBorder"
+            onChange={() => setState({ isBorder: !state.isBorder })}
+          >
+            border
+          </Checkbox>
+          <Checkbox
+            checked={state.isColorBackground}
+            name="isColorBackground"
+            onChange={() => setState({ isColorBackground: !state.isColorBackground })}
+          >
+            background
+          </Checkbox>
+        </div>
+      </div>
+
+      <Badge
+        align={state.align}
+        arrow={state.isArrow}
+        border={state.isBorder}
+        position={state.position}
+        title={state.labelText}
+        visible={state.isVisibleTop}
       >
-        arrow
-      </Checkbox>
-      <Checkbox
-        checked={state.isBorder}
-        name="isBorder"
-        onChange={() => setState({ isBorder: !state.isBorder })}
-      >
-        border
-      </Checkbox>
-      <Checkbox
-        checked={state.isColorBackground}
-        name="isColorBackground"
-        onChange={() => setState({ isColorBackground: !state.isColorBackground })}
-      >
-        background
-      </Checkbox>
-      <Badge arrow={state.isArrow} border={state.isBorder} position="top" title="top" visible={state.isVisibleTop}>
-        <Badge arrow={state.isArrow} border={state.isBorder} position="right" title="right" visible={state.isVisibleRight}>
-          <Badge arrow={state.isArrow} border={state.isBorder} position="bottom" title="bottom" visible={state.isVisibleBottom}>
-            <Badge arrow={state.isArrow} border={state.isBorder} position="left" title="left" visible={state.isVisibleLeft}>
-              <div style={{border: '1px solid lightgray', padding: '25px 100px', marginTop: '15px', background: state.isColorBackground ? "#3e6161" : "none"}}>
-                <Badge arrow={state.isArrow} border={state.isBorder} position="right" title={<span>Left</span>} />
-                <Badge arrow={state.isArrow} border={state.isBorder} position="left" title="Right" />
-              </div>
-            </Badge>
-          </Badge>
-        </Badge>
+        <div style={{
+          background: state.isColorBackground ? "#3e6161" : "none",
+          border: '1px solid lightgray',
+          marginTop: '15px',
+          padding: '50px 60px 50px 30px',
+        }}>
+          <Input
+            onChange={(e) => setState({labelText: e.target.value})}
+            type="text"
+            value={state.labelText}
+          />
+          <br />
+          <div style={{display: 'flex', justifyContent: 'space-around'}}>
+            <Badge position="left" title="Left" arrow={state.isArrow} border={state.isBorder} />
+            <Badge position="right" title="Right" arrow={state.isArrow} border={state.isBorder} />
+          </div>
+        </div>
       </Badge>
     </div>

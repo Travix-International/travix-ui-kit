@@ -88,6 +88,20 @@ function ejectOtherProps(props, propTypes) {
     }, {});
 }
 
+/**
+ * Warn about usage of deprecated prop
+ *
+ * @method warnAboutDeprecatedProp
+ * @param {Any} propValue value of deprecated prop.
+ * @param {String} oldPropName deprecated prop name.
+ * @param {String} newPropName new prop name.
+ */
+function warnAboutDeprecatedProp(propValue, oldPropName, newPropName) {
+  if (propValue !== undefined) {
+    console.warn(`[DEPRECATED] the property "${oldPropName}" has been deprecated, use "${newPropName}" instead`);
+  }
+}
+
 // Exports
 export default {
   ejectOtherProps,
@@ -95,4 +109,5 @@ export default {
   getDataAttributes,
   leftPad,
   normalizeDate,
+  warnAboutDeprecatedProp,
 };

@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   title: 'Travix styleguide',
   assetsDir: 'dist',
@@ -7,12 +9,13 @@ module.exports = {
   getExampleFilename: function(componentPath) {
     return componentPath.replace(/\.jsx?$/, '.md');
   },
+  require: ['babel-polyfill'],
   webpackConfig: {
     module: {
       rules: [
         {
           test: /\.js?$/,
-          include: __dirname + '/components',
+          include: path.join(__dirname, 'components'),
           use: 'babel-loader',
         },
       ],
