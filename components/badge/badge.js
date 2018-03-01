@@ -26,6 +26,9 @@ const Badge = (props) => {
     return null;
   }
 
+  // For the bottom badge we have default alignment is the `end`, for other positions it should be `start`.
+  const align = props.align || (position === 'bottom' ? 'end' : 'start');
+
   const dataAttributes = getDataAttributes(dataAttrs);
 
   let badge = null;
@@ -35,6 +38,7 @@ const Badge = (props) => {
       'arrow-left': arrow && position === 'right',
       'arrow-right': arrow && position === 'left',
       'no-border': !border,
+      [align]: true,
     };
 
     if (position && children) {
@@ -66,6 +70,11 @@ const Badge = (props) => {
 };
 
 Badge.propTypes = {
+  /**
+   * Alignment relatively the `position` prop [start|center|end]
+   * `start` means left for `top` and `bottom` positions. Also it means top for `left` and `right` positions.
+   */
+  align: PropTypes.oneOf(['start', 'center', 'end']),
   /**
    * Does the Badge have an arrow
    */

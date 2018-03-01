@@ -26,7 +26,7 @@ push-changelog:
 	git push origin master
 
 prepare-site:
-	npm run styleguide-build
+	npm run styleguide:build
 	rm -rf ./_site
 	mkdir -p _site/build
 	ls ./styleguide/

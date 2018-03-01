@@ -113,8 +113,8 @@ use file `node_modules/travix-ui-kit/dist/ui-bundle.css`
 - `npm run build` to build theme, styles and javascript
 
 ### How to run living style guide
-- `npm run styleguide-build` to build web service with living style guide
-- `npm run styleguide-server` to run web service with living style guide
+- `npm run styleguide:build` to build web service with living style guide
+- `npm run styleguide:server` to run web service with living style guide
 - open [localhost:6060](http://localhost:6060/)
 
 ### Development
@@ -123,7 +123,8 @@ use file `node_modules/travix-ui-kit/dist/ui-bundle.css`
 
 - `npm run build:watch` to build the themes, styles and javascript on each file change
 - `npm run build:watch -- -t "./path/to/my/theme.yml"` to build using a custom theme (also can use the other options as well).
-- `npm run styleguide-server` to run web service with livingstyle guide and review changes
+- `npm run styleguide:server` to run web service with livingstyle guide and review changes
+- `npm run styleguide:dev` to run both `styguide:build` and `styleguide:server`
 
 #### Testing
 

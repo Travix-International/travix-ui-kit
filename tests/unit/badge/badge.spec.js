@@ -88,4 +88,52 @@ describe('Badge', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render badge with "start" alignment', () => {
+    const wrapper = shallow(
+      <Badge align="start" title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render badge with "center" alignment', () => {
+    const wrapper = shallow(
+      <Badge align="center" title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render badge with "end" alignment', () => {
+    const wrapper = shallow(
+      <Badge align="end" title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render badge with "start" alignment by default for "top" position', () => {
+    const wrapper = shallow(
+      <Badge position="top" title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render badge with "end" alignment by default for "bottom" position', () => {
+    const wrapper = shallow(
+      <Badge position="bottom" title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render badge with both are position and alignment passed', () => {
+    const wrapper = shallow(
+      <Badge align="center" position="top" title="Badge title" />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
