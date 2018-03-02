@@ -5,13 +5,17 @@ import React from 'react';
 export default function ToggleItem(props) {
   const {
     children,
+    className,
     active,
     handleClick,
   } = props;
 
   const classes = classnames(
+    className,
     'ui-toggle-button__item',
-    { active }
+    {
+      'ui-toggle-button__item_active': active,
+    }
   );
 
   return (
@@ -27,15 +31,20 @@ ToggleItem.defaultProps = {
 
 ToggleItem.propTypes = {
   /**
-   * Custom className(s) to be concatenated with the default ones
-   * on the component's root element
+   * Is item active.
    */
   active: PropTypes.bool,
 
   /**
-   * List of toggleItems elements
+   * Content that will be wrapped by ToggleItem
    */
   children: PropTypes.node,
+
+  /**
+   * Custom className(s) to be concatenated with the default ones
+   * on the component's root element
+   */
+  className: PropTypes.string,
 
   /**
    * Specify a function that will be called when a user clicked on a given option.

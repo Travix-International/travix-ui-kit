@@ -18,7 +18,10 @@ export default function ToggleButton(props) {
     selectedIndex,
   } = props;
 
-  if ((!Array.isArray(items) || items.length < 2) && !children) {
+  if (
+    (!Array.isArray(items) || items.length < 2) &&
+    !children
+  ) {
     return null;
   }
 
@@ -61,7 +64,7 @@ export default function ToggleButton(props) {
       return cloneElement(child, {
         active,
         key: childIndex,
-        onClick: childHandleClick,
+        handleClick: childHandleClick,
       });
     });
   }
