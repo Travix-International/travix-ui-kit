@@ -3,6 +3,18 @@ Basic toggleButton:
     <div>
       <ToggleButton
         handleSelect={(e, selectedIndex) => setState({ selectedIndex1: selectedIndex })}
+        mods={['insurance']}
+        selectedIndex={state.selectedIndex1}
+      >
+        <ToggleItem>
+          Upper <strong>deck</strong>
+        </ToggleItem>
+        <ToggleItem>
+          Lower <strong>deck</strong>
+        </ToggleItem>
+      </ToggleButton><br/><br/>
+      <ToggleButton
+        handleSelect={(e, selectedIndex) => setState({ selectedIndex1: selectedIndex })}
         items={['Upper deck', 'Lower deck']}
         mods={['insurance']}
         selectedIndex={state.selectedIndex1}

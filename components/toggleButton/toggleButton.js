@@ -1,12 +1,15 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { cloneElement } from 'react';
 import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
+import ToggleItem from './toggleItem';
 
 export default function ToggleButton(props) {
   warnAboutDeprecatedProp(props.mods, 'mods', 'className');
+  warnAboutDeprecatedProp(props.items, 'items', 'children');
 
   const {
+    children,
     className,
     dataAttrs,
     mods = [],
@@ -15,27 +18,53 @@ export default function ToggleButton(props) {
     selectedIndex,
   } = props;
 
-  if (!Array.isArray(items) || items.length < 2) {
+  if ((!Array.isArray(items) || items.length < 2) && !children) {
     return null;
   }
+
+  const handleOnClick = (e, index) => {
+    e.stopPropagation();
+
+    if (handleSelect) {
+      handleSelect(e, index);
+    }
+  };
+
   const classes = classnames(
     getClassNamesWithMods('ui-toggle-button', mods),
     className,
   );
 
-  /** Generating the <li> tags */
-  const listItems = items.map((item, itemIndex) => {
-    const itemClasses = getClassNamesWithMods('ui-toggle-button__item', { 'active': itemIndex === selectedIndex });
-    const handleOnClick = (e) => {
-      e.stopPropagation();
+  let listItems;
+  if (items) {
+    listItems = items.map((item, itemIndex) => {
+      const active = itemIndex === selectedIndex;
+      const itemHandleClick = e => handleOnClick(e, itemIndex);
 
-      if (handleSelect) {
-        handleSelect(e, itemIndex);
-      }
-    };
+      return (
+        <ToggleItem
+          active={active}
+          handleClick={itemHandleClick}
+          key={itemIndex}
+        >
+          { item }
+        </ToggleItem>
+      );
+    });
+  }
 
-    return <li className={itemClasses} key={itemIndex} onClick={handleOnClick}>{item}</li>;
-  });
+  if (children) {
+    listItems = children.map((child, childIndex) => {
+      const active = childIndex === selectedIndex;
+      const childHandleClick = e => handleOnClick(e, childIndex);
+
+      return cloneElement(child, {
+        active,
+        key: childIndex,
+        onClick: childHandleClick,
+      });
+    });
+  }
 
   return (
     <ul className={classes} {...getDataAttributes(dataAttrs)}>
@@ -55,6 +84,11 @@ ToggleButton.propTypes = {
    * on the component's root element
    */
   className: PropTypes.string,
+
+  /**
+   * List of toggleItems elements
+   */
+  children: PropTypes.node,
 
   /**
    * Data attribute. You can use it to set up GTM key or any custom data-* attribute.

@@ -28,6 +28,7 @@ import Spinner from './spinner/spinner';
 import Tab from './tabs/tab';
 import Tabs from './tabs/tabs';
 import ToggleButton from './toggleButton/toggleButton';
+import ToggleItem from './toggleButton/toggleItem';
 import Tooltip from './tooltip/tooltip';
 
 export default {
@@ -61,5 +62,6 @@ export default {
   Tab,
   Tabs,
   ToggleButton,
+  ToggleItem,
   Tooltip,
 };
