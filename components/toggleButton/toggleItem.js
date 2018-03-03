@@ -1,12 +1,14 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { getDataAttributes } from '../_helpers';
 import React from 'react';
 
 export default function ToggleItem(props) {
   const {
+    active,
     children,
     className,
-    active,
+    dataAttrs,
     handleClick,
   } = props;
 
@@ -19,7 +21,7 @@ export default function ToggleItem(props) {
   );
 
   return (
-    <li className={classes} onClick={handleClick}>
+    <li className={classes} onClick={handleClick} {...getDataAttributes(dataAttrs)}>
       {children}
     </li>
   );
@@ -45,6 +47,11 @@ ToggleItem.propTypes = {
    * on the component's root element
    */
   className: PropTypes.string,
+
+  /**
+   * Data attribute. You can use it to set up GTM key or any custom data-* attribute.
+   */
+  dataAttrs: PropTypes.object,
 
   /**
    * Specify a function that will be called when a user clicked on a given option.
