@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React, { cloneElement } from 'react';
+import React, { cloneElement, Children } from 'react';
 import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 import ToggleItem from './toggleItem';
 
@@ -54,7 +54,7 @@ export default function ToggleButton(props) {
   }
 
   if (children) {
-    listItems = React.Children.map(children, (child, childIndex) => {
+    listItems = Children.map(children, (child, childIndex) => {
       const active = childIndex === selectedIndex;
       const childHandleClick = e => handleOnClick(e, childIndex);
 
