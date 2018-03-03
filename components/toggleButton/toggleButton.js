@@ -57,7 +57,7 @@ export default function ToggleButton(props) {
   }
 
   if (children) {
-    listItems = children.map((child, childIndex) => {
+    listItems = React.Children.map(children, (child, childIndex) => {
       const active = childIndex === selectedIndex;
       const childHandleClick = e => handleOnClick(e, childIndex);
 
