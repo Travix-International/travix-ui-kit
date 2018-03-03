@@ -52,18 +52,18 @@ describe('ToggleButton', () => {
   });
 
   it('when a "handleSelect" function is passed it gets executed when clicking on an option', () => {
-    const items = [
-      'First item',
-      'Second item',
-      'Third item',
-    ];
+    const wrapper = mount(
+      <ToggleButton handleSelect={defaultMockedHandleSelect} selectedIndex={2}>
+        <ToggleItem>First Item</ToggleItem>
+        <ToggleItem>Second Item</ToggleItem>
+        <ToggleItem>Third Item</ToggleItem>
+      </ToggleButton>
+    );
 
     const fakeEvent = { stopPropagation: jest.fn() };
 
-    const wrapper = mount(<ToggleButton handleSelect={defaultMockedHandleSelect} items={items} />);
     wrapper.find(ToggleItem).first().simulate('click', fakeEvent);
 
-    expect(wrapper).toMatchSnapshot();
     expect(fakeEvent.stopPropagation).toHaveBeenCalledTimes(1);
     expect(defaultMockedHandleSelect).toHaveBeenCalledTimes(1);
   });
