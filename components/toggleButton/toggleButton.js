@@ -27,10 +27,7 @@ export default function ToggleButton(props) {
 
   const handleOnClick = (e, index) => {
     e.stopPropagation();
-
-    if (handleSelect) {
-      handleSelect(e, index);
-    }
+    handleSelect(e, index);
   };
 
   const classes = classnames(
@@ -106,7 +103,7 @@ ToggleButton.propTypes = {
   /**
    * Specify a function that will be called when a user clicked on a given option.
    */
-  handleSelect: PropTypes.func,
+  handleSelect: PropTypes.func.isRequired,
 
   /**
    * List's elements.
