@@ -91,7 +91,9 @@ ToggleButton.propTypes = {
   /**
    * List of toggleItems elements
    */
-  children: PropTypes.node,
+  children: PropTypes.arrayOf(
+    PropTypes.shape({ type: ToggleItem })
+  ),
 
   /**
    * Data attribute. You can use it to set up GTM key or any custom data-* attribute.
