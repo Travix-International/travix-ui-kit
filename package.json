@@ -54,7 +54,7 @@
     "react-select": "1.0.0-rc.10"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
+    "autoprefixer": "^8.1.0",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^8.0.0",
