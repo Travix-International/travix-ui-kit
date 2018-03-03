@@ -104,6 +104,57 @@ exports[`ToggleButton renders the ToggleButton component using items 1`] = `
 </ToggleButton>
 `;
 
+exports[`ToggleButton renders the ToggleButton component with data-attributes 1`] = `
+<ToggleButton
+  data-gtm-id={123}
+  handleSelect={[MockFunction]}
+  items={Array []}
+  selectedIndex={0}
+>
+  <ul
+    className="ui-toggle-button"
+  >
+    <ToggleItem
+      active={true}
+      data-xivart-elm="first-item"
+      handleClick={[Function]}
+      key="0/.0"
+    >
+      <li
+        className="ui-toggle-button__item ui-toggle-button__item_active"
+        onClick={[Function]}
+      >
+        First Item
+      </li>
+    </ToggleItem>
+    <ToggleItem
+      active={false}
+      handleClick={[Function]}
+      key="1/.1"
+    >
+      <li
+        className="ui-toggle-button__item"
+        onClick={[Function]}
+      >
+        Second Item
+      </li>
+    </ToggleItem>
+    <ToggleItem
+      active={false}
+      handleClick={[Function]}
+      key="2/.2"
+    >
+      <li
+        className="ui-toggle-button__item"
+        onClick={[Function]}
+      >
+        Third Item
+      </li>
+    </ToggleItem>
+  </ul>
+</ToggleButton>
+`;
+
 exports[`ToggleButton renders the ToggleButton component with the defaults 1`] = `
 <ToggleButton
   handleSelect={[MockFunction]}
