@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { getDataAttributes } from '../_helpers';
 import React from 'react';
+import { getDataAttributes } from '../_helpers';
 
 export default function ToggleItem(props) {
   const {
