@@ -36,7 +36,19 @@ export default function ToggleButton(props) {
   );
 
   let listItems;
-  if (items) {
+
+  if (children) {
+    listItems = Children.map(children, (child, childIndex) => {
+      const active = childIndex === selectedIndex;
+      const childHandleClick = e => handleOnClick(e, childIndex);
+
+      return cloneElement(child, {
+        active,
+        key: childIndex,
+        handleClick: childHandleClick,
+      });
+    });
+  } else {
     listItems = items.map((item, itemIndex) => {
       const active = itemIndex === selectedIndex;
       const itemHandleClick = e => handleOnClick(e, itemIndex);
@@ -50,19 +62,6 @@ export default function ToggleButton(props) {
           { item }
         </ToggleItem>
       );
-    });
-  }
-
-  if (children) {
-    listItems = Children.map(children, (child, childIndex) => {
-      const active = childIndex === selectedIndex;
-      const childHandleClick = e => handleOnClick(e, childIndex);
-
-      return cloneElement(child, {
-        active,
-        key: childIndex,
-        handleClick: childHandleClick,
-      });
     });
   }
 
