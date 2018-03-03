@@ -20,7 +20,7 @@ export default function ToggleButton(props) {
 
   if (
     (!Array.isArray(items) || items.length < 2) &&
-    !children
+    (!Array.isArray(children) || children.length < 2)
   ) {
     return null;
   }

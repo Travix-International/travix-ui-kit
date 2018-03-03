@@ -11,6 +11,27 @@ describe('ToggleButton', () => {
     expect(wrapper.type()).toEqual(null);
   });
 
+  it('renders null when only one item is provided to ToggleButton', () => {
+    const wrapper = shallow(
+      <ToggleButton
+        handleSelect={defaultMockedHandleSelect}
+        items={['First item']}
+      />
+    );
+
+    expect(wrapper.type()).toEqual(null);
+  });
+
+  it('renders null when only one children is provided to ToggleButton', () => {
+    const wrapper = shallow(
+      <ToggleButton handleSelect={defaultMockedHandleSelect}>
+        <ToggleItem>First Item</ToggleItem>
+      </ToggleButton>
+    );
+
+    expect(wrapper.type()).toEqual(null);
+  });
+
   it('renders the ToggleButton component using items', () => {
     const items = [
       'First item',
