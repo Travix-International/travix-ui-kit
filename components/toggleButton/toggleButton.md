@@ -35,6 +35,29 @@ Passing items as property (deprecated):
       items={['Upper', 'Lower']}
     />
 
+More items:
+
+    <ToggleButton
+      handleSelect={(e, selectedIndex) => setState({ selectedIndex1: selectedIndex })}
+      selectedIndex={state.selectedIndex1}
+    >
+      <ToggleItem>
+        Banana
+      </ToggleItem>
+      <ToggleItem>
+        Apple
+      </ToggleItem>
+      <ToggleItem>
+        Strawberry
+      </ToggleItem>
+      <ToggleItem>
+        Pineapple
+      </ToggleItem>
+      <ToggleItem>
+        Avocado
+      </ToggleItem>
+    </ToggleButton>
+
 
 Passing data attributes:
 
