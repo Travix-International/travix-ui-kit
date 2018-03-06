@@ -138,6 +138,9 @@ ui-button:
       text-shadow: none
       border: "transparent"
       border-bottom: "var(--tx-generic-color-secondary-darker)"
+      icon:
+        arrow:
+          color: "var(--tx-generic-color-secondary-darker)"
     hover:
       bg-top: "var(--tx-generic-color-accent-dark)"
       bg-bottom: "var(--tx-generic-color-accent-dark)"
@@ -146,6 +149,9 @@ ui-button:
     active:
       shadow: "0 2px var(--tx-generic-color-accent-border), 0 0 transparent"
       text-shadow: "0px 1px 0px var(--tx-generic-color-accent-border)"
+    icon:
+      arrow:
+        color: "var(--tx-generic-color-blank)"
   ghost:
     normal:
       background: "var(--tx-generic-color-blank)"
@@ -159,6 +165,10 @@ ui-button:
       border-color: "var(--tx-generic-color-active)"
     inverted:
       color: "var(--tx-generic-color-primary-darker)"
+  link:
+    icon:
+      arrow:
+        color: "var(--tx-generic-color-active)"
 button:
   icon:
     color:

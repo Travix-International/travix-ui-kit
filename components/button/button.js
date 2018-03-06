@@ -16,6 +16,7 @@ function Button(props) {
   warnAboutDeprecatedProp(props.mods, 'mods', 'className');
 
   const {
+    arrow,
     children,
     className,
     dataAttrs = {},
@@ -37,6 +38,10 @@ function Button(props) {
 
   if (disabled) {
     mods.push(`disabled_true`);
+  }
+
+  if (arrow) {
+    mods.push(`arrow-icon`);
   }
 
   const classes = classnames(
@@ -94,6 +99,7 @@ function Button(props) {
 }
 
 Button.defaultProps = {
+  arrow: false,
   disabled: false,
   size: 'm',
   type: 'button',
@@ -167,6 +173,11 @@ Button.propTypes = {
    * Button's apperance.
    */
   variation: PropTypes.oneOf(['default', 'ghost', 'ghost-inverted', 'link']),
+
+  /**
+   * Button with arrow.
+   */
+  arrow: PropTypes.bool,
 };
 
 export default Button;

@@ -12,13 +12,20 @@ Basic button:
       >
         Disabled
       </Checkbox>
+      <Checkbox
+        checked={state.isArrow}
+        name="isButtonArrowbasic"
+        onChange={() => setState({ isArrow: !state.isArrow })}
+      >
+        Arrow
+      </Checkbox>
       <br/>
-      <Button disabled={state.isDisabled} onClick={alert}>Show alert</Button><br/><br/>
-      <Button disabled={state.isDisabled} dataAttrs={{gtm: 'some-id'}} type="reset">With GTM id</Button><br/><br/>
-      <Button disabled={state.isDisabled} mods={['test']} type="reset">With mode</Button><br/><br/>
-      <Button disabled={state.isDisabled} mods={['test']} id="my-button-id">Example with custom id set</Button><br/><br/>
-      <Button disabled={state.isDisabled} mods={['test']} className="my-class">Example with custom class set</Button><br/><br/>
-      <Button disabled={state.isDisabled} onMouseUp={() => alert('Mouse Up')}>Example with custom event (onMouseUp)</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} onClick={alert}>Show alert</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} dataAttrs={{gtm: 'some-id'}} type="reset">With GTM id</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} mods={['test']} type="reset">With mode</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} mods={['test']} id="my-button-id">Example with custom id set</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} mods={['test']} className="my-class">Example with custom class set</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} onMouseUp={() => alert('Mouse Up')}>Example with custom event (onMouseUp)</Button><br/><br/>
     </div>
 
 Sizes:
@@ -35,12 +42,19 @@ Sizes:
       >
         Disabled
       </Checkbox>
+      <Checkbox
+        checked={state.isArrow}
+        name="isButtonArrowSizes"
+        onChange={() => setState({ isArrow: !state.isArrow })}
+      >
+        Arrow
+      </Checkbox>
       <br/>
-      <Button disabled={state.isDisabled} type="reset" size="xs">Extra small</Button><br/><br/>
-      <Button disabled={state.isDisabled} type="reset" size="s">Small</Button><br/><br/>
-      <Button disabled={state.isDisabled} type="reset" size="m">Medium</Button><br/><br/>
-      <Button disabled={state.isDisabled} type="reset" size="l">Large</Button><br/><br/>
-      <Button disabled={state.isDisabled} type="reset" size="xl">Extra large</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} type="reset" size="xs">Extra small</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} type="reset" size="s">Small</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} type="reset" size="m">Medium</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} type="reset" size="l">Large</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} type="reset" size="xl">Extra large</Button><br/><br/>
     </div>
 
 Variations - Ghost:
@@ -82,9 +96,16 @@ Variations - Link:
       >
         Disabled
       </Checkbox>
+       <Checkbox
+        checked={state.isArrow}
+        name="isButtonArrowLink"
+        onChange={() => setState({ isArrow: !state.isArrow })}
+      >
+        Arrow
+      </Checkbox>
       <br/>
-      <Button disabled={state.isDisabled} onClick={alert} variation="link">Link button</Button><br/><br/>
+      <Button disabled={state.isDisabled} arrow={state.isArrow} onClick={alert} variation="link">Link button</Button><br/><br/>
       <p>
-        You can put a <Button disabled={state.isDisabled} onClick={alert} variation="link">link button</Button><br/> along with regular text.
+        You can put a <Button disabled={state.isDisabled} arrow={state.isArrow} onClick={alert} variation="link">link button</Button><br/> along with regular text.
       </p>
     </div>

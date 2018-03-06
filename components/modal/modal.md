@@ -52,7 +52,7 @@ Basic Modal:
           closeOnEsc={false}
           onClose={() => setState({ isOpenModalWithContent: false })}
         >
-          <ModalContent title="Modal content title">
+          <ModalContent title="Modal content title" subtitle="Modal content subtitle">
             First content body
           </ModalContent>
           <ModalContent>

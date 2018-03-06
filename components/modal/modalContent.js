@@ -2,14 +2,17 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const ModalContent = ({ children, className, title }) => {
-  const header = title
-    ? (
-      <div className="ui-modal-content-block__title">
-        {title}
+const ModalContent = ({ children, className, title, subtitle }) => {
+  const titleDescription = subtitle && <div className="ui-modal-content-block__subtitle">{subtitle}</div>;
+  const header = title &&
+    (
+      <div className="ui-modal-content-block__title-block">
+        <div className="ui-modal-content-block__title">
+          {title}
+        </div>
+        {titleDescription}
       </div>
-    )
-    : null;
+    );
 
   const classes = classnames(className, 'ui-modal-content-block');
   return (
@@ -35,6 +38,10 @@ ModalContent.propTypes = {
    * Title text of content
    */
   title: PropTypes.node,
+  /**
+   * Subtitle text of content
+   */
+  subtitle: PropTypes.node,
 };
 
 export default ModalContent;
