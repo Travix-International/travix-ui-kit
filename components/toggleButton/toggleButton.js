@@ -44,7 +44,6 @@ export default function ToggleButton(props) {
 
       return cloneElement(child, {
         active,
-        key: childIndex,
         handleClick: childHandleClick,
       });
     });
@@ -73,7 +72,6 @@ export default function ToggleButton(props) {
 }
 
 ToggleButton.defaultProps = {
-  items: [],
   selectedIndex: 0,
 };
 

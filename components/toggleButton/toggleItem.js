@@ -29,6 +29,7 @@ export default function ToggleItem(props) {
 
 ToggleItem.defaultProps = {
   active: false,
+  handleClick: () => {},
 };
 
 ToggleItem.propTypes = {
