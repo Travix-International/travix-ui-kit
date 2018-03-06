@@ -84,26 +84,6 @@
   position: static;
   text-shadow: var(--tx-ui-button-default-disabled-text-shadow);
 
-  &.ui-button_size_xs {
-    padding: 3px 6px;
-  }
-
-  &.ui-button_size_s {
-    padding: 5px 10px;
-  }
-
-  &.ui-button_size_m {
-    line-height: 40px;
-  }
-
-  &.ui-button_size_l {
-    padding: 12px 17px;
-  }
-
-  &.ui-button_size_xl {
-    padding: 15px 20px;
-  }
-
   &.ui-button_variation_ghost {
     border: 3px solid var(--tx-ui-button-default-disabled-border-bottom);
   }
@@ -133,8 +113,7 @@
 
 .ui-button_size_m {
   font-size: 22px;
-  padding: 0 24px;
-  line-height: 38px;
+  padding: 8px 24px;
 }
 
 .ui-button_size_l {
