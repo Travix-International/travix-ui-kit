@@ -3,7 +3,6 @@
 exports[`ToggleButton passing a value in selectedIndex will select the proper index of the list of items 1`] = `
 <ToggleButton
   handleSelect={[MockFunction]}
-  items={Array []}
   selectedIndex={2}
 >
   <ul
@@ -12,7 +11,7 @@ exports[`ToggleButton passing a value in selectedIndex will select the proper in
     <ToggleItem
       active={false}
       handleClick={[Function]}
-      key="0/.0"
+      key=".0"
     >
       <li
         className="ui-toggle-button__item"
@@ -24,7 +23,7 @@ exports[`ToggleButton passing a value in selectedIndex will select the proper in
     <ToggleItem
       active={false}
       handleClick={[Function]}
-      key="1/.1"
+      key=".1"
     >
       <li
         className="ui-toggle-button__item"
@@ -36,7 +35,7 @@ exports[`ToggleButton passing a value in selectedIndex will select the proper in
     <ToggleItem
       active={true}
       handleClick={[Function]}
-      key="2/.2"
+      key=".2"
     >
       <li
         className="ui-toggle-button__item ui-toggle-button__item_active"
@@ -108,7 +107,6 @@ exports[`ToggleButton renders the ToggleButton component with data-attributes 1`
 <ToggleButton
   data-gtm-id={123}
   handleSelect={[MockFunction]}
-  items={Array []}
   selectedIndex={0}
 >
   <ul
@@ -118,7 +116,7 @@ exports[`ToggleButton renders the ToggleButton component with data-attributes 1`
       active={true}
       data-xivart-elm="first-item"
       handleClick={[Function]}
-      key="0/.0"
+      key=".0"
     >
       <li
         className="ui-toggle-button__item ui-toggle-button__item_active"
@@ -130,7 +128,7 @@ exports[`ToggleButton renders the ToggleButton component with data-attributes 1`
     <ToggleItem
       active={false}
       handleClick={[Function]}
-      key="1/.1"
+      key=".1"
     >
       <li
         className="ui-toggle-button__item"
@@ -142,7 +140,7 @@ exports[`ToggleButton renders the ToggleButton component with data-attributes 1`
     <ToggleItem
       active={false}
       handleClick={[Function]}
-      key="2/.2"
+      key=".2"
     >
       <li
         className="ui-toggle-button__item"
@@ -158,7 +156,6 @@ exports[`ToggleButton renders the ToggleButton component with data-attributes 1`
 exports[`ToggleButton renders the ToggleButton component with the defaults 1`] = `
 <ToggleButton
   handleSelect={[MockFunction]}
-  items={Array []}
   selectedIndex={0}
 >
   <ul
@@ -167,7 +164,7 @@ exports[`ToggleButton renders the ToggleButton component with the defaults 1`] =
     <ToggleItem
       active={true}
       handleClick={[Function]}
-      key="0/.0"
+      key=".0"
     >
       <li
         className="ui-toggle-button__item ui-toggle-button__item_active"
@@ -179,7 +176,7 @@ exports[`ToggleButton renders the ToggleButton component with the defaults 1`] =
     <ToggleItem
       active={false}
       handleClick={[Function]}
-      key="1/.1"
+      key=".1"
     >
       <li
         className="ui-toggle-button__item"
@@ -191,7 +188,7 @@ exports[`ToggleButton renders the ToggleButton component with the defaults 1`] =
     <ToggleItem
       active={false}
       handleClick={[Function]}
-      key="2/.2"
+      key=".2"
     >
       <li
         className="ui-toggle-button__item"
@@ -202,4 +199,18 @@ exports[`ToggleButton renders the ToggleButton component with the defaults 1`] =
     </ToggleItem>
   </ul>
 </ToggleButton>
+`;
+
+exports[`ToggleButton should render ToggleItem standalone 1`] = `
+<ToggleItem
+  active={false}
+  handleClick={[Function]}
+>
+  <li
+    className="ui-toggle-button__item"
+    onClick={[Function]}
+  >
+    Self contained Toggle Item
+  </li>
+</ToggleItem>
 `;

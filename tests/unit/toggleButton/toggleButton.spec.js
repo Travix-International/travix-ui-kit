@@ -102,6 +102,24 @@ describe('ToggleButton', () => {
     expect(mockedHandleSelect).toHaveBeenCalledTimes(1);
   });
 
+  it('should render ToggleItem standalone', () => {
+    const wrapper = mount(
+      <ToggleItem>Self contained Toggle Item</ToggleItem>
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should return null if no handleClick function is passed to ToggleItem', () => {
+    const wrapper = mount(
+      <ToggleItem>
+        Self contained Toggle Item
+      </ToggleItem>
+    );
+
+    expect(wrapper.props().handleClick()).toBeNull();
+  });
+
   it('when a "handleSelect" function is passed it gets executed when clicking on an option using items', () => {
     const mockedHandleSelect = jest.fn();
     const items = [
