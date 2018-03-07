@@ -77,5 +77,13 @@ describe('Button', () => {
 
       expect(wrapper.find('.ui-button').hasClass('ui-button_variation_ghost')).toEqual(true);
     });
+
+    it('should render arrow icon', () => {
+      const wrapper = shallow(
+        <Button onClick={onClickSpy} arrow>Button with arrow icon</Button>
+      );
+
+      expect(wrapper.find('.ui-button').hasClass('ui-button_arrow-icon')).toEqual(true);
+    });
   });
 });

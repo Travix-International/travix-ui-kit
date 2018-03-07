@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Modal: render Should not redner header if only subtitle is passed 1`] = `
+<ModalContent
+  subtitle="Modal content subtitle"
+>
+  <section
+    className="ui-modal-content-block"
+  >
+    <div
+      className="ui-modal-content-block__container"
+    >
+      Modal Content
+    </div>
+  </section>
+</ModalContent>
+`;
+
 exports[`Modal: render Should redner modal content 1`] = `
 <ModalContent>
   <section
@@ -22,9 +38,44 @@ exports[`Modal: render Should redner modal content with title 1`] = `
     className="ui-modal-content-block"
   >
     <div
-      className="ui-modal-content-block__title"
+      className="ui-modal-content-block__title-block"
     >
-      Modal content title
+      <div
+        className="ui-modal-content-block__title"
+      >
+        Modal content title
+      </div>
+    </div>
+    <div
+      className="ui-modal-content-block__container"
+    >
+      Modal Content
+    </div>
+  </section>
+</ModalContent>
+`;
+
+exports[`Modal: render Should redner modal content with title and subtitle 1`] = `
+<ModalContent
+  subtitle="Modal content subtitle"
+  title="Modal content title"
+>
+  <section
+    className="ui-modal-content-block"
+  >
+    <div
+      className="ui-modal-content-block__title-block"
+    >
+      <div
+        className="ui-modal-content-block__title"
+      >
+        Modal content title
+      </div>
+      <div
+        className="ui-modal-content-block__subtitle"
+      >
+        Modal content subtitle
+      </div>
     </div>
     <div
       className="ui-modal-content-block__container"
