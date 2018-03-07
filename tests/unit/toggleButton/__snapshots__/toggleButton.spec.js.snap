@@ -1,85 +1,216 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ToggleButton passing a value in selectedIndex will select the proper index of the list of items 1`] = `
-<ul
-  className="ui-toggle-button"
+<ToggleButton
+  handleSelect={[MockFunction]}
+  selectedIndex={2}
 >
-  <li
-    className="ui-toggle-button__item"
-    key="0"
-    onClick={[Function]}
+  <ul
+    className="ui-toggle-button"
   >
-    First item
-  </li>
-  <li
-    className="ui-toggle-button__item"
-    key="1"
-    onClick={[Function]}
+    <ToggleItem
+      active={false}
+      handleClick={[Function]}
+      key=".0"
+    >
+      <li
+        className="ui-toggle-button__item"
+        onClick={[Function]}
+      >
+        First Item
+      </li>
+    </ToggleItem>
+    <ToggleItem
+      active={false}
+      handleClick={[Function]}
+      key=".1"
+    >
+      <li
+        className="ui-toggle-button__item"
+        onClick={[Function]}
+      >
+        Second Item
+      </li>
+    </ToggleItem>
+    <ToggleItem
+      active={true}
+      handleClick={[Function]}
+      key=".2"
+    >
+      <li
+        className="ui-toggle-button__item ui-toggle-button__item_active"
+        onClick={[Function]}
+      >
+        Third Item
+      </li>
+    </ToggleItem>
+  </ul>
+</ToggleButton>
+`;
+
+exports[`ToggleButton renders the ToggleButton component using items 1`] = `
+<ToggleButton
+  handleSelect={[MockFunction]}
+  items={
+    Array [
+      "First item",
+      "Second item",
+      "Third item",
+    ]
+  }
+  selectedIndex={0}
+>
+  <ul
+    className="ui-toggle-button"
   >
-    Second item
-  </li>
-  <li
-    className="ui-toggle-button__item ui-toggle-button__item_active"
-    key="2"
-    onClick={[Function]}
+    <ToggleItem
+      active={true}
+      handleClick={[Function]}
+      key="0"
+    >
+      <li
+        className="ui-toggle-button__item ui-toggle-button__item_active"
+        onClick={[Function]}
+      >
+        First item
+      </li>
+    </ToggleItem>
+    <ToggleItem
+      active={false}
+      handleClick={[Function]}
+      key="1"
+    >
+      <li
+        className="ui-toggle-button__item"
+        onClick={[Function]}
+      >
+        Second item
+      </li>
+    </ToggleItem>
+    <ToggleItem
+      active={false}
+      handleClick={[Function]}
+      key="2"
+    >
+      <li
+        className="ui-toggle-button__item"
+        onClick={[Function]}
+      >
+        Third item
+      </li>
+    </ToggleItem>
+  </ul>
+</ToggleButton>
+`;
+
+exports[`ToggleButton renders the ToggleButton component with data-attributes 1`] = `
+<ToggleButton
+  data-gtm-id={123}
+  handleSelect={[MockFunction]}
+  selectedIndex={0}
+>
+  <ul
+    className="ui-toggle-button"
   >
-    Third item
-  </li>
-</ul>
+    <ToggleItem
+      active={true}
+      data-xivart-elm="first-item"
+      handleClick={[Function]}
+      key=".0"
+    >
+      <li
+        className="ui-toggle-button__item ui-toggle-button__item_active"
+        onClick={[Function]}
+      >
+        First Item
+      </li>
+    </ToggleItem>
+    <ToggleItem
+      active={false}
+      handleClick={[Function]}
+      key=".1"
+    >
+      <li
+        className="ui-toggle-button__item"
+        onClick={[Function]}
+      >
+        Second Item
+      </li>
+    </ToggleItem>
+    <ToggleItem
+      active={false}
+      handleClick={[Function]}
+      key=".2"
+    >
+      <li
+        className="ui-toggle-button__item"
+        onClick={[Function]}
+      >
+        Third Item
+      </li>
+    </ToggleItem>
+  </ul>
+</ToggleButton>
 `;
 
 exports[`ToggleButton renders the ToggleButton component with the defaults 1`] = `
-<ul
-  className="ui-toggle-button"
+<ToggleButton
+  handleSelect={[MockFunction]}
+  selectedIndex={0}
 >
-  <li
-    className="ui-toggle-button__item ui-toggle-button__item_active"
-    key="0"
-    onClick={[Function]}
+  <ul
+    className="ui-toggle-button"
   >
-    First item
-  </li>
-  <li
-    className="ui-toggle-button__item"
-    key="1"
-    onClick={[Function]}
-  >
-    Second item
-  </li>
-  <li
-    className="ui-toggle-button__item"
-    key="2"
-    onClick={[Function]}
-  >
-    Third item
-  </li>
-</ul>
+    <ToggleItem
+      active={true}
+      handleClick={[Function]}
+      key=".0"
+    >
+      <li
+        className="ui-toggle-button__item ui-toggle-button__item_active"
+        onClick={[Function]}
+      >
+        First Item
+      </li>
+    </ToggleItem>
+    <ToggleItem
+      active={false}
+      handleClick={[Function]}
+      key=".1"
+    >
+      <li
+        className="ui-toggle-button__item"
+        onClick={[Function]}
+      >
+        Second Item
+      </li>
+    </ToggleItem>
+    <ToggleItem
+      active={false}
+      handleClick={[Function]}
+      key=".2"
+    >
+      <li
+        className="ui-toggle-button__item"
+        onClick={[Function]}
+      >
+        Third Item
+      </li>
+    </ToggleItem>
+  </ul>
+</ToggleButton>
 `;
 
-exports[`ToggleButton when a "handleSelect" function is passed it gets executed when clicking on an option 1`] = `
-<ul
-  className="ui-toggle-button"
+exports[`ToggleButton should render ToggleItem standalone 1`] = `
+<ToggleItem
+  active={false}
+  handleClick={[Function]}
 >
   <li
-    className="ui-toggle-button__item ui-toggle-button__item_active"
-    key="0"
-    onClick={[Function]}
-  >
-    First item
-  </li>
-  <li
     className="ui-toggle-button__item"
-    key="1"
     onClick={[Function]}
   >
-    Second item
+    Self contained Toggle Item
   </li>
-  <li
-    className="ui-toggle-button__item"
-    key="2"
-    onClick={[Function]}
-  >
-    Third item
-  </li>
-</ul>
+</ToggleItem>
 `;

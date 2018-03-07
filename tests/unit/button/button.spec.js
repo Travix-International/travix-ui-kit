@@ -80,7 +80,7 @@ describe('Button', () => {
 
     it('should render arrow icon', () => {
       const wrapper = shallow(
-        <Button onClick={onClickSpy} arrow>Button with arrow icon</Button>
+        <Button arrow onClick={onClickSpy}>Button with arrow icon</Button>
       );
 
       expect(wrapper.find('.ui-button').hasClass('ui-button_arrow-icon')).toEqual(true);

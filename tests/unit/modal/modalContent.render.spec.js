@@ -35,7 +35,7 @@ describe('Modal: render', () => {
 
   it('Should redner modal content with title and subtitle', () => {
     const component = mount(
-      <ModalContent title="Modal content title" subtitle="Modal content subtitle">
+      <ModalContent subtitle="Modal content subtitle" title="Modal content title">
         Modal Content
       </ModalContent>
     );
