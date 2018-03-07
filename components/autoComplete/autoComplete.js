@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 
-import AutoCompleteItem from './autoCompleteItem';
+import AutoCompleteItem from './autoCompleteItem/autoCompleteItem';
 import Input from '../input/input';
 import KEY_CODE from '../constants/keyCode';
 import {

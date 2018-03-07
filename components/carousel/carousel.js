@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
-import CarouselItem from './carouselItem';
-import CarouselMarkers from './carouselMarkers';
-import CarouselPage from './carouselPage';
-import CarouselTrack from './carouselTrack';
+import CarouselItem from './carouselItem/carouselItem';
+import CarouselMarkers from './carouselMarkers/carouselMarkers';
+import CarouselPage from './carouselPage/carouselPage';
+import CarouselTrack from './carouselTrack/carouselTrack';
 
 /**
  * Carousel component
