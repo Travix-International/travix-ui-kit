@@ -1,0 +1,40 @@
+.ui-toggle-button__item {
+  background-color: var(--tx-generic-color-blank);
+  border: var(--tx-toggle-button-item-border-size) var(--tx-toggle-button-item-border-style) var(--tx-toggle-button-item-border-color);
+  border-right-width: 0;
+  color: var(--tx-generic-color-primary);
+  display: inline-block;
+  font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
+  font-size: var(--tx-toggle-button-item-font-size);
+  font-weight: var(--tx-generic-font-secondary-weight-regular);
+  line-height: var(--tx-toggle-button-item-line-height);
+  min-width: 130px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.ui-toggle-button__item:first-child {
+  border-bottom-left-radius: var(--tx-toggle-button-item-border-radius);
+  border-top-left-radius: var(--tx-toggle-button-item-border-radius);
+}
+
+.ui-toggle-button__item:last-child {
+  border-bottom-right-radius: var(--tx-toggle-button-item-border-radius);
+  border-right-width: var(--tx-toggle-button-item-border-size);
+  border-top-right-radius: var(--tx-toggle-button-item-border-radius);
+}
+
+.ui-toggle-button__item_active {
+  background-color: var(--tx-generic-color-active);
+  border-color: var(--tx-generic-color-active);
+  color: var(--tx-generic-color-blank);
+}
+
+.ui-toggle-button__item_active::before {
+  color: var(--tx-generic-color-blank);
+  content: '\2714';
+  font-size: var(--tx-toggle-button-item-active-font-size);
+  line-height: var(--tx-toggle-button-item-active-line-height);
+  margin-right: 5px;
+  vertical-align: bottom;
+}
