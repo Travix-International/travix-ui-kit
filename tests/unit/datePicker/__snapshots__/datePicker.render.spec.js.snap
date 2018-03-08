@@ -34,6 +34,7 @@ exports[`DatePicker #render() should render DatePicker with label 1`] = `
       multiplemode={true}
       onMouseDown={[Function]}
       onSelectDay={[Function]}
+      selectionType="normal"
     />
   </div>
 </div>
@@ -66,6 +67,7 @@ exports[`DatePicker #render() should render correct DatePicker with value 1`] = 
       multiplemode={true}
       onMouseDown={[Function]}
       onSelectDay={[Function]}
+      selectionType="normal"
     />
   </div>
 </div>
@@ -99,6 +101,7 @@ exports[`DatePicker #render() should render disabled DatePicker 1`] = `
       multiplemode={true}
       onMouseDown={[Function]}
       onSelectDay={[Function]}
+      selectionType="normal"
     />
   </div>
 </div>
@@ -132,6 +135,7 @@ exports[`DatePicker #render() should render open DatePicker 1`] = `
       multiplemode={true}
       onMouseDown={[Function]}
       onSelectDay={[Function]}
+      selectionType="normal"
     />
   </div>
 </div>
