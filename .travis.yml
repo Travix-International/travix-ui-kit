@@ -1,10 +1,11 @@
 language: node_js
 
 node_js:
-  - '6'
+  - '8'
 
-before_install:
-  - set -e
+install:
+  - npm i -g npm@5.7.1 # this should be deleted once 5.7.X is out of "pre-release"
+  - npm ci             # instead of default npm install 
 
 script:
   - 'npm run ci:lint'
