@@ -1,10 +1,11 @@
 language: node_js
 
 node_js:
-  - '6'
+  - '8'
 
-before_install:
-  - set -e
+install:
+  - npm i -g npm@5
+  - npm ci
 
 script:
   - 'npm run ci:lint'
