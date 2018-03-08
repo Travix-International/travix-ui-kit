@@ -1,0 +1,20 @@
+import AutoComplete from '../autoComplete';
+
+describe('AutoComplete: highlightItem', () => {
+  const self = {
+    state: {
+      inputValue: 'Berlin (?#',
+    },
+    props: {
+      highlightRule: null,
+    },
+  };
+
+  const str = 'Berlin';
+
+  it('should not be RegExp exсeption', () => {
+    expect(() => {
+      AutoComplete.prototype.highlightItem.call(self, str);
+    }).not.toThrow(SyntaxError);
+  });
+});

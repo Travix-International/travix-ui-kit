@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { cloneElement, Children } from 'react';
 import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
-import ToggleItem from './toggleItem';
+import ToggleItem from './toggleItem/toggleItem';
 
 export default function ToggleButton(props) {
   warnAboutDeprecatedProp(props.mods, 'mods', 'className');

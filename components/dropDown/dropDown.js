@@ -4,7 +4,7 @@ import Select from 'react-select/dist/react-select';
 import classnames from 'classnames';
 
 import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
-import DropdownFilterOptionComponent from './dropdownFilterOptionComponent';
+import dropDownFilterOption from './dropDownFilterOption/dropDownFilterOption';
 
 /**
  * DropDown component
@@ -138,7 +138,7 @@ class DropDown extends Component {
           multi={filterMode ? true : multi}
           name={name}
           onChange={this.onChange}
-          optionComponent={filterMode ? DropdownFilterOptionComponent : undefined}
+          optionComponent={filterMode ? dropDownFilterOption : undefined}
           options={options}
           placeholder={placeholder}
           scrollMenuIntoView={scrollMenuIntoView}

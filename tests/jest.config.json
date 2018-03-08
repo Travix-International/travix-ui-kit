@@ -26,6 +26,9 @@
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
   ],
+  "testMatch": [
+    "**/__tests__/?(*.)(spec|test).js"
+  ],
   "transform": {
     ".*": "babel-jest"
   },
