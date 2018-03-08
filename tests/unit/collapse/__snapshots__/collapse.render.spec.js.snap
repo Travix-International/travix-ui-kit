@@ -11,6 +11,7 @@ exports[`Collapse: render should render collapse component items and first item 
   className="ui-collapse ui-collapse_accordion"
 >
   <CollapseItem
+    iconPosition="left"
     id="сid1"
     isActive={true}
     key=".0"
@@ -22,6 +23,7 @@ exports[`Collapse: render should render collapse component items and first item 
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="сid2"
     isActive={false}
     key=".1"
@@ -40,6 +42,7 @@ exports[`Collapse: render should render collapse component items with custom id 
   className="ui-collapse ui-collapse_accordion"
 >
   <CollapseItem
+    iconPosition="left"
     id="сid1"
     isActive={false}
     key=".0"
@@ -51,6 +54,7 @@ exports[`Collapse: render should render collapse component items with custom id 
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="сid2"
     isActive={false}
     key=".1"
@@ -69,6 +73,7 @@ exports[`Collapse: render should render collapse component with expanded item ba
   className="ui-collapse ui-collapse_accordion"
 >
   <CollapseItem
+    iconPosition="left"
     id="сid1"
     isActive={true}
     key=".0"
@@ -80,6 +85,7 @@ exports[`Collapse: render should render collapse component with expanded item ba
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="сid2"
     isActive={false}
     key=".1"
@@ -98,6 +104,7 @@ exports[`Collapse: render should render collapse component with expanded item by
   className="ui-collapse ui-collapse_accordion"
 >
   <CollapseItem
+    iconPosition="left"
     id="сid1"
     isActive={false}
     key=".0"
@@ -109,6 +116,7 @@ exports[`Collapse: render should render collapse component with expanded item by
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="сid2"
     isActive={true}
     key=".1"
@@ -127,6 +135,7 @@ exports[`Collapse: render should render collapse component with expanded items b
   className="ui-collapse"
 >
   <CollapseItem
+    iconPosition="left"
     id="сid1"
     isActive={true}
     key=".0"
@@ -138,6 +147,7 @@ exports[`Collapse: render should render collapse component with expanded items b
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="сid2"
     isActive={true}
     key=".1"
@@ -187,6 +197,7 @@ exports[`Collapse: render should render collapse with mod 1`] = `
   className="ui-collapse ui-collapse_collapse-mod"
 >
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.0"
     isActive={false}
     key=".0"
@@ -198,6 +209,7 @@ exports[`Collapse: render should render collapse with mod 1`] = `
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.1"
     isActive={false}
     key=".1"
@@ -216,6 +228,7 @@ exports[`Collapse: render should return "accordion" collapse component with two 
   className="ui-collapse ui-collapse_accordion"
 >
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.0"
     isActive={false}
     key=".0"
@@ -227,6 +240,7 @@ exports[`Collapse: render should return "accordion" collapse component with two 
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.1"
     isActive={false}
     key=".1"
@@ -245,6 +259,7 @@ exports[`Collapse: render should return collapse component with two items 1`] = 
   className="ui-collapse"
 >
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.0"
     isActive={false}
     key=".0"
@@ -256,6 +271,7 @@ exports[`Collapse: render should return collapse component with two items 1`] = 
     </p>
   </CollapseItem>
   <CollapseItem
+    iconPosition="left"
     id="ui-collapse-item.1"
     isActive={false}
     key=".1"
