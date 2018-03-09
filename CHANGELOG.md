@@ -1,5 +1,16 @@
 # Change Log
 
+## [v0.9.3](https://github.com/Travix-International/travix-ui-kit/tree/v0.9.3) (2018-03-08)
+[Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.9.2...v0.9.3)
+
+**Closed issues:**
+
+- Allow toggleButton to receive a JSX as items property [\#343](https://github.com/Travix-International/travix-ui-kit/issues/343)
+
+**Merged pull requests:**
+
+- Add support to JSX on ToggleButton [\#344](https://github.com/Travix-International/travix-ui-kit/pull/344) ([leandrooriente](https://github.com/leandrooriente))
+
 ## [v0.9.2](https://github.com/Travix-International/travix-ui-kit/tree/v0.9.2) (2018-03-05)
 [Full Changelog](https://github.com/Travix-International/travix-ui-kit/compare/v0.9.1...v0.9.2)
 
