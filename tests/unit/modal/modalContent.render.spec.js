@@ -32,4 +32,24 @@ describe('Modal: render', () => {
 
     expect(component).toMatchSnapshot();
   });
+
+  it('Should redner modal content with title and subtitle', () => {
+    const component = mount(
+      <ModalContent subtitle="Modal content subtitle" title="Modal content title">
+        Modal Content
+      </ModalContent>
+    );
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it('Should not redner header if only subtitle is passed', () => {
+    const component = mount(
+      <ModalContent subtitle="Modal content subtitle">
+        Modal Content
+      </ModalContent>
+    );
+
+    expect(component).toMatchSnapshot();
+  });
 });

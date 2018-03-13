@@ -6,13 +6,21 @@
   flex: 1 0 auto;
 }
 
+.ui-modal-content-block__title-block {
+  border-bottom: 2px solid var(--tx-generic-color-secondary);
+  padding: 20px;
+}
+
 .ui-modal-content-block__title {
   color: var(--tx-modal-color-dark);
   font-family: var(--tx-generic-font-secondary-font-family), var(--tx-generic-font-secondary-generic-family);
   font-size: 16px;
   font-weight: 500;
-  border-bottom: 2px solid var(--tx-generic-color-secondary);
-  padding: 24px;
+}
+
+.ui-modal-content-block__subtitle {
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .ui-modal-content-block__container {

@@ -84,32 +84,20 @@
   position: static;
   text-shadow: var(--tx-ui-button-default-disabled-text-shadow);
 
-  &.ui-button_size_xs {
-    padding: 3px 6px;
-  }
-
-  &.ui-button_size_s {
-    padding: 5px 10px;
-  }
-
-  &.ui-button_size_m {
-    line-height: 40px;
-  }
-
-  &.ui-button_size_l {
-    padding: 12px 17px;
-  }
-
-  &.ui-button_size_xl {
-    padding: 15px 20px;
-  }
-
   &.ui-button_variation_ghost {
     border: 3px solid var(--tx-ui-button-default-disabled-border-bottom);
   }
 
   &.ui-button_variation_link {
+    background: none;
     border: none;
+    opacity: 0.25;
+  }
+
+  &.ui-button_arrow-icon {
+    &:after {
+      color: var(--tx-ui-button-default-disabled-icon-arrow-color);
+    }
   }
 }
 
@@ -125,8 +113,7 @@
 
 .ui-button_size_m {
   font-size: 22px;
-  padding: 0 24px;
-  line-height: 38px;
+  padding: 8px 24px;
 }
 
 .ui-button_size_l {
@@ -156,5 +143,20 @@
     font-family: var(--tx-button-link-hover-font-family);
     font-weight: var(--tx-button-link-hover-font-weight);
     text-decoration:  var(--tx-button-link-hover-text-decoration);
+  }
+  &.ui-button_arrow-icon {
+    &:after {
+      content: "\27a4";
+      color: var(--tx-ui-button-link-icon-arrow-color);
+    }
+  }
+}
+
+.ui-button_arrow-icon {
+  &:after {
+    content: "\25B8";
+    color: var(--tx-ui-button-default-icon-arrow-color);
+    display: inline-block;
+    margin-left: 6px;
   }
 }
