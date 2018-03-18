@@ -184,10 +184,6 @@ Sliding Panel with global
       <SlidingPanel
         active={state.isSlidingPanelOpen}
         global
-        footer={[
-          <button data-rel="close" key="1">Close</button>,
-          <button key="2">Action button</button>
-          ]}
         onClose={() => setState({ isSlidingPanelOpen: false })}
       >
         <SlidingPanelHeader>
@@ -201,6 +197,11 @@ Sliding Panel with global
 
           <Button onClick={() => setState({ isOpenBaseModal: !state.isOpenBaseModal })} >Open Modal </Button>
         </SlidingPanelContent>
+
+        <SlidingPanelFooter>
+          <button data-rel="close" key="1">Close</button>
+          <button key="2">Action button</button>
+        </SlidingPanelFooter>
 
         <Modal
           active={state.isOpenBaseModal}
@@ -218,11 +219,6 @@ Sliding Panel with the sticky footer
       >Open panel</button>
       <SlidingPanel
         active={state.isSlidingPanelOpen}
-        footer={[
-          <button data-rel="close" key="close">Close</button>,
-          <button key="action">Action button</button>
-          ]}
-        onClose={() => setState({ isSlidingPanelOpen: false })}
       >
         <SlidingPanelHeader>
           Panel title
@@ -234,5 +230,10 @@ Sliding Panel with the sticky footer
           Our sliding panel.<br/><br/>
           <button data-rel="close">Close</button>
         </SlidingPanelContent>
+
+        <SlidingPanelFooter>
+          <button data-rel="close" key="close">Close</button>
+          <button key="action">Action button</button>
+        </SlidingPanelFooter>
       </SlidingPanel>
     </div>

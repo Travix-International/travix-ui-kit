@@ -260,11 +260,13 @@ exports[`SlidingPanel #render() render footer if prop has been passed and it is 
           Test
         </div>
       </SlidingPanelContent>
-      <div
-        className="ui-sliding-panel__footer"
-      >
-        test
-      </div>
+      <SlidingPanelFooter>
+        <div
+          className="ui-sliding-panel__footer"
+        >
+          test
+        </div>
+      </SlidingPanelFooter>
     </div>
   </div>
 </SlidingPanel>

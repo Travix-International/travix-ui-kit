@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import SlidingPanelHeader from './slidingPanelHeader/slidingPanelHeader';
+import SlidingPanelFooter from './slidingPanelFooter/slidingPanelFooter';
 import Global from '../global/global';
 import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
@@ -14,6 +15,7 @@ export default class SlidingPanel extends Component {
   };
 
   componentWillMount() {
+    warnAboutDeprecatedProp(this.props.footer, 'footer', 'SlidingPanelFooter component');
     warnAboutDeprecatedProp(this.props.leftBlock, 'leftBlock', 'SlidingPanelHeader component');
     warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
     warnAboutDeprecatedProp(this.props.onBackButtonClick, 'onBackButtonClick', 'SlidingPanelHeader component');
@@ -127,19 +129,8 @@ export default class SlidingPanel extends Component {
 
     panelMods.push(direction);
 
-    const panelClass = 'ui-sliding-panel';
-    const panelClassName = classnames(getClassNamesWithMods(panelClass, panelMods), className);
-
-    const overlayClass = 'ui-sliding-panel-overlay';
-    const overlayClassName = getClassNamesWithMods(overlayClass, overlayMods);
-
-    const subheaderClass = 'ui-sliding-panel__subheader';
-
-    const footerBlock = footer ? (
-      <div className="ui-sliding-panel__footer">
-        {footer}
-      </div>
-    ) : null;
+    const panelClassName = classnames(getClassNamesWithMods('ui-sliding-panel', panelMods), className);
+    const overlayClassName = getClassNamesWithMods('ui-sliding-panel-overlay', overlayMods);
 
     const content = (
       <div className={overlayClassName} onClick={this.handleClickOverlay}>
@@ -161,14 +152,18 @@ export default class SlidingPanel extends Component {
           ) }
 
           { subheader && (
-            <div className={subheaderClass}>
+            <div className="ui-sliding-panel__subheader">
               {subheader}
             </div>
           ) }
 
           {children}
 
-          {footerBlock}
+          { footer && (
+            <SlidingPanelFooter>
+              {footer}
+            </SlidingPanelFooter>
+          ) }
         </div>
       </div>
     );

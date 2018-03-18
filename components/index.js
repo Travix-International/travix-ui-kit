@@ -26,6 +26,7 @@ import SelectionBlock from './selectionBlock/selectionBlock';
 import SlidingPanel from './slidingPanel/slidingPanel';
 import SlidingPanelHeader from './slidingPanel/slidingPanelHeader/slidingPanelHeader';
 import SlidingPanelContent from './slidingPanel/slidingPanelContent/slidingPanelContent';
+import SlidingPanelFooter from './slidingPanel/slidingPanelFooter/slidingPanelFooter';
 import Spinner from './spinner/spinner';
 import Tab from './tabs/tab';
 import Tabs from './tabs/tabs';
@@ -62,6 +63,7 @@ export default {
   SlidingPanel,
   SlidingPanelHeader,
   SlidingPanelContent,
+  SlidingPanelFooter,
   Spinner,
   Tab,
   Tabs,
