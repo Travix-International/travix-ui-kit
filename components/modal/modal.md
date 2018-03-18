@@ -130,8 +130,7 @@ Basic Modal:
             <Modal
               active={state.isOpenModalWithCard}
               isSmall
-              onClose={(e) => {
-                e.persist();
+              onClose={() => {
                 setState({ isOpenModalWithCard: false });
               }}>
                 Modal Content
