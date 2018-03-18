@@ -283,6 +283,9 @@ exports[`SlidingPanel #render() render header if title prop is passed 1`] = `
     <div
       class="ui-sliding-panel-header"
     >
+      <div
+        class="ui-sliding-panel-header__left-block"
+      />
       <h3
         class="ui-sliding-panel-header__title"
       >

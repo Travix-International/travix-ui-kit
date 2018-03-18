@@ -47,28 +47,22 @@ const SlidingPanelHeader = ({
     </button>
   );
 
-  const left = headerLeftBlock && (
-    <div className="ui-sliding-panel-header__left-block">
-      {leftBlock}
-    </div>
-  );
-
-  const right = (
-    <div className="ui-sliding-panel-header__right-block">
-      {rightBlock || defaultCloseButton}
-    </div>
-  );
-
   return (
     <div
       className={headerClassName}
       {...getDataAttributes(dataAttrs)}
     >
-      {left}
+      <div className="ui-sliding-panel-header__left-block">
+        {headerLeftBlock}
+      </div>
+
       <h3 className="ui-sliding-panel-header__title">
         {children}
       </h3>
-      {right}
+
+      <div className="ui-sliding-panel-header__right-block">
+        {rightBlock || defaultCloseButton}
+      </div>
     </div>
   );
 };
