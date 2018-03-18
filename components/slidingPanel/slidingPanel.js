@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import SlidingPanelHeader from './slidingPanelHeader';
+import SlidingPanelHeader from './slidingPanelHeader/slidingPanelHeader';
 import Global from '../global/global';
 import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 

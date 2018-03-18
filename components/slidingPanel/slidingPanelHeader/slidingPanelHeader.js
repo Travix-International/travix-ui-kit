@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { getDataAttributes } from '../_helpers';
+import { getDataAttributes } from '../../_helpers';
 
 const renderDefaultLeftBlock = (backButtonLabel, onBackButtonClick) => (
   <button

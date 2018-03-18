@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import SlidingPanelHeader from '../../../components/slidingPanel/slidingPanelHeader';
+import SlidingPanelHeader from '../../../components/slidingPanel/slidingPanelHeader/slidingPanelHeader';
 
 jest.useFakeTimers();
 
