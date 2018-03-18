@@ -1,0 +1,6 @@
+.ui-sliding-panel__content {
+  flex: var(--tx-sliding-panel-content-flex);
+  overflow: var(--tx-sliding-panel-content-overflow);
+  overflow-y: var(--tx-sliding-panel-content-overflow-y);
+  padding: 20px;
+}

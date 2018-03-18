@@ -7,12 +7,17 @@ Basic Sliding Panel:
       <SlidingPanel
         active={state.isSlidingPanelOpen}
         onClose={() => setState({ isSlidingPanelOpen: false })}
-        title="Panel Title"
       >
-        This is an example<br/>
-        Of how simple it is to use<br/>
-        Our sliding panel.<br/><br/>
-        <button data-rel="close">Close</button>
+        <SlidingPanelHeader>
+          Panel title
+        </SlidingPanelHeader>
+
+        <SlidingPanelContent>
+          This is an example<br/>
+          Of how simple it is to use<br/>
+          Our sliding panel.<br/><br/>
+          <button data-rel="close">Close</button>
+        </SlidingPanelContent>
       </SlidingPanel>
     </div>
 
@@ -26,12 +31,17 @@ Sliding Panel with custom width:
         active={state.isSlidingPanelOpen}
         onClose={() => setState({ isSlidingPanelOpen: false })}
         width="720px"
-        title="Panel Title"
       >
-        This is an example<br/>
-        Of how simple it is to use<br/>
-        Our sliding panel.<br/><br/>
-        <button data-rel="close">Close</button>
+        <SlidingPanelHeader>
+          Panel title
+        </SlidingPanelHeader>
+
+        <SlidingPanelContent>
+          This is an example<br/>
+          Of how simple it is to use<br/>
+          Our sliding panel.<br/><br/>
+          <button data-rel="close">Close</button>
+        </SlidingPanelContent>
       </SlidingPanel>
     </div>
 
@@ -45,12 +55,17 @@ Sliding Panel with preclosing hook:
         active={state.isSlidingPanelOpen}
         onTryingToClose={() => alert('You are trying to close a sidepanel.')}
         onClose={() => setState({ isSlidingPanelOpen: false })}
-        title="Panel Title"
       >
-        This is an example<br/>
-        Of how simple it is to use<br/>
-        Our sliding panel.<br/><br/>
-        <button data-rel="close">Close</button>
+        <SlidingPanelHeader>
+          Panel title
+        </SlidingPanelHeader>
+
+        <SlidingPanelContent>
+          This is an example<br/>
+          Of how simple it is to use<br/>
+          Our sliding panel.<br/><br/>
+          <button data-rel="close">Close</button>
+        </SlidingPanelContent>
       </SlidingPanel>
     </div>
 
@@ -64,12 +79,17 @@ Sliding Panel with preclosing hook which prevent closing:
         active={state.isSlidingPanelOpen}
         onTryingToClose={() => confirm('Are you sure you want to exit?')}
         onClose={() => setState({ isSlidingPanelOpen: false })}
-        title="Panel Title"
       >
-        This is an example<br/>
-        Of how simple it is to use<br/>
-        Our sliding panel.<br/><br/>
-        <button data-rel="close">Close</button>
+        <SlidingPanelHeader>
+          Panel title
+        </SlidingPanelHeader>
+
+        <SlidingPanelContent>
+          This is an example<br/>
+          Of how simple it is to use<br/>
+          Our sliding panel.<br/><br/>
+          <button data-rel="close">Close</button>
+        </SlidingPanelContent>
       </SlidingPanel>
     </div>
 
@@ -83,14 +103,20 @@ Sliding Panel with custom left and right blocks in the header:
       <SlidingPanel
         active={state.isSlidingPanelOpen}
         onClose={() => setState({ isSlidingPanelOpen: false })}
-        rightBlock={<button data-rel="close"> close me! </button>}
-        leftBlock={<button data-rel="close"> ← </button>}
-        title="Panel Title"
       >
-        This is an example<br/>
-        Of how simple it is to use<br/>
-        Our sliding panel.<br/><br/>
-        <button data-rel="close">Close</button>
+        <SlidingPanelHeader
+          rightBlock={<button data-rel="close"> close me! </button>}
+          leftBlock={<button data-rel="close"> ← </button>}
+        >
+          Panel title
+        </SlidingPanelHeader>
+
+        <SlidingPanelContent>
+          This is an example<br/>
+          Of how simple it is to use<br/>
+          Our sliding panel.<br/><br/>
+          <button data-rel="close">Close</button>
+        </SlidingPanelContent>
       </SlidingPanel>
     </div>
 
@@ -104,37 +130,17 @@ Sliding Panel opening from the left:
         active={state.isSlidingPanelOpen}
         direction='left'
         onClose={() => setState({ isSlidingPanelOpen: false })}
-        title="Panel Title"
       >
-        This is an example<br/>
-        Of how simple it is to use<br/>
-        Our sliding panel.<br/><br/>
-        <button data-rel="close">Close</button>
-      </SlidingPanel>
-    </div>
+        <SlidingPanelHeader>
+          Panel title
+        </SlidingPanelHeader>
 
-Sliding Panel with custom subheader
-
-    <div>
-      <button
-        onClick={() => setState({ isSlidingPanelOpen: !state.isSlidingPanelOpen })}
-      >Open panel</button>
-      <SlidingPanel
-        active={state.isSlidingPanelOpen}
-        onClose={() => setState({ isSlidingPanelOpen: false })}
-        subheader={
-          <div
-            style={{background: '#ffd05e', height: '96px' }}>
-              * Additional information.
-          </div>
-        }
-        width="720px"
-        title="Panel Title"
-      >
-        This is an example<br/>
-        Of how simple it is to use<br/>
-        Our sliding panel.<br/><br/>
-        <button data-rel="close">Close</button>
+        <SlidingPanelContent>
+          This is an example<br/>
+          Of how simple it is to use<br/>
+          Our sliding panel.<br/><br/>
+          <button data-rel="close">Close</button>
+        </SlidingPanelContent>
       </SlidingPanel>
     </div>
 
@@ -148,18 +154,24 @@ Sliding Panel with default block with back button
         width="750px"
         active={state.isSlidingPanelOpen}
         onClose={() => setState({ isSlidingPanelOpen: false })}
-        useDefaultLeftBlock={true}
-        backButtonLabel="Back to the website"
-        onBackButtonClick={() => {
-          alert('Going back...');
-          setState({ isSlidingPanelOpen: false });
-        }}
-        title="Panel Title"
       >
-        This is an example<br/>
-        Of how simple it is to use<br/>
-        Our sliding panel.<br/><br/>
-        <button data-rel="close">Close</button>
+        <SlidingPanelHeader
+          backButtonLabel="Back to the website"
+          onBackButtonClick={() => {
+            alert('Going back...');
+            setState({ isSlidingPanelOpen: false });
+          }}
+          useDefaultLeftBlock={true}
+        >
+          Panel title
+        </SlidingPanelHeader>
+
+        <SlidingPanelContent>
+          This is an example<br/>
+          Of how simple it is to use<br/>
+          Our sliding panel.<br/><br/>
+          <button data-rel="close">Close</button>
+        </SlidingPanelContent>
       </SlidingPanel>
     </div>
 
@@ -177,15 +189,19 @@ Sliding Panel with global
           <button key="2">Action button</button>
           ]}
         onClose={() => setState({ isSlidingPanelOpen: false })}
-        title="Panel Title"
       >
-        <div>
-        This is an example<br/>
-        Of how simple it is to use<br/>
-        Our sliding panel.<br/><br/>
-        This is an example<br/>
-        </div>
-        <Button onClick={() => setState({ isOpenBaseModal: !state.isOpenBaseModal })} >Open Modal </Button>
+        <SlidingPanelHeader>
+          Panel title
+        </SlidingPanelHeader>
+
+        <SlidingPanelContent>
+          This is an example<br/>
+          Of how simple it is to use<br/>
+          Our sliding panel.<br/><br/>
+
+          <Button onClick={() => setState({ isOpenBaseModal: !state.isOpenBaseModal })} >Open Modal </Button>
+        </SlidingPanelContent>
+
         <Modal
           active={state.isOpenBaseModal}
           onClose={() => setState({ isOpenBaseModal: false })}>
@@ -207,11 +223,16 @@ Sliding Panel with the sticky footer
           <button key="action">Action button</button>
           ]}
         onClose={() => setState({ isSlidingPanelOpen: false })}
-        title="Panel Title"
       >
-        This is an example<br/>
-        Of how simple it is to use<br/>
-        Our sliding panel.<br/><br/>
-        This is an example<br/>
+        <SlidingPanelHeader>
+          Panel title
+        </SlidingPanelHeader>
+
+        <SlidingPanelContent>
+          This is an example<br/>
+          Of how simple it is to use<br/>
+          Our sliding panel.<br/><br/>
+          <button data-rel="close">Close</button>
+        </SlidingPanelContent>
       </SlidingPanel>
     </div>

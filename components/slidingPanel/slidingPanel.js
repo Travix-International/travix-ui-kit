@@ -18,6 +18,7 @@ export default class SlidingPanel extends Component {
     warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
     warnAboutDeprecatedProp(this.props.onBackButtonClick, 'onBackButtonClick', 'SlidingPanelHeader component');
     warnAboutDeprecatedProp(this.props.rightBlock, 'rightBlock', 'SlidingPanelHeader component');
+    warnAboutDeprecatedProp(this.props.subheader, 'subheader', 'SlidingPanel component without SlidingPanelContent');
     warnAboutDeprecatedProp(this.props.title, 'title', 'SlidingPanelHeader component children');
     warnAboutDeprecatedProp(this.props.useDefaultLeftBlock, 'useDefaultLeftBlock', 'SlidingPanelHeader component');
   }
@@ -165,9 +166,7 @@ export default class SlidingPanel extends Component {
             </div>
           ) }
 
-          <div className="ui-sliding-panel__content">
-            {children}
-          </div>
+          {children}
 
           {footerBlock}
         </div>

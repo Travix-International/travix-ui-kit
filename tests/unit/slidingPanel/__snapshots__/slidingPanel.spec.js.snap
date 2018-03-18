@@ -123,11 +123,7 @@ exports[`SlidingPanel #render() do not render footer if prop is not passed or fa
           "width": "480px",
         }
       }
-    >
-      <div
-        className="ui-sliding-panel__content"
-      />
-    </div>
+    />
   </div>
 </SlidingPanel>
 `;
@@ -140,15 +136,11 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
     class="ui-sliding-panel ui-sliding-panel_active ui-sliding-panel_right"
     style="width: 480px;"
   >
-    <div
-      class="ui-sliding-panel__content"
+    <button
+      data-rel="close"
     >
-      <button
-        data-rel="close"
-      >
-        Test
-      </button>
-    </div>
+      Test
+    </button>
   </div>
 </div>
 `;
@@ -161,15 +153,11 @@ exports[`SlidingPanel #render() enables [data-rel="close"] element provided on t
     class="ui-sliding-panel ui-sliding-panel_right"
     style="width: 480px;"
   >
-    <div
-      class="ui-sliding-panel__content"
+    <button
+      data-rel="close"
     >
-      <button
-        data-rel="close"
-      >
-        Test
-      </button>
-    </div>
+      Test
+    </button>
   </div>
 </div>
 `;
@@ -265,11 +253,13 @@ exports[`SlidingPanel #render() render footer if prop has been passed and it is 
         }
       }
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      <SlidingPanelContent>
+        <div
+          className="ui-sliding-panel__content"
+        >
+          Test
+        </div>
+      </SlidingPanelContent>
       <div
         className="ui-sliding-panel__footer"
       >
@@ -349,11 +339,13 @@ exports[`SlidingPanel #render() render with custom subheader 1`] = `
           className="custom-class"
         />
       </div>
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      <SlidingPanelContent>
+        <div
+          className="ui-sliding-panel__content"
+        >
+          Test
+        </div>
+      </SlidingPanelContent>
     </div>
   </div>
 </SlidingPanel>
@@ -381,11 +373,13 @@ exports[`SlidingPanel #render() render with custom width 1`] = `
         }
       }
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      <SlidingPanelContent>
+        <div
+          className="ui-sliding-panel__content"
+        >
+          Test
+        </div>
+      </SlidingPanelContent>
     </div>
   </div>
 </SlidingPanel>
@@ -415,11 +409,13 @@ exports[`SlidingPanel #render() render with default block with back button and a
         }
       }
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      <SlidingPanelContent>
+        <div
+          className="ui-sliding-panel__content"
+        >
+          Test
+        </div>
+      </SlidingPanelContent>
     </div>
   </div>
 </SlidingPanel>
@@ -448,11 +444,13 @@ exports[`SlidingPanel #render() render with default block with back button and a
         }
       }
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      <SlidingPanelContent>
+        <div
+          className="ui-sliding-panel__content"
+        >
+          Test
+        </div>
+      </SlidingPanelContent>
     </div>
   </div>
 </SlidingPanel>
@@ -503,11 +501,13 @@ exports[`SlidingPanel #render() render with global mode 1`] = `
             }
           }
         >
-          <div
-            className="ui-sliding-panel__content"
-          >
-            Test
-          </div>
+          <SlidingPanelContent>
+            <div
+              className="ui-sliding-panel__content"
+            >
+              Test
+            </div>
+          </SlidingPanelContent>
         </div>
       </div>
     </div>
@@ -542,11 +542,13 @@ exports[`SlidingPanel #render() render with left direction 1`] = `
         }
       }
     >
-      <div
-        className="ui-sliding-panel__content"
-      >
-        Test
-      </div>
+      <SlidingPanelContent>
+        <div
+          className="ui-sliding-panel__content"
+        >
+          Test
+        </div>
+      </SlidingPanelContent>
     </div>
   </div>
 </SlidingPanel>
@@ -574,11 +576,7 @@ exports[`SlidingPanel #render() should render SlidingPanel with provided classNa
           "width": "480px",
         }
       }
-    >
-      <div
-        className="ui-sliding-panel__content"
-      />
-    </div>
+    />
   </div>
 </SlidingPanel>
 `;
