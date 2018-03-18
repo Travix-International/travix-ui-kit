@@ -8,23 +8,17 @@ import Global from '../global/global';
 import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 export default class SlidingPanel extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { isOverlayHidden: true, isActive: false };
-
-    this.handleClickOverlay = this.handleClickOverlay.bind(this);
-    this.handleActive = this.handleActive.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-    this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
-  }
+  state = {
+    isActive: false,
+    isOverlayHidden: true,
+  };
 
   componentWillMount() {
-    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
-    warnAboutDeprecatedProp(this.props.title, 'title', 'SlidingPanelHeader component');
     warnAboutDeprecatedProp(this.props.leftBlock, 'leftBlock', 'SlidingPanelHeader component');
+    warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
     warnAboutDeprecatedProp(this.props.onBackButtonClick, 'onBackButtonClick', 'SlidingPanelHeader component');
     warnAboutDeprecatedProp(this.props.rightBlock, 'rightBlock', 'SlidingPanelHeader component');
+    warnAboutDeprecatedProp(this.props.title, 'title', 'SlidingPanelHeader component children');
     warnAboutDeprecatedProp(this.props.useDefaultLeftBlock, 'useDefaultLeftBlock', 'SlidingPanelHeader component');
   }
 
@@ -58,7 +52,7 @@ export default class SlidingPanel extends Component {
    * @method handleClickOverlay
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
-  handleClickOverlay(e) {
+  handleClickOverlay = (e) => {
     if ((e.target === e.currentTarget) && this.props.closeOnOverlayClick) {
       this.handleClose(e);
     }
@@ -70,7 +64,7 @@ export default class SlidingPanel extends Component {
    * @method handleClose
    * @param {SyntheticEvent} e Click event trapped in the overlay element or close button
    */
-  handleClose(e) {
+  handleClose = (e) => {
     const { onTryingToClose } = this.props;
 
     if (onTryingToClose && onTryingToClose(e) === false) {
@@ -85,7 +79,7 @@ export default class SlidingPanel extends Component {
    *
    * @method handleActive
    */
-  handleActive() {
+  handleActive = () => {
     const { onOpen } = this.props;
 
     this.setState({ isOverlayHidden: false, isActive: true }, () => {
@@ -93,7 +87,7 @@ export default class SlidingPanel extends Component {
     });
   }
 
-  handleAnimationEnd() {
+  handleAnimationEnd = () => {
     const { onClose } = this.props;
     this.setState({ isOverlayHidden: !this.state.isActive }, () => {
       if (this.state.isOverlayHidden && onClose) {
