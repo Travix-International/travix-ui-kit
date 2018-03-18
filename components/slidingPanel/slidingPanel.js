@@ -21,6 +21,11 @@ export default class SlidingPanel extends Component {
 
   componentWillMount() {
     warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
+    warnAboutDeprecatedProp(this.props.title, 'title', 'SlidingPanelHeader component');
+    warnAboutDeprecatedProp(this.props.leftBlock, 'leftBlock', 'SlidingPanelHeader component');
+    warnAboutDeprecatedProp(this.props.onBackButtonClick, 'onBackButtonClick', 'SlidingPanelHeader component');
+    warnAboutDeprecatedProp(this.props.rightBlock, 'rightBlock', 'SlidingPanelHeader component');
+    warnAboutDeprecatedProp(this.props.useDefaultLeftBlock, 'useDefaultLeftBlock', 'SlidingPanelHeader component');
   }
 
   componentWillReceiveProps(newProps) {
@@ -97,21 +102,6 @@ export default class SlidingPanel extends Component {
     });
   }
 
-  renderDefaultLeftBlock() {
-    const { backButtonLabel, onBackButtonClick } = this.props;
-    return (
-      <button
-        className="ui-sliding-panel-header__left-block-back"
-        onClick={onBackButtonClick}
-      >
-        <span className="ui-sliding-panel-header__left-block-back-icon" />
-        <span className="ui-sliding-panel-header__left-block-back-text">
-          {backButtonLabel}
-        </span>
-      </button>
-    );
-  }
-
   render() {
     const {
       children,
@@ -121,16 +111,13 @@ export default class SlidingPanel extends Component {
       footer,
       leftBlock,
       global,
+      onBackButtonClick,
       rightBlock,
       subheader,
       title,
       useDefaultLeftBlock,
       width,
     } = this.props;
-
-    const headerLeftBlock = useDefaultLeftBlock
-      ? this.renderDefaultLeftBlock()
-      : leftBlock;
 
     const overlayMods = [];
     const panelMods = this.props.mods ? this.props.mods.slice() : [];
@@ -167,22 +154,27 @@ export default class SlidingPanel extends Component {
           style={{ width }}
           {...getDataAttributes(dataAttrs)}
         >
-          {title &&
+          { title && (
             <SlidingPanelHeader
-              leftBlock={headerLeftBlock}
+              leftBlock={leftBlock}
+              onBackButtonClick={onBackButtonClick}
               rightBlock={rightBlock}
-              title={title}
-            />}
-          {
-            subheader && (
-              <div className={subheaderClass}>
-                {subheader}
-              </div>
-            )
-          }
+              useDefaultLeftBlock={useDefaultLeftBlock}
+            >
+              { title }
+            </SlidingPanelHeader>
+          ) }
+
+          { subheader && (
+            <div className={subheaderClass}>
+              {subheader}
+            </div>
+          ) }
+
           <div className="ui-sliding-panel__content">
             {children}
           </div>
+
           {footerBlock}
         </div>
       </div>

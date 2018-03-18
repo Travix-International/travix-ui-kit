@@ -1,6 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SlidingPanel #render() render noscript without title 1`] = `<SlidingPanelHeader />`;
+exports[`SlidingPanel #render() render noscript without children 1`] = `
+<SlidingPanelHeader
+  useDefaultLeftBlock={false}
+/>
+`;
+
+exports[`SlidingPanel #render() render with children 1`] = `
+<SlidingPanelHeader
+  useDefaultLeftBlock={false}
+>
+  <div
+    className="ui-sliding-panel-header"
+  >
+    <h3
+      className="ui-sliding-panel-header__title"
+    >
+      Test Title
+    </h3>
+    <div
+      className="ui-sliding-panel-header__right-block"
+    >
+      <button
+        className="ui-sliding-panel-header__close-button"
+        data-rel="close"
+      >
+        ×
+      </button>
+    </div>
+  </div>
+</SlidingPanelHeader>
+`;
 
 exports[`SlidingPanel #render() render with custom left and right blocks 1`] = `
 <SlidingPanelHeader
@@ -28,7 +58,7 @@ exports[`SlidingPanel #render() render with custom left and right blocks 1`] = `
        close me! 
     </button>
   }
-  title="Test Title"
+  useDefaultLeftBlock={false}
 >
   <div
     className="ui-sliding-panel-header"
@@ -70,17 +100,63 @@ exports[`SlidingPanel #render() render with custom left and right blocks 1`] = `
 </SlidingPanelHeader>
 `;
 
-exports[`SlidingPanel #render() render with title 1`] = `
+exports[`SlidingPanel #render() should render with backButtonLabel and onBackButtonClick 1`] = `
 <SlidingPanelHeader
-  title="Test Title"
+  backButtonLabel="foo"
+  onBackButtonClick={[MockFunction]}
+  useDefaultLeftBlock={true}
 >
   <div
     className="ui-sliding-panel-header"
   >
+    <div
+      className="ui-sliding-panel-header__left-block"
+    />
     <h3
       className="ui-sliding-panel-header__title"
     >
-      Test Title
+      <span
+        className="my-class"
+      >
+         my label 
+      </span>
+    </h3>
+    <div
+      className="ui-sliding-panel-header__right-block"
+    >
+      <button
+        className="ui-sliding-panel-header__close-button"
+        data-rel="close"
+      >
+        ×
+      </button>
+    </div>
+  </div>
+</SlidingPanelHeader>
+`;
+
+exports[`SlidingPanel #render() should render with dataAttr and className 1`] = `
+<SlidingPanelHeader
+  className="foo"
+  dataAttrs={
+    Object {
+      "foo": "bar",
+    }
+  }
+  useDefaultLeftBlock={false}
+>
+  <div
+    className="ui-sliding-panel-header foo"
+    data-foo="bar"
+  >
+    <h3
+      className="ui-sliding-panel-header__title"
+    >
+      <span
+        className="my-class"
+      >
+         my label 
+      </span>
     </h3>
     <div
       className="ui-sliding-panel-header__right-block"

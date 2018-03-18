@@ -6,7 +6,7 @@ jest.useFakeTimers();
 
 describe('SlidingPanel', () => {
   describe('#render()', () => {
-    it('render noscript without title', () => {
+    it('render noscript without children', () => {
       const renderTree = mount(
         <SlidingPanelHeader />
       );
@@ -16,10 +16,12 @@ describe('SlidingPanel', () => {
       expect(renderTree).toMatchSnapshot();
     });
 
-    it('render with title', () => {
+    it('render with children', () => {
       const title = 'Test Title';
       const renderTree = mount(
-        <SlidingPanelHeader title={title} />
+        <SlidingPanelHeader>
+          { title }
+        </SlidingPanelHeader>
       );
 
       const titleEl = renderTree.find('.ui-sliding-panel-header__title');
@@ -36,8 +38,9 @@ describe('SlidingPanel', () => {
         <SlidingPanelHeader
           leftBlock={<button data-rel="close" style={{ marginLeft: '15px' }}> ← </button>}
           rightBlock={<button data-rel="close" style={{ marginRight: '15px' }}> close me! </button>}
-          title={title}
-        />
+        >
+          {title}
+        </SlidingPanelHeader>
       );
 
       const titleEl = renderTree.find('.ui-sliding-panel-header__title');
@@ -54,8 +57,9 @@ describe('SlidingPanel', () => {
         <SlidingPanelHeader
           leftBlock={<button data-rel="close" style={{ marginLeft: '15px' }}> ← </button>}
           rightBlock={<button data-rel="close" style={{ marginRight: '15px' }}> close me! </button>}
-          title={title}
-        />
+        >
+          { title }
+        </SlidingPanelHeader>
       );
 
       const titleEl = renderTree.find('.ui-sliding-panel-header__title');
@@ -65,6 +69,40 @@ describe('SlidingPanel', () => {
 
       expect(titleEl).toHaveLength(1);
       expect(titleContent).toHaveLength(1);
+    });
+
+    it('should render with backButtonLabel and onBackButtonClick', () => {
+      const title = <span className="my-class"> my label </span>;
+      const backButtonClick = jest.fn();
+      const renderTree = mount(
+        <SlidingPanelHeader
+          backButtonLabel="foo"
+          onBackButtonClick={backButtonClick}
+          useDefaultLeftBlock
+        >
+          { title }
+        </SlidingPanelHeader>
+      );
+
+      jest.runAllTimers();
+
+      expect(renderTree).toMatchSnapshot();
+    });
+
+    it('should render with dataAttr and className', () => {
+      const title = <span className="my-class"> my label </span>;
+      const renderTree = mount(
+        <SlidingPanelHeader
+          className="foo"
+          dataAttrs={{ foo: 'bar' }}
+        >
+          { title }
+        </SlidingPanelHeader>
+      );
+
+      jest.runAllTimers();
+
+      expect(renderTree).toMatchSnapshot();
     });
   });
 });
