@@ -76,10 +76,7 @@ SlidingPanelHeader.propTypes = {
   /**
    * Content, that will be wrapped by SlidingPanel
    */
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
 
   /**
    * Attribute used to set specific classes
