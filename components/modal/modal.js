@@ -37,7 +37,7 @@ class Modal extends Component {
       if (newProps.active) {
         this.open();
       } else {
-        this.close();
+        this.state.isActive && this.close();
       }
     }
   }
@@ -56,12 +56,15 @@ class Modal extends Component {
   }
 
   close(e) {
-    if (typeof this.props.onClose === 'function') {
-      this.props.onClose(e);
-    }
     global.window.requestAnimationFrame(() => {
       this.setState({ isActive: false });
-      setTimeout(() => this.setState({ isOpen: false }), this.props.delay);
+      setTimeout(() => {
+        this.setState({ isOpen: false }, () => {
+          if (typeof this.props.onClose === 'function') {
+            this.props.onClose(e);
+          }
+        });
+      }, this.props.delay);
     });
   }
 
@@ -140,7 +143,7 @@ class Modal extends Component {
         onClick={this.handleClose}
         type="button"
       >
-        <span>{this.props.closeButtonText}</span>
+        <span className="ui-modal__close-button-text">{this.props.closeButtonText}</span>
       </button>
     );
   }
@@ -189,7 +192,7 @@ class Modal extends Component {
     const classes = classnames(className, classNameWithMods);
 
     return (
-      <Global className={classes} {...getDataAttributes(dataAttrs)}>
+      <Global className={classes} {...getDataAttributes(dataAttrs)} noscroll={isOpen}>
         {this.renderOverlay()}
         <div className={'ui-modal__container'}>
           {this.renderHeader()}

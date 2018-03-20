@@ -55,7 +55,7 @@ export default class SlidingPanel extends Component {
    */
   handleClickOverlay(e) {
     if ((e.target === e.currentTarget) && this.props.closeOnOverlayClick) {
-      this.handleClose();
+      this.handleClose(e);
     }
   }
 
@@ -63,12 +63,12 @@ export default class SlidingPanel extends Component {
    * Closes the panel.
    *
    * @method handleClose
-   * @param {SyntheticEvent} e Click event trapped in the overlay element
+   * @param {SyntheticEvent} e Click event trapped in the overlay element or close button
    */
-  handleClose() {
+  handleClose(e) {
     const { onTryingToClose } = this.props;
 
-    if (onTryingToClose && onTryingToClose() === false) {
+    if (onTryingToClose && onTryingToClose(e) === false) {
       return;
     }
 
@@ -100,17 +100,15 @@ export default class SlidingPanel extends Component {
   renderDefaultLeftBlock() {
     const { backButtonLabel, onBackButtonClick } = this.props;
     return (
-      <span>
-        <button
-          className="ui-sliding-panel-header__left-block-back"
-          onClick={onBackButtonClick}
-        >
-          <span className="ui-sliding-panel-header__left-block-back-icon" />
-          <span className="ui-sliding-panel-header__left-block-back-text">
-            {backButtonLabel}
-          </span>
-        </button>
-      </span>
+      <button
+        className="ui-sliding-panel-header__left-block-back"
+        onClick={onBackButtonClick}
+      >
+        <span className="ui-sliding-panel-header__left-block-back-icon" />
+        <span className="ui-sliding-panel-header__left-block-back-text">
+          {backButtonLabel}
+        </span>
+      </button>
     );
   }
 
@@ -276,6 +274,9 @@ SlidingPanel.propTypes = {
 
   /**
    * Hook that will be executed when trying to close a panel if exists.
+   * In case, of an event is passed as argument into this function it
+   * was triggered as handler for click on some DOM element.
+   * In another case, panel is trying to close via changing props.
    * If it returns false, the panel won't be closed.
    */
   onTryingToClose: PropTypes.func,
