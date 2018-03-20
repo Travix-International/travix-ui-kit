@@ -79,11 +79,7 @@ exports[`Badge should render badge with provided className 1`] = `
 
 exports[`Badge should render badge with provided dataAttrs 1`] = `
 <div
-<<<<<<< HEAD
-  className="ui-badge-badge"
-=======
   className="ui-badge-badge ui-badge-badge_start"
->>>>>>> master
   data-test-data-attr="test"
 >
   Badge title

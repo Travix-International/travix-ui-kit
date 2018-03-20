@@ -391,10 +391,11 @@ exports[`Modal: render should render modal with provided className 1`] = `
 >
   <Global
     className="test-cls ui-modal ui-modal_active"
-    noscroll={true}
+    noscroll={false}
   >
     <div
       className="test-cls ui-modal ui-modal_active"
+      onClick={[Function]}
     >
       <div
         className="ui-modal__overlay"
@@ -438,10 +439,11 @@ exports[`Modal: render should render modal with provided dataAttrs 1`] = `
   <Global
     className="ui-modal ui-modal_active"
     data-gtm="id"
-    noscroll={true}
+    noscroll={false}
   >
     <div
       className="ui-modal ui-modal_active"
+      onClick={[Function]}
     >
       <div
         className="ui-modal__overlay"
