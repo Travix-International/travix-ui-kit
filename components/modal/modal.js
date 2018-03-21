@@ -191,7 +191,7 @@ class Modal extends Component {
     const classes = classnames(className, classNameWithMods);
 
     return (
-      <Global className={classes}>
+      <Global className={classes} noscroll={isOpen}>
         {this.renderOverlay()}
         <div className={'ui-modal__container'}>
           {this.renderHeader()}
