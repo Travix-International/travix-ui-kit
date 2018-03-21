@@ -6,17 +6,14 @@ module.exports = {
   template: './styleguide.html',
   components: 'components/**/*.js',
   skipComponentsWithoutExample: true,
-  getExampleFilename: function(componentPath) {
-    return componentPath.replace(/\.jsx?$/, '.md');
-  },
   require: ['babel-polyfill'],
   webpackConfig: {
     module: {
       rules: [
         {
           test: /\.js?$/,
-          include: path.join(__dirname, 'components'),
-          use: 'babel-loader',
+          exclude: path.join(__dirname, 'node_modules'),
+          use: 'babel-loader?compact=true',
         },
       ],
     },
