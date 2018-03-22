@@ -140,30 +140,30 @@ export default class SlidingPanel extends Component {
           style={{ width }}
           {...getDataAttributes(dataAttrs)}
         >
-          { title && (
+          {title && (
             <SlidingPanelHeader
               leftBlock={leftBlock}
               onBackButtonClick={onBackButtonClick}
               rightBlock={rightBlock}
               useDefaultLeftBlock={useDefaultLeftBlock}
             >
-              { title }
+              {title}
             </SlidingPanelHeader>
-          ) }
+          )}
 
-          { subheader && (
+          {subheader && (
             <div className="ui-sliding-panel__subheader">
               {subheader}
             </div>
-          ) }
+          )}
 
           {children}
 
-          { footer && (
+          {footer && (
             <SlidingPanelFooter>
               {footer}
             </SlidingPanelFooter>
-          ) }
+          )}
         </div>
       </div>
     );
