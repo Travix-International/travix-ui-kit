@@ -187,6 +187,30 @@ describe('Modal: render', () => {
     expect(component).toMatchSnapshot();
   });
 
+  it('should render modal with provided className', () => {
+    const wrapper = mount(
+      <Modal
+        active
+        className="test-cls"
+      >
+        Modal Content
+      </Modal>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render modal with provided dataAttrs', () => {
+    const wrapper = mount(
+      <Modal
+        active
+        dataAttrs={{ gtm: 'id' }}
+      >
+        Modal Content
+      </Modal>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should render small modal', () => {
     const wrapper = mount(
       <Modal
