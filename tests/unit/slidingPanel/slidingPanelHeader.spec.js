@@ -84,8 +84,6 @@ describe('SlidingPanel', () => {
         </SlidingPanelHeader>
       );
 
-      jest.runAllTimers();
-
       expect(renderTree).toMatchSnapshot();
     });
 
@@ -99,8 +97,6 @@ describe('SlidingPanel', () => {
           { title }
         </SlidingPanelHeader>
       );
-
-      jest.runAllTimers();
 
       expect(renderTree).toMatchSnapshot();
     });
