@@ -3,7 +3,6 @@
 exports[`DropDown: render should return base dropdown with passed array value 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -40,11 +39,14 @@ exports[`DropDown: render should return base dropdown with passed array value 1`
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     value={Array []}
     valueComponent={[Function]}
     valueKey="value"
@@ -56,7 +58,6 @@ exports[`DropDown: render should return base dropdown with passed array value 1`
 exports[`DropDown: render should return base dropdown with passed number value 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -93,11 +94,14 @@ exports[`DropDown: render should return base dropdown with passed number value 1
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     value={1}
     valueComponent={[Function]}
     valueKey="value"
@@ -109,7 +113,6 @@ exports[`DropDown: render should return base dropdown with passed number value 1
 exports[`DropDown: render should return base dropdown with passed string value 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -146,11 +149,14 @@ exports[`DropDown: render should return base dropdown with passed string value 1
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     value="testValue"
     valueComponent={[Function]}
     valueKey="value"
@@ -162,7 +168,6 @@ exports[`DropDown: render should return base dropdown with passed string value 1
 exports[`DropDown: render should return base dropdown with required fields 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -199,11 +204,14 @@ exports[`DropDown: render should return base dropdown with required fields 1`] =
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={null}
@@ -214,7 +222,6 @@ exports[`DropDown: render should return base dropdown with required fields 1`] =
 exports[`DropDown: render should return clearable dropdown 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -251,11 +258,14 @@ exports[`DropDown: render should return clearable dropdown 1`] = `
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={null}
@@ -266,7 +276,6 @@ exports[`DropDown: render should return clearable dropdown 1`] = `
 exports[`DropDown: render should return disabled dropdown 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -303,11 +312,14 @@ exports[`DropDown: render should return disabled dropdown 1`] = `
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={null}
@@ -318,7 +330,6 @@ exports[`DropDown: render should return disabled dropdown 1`] = `
 exports[`DropDown: render should return dropdown with custom class name 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -355,11 +366,14 @@ exports[`DropDown: render should return dropdown with custom class name 1`] = `
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={null}
@@ -370,7 +384,6 @@ exports[`DropDown: render should return dropdown with custom class name 1`] = `
 exports[`DropDown: render should return dropdown with icon 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -407,11 +420,14 @@ exports[`DropDown: render should return dropdown with icon 1`] = `
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={[Function]}
@@ -422,7 +438,6 @@ exports[`DropDown: render should return dropdown with icon 1`] = `
 exports[`DropDown: render should return dropdown with passed name 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -460,11 +475,14 @@ exports[`DropDown: render should return dropdown with passed name 1`] = `
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={null}
@@ -475,7 +493,6 @@ exports[`DropDown: render should return dropdown with passed name 1`] = `
 exports[`DropDown: render should return dropdown with shifting viewport enabled 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -512,11 +529,14 @@ exports[`DropDown: render should return dropdown with shifting viewport enabled 
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={true}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={null}
@@ -527,7 +547,6 @@ exports[`DropDown: render should return dropdown with shifting viewport enabled 
 exports[`DropDown: render should return dropdown with status 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -564,11 +583,14 @@ exports[`DropDown: render should return dropdown with status 1`] = `
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={null}
@@ -579,7 +601,6 @@ exports[`DropDown: render should return dropdown with status 1`] = `
 exports[`DropDown: render should return filter dropdown 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -622,11 +643,14 @@ exports[`DropDown: render should return filter dropdown 1`] = `
     }
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={null}
@@ -637,7 +661,6 @@ exports[`DropDown: render should return filter dropdown 1`] = `
 exports[`DropDown: render should return multi dropdown 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -674,11 +697,14 @@ exports[`DropDown: render should return multi dropdown 1`] = `
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={false}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={null}
@@ -689,7 +715,6 @@ exports[`DropDown: render should return multi dropdown 1`] = `
 exports[`DropDown: render should return searchable dropdown 1`] = `
 <div>
   <Select
-    addLabelText="Add \\"{label}\\"?"
     arrowRenderer={[Function]}
     autosize={true}
     backspaceRemoves={true}
@@ -726,11 +751,14 @@ exports[`DropDown: render should return searchable dropdown 1`] = `
     options={Array []}
     pageSize={5}
     placeholder=""
+    removeSelected={true}
     required={false}
+    rtl={false}
     scrollMenuIntoView={false}
     searchable={true}
     simpleValue={false}
     tabSelectsValue={true}
+    trimFilter={true}
     valueComponent={[Function]}
     valueKey="value"
     valueRenderer={null}
