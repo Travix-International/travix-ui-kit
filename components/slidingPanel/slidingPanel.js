@@ -3,24 +3,26 @@ import ReactDom from 'react-dom';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import SlidingPanelHeader from './slidingPanelHeader';
+import SlidingPanelHeader from './slidingPanelHeader/slidingPanelHeader';
+import SlidingPanelFooter from './slidingPanelFooter/slidingPanelFooter';
 import Global from '../global/global';
 import { getClassNamesWithMods, getDataAttributes, warnAboutDeprecatedProp } from '../_helpers';
 
 export default class SlidingPanel extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { isOverlayHidden: true, isActive: false };
-
-    this.handleClickOverlay = this.handleClickOverlay.bind(this);
-    this.handleActive = this.handleActive.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-    this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
-  }
+  state = {
+    isActive: false,
+    isOverlayHidden: true,
+  };
 
   componentWillMount() {
+    warnAboutDeprecatedProp(this.props.footer, 'footer', 'SlidingPanelFooter component');
+    warnAboutDeprecatedProp(this.props.leftBlock, 'leftBlock', 'SlidingPanelHeader component');
     warnAboutDeprecatedProp(this.props.mods, 'mods', 'className');
+    warnAboutDeprecatedProp(this.props.onBackButtonClick, 'onBackButtonClick', 'SlidingPanelHeader component');
+    warnAboutDeprecatedProp(this.props.rightBlock, 'rightBlock', 'SlidingPanelHeader component');
+    warnAboutDeprecatedProp(this.props.subheader, 'subheader', 'SlidingPanel component without SlidingPanelContent');
+    warnAboutDeprecatedProp(this.props.title, 'title', 'SlidingPanelHeader component children');
+    warnAboutDeprecatedProp(this.props.useDefaultLeftBlock, 'useDefaultLeftBlock', 'SlidingPanelHeader component');
   }
 
   componentWillReceiveProps(newProps) {
@@ -53,7 +55,7 @@ export default class SlidingPanel extends Component {
    * @method handleClickOverlay
    * @param {SyntheticEvent} e Click event trapped in the overlay element
    */
-  handleClickOverlay(e) {
+  handleClickOverlay = (e) => {
     if ((e.target === e.currentTarget) && this.props.closeOnOverlayClick) {
       this.handleClose(e);
     }
@@ -65,7 +67,7 @@ export default class SlidingPanel extends Component {
    * @method handleClose
    * @param {SyntheticEvent} e Click event trapped in the overlay element or close button
    */
-  handleClose(e) {
+  handleClose = (e) => {
     const { onTryingToClose } = this.props;
 
     if (onTryingToClose && onTryingToClose(e) === false) {
@@ -80,7 +82,7 @@ export default class SlidingPanel extends Component {
    *
    * @method handleActive
    */
-  handleActive() {
+  handleActive = () => {
     const { onOpen } = this.props;
 
     this.setState({ isOverlayHidden: false, isActive: true }, () => {
@@ -88,28 +90,13 @@ export default class SlidingPanel extends Component {
     });
   }
 
-  handleAnimationEnd() {
+  handleAnimationEnd = () => {
     const { onClose } = this.props;
     this.setState({ isOverlayHidden: !this.state.isActive }, () => {
       if (this.state.isOverlayHidden && onClose) {
         onClose();
       }
     });
-  }
-
-  renderDefaultLeftBlock() {
-    const { backButtonLabel, onBackButtonClick } = this.props;
-    return (
-      <button
-        className="ui-sliding-panel-header__left-block-back"
-        onClick={onBackButtonClick}
-      >
-        <span className="ui-sliding-panel-header__left-block-back-icon" />
-        <span className="ui-sliding-panel-header__left-block-back-text">
-          {backButtonLabel}
-        </span>
-      </button>
-    );
   }
 
   render() {
@@ -121,16 +108,13 @@ export default class SlidingPanel extends Component {
       footer,
       leftBlock,
       global,
+      onBackButtonClick,
       rightBlock,
       subheader,
       title,
       useDefaultLeftBlock,
       width,
     } = this.props;
-
-    const headerLeftBlock = useDefaultLeftBlock
-      ? this.renderDefaultLeftBlock()
-      : leftBlock;
 
     const overlayMods = [];
     const panelMods = this.props.mods ? this.props.mods.slice() : [];
@@ -145,19 +129,8 @@ export default class SlidingPanel extends Component {
 
     panelMods.push(direction);
 
-    const panelClass = 'ui-sliding-panel';
-    const panelClassName = classnames(getClassNamesWithMods(panelClass, panelMods), className);
-
-    const overlayClass = 'ui-sliding-panel-overlay';
-    const overlayClassName = getClassNamesWithMods(overlayClass, overlayMods);
-
-    const subheaderClass = 'ui-sliding-panel__subheader';
-
-    const footerBlock = footer ? (
-      <div className="ui-sliding-panel__footer">
-        {footer}
-      </div>
-    ) : null;
+    const panelClassName = classnames(getClassNamesWithMods('ui-sliding-panel', panelMods), className);
+    const overlayClassName = getClassNamesWithMods('ui-sliding-panel-overlay', overlayMods);
 
     const content = (
       <div className={overlayClassName} onClick={this.handleClickOverlay}>
@@ -167,23 +140,30 @@ export default class SlidingPanel extends Component {
           style={{ width }}
           {...getDataAttributes(dataAttrs)}
         >
-          {title &&
+          {title && (
             <SlidingPanelHeader
-              leftBlock={headerLeftBlock}
+              leftBlock={leftBlock}
+              onBackButtonClick={onBackButtonClick}
               rightBlock={rightBlock}
-              title={title}
-            />}
-          {
-            subheader && (
-              <div className={subheaderClass}>
-                {subheader}
-              </div>
-            )
-          }
-          <div className="ui-sliding-panel__content">
-            {children}
-          </div>
-          {footerBlock}
+              useDefaultLeftBlock={useDefaultLeftBlock}
+            >
+              {title}
+            </SlidingPanelHeader>
+          )}
+
+          {subheader && (
+            <div className="ui-sliding-panel__subheader">
+              {subheader}
+            </div>
+          )}
+
+          {children}
+
+          {footer && (
+            <SlidingPanelFooter>
+              {footer}
+            </SlidingPanelFooter>
+          )}
         </div>
       </div>
     );

@@ -32,10 +32,10 @@ h3.ui-sliding-panel-header__title {
   padding: 0;
   text-align: right;
   width: var(--tx-sliding-panel-header-close-button-width);
+}
 
-  &:hover {
-    color: var(--tx-generic-color-secondary-darkest);
-  }
+.ui-sliding-panel-header__close-button:hover {
+  color: var(--tx-generic-color-secondary-darkest);
 }
 
 .ui-sliding-panel-header__left-block,
@@ -74,10 +74,10 @@ button.ui-sliding-panel-header__left-block-back {
   font-size: var(--tx-sliding-panel-header-back-block-icon-font-size);
   margin-right: 4px;
   transform: translateY(-2px);
+}
 
-  &:before {
-    content: '‹';
-  }
+.ui-sliding-panel-header__left-block-back-icon:before {
+  content: '‹';
 }
 
 .ui-sliding-panel-header__left-block-back-text {

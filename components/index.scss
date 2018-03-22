@@ -23,8 +23,10 @@
 @import "./radioButton/radioButton.scss";
 @import "./rating/rating.scss";
 @import "./selectionBlock/selectionBlock.css";
-@import "./slidingPanel/slidingPanel.scss";
-@import "./slidingPanel/slidingPanelHeader.scss";
+@import "./slidingPanel/slidingPanel.css";
+@import "./slidingPanel/slidingPanelContent/slidingPanelContent.css";
+@import "./slidingPanel/slidingPanelFooter/slidingPanelFooter.css";
+@import "./slidingPanel/slidingPanelHeader/slidingPanelHeader.css";
 @import "./spinner/spinner.scss";
 @import "./tabs/tab.css";
 @import "./tabs/tabs.css";

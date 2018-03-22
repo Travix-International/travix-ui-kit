@@ -1,0 +1,9 @@
+.ui-sliding-panel__footer {
+  align-items: center;
+  background-color: var(--tx-generic-color-blank);
+  border-top: 2px solid var(--tx-generic-color-secondary-darker);
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  padding: 0 20px;
+}

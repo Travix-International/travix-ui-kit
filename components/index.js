@@ -24,6 +24,9 @@ import RadioButton from './radioButton/radioButton';
 import Rating from './rating/rating';
 import SelectionBlock from './selectionBlock/selectionBlock';
 import SlidingPanel from './slidingPanel/slidingPanel';
+import SlidingPanelContent from './slidingPanel/slidingPanelContent/slidingPanelContent';
+import SlidingPanelFooter from './slidingPanel/slidingPanelFooter/slidingPanelFooter';
+import SlidingPanelHeader from './slidingPanel/slidingPanelHeader/slidingPanelHeader';
 import Spinner from './spinner/spinner';
 import Tab from './tabs/tab';
 import Tabs from './tabs/tabs';
@@ -58,6 +61,9 @@ export default {
   Rating,
   SelectionBlock,
   SlidingPanel,
+  SlidingPanelContent,
+  SlidingPanelFooter,
+  SlidingPanelHeader,
   Spinner,
   Tab,
   Tabs,
