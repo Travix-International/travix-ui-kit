@@ -23,6 +23,7 @@ const SlidingPanelHeader = ({
   children,
   className,
   dataAttrs,
+  dataAttrsDefaultCloseBtn,
   leftBlock,
   onBackButtonClick,
   rightBlock,
@@ -42,6 +43,7 @@ const SlidingPanelHeader = ({
     <button
       className="ui-sliding-panel-header__close-button"
       data-rel="close"
+      {...getDataAttributes(dataAttrsDefaultCloseBtn)}
     >
       &#215;
     </button>
@@ -87,6 +89,11 @@ SlidingPanelHeader.propTypes = {
    * Data attributes. You can use it to set up any custom data-* attribute
    */
   dataAttrs: PropTypes.object,
+
+  /**
+   * Data attributes for default close button. You can use it to set up any custom data-* attribute
+   */
+  dataAttrsDefaultCloseBtn: PropTypes.object,
 
   /**
    * When defined, this custom node appears on the left part of the header
