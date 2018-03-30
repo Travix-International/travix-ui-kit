@@ -52,7 +52,7 @@ const SlidingPanelHeader = ({
   return (
     <div
       className={headerClassName}
-      {...getDataAttributes(dataAttrs.root)}
+      {...getDataAttributes(dataAttrs.container)}
     >
       <div className="ui-sliding-panel-header__left-block">
         {headerLeftBlock}
