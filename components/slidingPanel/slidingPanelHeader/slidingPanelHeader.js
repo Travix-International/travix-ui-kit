@@ -3,7 +3,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { getDataAttributes } from '../../_helpers';
 
-const renderDefaultLeftBlock = (backButtonLabel, onBackButtonClick) => (
+const renderDefaultLeftBlock = (backButtonLabel, onBackButtonClick, dataAttrs) => (
   <button
     className="ui-sliding-panel-header__left-block-back"
     onClick={onBackButtonClick}
@@ -36,7 +36,7 @@ const SlidingPanelHeader = ({
   const headerClassName = classnames('ui-sliding-panel-header', className);
 
   const headerLeftBlock = useDefaultLeftBlock
-    ? renderDefaultLeftBlock(backButtonLabel, onBackButtonClick)
+    ? renderDefaultLeftBlock(backButtonLabel, onBackButtonClick, dataAttrs)
     : leftBlock;
 
   const defaultCloseButton = (
