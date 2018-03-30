@@ -7,6 +7,7 @@ const renderDefaultLeftBlock = (backButtonLabel, onBackButtonClick) => (
   <button
     className="ui-sliding-panel-header__left-block-back"
     onClick={onBackButtonClick}
+    {...getDataAttributes(dataAttrs.backButton)}
   >
     <span className="ui-sliding-panel-header__left-block-back-icon" />
 
@@ -23,7 +24,6 @@ const SlidingPanelHeader = ({
   children,
   className,
   dataAttrs,
-  dataAttrsDefaultCloseBtn,
   leftBlock,
   onBackButtonClick,
   rightBlock,
@@ -43,7 +43,7 @@ const SlidingPanelHeader = ({
     <button
       className="ui-sliding-panel-header__close-button"
       data-rel="close"
-      {...getDataAttributes(dataAttrsDefaultCloseBtn)}
+      {...getDataAttributes(dataAttrs.defaultCloseButton)}
     >
       &#215;
     </button>
@@ -52,7 +52,7 @@ const SlidingPanelHeader = ({
   return (
     <div
       className={headerClassName}
-      {...getDataAttributes(dataAttrs)}
+      {...getDataAttributes(dataAttrs.root)}
     >
       <div className="ui-sliding-panel-header__left-block">
         {headerLeftBlock}
@@ -86,14 +86,9 @@ SlidingPanelHeader.propTypes = {
   className: PropTypes.string,
 
   /**
-   * Data attributes. You can use it to set up any custom data-* attribute
+   * Data attributes. You can use it to set up any custom data-* attribute for each element
    */
   dataAttrs: PropTypes.object,
-
-  /**
-   * Data attributes for default close button. You can use it to set up any custom data-* attribute
-   */
-  dataAttrsDefaultCloseBtn: PropTypes.object,
 
   /**
    * When defined, this custom node appears on the left part of the header
@@ -119,6 +114,7 @@ SlidingPanelHeader.propTypes = {
 
 SlidingPanelHeader.defaultProps = {
   useDefaultLeftBlock: false,
+  dataAttrs: {},
 };
 
 export default SlidingPanelHeader;
