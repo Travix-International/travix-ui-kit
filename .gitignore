@@ -1,0 +1,11 @@
+.idea
+npm-debug.log
+coverage/
+dist/
+lib/
+node_modules/
+styleguide/
+themes/theme.scss
+.DS_Store
+wallaby.js
+_site

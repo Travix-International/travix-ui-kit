@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="build/ui-bundle.css" data-cssvars />
+    <link rel="stylesheet" href="build/theme.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.27&key=AIzaSyAqvSFBj-lPSA8BsEbSoqU7dzRlQxPUf8I"></script>
+    <script>
+      (function () {
+        'use strict';
+
+        if (window.CSS && CSS.supports('color', 'var(--primary)') && navigator.userAgent.indexOf('Edge/15') === -1) {
+          return;
+        }
+
+        var themejs = document.createElement('script');
+        var polyfilljs = document.createElement('script');
+        themejs.src = "build/theme.js";
+        polyfilljs.src = "build/css-vars-polyfill.js";
+        themejs.async = false;
+        polyfilljs.async = false;
+        document.head.appendChild(themejs);
+        document.head.appendChild(polyfilljs);
+      }());
+    </script>
+    <title>Travix styleguide</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style type="text/css">
+      div.ReactStyleguidist-Playground__preview {
+          overflow: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+  <script type="text/javascript" src="build/bundle.8d6d462c.js"></script></body>
+</html>
