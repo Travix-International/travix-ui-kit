@@ -2,12 +2,14 @@
 
 exports[`SlidingPanel #render() render noscript without children 1`] = `
 <SlidingPanelHeader
+  dataAttrs={Object {}}
   useDefaultLeftBlock={false}
 />
 `;
 
 exports[`SlidingPanel #render() render with children 1`] = `
 <SlidingPanelHeader
+  dataAttrs={Object {}}
   useDefaultLeftBlock={false}
 >
   <div
@@ -37,6 +39,7 @@ exports[`SlidingPanel #render() render with children 1`] = `
 
 exports[`SlidingPanel #render() render with custom left and right blocks 1`] = `
 <SlidingPanelHeader
+  dataAttrs={Object {}}
   leftBlock={
     <button
       data-rel="close"
@@ -106,6 +109,7 @@ exports[`SlidingPanel #render() render with custom left and right blocks 1`] = `
 exports[`SlidingPanel #render() should render with backButtonLabel and onBackButtonClick 1`] = `
 <SlidingPanelHeader
   backButtonLabel="foo"
+  dataAttrs={Object {}}
   onBackButtonClick={[MockFunction]}
   useDefaultLeftBlock={true}
 >
@@ -157,14 +161,16 @@ exports[`SlidingPanel #render() should render with dataAttr and className 1`] = 
   className="foo"
   dataAttrs={
     Object {
-      "foo": "bar",
+      "container": Object {
+        "data-gtm-id": "test",
+      },
     }
   }
   useDefaultLeftBlock={false}
 >
   <div
     className="ui-sliding-panel-header foo"
-    data-foo="bar"
+    data-data-gtm-id="test"
   >
     <div
       className="ui-sliding-panel-header__left-block"

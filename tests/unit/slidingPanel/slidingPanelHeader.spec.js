@@ -92,7 +92,7 @@ describe('SlidingPanel', () => {
       const renderTree = mount(
         <SlidingPanelHeader
           className="foo"
-          dataAttrs={{ foo: 'bar' }}
+          dataAttrs={{ container: { 'data-gtm-id': 'test' } }}
         >
           { title }
         </SlidingPanelHeader>

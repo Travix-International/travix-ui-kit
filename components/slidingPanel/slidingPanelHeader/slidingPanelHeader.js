@@ -3,10 +3,11 @@ import React from 'react';
 import classnames from 'classnames';
 import { getDataAttributes } from '../../_helpers';
 
-const renderDefaultLeftBlock = (backButtonLabel, onBackButtonClick) => (
+const renderDefaultLeftBlock = (backButtonLabel, onBackButtonClick, dataAttrs) => (
   <button
     className="ui-sliding-panel-header__left-block-back"
     onClick={onBackButtonClick}
+    {...getDataAttributes(dataAttrs.backButton)}
   >
     <span className="ui-sliding-panel-header__left-block-back-icon" />
 
@@ -35,13 +36,14 @@ const SlidingPanelHeader = ({
   const headerClassName = classnames('ui-sliding-panel-header', className);
 
   const headerLeftBlock = useDefaultLeftBlock
-    ? renderDefaultLeftBlock(backButtonLabel, onBackButtonClick)
+    ? renderDefaultLeftBlock(backButtonLabel, onBackButtonClick, dataAttrs)
     : leftBlock;
 
   const defaultCloseButton = (
     <button
       className="ui-sliding-panel-header__close-button"
       data-rel="close"
+      {...getDataAttributes(dataAttrs.defaultCloseButton)}
     >
       &#215;
     </button>
@@ -50,7 +52,7 @@ const SlidingPanelHeader = ({
   return (
     <div
       className={headerClassName}
-      {...getDataAttributes(dataAttrs)}
+      {...getDataAttributes(dataAttrs.container)}
     >
       <div className="ui-sliding-panel-header__left-block">
         {headerLeftBlock}
@@ -84,7 +86,7 @@ SlidingPanelHeader.propTypes = {
   className: PropTypes.string,
 
   /**
-   * Data attributes. You can use it to set up any custom data-* attribute
+   * Data attributes. You can use it to set up any custom data-* attribute for each element
    */
   dataAttrs: PropTypes.object,
 
@@ -112,6 +114,7 @@ SlidingPanelHeader.propTypes = {
 
 SlidingPanelHeader.defaultProps = {
   useDefaultLeftBlock: false,
+  dataAttrs: {},
 };
 
 export default SlidingPanelHeader;
