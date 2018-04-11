@@ -33,14 +33,7 @@ Sliding Panel Header with default block and back button
         active={state.isSlidingPanelOpen}
         onClose={() => setState({ isSlidingPanelOpen: false })}
       >
-        <SlidingPanelHeader
-          backButtonLabel="Back to the website"
-          onBackButtonClick={() => {
-            alert('Going back...');
-            setState({ isSlidingPanelOpen: false });
-          }}
-          useDefaultLeftBlock
-        >
+        <SlidingPanelHeader>
           Panel title
         </SlidingPanelHeader>
 
