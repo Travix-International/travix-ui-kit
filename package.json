@@ -67,7 +67,7 @@
     "codecov": "^3.0.0",
     "commander": "^2.9.0",
     "create-react-class": "^15.5.2",
-    "css-loader": "~0.28.1",
+    "css-loader": "~1.0.0",
     "enzyme": "^3.1.1",
     "enzyme-adapter-react-16": "^1.0.4",
     "enzyme-to-json": "^3.3.1",
