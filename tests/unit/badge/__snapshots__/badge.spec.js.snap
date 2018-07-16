@@ -66,6 +66,24 @@ exports[`Badge should render badge with both are position and alignment passed 1
 </div>
 `;
 
+exports[`Badge should render badge with main container class name 1`] = `
+<div
+  className="my-container-class ui-badge ui-badge_visible"
+>
+  <p>
+    Children element
+  </p>
+  <div
+    className="ui-badge-badge ui-badge-badge_start"
+  >
+    Badge title
+    <div
+      className="ui-badge__border"
+    />
+  </div>
+</div>
+`;
+
 exports[`Badge should render badge with provided className 1`] = `
 <div
   className="test-class ui-badge-badge ui-badge-badge_start"
