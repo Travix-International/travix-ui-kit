@@ -1,4 +1,8 @@
-# Travix UI-kit
+# DEPRECATED
+
+(Please refer to https://github.com/Travix-International/ui/
+
+## Travix UI-kit
 
 [![npm](https://img.shields.io/npm/v/travix-ui-kit.svg)](https://www.npmjs.com/package/travix-ui-kit)
 [![Build Status](https://img.shields.io/travis/Travix-International/travix-ui-kit/master.svg)](http://travis-ci.org/Travix-International/travix-ui-kit)
